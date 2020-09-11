@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% set active_page = "Papers" %}
+{% set page_title = "Papers" %}
+
+{% block head %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+<script src="static/js/icons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+{% endblock %}
+
+{% block heading %}
+  <div class="text-muted text-center">
+  The <a href="schedule.html" target="_blank">Schedule</a> page shows the timing of QA/Demo sessions.
+  </div>
+{% endblock %}
+
+{% block tabs %}
+  <ul class="nav nav-pills justify-content-center pb-3">
+    <li class="nav-item">
+      <a
+          class="nav-link active"
+          data-toggle="tab"
+          href="papers.html"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true"
+      >Browse
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="papers_vis.html">Visualization</a>
+    </li>
+  </ul>
+
+{% endblock %}
+
+
+{% block content %}
+<!-- Session -->
+<div class="row d-none session_notice">
+  <div
+      class="alert alert-warning alert-dismissible fade show col-12"
+      role="alert"
+  >
+  Showing papers for
+  <span id="session_name" style="font-weight: bold;"></span>.
+  <button
+      type="button"
+      class="close remove_session"
+      data-dismiss="alert"
+      aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+</div>
+
+<!-- Buttons -->
+<div id="papers_options" class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="input-group mr-3 flex-fill">
+    <input
+      type="text"
+      class="form-control typeahead_all"
+      placeholder="Search"
+    />
+    <!-- <div class="input-group-append">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">Dropdown</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">by title</a>
+        <a class="dropdown-item" href="#">by author</a>
+      </div>
+    </div> -->
+    <div class="input-group-append mr-3 btn-group-toggle filter_option">
+      <label class="btn btn-outline-primary" data-tippy-content="Search for papers titles">
+        <input type="radio" name="options" value="titles" autocomplete="off" checked />
+        by title
+      </label>
+      <!--
+      <label
+        class="btn btn-outline-secondary"
+        data-tippy-content="Search for papers with specific keywords"
+      >
+        <input
+          type="radio"
+          name="options"
+          value="keywords"
+          autocomplete="off"
+        />
+        keyword
+      </label>
+      -->
+      <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific authors">
+        <input type="radio" name="options" value="authors" autocomplete="off" />
+        by author
+      </label>
+
+      <button class="btn btn btn-outline-danger typeahead_all_clear" type="button">
+        &times;
+      </button>
+    </div>
+  </div>
+
+  
+
+  <!-- Compact/Detail -->
+  <div
+    class="btn-group btn-group-toggle render_option mr-3"
+    data-toggle="buttons">
+
+    <label class="btn btn-outline-secondary active">
+      <input
+          type="radio"
+          name="options"
+          value="list"
+          autocomplete="off"
+          checked
+      />
+      compact
+    </label>
+    <label class="btn btn-outline-secondary">
+      <input
+        type="radio"
+        name="options"
+        value="compact"
+        autocomplete="off"
+      />
+      medium
+    </label>
+    <label class="btn btn-outline-secondary">
+      <input
+        type="radio"
+        name="options"
+        value="detail"
+        autocomplete="off"
+      />
+      detail
+    </label>
+  </div>
+
+  <!-- Papers/Visualization -->
+  <!--
+  <div
+    class="btn-group btn-group-toggle mr-3 render_option"
+    data-toggle="buttons">
+
+    <label class="btn btn-outline-secondary active">
+      <input
+        type="radio"
+        name="options"
+        value="paper"
+        autocomplete="off"
+        checked
+      />
+      paper
+    </label>
+    <label class="btn btn-outline-secondary">
+      <input
+        type="radio"
+        name="options"
+        value="visualization"
+        autocomplete="off"
+      />
+      <a href="papers_vis.html" class="deco-none">visualization</a>
+    </label>
+  </div>
+  -->
+
+  <!-- Shuffle -->
+  <div class="btn-group mr-3">
+    <button class="btn btn-outline-secondary reshuffle">shuffle</button>
+    <button class="btn btn-outline-secondary visited">visited</button>
+  </div>
+
+  <div class="bootstrap-select">
+      <select id="track_selector" class="selectpicker" data-live-search="true" data-style="btn-light">
+        <option>All tracks</option>
+      {% for track in tracks %}
+        <option>{{ track }}</option>
+      {% endfor %}
+      </select>
+  </div>
+</div>
+
+<!-- Cards -->
+<div class="cards row"></div>
+<script src="static/js/little_helpers.js"></script>
+<script src="static/js/lazy_load.js"></script>
+<script src="static/js/persistor.js"></script>
+<script src="static/js/papers.js"></script>
+<script>
+  $(document).ready(function () {
+    tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
+    const track = getUrlParameter("track") || "All tracks";
+
+    start(track);
+    $('#track_selector').selectpicker('val', track);
+  });
+
+  $('#track_selector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+    let track = e.target.value;
+    setQueryStringParameter("track", track);
+    start(track);
+  });
+</script>
+
+{% endblock %}
+
+{% block footer %}
+
+<div
+  class="gdpr bg-dark text-light"
+  style="padding: 10pt; position: fixed; bottom: 0; display: none;"
+>
+  We use cookies to store which papers have been visited.
+  <div class="gdpr-btn btn btn-sm btn-info" style="margin-left: 15pt;">
+    I agree
+  </div>
+</div>
+<script src="static/js/gdpr_cookies.js"></script>
+
+{% endblock %}

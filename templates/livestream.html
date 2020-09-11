@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% set active_page = "Livestream" %}
+{% set page_title = "Livestream" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block heading %}
+<div class="col-12 bd-content">
+<h4 class="text-center">
+  Pre-recorded videos are also available <a href="plenary_sessions.html" target="_blank">here</a>.
+</h4>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div id="live container">
+    {{ components.section("July 6") }}
+    <div class="row p-4">
+      <!-- SlidesLive-->
+      <div class="col-md-12 col-xs-12 p-2">
+        <div id="presentation-embed-july6" class="my-auto slp"></div>
+        <script src='https://slideslive.com/embed_presentation.js'></script>
+        <script>
+          embed = new SlidesLiveEmbed('presentation-embed-july6', {
+            presentationId: '38931670',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            verticalWhenWidthLte: 500,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true,
+          });
+        </script>
+      </div>
+    </div>
+
+    {{ components.section("July 7") }}
+    <!-- SlidesLive-->
+    <div class="col-md-12 col-xs-12 p-2">
+      <div id="presentation-embed-july7" class="my-auto slp"></div>
+        <script src='https://slideslive.com/embed_presentation.js'></script>
+        <script>
+          embed = new SlidesLiveEmbed('presentation-embed-july7', {
+            presentationId: '38931811',
+            // presentationId: '38931671',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            verticalWhenWidthLte: 500,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true,
+          });
+        </script>
+    </div>
+
+    {{ components.section("July 8") }}
+    <!-- SlidesLive-->
+    <div class="col-md-12 col-xs-12 p-2">
+      <div id="presentation-embed-july8" class="my-auto slp"></div>
+        <script src='https://slideslive.com/embed_presentation.js'></script>
+        <script>
+          embed = new SlidesLiveEmbed('presentation-embed-july8', {
+            presentationId: '38931672',
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            verticalWhenWidthLte: 500,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true,
+          });
+        </script>
+    </div>
+
+    <!-- Chat -->
+    {{ components.section("Live Chat") }}
+    <div class="text text-muted text-center">
+      You can also open the <a href="https://{{config.chat_server}}/channel/live" target="_blank">#live</a>
+      channel below in a separate window.
+    </div>
+
+    <div class="row p-4">
+      <div class="col-md-12 col-xs-12 p-2">
+        <div id="chat" class="slp">
+          <iframe frameborder="0" src="https://{{config.chat_server}}/channel/live?layout=embedded" height="600px" width="100%" ></iframe>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<script src="static/js/lazy_load.js"></script>
+<script type="text/javascript">
+  lazyLoader();
+</script>
+
+{% endblock %}

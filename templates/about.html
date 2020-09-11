@@ -1,0 +1,57 @@
+{% set active_page = "Help" %}
+{% set page_title = "Help" %}
+{% extends "base.html" %}
+
+{% block heading %}
+{{ components.section("Help") }}
+{% endblock %}
+
+{% block tabs %}
+{{ components.tabs([("faq", "Frequently Asked Questions", "active"),
+                    ("code-of-conduct", "EMNLP Code of Conduct", "")]) }}
+{% endblock %}
+
+{% block content %}
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+  <!-- FAQ -->
+  <div
+    class="tab-pane active tab-switching-link"
+    id="tab-faq"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    {{ components.subsection("Frequently Asked Questions") }}
+
+    {{ components.faqgroup(FAQ) }}
+  </div>
+
+  <!-- Code of Conduct -->
+  <div
+    class="tab-pane fade"
+    id="tab-code-of-conduct"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    {{ components.subsection("EMNLP Code of Conduct") }}
+    <div class="row p-3">
+      <div class="col-12 bd-content">
+        <div>{{CodeOfConduct|markdown}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enable Code of Conduct tab switch from FAQ hyperlinks -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.tab-switching-link a[href="/about.html#tab-code-of-conduct"]').click(function(){
+        window.scrollTo({top: 0});
+        window.location = '/about.html#tab-code-of-conduct';
+        window.location.reload();
+      });
+    });
+  </script>
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% set active_page = "Sponsors" %}
+{% set page_title = "Sponsors" %}
+{% extends "base.html" %}
+
+{% block heading %}
+{{ components.section("Sponsor Lounge") }}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-12 pb-4">
+    <p class="lead">
+      EMNLP 2020 is grateful to all its sponsors, who are listed below. We simply
+      couldn't run the conference without the help of these generous companies. We
+      thank them sincerely for their ongoing support of the NLP/CL community.
+      <br >
+      <span class="font-weight-bold">Click on sponsor logos to visit their Virtual Exhibit Spaces!</span>
+    </p>
+  </div>
+
+</div>
+
+<div class="">
+  <div class="sponsors">
+  {{ components.sponsorgroup(sponsors) }}
+  </div>
+</div>
+{% endblock %}
