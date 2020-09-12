@@ -40,3 +40,6 @@ jobs:
       run: npm ci
     - name: Deploy to AWS S3
       run: make deploy-aws
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}

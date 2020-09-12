@@ -122,7 +122,9 @@ def load_site_data(
             site_data[name] = list(csv.DictReader(open(f)))
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
-    assert set(site_data.keys()) == registered_sitedata, registered_sitedata - set(site_data.keys())
+    assert set(site_data.keys()) == registered_sitedata, registered_sitedata - set(
+        site_data.keys()
+    )
 
     display_time_format = "%H:%M"
 
