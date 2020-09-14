@@ -1,4 +1,4 @@
-## Mini-Conf
+## EMNLP 2020 Virtual Conference
 
 <a href="https://mini-conf.github.io/index.html">MiniConf</a> is a virtual conference in a box. It manages the papers, schedules, and speakers for an academic conference run virtually. It can be easily integrated with interactive tools such as video, chat, and QA.
 
