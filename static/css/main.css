@@ -19,6 +19,11 @@ label:text-muted,
 
 body {
   font-family: "Lato", sans-serif;
+  background-color: #f2efea;
+}
+
+.bg-emnlp {
+  background-color: #2d3047 !important;
 }
 
 .container a:hover {
