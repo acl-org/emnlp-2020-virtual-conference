@@ -149,7 +149,6 @@
       <div class="heading">
         {% block heading %} {% endblock %}
       </div>
-      <div class="tabs pt-3">
       <!-- Tabs -->
       <div class="tabs">
         {% block tabs %} {% endblock %}
@@ -179,7 +178,13 @@
     <!-- Footer -->
     <footer class="footer bg-light p-4">
       <div class="container">
-        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="float-left">
+          <img src="{{ config.logo.image }}"
+          height={{config.logo.height | default("auto") | tojson}}
+          width={{config.logo.width | default("auto") | tojson}} align="center" >
+          <span class="lead">EMNLP 2020</span> 
+        </p>
+        <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
         <p class="text-center">© 2020 {{config.organization}}</p>
       </div>
     </footer>

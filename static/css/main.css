@@ -26,6 +26,14 @@ body {
   background-color: #2d3047 !important;
 }
 
+.bg-emnlp .nav-link {
+  color: #cecece !important;
+}
+
+.bg-emnlp .nav-link:hover, .nav-link:active, .nav-item.active > .nav-link {
+  color: #fff !important;
+}
+
 .container a:hover {
   text-decoration: none;
 }
@@ -36,8 +44,8 @@ body {
 }
 
 #main-nav {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .header {
