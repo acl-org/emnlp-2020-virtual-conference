@@ -30,7 +30,9 @@ body {
   color: #cecece !important;
 }
 
-.bg-emnlp .nav-link:hover, .nav-link:active, .nav-item.active > .nav-link {
+.bg-emnlp .nav-link:hover,
+.nav-link:active,
+.nav-item.active > .nav-link {
   color: #fff !important;
 }
 
