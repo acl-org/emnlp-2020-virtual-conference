@@ -153,7 +153,7 @@ The data used to generate these pages is sourced from `sponsors.yml`. Grouped
 by sponsor level, there is an entry for every sponsor containing information
 like name, logo, a link to their website, event schedule and more.
 
-Please refer to the [format description in the sitedata repo](https://github.com/emnlp-org/acl-2020-virtual-conference-sitedata#sponsors--yml-)
+Please refer to the [format description](doc/dataformats.md)
 for which fields exist and which are optional.
 
 #### Managing Duplicates
