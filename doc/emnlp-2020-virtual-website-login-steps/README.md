@@ -1,2 +1,2 @@
 Produces the PDF with instructions how to sign in to the virtual conference.
-Compiles with TeXLive 2020, other TeX distributions were not tested.
+Compiled successfully with TeXLive 2020 on Ubuntu 20.04 and TeXLive 2019 on Windows.
