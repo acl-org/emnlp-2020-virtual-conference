@@ -249,7 +249,6 @@ def parse_arguments():
         dest="build",
         help="Convert the site to static assets",
     )
-    parser.add_argument("path", help="Pass the JSON data path and run the server")
 
     return parser.parse_args()
 
@@ -257,7 +256,7 @@ def parse_arguments():
 if __name__ == "__main__":
     args = parse_arguments()
 
-    extra_files = load_site_data(args.path, site_data, by_uid, qa_session_length_hr)
+    extra_files = load_site_data("sitedata", site_data, by_uid, qa_session_length_hr)
 
     if args.build:
         freezer.freeze()
