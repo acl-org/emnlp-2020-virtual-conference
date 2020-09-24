@@ -1,211 +1,151 @@
 committee:
-  - role: General Chair 
-    name: Dan Jurafsky
-    aff: Stanford University
-    im: https://web.stanford.edu/~jurafsky/danfall13.jpg
-    tw: 
-  - role: Program Chair
-    name: Joyce Chai
-    aff: University of Michigan
-    im: https://www.cse.msu.edu/~jchai/joycechai.jpeg
-    tw: 
-  - role: Program Chair 
-    name: Natalie Schluter
-    aff: Google Brain and IT University of Copenhagen
-    im: static/images/committee/natalie-schluter.jpg
-    tw: natschluter
-  - role: Program Chair 
-    name: Joel Tetreault
-    aff: Dataminr
-    im: static/images/committee/joel-tetreault.png
-    tw: Tetreault_NLP
-  - role: Local Chair 
-    name: Jianfeng Gao
-    aff: Microsoft Research
-    im: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/09/avatar_user__1474328665-180x180.jpg
-    tw: JianfengGao0217
-  - role: Local Chair 
-    name: Priscilla Rasmussen
-    aff: EMNLP
-    im: static/images/committee/priscilla-rasmussen.jpg
-    tw:
-  - role: Local Chair 
-    name: Luke Zettlemoyer
-    aff: University of Washington
-    im: https://s3-us-west-2.amazonaws.com/www-cse-public/images/portraits/lsz_sm.jpg
-    tw: LukeZettlemoyer
-  - role: Tutorial Chair 
-    name: Agata Savary
-    aff: University of Tours
-    im: static/images/committee/agata-savary.JPG
-    tw: AgataSavary
-  - role: Tutorial Chair 
-    name: Yue Zhang
-    aff: Westlake University
-    im: static/images/committee/yue-zhang.jpg
-    tw:
-  - role: Workshop Chair 
-    name: Milica Gašić
-    aff: Heinrich Heine University of Düsseldorf
-    im: static/images/committee/milica-gasic.jpg
-    tw:
-  - role: Workshop Chair 
-    name: Dilek Hakkani-Tur
-    aff: Amazon Alexa AI
-    im: static/images/committee/dilek-hakkani-tur.jpg
-    tw: dilekhakkanitur
-  - role: Workshop Chair 
-    name: Saif M. Mohammad
-    aff: National Research Council Canada
-    im: https://pbs.twimg.com/profile_images/1188178214016950273/znJnf3I-_400x400.jpg
-    tw: SaifMMohammad
-  - role: Workshop Chair 
-    name: Ves Stoyanov
-    aff: Facebook AI
-    im: static/images/committee/ves-stoyanov.jpg
-    tw: vesko_st
-  - role: Student Research Workshop Chair 
-    name: Rotem Dror
-    aff: Technion - Israel Institute of Technology
-    im: https://rtmdrr.github.io/images/profile.png
-    tw:
-  - role: Student Research Workshop Chair 
-    name: Jiangming Liu
-    aff: The University of Edinburgh
-    im: https://leoncrashcode.github.io/images/WechatIMG5.jpeg
-    tw: jiangming_liu
-  - role: Student Research Workshop Chair 
-    name: Shruti Rijhwani
-    aff: Carnegie Mellon University
-    im: static/images/committee/shruti-rijhwani.jpg
-    tw: shrutirij
-  - role: Student Research Workshop Chair 
-    name: Yizhong Wang
-    aff: University of Washington
-    im: https://yizhong-wang.com/assets/selfie.jpg
-    tw: yizhongwyz
-  - role: Faculty Advisor to the Student Research Workshop 
-    name: Omri Abend
-    aff: Hebrew University of Jerusalem
-    im: https://www.cse.huji.ac.il/~oabend/photo.jpg
-    tw: AbendOmri
-  - role: Faculty Advisor to the Student Research Workshop 
-    name: Sujian Li
-    aff: Peking University
-    im: https://eecs.pku.edu.cn/__local/3/94/F7/40202A8B6BC480A619E18D543FF_6BE0C929_6FB8.jpg?e=.jpg
-    tw:
-  - role: Faculty Advisor to the Student Research Workshop 
-    name: Zhou Yu
-    aff: University of California, Davis
-    im: https://www.cs.cmu.edu/afs/cs/user/zhouyu/www/007.jpg
-    tw: Zhou_Yu_AI
-  - role: Conference Handbook Chair 
-    name: Nanyun Peng
-    aff: University of Southern California
-    im: static/images/committee/nanyun-peng.jpg
-    tw: VioletNPeng
-  - role: Demonstration Chair 
-    name: Asli Celikyilmaz
-    aff: Microsoft Research, Redmond
-    im: static/images/committee/asli-celikyilmaz.png
-    tw: real_asli
-  - role: Demonstration Chair 
-    name: Shawn Wen
-    aff: PolyAI
-    im: https://shawnwun.github.io/img/personal/personal-big.jpg
-    tw:
-  - role: Diversity & Inclusion (D&I) Chair 
-    name: Cecilia Ovesdotter Alm
-    aff: Rochester Institute of Technology
-    im: https://pht180.rit.edu/ceciliaovesdotteralm/wp-content/uploads/sites/11/2020/03/3407_Wild_Overdotter_HR_03.jpg-682x1024.jpeg
-    tw:
-  - role: Diversity & Inclusion (D&I) Chair 
-    name: Vinodkumar Prabhakaran
-    aff: Google
-    im: static/images/committee/vinodkumar-prabhakaran.png
-    tw: vinodkpg
-  - role: Local Sponsorship Chair 
-    name: Hoifung Poon
-    aff: Microsoft
-    im: https://www.microsoft.com/en-us/research/wp-content/uploads/2017/07/avatar_user_32016_1499797906-180x180.jpg
-    tw: hoifungpoon
-  - role: Local Sponsorship Chair 
-    name: Kristina Toutanova
-    aff: Google
-    im: static/images/committee/kristina-toutanova.jpg
-    tw: toutanova
-  - role: Publication Chair 
-    name: Steven Bethard
-    aff: University of Arizona
-    im: static/images/committee/steven-bethard.jpg
-    tw:
-  - role: Publication Chair 
-    name: Ryan Cotterell
-    aff: University of Cambridge
-    im: static/images/committee/ryan-cotterell.png
-    tw: ryandcotterell
-  - role: Publication Chair 
-    name: Rui Yan
-    aff: Peking University
-    im: http://www.ruiyan.me/img/me.jpg
-    tw:
-  - role: Publicity Chair
-    name: Emily M. Bender
-    aff: University of Washington
-    im: static/images/committee/emily-bender.jpeg
-    tw: emilymbender
-  - role: Publicity Chair 
-    name: Esther Seyffarth
-    aff: University of Düsseldorf
-    im: https://user.phil.hhu.de/~seyffarth/esther_avatar_small.jpg
-    tw: ojahnn
-  - role: Publicity Chair 
-    name: Zhiyuan Liu
-    aff: Tsinghua University
-    im: static/images/committee/zhiyuan-liu.png
-    tw: zibuyu9
-  - role: Sustainability Chair 
-    name: Ananya Ganesh
-    aff: Educational Testing Service
-    im: https://ananyaganesh.github.io/lake.jpeg
-    tw: ananya__g
-  - role: Sustainability Chair 
-    name: Klaus Zechner
-    aff: Educational Testing Service
-    im: static/images/committee/klaus-zechner.jpg
-    tw:
-  - role: Student Volunteer Coordinator 
-    name: Marjan Ghazvininejad
-    aff: Facebook AI Lab
-    im: https://scholar.googleusercontent.com/citations?view_op=view_photo&user=IRTtnAIAAAAJ&citpid=1
-    tw: gh_marjan
-  - role: Virtual Infrastructure Chair
-    name: Hao Fang
-    aff: Microsoft Semantic Machines
-    im: https://hao-fang.github.io/res/profile_photo_2019.jpg
-    tw:
-  - role: Virtual Infrastructure Chair
-    name: Yi Luan
-    aff: Google AI Language
-    im: https://luanyi.github.io/YiLuan_files/yiluan.jpg
-    tw:
-  - role: Virtual Infrastructure Chair
-    name: Hamid Palangi
-    aff: Microsoft Research, Redmond
-    im: static/images/committee/hamid-palangi.jpg
-    tw: hmd_palangi
-  - role: Virtual Infrastructure Chair
-    name: Lianhui Qin
-    aff: University of Washington
-    im: static/images/committee/lianhui-qin.jpg
-    tw: Lianhuiq
-  - role: Virtual Infrastructure Chair & Website Chair
+  - aff: University of Edinburgh, UK
+    im: https://2020.emnlp.org/static/1bc4b2fd3ed07db0a3dd87271a8df3c5/94da3/bonnie_webber.jpg
+    name: Bonnie Webber
+    role: General Chair
+    tw: ''
+  - aff: The University of Melbourne, Australia
+    im: https://2020.emnlp.org/static/6a8ad7ecaa679312d5d67b4f9342faac/94da3/trevor_cohn.jpg
+    name: Trevor Cohn
+    role: Program Co-chair
+    tw: ''
+  - aff: University of Warwick, UK
+    im: https://2020.emnlp.org/static/b173696a1709bfbfecdd2be93a57a846/94da3/yulan_he.jpg
+    name: Yulan He
+    role: Program Co-chair
+    tw: ''
+  - aff: "Amazon \u2013 Alexa AI, USA"
+    im: https://2020.emnlp.org/static/5efed94a102b6e6fd30066ec778172e4/94da3/yang_liu.jpg
+    name: Yang Liu
+    role: Program Co-chair
+    tw: ''
+  - aff: University of Malta, Malta
+    im: https://2020.emnlp.org/static/592074e7ccdfb0d8d82702b0c385c32b/94da3/lonneke_van_der_plas.jpg
+    name: Lonneke van der Plas
+    role: Workshop Chair
+    tw: ''
+  - aff: McGill University, Canada
+    im: https://2020.emnlp.org/static/d3ba870fc3fd718edb064d9d5b9c963d/94da3/jackie_chi_kit_cheung.jpg
+    name: Jackie Chi Kit Cheung
+    role: Workshop Chair
+    tw: ''
+  - aff: University of Sheffield, UK
+    im: https://2020.emnlp.org/static/defc4001888c4c80a4e8410806c9e290/94da3/aline_villavicencio.jpg
+    name: Aline Villavicencio
+    role: Tutorial Chair
+    tw: ''
+  - aff: Johns Hopkins University, USA
+    im: ''
+    name: Benjamin van Durme
+    role: Tutorial Chair
+    tw: ''
+  - aff: Huawei Noah's Ark Lab, Hong Kong
+    im: https://2020.emnlp.org/static/e3b54bc911ff3187a0dcd1a1302252d8/94da3/qun_liu.jpg
+    name: Qun Liu
+    role: Demonstration Chair
+    tw: ''
+  - aff: University of Potsdam, Germany
+    im: https://2020.emnlp.org/static/2561cb887e75cae94da97054cbb6d134/94da3/david_schlangen.jpg
+    name: David Schlangen
+    role: Demonstration Chair
+    tw: ''
+  - aff: University of Central Florida, USA
+    im: https://2020.emnlp.org/static/5092a15c0874961beec142bf36ffc110/94da3/fei_liu.jpg
+    name: Fei Liu
+    role: General Publication Chair
+    tw: ''
+  - aff: University of Toulouse, France, UK
+    im: https://2020.emnlp.org/static/c56fe81d28f29b6bc50d7064a3292a1e/94da3/philippe_muller.jpg
+    name: Philippe Muller
+    role: Publication Chair
+    tw: ''
+  - aff: Royal Holloway, University of London
+    im: https://2020.emnlp.org/static/6c2dbb34009b6deff1a67f7095d43708/7a6cf/yang_gao.png
+    name: Yang Gao
+    role: Publication Chair
+    tw: ''
+  - aff: The Hong Kong Polytechnic University, Hong Kong
+    im: https://2020.emnlp.org/static/a4ba39118bd47fb8f61ac0022fc7b6ab/94da3/jing_li.jpg
+    name: Jing Li
+    role: Publication Chair
+    tw: ''
+  - aff: University of Turku, Finland
+    im: https://2020.emnlp.org/static/90012ef5c420ce11f1a09e0b1c21963e/94da3/veronika_laippala.jpg
+    name: Veronika Laippala
+    role: Publication Chair
+    tw: ''
+  - aff: University of Copenhagen, Denmark
+    im: https://2020.emnlp.org/static/cb7726e03753f2ca6de917658148b155/94da3/anna_rogers.jpg
+    name: Anna Rogers
+    role: Publicity Chair
+    tw: ''
+  - aff: Harbin Institute of Technology, China
+    im: https://2020.emnlp.org/static/ae751e75d91d08d2939b274405854b65/94da3/ruifeng_xu.jpg
+    name: Ruifeng Xu
+    role: Publicity Chair
+    tw: ''
+  - aff: Culture Amp, Australia
+    im: https://2020.emnlp.org/static/e9bf5d21c129c1295099cdea7515e59c/94da3/andy_mackinlay.jpg
+    name: Andy MacKinlay
+    role: Website Chair
+    tw: ''
+  - aff: Google, USA
+    im: ''
+    name: Kellie Webster
+    role: Student Volunteer Coordinator & Student Scholarship Chair
+    tw: ''
+  - aff: University of Copenhagen
+    im: https://2020.emnlp.org/static/81ac8cc54abd4a4257a36262b43a7612/94da3/isabelle_augenstein.jpg
+    name: Isabelle Augenstein
+    role: Diversity & Inclusion Chair
+    tw: ''
+  - aff: ''
+    im: https://2020.emnlp.org/static/39dd647aa2a52e522a5b6485cc64a3cd/94da3/chris_brew.jpg
+    name: Chris Brew
+    role: Diversity & Inclusion Chair
+    tw: ''
+  - aff: University of Stockholm
+    im: https://2020.emnlp.org/static/cf0d65976c54e6df10d9d5a2e29e3e2f/94da3/murathan_kurfali.jpg
+    name: Murathan Kurfali
+    role: Diversity & Inclusion Student Chair
+    tw: ''
+  - aff: Nanyang Technological University, Singapore
+    im: https://2020.emnlp.org/static/ad66a7ccf5824bde5faab124ad8d6c3a/94da3/prathyusha_jwalapuram.jpg
+    name: Prathyusha Jwalapuram
+    role: Diversity & Inclusion Student Chair
+    tw: ''
+  - aff: Technical University of Darmstadt, Germany
+    im: https://2020.emnlp.org/static/80e59d1d5fd18bb21eaae8c0da5e5fbb/94da3/jan-christoph_klie.jpg
+    name: Jan-Christoph Klie
+    role: Virtual Infrastructure Co-chair
+    tw: ''
+  - aff: Chinese Academy of Sciences, China
+    im: https://2020.emnlp.org/static/82dda44a38439af353648c931814dd9a/94da3/yang_feng.jpg
+    name: Yang Feng
+    role: Virtual Infrastructure Co-chair
+    tw: ''
+  - aff: Fudan University, China
+    im: https://2020.emnlp.org/static/65d86d48aca35dea862bc16a060185f7/94da3/zhongyu_wei.jpg
+    name: Zhongyu Wei
+    role: Virtual Infrastructure Co-chair
+    tw: ''
+  - aff: University of North Texas, USA
+    im: https://2020.emnlp.org/static/e4361b3c3aeb75120afda05edf318439/94da3/eduardo_blanco.jpg
+    name: Eduardo Blanco
+    role: Virtual Infrastructure Co-chair
+    tw: ''
+  - aff: Microsoft Research, USA
+    im: https://2020.emnlp.org/static/aaf18ad0ead732dad61c81118f80cf03/94da3/sudha_rao.jpg
     name: Sudha Rao
-    aff: Microsoft Research, Redmond
-    im: static/images/committee/sudha-rao.jpg
-    tw: raosudha89
-  - role: Virtual Infrastructure Chair & Website Chair
-    name: Yizhe Zhang
-    aff: Microsoft Research, Redmond
-    im: static/images/committee/yizhe-zhang.jpg
-    tw: icaruszyz
+    role: Advisors, Virtual Infrastructure Committee
+    tw: ''
+  - aff: Microsoft Semantic Machines, USA
+    im: https://2020.emnlp.org/static/e1e861e5e50769036955a9a9164d7b74/7a6cf/hao_fang.png
+    name: Hao Fang
+    role: Advisors, Virtual Infrastructure Committee
+    tw: ''
+  - aff: Association for Computational Linguistics, USA
+    im: ''
+    name: Priscilla Rasmussen
+    role: ACL Business Manager & Local Arrangements Chair
+    tw: ''
