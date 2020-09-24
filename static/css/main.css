@@ -19,6 +19,21 @@ label:text-muted,
 
 body {
   font-family: "Lato", sans-serif;
+  background-color: #f2efea;
+}
+
+.bg-emnlp {
+  background-color: #2d3047 !important;
+}
+
+.bg-emnlp .nav-link {
+  color: #cecece !important;
+}
+
+.bg-emnlp .nav-link:hover,
+.nav-link:active,
+.nav-item.active > .nav-link {
+  color: #fff !important;
 }
 
 .container a:hover {
@@ -31,8 +46,8 @@ body {
 }
 
 #main-nav {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .header {
