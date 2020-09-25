@@ -171,6 +171,9 @@ const updateModalData = (paper) => {
     $('#modalPaperUrl').attr('href', paper.content.pdf_url);
     $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
 
+    let keywordsHtml = paper.content.keywords.map(modal_keyword).join('\n');
+    $('#modalKeywords').html(keywordsHtml);
+
     $('#quickviewModal').modal('handleUpdate');
 }
 
@@ -397,6 +400,7 @@ const card_html = openreview => `
 
         `
 
+const modal_keyword = keyword => `<span class="badge badge-pill badge-info">${keyword}</span>`
 //<div class="pp-card pp-mode-` + render_mode + ` ">
 //            <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
 //            <div class="" style="position: relative; height:100%">
