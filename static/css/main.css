@@ -136,17 +136,16 @@ body .nav-pills .nav-link.active {
 }
 
 .card-footer {
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
   border-top: none !important;
   text-align: right;
   padding-bottom: 1.3em;
 }
 
-.card-active{
+.card-active {
   box-shadow: 0px 9px 11px 4px rgb(84 83 83 / 21%);
-  border-color: #007bff!important;
+  border-color: #007bff !important;
 }
-
 
 .card-dimensions {
   margin-bottom: 1.5em;
@@ -154,8 +153,8 @@ body .nav-pills .nav-link.active {
 }
 
 .btn-quickview {
-  margin-left:0.5em;
-  margin-top:0;
+  margin-left: 0.5em;
+  margin-top: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -165,8 +164,8 @@ body .nav-pills .nav-link.active {
   }
 
   .btn-quickview {
-    margin-left:0.5em;
-    margin-top:0.5em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
   }
 }
 
@@ -177,8 +176,8 @@ body .nav-pills .nav-link.active {
   }
 
   .btn-quickview {
-    margin-left:0.5em;
-    margin-top:0;
+    margin-left: 0.5em;
+    margin-top: 0;
   }
 }
 
@@ -189,8 +188,8 @@ body .nav-pills .nav-link.active {
   }
 
   .btn-quickview {
-    margin-left:0.5em;
-    margin-top:0;
+    margin-left: 0.5em;
+    margin-top: 0;
   }
 }
 
@@ -488,7 +487,6 @@ div#papers_options > div {
 .fc-v-event:hover {
   background: rgb(234, 33, 45);
 }
-
 
 .paper-modal-session {
   max-width: 17em;
