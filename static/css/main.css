@@ -23,7 +23,7 @@ body {
 }
 
 .bg-emnlp {
-  background-color: #1b1d2e !important;
+  background-color: #2d3047 !important;
 }
 
 .bg-emnlp .nav-link {
@@ -46,8 +46,8 @@ body {
 }
 
 #main-nav {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .header {
