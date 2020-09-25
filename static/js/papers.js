@@ -124,18 +124,11 @@ const updateCards = (papers) => {
       .on('click', function (d) {
           const iid = d.id;
           all_mounted_cards.filter(d => d.id === iid)
-            .select(".checkbox-paper").classed('selected', function () {
+            .select(".card-title").classed('card-title-visited', function () {
               const new_value = true;//!d3.select(this).classed('not-selected');
               readCard(iid, new_value);
               return new_value;
           })
-
-          all_mounted_cards.filter(d => d.id === iid)
-              .select(".greenbox-paper").classed('selected', function () {
-                  const new_value = true;//!d3.select(this).classed('not-selected');
-                  readCard(iid, new_value);
-                  return new_value;
-              })
       })
 
     all_mounted_cards.select('.btn-quickview')
@@ -392,8 +385,7 @@ const card_html = openreview => `
             <div class="card-body">
 
                 <a href="paper_${openreview.id}.html"
-                target="_blank"
-                        class="text-muted"><h5 class="card-title">${openreview.content.title}</h5>
+                target="_blank"><h5 class="card-title ${openreview.content.read ? 'card-title-visited' : ''}">${openreview.content.title}</h5>
                 </a>
                 <h6 class="card-subtitle mb-2 text-muted">${openreview.content.authors.join(', ')}</h6>
             </div>

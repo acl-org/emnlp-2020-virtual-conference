@@ -131,6 +131,9 @@ body .nav-pills .nav-link.active {
   color: #212529 !important;
 }
 
+.card-title-visited {
+  color: purple !important;
+}
 
 .card-footer {
   background-color: rgba(0,0,0,0) !important;
