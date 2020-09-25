@@ -272,23 +272,39 @@ const card_detail = (openreview, show) => {
 
 //language=HTML
 const card_html = openreview => `
-        <div class="pp-card pp-mode-` + render_mode + ` ">
-            <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
-            <div class="" style="position: relative; height:100%">
-                <div style="display: block;position: absolute; bottom:35px;left: 0px;"> 
-                    <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}">✓</div> 
-                </div>   
+        <div class="card card-dimensions">
+            <div class="card-body">
+
                 <a href="paper_${openreview.id}.html"
                 target="_blank"
-                   class="text-muted">
-                   <h5 class="card-title" align="center"> ${openreview.content.title} </h5></a>
-                <h6 class="card-subtitle text-muted" align="center">
-                        ${openreview.content.authors.join(', ')}
-                </h6>
-                ${card_image(openreview, render_mode !== 'list')}
+                        class="text-muted"><h5 class="card-title">${openreview.content.title}</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">${openreview.content.authors.join(', ')}</h6>
             </div>
+            <div class="card-footer">
+                    <button type="button" class="btn btn-sm btn-outline-primary"><i class="fas fa-plus"></i> Add to Favorite</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary btn-quickview"><i class="fas fa-bars"></i> Quickview</button>
             </div>
-               
-                ${card_detail(openreview, (render_mode === 'detail'))}
-        </div>`
+        </div>
 
+        `
+
+//<div class="pp-card pp-mode-` + render_mode + ` ">
+//            <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
+//            <div class="" style="position: relative; height:100%">
+//                <div style="display: block;position: absolute; bottom:35px;left: 0px;">
+//                    <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}">✓</div>
+//                </div>
+//                <a href="paper_${openreview.id}.html"
+//                target="_blank"
+//                   class="text-muted">
+//                   <h5 class="card-title" align="center"> ${openreview.content.title} </h5></a>
+//                <h6 class="card-subtitle text-muted" align="center">
+//                        ${openreview.content.authors.join(', ')}
+//                </h6>
+//                ${card_image(openreview, render_mode !== 'list')}
+//            </div>
+//            </div>
+//
+//                ${card_detail(openreview, (render_mode === 'detail'))}
+//        </div>
