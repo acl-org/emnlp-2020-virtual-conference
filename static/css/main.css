@@ -485,3 +485,22 @@ div#papers_options > div {
 .fc-v-event:hover {
   background: rgb(234, 33, 45);
 }
+
+
+.paper-modal-session {
+  max-width: 17em;
+  /* background-color: whitesmoke; */
+  border-radius: 10em;
+  /* padding: 0.5em; */
+  margin-right: 1.5em;
+  /* padding-right: 1em; */
+}
+
+.paper-modal-session-name {
+  border-radius: 100%;
+  padding: 0.6em;
+}
+
+.paper-modal-session-calendar-btn {
+  margin-left: -0.5em;
+}

@@ -189,6 +189,107 @@
   </div>
 </div>
 
+
+
+<div class="modal fade" id="quickviewModal" tabindex="-1" data-keyboard="false" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="display: block !important;">
+        <div style="display: flex;">
+        <h5 class="modal-title" id="modalTitle"></h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        </div>
+
+        <p class="text-muted" id="modalAuthors"></p>
+        
+        <div style="float: left; margin-top: 0.2em;">
+          <h6>
+            <span class="badge badge-pill badge-secondary" id="modalPaperType"></span>
+            &nbsp;
+            <span class="badge badge-pill badge-primary" id="modalPaperTrack"></span>
+          </h6>
+        </div>
+
+        <div style="float: right;">
+          <a class="btn btn-sm btn-outline-primary" id="modalChatUrl" href="#">Chat</a>
+          <a class="btn btn-sm btn-outline-primary" id="modalPresUrl" href="#">Presentation</a>
+          <a class="btn btn-sm btn-outline-primary" id="modalPaperUrl" href="#">Paper</a>
+        </div>
+
+      </div>
+      <div class="modal-body">
+        <h6 class="text-muted">Abstract</h6>
+        <p id="modalAbstract"></p>
+
+        <h6 class="text-muted">Keywords</h6>
+        <p style="font-size: 1.3em; font-family: monospace;" id="modalKeywords">
+          <span class="badge badge-pill badge-info">Source Summarization</span>
+          <span class="badge badge-pill badge-info">summarization</span>
+          <span class="badge badge-pill badge-info">ablation studies</span>
+          <span class="badge badge-pill badge-info">Transformer-based Approach</span>
+        </p>
+
+        <h6 class="text-muted">Sessions</h6>
+        <div style="display: flex;">
+          <div class="media paper-modal-session">
+            <div class="align-self-center mr-2 bg-primary paper-modal-session-name text-light"> 
+              13B
+            </div>
+            <div>
+              <div>Nov 12, 22:00-23:00</div>
+              <div class="btn-group paper-modal-session-calendar-btn">
+                <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add to Calendar
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Google</a>
+                  <a class="dropdown-item" href="#">Office365</a>
+                  <a class="dropdown-item" href="#">Outlook</a>
+                  <a class="dropdown-item" href="#">iCal</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="media paper-modal-session">
+            <div class="align-self-center mr-2 bg-primary paper-modal-session-name text-light"> 
+              13B
+            </div>
+            <div>
+              <div>Nov 12, 22:00-23:00</div>
+              <div class="btn-group paper-modal-session-calendar-btn">
+                <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add to Calendar
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Google</a>
+                  <a class="dropdown-item" href="#">Office365</a>
+                  <a class="dropdown-item" href="#">Outlook</a>
+                  <a class="dropdown-item" href="#">iCal</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer" style="display: block;">
+        <div class="btn-group" role="group" aria-label="Paper Navigation" style="float: left;">
+          <button type="button" class="btn btn-secondary" onclick="updateCardIndex(current_card_index-1);">Previous</button>
+          <button type="button" class="btn btn-secondary" onclick="updateCardIndex(current_card_index+1);">Next</button>
+        </div>
+        <div style="float: right;">
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal">Add to favorite</button>
+          <a class="btn btn-outline-primary" target="_blank" id="modalPaperPage">More Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Cards -->
 <div class="cards row"></div>
 <script src="static/js/little_helpers.js"></script>
