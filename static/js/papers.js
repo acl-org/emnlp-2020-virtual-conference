@@ -166,8 +166,8 @@ const updateModalData = (paper) => {
 
     $('#modalAbstract').text(paper.content.abstract);
 
-    $('#modalChatUrl').attr('href', "");
-    $('#modalPresUrl').attr('href', "");
+    $('#modalChatUrl').attr('href', `https://${chat_server}/channel/${paper.forum}`);
+    $('#modalPresUrl').attr('href', `https://slideslive.com/${paper.presentation_id}`);
     $('#modalPaperUrl').attr('href', paper.content.pdf_url);
     $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
 
