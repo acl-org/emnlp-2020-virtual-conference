@@ -13,6 +13,85 @@ const filters = {
 };
 
 let render_mode = 'list';
+let current_card_index = -1;
+
+const removeOldFocus = () => {
+    if (current_card_index !== -1) {
+        $('.card').eq(current_card_index).removeClass('card-active')
+    }
+}
+
+const updateCardIndex = (card_index) => {
+    removeOldFocus()
+
+    if (card_index < -1) return;
+
+    current_card_index = card_index;
+    if (current_card_index == -1) return;
+
+    let card = $('.card').eq(current_card_index)
+    
+    card.addClass('card-active');
+    // $('.card').eq(current_card_index).focus();
+
+    if (!card.visible()) {
+        var $window = $(window),
+        $element = card;
+        elementTop = $element.offset().top,
+        elementHeight = $element.height(),
+        viewportHeight = $window.height(),
+        scrollIt = elementTop - ((viewportHeight - elementHeight) / 2);
+
+        // $window.scrollTop(scrollIt);
+        $("html, body").animate({ scrollTop: scrollIt }, 50);
+    }
+
+    let isShown = ($("#quickviewModal").data('bs.modal') || {})._isShown;
+    if (isShown) 
+        $('.card').eq(current_card_index).find(".btn-quickview")[0].click();
+}
+
+const setUpKeyBindings = () => {
+
+    Mousetrap.bind('right', () => {
+        if (current_card_index >= $('.card').length - 1) 
+            return;
+        
+        updateCardIndex(current_card_index+1);
+    });
+
+    Mousetrap.bind('left', () => {
+        if (current_card_index <= 0) 
+            return;
+        
+        updateCardIndex(current_card_index-1);
+    });
+
+    Mousetrap.bind('space', () => {
+        if (current_card_index == -1)
+            return
+
+        let isShown = ($("#quickviewModal").data('bs.modal') || {})._isShown
+        if (isShown) 
+            $('#quickviewModal').modal('toggle')
+        else
+            $('.card').eq(current_card_index).find(".btn-quickview")[0].click()
+    })
+
+    Mousetrap.bind('esc', () => {
+        let isShown = ($("#quickviewModal").data('bs.modal') || {})._isShown
+        if (isShown) {
+            $('#quickviewModal').modal('hide')
+            return;
+        }
+        
+        updateCardIndex(-1);
+    })
+
+    // $('.container').click(()=>{
+    //     updateCardIndex(-1);
+    // })
+}
 
 const persistor = new Persistor('Mini-Conf-Papers');
 
@@ -22,6 +101,11 @@ const updateCards = (papers) => {
       openreview => {
           openreview.content.read = storedPapers[openreview.id] || false
       })
+
+    papers.map((e, idx, array) => {
+        e.index_in_list = idx;
+        return e;
+    })
 
     const readCard = (iid, new_value) => {
         persistor.set(iid, new_value);
@@ -54,6 +138,14 @@ const updateCards = (papers) => {
               })
       })
 
+    all_mounted_cards.select('.btn-quickview')
+      .on('click', function (d) {
+          const iid = d.id;
+          updateCardIndex(d.index_in_list)
+          openQuickviewModal(d);
+          d3.event.stopPropagation();
+      })
+
     all_mounted_cards.select(".checkbox-paper")
       .on('click', function (d) {
           const iid = d.id;
@@ -65,6 +157,28 @@ const updateCards = (papers) => {
 
 
     lazyLoader();
+}
+
+const openQuickviewModal = (paper) => {
+    updateModalData(paper);
+    $('#quickviewModal').modal('show')
+}
+
+const updateModalData = (paper) => {
+    $('#modalTitle').text(paper.content.title);
+    $('#modalAuthors').text(paper.content.authors.join(', '));
+
+    $('#modalPaperType').text(paper.content.paper_type);
+    $('#modalPaperTrack').text(paper.content.track);
+
+    $('#modalAbstract').text(paper.content.abstract);
+
+    $('#modalChatUrl').attr('href', "");
+    $('#modalPresUrl').attr('href', "");
+    $('#modalPaperUrl').attr('href', paper.content.pdf_url);
+    $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
+
+    $('#quickviewModal').modal('handleUpdate');
 }
 
 const moveArrayItem = (array, fromIndex, toIndex) => {
@@ -94,6 +208,8 @@ function shuffleArray(array) {
 }
 
 const render = () => {
+    current_card_index = -1;
+
     const f_test = [];
 
     updateSession();
