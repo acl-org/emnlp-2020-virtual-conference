@@ -174,6 +174,9 @@ const updateModalData = (paper) => {
     let keywordsHtml = paper.content.keywords.map(modal_keyword).join('\n');
     $('#modalKeywords').html(keywordsHtml);
 
+    let sessionsHtml = paper.content.sessions.map(s => modal_session_html(s, paper)).join('\n');
+    $('#modalSessions').html(sessionsHtml);
+
     $('#quickviewModal').modal('handleUpdate');
 }
 
@@ -401,6 +404,72 @@ const card_html = openreview => `
         `
 
 const modal_keyword = keyword => `<span class="badge badge-pill badge-info">${keyword}</span>`
+
+const getSessionTimeString = (sess) => {
+    let start_time = moment.utc(sess.start_time, 'ddd, DD MMM YYYY HH:mm:ss');
+    let end_time = moment.utc(sess.end_time, 'ddd, DD MMM YYYY HH:mm:ss');
+
+    let guess_tz = moment.tz.guess(true);
+    let local_start = start_time.tz(guess_tz);
+    let local_end = end_time.tz(guess_tz);
+
+    if (local_start.dayOfYear() === local_end.dayOfYear()){
+        time_str = `${local_start.format('MMM D, HH:mm')}-${local_end.format('HH:mm')}`;
+    } else {
+        time_str = `${local_start.format('MMM D HH:mm')}-${local_end.format('MMM D HH:mm')}`;
+    }
+
+    return time_str;
+}
+
+const getCalendarLinks = (sess, paper) => {
+    
+    let start_time = moment.utc(sess.start_time, 'ddd, DD MMM YYYY HH:mm:ss');
+    let end_time = moment.utc(sess.end_time, 'ddd, DD MMM YYYY HH:mm:ss');
+
+    return addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'
+        },
+        data: {
+          title: paper.content.title.replace("#", " "),
+          start: new Date(start_time.format('YYYY-MM-DDTHH:mm:ss')),
+          end: new Date(end_time.format('YYYY-MM-DDTHH:mm:ss')),
+          timezone: 'UTC',
+          address: sess.zoom_link,
+          description: `${site_url}/paper_${paper.id}.html`,
+        }
+    });
+}
+
+const modal_session_html = (session, paper) => {
+    let calendar_links = getCalendarLinks(session, paper);
+    for (const key of Object.keys(calendar_links)) 
+        calendar_links[key] = $($.parseHTML(calendar_links[key]))
+            .addClass('dropdown-item')
+            .prop('outerHTML');
+    
+    return `<div class="media paper-modal-session">
+            <div class="align-self-center mr-2 bg-primary paper-modal-session-name text-light"> 
+              ${session.session_name}
+            </div>
+            <div>
+              <div>${getSessionTimeString(session)}</div>
+              <div class="btn-group paper-modal-session-calendar-btn">
+                <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add to Calendar
+                </button>
+                <div class="dropdown-menu">  
+                    ${calendar_links['google']}
+                    ${calendar_links['off365']}
+                    ${calendar_links['outlook']}
+                    ${calendar_links['ical']}
+                </div>
+              </div>
+            </div>
+        </div>`;
+}
 //<div class="pp-card pp-mode-` + render_mode + ` ">
 //            <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
 //            <div class="" style="position: relative; height:100%">
