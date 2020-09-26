@@ -98,6 +98,21 @@ const setUpKeyBindings = () => {
         else
             $('.card-paper').eq(current_card_index).find(".btn-fav")[0].click();
     })
+
+    
+    Mousetrap.bind('enter', () => {
+        if (current_card_index == -1)
+            return;
+
+        let isShown = ($("#quickviewModal").data('bs.modal') || {})._isShown;
+        if (isShown) {
+            $('#modalPaperPage').click();
+        } else {
+            let title = $('.card-paper').eq(current_card_index).find(".card-title")[0];
+            title.click();
+            window.open(title.attr('href'), '_blank');
+        }
+    })
 }
 
 const persistor = new Persistor('Mini-Conf-Papers');
