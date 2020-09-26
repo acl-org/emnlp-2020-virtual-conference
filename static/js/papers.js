@@ -159,6 +159,11 @@ const openQuickviewModal = (paper) => {
 
 const updateModalData = (paper) => {
     $('#modalTitle').text(paper.content.title);
+    if (paper.content.read)
+        $('#modalTitle').addClass('card-title-visited');
+    else
+        $('#modalTitle').removeClass('card-title-visited');
+
     $('#modalAuthors').text(paper.content.authors.join(', '));
 
     $('#modalPaperType').text(paper.content.paper_type);
@@ -176,6 +181,14 @@ const updateModalData = (paper) => {
 
     let sessionsHtml = paper.content.sessions.map(s => modal_session_html(s, paper)).join('\n');
     $('#modalSessions').html(sessionsHtml);
+
+    $('#modalPaperPage').click(() => {
+        persistor.set(paper.id, true);
+        $('#modalTitle').addClass('card-title-visited');
+        $('.card-title').filter(function (index) {
+            return this.innerHTML === paper.content.title
+        }).addClass('card-title-visited');
+    });
 
     $('#quickviewModal').modal('handleUpdate');
 }
