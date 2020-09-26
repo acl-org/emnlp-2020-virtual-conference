@@ -203,7 +203,7 @@
 
 
 
-<div class="modal fade" id="quickviewModal" tabindex="-1" data-keyboard="false" aria-labelledby="modalTitle" aria-hidden="true">
+<div class="modal fade quickview" id="quickviewModal" tabindex="-1" data-keyboard="false" aria-labelledby="modalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header" style="display: block !important;">
@@ -249,8 +249,8 @@
           <button type="button" class="btn btn-secondary" onclick="updateCardIndex(current_card_index+1);">Next</button>
         </div>
         <div style="float: right;">
-          <button type="button" class="btn btn-outline-success" data-dismiss="modal">Add to favorite</button>
-          <a class="btn btn-outline-primary" target="_blank" id="modalPaperPage">More Details</a>
+          <button type="button" class="btn btn-outline-primary" id="modalFavBtn"><i class="fas fa-star"></i> Add to Favorites</button>
+          <a class="btn btn-outline-primary" target="_blank" style="margin-left: 0.5em;" id="modalPaperPage">More Details</a>
         </div>
       </div>
     </div>

@@ -88,18 +88,29 @@ const setUpKeyBindings = () => {
         updateCardIndex(-1);
     })
 
-    // $('.container').click(()=>{
-    //     updateCardIndex(-1);
-    // })
+    Mousetrap.bind('f', () => {
+        if (current_card_index == -1)
+            return;
+
+        let isShown = ($("#quickviewModal").data('bs.modal') || {})._isShown;
+        if (isShown) 
+            $('#modalFavBtn').click();
+        else
+            $('.card').eq(current_card_index).find(".btn-fav")[0].click();
+    })
 }
 
 const persistor = new Persistor('Mini-Conf-Papers');
+const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
 
 const updateCards = (papers) => {
     const storedPapers = persistor.getAll();
+    const favPapers = favPersistor.getAll();
+    
     papers.forEach(
       openreview => {
           openreview.content.read = storedPapers[openreview.id] || false
+          openreview.content.isFav = favPapers[openreview.id] || false
       })
 
     papers.map((e, idx, array) => {
@@ -111,6 +122,10 @@ const updateCards = (papers) => {
         persistor.set(iid, new_value);
         // storedPapers[iid] = new_value ? 1 : null;
         // Cookies.set('papers-selected', storedPapers, {expires: 365});
+    }
+
+    const favPaper = (iid, new_value) => {
+        favPersistor.set(iid, new_value);
     }
 
     const all_mounted_cards = d3.select('.cards')
@@ -139,15 +154,32 @@ const updateCards = (papers) => {
           d3.event.stopPropagation();
       })
 
-    all_mounted_cards.select(".checkbox-paper")
+    all_mounted_cards.select(".btn-fav")
       .on('click', function (d) {
           const iid = d.id;
-          const new_value = !d3.select(this).classed('selected');
-          readCard(iid, new_value);
-          d3.select(this).classed('selected', new_value)
-          d3.select(this.closest('.greenbox-paper')).classed('selected', new_value)
+          let btn = d3.select(this)
+          const is_fav = btn.classed('btn-warning');
+          
+          if (is_fav) {
+            btn.classed('btn-warning', false)
+            btn.classed('btn-outline-primary', true)
+            btn.html('<i class="fas fa-star"></i> Add to Favorites')
+            $(btn.node()).tooltip('dispose')
+            $(btn.node()).parent().parent().removeClass('card-fav')
+          } else {
+            btn.classed('btn-warning', true)
+            btn.classed('btn-outline-primary', false)
+            btn.html('<i class="fas fa-star"></i>')
+            $(btn.node()).tooltip(
+                {title:'Click to remove from Favorites', placement: 'left'})
+            $(btn.node()).parent().parent().addClass('card-fav')
+          }
+
+          favPaper(iid, !is_fav)
       })
 
+    
+    $('[data-toggle="tooltip"]').tooltip()
 
     lazyLoader();
 }
@@ -171,7 +203,7 @@ const updateModalData = (paper) => {
 
     $('#modalAbstract').text(paper.content.abstract);
 
-    $('#modalChatUrl').attr('href', `https://${chat_server}/channel/${paper.forum}`);
+    $('#modalChatUrl').attr('href', `https://${chat_server}/channel/paper-${paper.id.replace('.', '-')}`);
     $('#modalPresUrl').attr('href', `https://slideslive.com/${paper.presentation_id}`);
     $('#modalPaperUrl').attr('href', paper.content.pdf_url);
     $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
@@ -182,13 +214,36 @@ const updateModalData = (paper) => {
     let sessionsHtml = paper.content.sessions.map(s => modal_session_html(s, paper)).join('\n');
     $('#modalSessions').html(sessionsHtml);
 
+    $('#modalPaperPage').unbind( "click" );
     $('#modalPaperPage').click(() => {
-        persistor.set(paper.id, true);
+        $('.card-title').eq(current_card_index).click();
         $('#modalTitle').addClass('card-title-visited');
-        $('.card-title').filter(function (index) {
-            return this.innerHTML === paper.content.title
-        }).addClass('card-title-visited');
     });
+
+    let favBtn = $('#modalFavBtn')
+
+    const updateFavBtn = (isFav) => {
+        if (isFav) {
+            favBtn.removeClass('btn-outline-primary')
+            favBtn.addClass('btn-warning')
+            favBtn.html('<i class="fas fa-star"></i>')
+            favBtn.tooltip(
+                {title:'Click to remove from Favorites', placement: 'left'})
+        } else {
+            favBtn.removeClass('btn-warning')
+            favBtn.addClass('btn-outline-primary')
+            favBtn.html('<i class="fas fa-star"></i> Add to Favorites')
+            favBtn.tooltip('dispose')
+        }
+    }
+
+    updateFavBtn(favPersistor.get(paper.id));
+
+    favBtn.unbind( "click" );
+    favBtn.click(() => {
+        $('.btn-fav').eq(current_card_index).click();
+        updateFavBtn(favPersistor.get(paper.id))
+    })
 
     $('#quickviewModal').modal('handleUpdate');
 }
@@ -261,7 +316,6 @@ const render = () => {
         // console.log(fList, "--- fList");
         updateCards(fList)
     }
-
 }
 
 const updateFilterSelectionBtn = value => {
@@ -398,9 +452,20 @@ const card_detail = (openreview, show) => {
     else return ''
 };
 
+const card_fav_btn_html = (is_fav) => {
+    if (is_fav) {
+        return `<button type="button" class="btn btn-sm btn-warning btn-fav" 
+                    data-toggle="tooltip" data-placement="left" title="Click to remove from Favorites">
+                    <i class="fas fa-star"></i></button>`
+    } else {
+        return `<button type="button" class="btn btn-sm btn-outline-primary btn-fav"><i class="fas fa-star"></i> Add to Favorites</button>`
+    }
+}
+
 //language=HTML
 const card_html = openreview => `
-        <div class="card card-dimensions${(render_mode == 'detail')? '-detail' : render_mode !== 'list'? '-image' : ''}">
+        <div class="card ${openreview.content.isFav? 'card-fav' : ''}
+                card-dimensions${(render_mode == 'detail')? '-detail' : render_mode !== 'list'? '-image' : ''}">
             <div class="card-body">
 
                 <a href="paper_${openreview.id}.html"
@@ -414,7 +479,7 @@ const card_html = openreview => `
             </div>
 
             <div class="card-footer">
-                    <button type="button" class="btn btn-sm btn-outline-primary"><i class="fas fa-plus"></i> Add to Favorite</button>
+                    ${card_fav_btn_html(openreview.content.isFav)}
                     <button type="button" class="btn btn-sm btn-outline-primary btn-quickview"><i class="fas fa-bars"></i> Quickview</button>
             </div>
         </div>
@@ -490,22 +555,3 @@ const modal_session_html = (session, paper) => {
             </div>
         </div>`;
 }
-//<div class="pp-card pp-mode-` + render_mode + ` ">
-//            <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
-//            <div class="" style="position: relative; height:100%">
-//                <div style="display: block;position: absolute; bottom:35px;left: 0px;">
-//                    <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}">✓</div>
-//                </div>
-//                <a href="paper_${openreview.id}.html"
-//                target="_blank"
-//                   class="text-muted">
-//                   <h5 class="card-title" align="center"> ${openreview.content.title} </h5></a>
-//                <h6 class="card-subtitle text-muted" align="center">
-//                        ${openreview.content.authors.join(', ')}
-//                </h6>
-            //    ${card_image(openreview, render_mode !== 'list')}
-//            </div>
-//            </div>
-//
-//                ${card_detail(openreview, (render_mode === 'detail'))}
-//        </div>
