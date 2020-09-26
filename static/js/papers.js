@@ -17,7 +17,7 @@ let current_card_index = -1;
 
 const removeOldFocus = () => {
     if (current_card_index !== -1) {
-        $('.card').eq(current_card_index).removeClass('card-active')
+        $('.card-paper').eq(current_card_index).removeClass('card-active')
     }
 }
 
@@ -29,10 +29,10 @@ const updateCardIndex = (card_index) => {
     current_card_index = card_index;
     if (current_card_index == -1) return;
 
-    let card = $('.card').eq(current_card_index)
+    let card = $('.card-paper').eq(current_card_index)
     
     card.addClass('card-active');
-    // $('.card').eq(current_card_index).focus();
+    // $('.card-paper').eq(current_card_index).focus();
 
     if (!card.visible()) {
         var $window = $(window),
@@ -48,13 +48,13 @@ const updateCardIndex = (card_index) => {
 
     let isShown = ($("#quickviewModal").data('bs.modal') || {})._isShown;
     if (isShown) 
-        $('.card').eq(current_card_index).find(".btn-quickview")[0].click();
+        $('.card-paper').eq(current_card_index).find(".btn-quickview")[0].click();
 }
 
 const setUpKeyBindings = () => {
 
     Mousetrap.bind('right', () => {
-        if (current_card_index >= $('.card').length - 1) 
+        if (current_card_index >= $('.card-paper').length - 1) 
             return;
         
         updateCardIndex(current_card_index+1);
@@ -75,7 +75,7 @@ const setUpKeyBindings = () => {
         if (isShown) 
             $('#quickviewModal').modal('toggle')
         else
-            $('.card').eq(current_card_index).find(".btn-quickview")[0].click()
+            $('.card-paper').eq(current_card_index).find(".btn-quickview")[0].click()
     })
 
     Mousetrap.bind('esc', () => {
@@ -96,7 +96,7 @@ const setUpKeyBindings = () => {
         if (isShown) 
             $('#modalFavBtn').click();
         else
-            $('.card').eq(current_card_index).find(".btn-fav")[0].click();
+            $('.card-paper').eq(current_card_index).find(".btn-fav")[0].click();
     })
 }
 
@@ -352,6 +352,10 @@ const updateSession = () => {
 const start = (track) => {
     // const urlFilter = getUrlParameter("filter") || 'keywords';
     const urlFilter = getUrlParameter("filter") || 'titles';
+    const showFavs = getUrlParameter("showFavs") || 0;
+
+    const favPapers = favPersistor.getAll();
+
     setQueryStringParameter("filter", urlFilter);
     updateFilterSelectionBtn(urlFilter);
 
@@ -365,7 +369,13 @@ const start = (track) => {
     d3.json(path_to_papers_json).then(papers => {
         shuffleArray(papers);
 
-        allPapers = papers;
+        if (showFavs === "1")
+            allPapers = papers.filter(p => favPapers[p.id])
+        else
+            allPapers = papers
+
+        $('#progressBar').remove();
+        
         calcAllKeys(allPapers, allKeys);
         setTypeAhead(urlFilter,
           allKeys, filters, render);
@@ -464,7 +474,7 @@ const card_fav_btn_html = (is_fav) => {
 
 //language=HTML
 const card_html = openreview => `
-        <div class="card ${openreview.content.isFav? 'card-fav' : ''}
+        <div class="card card-paper ${openreview.content.isFav? 'card-fav' : ''}
                 card-dimensions${(render_mode == 'detail')? '-detail' : render_mode !== 'list'? '-image' : ''}">
             <div class="card-body">
 

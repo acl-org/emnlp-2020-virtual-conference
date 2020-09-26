@@ -27,179 +27,159 @@
 {% endblock %}
 
 {% block heading %}
-  {{ components.section("Papers") }}
+  <!-- {{ components.section("Papers") }} -->
   <div class="text-muted text-center">
   The <a href="schedule.html" target="_blank">Schedule</a> page shows the timing of QA/Demo sessions.
   </div>
 {% endblock %}
 
 {% block tabs %}
-  <ul class="nav nav-pills justify-content-center pb-3">
-    <li class="nav-item">
-      <a
-          class="nav-link active"
-          data-toggle="tab"
-          href="papers.html"
-          role="tab"
-          aria-controls="nav-home"
-          aria-selected="true"
-      >Browse
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="papers_vis.html">Visualization</a>
-    </li>
-  </ul>
+
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="papers.html" id="tabBrowse" >Browse</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="papers_vis.html">Visualization</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="papers.html?showFavs=1" id="tabFavs"><i class="fas fa-star"></i> Favorites</a>
+  </li>
+</ul>
+
+<div class="card" style="margin-bottom: 2.5em;">
+  <div class="card-body">
+
+    <div id="papers_options" class="row" role="toolbar" aria-label="Toolbar with button groups">  
+      <!-- Search bar -->
+        <div class="col-lg-7">
+          <div class="input-group flex-fill">
+            <input
+              type="text"
+              class="form-control typeahead_all"
+              placeholder="Search"
+            />
+            <!-- <div class="input-group-append">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Dropdown</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">by title</a>
+                <a class="dropdown-item" href="#">by author</a>
+              </div>
+            </div> -->
+            <div class="input-group-append btn-group-toggle filter_option">
+              <label class="btn btn-outline-primary" data-tippy-content="Search for papers titles">
+                <input type="radio" name="options" value="titles" autocomplete="off" checked />
+                by title
+              </label>
+              <!--
+              <label
+                class="btn btn-outline-secondary"
+                data-tippy-content="Search for papers with specific keywords"
+              >
+                <input
+                  type="radio"
+                  name="options"
+                  value="keywords"
+                  autocomplete="off"
+                />
+                keyword
+              </label>
+              -->
+              <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific authors">
+                <input type="radio" name="options" value="authors" autocomplete="off" />
+                by author
+              </label>
+    
+              <button class="btn btn btn-outline-danger typeahead_all_clear" type="button">
+                &times;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="form-group">
+            <select id="track_selector" class="selectpicker form-control" data-live-search="true" data-style="btn-light">
+              <option>All tracks</option>
+            {% for track in tracks %}
+              <option>{{ track }}</option>
+            {% endfor %}
+            </select>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- Bottoms-->
+    <div style="display: flex; margin-top: -0.7em;">
+      <div style="margin-right: 0.0em;">
+        <div 
+            class="btn-group btn-group-toggle render_option mr-3"
+            data-toggle="buttons" >
+
+            <label class="btn btn-sm btn-outline-secondary active">
+              <input
+                  type="radio"
+                  name="options"
+                  value="list"
+                  autocomplete="off"
+                  checked
+              />
+              compact
+            </label>
+            <label class="btn btn-sm btn-outline-secondary">
+              <input
+                type="radio"
+                name="options"
+                value="compact"
+                autocomplete="off"
+              />
+              medium
+            </label>
+            <label class="btn btn-sm btn-outline-secondary">
+              <input
+                type="radio"
+                name="options"
+                value="detail"
+                autocomplete="off"
+              />
+              detail
+            </label>
+        </div>
+      </div>
+
+      <div>
+        <div class="btn-group">
+          <button class="btn btn-sm btn-outline-secondary reshuffle">shuffle</button>
+          <button class="btn btn-sm btn-outline-secondary visited">visited</button>
+        </div>
+      </div>
+    </div>
+
+  
+    
+    <!-- Shortcut Guide-->
+    <div class="card-text shortcut-guide text-muted" style="font-size: 0.9rem; margin-bottom: -1em;">
+      <br/>
+      <h7 style="font-weight: bold;">Pro Tip!</h7> You can use the follwing shortcuts to quickly navigate through papers (All of them work even when the Quickview is open)
+      <p>
+        <span class="badge badge-secondary">&larr;</span>, <span class="badge badge-secondary">&rarr;</span> Move between cards&nbsp;&nbsp;&nbsp;
+        <span class="badge badge-secondary">space</span> Open/Close Quickview &nbsp;&nbsp;&nbsp;
+        <span class="badge badge-secondary">esc</span> Close Quickview &nbsp;&nbsp;&nbsp;
+        <span class="badge badge-secondary">enter</span> Open the paper's page &nbsp;&nbsp;&nbsp;
+        <span class="badge badge-secondary">f</span> Add a paper to Favorites
+      </p>
+    </div>
+
+  </div>
+</div>
 
 {% endblock %}
 
 
 {% block content %}
-<!-- Session -->
-<div class="row d-none session_notice">
-  <div
-      class="alert alert-warning alert-dismissible fade show col-12"
-      role="alert"
-  >
-  Showing papers for
-  <span id="session_name" style="font-weight: bold;"></span>.
-  <button
-      type="button"
-      class="close remove_session"
-      data-dismiss="alert"
-      aria-label="Close"
-  >
-    <span aria-hidden="true">&times;</span>
-  </button>
-  </div>
-</div>
 
-<!-- Buttons -->
-<div id="papers_options" class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-  <div class="input-group mr-3 flex-fill">
-    <input
-      type="text"
-      class="form-control typeahead_all"
-      placeholder="Search"
-    />
-    <!-- <div class="input-group-append">
-      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">Dropdown</button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">by title</a>
-        <a class="dropdown-item" href="#">by author</a>
-      </div>
-    </div> -->
-    <div class="input-group-append mr-3 btn-group-toggle filter_option">
-      <label class="btn btn-outline-primary" data-tippy-content="Search for papers titles">
-        <input type="radio" name="options" value="titles" autocomplete="off" checked />
-        by title
-      </label>
-      <!--
-      <label
-        class="btn btn-outline-secondary"
-        data-tippy-content="Search for papers with specific keywords"
-      >
-        <input
-          type="radio"
-          name="options"
-          value="keywords"
-          autocomplete="off"
-        />
-        keyword
-      </label>
-      -->
-      <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific authors">
-        <input type="radio" name="options" value="authors" autocomplete="off" />
-        by author
-      </label>
-
-      <button class="btn btn btn-outline-danger typeahead_all_clear" type="button">
-        &times;
-      </button>
-    </div>
-  </div>
-
-  
-
-  <!-- Compact/Detail -->
-  <div
-    class="btn-group btn-group-toggle render_option mr-3"
-    data-toggle="buttons">
-
-    <label class="btn btn-outline-secondary active">
-      <input
-          type="radio"
-          name="options"
-          value="list"
-          autocomplete="off"
-          checked
-      />
-      compact
-    </label>
-    <label class="btn btn-outline-secondary">
-      <input
-        type="radio"
-        name="options"
-        value="compact"
-        autocomplete="off"
-      />
-      medium
-    </label>
-    <label class="btn btn-outline-secondary">
-      <input
-        type="radio"
-        name="options"
-        value="detail"
-        autocomplete="off"
-      />
-      detail
-    </label>
-  </div>
-
-  <!-- Papers/Visualization -->
-  <!--
-  <div
-    class="btn-group btn-group-toggle mr-3 render_option"
-    data-toggle="buttons">
-
-    <label class="btn btn-outline-secondary active">
-      <input
-        type="radio"
-        name="options"
-        value="paper"
-        autocomplete="off"
-        checked
-      />
-      paper
-    </label>
-    <label class="btn btn-outline-secondary">
-      <input
-        type="radio"
-        name="options"
-        value="visualization"
-        autocomplete="off"
-      />
-      <a href="papers_vis.html" class="deco-none">visualization</a>
-    </label>
-  </div>
-  -->
-
-  <!-- Shuffle -->
-  <div class="btn-group mr-3">
-    <button class="btn btn-outline-secondary reshuffle">shuffle</button>
-    <button class="btn btn-outline-secondary visited">visited</button>
-  </div>
-
-  <div class="bootstrap-select">
-      <select id="track_selector" class="selectpicker" data-live-search="true" data-style="btn-light">
-        <option>All tracks</option>
-      {% for track in tracks %}
-        <option>{{ track }}</option>
-      {% endfor %}
-      </select>
-  </div>
-</div>
 
 
 
@@ -267,6 +247,11 @@
   $(document).ready(function () {
     tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
     const track = getUrlParameter("track") || "All tracks";
+    const showFavs = getUrlParameter("showFavs") || "0";
+    if (showFavs === "1") {
+      $('#tabBrowse').removeClass('active');
+      $('#tabFavs').addClass('active');
+    }
 
     start(track);
     $('#track_selector').selectpicker('val', track);
@@ -278,6 +263,12 @@
     start(track);
   });
 </script>
+
+<div class="d-flex justify-content-center" id="progressBar">
+  <div class="spinner-border text-primary" style="margin-top: 2em; width: 3rem; height: 3rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
 
 {% endblock %}
 
