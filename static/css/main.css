@@ -577,3 +577,7 @@ div#papers_options > div {
 .modal-footer .btn-warning {
   color: white;
 }
+
+.card-link-warning {
+  color: #ffc107 !important;
+}

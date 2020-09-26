@@ -17,9 +17,47 @@
 {% endfor %}
 <meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
 
+<script src="static/js/persistor.js"></script>
+
+<script>
+  let paper_id = "{{ paper.id }}"
+
+  function updateFavBtn(isFav){
+    let favBtn = $('#favBtn');
+    if (isFav) {
+      // favBtn.removeClass('btn-outline-primary')
+      favBtn.addClass('card-link-warning');
+      favBtn.html('<i class="fas fa-star"></i>');
+      favBtn.tooltip(
+          {title:'Click to remove from Favorites', placement: 'right'});
+    } else {
+      favBtn.removeClass('card-link-warning')
+      // favBtn.addClass('btn-outline-primary')
+      favBtn.html('<i class="fas fa-star"></i> Add to Favorites');
+      favBtn.tooltip('dispose');
+    }
+  }
+
+  $(document).ready(function () {
+
+    const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
+
+    let isFav = favPersistor.get(paper_id);
+    updateFavBtn(isFav)
+
+    $('#favBtn').click(()=>{
+      let isFav = favPersistor.get(paper_id) || false;
+      favPersistor.set(paper_id, !isFav);
+      updateFavBtn(!isFav);
+    })
+  })
+
+</script>
+
 {% endblock %}
 
 {% block content %}
+
 
 <!-- Title -->
 <div class="pp-card m-3" style="">
@@ -54,6 +92,10 @@
         Demo
       </a>
       {% endif %}
+      
+      <a href="#" id="favBtn" class="card-link">
+        <i class="fas fa-star"></i> Add to Favorites
+      </a>
     </div>
     <p class="card-text text-center h5">
 
