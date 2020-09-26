@@ -368,33 +368,38 @@ const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
 
 const card_image = (openreview, show) => {
-    if (show) return ` <center><img class="lazy-load-img cards_img" data-src="${openreview.card_image_path}" width="80%"/></center>`
+    if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" width="80%"/></center>`
     else return ''
 };
+
 
 const card_detail = (openreview, show) => {
     if (show)
         return ` 
-     <div class="pp-card-header" style="background-color:rgb(240, 240, 240)">
+        <br/>
         <p class="card-text"> ${openreview.content.tldr}</p>
         <p class="card-text"><span class="font-weight-bold">Keywords:</span>
             ${openreview.content.keywords.map(keyword).join(', ')}
         </p>
-    </div>
 `
     else return ''
 };
 
 //language=HTML
 const card_html = openreview => `
-        <div class="card card-dimensions">
+        <div class="card card-dimensions${(render_mode == 'detail')? '-detail' : render_mode !== 'list'? '-image' : ''}">
             <div class="card-body">
 
                 <a href="paper_${openreview.id}.html"
                 target="_blank"><h5 class="card-title ${openreview.content.read ? 'card-title-visited' : ''}">${openreview.content.title}</h5>
                 </a>
                 <h6 class="card-subtitle mb-2 text-muted">${openreview.content.authors.join(', ')}</h6>
+                
+                ${card_image(openreview, render_mode !== 'list')}
+
+                ${card_detail(openreview, (render_mode === 'detail'))}
             </div>
+
             <div class="card-footer">
                     <button type="button" class="btn btn-sm btn-outline-primary"><i class="fas fa-plus"></i> Add to Favorite</button>
                     <button type="button" class="btn btn-sm btn-outline-primary btn-quickview"><i class="fas fa-bars"></i> Quickview</button>
@@ -403,7 +408,9 @@ const card_html = openreview => `
 
         `
 
-const modal_keyword = keyword => `<span class="badge badge-pill badge-info">${keyword}</span>`
+
+const modal_keyword = kw => `<a class="badge badge-pill badge-info" 
+                                href="papers.html?filter=keywords&search=${kw}">${kw.toLowerCase()}</a>`
 
 const getSessionTimeString = (sess) => {
     let start_time = moment.utc(sess.start_time, 'ddd, DD MMM YYYY HH:mm:ss');
@@ -483,7 +490,7 @@ const modal_session_html = (session, paper) => {
 //                <h6 class="card-subtitle text-muted" align="center">
 //                        ${openreview.content.authors.join(', ')}
 //                </h6>
-//                ${card_image(openreview, render_mode !== 'list')}
+            //    ${card_image(openreview, render_mode !== 'list')}
 //            </div>
 //            </div>
 //

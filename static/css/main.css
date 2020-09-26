@@ -152,6 +152,16 @@ body .nav-pills .nav-link.active {
   min-height: 10rem;
 }
 
+.card-dimensions-image {
+  margin-bottom: 1.5em;
+  min-height: 10rem;
+}
+
+.card-dimensions-detail {
+  margin-bottom: 1.5em;
+  min-height: 10rem;
+}
+
 .btn-quickview {
   margin-left: 0.5em;
   margin-top: 0;
@@ -161,6 +171,16 @@ body .nav-pills .nav-link.active {
   .card-dimensions {
     margin-bottom: 1.5em;
     min-height: 20rem;
+  }
+
+  .card-dimensions-image {
+    margin-bottom: 1.5em;
+    min-height: 30rem;
+  }
+
+  .card-dimensions-detail {
+    margin-bottom: 1.5em;
+    min-height: 60rem;
   }
 
   .btn-quickview {
@@ -175,6 +195,16 @@ body .nav-pills .nav-link.active {
     min-height: 16rem;
   }
 
+  .card-dimensions-image {
+    margin-bottom: 1.5em;
+    min-height: 26rem;
+  }
+
+  .card-dimensions-detail {
+    margin-bottom: 1.5em;
+    min-height: 44rem;
+  }
+
   .btn-quickview {
     margin-left: 0.5em;
     margin-top: 0;
@@ -185,6 +215,16 @@ body .nav-pills .nav-link.active {
   .card-dimensions {
     margin-bottom: 1.5em;
     min-height: 14rem;
+  }
+
+  .card-dimensions-image {
+    margin-bottom: 1.5em;
+    min-height: 24rem;
+  }
+
+  .card-dimensions-detail {
+    margin-bottom: 1.5em;
+    min-height: 40rem;
   }
 
   .btn-quickview {
@@ -499,7 +539,11 @@ div#papers_options > div {
 
 .paper-modal-session-name {
   border-radius: 100%;
-  padding: 0.6em;
+  min-width: 2.7em;
+  min-height: 2.7em;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.6em 0;
 }
 
 .paper-modal-session-calendar-btn {
