@@ -23,29 +23,91 @@
 {% endblock %}
 
 {% block tabs %}
-<ul class="nav nav-pills justify-content-center pb-3">
+
+<ul class="nav nav-tabs justify-content-center">
   <li class="nav-item">
     <a class="nav-link" href="papers.html">Browse</a>
   </li>
   <li class="nav-item">
-    <a
-        class="nav-link active"
-        data-toggle="tab"
-        href="papers.html"
-        role="tab"
-        aria-controls="nav-home"
-        aria-selected="true"
-    >Visualization
-    </a>
+    <a class="nav-link active" href="papers_vis.html">Visualization</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="papers.html?showFavs=1" id="tabFavs"><i class="fas fa-star"></i> Favorites</a>
   </li>
 </ul>
+<div class="card" style="margin-bottom: 2.5em;">
+  <div class="card-body" style="margin-bottom: -1em;">
+
+    <div id="papers_options" class="row" role="toolbar" aria-label="Toolbar with button groups">  
+      <!-- Search bar -->
+        <div class="col-lg-7">
+          <div class="input-group flex-fill">
+            <input
+              type="text"
+              class="form-control typeahead_all"
+              placeholder="Search"
+            />
+            <!-- <div class="input-group-append">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Dropdown</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">by title</a>
+                <a class="dropdown-item" href="#">by author</a>
+              </div>
+            </div> -->
+            <div class="input-group-append btn-group-toggle filter_option">
+              <label class="btn btn-outline-primary" data-tippy-content="Search for papers titles">
+                <input type="radio" name="options" value="titles" autocomplete="off" checked />
+                by title
+              </label>
+              <!--
+              <label
+                class="btn btn-outline-secondary"
+                data-tippy-content="Search for papers with specific keywords"
+              >
+                <input
+                  type="radio"
+                  name="options"
+                  value="keywords"
+                  autocomplete="off"
+                />
+                keyword
+              </label>
+              -->
+              <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific authors">
+                <input type="radio" name="options" value="authors" autocomplete="off" />
+                by author
+              </label>
+    
+              <button class="btn btn btn-outline-danger typeahead_all_clear" type="button">
+                &times;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="form-group">
+            <select id="track_selector" class="selectpicker form-control" data-live-search="true" data-style="btn-light">
+              <option>All tracks</option>
+            {% for track in tracks %}
+              <option>{{ track }}</option>
+            {% endfor %}
+            </select>
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+</div>
 
 {% endblock %}
 
 
 
 {% block content %}
-<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+<!-- <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
   <div class="input-group mr-3">
     <input
       type="text"
@@ -57,20 +119,6 @@
         <input type="radio" name="options" value="titles" autocomplete="off"/>
         by title
       </label>
-      <!--
-      <label
-        class="btn btn-outline-secondary"
-        data-tippy-content="Search for papers with specific keywords"
-      >
-        <input
-          type="radio"
-          name="options"
-          value="keywords"
-          autocomplete="off"
-        />
-        keyword
-      </label>
-      -->
       <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific authors">
         <input type="radio" name="options" value="authors" autocomplete="off" checked />
         by author
@@ -88,7 +136,7 @@
       <option>{{ track }}</option>
       {% endfor %}
     </select>
-  </div>
+  </div> -->
 
   
 
