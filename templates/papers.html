@@ -37,13 +37,13 @@
 
 <ul class="nav nav-tabs justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" href="papers.html" id="tabBrowse" >Browse</a>
+    <a class="nav-link active" href="#" id="tabBrowse" >Browse</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="papers_vis.html">Visualization</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="papers.html?showFavs=1" id="tabFavs"><i class="fas fa-star"></i> Favorites</a>
+    <a class="nav-link" href="#" id="tabFavs"><i class="fas fa-star"></i> Favorites</a>
   </li>
 </ul>
 
@@ -162,7 +162,7 @@
     <!-- Shortcut Guide-->
     <div class="card-text shortcut-guide text-muted" style="font-size: 0.9rem; margin-bottom: -1em;">
       <br/>
-      <h7 style="font-weight: bold;">Pro Tip!</h7> You can use the follwing shortcuts to quickly navigate through papers (All of them work even when the Quickview is open)
+      <h7 style="font-weight: bold;">Pro Tip!</h7> You can use the following shortcuts to quickly navigate through papers (All of them work even when the Quickview is open)
       <p>
         <span class="badge badge-secondary">&larr;</span>, <span class="badge badge-secondary">&rarr;</span> Move between cards&nbsp;&nbsp;&nbsp;
         <span class="badge badge-secondary">space</span> Open/Close Quickview &nbsp;&nbsp;&nbsp;
@@ -244,16 +244,24 @@
 <script src="static/js/persistor.js"></script>
 <script src="static/js/papers.js"></script>
 <script>
-  $(document).ready(function () {
-    tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
-    const track = getUrlParameter("track") || "All tracks";
+  const updateTabs = () => {
     const showFavs = getUrlParameter("showFavs") || "0";
     if (showFavs === "1") {
       $('#tabBrowse').removeClass('active');
       $('#tabFavs').addClass('active');
+    } else {
+      $('#tabBrowse').addClass('active');
+      $('#tabFavs').removeClass('active');
     }
+  }
 
-    start(track);
+  $(document).ready(function () {
+    tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
+    const track = getUrlParameter("track") || "All tracks";
+    
+    updateTabs();
+
+    // start(track);
     $('#track_selector').selectpicker('val', track);
   });
 
@@ -262,9 +270,21 @@
     setQueryStringParameter("track", track);
     start(track);
   });
+
+  $('#tabBrowse').click(()=>{
+    setQueryStringParameter("showFavs", "0");
+    updateTabs();
+    render();
+  });
+
+  $('#tabFavs').click(()=>{
+    setQueryStringParameter("showFavs", "1");
+    updateTabs();
+    render();
+  });
 </script>
 
-<div class="d-flex justify-content-center" id="progressBar">
+<div class="text-center" id="progressBar">
   <div class="spinner-border text-primary" style="margin-top: 2em; width: 3rem; height: 3rem;" role="status">
     <span class="sr-only">Loading...</span>
   </div>

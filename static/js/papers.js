@@ -142,6 +142,9 @@ const updateCards = (papers) => {
     const favPaper = (iid, new_value) => {
         favPersistor.set(iid, new_value);
     }
+    
+    
+    $('#progressBar').hide();
 
     const all_mounted_cards = d3.select('.cards')
       .selectAll('.myCard', openreview => openreview.id)
@@ -292,7 +295,13 @@ function shuffleArray(array) {
 const render = () => {
     current_card_index = -1;
 
+    $('.cards').empty();
+    $('#progressBar').show();
+
     const f_test = [];
+    
+    const showFavs = getUrlParameter("showFavs") || '0';
+    const favPapers = favPersistor.getAll();
 
     updateSession();
 
@@ -300,36 +309,45 @@ const render = () => {
       .forEach(k => {filters[k] ? f_test.push([k, filters[k]]) : null})
 
     //  console.log(f_test, filters, "--- f_test, filters");
-    if (f_test.length === 0) updateCards(allPapers)
-    else {
-        const fList = allPapers.filter(
-          d => {
+    if (f_test.length === 0 && showFavs != '1') {
+        // $('#progressBar').hide();
+        setTimeout(()=>{updateCards(allPapers)}, 50);
+    } else {
+        setTimeout(()=>{
+            const fList = allPapers.filter(
+            d => {
+                let pass_test = true;
 
-              let i = 0, pass_test = true;
-              while (i < f_test.length && pass_test) {
-                  if (f_test[i][0] === 'titles') {
-                      pass_test &= d.content['title'].toLowerCase()
-                        .indexOf(f_test[i][1].toLowerCase()) > -1;
+                if (showFavs === '1')
+                    pass_test &= favPapers[d.id];
 
-                  } else {
-                      if (f_test[i][0] === 'session' || f_test[i][0] === 'sessions' ) {
-                          pass_test &= d.content['sessions'].some(
-                              function (item) {
-                                  return item.session_name === f_test[i][1];
-                              }
-                          );
-                      } else {
-                          console.log(f_test[i])
-                          pass_test &= d.content[f_test[i][0]].indexOf(
-                            f_test[i][1]) > -1
-                      }
-                  }
-                  i++;
-              }
-              return pass_test;
-          });
-        // console.log(fList, "--- fList");
-        updateCards(fList)
+                let i = 0;
+                while (i < f_test.length && pass_test) {
+                    if (f_test[i][0] === 'titles') {
+                        pass_test &= d.content['title'].toLowerCase()
+                            .indexOf(f_test[i][1].toLowerCase()) > -1;
+
+                    } else {
+                        if (f_test[i][0] === 'session' || f_test[i][0] === 'sessions' ) {
+                            pass_test &= d.content['sessions'].some(
+                                function (item) {
+                                    return item.session_name === f_test[i][1];
+                                }
+                            );
+                        } else {
+                            console.log(f_test[i])
+                            pass_test &= d.content[f_test[i][0]].indexOf(
+                                f_test[i][1]) > -1
+                        }
+                    }
+                    i++;
+                }
+                return pass_test;
+            });
+            // console.log(fList, "--- fList");
+            
+            updateCards(fList)
+        }, 50);
     }
 }
 
@@ -367,9 +385,6 @@ const updateSession = () => {
 const start = (track) => {
     // const urlFilter = getUrlParameter("filter") || 'keywords';
     const urlFilter = getUrlParameter("filter") || 'titles';
-    const showFavs = getUrlParameter("showFavs") || 0;
-
-    const favPapers = favPersistor.getAll();
 
     setQueryStringParameter("filter", urlFilter);
     updateFilterSelectionBtn(urlFilter);
@@ -384,26 +399,23 @@ const start = (track) => {
     d3.json(path_to_papers_json).then(papers => {
         shuffleArray(papers);
 
-        if (showFavs === "1")
-            allPapers = papers.filter(p => favPapers[p.id])
-        else
-            allPapers = papers
+        allPapers = papers;
 
-        $('#progressBar').remove();
+        $('#progressBar').hide();
         
         calcAllKeys(allPapers, allKeys);
         setTypeAhead(urlFilter,
           allKeys, filters, render);
-        updateCards(allPapers);
+        // updateCards(allPapers);
 
-        const urlSearch = getUrlParameter("search");
-        if ((urlSearch !== '') || updateSession()) {
-            filters[urlFilter] = urlSearch;
-            $('.typeahead_all').val(urlSearch);
-            render();
-        }
+        // const urlSearch = getUrlParameter("search");
+        // if ((urlSearch !== '') || updateSession()) {
+        //     filters[urlFilter] = urlSearch;
+        //     $('.typeahead_all').val(urlSearch);
+        // }
 
-
+        render();
+        
     }).catch(e => console.error(e))
 };
 
