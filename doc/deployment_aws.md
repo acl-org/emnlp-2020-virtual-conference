@@ -70,6 +70,16 @@ Wait a bit until the DNS records have propagated. Now you can create a test user
 into your website, e.g. `virtual.2020.emnlp.org`! It should greet you with a dummy website. If not, refer to the 
 `Troubleshooting` section of this guide!
 
+## Setting up Mail
+
+We will use a dedicated email address that sends invitations. Users can reply to this mail in case they have problems.
+To do that, first go to [Amazon SES](https://console.aws.amazon.com/ses) and create and verify your address.
+
+Then go to AWS Cognito, under `Message Customizations`, select your mail in the `FROM email address ARN`, `FROM email address`
+and `REPLY-TO email address`.
+
+Users will use this mail then when asking for help so you should closely monitor this address. 
+
 ## Autodeploy via Github Actions
 
 This repository comes with an action to build and deploy this repository automatically. To set it up, do the following:
