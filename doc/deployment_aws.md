@@ -76,7 +76,8 @@ We will use a dedicated email address that sends invitations. Users can reply to
 To do that, first go to [Amazon SES](https://console.aws.amazon.com/ses) and create and verify your address.
 
 Then go to AWS Cognito, under `Message Customizations`, select your mail in the `FROM email address ARN`, `FROM email address`
-and `REPLY-TO email address`.
+and `REPLY-TO email address`. You can change the display name by using e.g. `EMNLP 2020 Virtual Conference <virtual.2020@emnlp.org>`
+as the `FROM email address`.
 
 Users will use this mail then when asking for help so you should closely monitor this address. 
 
