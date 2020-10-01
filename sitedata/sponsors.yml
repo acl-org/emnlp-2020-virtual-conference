@@ -2,7 +2,7 @@
   sponsors:
   - UID: '1'
     name: Apple
-    logo: static/images/sponsors/Apple-for-2019-EMNLPwebsite.jpg
+    logo: static/images/sponsors/Apple-for-2019-ACLwebsite.jpg
     logoontop: True
     website: https://www.apple.com/jobs/us/teams/machine-learning-and-ai.html
     description: "Apple is a place where extraordinary people gather to do their best work. Our community is made up of every kind of individual: artists and designers, engineers and scientists, thinkers and doers. Together, we create things and experiences people once couldn’t have imagined and now can’t imagine living without. So if you’re excited by the idea of making a real impact, a career with Apple might be your dream job. Just be ready to dream big."
@@ -555,7 +555,7 @@
         label: NLP Research at Alibaba
   - UID: '19'
     name: Two Sigma
-    logo: static/images/sponsors/TwoSigma-Final2020.jpg
+    logo: static/images/sponsors/TwoSigma-Final2020.png
     website: http://careers.twosigma.com/acl
     channel: sponsor-two-sigma
     contacts:
