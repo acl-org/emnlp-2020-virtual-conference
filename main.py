@@ -227,9 +227,8 @@ def generator():
     for workshop in site_data["workshops"]:
         yield "workshop", {"uid": workshop.id}
 
-    for sponsors_at_level in site_data["sponsors"]:
-        for sponsor in sponsors_at_level["sponsors"]:
-            yield "sponsor", {"uid": str(sponsor["UID"])}
+    for sponsor in site_data["sponsors"]:
+        yield "sponsor", {"uid": str(sponsor["UID"])}
 
     for key in site_data:
         yield "serve", {"path": key}
