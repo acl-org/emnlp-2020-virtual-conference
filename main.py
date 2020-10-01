@@ -106,7 +106,8 @@ def workshops():
 @app.route("/sponsors.html")
 def sponsors():
     data = _data()
-    data["sponsors"] = site_data["sponsors"]
+    data["sponsors"] = site_data["sponsors_by_level"]
+    data["sponsor_levels"] = site_data["sponsor_levels"]
     return render_template("sponsors.html", **data)
 
 
@@ -226,9 +227,8 @@ def generator():
     for workshop in site_data["workshops"]:
         yield "workshop", {"uid": workshop.id}
 
-    for sponsors_at_level in site_data["sponsors"]:
-        for sponsor in sponsors_at_level["sponsors"]:
-            yield "sponsor", {"uid": str(sponsor["UID"])}
+    for sponsor in site_data["sponsors"]:
+        yield "sponsor", {"uid": str(sponsor["UID"])}
 
     for key in site_data:
         yield "serve", {"path": key}

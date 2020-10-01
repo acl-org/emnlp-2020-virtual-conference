@@ -388,33 +388,6 @@
   {% endfor %}
 {%- endmacro %}
 
-
-{% macro sponsorgroup(sponsors) -%}
-  <div class="cards row">
-  {% for sponsor_level in sponsors %}
-    <div class="col-12">
-    <h2>{{ sponsor_level.level }}</h2>
-    <hr />
-    </div>
-
-    {% for sponsor in sponsor_level.sponsors %}
-    <div class="col-md-3 col-sm-6">
-      <div class="sponsorLogo">
-        {% if sponsor.landingpage is defined %}
-        <a class="text-muted" href="{{sponsor.landingpage}}" target="_blank">
-        {% else %}
-        <a class="text-muted" href="sponsor_{{sponsor.UID}}.html" target="_blank">
-        {% endif %}
-          <span class="sponsorHelper"></span>
-            <img class="card-img-top sponsorImg" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
-        </a>
-      </div>
-    </div>
-    {% endfor %}
-  {% endfor %}
-  </div>
-{%- endmacro %}
-
 {% macro live_sessions(sessions, title, url, is_plenary) -%}
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
