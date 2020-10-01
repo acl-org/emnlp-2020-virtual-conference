@@ -607,19 +607,12 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
 
 
 def build_sponsors(site_data, by_uid, display_time_format) -> None:
-    # TODO: should assign UID by sponsor name? What about sponsors with multiple levels?
-    by_uid["sponsors"] = {
-        sponsor["UID"]: sponsor
-        for sponsors_at_level in site_data["sponsors"]
-        for sponsor in sponsors_at_level["sponsors"]
-        if not sponsor.get("duplicate", False)
-    }
+    by_uid["sponsors"] = {}
 
-    # Fix duplicates
-    for sponsors_at_level in site_data["sponsors"]:
-        for sponsor in sponsors_at_level["sponsors"]:
-            if sponsor.get("duplicate", False):
-                sponsor.update(by_uid["sponsors"][sponsor["UID"]])
+    for sponsor in site_data["sponsors"]:
+        uid = "_".join(sponsor["name"].lower().split())
+        sponsor["UID"] = uid
+        by_uid["sponsors"][uid] = sponsor
 
     # Format the session start and end times
     for sponsor in by_uid["sponsors"].values():
@@ -640,3 +633,27 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
                 sponsor["zoom_times"][day] = []
 
             sponsor["zoom_times"][day].append((time_string, zoom["label"]))
+
+    # In the YAML, we just have a list of sponsors. We group them here by level
+    sponsors_by_level = defaultdict(list)
+    for sponsor in site_data["sponsors"]:
+        if "level" in sponsor:
+            sponsors_by_level[sponsor["level"]].append(sponsor)
+        elif "levels" in sponsor:
+            for level in sponsor["levels"]:
+                sponsors_by_level[level].append(sponsor)
+
+    site_data["sponsors_by_level"] = sponsors_by_level
+    site_data["sponsor_levels"] = [
+        "Diamond",
+        "Platinum",
+        "Gold",
+        "Silver",
+        "Bronze",
+        "Supporter",
+        "Publisher",
+        "Diversity & Inclusion: Champion",
+        "Diversity & Inclusion: In-Kind",
+    ]
+
+    assert all(lvl in site_data["sponsor_levels"] for lvl in sponsors_by_level)
