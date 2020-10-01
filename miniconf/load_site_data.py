@@ -635,7 +635,7 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
             sponsor["zoom_times"][day].append((time_string, zoom["label"]))
 
     # In the YAML, we just have a list of sponsors. We group them here by level
-    sponsors_by_level = defaultdict(list)
+    sponsors_by_level: DefaultDict[str, List[Any]] = defaultdict(list)
     for sponsor in site_data["sponsors"]:
         if "level" in sponsor:
             sponsors_by_level[sponsor["level"]].append(sponsor)
