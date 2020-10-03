@@ -584,8 +584,8 @@ def build_workshops(
             sessions=[
                 SessionInfo(
                     session_name=session.get("name", ""),
-                    start_time=parse_session_time(session.get("start_time")),
-                    end_time=parse_session_time(session.get("end_time")),
+                    start_time=session.get("start_time"),
+                    end_time=session.get("end_time"),
                     zoom_link=session.get("zoom_link", ""),
                 )
                 for session in item.get("sessions")
@@ -593,6 +593,7 @@ def build_workshops(
         )
         for item in raw_workshops
     ]
+
     return workshops
 
 
