@@ -126,6 +126,23 @@ def load_site_data(
         site_data.keys()
     )
 
+    # Add things to calendar
+    for tutorial in site_data["tutorials"]:
+        uid = tutorial["UID"]
+        for session in tutorial["sessions"]:
+            event = {
+                "title": f"{uid}: {tutorial['title']}<br/> <br/> <i>{tutorial['organizers']}</i>",
+                "start": session["start_time"],
+                "end": session["end_time"],
+                "location": f"tutorial_{uid}.html",
+                "link": f"tutorial_{uid}.html",
+                "category": "time",
+                "calendarId": "---",
+                "type": "Tutorials",
+                "view": "week",
+            }
+            site_data["overall_calendar"].append(event)
+
     display_time_format = "%H:%M"
 
     # index.html
@@ -521,8 +538,8 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             sessions=[
                 TutorialSessionInfo(
                     session_name=session.get("name"),
-                    start_time=parse_session_time(session.get("start_time")),
-                    end_time=parse_session_time(session.get("end_time")),
+                    start_time=session.get("start_time"),
+                    end_time=session.get("start_time"),
                     livestream_id=session.get("livestream_id"),
                     zoom_link=session.get("zoom_link"),
                 )
