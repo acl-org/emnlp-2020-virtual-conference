@@ -546,8 +546,8 @@ def build_papers(
     for session_name, session_info in chain(
         *[paper_sessions.items() for paper_sessions in all_paper_sessions]
     ):
-        date = session_info["date"]
-        start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
+        session_date = session_info["date"]
+        start_time = datetime.strptime(session_date, "%Y-%m-%d_%H:%M:%S")
         end_time = start_time + timedelta(hours=qa_session_length_hr)
         for paper_id in session_info["papers"]:
             paper_session_id = f"{paper_id}-{session_name}"
