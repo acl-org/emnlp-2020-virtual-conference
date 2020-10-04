@@ -395,7 +395,7 @@ def generate_workshop_events(site_data: Dict[str, Any]):
                 "category": "time",
                 "calendarId": "---",
                 "type": "Workshops",
-                "view": "day"
+                "view": "day",
             }
             site_data["overall_calendar"].append(event)
 
