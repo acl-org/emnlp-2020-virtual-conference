@@ -1,6 +1,6 @@
 - UID: T1
   title: Machine Reasoning for Knowledgeable, Explainable and Inferable Models
-  organizers: Reasoning
+  organizers: Nan Duan, Duyu Tang and Ming Zhou
   abstract: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula neque, posuere ac velit et, elementum
     luctus orci. Vivamus nec orci quis sapien ultrices lobortis id a lacus. Nullam eget fermentum nibh. Praesent quis
@@ -28,10 +28,10 @@
   - name: Live Session 1
     start_time: 2020-11-19 00:00:00-07:00
     end_time: 2020-11-19 03:00:00-07:00
-    livestream_id: 131467
+    livestream_id: 158084
 - UID: T2
   title: Interpreting Predictions of NLP Models
-  organizers: Interpretability
+  organizers: Eric Wallace, Matt Gardner and Sameer Singh
   abstract: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula neque, posuere ac velit et, elementum
     luctus orci. Vivamus nec orci quis sapien ultrices lobortis id a lacus. Nullam eget fermentum nibh. Praesent quis
@@ -59,10 +59,10 @@
   - name: Live Session 1
     start_time: 2020-11-19 01:00:00-07:00
     end_time: 2020-11-19 04:00:00-07:00
-    livestream_id: 566378
+    livestream_id: 981527
 - UID: T3
   title: High Performance Natural Language Processing
-  organizers: DL techniques
+  organizers: Gabriel Ilharco, Cesar Ilharco Magalhaes and Kenton Lee
   abstract: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula neque, posuere ac velit et, elementum
     luctus orci. Vivamus nec orci quis sapien ultrices lobortis id a lacus. Nullam eget fermentum nibh. Praesent quis
@@ -90,11 +90,11 @@
   - name: Live Session 1
     start_time: 2020-11-19 02:00:00-07:00
     end_time: 2020-11-19 05:00:00-07:00
-    livestream_id: 367403
+    livestream_id: 510855
 - UID: T4
   title: 'Fact-Checking, Fake News, Propaganda, and Media Bias: Truth Seeking in the
     Post-Truth Era'
-  organizers: ''
+  organizers: Preslav Nakov and Giovanni Da San Martino
   abstract: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula neque, posuere ac velit et, elementum
     luctus orci. Vivamus nec orci quis sapien ultrices lobortis id a lacus. Nullam eget fermentum nibh. Praesent quis
@@ -122,10 +122,10 @@
   - name: Live Session 1
     start_time: 2020-11-19 03:00:00-07:00
     end_time: 2020-11-19 06:00:00-07:00
-    livestream_id: 799325
+    livestream_id: 681111
 - UID: T5
   title: The Amazing World of Neural Language Generation
-  organizers: ''
+  organizers: Yangfeng Ji, Antoine Bosselut, Thomas Wolf and Asli Celikyilmaz
   abstract: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula neque, posuere ac velit et, elementum
     luctus orci. Vivamus nec orci quis sapien ultrices lobortis id a lacus. Nullam eget fermentum nibh. Praesent quis
@@ -153,11 +153,11 @@
   - name: Live Session 1
     start_time: 2020-11-20 04:00:00-07:00
     end_time: 2020-11-20 07:00:00-07:00
-    livestream_id: 919627
+    livestream_id: 634502
 - UID: T6
   title: Representation, Learning and Reasoning on Spatial Language for Down-stream
     NLP Tasks
-  organizers: Semantics
+  organizers: Parisa Kordjamshidi, James Pustejovsky and Marie-Francine Moens
   abstract: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula neque, posuere ac velit et, elementum
     luctus orci. Vivamus nec orci quis sapien ultrices lobortis id a lacus. Nullam eget fermentum nibh. Praesent quis
@@ -185,10 +185,11 @@
   - name: Live Session 1
     start_time: 2020-11-20 05:00:00-07:00
     end_time: 2020-11-20 08:00:00-07:00
-    livestream_id: 852335
+    livestream_id: 414245
 - UID: T7
   title: Simultaneous Translation
-  organizers: Translation
+  organizers: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan and Zhongjun
+    He
   abstract: |-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula neque, posuere ac velit et, elementum
     luctus orci. Vivamus nec orci quis sapien ultrices lobortis id a lacus. Nullam eget fermentum nibh. Praesent quis
@@ -216,4 +217,4 @@
   - name: Live Session 1
     start_time: 2020-11-20 06:00:00-07:00
     end_time: 2020-11-20 09:00:00-07:00
-    livestream_id: 858977
+    livestream_id: 898997
