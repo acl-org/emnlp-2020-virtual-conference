@@ -126,29 +126,14 @@ def load_site_data(
         site_data.keys()
     )
 
-    # Add things to calendar
-    for tutorial in site_data["tutorials"]:
-        uid = tutorial["UID"]
-        for session in tutorial["sessions"]:
-            event = {
-                "title": f"{uid}: {tutorial['title']}<br/> <br/> <i>{tutorial['organizers']}</i>",
-                "start": session["start_time"],
-                "end": session["end_time"],
-                "location": f"tutorial_{uid}.html",
-                "link": f"tutorial_{uid}.html",
-                "category": "time",
-                "calendarId": "---",
-                "type": "Tutorials",
-                "view": "week",
-            }
-            site_data["overall_calendar"].append(event)
-
     display_time_format = "%H:%M"
 
     # index.html
     site_data["committee"] = build_committee(site_data["committee"]["committee"])
 
     # schedule.html
+    generate_tutorial_events(site_data)
+    generate_workshop_events(site_data)
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
 
     # plenary_sessions.html
@@ -340,7 +325,96 @@ def build_plenary_sessions(
     return plenary_sessions
 
 
+def generate_tutorial_events(site_data: Dict[str, Any]):
+    """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
+
+    # Add tutorial sessions to calendar
+    sessions_by_day = defaultdict(list)
+    for tutorial in site_data["tutorials"]:
+        uid = tutorial["UID"]
+        for session in tutorial["sessions"]:
+            start = session["start_time"]
+            end = session["end_time"]
+            event = {
+                "title": f"{uid}: {tutorial['title']}<br/> <br/> <i>{tutorial['organizers']}</i>",
+                "start": start,
+                "end": end,
+                "location": f"tutorial_{uid}.html",
+                "link": f"tutorial_{uid}.html",
+                "category": "time",
+                "calendarId": "---",
+                "type": "Tutorials",
+                "view": "day",
+            }
+            site_data["overall_calendar"].append(event)
+
+            start_day = start.date()
+            end_day = end.date()
+
+            assert start_day == end_day, "Tutorial session spans more than a day"
+            assert start < end, "Session start after session end"
+
+            sessions_by_day[start_day].append((start, end))
+
+    # Compute start and end of tutorial blocks
+    for tutorial_day in sessions_by_day:
+        min_start = min([t[0] for t in sessions_by_day[tutorial_day]])
+        max_end = max([t[1] for t in sessions_by_day[tutorial_day]])
+
+        event = {
+            "title": "Tutorials",
+            "start": min_start,
+            "end": max_end,
+            "location": "tutorials.html",
+            "link": "tutorials.html",
+            "category": "time",
+            "calendarId": "---",
+            "type": "Tutorials",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
+def generate_workshop_events(site_data: Dict[str, Any]):
+    """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
+    # Add workshop sessions to calendar
+    sessions_by_day = defaultdict(list)
+
+    for workshop in site_data["workshops"]:
+        uid = workshop["UID"]
+        for session in workshop["sessions"]:
+            start = session["start_time"]
+            end = session["end_time"]
+
+            start_day = start.date()
+            end_day = end.date()
+
+            assert start_day == end_day, "Tutorial session spans more than a day"
+            assert start < end, "Session start after session end"
+
+            sessions_by_day[start_day].append((start, end))
+
+    # Compute start and end of workshop blocks
+    for workshop_day in sessions_by_day:
+        min_start = min([t[0] for t in sessions_by_day[workshop_day]])
+        max_end = max([t[1] for t in sessions_by_day[workshop_day]])
+
+        event = {
+            "title": "Workshops",
+            "start": min_start,
+            "end": max_end,
+            "location": "workshops.html",
+            "link": "workshops.html",
+            "category": "time",
+            "calendarId": "---",
+            "type": "Workshops",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
 def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+
     events = [
         copy.deepcopy(event)
         for event in overall_calendar
