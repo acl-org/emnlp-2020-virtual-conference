@@ -4,9 +4,9 @@ import glob
 import json
 import os
 from collections import OrderedDict, defaultdict
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from itertools import chain
-from typing import Any, DefaultDict, Dict, List
+from typing import Any, DefaultDict, Dict, List, Tuple
 
 import jsons
 import pytz
@@ -126,29 +126,14 @@ def load_site_data(
         site_data.keys()
     )
 
-    # Add things to calendar
-    for tutorial in site_data["tutorials"]:
-        uid = tutorial["UID"]
-        for session in tutorial["sessions"]:
-            event = {
-                "title": f"{uid}: {tutorial['title']}<br/> <br/> <i>{tutorial['organizers']}</i>",
-                "start": session["start_time"],
-                "end": session["end_time"],
-                "location": f"tutorial_{uid}.html",
-                "link": f"tutorial_{uid}.html",
-                "category": "time",
-                "calendarId": "---",
-                "type": "Tutorials",
-                "view": "week",
-            }
-            site_data["overall_calendar"].append(event)
-
     display_time_format = "%H:%M"
 
     # index.html
     site_data["committee"] = build_committee(site_data["committee"]["committee"])
 
     # schedule.html
+    generate_tutorial_events(site_data)
+    generate_workshop_events(site_data)
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
 
     # plenary_sessions.html
@@ -340,7 +325,109 @@ def build_plenary_sessions(
     return plenary_sessions
 
 
+def generate_tutorial_events(site_data: Dict[str, Any]):
+    """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
+
+    # Add tutorial sessions to calendar
+    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
+    for tutorial in site_data["tutorials"]:
+        uid = tutorial["UID"]
+        for session in tutorial["sessions"]:
+            start = session["start_time"]
+            end = session["end_time"]
+            event = {
+                "title": f"{uid}: {tutorial['title']}<br/> <br/> <i>{tutorial['organizers']}</i>",
+                "start": start,
+                "end": end,
+                "location": f"tutorial_{uid}.html",
+                "link": f"tutorial_{uid}.html",
+                "category": "time",
+                "calendarId": "---",
+                "type": "Tutorials",
+                "view": "day",
+            }
+            site_data["overall_calendar"].append(event)
+
+            start_day = start.date()
+            end_day = end.date()
+
+            assert start_day == end_day, "Tutorial session spans more than a day"
+            assert start < end, "Session start after session end"
+
+            sessions_by_day[start_day].append((start, end))
+
+    # Compute start and end of tutorial blocks
+    for tutorial_day in sessions_by_day:
+        min_start = min([t[0] for t in sessions_by_day[tutorial_day]])
+        max_end = max([t[1] for t in sessions_by_day[tutorial_day]])
+
+        event = {
+            "title": "Tutorials",
+            "start": min_start,
+            "end": max_end,
+            "location": "tutorials.html",
+            "link": "tutorials.html",
+            "category": "time",
+            "calendarId": "---",
+            "type": "Tutorials",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
+def generate_workshop_events(site_data: Dict[str, Any]):
+    """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
+    # Add workshop sessions to calendar
+    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
+
+    for workshop in site_data["workshops"]:
+        uid = workshop["UID"]
+        for session in workshop["sessions"]:
+            start = session["start_time"]
+            end = session["end_time"]
+
+            event = {
+                "title": f"{workshop['title']}<br/> <br/> <i>{', '.join(workshop['organizers'])}</i>",
+                "start": start,
+                "end": end,
+                "location": f"workshop_{uid}.html",
+                "link": f"workshop_{uid}.html",
+                "category": "time",
+                "calendarId": "---",
+                "type": "Workshops",
+                "view": "day",
+            }
+            site_data["overall_calendar"].append(event)
+
+            start_day = start.date()
+            end_day = end.date()
+
+            assert start_day == end_day, "Tutorial session spans more than a day"
+            assert start < end, "Session start after session end"
+
+            sessions_by_day[start_day].append((start, end))
+
+    # Compute start and end of workshop blocks
+    for workshop_day in sessions_by_day:
+        min_start = min([t[0] for t in sessions_by_day[workshop_day]])
+        max_end = max([t[1] for t in sessions_by_day[workshop_day]])
+
+        event = {
+            "title": "Workshops",
+            "start": min_start,
+            "end": max_end,
+            "location": "workshops.html",
+            "link": "workshops.html",
+            "category": "time",
+            "calendarId": "---",
+            "type": "Workshops",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
 def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+
     events = [
         copy.deepcopy(event)
         for event in overall_calendar
@@ -459,8 +546,8 @@ def build_papers(
     for session_name, session_info in chain(
         *[paper_sessions.items() for paper_sessions in all_paper_sessions]
     ):
-        date = session_info["date"]
-        start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
+        session_date = session_info["date"]
+        start_time = datetime.strptime(session_date, "%Y-%m-%d_%H:%M:%S")
         end_time = start_time + timedelta(hours=qa_session_length_hr)
         for paper_id in session_info["papers"]:
             paper_session_id = f"{paper_id}-{session_name}"
@@ -584,8 +671,8 @@ def build_workshops(
             sessions=[
                 SessionInfo(
                     session_name=session.get("name", ""),
-                    start_time=parse_session_time(session.get("start_time")),
-                    end_time=parse_session_time(session.get("end_time")),
+                    start_time=session.get("start_time"),
+                    end_time=session.get("end_time"),
                     zoom_link=session.get("zoom_link", ""),
                 )
                 for session in item.get("sessions")
@@ -593,6 +680,7 @@ def build_workshops(
         )
         for item in raw_workshops
     ]
+
     return workshops
 
 
