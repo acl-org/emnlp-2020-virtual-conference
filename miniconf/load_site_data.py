@@ -386,6 +386,19 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             start = session["start_time"]
             end = session["end_time"]
 
+            event = {
+                "title": f"{workshop['title']}<br/> <br/> <i>{', '.join(workshop['organizers'])}</i>",
+                "start": start,
+                "end": end,
+                "location": f"workshop_{uid}.html",
+                "link": f"workshop_{uid}.html",
+                "category": "time",
+                "calendarId": "---",
+                "type": "Workshops",
+                "view": "day"
+            }
+            site_data["overall_calendar"].append(event)
+
             start_day = start.date()
             end_day = end.date()
 
