@@ -4,7 +4,7 @@ import glob
 import json
 import os
 from collections import OrderedDict, defaultdict
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from itertools import chain
 from typing import Any, DefaultDict, Dict, List
 
@@ -329,7 +329,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
     """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
 
     # Add tutorial sessions to calendar
-    sessions_by_day = defaultdict(list)
+    sessions_by_day: Dict[date, List[Dict[str, Any]]] = defaultdict(list)
     for tutorial in site_data["tutorials"]:
         uid = tutorial["UID"]
         for session in tutorial["sessions"]:
@@ -378,7 +378,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
 def generate_workshop_events(site_data: Dict[str, Any]):
     """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
     # Add workshop sessions to calendar
-    sessions_by_day = defaultdict(list)
+    sessions_by_day: Dict[date, List[Dict[str, Any]]] = defaultdict(list)
 
     for workshop in site_data["workshops"]:
         uid = workshop["UID"]
