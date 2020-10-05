@@ -160,7 +160,6 @@ const updateVis = () => {
           openreview.content.read = storedPapers[openreview.id] || false
           openreview.content.tracker = trackhighlight.includes(openreview.id) || false
       })
-
     const is_filtered = filters.authors || filters.keywords || filters.titles;
 
     const [pW, pH] = plot_size();
