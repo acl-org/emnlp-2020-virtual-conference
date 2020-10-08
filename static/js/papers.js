@@ -209,13 +209,13 @@ const openQuickviewModal = (paper) => {
 
 const updateModalData = (paper) => {
     $('#modalTitle').text(paper.content.title);
-    
+
     let isVisited = persistor.get(paper.id) || false
     if (isVisited)
         $('#modalTitle').addClass('card-title-visited');
     else
         $('#modalTitle').removeClass('card-title-visited');
-    
+
     $('#modalAuthors').text(paper.content.authors.join(', '));
 
     $('#modalPaperType').text(paper.content.paper_type);
@@ -304,6 +304,13 @@ const render = () => {
     
     const showFavs = getUrlParameter("showFavs") || '0';
     const favPapers = favPersistor.getAll();
+
+    const urlFilter = getUrlParameter("filter") || 'titles';
+    const urlSearch = getUrlParameter("search");
+    if ((urlSearch !== '') || updateSession()) {
+        filters[urlFilter] = urlSearch;
+        $('.typeahead_all').val(urlSearch);
+    }
 
     updateSession();
 
@@ -409,12 +416,6 @@ const start = (track) => {
         setTypeAhead(urlFilter,
           allKeys, filters, render);
         // updateCards(allPapers);
-
-        // const urlSearch = getUrlParameter("search");
-        // if ((urlSearch !== '') || updateSession()) {
-        //     filters[urlFilter] = urlSearch;
-        //     $('.typeahead_all').val(urlSearch);
-        // }
 
         render();
         
