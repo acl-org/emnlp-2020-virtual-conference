@@ -209,11 +209,13 @@ const openQuickviewModal = (paper) => {
 
 const updateModalData = (paper) => {
     $('#modalTitle').text(paper.content.title);
-    if (paper.content.read)
+    
+    let isVisited = persistor.get(paper.id) || false
+    if (isVisited)
         $('#modalTitle').addClass('card-title-visited');
     else
         $('#modalTitle').removeClass('card-title-visited');
-
+    
     $('#modalAuthors').text(paper.content.authors.join(', '));
 
     $('#modalPaperType').text(paper.content.paper_type);
