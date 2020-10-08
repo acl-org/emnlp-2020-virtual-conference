@@ -127,7 +127,9 @@ def organizers():
     # groups by name, i.e. the general chair would not be on top anymore because it doesn't start with A.
     # See https://github.com/pallets/jinja/issues/250
     committee_by_role = []
-    for role, members in itertools.groupby(site_data["committee"], lambda member: member.role):
+    for role, members in itertools.groupby(
+        site_data["committee"], lambda member: member.role
+    ):
         members = list(members)
         # add plural 's' to "chair" roles with multiple members
         if role.lower().endswith("chair") and len(members) > 1:
