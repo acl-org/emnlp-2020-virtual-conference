@@ -125,8 +125,7 @@ class CommitteeMember:
     role: str
     name: str
     aff: str
-    im: Optional[str]
-    tw: Optional[str]
+    image: Optional[str]
 
 
 @dataclass(frozen=True)
