@@ -216,7 +216,8 @@ const updateModalData = (paper) => {
     else
         $('#modalTitle').removeClass('card-title-visited');
 
-    $('#modalAuthors').text(paper.content.authors.join(', '));
+    let authorsHtml = paper.content.authors.map(author_html).join(', ');
+    $('#modalAuthors').html(authorsHtml);
 
     $('#modalPaperType').text(paper.content.paper_type);
     $('#modalPaperTrack').text(paper.content.track);
@@ -344,7 +345,6 @@ const render = () => {
                                 }
                             );
                         } else {
-                            console.log(f_test[i])
                             pass_test &= d.content[f_test[i][0]].indexOf(
                                 f_test[i][1]) > -1
                         }
@@ -473,6 +473,9 @@ d3.select('.reshuffle').on('click', () => {
 
 const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
+
+const author_html = author => `<a href="papers.html?filter=authors&search=${author}"
+                                class="text-secondary text-decoration-none">${author}</a>`;
 
 const card_image = (openreview, show) => {
     if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" width="80%"/></center>`
