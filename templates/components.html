@@ -84,10 +84,10 @@
 {%- endmacro %}
 
 {% macro organizergroup(committee) -%}
-{% for role, members in committee %}
+{% for role in committee %}
   <h4>{{ role }}</h4>
   <div class="row mb-5 mt-3">
-    {% for org in members %}
+    {% for org in committee[role] %}
     <div class="col-md-3 col-xs-6">
       <div class="card text-center shadow p-3 bg-light rounded h-100">
         <div class="text-muted">
