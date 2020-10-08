@@ -283,11 +283,11 @@ def build_committee(
     committee = [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
     committee_by_role = OrderedDict()
     for role, members in itertools.groupby(committee, lambda member: member.role):
-        members = list(members)
+        member_list = list(members)
         # add plural 's' to "chair" roles with multiple members
-        if role.lower().endswith("chair") and len(members) > 1:
+        if role.lower().endswith("chair") and len(member_list) > 1:
             role += "s"
-        committee_by_role[role] = members
+        committee_by_role[role] = member_list
 
     return committee_by_role
 
