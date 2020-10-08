@@ -209,12 +209,15 @@ const openQuickviewModal = (paper) => {
 
 const updateModalData = (paper) => {
     $('#modalTitle').text(paper.content.title);
-    if (paper.content.read)
+
+    let isVisited = persistor.get(paper.id) || false
+    if (isVisited)
         $('#modalTitle').addClass('card-title-visited');
     else
         $('#modalTitle').removeClass('card-title-visited');
 
-    $('#modalAuthors').text(paper.content.authors.join(', '));
+    let authorsHtml = paper.content.authors.map(author_html).join(', ');
+    $('#modalAuthors').html(authorsHtml);
 
     $('#modalPaperType').text(paper.content.paper_type);
     $('#modalPaperTrack').text(paper.content.track);
@@ -303,6 +306,13 @@ const render = () => {
     const showFavs = getUrlParameter("showFavs") || '0';
     const favPapers = favPersistor.getAll();
 
+    const urlFilter = getUrlParameter("filter") || 'titles';
+    const urlSearch = getUrlParameter("search");
+    if ((urlSearch !== '') || updateSession()) {
+        filters[urlFilter] = urlSearch;
+        $('.typeahead_all').val(urlSearch);
+    }
+
     updateSession();
 
     Object.keys(filters)
@@ -335,7 +345,6 @@ const render = () => {
                                 }
                             );
                         } else {
-                            console.log(f_test[i])
                             pass_test &= d.content[f_test[i][0]].indexOf(
                                 f_test[i][1]) > -1
                         }
@@ -408,12 +417,6 @@ const start = (track) => {
           allKeys, filters, render);
         // updateCards(allPapers);
 
-        // const urlSearch = getUrlParameter("search");
-        // if ((urlSearch !== '') || updateSession()) {
-        //     filters[urlFilter] = urlSearch;
-        //     $('.typeahead_all').val(urlSearch);
-        // }
-
         render();
         
     }).catch(e => console.error(e))
@@ -470,6 +473,8 @@ d3.select('.reshuffle').on('click', () => {
 
 const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
+
+const author_html = author => `<a href="papers.html?filter=authors&search=${author}">${author}</a>`;
 
 const card_image = (openreview, show) => {
     if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" width="80%"/></center>`
