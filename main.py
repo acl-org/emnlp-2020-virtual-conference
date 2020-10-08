@@ -1,5 +1,6 @@
 # pylint: disable=global-statement,redefined-outer-name
 import argparse
+import itertools
 import os
 from typing import Any, Dict
 
@@ -121,7 +122,13 @@ def socials():
 @app.route("/organizers.html")
 def organizers():
     data = _data()
-    data["committee"] = site_data["committee"]
+
+    # We want to show the committee grouped by role. Grouping has to be done in python since jinja's groupby sorts
+    # groups by name, i.e. the general chair would not be on top anymore because it doesn't start with A.
+    # See https://github.com/pallets/jinja/issues/250
+    committee = site_data["committee"]
+    committee_by_role = itertools.groupby(committee, lambda member: member.role)
+    data["committee"] = committee_by_role
     return render_template("organizers.html", **data)
 
 
