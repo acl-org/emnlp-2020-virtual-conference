@@ -474,8 +474,7 @@ d3.select('.reshuffle').on('click', () => {
 const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
 
-const author_html = author => `<a href="papers.html?filter=authors&search=${author}"
-                                class="text-secondary text-decoration-none">${author}</a>`;
+const author_html = author => `<a href="papers.html?filter=authors&search=${author}">${author}</a>`;
 
 const card_image = (openreview, show) => {
     if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" width="80%"/></center>`
