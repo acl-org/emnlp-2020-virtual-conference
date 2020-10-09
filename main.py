@@ -121,6 +121,7 @@ def socials():
 @app.route("/organizers.html")
 def organizers():
     data = _data()
+
     data["committee"] = site_data["committee"]
     return render_template("organizers.html", **data)
 

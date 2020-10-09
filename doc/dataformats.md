@@ -34,8 +34,7 @@ The list of members of the orga team visible on the landing page
   - role: `<Chair name>` 
   - name: `<Name>`
   - aff: `<Affiliation>`
-  - im: `<Image URL>`
-  - tw: `<Twitter name>`
+  - image: `<Image URL>`
   
  Example (.yml):
  ```yaml
@@ -43,7 +42,7 @@ committee:
   - role: Procrastination Chair 
     name: Homer Simpson
     aff: Springfield University
-    im: https://en.wikipedia.org/wiki/Homer_Simpson#/media/File:Homer_Simpson_2006.png 
+    image: https://en.wikipedia.org/wiki/Homer_Simpson#/media/File:Homer_Simpson_2006.png 
 ```
 
 <hr>
