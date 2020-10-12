@@ -68,6 +68,11 @@
   background: lightgray;
 }
 
+rect.hover {
+  background-color: rgba(0, 0, 0, .5);
+  border-color: goldenrod;
+}
+
 .results {
   width: 200px;
 }
@@ -77,3 +82,4 @@
     width: 90%;
   }
 }
+

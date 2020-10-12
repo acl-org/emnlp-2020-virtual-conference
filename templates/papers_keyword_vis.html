@@ -29,10 +29,10 @@
     <a class="nav-link" href="papers.html">Browse</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="papers_vis.html">Visualization</a>
+    <a class="nav-link" href="papers_vis.html">Visualization</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="papers_keyword_vis.html">Browse Keywords</a>
+    <a class="nav-link active" href="papers_keyword_vis.html">Browse Keywords</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="papers.html?showFavs=1" id="tabFavs"><i class="fas fa-star"></i> Favorites</a>
@@ -180,7 +180,7 @@
 
 <!-- Visualization -->
 <div id="container" position: relative; >
-  <div class="card"  style="margin-right: -40px; float:left ">
+  <!-- <div class="card"  style="margin-right: -40px; float:left ">
     <div class="card-header">
       <div id="outer_svg" style="display: inline-block; vertical-align: top;">
         <svg class="plot" id="scatter" style="display: block;" width="1200" height="1000"></svg>
@@ -212,26 +212,22 @@
       </div>
       
     </div>
-  </div>
-  <!-- <div class="card" style="margin-right: -40px; float:left"> -->
-    <!-- <div class="card-header"> -->
-      <!-- <div id="outer_svg2" style="display: inline-block; vertical-align: top;">
-        <svg class="plot" id="heatmap" width="1200" height="1000" style="display: block;"></svg>
-      </div> -->
-    <!-- </div> -->
-      <!-- <svg width="1400" height ="1000" id="heatmap"> -->
+  </div> -->
+  <div class="card" style="margin-right: -40px; float:left">
+    <div class="card-header">
+      <div id="outer_svg2" style="display: inline-block; vertical-align: top;">
+        <svg class="plot" id="heatmap" style="display: block;"></svg>
+      </div>
+    </div> 
     <!-- Heatmap visualization controls highlight functionality in tsne plot -->
-    
-  <!-- </svg> -->
-  <!-- </div> -->
-
 </div>
 
 
 <script src="static/js/little_helpers.js"></script>
+<script src="static/js/d3-tip.js"></script>
 
 <script src="static/js/persistor.js"></script>
-<script src="static/js/paper_vis.js"></script>
+<script src="static/js/paper_vis_keywords.js"></script>
 
 <script>
   $(document).ready(function () {
