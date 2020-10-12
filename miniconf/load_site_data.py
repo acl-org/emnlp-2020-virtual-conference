@@ -1,6 +1,7 @@
 import copy
 import csv
 import glob
+import itertools
 import json
 import os
 from collections import OrderedDict, defaultdict
@@ -272,8 +273,23 @@ def extract_list_field(v, key):
         return value.split("|")
 
 
-def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember]:
-    return [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
+def build_committee(
+    raw_committee: List[Dict[str, Any]]
+) -> Dict[str, List[CommitteeMember]]:
+    # We want to show the committee grouped by role. Grouping has to be done in python since jinja's groupby sorts
+    # groups by name, i.e. the general chair would not be on top anymore because it doesn't start with A.
+    # See https://github.com/pallets/jinja/issues/250
+
+    committee = [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
+    committee_by_role = OrderedDict()
+    for role, members in itertools.groupby(committee, lambda member: member.role):
+        member_list = list(members)
+        # add plural 's' to "chair" roles with multiple members
+        if role.lower().endswith("chair") and len(member_list) > 1:
+            role += "s"
+        committee_by_role[role] = member_list
+
+    return committee_by_role
 
 
 def build_plenary_sessions(

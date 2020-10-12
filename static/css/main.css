@@ -50,6 +50,10 @@ body {
   padding-bottom: 10px;
 }
 
+.navbar .container {
+  margin-top: 0px !important;
+}
+
 .header {
   font: "Montserrat";
 }
