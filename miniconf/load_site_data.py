@@ -631,7 +631,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
         Tutorial(
             id=item["UID"],
             title=item["title"],
-            organizers=extract_list_field(item, "organizers"),
+            organizers=item["organizers"],
             abstract=item["abstract"],
             website=item["website"],
             material=item["material"],
