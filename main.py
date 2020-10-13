@@ -92,7 +92,7 @@ def plenary_sessions():
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
-    data["calendar"] = site_data["tutorial_calendar"]
+    data["tutorials"] = site_data["tutorials"]
     return render_template("tutorials.html", **data)
 
 
