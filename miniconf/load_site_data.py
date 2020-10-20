@@ -133,8 +133,10 @@ def load_site_data(
     site_data["committee"] = build_committee(site_data["committee"]["committee"])
 
     # schedule.html
+    generate_plenary_events(site_data)
     generate_tutorial_events(site_data)
     generate_workshop_events(site_data)
+
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
 
     # plenary_sessions.html
@@ -345,6 +347,58 @@ def build_plenary_sessions(
     return plenary_sessions
 
 
+def generate_plenary_events(site_data: Dict[str, Any]):
+    """ We add sessions from the plenary for the weekly and daily view. """
+    # Add plenary sessions to calendar
+    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
+    for plenary in site_data["plenary_sessions"]:
+        uid = plenary["UID"]
+
+        for session in plenary["sessions"]:
+            start = session["start_time"]
+            end = session["end_time"]
+            event = {
+                "title": session["name"],
+                "start": start,
+                "end": end,
+                "location": f"plenary_session_{uid}.html",
+                "link": f"plenary_session_{uid}.html",
+                "category": "time",
+                "calendarId": "---",
+                "type": "Plenary Sessions",
+                "view": "day",
+            }
+            site_data["overall_calendar"].append(event)
+
+            start_day = start.date()
+            end_day = end.date()
+
+            assert start_day == end_day, "Tutorial session spans more than a day"
+            assert start < end, "Session start after session end"
+
+            sessions_by_day[start_day].append((start, end))
+
+    # Compute start and end of plenary blocks
+    for day in sessions_by_day:
+        min_start = min([t[0] for t in sessions_by_day[day]])
+        max_end = max([t[1] for t in sessions_by_day[day]])
+
+        tab_id = (day.strftime("%b %d"),)
+
+        event = {
+            "title": "Plenary Session",
+            "start": min_start,
+            "end": max_end,
+            "location": f"plenary_sessions.html#tab-{tab_id}",
+            "link": f"plenary_sessions.html#tab-{tab_id}",
+            "category": "time",
+            "calendarId": "---",
+            "type": "Plenary Sessions",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
 def generate_tutorial_events(site_data: Dict[str, Any]):
     """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
 
@@ -407,7 +461,7 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             end = session["end_time"]
 
             event = {
-                "title": f"{workshop['title']}<br/> <br/> <i>{', '.join(workshop['organizers'])}</i>",
+                "title": f"{workshop['title']}<br/> <br/> <i>{workshop['organizers']}</i>",
                 "start": start,
                 "end": end,
                 "location": f"workshop_{uid}.html",
