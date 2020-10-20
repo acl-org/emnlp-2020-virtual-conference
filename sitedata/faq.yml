@@ -56,7 +56,7 @@ FAQ:
       - Question: If I watch the pre-recorded talks of tutorials, do I still need to attend the live session? What will be different there?
         Answer: "Live sessions will include discussions with tutorial teachers and other attendes. Please visit individual tutorial website to know more."
       - Question: What will be included in the live sessions of workshops?
-        Answer: "Each workshop format is different. Please see the schedule of each workshop to know more. But generally, workshop live sessions will include Q&A with keynote speakers and authors."
+        Answer: "Each workshop format is different. Please see the schedule of each workshop to know more. But generally, workshop live sessions will include Q&A with keynotes speakers and authors."
 
   - Section: Accessibility and Safety
     QA:
@@ -68,7 +68,7 @@ FAQ:
         Answer: "We have selected technologies we rely on to run the fully virtual EMNLP carefully in order to maximize its reachability. More specifically, we have used our large pool of volunteers from all over the world to check the accessibility of all four services, including Zoom, Slideslive, RocketChat and EMNLP Web Portal. From these tests, we have confirmed that these services largely work from any country across the globe, but as we are too well aware, the service status in each country may change overnight. If you have having difficulty accessing any of these services, please report it to us at #helpdesk channel."
         # TODO: confirm info from the stress test (https://github.com/acl-org/acl-2020-virtual-conference/issues/90)
       - Question:  General Data Protection and Privacy
-        Answer: "This site records a very limited amount of data. Data as text in RocketChat is accessible only to registered conference attendees and will be removed two weeks after the conference. Zoom sessions for Paper Sessions and Virtual Socials will not be recorded (other than Q&A sessions with keynote speakers). Videos are hosted by our video partner SlidesLive. For more information on privacy practices of all the conference software, we encourage all attendees to consult the statements from [Zoom](https://zoom.us/privacy), [SlidesLive](https://slideslive.com/privacy-policy), and [RocketChat](https://rocket.chat/privacy)."
+        Answer: "This site records a very limited amount of data. Data as text in RocketChat is accessible only to registered conference attendees and will be removed two weeks after the conference. Zoom sessions for Paper Sessions and Virtual Socials will not be recorded (other than Q&A sessions with keynotes speakers). Videos are hosted by our video partner SlidesLive. For more information on privacy practices of all the conference software, we encourage all attendees to consult the statements from [Zoom](https://zoom.us/privacy), [SlidesLive](https://slideslive.com/privacy-policy), and [RocketChat](https://rocket.chat/privacy)."
 
   - Section: For Authors
     QA:

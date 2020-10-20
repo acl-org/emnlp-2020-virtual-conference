@@ -358,13 +358,12 @@ def generate_plenary_events(site_data: Dict[str, Any]):
             start = session["start_time"]
             end = session["end_time"]
             event = {
-                "title": session["name"],
+                "title": plenary["title"],
                 "start": start,
                 "end": end,
                 "location": f"plenary_session_{uid}.html",
                 "link": f"plenary_session_{uid}.html",
                 "category": "time",
-                "calendarId": "---",
                 "type": "Plenary Sessions",
                 "view": "day",
             }
@@ -392,7 +391,6 @@ def generate_plenary_events(site_data: Dict[str, Any]):
             "location": f"plenary_sessions.html#tab-{tab_id}",
             "link": f"plenary_sessions.html#tab-{tab_id}",
             "category": "time",
-            "calendarId": "---",
             "type": "Plenary Sessions",
             "view": "week",
         }
@@ -416,7 +414,6 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
                 "location": f"tutorial_{uid}.html",
                 "link": f"tutorial_{uid}.html",
                 "category": "time",
-                "calendarId": "---",
                 "type": "Tutorials",
                 "view": "day",
             }
@@ -442,7 +439,6 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
             "location": "tutorials.html",
             "link": "tutorials.html",
             "category": "time",
-            "calendarId": "---",
             "type": "Tutorials",
             "view": "week",
         }
@@ -467,7 +463,6 @@ def generate_workshop_events(site_data: Dict[str, Any]):
                 "location": f"workshop_{uid}.html",
                 "link": f"workshop_{uid}.html",
                 "category": "time",
-                "calendarId": "---",
                 "type": "Workshops",
                 "view": "day",
             }
@@ -493,7 +488,6 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             "location": "workshops.html",
             "link": "workshops.html",
             "category": "time",
-            "calendarId": "---",
             "type": "Workshops",
             "view": "week",
         }

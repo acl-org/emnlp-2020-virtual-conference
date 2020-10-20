@@ -20,7 +20,6 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 freezer = Freezer(app)
 markdown = Markdown(app)
-app.jinja_env.filters["zip"] = zip
 
 # MAIN PAGES
 
