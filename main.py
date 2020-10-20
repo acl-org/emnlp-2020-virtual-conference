@@ -86,6 +86,7 @@ def livestream():
 def plenary_sessions():
     data = _data()
     data["plenary_sessions"] = site_data["plenary_sessions"]
+    data["plenary_session_days"] = site_data["plenary_session_days"]
     return render_template("plenary_sessions.html", **data)
 
 

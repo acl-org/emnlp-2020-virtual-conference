@@ -22,58 +22,30 @@
 {% endblock %}
 
 {% block tabs %}
-{{ components.tabs([("july6", "July 6", "active"),
-                    ("july7", "July 7", ""),
-                    ("july8", "July 8", "")]) }}
+{{ components.tabs(plenary_session_days) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="tab-content" id="nav-tabContent">
 
-  <!-- Day Tab -->
+  {% for (tab_id, day, active) in plenary_session_days %}
   <div
-      class="tab-pane active show"
-      id="tab-july6"
-      role="tabpanel"
-      aria-labelledby="nav-profile-tab"
-  >
-    
-    <div id="july6">
-      <div class="plenary_sessions">
-        {{ components.plenarysessiongroup(plenary_sessions["July 6"]) }}
-      </div>
-
-    </div>
-  </div>
-
-  <div
-    class="tab-pane fade"
-    id="tab-july7"
+    class="tab-pane fade {{ 'active show' if active else '' }}"
+    id="tab-{{ tab_id }}"
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-    
-    <div id="july7">
+
+    <div id="nov16">
       <div class="plenary_sessions">
-        {{ components.plenarysessiongroup(plenary_sessions["July 7"]) }}
+        {{ components.plenarysessiongroup(plenary_sessions[day]) }}
       </div>
     </div>
   </div>
 
-  <div
-    class="tab-pane fade"
-    id="tab-july8"
-    role="tabpanel"
-    aria-labelledby="nav-profile-tab"
-  >
-    
-    <div id="july8">
-      <div class="plenary_sessions">
-        {{ components.plenarysessiongroup(plenary_sessions["July 8"]) }}
-      </div>
-    </div>
-  </div>
+  {% endfor %}
+
 </div>
 
 <script src="static/js/lazy_load.js"></script>
