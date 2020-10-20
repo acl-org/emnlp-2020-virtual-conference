@@ -145,12 +145,17 @@ def load_site_data(
             "review_meeting": site_data["review_meeting"],
         },
     )
+
     site_data["plenary_sessions"] = plenary_sessions
     by_uid["plenary_sessions"] = {
         plenary_session.id: plenary_session
         for _, plenary_sessions_on_date in plenary_sessions.items()
         for plenary_session in plenary_sessions_on_date
     }
+    site_data["plenary_session_days"] = [
+        [day.replace(" ", "").lower(), day, ""] for day in plenary_sessions
+    ]
+    site_data["plenary_session_days"][0][-1] = "active"
 
     # papers.{html,json}
     papers = build_papers(
@@ -311,18 +316,17 @@ def build_plenary_sessions(
 
     plenary_sessions: DefaultDict[str, List[PlenarySession]] = defaultdict(list)
     for item in raw_plenary_sessions:
-        plenary_sessions[item["date"]].append(
+        plenary_sessions[item["day"]].append(
             PlenarySession(
                 id=item["UID"],
                 title=item["title"],
                 image=item["image"],
-                date=item["date"],
                 day=item["day"],
                 sessions=[
                     SessionInfo(
                         session_name=session.get("name"),
-                        start_time=parse_session_time(session.get("start_time")),
-                        end_time=parse_session_time(session.get("end_time")),
+                        start_time=session.get("start_time"),
+                        end_time=session.get("end_time"),
                         zoom_link=session.get("zoom_link"),
                     )
                     for session in item.get("sessions")

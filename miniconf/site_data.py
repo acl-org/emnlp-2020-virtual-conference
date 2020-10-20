@@ -107,7 +107,6 @@ class PlenarySession:
     id: str
     title: str
     image: str
-    date: str
     day: str
     sessions: List[SessionInfo]
     presenter: Optional[str]

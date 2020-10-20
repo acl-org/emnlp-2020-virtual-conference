@@ -20,6 +20,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 freezer = Freezer(app)
 markdown = Markdown(app)
+app.jinja_env.filters["zip"] = zip
 
 # MAIN PAGES
 
@@ -86,6 +87,7 @@ def livestream():
 def plenary_sessions():
     data = _data()
     data["plenary_sessions"] = site_data["plenary_sessions"]
+    data["plenary_session_days"] = site_data["plenary_session_days"]
     return render_template("plenary_sessions.html", **data)
 
 
