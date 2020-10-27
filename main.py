@@ -187,10 +187,10 @@ def papers_json():
     return jsonify(site_data["papers"])
 
 
-@app.route("/papers_<program_name>.json")
-def papers_program_track(program_name):
+@app.route("/papers_<program>.json")
+def papers_program(program):
     paper: Paper
-    if program_name == "workshop":
+    if program == "workshop":
         papers_for_program = []
         for wsh in site_data["workshops"]:
             papers_for_program.extend(wsh.papers)
@@ -198,7 +198,7 @@ def papers_program_track(program_name):
         papers_for_program = [
             paper
             for paper in site_data["papers"]
-            if paper.content.program == program_name
+            if paper.content.program == program
         ]
     return jsonify(papers_for_program)
 
@@ -242,16 +242,14 @@ def generator():
     paper: Paper
     for paper in site_data["papers"]:
         yield "paper", {"uid": paper.id}
-    # for track in site_data["tracks"]:
-    #     yield "track_json", {"track_name": track}
     for program in site_data["programs"]:
-        yield "papers_json", {"program_name": program}
+        yield "papers_program", {"program": program}
         for track in site_data["tracks"]:
-            yield "track__json", {"track_name": track, "program_name": program}
+            yield "track_json", {"track_name": track, "program_name": program}
 
-    yield "papers_json", {"program_name": "workshop"}
+    yield "papers_program", {"program": "workshop"}
     for wsh in site_data["workshops"]:
-        yield "track__json", {"track_name": wsh.title, "program_name": "workshop"}
+        yield "track_json", {"track_name": wsh.title, "program_name": "workshop"}
     plenary_session: PlenarySession
     for _, plenary_sessions_on_date in site_data["plenary_sessions"].items():
         for plenary_session in plenary_sessions_on_date:
