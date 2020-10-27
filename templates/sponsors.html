@@ -24,25 +24,27 @@
 <div class="sponsors">
   <div class="cards row">
   {% for sponsor_level in sponsor_levels %}
-    <div class="col-12">
-    <h2>{{ sponsor_level }}</h2>
-    <hr />
-    </div>
-
-    {% for sponsor in sponsors[sponsor_level] %}
-      {% if sponsor.landingpage is defined %}
-        <a class="text-muted" href="{{sponsor.landingpage}}" target="_blank">
-      {% else %}
-        <a class="text-muted" href="sponsor_{{sponsor.UID}}.html" target="_blank">
-      {% endif %}
-    <div class="col-md-3 col-sm-6">
-      <div class="sponsorLogo">
-          <span class="sponsorHelper"></span>
-            <img class="card-img-top sponsorImg" src="static/images/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
-        </div>
+    {% if sponsors[sponsor_level] | length > 0 %}
+      <div class="col-12 pt-3">
+      <h2>{{ sponsor_level }}</h2>
+      <hr />
       </div>
-    </a>
-    {% endfor %}
+
+      {% for sponsor in sponsors[sponsor_level] %}
+        {% if sponsor.landingpage is defined %}
+          <a class="text-muted" href="{{sponsor.landingpage}}" target="_blank">
+        {% else %}
+          <a class="text-muted" href="sponsor_{{sponsor.UID}}.html" target="_blank">
+        {% endif %}
+      <div class="col-md-3 col-sm-6">
+        <div class="sponsorLogo">
+            <span class="sponsorHelper"></span>
+              <img class="card-img-top sponsorImg" src="static/images/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    {% endif %}
   {% endfor %}
   </div>
 </div>

@@ -800,7 +800,7 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
                 end = start + timedelta(hours=session["duration"])
             else:
                 end = session["end"].astimezone(pytz.timezone("GMT"))
-            day = start.strftime("%A")
+            day = start.strftime("%A, %b %d")
             start_time = start.strftime(display_time_format)
             end_time = end.strftime(display_time_format)
             time_string = "{} ({}-{} GMT)".format(day, start_time, end_time)
