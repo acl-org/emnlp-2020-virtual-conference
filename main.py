@@ -196,9 +196,7 @@ def papers_program(program):
             papers_for_program.extend(wsh.papers)
     else:
         papers_for_program = [
-            paper
-            for paper in site_data["papers"]
-            if paper.content.program == program
+            paper for paper in site_data["papers"] if paper.content.program == program
         ]
     return jsonify(papers_for_program)
 
