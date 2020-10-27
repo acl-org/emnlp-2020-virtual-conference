@@ -118,6 +118,17 @@ const setUpKeyBindings = () => {
 const persistor = new Persistor('Mini-Conf-Papers');
 const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
 
+const updateTrackList = (tracks, default_track) => {
+    default_track = default_track || "All tracks";
+
+    tracks = Array.from([default_track]).concat(tracks);
+    let optionsHtml = tracks.map(track_html);
+
+    $('#track_selector').html(optionsHtml);
+    $('#track_selector').selectpicker('refresh');
+    $('#track_selector').selectpicker('val', default_track);
+}
+
 const updateCards = (papers) => {
     const storedPapers = persistor.getAll();
     const favPapers = favPersistor.getAll();
@@ -207,8 +218,22 @@ const openQuickviewModal = (paper) => {
     $('#quickviewModal').modal('show')
 }
 
+const maybe_update = (element_ids, value, callback) => {
+    if (value && (
+        (typeof value == "string" && value !== "") ||
+        (Array.isArray(value) && value.length > 0 )))
+        element_ids.forEach(x => $(x).show());
+    else
+        element_ids.forEach(x => $(x).hide());
+
+    callback(value);
+}
+
 const updateModalData = (paper) => {
-    $('#modalTitle').text(paper.content.title);
+
+    let program = paper.content.program;
+    $('#modalTitle').html(
+        `${paper.content.title} &nbsp; <span class="badge badge-danger">${program}</span>`);
 
     let isVisited = persistor.get(paper.id) || false
     if (isVisited)
@@ -217,23 +242,56 @@ const updateModalData = (paper) => {
         $('#modalTitle').removeClass('card-title-visited');
 
     let authorsHtml = paper.content.authors.map(author_html).join(', ');
-    $('#modalAuthors').html(authorsHtml);
+    maybe_update(
+        ["#modalAuthors"], 
+        authorsHtml,
+        x => $('#modalAuthors').html(x));
 
-    $('#modalPaperType').text(paper.content.paper_type);
-    $('#modalPaperTrack').text(paper.content.track);
+    
+    maybe_update(
+        ['#modalPaperType'], 
+        paper.content.paper_type,
+        x => $('#modalPaperType').text(x));
+    maybe_update(
+        ['#modalPaperTrack'], 
+        paper.content.track,
+        x => $('#modalPaperTrack').text(x));
 
-    $('#modalAbstract').text(paper.content.abstract);
-
-    $('#modalChatUrl').attr('href', `https://${chat_server}/channel/paper-${paper.id.replace('.', '-')}`);
-    $('#modalPresUrl').attr('href', `https://slideslive.com/${paper.presentation_id}`);
-    $('#modalPaperUrl').attr('href', paper.content.pdf_url);
-    $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
+    maybe_update(
+        ['#modalAbstract', '#modalAbstractHeader'], 
+        paper.content.abstract,
+        x => $('#modalAbstract').text(x));
+    
+    if (program != "workshop"){
+        $('#modalChatUrl').attr('href', `https://${chat_server}/channel/paper-${paper.id.replace('.', '-')}`);
+        $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
+    } else {
+        $('#modalChatUrl').hide();
+        $('#modalPaperPage').hide();
+    }
+    
+    maybe_update(
+        ['#modalPresUrl'], 
+        paper.presentation_id,
+        x => $('#modalPresUrl').attr('href', `https://slideslive.com/${x}`));
+    maybe_update(
+        ['#modalPaperUrl'], 
+        paper.content.pdf_url,
+        x => $('#modalPaperUrl').attr('href', x));
+    
 
     let keywordsHtml = paper.content.keywords.map(modal_keyword).join('\n');
-    $('#modalKeywords').html(keywordsHtml);
+    maybe_update(
+        ['#modalKeywords', '#modalKeywordsHeader'], 
+        paper.content.keywords,
+        x => $('#modalKeywords').html(keywordsHtml));
 
     let sessionsHtml = paper.content.sessions.map(s => modal_session_html(s, paper)).join('\n');
     $('#modalSessions').html(sessionsHtml);
+    maybe_update(
+        ['#modalSessions', '#modalSessionsHeader'], 
+        paper.content.sessions,
+        x => $('#modalSessions').html(sessionsHtml));
 
     $('#modalPaperPage').unbind( "click" );
     $('#modalPaperPage').click(() => {
@@ -391,18 +449,29 @@ const updateSession = () => {
 /**
  * START here and load JSON.
  */
-const start = (track) => {
+const start = () => {
     // const urlFilter = getUrlParameter("filter") || 'keywords';
     const urlFilter = getUrlParameter("filter") || 'titles';
+    const program = getUrlParameter("program") || 'main'
+    let track = ""
+    if (program !== "workshop") {
+        track = getUrlParameter("track") || 'All tracks'
+    } else {
+        track = getUrlParameter("track") || 'All workshops'
+    }
 
     setQueryStringParameter("filter", urlFilter);
+    setQueryStringParameter("program", program);
     updateFilterSelectionBtn(urlFilter);
 
+    // $('.program_option').find(`input[name=program][value=${program}]`).checked = true
+    document.querySelector(`input[name=program][value=${program}]`).checked = true;
+
     var path_to_papers_json;
-    if (track === "All tracks") {
-      path_to_papers_json = "papers.json";
+    if (track === "All tracks" || track === "All workshops") {
+      path_to_papers_json = `papers_${program}.json`;
     } else {
-      path_to_papers_json = "track_"  + track + ".json";
+      path_to_papers_json = `track_${program}_${track}.json`;
     }
 
     d3.json(path_to_papers_json).then(papers => {
@@ -413,13 +482,17 @@ const start = (track) => {
         $('#progressBar').hide();
         
         calcAllKeys(allPapers, allKeys);
+        let default_track = program == "workshop"? "All workshops" : "All tracks";
+        if (path_to_papers_json.startsWith("papers_"))
+            updateTrackList(allKeys.tracks, default_track);
+        
         setTypeAhead(urlFilter,
           allKeys, filters, render);
         // updateCards(allPapers);
 
         render();
         
-    }).catch(e => console.error(e))
+    }).catch(e => console.error(e));
 };
 
 
@@ -453,6 +526,14 @@ d3.selectAll('.render_option input').on('click', function () {
     render();
 });
 
+d3.selectAll('.program_option input').on('click', function () {
+    const me = d3.select(this);
+    let program = me.property('value');
+    setQueryStringParameter("program", program);
+
+    start();
+});
+
 d3.select('.visited').on('click', () => {
     sortSelectedFirst(allPapers);
 
@@ -470,6 +551,8 @@ d3.select('.reshuffle').on('click', () => {
 /**
  * CARDS
  */
+
+const track_html = track => `<option>${track}</option>`;
 
 const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;

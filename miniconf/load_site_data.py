@@ -5,6 +5,7 @@ import itertools
 import json
 import os
 from collections import OrderedDict, defaultdict
+from dataclasses import asdict
 from datetime import date, datetime, timedelta
 from itertools import chain
 from typing import Any, DefaultDict, Dict, List, Tuple
@@ -158,6 +159,19 @@ def load_site_data(
         [day.replace(" ", "").lower(), day, ""] for day in plenary_sessions
     ]
     site_data["plenary_session_days"][0][-1] = "active"
+
+    
+    # Papers' progam to their data
+    for p in site_data["main_papers"] + site_data["cl_papers"] + site_data["tacl_papers"]:
+        p["program"] = "main"
+    
+    for p in site_data["demo_papers"]:
+        p["program"] = "demo"
+    
+    for p in site_data["srw_papers"]:
+        p["program"] = "srw"
+
+    site_data["programs"] = ["main", "demo", "findings", "srw", "workshop"]
 
     # papers.{html,json}
     papers = build_papers(
@@ -653,6 +667,7 @@ def build_papers(
                 paper_type=item.get("paper_type", ""),
                 sessions=sessions_for_paper[item["UID"]],
                 similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
+                program=item["program"]
             ),
         )
         for item in raw_papers
@@ -712,6 +727,11 @@ def build_workshops(
     workshop_schedules: Dict[str, List[Dict[str, Any]]],
 ) -> List[Workshop]:
 
+    def workshop_title(workshop_id):
+        for wsh in raw_workshops:
+            if wsh["UID"] == workshop_id:
+                return wsh["title"]
+
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
     for workshop_id, papers in raw_workshop_papers.items():
         for item in papers:
@@ -720,7 +740,21 @@ def build_workshops(
                     id=item["UID"],
                     title=item["title"],
                     speakers=item["speakers"],
-                    presentation_id=item.get("presentation_id", ""),
+                    presentation_id=item.get("presentation_id", None),
+                    content=PaperContent(
+                        title=item["title"],
+                        authors=[item["speakers"]],
+                        track=workshop_title(workshop_id),
+                        paper_type=None,
+                        abstract=None,
+                        tldr=None,
+                        keywords=[],
+                        pdf_url=None,
+                        demo_url=None,
+                        sessions=[],
+                        similar_paper_uids=[],
+                        program="workshop",
+                    )
                 )
             )
 

@@ -186,13 +186,35 @@ def chat():
 def papers_json():
     return jsonify(site_data["papers"])
 
-
-@app.route("/track_<track_name>.json")
-def track_json(track_name):
+@app.route("/papers_<program_name>.json")
+def papers_program_track(program_name):
     paper: Paper
-    papers_for_track = [
-        paper for paper in site_data["papers"] if paper.content.track == track_name
-    ]
+    if program_name == "workshop":
+        papers_for_program = []
+        for wsh in site_data["workshops"]:
+            papers_for_program.extend(wsh.papers)
+    else:
+        papers_for_program = [
+            paper for paper in site_data["papers"] if paper.content.program == program_name
+        ]
+    return jsonify(papers_for_program)
+
+
+@app.route("/track_<program_name>_<track_name>.json")
+def track_json(program_name, track_name):
+    paper: Paper
+    if program_name == "workshop":
+        papers_for_track = None
+        for wsh in site_data["workshops"]:
+            if wsh.title == track_name:
+                papers_for_track = wsh.papers
+                break
+    else:
+        papers_for_track = [
+            paper 
+            for paper in site_data["papers"] 
+            if paper.content.track == track_name and paper.content.program == program_name
+        ]
     return jsonify(papers_for_track)
 
 
@@ -216,8 +238,16 @@ def generator():
     paper: Paper
     for paper in site_data["papers"]:
         yield "paper", {"uid": paper.id}
-    for track in site_data["tracks"]:
-        yield "track_json", {"track_name": track}
+    # for track in site_data["tracks"]:
+    #     yield "track_json", {"track_name": track}
+    for program in site_data["programs"]:
+        yield "papers_json", {"program_name": program}
+        for track in site_data["tracks"]:
+            yield "track__json", {"track_name": track, "program_name":program}
+
+    yield "papers_json", {"program_name": "workshop"}
+    for wsh in site_data["workshops"]:
+        yield "track__json", {"track_name": wsh.title, "program_name":"workshop"}
     plenary_session: PlenarySession
     for _, plenary_sessions_on_date in site_data["plenary_sessions"].items():
         for plenary_session in plenary_sessions_on_date:
