@@ -5,7 +5,6 @@ import itertools
 import json
 import os
 from collections import OrderedDict, defaultdict
-from dataclasses import asdict
 from datetime import date, datetime, timedelta
 from itertools import chain
 from typing import Any, DefaultDict, Dict, List, Tuple
@@ -731,6 +730,7 @@ def build_workshops(
         for wsh in raw_workshops:
             if wsh["UID"] == workshop_id:
                 return wsh["title"]
+        return ""
 
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
     for workshop_id, papers in raw_workshop_papers.items():
