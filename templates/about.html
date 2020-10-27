@@ -8,7 +8,7 @@
 
 {% block tabs %}
 {{ components.tabs([("faq", "Frequently Asked Questions", "active"),
-                    ("code-of-conduct", "EMNLP Code of Conduct", "")]) }}
+                    ("code-of-conduct", "Code of Conduct", "")]) }}
 {% endblock %}
 
 {% block content %}
@@ -33,8 +33,23 @@
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-    {{ components.subsection("EMNLP Code of Conduct") }}
+
+
     <div class="row p-3">
+      <div class="col-12 bd-content">
+      By registering, participants acknowledge and agree to follow the
+      <a href="https://www.aclweb.org/portal/content/acl-code-ethics">ACL's code of ethics</a>, the
+      <a href="https://www.aclweb.org/adminwiki/index.php?title=Anti-Harassment_Policy">ACL's anti-harassment policy</a>
+      and the ACL code of conduct below.
+      Violations against those should be reported to the
+      <a href="https://www.aclweb.org/adminwiki/index.php?title=Professional_Conduct_Committee">Professional Conduct Committee</a>:
+      EMAIL and/or the <a href="https://2020.emnlp.org/organizers/ethics-committee">EMNLP Ethics Committee</a> : EMAIL.
+      </div>
+    </div>
+
+    <div class="row p-3">
+          {{ components.subsection("ACL Code of Conduct") }}
+
       <div class="col-12 bd-content">
         <div>{{CodeOfConduct|markdown}}</div>
       </div>

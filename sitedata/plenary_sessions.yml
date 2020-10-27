@@ -1,207 +1,117 @@
-- UID: "opening_remarks"
-  title: "Opening Remarks"
+- UID: opening_remarks
+  title: Opening Remarks
+  day: Nov 16
   image: static/images/emnlp2020/acl-logo.png
-  date: July 6
-  day: Monday
   sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-06_14:00:00
-      end_time: 2020-07-06_14:15:00
-  presenter: Dan Jurafsky, Joyce Chai, Natalie Schluter, Joel Tetreault
-  presentation_id: 38929463
-- UID: "presidential_address"
-  title: "Presidential Address"
+  - name: P-Live Presentation
+    start_time: 2020-11-16 10:45:00-04:00
+    end_time: 2020-11-16 11:00:00-04:00
+- UID: keynote_by_claire_cardie
+  title: 'Keynote: Information Extraction Through the Years: How Did We Get Here?'
+  day: Nov 16
+  image: static/images/keynotes/claire_cardie.jpg
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-16 11:00:00-04:00
+    end_time: 2020-11-16 12:00:00-04:00
+  abstract: In this talk, I'll examine the state of the NLP subfield of information
+    extraction from its inception almost 30 years ago to its current realization in
+    neural network models. Which aspects of the original formulation of the task are
+    more or less solved? In what ways are current state-of-the-art methods still falling
+    short? What's up next for information extraction?
+  bio: "[Claire Cardie](https://www.cs.cornell.edu/home/cardie/) is the John C. Ford\
+    \ Professor of Engineering in the Departments of Computer Science and Information\
+    \ Science at Cornell University. She has worked since the early 1990's on application\
+    \ of machine learning methods to problems in Natural Language Processing --- on\
+    \ topics ranging from information extraction, noun phrase coreference resolution,\
+    \ text summarization and question answering to the automatic analysis of opinions,\
+    \ argumentation, and deception in text. She has served on the executive committees\
+    \ of the ACL and AAAI and twice as secretary of NAACL. She has been Program Chair\
+    \ for ACL/COLING, EMNLP and CoNLL, and General Chair for ACL in 2018. Cardie was\
+    \ named a Fellow of the ACL in 2015 and a Fellow of the Association for Computing\
+    \ Machinery (ACM) in 2019. At Cornell, she led the development of the university's\
+    \ academic programs in Information Science and was the founding Chair of its Information\
+    \ Science Department."
+  presenter: Claire Cardie
+- UID: industry_panel
+  title: Industry Panel
+  day: Nov 16
   image: static/images/emnlp2020/acl-logo.png
-  date: July 6
-  day: Monday
   sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-06_14:15:00
-      end_time: 2020-07-06_14:30:00
-  presenter: "Hinrich Schütze"
-  presentation_id: 38929465
-- UID: "keynote_kathy_mckeown"
-  title: "Rewriting the Past: Assessing the Field through the Lens of Language Generation"
-  image: https://acl2020.org/assets/images/keynotes/kathleen.jpg
-  date: July 6
-  day: Monday
-  sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-06_14:30:00
-      end_time: 2020-07-06_15:15:00
-    - name: P-Live QA
-      start_time: 2020-07-06_15:15:00
-      end_time: 2020-07-06_15:45:00
-  presenter: Prof. Kathleen R. McKeown
-  institution: Columbia University, New York
-  abstract: |
-    In recent years, we have seen tremendous advances in the field of natural language processing through the
-    use of neural networks. In fact, they have done so well, that they have almost succeeded in rewriting the field as we knew it.
-    In this talk, I examine the state of the field and its link to the past, with a focus on language generation of many forms.
-    I ask where neural networks have been particularly successful, where approaches from the past might still be valuable, and where
-    we need to turn in the future if we are to go beyond our current success. To answer these questions, this talk will feature clips
-    from a series of interviews I carried out with experts in the field.
-  bio: |
-    Kathleen R. McKeown is the Henry and Gertrude Rothschild Professor of Computer Science at Columbia University and
-    the Founding Director of the Data Science Institute, serving as Director from 2012 to 2017. She is also an Amazon Scholar.
-    In earlier years, she served as Department Chair (1998-2003) and as Vice Dean for Research for the School of Engineering and
-    Applied Science (2010-2012). A leading scholar and researcher in the field of natural language processing,
-    McKeown focuses her research on the use of data for societal problems; her interests include text summarization, question answering,
-    natural language generation, social media analysis and multilingual applications. She has received numerous honors and awards,
-    including American Academy of Arts and Science elected member, American Association of Artificial Intelligence Fellow,
-    a Founding Fellow of the Association for Computational Linguistics and an Association for Computing Machinery Fellow.
-    Early on she received the National Science Foundation Presidential Young Investigator Award, and a National Science Foundation
-    Faculty Award for Women. In 2010, she won both the Columbia Great Teacher Award—an honor bestowed by the students—and the Anita
-    Borg Woman of Vision Award for Innovation.
-  presentation_id: 38929460
-  rocketchat_channel: keynote-kathy-mckeown
-- UID: "business_meeting"
-  title: "Business Meeting"
+  - name: P-Live Presentation
+    start_time: 2020-11-16 19:00:00-04:00
+    end_time: 2020-11-16 20:00:00-04:00
+- UID: ethics_panel_discussion
+  title: Ethics Panel Discussion
+  day: Nov 17
   image: static/images/emnlp2020/acl-logo.png
-  date: July 6
-  day: Monday
-  presenter: "Host: Natalie Schluter, Hinrich Schütze, Shiqi Zhao"
-  presentation_id: 38931397
-  rocketchat_channel: business-meeting
   sessions:
-    - name: P-Live QA
-      start_time: 2020-07-06_15:45:00
-      end_time: 2020-07-06_16:15:00
-- UID: "lifetime_achievement_award"
-  title: "Lifetime Achievement Award"
+  - name: P-Live Presentation
+    start_time: 2020-11-17 11:00:00-04:00
+    end_time: 2020-11-17 12:00:00-04:00
+- UID: keynote_by_rich_caruana
+  title: "Keynote: Friends Don\u2019t Let Friends Deploy Black-Box Models: The Importance\
+    \ of Intelligibility in Machine Learning"
+  day: Nov 17
+  image: static/images/keynotes/rich_caruana.jpg
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-17 19:00:00-04:00
+    end_time: 2020-11-17 20:00:00-04:00
+  abstract: "In machine learning sometimes tradeoffs must be made between accuracy\
+    \ and intelligibility: the most accurate models usually are not very intelligible,\
+    \ and the most intelligible models usually are less accurate. This can limit the\
+    \ accuracy of models that can safely be deployed in mission-critical applications\
+    \ where being able to understand, validate, edit, and ultimately trust a model\
+    \ is important. We have been working on a learning method to escape this tradeoff\
+    \ that is as accurate as full complexity models such as boosted trees and random\
+    \ forests, but more intelligible than linear models. This makes it easy to understand\
+    \ what the model has learned and to edit the model when it learns inappropriate\
+    \ things. Making it possible for humans to understand and repair a model is critical\
+    \ because most training data has unexpected problems. I\u2019ll present several\
+    \ case studies where these high-accuracy GAMs discover surprising patterns in\
+    \ the data that would have made deploying a black-box model inappropriate. I\u2019\
+    ll also show how these models can be used to detect and correct bias. And if there\u2019\
+    s time, I\u2019ll briefly discuss using intelligible GAM models to predict COVID-19\
+    \ mortality."
+  bio: "[Rich Caruana](https://www.microsoft.com/en-us/research/people/rcaruana/)\
+    \ is a Senior Principal Researcher at Microsoft. His focus is on intelligible/transparent\
+    \ modeling, machine learning for medical decision making, deep learning, and computational\
+    \ ecology. Before joining Microsoft, Rich was on the faculty in Computer Science\
+    \ at Cornell, at UCLA's Medical School, and at CMU's Center for Learning and Discovery.\
+    \ Rich's Ph.D. is from CMU. His work on Multitask Learning helped create interest\
+    \ in a subfield of machine learning called Transfer Learning.  Rich received an\
+    \ NSF CAREER Award in 2004 (for Meta Clustering), best paper awards in 2005 (with\
+    \ Alex Niculescu-Mizil), 2007 (with Daria Sorokina), and 2014 (with Todd Kulesza,\
+    \ Saleema Amershi, Danyel Fisher, and Denis Charles), and co-chaired KDD in 2007\
+    \ with Xindong Wu. \""
+  presenter: Rich Caruana
+- UID: keynote_by_janet_pierrehumbert
+  title: 'Keynote: Linguistic Behaviour and the Realistic Testing of NLP Systems.'
+  day: Nov 18
+  image: static/images/keynotes/janet_pierrehumbert.jpg
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-18 11:00:00-04:00
+    end_time: 2020-11-18 12:00:00-04:00
+  bio: |-
+    [Janet Pierrehumbert](http://www.phon.ox.ac.uk/jpierrehumbert/) is the Professor of Language Modelling in the Department of Engineering Science at the University of Oxford. She received her BA in Linguistics and Mathematics at Harvard in 1975, and her Ph.D in Linguistics from MIT in 1980. Much of her Ph.D dissertation research on English prosody and intonation was carried out at AT&T Bell Laboratories, where she was also a Member of Technical Staff from 1982 to 1989. After she moved to Northwestern University in1989, her research program used a wide variety of experimental and computational methods to explore how lexical systems emerge in speech communities. She showed that the mental representations of words are at once abstract and phonetically detailed, and that social factors interact with cognitive factors as lexical patterns are learned, remembered, and generalized. Pierrehumbert joined the faculty at the University of Oxford in 2015 as a member of the interdisciplinary Oxford e-Research Centre. Her current research uses machine-learning methods to model the dynamics of on-line language. Her latest project, funded by the UK EPSRC, seeks to develop new NLP methods to characterize exaggeration, cohesion, and fragmentation in on-line forums.
+
+    Pierrehumbert is a Fellow of the Linguistic Society of America, the Cognitive Science Society, and the American Academy of Arts and Sciences. She was elected to the National Academy of Sciences in 2019. She is the recipient of the 2020 Medal for Scientific Achievement from the International Speech Communication Association.
+  presenter: Janet Pierrehumbert
+- UID: business_meeting
+  title: Business Meeting
+  day: Nov 18
   image: static/images/emnlp2020/acl-logo.png
-  date: July 7
-  day: Tuesday
-  time: 14:00-14:30 GMT / 07:00-07:30 PDT
-  presenter: "Presenter: Hinrich Schütze"
-  presentation_id: 38929472
   sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-07_14:00:00
-      end_time: 2020-07-07_14:30:00
-    - name: P-Live QA
-      start_time: 2020-07-07_14:30:00
-      end_time: 2020-07-07_14:45:00
-- UID: "distinguished_service_award"
-  title: "Distinguished Service Award"
+  - name: P-Live Presentation
+    start_time: 2020-11-18 21:00:00-04:00
+    end_time: 2020-11-18 21:45:00-04:00
+- UID: best_paper_awards_and_closing
+  title: Best Paper Awards and Closing
+  day: Nov 18
   image: static/images/emnlp2020/acl-logo.png
-  date: July 7
-  day: Tuesday
   sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-07_14:45:00
-      end_time: 2020-07-07_14:55:00
-    - name: P-Live QA
-      start_time: 2020-07-06_14:55:00
-      end_time: 2020-07-06_15:00:00
-  presenter: "Presenter: Hinrich Schütze"
-  presentation_id: 38929474
-- UID: "test_of_time_awards"
-  title: "Test of Time Awards"
-  image: static/images/emnlp2020/acl-logo.png
-  date: July 7
-  day: Tuesday
-  sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-07_15:00:00
-      end_time: 2020-07-07_15:10:00
-    - name: P-Live QA
-      start_time: 2020-07-07_15:10:00
-      end_time: 2020-07-07_15:15:00
-  presenter: "Presenter: Barbara Di Eugenio"
-  # surprise
-  presentation_id: 38929462
-- UID: "review_meeting"
-  title: "Review Meeting"
-  image: static/images/emnlp2020/acl-logo.png
-  date: July 7
-  day: Tuesday
-  sessions:
-    - name: P-Live QA
-      start_time: 2020-07-07_15:15:00
-      end_time: 2020-07-07_16:00:00
-  presenter: "Host: Hinrich Schütze, Amanda Stent"
-  abstract: |
-    * Short-term proposal: [link](https://www.aclweb.org/adminwiki/index.php?title=Short-Term_Reform_Proposals_for_EMNLP_Reviewing)
-    * Long-term proposal: [link](https://www.aclweb.org/adminwiki/index.php?title=EMNLP_Rolling_Review_Proposal)
-  presentation_id: 38931398
-  rocketchat_channel: review-meeting
-- UID: "keynote_josh_tenenbaum"
-  title: Cognitive and computational building blocks for more human-like language in machines
-  image: https://acl2020.org/assets/images/keynotes/josh.jpg
-  date: July 8
-  day: Wednesday
-  sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-08_14:00:00
-      end_time: 2020-07-08_14:45:00
-    - name: P-Live QA
-      start_time: 2020-07-08_14:45:00
-      end_time: 2020-07-08_15:15:00
-  presenter: Prof. Josh Tenenbaum
-  institution: Massachusetts Institute of Technology
-  abstract: |
-    Humans learn language building on more basic conceptual and computational resources that we can already see
-    precursors of in infancy.  These include capacities for causal reasoning, symbolic rule formation, rapid
-    abstraction, and commonsense representations of events in terms of objects, agents and their interactions.
-    I will talk about steps towards capturing these abilities in engineering terms, using tools from hierarchical
-    Bayesian models, probabilistic programs, program induction, and neuro-symbolic architectures.
-    I will show examples of how these tools have been applied in both cognitive science and AI contexts, and point
-    to ways they might be useful in building more human-like language, learning and reasoning in machines.
-  bio: |
-    Josh Tenenbaum is Professor of Computational Cognitive Science at MIT in the Department of Brain and Cognitive Sciences, 
-    the Computer Science and Artificial Intelligence Laboratory (CSAIL) and the Center for Brains, Minds and Machines (CBMM). 
-    He received his PhD from MIT in 1999, and taught at Stanford from 1999 to 2002. His long-term goal is to reverse-engineer
-    intelligence in the human mind and brain, and use these insights to engineer more human-like machine intelligence.  His 
-    current research focuses on the development of common sense in children and machines, the neural basis of common sense, 
-    and models of learning as Bayesian program synthesis. His work has been published in Science, Nature, PNAS, and many 
-    other leading journals, and recognized with awards at conferences in Cognitive Science, Computer Vision, Neural Information 
-    Processing Systems, Reinforcement Learning and Decision Making, and Robotics. He is the recipient of the Distinguished 
-    Scientific Award for Early Career Contributions in Psychology from the American Psychological Association (2008), the 
-    Troland Research Award from the National Academy of Sciences (2011), the Howard Crosby Warren Medal from the Society of 
-    Experimental Psychologists (2016), the R&D Magazine Innovator of the Year award (2018), and a MacArthur Fellowship (2019). 
-    He is a fellow of the Cognitive Science Society, the Society for Experimental Psychologists, and a member of the American 
-    Academy of Arts and Sciences. 
-  presentation_id: 38929461
-  rocketchat_channel: keynote-josh-tenenbaum
-- UID: "best_paper_award"
-  title: "Best Paper Award Ceremony"
-  image: static/images/emnlp2020/acl-logo.png
-  date: July 8
-  day: Wednesday
-  sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-08_15:15:00
-      end_time: 2020-07-08_15:25:00
-  presenter: "Presenters: Joyce Chai, Natalie Schluter, Joel Tetreault"
-  # surprise
-  presentation_id: 38929475
-- UID: "future_conferences"
-  title: "Future Conferences"
-  image: static/images/emnlp2020/acl-logo.png
-  date: July 8
-  day: Wednesday
-  sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-08_15:25:00
-      end_time: 2020-07-08_15:45:00
-  abstract: |
-    * EMNLP 2020: Bonnie Webber, Trevor Cohn, Yulan He, Yang Liu
-    * AEMNLP 2020: Kam-Fai Wong, Kevin Knight, Hua Wu
-    * COLING 2020: Donia Scott, Nuria Bel, Chengqing Zong
-    * EEMNLP 2021: Paola Merlo, Jorg Tiedemann, Reut Tsarfaty
-    * NAEMNLP 2021: Kristina Toutanova, Luke Zettlemoyer, Anna Rumshisky, Saif Mohammad
-    * EMNLP 2021: Chengqing Zong, Thepchai Supnithi
-    * EMNLP 2023 Call for Bids: Tim Baldwin
-  presentation_id: 38931399
-- UID: "closing_remarks"
-  title: "Closing Remarks"
-  image: static/images/emnlp2020/acl-logo.png
-  date: July 8
-  day: Wednesday
-  sessions:
-    - name: P-Live Presentation
-      start_time: 2020-07-08_15:45:00
-      end_time: 2020-07-08_15:50:00
-  presenter: Dan Jurafsky
-  presentation_id: 38929464
+  - name: P-Live Presentation
+    start_time: 2020-11-18 21:50:00-04:00
+    end_time: 2020-11-18 22:20:00-04:00

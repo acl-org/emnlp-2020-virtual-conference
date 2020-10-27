@@ -93,13 +93,14 @@ def livestream():
 def plenary_sessions():
     data = _data()
     data["plenary_sessions"] = site_data["plenary_sessions"]
+    data["plenary_session_days"] = site_data["plenary_session_days"]
     return render_template("plenary_sessions.html", **data)
 
 
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
-    data["calendar"] = site_data["tutorial_calendar"]
+    data["tutorials"] = site_data["tutorials"]
     return render_template("tutorials.html", **data)
 
 
