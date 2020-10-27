@@ -15,7 +15,6 @@ const summaryBy = 'keywords' // or: "abstract"
 
 let currentTippy = null;
 let brush = null;
-
 const sizes = {
     margins: {l: 20, b: 20, r: 20, t: 20}
 }
@@ -27,11 +26,12 @@ const sel_papers = d3.select('#sel_papers');
 const persistor = new Persistor('Mini-Conf-Papers');
 
 let trackhighlight = [];
-
+let color;
+let opacity;
 const plot_size = () => {
     const cont = document.getElementById('container');
-    const wh = Math.max(window.innerHeight , 300)
-    let ww = Math.max(cont.offsetWidth , 300)
+    const wh = Math.max(window.innerHeight - 280, 300)
+    let ww = Math.max(cont.offsetWidth - 210, 300)
     if (cont.offsetWidth < 768) ww = cont.offsetWidth - 10.0;
 
     if ((wh / ww > 1.3)) {
@@ -42,127 +42,18 @@ const plot_size = () => {
     }
 }
 
-const xS = d3.scaleLinear().range([0, 600]);
-const yS = d3.scaleLinear().range([0, 600]);
+const xS = d3.scaleLinear().range([0, 800]);
+const yS = d3.scaleLinear().range([0, 800]);
 const plot = d3.select('.plot');
 const l_bg = plot.append('g');
 const l_main = plot.append('g');
 const l_fg = plot.append('g');
 
-// const brush_start = () => {
-//     // console.log(currentTippy, "--- currentTippy");
-//     currentTippy.forEach(t => t.disable());
-//     brushed();
-// }
-// const brushed = () => {
-//     let [[x0, y0], [x1, y1]] = d3.event.selection;
-//     x0 = Math.round(x0), y0 = Math.round(y0);
-//     x1 = Math.round(x1), y1 = Math.round(y1);
-//     // console.log(x0, x1, y1, y0, "--- x0,x1,y1,y0");
-
-//     l_main.selectAll('.dot')
-//       .classed('rect_selected', function () {
-//           const me = d3.select(this);
-//           return x0 <= me.attr("cx") && x1 >= me.attr("cx") && // Check X coordinate
-//             y0 <= me.attr("cy") && y1 >= me.attr("cy")  // And Y coordinate
-//       })
-
-//     // extent[0][0] <= myCircle.attr("cx") && extent[1][0] >= myCircle.attr("cx") && // Check X coordinate
-//     //          extent[0][1] <= myCircle.attr("cy") && extent[1][1] >= myCircle.attr("cy")  // And Y coordinate
-
-// }
-
-// function brush_ended() {
-//     currentTippy.forEach(t => t.enable());
-
-//     const all_sel = []
-//     l_main.selectAll('.dot.rect_selected').each(d => all_sel.push(d));
-
-//     const words_abstract = new Map();
-//     let parts = null;
-//     let count = 0;
-//     all_sel.forEach(paper => {
-//         if (summaryBy === 'keywords') {
-//             paper.content.keywords.forEach(kw => {
-//                 count = words_abstract.get(kw) | 0;
-//                 count += 1;
-//                 words_abstract.set(kw, count);
-//             })
-//         } else {
-//             parts = paper.content.abstract.split(/[.]?\s+/)
-//             parts.forEach(p => {
-//                 if (p.length < 3) return;
-//                 p = p.toLowerCase();
-//                 count = words_abstract.get(p) | 0;
-//                 count += 1;
-//                 words_abstract.set(p, count);
-//             })
-//         }
-
-
-//     })
-    // stopwords.forEach(sw => words_abstract.delete(sw));
-    // const abstract_words = [...words_abstract.entries()]
-    //   .sort((a, b) => -a[1] + b[1])
-    //   .slice(0, 15);
-
-    // if (abstract_words.length > 0) {
-    //     explain_text_plot.style('display', 'none');
-    //     const f_scale = d3.scaleLinear().domain([1, abstract_words[0][1]])
-    //       .range([10, 16])
-    //     summary_selection.selectAll('.topWords').data(abstract_words)
-    //       .join('div')
-    //       .attr('class', 'topWords')
-    //       .style('font-size', d => f_scale(d[1]) + 'px')
-    //       .text(d => d[0])
-
-
-    // } else {
-    //     summary_selection.selectAll('.topWords').remove();
-    //     explain_text_plot.style('display', null);
-    // }
-
-    // sel_papers.selectAll('.sel_paper').data(all_sel)
-    //   .join('div')
-    //   .attr('class', 'sel_paper')
-    //   .html(
-    //     d => `<div class="p_title">${d.content.title}</div> <div class="p_authors">${d.content.authors.join(
-    //       ', ')}</div>`)
-    //   .on('click',
-    //     d => window.open(`paper_${d.id}.html`, '_blank'))
-    //   .on('mouseenter', d => {
-
-    //       l_main.selectAll('.dot').filter(dd => dd.id === d.id)
-    //         .classed('highlight_sel', true)
-    //         .each(function () {
-    //             if (this._tippy)
-    //                 this._tippy.show();
-    //         })
-    //   })
-    //   .on('mouseleave', d => {
-    //       l_main.selectAll('.dot').filter(dd => dd.id === d.id)
-    //         .classed('highlight_sel', false)
-    //         .each(function () {
-    //             if (this._tippy)
-    //                 this._tippy.hide();
-    //         })
-    //   })
-
-
-// }
-
-
 const updateVis = () => {
 
     const storedPapers = persistor.getAll();
-    // all_papers.forEach(
-    //   openreview => {
-    //       openreview.content.read = storedPapers[openreview.id] || false
-    //       openreview.content.tracker = trackhighlight.includes(openreview.id) || false
-    //   })
 
     const is_filtered = filters.authors || filters.keywords || filters.titles;
-
     const [pW, pH] = plot_size();
 
     plot.attr('width', pW).attr('height', pH);
@@ -171,51 +62,8 @@ const updateVis = () => {
     xS.range([sizes.margins.l, pW - sizes.margins.r]);
     yS.range([sizes.margins.t, pH - sizes.margins.b]);
 
-    // brush.extent([[0, 0], [pW, pH]]);
-    // l_bg.call(brush);
-
-    // all_pos = all_papers.map(d => {
-    //     const r2 = (d.is_selected ? 8 : 4);
-    //     const [x, y] = [xS(d.pos[0]), yS(d.pos[1])];
-    //     return new cola.Rectangle(x - r2, x + r2, y - r2, y + r2);
-    // });
-
-    // cola.removeOverlaps(all_pos);
-    // console.log(all_papers);
     treeMap(all_papers);
 
-
-    // l_main.selectAll('.dot').data(all_papers, d => d.id)
-    //   .join('circle')
-    //   .attr('class', 'dot')
-    //   .attr('r', d => d.is_selected ? 8 : 6)
-    //   .attr('cx', (d, i) => all_pos[i].cx())
-    //   .attr('cy', (d, i) => all_pos[i].cy())
-    //   .classed('read', d => d.content.read)
-    //   .classed('filtered', d => d.content.tracker)
-    //   .classed('highlight', d => d.is_selected)
-    //   .classed('non-highlight', d => !d.is_selected && is_filtered)
-    //   .on('click',
-    //     function(d) {
-    //         window.open(`paper_${d.id}.html`, '_blank');
-    //         persistor.set(d.id, true);
-    //         d3.select(this).classed('read', true);
-    //     });
-
-    // if (!currentTippy) {
-    //     currentTippy = tippy('.dot', {
-    //         content(reference) {
-    //             return d3.select(reference).datum().content.title;
-    //             // return tooltip_template(d3.select(reference).datum());
-    //         },
-    //         onShow(instance) {
-    //             const d = d3.select(instance.reference).datum()
-    //             instance.setContent(tooltip_template(d))
-    //         },
-    //         allowHTML: true
-    //     });
-
-    // }
 
 }
 
@@ -247,7 +95,6 @@ const render = () => {
 }
 
 
-//language=HTML
 const tooltip_template = (d) => `
     <div>
         <div class="tt-title">${d.data.name}</div>
@@ -266,7 +113,6 @@ const start = (track) => {
         trackhighlight =[];
     }
     Promise.all(loadfiles).then(([papers, proj, trackPapers]) => {
-        // all_proj = proj;
 
         const projMap = new Map()
         proj.forEach(p => projMap.set(p.id, p.pos))
@@ -286,19 +132,10 @@ const start = (track) => {
         yS.domain(d3.extent(proj.map(p => p.pos[1])));
         
         if (trackPapers) trackhighlight = trackPapers.map(d => d.id);
-        // console.log(trackHighlight);
-        // console.log(all_papers);
+
         updateVis();
     })
       .catch(e => console.error(e))
-
-
-    // brush = d3.brush()
-    //   .on("start", brush_start)
-    //   .on("brush", brushed)
-    //   .on("end", brush_ended)
-    // ;
-
 
 }
 
@@ -326,8 +163,6 @@ d3.selectAll('.filter_option input').on('click', function () {
 
 
 function treeMap(data) {
-
-    // preprocess data by computing # papers per track.
         let trackMappings = {};
         data.forEach(e => {
             if (!(e.content.track in trackMappings)) {
@@ -336,39 +171,52 @@ function treeMap(data) {
             for (let keyword of e.content.keywords) {
                 let lowerCasedKeyword = keyword.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").replace(/\s{2,}/g," ");
                 if (lowerCasedKeyword in trackMappings[e.content.track]) {
-                    trackMappings[e.content.track][lowerCasedKeyword]+=1;
+                    trackMappings[e.content.track][lowerCasedKeyword].push({title: e.content.title, authors: e.content.authors, id: e.id, track: e.content.track});
                 } else {
-                    trackMappings[e.content.track][lowerCasedKeyword]=1;
+                    trackMappings[e.content.track][lowerCasedKeyword]=[{title: e.content.title, authors: e.content.authors, id: e.id, track: e.content.track}];
                 }
             }
-            
-                // trackMappings[e.content.track]
-            
-            // trackMappings[e.content.track] = 1;
+
         });
-        console.log(trackMappings);
+        // now filter out all track keys with only 1 value
+        let filteredTrackMappings = {};
+        Object.entries(trackMappings).forEach(([track, keywords]) => {
+            // TODO: Do we add others?
+            // let d = Object.entries(keywords);
+            // d.forEach(([k,v]) => {
+            //     if (v.length == 1) {
+            //         if ("other" in keywords) {
+            //             keywords["other"].push(v[0]);
+            //         } else {
+            //             keywords["other"] = v;
+            //         }
+            //     }
+            // });
+            filteredTrackMappings[track] = Object.fromEntries(Object.entries(keywords).filter(([_,v]) => v.length>1));
+        });
         function parseTracksToTree(trackMappings) {
             let hierarchalTreeData = {"children": []};
             for (let TRACK_KEY of Object.keys(trackMappings)) {
                 let children = [];
                 for (let KEYWORD_KEY of Object.keys(trackMappings[TRACK_KEY])) {
-                    children.push({"name": KEYWORD_KEY, "group": KEYWORD_KEY, "value": trackMappings[TRACK_KEY][KEYWORD_KEY], "colname": "placeholder"});
+                    children.push({"name": KEYWORD_KEY, "group": KEYWORD_KEY, "papers": trackMappings[TRACK_KEY][KEYWORD_KEY], "value": trackMappings[TRACK_KEY][KEYWORD_KEY].length, "colname": "placeholder"});
                 }
 
                 hierarchalTreeData["children"].push({"name": TRACK_KEY, "children": children, "colname": "placeholder2"});
             }
             return hierarchalTreeData;
         }
-        let treeData = parseTracksToTree(trackMappings);
-        let root = d3.hierarchy(treeData).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
-        d3.treemap().size([1050,1050]).paddingTop(24).paddingRight(1).paddingInner(2)(root);
-        var color = d3.scaleOrdinal().domain(Object.keys(trackMappings)).range(d3.schemeSet3)
-        var opacity = d3.scaleLinear().domain([0, 10]).range([.2, 1])
+        let treeData = parseTracksToTree(filteredTrackMappings);
+        let root = d3.hierarchy(treeData).sum(d => d.value);
+
+
+        d3.treemap().size([650,650]).paddingTop(24).paddingRight(1).paddingInner(2)(root);
+        color = d3.scaleOrdinal().domain(Object.keys(trackMappings)).range(d3.schemeSet3)
+        opacity = d3.scaleLinear().domain([0, 10]).range([.2, 1])
         // and to add the text labels
-        let svg = d3.select("#heatmap");
         let is_clicked = false;
 
-          // use this information to add rectangles:
+        let svg = d3.select("#heatmap");
         svg
         .selectAll("rect")
         .data(root.leaves())
@@ -389,53 +237,29 @@ function treeMap(data) {
                         .classed('highlight_sel', true)
                 }
 
-                // update highlights
             }).on("mouseout", function(d) {
                 if (!is_clicked) {
-                    d3.selectAll(`.keyword-${d.data.name.replace(' ', '')}`).style("fill", function(d){ return color(d.parent.data.name)}).style("opacity", function(d){ return opacity(d.data.value)})
+                    d3.selectAll(`.keyword-${d.data.name.replace(' ', '')}`).style("fill", d => color(d.parent.data.name)).style("opacity", d => opacity(d.data.value))
                     l_main.selectAll('.dot')
                         .classed('highlight_sel', false);
-    
                 }
 
             }).on("click", function(d) {
-
                 if (!is_clicked) {
-                    d3.selectAll(`.keyword-${d.data.name.replace(' ', '')}`).style("fill", "black").style("opacity", 1); //classed("hover", true);
+                    d3.selectAll(`.keyword-${d.data.name.replace(' ', '')}`).style("fill", d=> color(d.parent.data.name)).style("opacity", 1); //classed("hover", true);
                     l_main.selectAll('.dot').filter(dd => {  return  dd.content.keywords.includes(d.data.name) })
-                        .classed('highlight_sel', true)
+                        .classed('highlight_sel', true);
+                    triggerListView(d.data.name, root.leaves());
                 } else {
                     l_main.selectAll('.dot')
                     .classed('highlight_sel', false);
-                    d3.selectAll(`.keyword-${d.data.name.replace(' ', '')}`).style("fill", function(d){ return color(d.parent.data.name)}).style("opacity", function(d){ return opacity(d.data.value)})
+                    d3.selectAll(`.keyword-${d.data.name.replace(' ', '')}`).style("fill", d => color(d.parent.data.name)).style("opacity", d => opacity(d.data.value))
+                    
                 }
                 is_clicked = !is_clicked;
             })
 
-
-        // svg
-        //     .selectAll("text")
-        //     .data(root.leaves())
-        //     .enter()
-        //     .append("text")
-        //     .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-        //     .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
-        //     .text(function(d){   return d.data.name.replace('mister_','') })
-        //     .attr("font-size", "19px")
-        //     .attr("fill", "white")
-
-        // // and to add the text labels
-        // svg
-        //     .selectAll("vals")
-        //     .data(root.leaves())
-        //     .enter()
-        //     .append("text")
-        //     .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-        //     .attr("y", function(d){ return d.y0+35})    // +20 to adjust position (lower)
-        //     .text(function(d){ return d.data.value })
-        //     .attr("font-size", "11px")
-        //     .attr("fill", "white")
-
+        // TODO: Work on making titles fit
         svg
             .selectAll("titles")
             .data(root.descendants().filter(function(d){return d.depth==1}))
@@ -444,7 +268,7 @@ function treeMap(data) {
             .attr("x", function(d){ return d.x0})
             .attr("y", function(d){ return d.y0+21})
             .text(function(d){ return d.data.name })
-            .attr("font-size", "19px")
+            .attr("font-size", "9px")
             .attr("fill",  function(d){ return color(d.data.name)} )
         svg
             .append("text")
@@ -454,18 +278,11 @@ function treeMap(data) {
             .attr("font-size", "19px")
             .attr("fill",  "grey" )
 
-
-
         if (!currentTippy) {
             currentTippy = tippy('.recter', {
                 content(reference) {
-                    // console.log("what is reference??")
-                    // console.log(reference);
                     let value = d3.select(reference).datum().name ;
-                    // console.log("whoa this is so cool.")
-                    // console.log(value);
                     return value;
-                    // return tooltip_template(d3.select(reference).datum());
                 },
                 onShow(instance) {                    
                     const d = d3.select(instance.reference).datum()
@@ -482,132 +299,49 @@ function treeMap(data) {
 
 $(window).on('resize', _.debounce(updateVis, 150));
 
+function hexToRgb(hex, alpha) {
+    hex   = hex.replace('#', '');
+    var r = parseInt(hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
+    var g = parseInt(hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
+    var b = parseInt(hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16);
+    if ( alpha ) {
+       return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
+    }
+    else {
+       return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+    }
+ }
 
-const stopwords =
-  `i
-me
-my
-myself
-we
-our
-ours
-ourselves
-you
-your
-yours
-yourself
-yourselves
-he
-him
-his
-himself
-she
-her
-hers
-herself
-it
-its
-itself
-they
-them
-their
-theirs
-themselves
-what
-which
-who
-whom
-this
-that
-these
-those
-am
-is
-are
-was
-were
-be
-been
-being
-have
-has
-had
-having
-do
-does
-did
-doing
-a
-an
-the
-and
-but
-if
-or
-because
-as
-until
-while
-of
-at
-by
-for
-with
-about
-against
-between
-into
-through
-during
-before
-after
-above
-below
-to
-from
-up
-down
-in
-out
-on
-off
-over
-under
-again
-further
-then
-once
-here
-there
-when
-where
-why
-how
-all
-any
-both
-each
-few
-more
-most
-other
-some
-such
-no
-nor
-not
-only
-own
-same
-so
-than
-too
-very
-s
-t
-can
-will
-just
-don
-should
-now`.split('\n');
+function triggerListView(name, allPapers) {
+    let all_sel = allPapers.filter(d => d.data.name == name).map(e => e.data.papers).flat();
+    const sel_papers = d3.select('#sel_papers');
+    sel_papers.selectAll('.sel_paper').data(all_sel)
+    .join('div')
+    .attr('class', 'sel_paper')
+    .style("background", d => { return hexToRgb(color(d.track), opacity(5));  } )
+    .html(
+    d => `<div class="p_title">${d.title}</div> <div class="p_authors">${d.authors.join(
+        ', ')}</div>`)
+    .on('click',
+    d => window.open(`paper_${d.id}.html`, '_blank'))
+    .on('mouseenter', d => {
+
+        l_main.selectAll('.dot').filter(dd => dd.id === d.id)
+        .classed('highlight_sel', true)
+        .each(function () {
+            if (this._tippy)
+                this._tippy.show();
+        })
+    })
+    .on('mouseleave', d => {
+        l_main.selectAll('.dot').filter(dd => dd.id === d.id)
+        .classed('highlight_sel', false)
+        .each(function () {
+            if (this._tippy)
+                this._tippy.hide();
+        })
+    })
+}
+
+
+

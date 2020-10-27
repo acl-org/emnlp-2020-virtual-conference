@@ -160,6 +160,7 @@ const updateVis = () => {
           openreview.content.read = storedPapers[openreview.id] || false
           openreview.content.tracker = trackhighlight.includes(openreview.id) || false
       })
+
     const is_filtered = filters.authors || filters.keywords || filters.titles;
 
     const [pW, pH] = plot_size();
@@ -180,7 +181,7 @@ const updateVis = () => {
     });
 
     cola.removeOverlaps(all_pos);
-    // treeMap(all_papers);
+
     l_main.selectAll('.dot').data(all_papers, d => d.id)
       .join('circle')
       .attr('class', 'dot')
@@ -284,8 +285,7 @@ const start = (track) => {
         yS.domain(d3.extent(proj.map(p => p.pos[1])));
         
         if (trackPapers) trackhighlight = trackPapers.map(d => d.id);
-        // console.log(trackHighlight);
-        // console.log(all_papers);
+
         updateVis();
     })
       .catch(e => console.error(e))
@@ -299,6 +299,7 @@ const start = (track) => {
 
 
 }
+
 
 /**
  *  EVENTS
@@ -321,7 +322,6 @@ d3.selectAll('.filter_option input').on('click', function () {
     setTypeAhead(filter_mode, allKeys, filters, render);
     render();
 });
-
 
 $(window).on('resize', _.debounce(updateVis, 150));
 

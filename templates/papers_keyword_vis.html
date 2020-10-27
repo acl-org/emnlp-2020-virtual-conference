@@ -180,46 +180,35 @@
 
 <!-- Visualization -->
 <div id="container" position: relative; >
-  <!-- <div class="card"  style="margin-right: -40px; float:left ">
-    <div class="card-header">
-      <div id="outer_svg" style="display: inline-block; vertical-align: top;">
-        <svg class="plot" id="scatter" style="display: block;" width="1200" height="1000"></svg>
-      </div>
-      <div
-        class="results"
-        style="display: inline-block; vertical-align: top; text-align: left;"
-      >
-        <div style="display: block; overflow-y: auto;" id="table_info">
-          <div id="explain_text_plot">
-            <p>
-              Each dot represents a paper. They are arranged by a measure of
-              similarity.
-            </p>
-            <p>If you <b>hover</b> over a dot, you see the related paper.</p>
-            <p>
-              If you <b>click</b> on a dot, you go to the related paper page.
-            </p>
-            <p>
-              You can <b>search</b> for papers by author, keyword, or title
-            </p>
-            <p><b>Drag a rectangle </b> to summarize an area of the plot.</p>
-          </div>
-          <div id="summary_selection" style=""></div>
-          <div style="overflow-y: auto; bottom: 0; margin-top: 5pt;">
-            <div id="sel_papers"></div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div> -->
   <div class="card" style="margin-right: -40px; float:left">
     <div class="card-header">
-      <div id="outer_svg2" style="display: inline-block; vertical-align: top;">
-        <svg class="plot" id="heatmap" style="display: block;"></svg>
+      <div id="outer_svg" style="display: inline-block; vertical-align: top;">
+        <svg class="plot" id="heatmap" style="display: block;" width="1200" height="1200"></svg>
       </div>
+      <div class="results"
+      style="display: inline-block; vertical-align: top; text-align: left;"
+       >
+      <div style="display: block; overflow-y: auto;" id="table_info">
+        <div id="explain_text_plot">
+          <p>
+            Each rectangle represents a keyword in an EMNLP track.
+            Keywords not represented by more than one paper within the track have been filtered out.
+          </p>
+          <p>If you <b>hover</b> over a rectangle, you see the keyword reflected across all tracks.</p>
+          <p>
+            If you <b>click</b> on a rectangle, you see a list of papers that include that keyword across all tracks. You can differentiate between tracks by noting the color of the paper's card.
+          </p>
+          <!-- <p>
+            You can <b>search</b> for papers by author, keyword, or title
+          </p> TODO -->
+        </div>
+        <div id="summary_selection" style=""></div>
+        <div style="overflow-y: auto; bottom: 0; margin-top: 5pt;">
+          <div id="sel_papers"></div>
+        </div>
+      </div>
+    </div>
     </div> 
-    <!-- Heatmap visualization controls highlight functionality in tsne plot -->
 </div>
 
 
