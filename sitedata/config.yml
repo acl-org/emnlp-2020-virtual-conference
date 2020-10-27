@@ -20,7 +20,7 @@ paper_images_path: https://acl2020-public.s3.amazonaws.com/papers
 default_presentation_id: 38931484
 
 # Remove or change to your chat server.
-chat_server: acl2020.rocket.chat
+chat_server: emnlp2020.rocket.chat
 
 calendar:
   start: '2020-11-16'
