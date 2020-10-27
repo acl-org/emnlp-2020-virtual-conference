@@ -791,12 +791,15 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     for sponsor in by_uid["sponsors"].values():
         sponsor["zoom_times"] = OrderedDict()
 
-        for zoom in sponsor.get("schedule", []):
-            start = zoom["start"].astimezone(pytz.timezone("GMT"))
-            if zoom.get("end") is None:
-                end = start + timedelta(hours=zoom["duration"])
+        for session in sponsor.get("schedule", []):
+            if session["start"] is None:
+                continue
+
+            start = session["start"].astimezone(pytz.timezone("GMT"))
+            if session.get("end") is None:
+                end = start + timedelta(hours=session["duration"])
             else:
-                end = zoom["end"].astimezone(pytz.timezone("GMT"))
+                end = session["end"].astimezone(pytz.timezone("GMT"))
             day = start.strftime("%A")
             start_time = start.strftime(display_time_format)
             end_time = end.strftime(display_time_format)
@@ -805,7 +808,7 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
             if day not in sponsor["zoom_times"]:
                 sponsor["zoom_times"][day] = []
 
-            sponsor["zoom_times"][day].append((time_string, zoom["label"]))
+            sponsor["zoom_times"][day].append((time_string, session["label"]))
 
     # In the YAML, we just have a list of sponsors. We group them here by level
     sponsors_by_level: DefaultDict[str, List[Any]] = defaultdict(list)
