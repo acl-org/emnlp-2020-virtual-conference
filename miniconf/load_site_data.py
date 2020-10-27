@@ -160,14 +160,15 @@ def load_site_data(
     ]
     site_data["plenary_session_days"][0][-1] = "active"
 
-    
     # Papers' progam to their data
-    for p in site_data["main_papers"] + site_data["cl_papers"] + site_data["tacl_papers"]:
+    for p in (
+        site_data["main_papers"] + site_data["cl_papers"] + site_data["tacl_papers"]
+    ):
         p["program"] = "main"
-    
+
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
-    
+
     for p in site_data["srw_papers"]:
         p["program"] = "srw"
 
@@ -667,7 +668,7 @@ def build_papers(
                 paper_type=item.get("paper_type", ""),
                 sessions=sessions_for_paper[item["UID"]],
                 similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
-                program=item["program"]
+                program=item["program"],
             ),
         )
         for item in raw_papers
@@ -726,7 +727,6 @@ def build_workshops(
     raw_workshop_papers: Dict[str, List[Dict[str, Any]]],
     workshop_schedules: Dict[str, List[Dict[str, Any]]],
 ) -> List[Workshop]:
-
     def workshop_title(workshop_id):
         for wsh in raw_workshops:
             if wsh["UID"] == workshop_id:
@@ -754,7 +754,7 @@ def build_workshops(
                         sessions=[],
                         similar_paper_uids=[],
                         program="workshop",
-                    )
+                    ),
                 )
             )
 
