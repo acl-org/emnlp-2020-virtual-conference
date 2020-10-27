@@ -68,6 +68,7 @@ def papers_vis():
     data["tracks"] = site_data["tracks"]
     return render_template("papers_vis.html", **data)
 
+
 @app.route("/papers_keyword_vis.html")
 def papers_keyword_vis():
     data = _data()
@@ -75,6 +76,7 @@ def papers_keyword_vis():
     # See the `papers_json()` method and `static/js/papers.js`.
     data["tracks"] = site_data["tracks"]
     return render_template("papers_keyword_vis.html", **data)
+
 
 @app.route("/schedule.html")
 def schedule():
