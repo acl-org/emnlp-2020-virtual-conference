@@ -490,12 +490,15 @@ const start = (reset_track) => {
         path_to_papers_json = `track_${program}_${track}.json`;
     }
 
+    $('.cards').empty();
+    $('#progressBar').show();
+
     d3.json(path_to_papers_json).then(papers => {
         shuffleArray(papers);
 
         allPapers = papers;
 
-        $('#progressBar').hide();
+        // $('#progressBar').hide();
         
         calcAllKeys(allPapers, allKeys);
         if (path_to_papers_json.startsWith("papers_"))
