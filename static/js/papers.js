@@ -232,8 +232,9 @@ const maybe_update = (element_ids, value, callback) => {
 const updateModalData = (paper) => {
 
     let program = paper.content.program;
+    let badgeClass = program_to_badge_class[program];
     $('#modalTitle').html(
-        `${paper.content.title} &nbsp; <span class="badge badge-danger">${program}</span>`);
+        `${paper.content.title} &nbsp; <span class="badge badge-pill badge-${badgeClass}">${program}</span>`);
 
     let isVisited = persistor.get(paper.id) || false
     if (isVisited)
@@ -452,7 +453,7 @@ const updateToolboxUI = (program, urlFilter, track) =>{
     // Update program selector UI
     document.querySelector(`input[name=program][value=${program}]`).checked = true;
 
-    if (["main", "workshop", "all"].includes(program)) {
+    if (["main", "workshop"].includes(program)) {
         $("#track_selector").selectpicker('show');
         $("#track_selector_placeholder").removeClass("d-lg-block");
     } else{
@@ -602,10 +603,17 @@ const card_fav_btn_html = (is_fav) => {
     }
 }
 
+const program_to_badge_class = new Map()
+program_to_badge_class["main"] = "danger";
+program_to_badge_class["demo"] = "primary";
+program_to_badge_class["findings"] = "warning";
+program_to_badge_class["workshop"] = "info";
 const card_program_badge = (paper) => {
     let selected_program = getUrlParameter("program");
     if (selected_program === "all") 
-        return `<span class="badge badge-pill badge-success">${paper.content.program}</span>`;
+        return `<span class="badge 
+                      badge-pill badge-${program_to_badge_class[paper.content.program]}"
+                      >${paper.content.program}</span>`;
     else
         return ``;
 }
