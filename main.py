@@ -263,6 +263,8 @@ def generator():
         yield "workshop", {"uid": workshop.id}
 
     for sponsor in site_data["sponsors"]:
+        if "landingpage" in sponsor:
+            continue
         yield "sponsor", {"uid": str(sponsor["UID"])}
 
     for key in site_data:
