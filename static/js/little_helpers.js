@@ -81,15 +81,18 @@ let calcAllKeys = function (allPapers, allKeys) {
     const collectAuthors = new Set();
     const collectKeywords = new Set();
     const collectSessions = new Set();
+    const collectTracks = new Set();
 
     allPapers.forEach(
       d => {
           d.content.authors.forEach(a => collectAuthors.add(a));
           d.content.keywords.forEach(a => collectKeywords.add(a));
           d.content.sessions.forEach(a => collectSessions.add(a));
+          collectTracks.add(d.content.track);
           allKeys.titles.push(d.content.title);
       });
     allKeys.authors = Array.from(collectAuthors);
     allKeys.keywords = Array.from(collectKeywords);
     allKeys.sessions = Array.from(collectSessions);
+    allKeys.tracks = Array.from(collectTracks).sort();
 };

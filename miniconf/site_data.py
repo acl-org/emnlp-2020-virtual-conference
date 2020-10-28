@@ -63,16 +63,19 @@ class PaperContent:
     demo_url: Optional[str]
     sessions: List[SessionInfo]
     similar_paper_uids: List[str]
+    program: str
 
     def __post_init__(self):
-        assert self.track, self
+        if self.program != "workshop":
+            assert self.track, self
         if self.pdf_url:
             assert self.pdf_url.startswith("https://"), self.pdf_url
         if self.demo_url:
             assert self.demo_url.startswith("https://") or self.demo_url.startswith(
                 "http://"
             ), self.demo_url
-        assert self.paper_type[0].isupper(), self
+        if self.program != "workshop":
+            assert self.paper_type[0].isupper(), self
 
 
 @dataclass(frozen=True)
@@ -178,6 +181,7 @@ class WorkshopPaper:
     title: str
     speakers: str
     presentation_id: Optional[str]
+    content: PaperContent
 
 
 @dataclass(frozen=True)
