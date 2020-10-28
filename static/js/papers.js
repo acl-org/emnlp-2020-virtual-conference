@@ -497,11 +497,9 @@ const start = (reset_track) => {
         shuffleArray(papers);
 
         allPapers = papers;
-
-        // $('#progressBar').hide();
         
         calcAllKeys(allPapers, allKeys);
-        if (path_to_papers_json.startsWith("papers_"))
+        if (path_to_papers_json.startsWith("papers"))
             updateTrackList(allKeys.tracks, default_track);
         
         setTypeAhead(urlFilter,
