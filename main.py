@@ -184,7 +184,8 @@ def chat():
 
 @app.route("/papers.json")
 def papers_json():
-    all_papers = site_data["papers"]
+    all_papers = []
+    all_papers.extend(site_data["papers"])
     for wsh in site_data["workshops"]:
         all_papers.extend(wsh.papers)
     return jsonify(all_papers)
