@@ -101,19 +101,20 @@
         <div class="col-lg-5">
           <div class="form-group">
             <select id="track_selector" class="selectpicker form-control" data-live-search="true" data-style="btn-light">
-              
             </select>
+          </div>
+          <div id="track_selector_placeholder" class="d-none d-lg-block" style="width: 100%; height: 2.45em;">
           </div>
         </div>
 
     </div>
 
     <!-- Bottoms-->
-    <div style="display: flex; margin-top: -0.7em;">
+    <div class="button-box" style="margin-top: -0.7em;">
       
       <div >
         <div 
-            class="btn-group btn-group-toggle program_option mr-3"
+            class="btn-group btn-group-toggle program_option mr-3 bottom-bar"
             data-toggle="buttons" >
 
             <label class="btn btn-sm btn-outline-secondary active">
@@ -157,7 +158,7 @@
       
       <div style="margin-right: 0.0em;">
         <div 
-            class="btn-group btn-group-toggle render_option mr-3"
+            class="btn-group btn-group-toggle render_option mr-3 bottom-bar"
             data-toggle="buttons" >
 
             <label class="btn btn-sm btn-outline-secondary active">
@@ -310,7 +311,6 @@
     updateTabs();
 
     start();
-    // $('#track_selector').selectpicker('val', track);
   });
 
   $('#track_selector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {

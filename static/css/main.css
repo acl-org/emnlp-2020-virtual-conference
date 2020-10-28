@@ -585,3 +585,22 @@ div#papers_options > div {
 .card-link-warning {
   color: #ffc107 !important;
 }
+
+.button-box {
+  display: flex;
+}
+
+.bottom-bar {
+  margin-bottom: 0em;
+}
+
+@media (max-width: 768px) {
+  .button-box {
+    display: block;
+  }
+
+  .bottom-bar {
+    margin-bottom: 1em;
+  }
+}
+

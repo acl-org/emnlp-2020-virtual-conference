@@ -446,29 +446,43 @@ const updateSession = () => {
     }
 }
 
+const updateToolboxUI = (program, urlFilter, track) =>{
+    updateFilterSelectionBtn(urlFilter);
+
+    // Update program selector UI
+    document.querySelector(`input[name=program][value=${program}]`).checked = true;
+
+    if (["main", "workshop", "all"].includes(program)) {
+        $("#track_selector").selectpicker('show');
+        $("#track_selector_placeholder").removeClass("d-lg-block");
+    } else{
+        $("#track_selector").selectpicker('hide');
+        $("#track_selector_placeholder").addClass("d-lg-block");
+    }
+}
+
 /**
  * START here and load JSON.
  */
-const start = () => {
-    // const urlFilter = getUrlParameter("filter") || 'keywords';
+const start = (reset_track) => {
+    
+    reset_track = reset_track || false;
+    
     const urlFilter = getUrlParameter("filter") || 'titles';
     const program = getUrlParameter("program") || 'main'
-    let track = ""
-    if (program !== "workshop") {
-        track = getUrlParameter("track") || 'All tracks'
-    } else {
-        track = getUrlParameter("track") || 'All workshops'
-    }
+    let default_track = program == "workshop"? "All workshops" : "All tracks";
+    
+    let track = getUrlParameter("track") || default_track;
+    if (reset_track) 
+        track = default_track;
 
     setQueryStringParameter("filter", urlFilter);
     setQueryStringParameter("program", program);
-    updateFilterSelectionBtn(urlFilter);
 
-    // $('.program_option').find(`input[name=program][value=${program}]`).checked = true
-    document.querySelector(`input[name=program][value=${program}]`).checked = true;
+    updateToolboxUI(program, urlFilter, track)
 
-    var path_to_papers_json;
-    if (track === "All tracks" || track === "All workshops") {
+    let path_to_papers_json;
+    if (track === default_track) {
       path_to_papers_json = `papers_${program}.json`;
     } else {
       path_to_papers_json = `track_${program}_${track}.json`;
@@ -531,7 +545,7 @@ d3.selectAll('.program_option input').on('click', function () {
     let program = me.property('value');
     setQueryStringParameter("program", program);
 
-    start();
+    start(reset_track=true);
 });
 
 d3.select('.visited').on('click', () => {
