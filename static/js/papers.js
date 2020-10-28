@@ -482,10 +482,12 @@ const start = (reset_track) => {
     updateToolboxUI(program, urlFilter, track)
 
     let path_to_papers_json;
-    if (track === default_track) {
-      path_to_papers_json = `papers_${program}.json`;
+    if (program === "all"){
+        path_to_papers_json = `papers.json`;
+    } else if (track === default_track) {
+        path_to_papers_json = `papers_${program}.json`;
     } else {
-      path_to_papers_json = `track_${program}_${track}.json`;
+        path_to_papers_json = `track_${program}_${track}.json`;
     }
 
     d3.json(path_to_papers_json).then(papers => {
@@ -599,6 +601,14 @@ const card_fav_btn_html = (is_fav) => {
     }
 }
 
+const card_program_badge = (paper) => {
+    let selected_program = getUrlParameter("program");
+    if (selected_program === "all") 
+        return `<span class="badge badge-pill badge-success">${paper.content.program}</span>`;
+    else
+        return ``;
+}
+
 //language=HTML
 const card_html = openreview => `
         <div class="card card-paper ${openreview.content.isFav? 'card-fav' : ''}
@@ -609,6 +619,8 @@ const card_html = openreview => `
                 target="_blank"><h5 class="card-title ${openreview.content.read ? 'card-title-visited' : ''}">${openreview.content.title}</h5>
                 </a>
                 <h6 class="card-subtitle mb-2 text-muted">${openreview.content.authors.join(', ')}</h6>
+                
+                ${card_program_badge(openreview)}
                 
                 ${card_image(openreview, render_mode !== 'list')}
 
