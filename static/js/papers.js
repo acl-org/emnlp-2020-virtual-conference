@@ -496,13 +496,11 @@ const start = (reset_track) => {
         $('#progressBar').hide();
         
         calcAllKeys(allPapers, allKeys);
-        let default_track = program == "workshop"? "All workshops" : "All tracks";
         if (path_to_papers_json.startsWith("papers_"))
             updateTrackList(allKeys.tracks, default_track);
         
         setTypeAhead(urlFilter,
           allKeys, filters, render);
-        // updateCards(allPapers);
 
         render();
         
