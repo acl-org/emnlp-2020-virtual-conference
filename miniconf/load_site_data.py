@@ -700,16 +700,16 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             title=item["title"],
             organizers=item["organizers"],
             abstract=item["abstract"],
-            website=item["website"],
-            material=item["material"],
-            slides=item["slides"],
+            website=item.get("website", None),
+            material=item.get("material", None),
+            slides=item.get("slides", None),
             prerecorded=item.get("prerecorded", ""),
             rocketchat_channel=item.get("rocketchat_channel", ""),
             sessions=[
                 TutorialSessionInfo(
                     session_name=session.get("name"),
                     start_time=session.get("start_time"),
-                    end_time=session.get("start_time"),
+                    end_time=session.get("end_time"),
                     livestream_id=session.get("livestream_id"),
                     zoom_link=session.get("zoom_link"),
                 )
