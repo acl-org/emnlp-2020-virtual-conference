@@ -193,11 +193,6 @@ def load_site_data(
         + site_data["srw_paper_zoom_links"]
         + site_data["cl_paper_zoom_links"]
         + site_data["tacl_paper_zoom_links"],
-        all_paper_slideslive_ids=site_data["main_paper_slideslive_ids"]
-        + site_data["demo_paper_slideslive_ids"]
-        + site_data["srw_paper_slideslive_ids"]
-        + site_data["cl_paper_slideslive_ids"]
-        + site_data["tacl_paper_slideslive_ids"],
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
     )
@@ -575,7 +570,6 @@ def build_papers(
     all_paper_sessions: List[Dict[str, Dict[str, Any]]],
     qa_session_length_hr: int,
     all_paper_zoom_links: List[Dict[str, str]],
-    all_paper_slideslive_ids: List[Dict[str, str]],
     paper_recs: Dict[str, List[str]],
     paper_images_path: str,
 ) -> List[Paper]:
@@ -615,14 +609,6 @@ def build_papers(
         assert paper_session_id not in zoom_info_for_paper_session
         zoom_info_for_paper_session[paper_session_id] = item
 
-    # build the lookup from paper to slideslive presentation ID
-    presentation_id_for_paper: Dict[str, str] = {}
-    for item in all_paper_slideslive_ids:
-        paper_id = item["UID"]
-        presentation_id = item["presentation_id"]
-        assert paper_id not in presentation_id_for_paper
-        presentation_id_for_paper[paper_id] = presentation_id
-
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
     for session_name, session_info in chain(
@@ -654,7 +640,7 @@ def build_papers(
             card_image_path=get_card_image_path_for_paper(
                 item["UID"], paper_images_path
             ),
-            presentation_id=presentation_id_for_paper.get(item["UID"]),
+            presentation_id=item.get("presentation_id", None),
             content=PaperContent(
                 title=item["title"],
                 authors=extract_list_field(item, "authors"),
