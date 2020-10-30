@@ -320,6 +320,9 @@
               {{ tutorial.organizers }}
             </span>
           </div>
+        <div class="mx-4 text-left card-subtitle">
+          <p>{{tutorial.abstract|safe}}</p>
+          <br/>
 
           {% for session in tutorial.sessions %}
           <div class="m-3 text-center">
@@ -333,6 +336,7 @@
             </div>
           </div>
           {% endfor %}
+        </div>
     </div>
   </div>
   {% endfor %}

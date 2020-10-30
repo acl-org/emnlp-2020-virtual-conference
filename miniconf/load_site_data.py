@@ -55,26 +55,14 @@ def load_site_data(
         # papers.html
         "main_papers",
         "demo_papers",
-        "srw_papers",
-        "cl_papers",
-        "tacl_papers",
         "paper_recs",
         "papers_projection",
         "main_paper_sessions",
         "demo_paper_sessions",
-        "srw_paper_sessions",
-        "cl_paper_sessions",
-        "tacl_paper_sessions",
         "main_paper_zoom_links",
         "demo_paper_zoom_links",
-        "srw_paper_zoom_links",
-        "cl_paper_zoom_links",
-        "tacl_paper_zoom_links",
         "main_paper_slideslive_ids",
         "demo_paper_slideslive_ids",
-        "srw_paper_slideslive_ids",
-        "cl_paper_slideslive_ids",
-        "tacl_paper_slideslive_ids",
         # socials.html
         "socials",
         # workshops.html
@@ -160,48 +148,28 @@ def load_site_data(
     site_data["plenary_session_days"][0][-1] = "active"
 
     # Papers' progam to their data
-    for p in (
-        site_data["main_papers"] + site_data["cl_papers"] + site_data["tacl_papers"]
-    ):
+    for p in site_data["main_papers"]:
         p["program"] = "main"
 
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
 
-    for p in site_data["srw_papers"]:
-        p["program"] = "srw"
-
-    site_data["programs"] = ["main", "demo", "findings", "srw", "workshop"]
+    site_data["programs"] = ["main", "demo", "findings", "workshop"]
 
     # papers.{html,json}
     papers = build_papers(
-        raw_papers=site_data["main_papers"]
-        + site_data["demo_papers"]
-        + site_data["srw_papers"]
-        + site_data["cl_papers"]
-        + site_data["tacl_papers"],
+        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
         all_paper_sessions=[
             site_data["main_paper_sessions"],
             site_data["demo_paper_sessions"],
-            site_data["srw_paper_sessions"],
-            site_data["cl_paper_sessions"],
-            site_data["tacl_paper_sessions"],
         ],
         qa_session_length_hr=qa_session_length_hr,
         all_paper_zoom_links=site_data["main_paper_zoom_links"]
-        + site_data["demo_paper_zoom_links"]
-        + site_data["srw_paper_zoom_links"]
-        + site_data["cl_paper_zoom_links"]
-        + site_data["tacl_paper_zoom_links"],
-        all_paper_slideslive_ids=site_data["main_paper_slideslive_ids"]
-        + site_data["demo_paper_slideslive_ids"]
-        + site_data["srw_paper_slideslive_ids"]
-        + site_data["cl_paper_slideslive_ids"]
-        + site_data["tacl_paper_slideslive_ids"],
+        + site_data["demo_paper_zoom_links"],
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
     )
-    for prefix in ["main", "demo", "srw", "cl", "tacl"]:
+    for prefix in ["main", "demo"]:
         for suffix in [
             "papers",
             "paper_sessions",
@@ -575,7 +543,6 @@ def build_papers(
     all_paper_sessions: List[Dict[str, Dict[str, Any]]],
     qa_session_length_hr: int,
     all_paper_zoom_links: List[Dict[str, str]],
-    all_paper_slideslive_ids: List[Dict[str, str]],
     paper_recs: Dict[str, List[str]],
     paper_images_path: str,
 ) -> List[Paper]:
@@ -615,14 +582,6 @@ def build_papers(
         assert paper_session_id not in zoom_info_for_paper_session
         zoom_info_for_paper_session[paper_session_id] = item
 
-    # build the lookup from paper to slideslive presentation ID
-    presentation_id_for_paper: Dict[str, str] = {}
-    for item in all_paper_slideslive_ids:
-        paper_id = item["UID"]
-        presentation_id = item["presentation_id"]
-        assert paper_id not in presentation_id_for_paper
-        presentation_id_for_paper[paper_id] = presentation_id
-
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
     for session_name, session_info in chain(
@@ -654,7 +613,7 @@ def build_papers(
             card_image_path=get_card_image_path_for_paper(
                 item["UID"], paper_images_path
             ),
-            presentation_id=presentation_id_for_paper.get(item["UID"]),
+            presentation_id=item.get("presentation_id", None),
             content=PaperContent(
                 title=item["title"],
                 authors=extract_list_field(item, "authors"),
@@ -700,16 +659,16 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             title=item["title"],
             organizers=item["organizers"],
             abstract=item["abstract"],
-            website=item["website"],
-            material=item["material"],
-            slides=item["slides"],
+            website=item.get("website", None),
+            material=item.get("material", None),
+            slides=item.get("slides", None),
             prerecorded=item.get("prerecorded", ""),
             rocketchat_channel=item.get("rocketchat_channel", ""),
             sessions=[
                 TutorialSessionInfo(
                     session_name=session.get("name"),
                     start_time=session.get("start_time"),
-                    end_time=session.get("start_time"),
+                    end_time=session.get("end_time"),
                     livestream_id=session.get("livestream_id"),
                     zoom_link=session.get("zoom_link"),
                 )
