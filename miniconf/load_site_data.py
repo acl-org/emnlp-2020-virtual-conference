@@ -55,22 +55,14 @@ def load_site_data(
         # papers.html
         "main_papers",
         "demo_papers",
-        "cl_papers",
-        "tacl_papers",
         "paper_recs",
         "papers_projection",
         "main_paper_sessions",
         "demo_paper_sessions",
-        "cl_paper_sessions",
-        "tacl_paper_sessions",
         "main_paper_zoom_links",
         "demo_paper_zoom_links",
-        "cl_paper_zoom_links",
-        "tacl_paper_zoom_links",
         "main_paper_slideslive_ids",
         "demo_paper_slideslive_ids",
-        "cl_paper_slideslive_ids",
-        "tacl_paper_slideslive_ids",
         # socials.html
         "socials",
         # workshops.html
@@ -156,9 +148,7 @@ def load_site_data(
     site_data["plenary_session_days"][0][-1] = "active"
 
     # Papers' progam to their data
-    for p in (
-        site_data["main_papers"] + site_data["cl_papers"] + site_data["tacl_papers"]
-    ):
+    for p in site_data["main_papers"]:
         p["program"] = "main"
 
     for p in site_data["demo_papers"]:
@@ -168,25 +158,18 @@ def load_site_data(
 
     # papers.{html,json}
     papers = build_papers(
-        raw_papers=site_data["main_papers"]
-        + site_data["demo_papers"]
-        + site_data["cl_papers"]
-        + site_data["tacl_papers"],
+        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
         all_paper_sessions=[
             site_data["main_paper_sessions"],
             site_data["demo_paper_sessions"],
-            site_data["cl_paper_sessions"],
-            site_data["tacl_paper_sessions"],
         ],
         qa_session_length_hr=qa_session_length_hr,
         all_paper_zoom_links=site_data["main_paper_zoom_links"]
-        + site_data["demo_paper_zoom_links"]
-        + site_data["cl_paper_zoom_links"]
-        + site_data["tacl_paper_zoom_links"],
+        + site_data["demo_paper_zoom_links"],
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
     )
-    for prefix in ["main", "demo", "cl", "tacl"]:
+    for prefix in ["main", "demo"]:
         for suffix in [
             "papers",
             "paper_sessions",
