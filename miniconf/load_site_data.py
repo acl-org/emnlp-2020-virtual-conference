@@ -5,9 +5,8 @@ import itertools
 import json
 import os
 from collections import OrderedDict, defaultdict
-from datetime import date, datetime, timedelta
-from itertools import chain
-from typing import Any, DefaultDict, Dict, List, Tuple, Union
+from datetime import datetime, timedelta
+from typing import Any, DefaultDict, Dict, List
 
 import jsons
 import pytz
@@ -157,7 +156,6 @@ def load_site_data(
     papers = build_papers(
         raw_papers=site_data["main_papers"] + site_data["demo_papers"],
         paper_sessions=site_data["paper_sessions"],
-        qa_session_length_hr=qa_session_length_hr,
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
     )
@@ -566,7 +564,6 @@ def get_card_image_path_for_paper(paper_id: str, paper_images_path: str) -> str:
 def build_papers(
     raw_papers: List[Dict[str, str]],
     paper_sessions: Dict[str, Any],
-    qa_session_length_hr: int,
     paper_recs: Dict[str, List[str]],
     paper_images_path: str,
 ) -> List[Paper]:
@@ -839,8 +836,6 @@ def compute_schedule_blocks(events) -> List[List[Dict[str, Any]]]:
 
     # sort by start times
     events = sorted(events, key=lambda x: x["start_time"])
-
-    gaps = []
 
     # Start at the end of the first range
     now = events[0]["end_time"]
