@@ -146,6 +146,7 @@ def load_site_data(
     for p in site_data["main_papers"]:
         p["program"] = "main"
 
+    site_data["demo_papers"] = []
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
 
@@ -315,7 +316,7 @@ def build_plenary_sessions(
 def generate_plenary_events(site_data: Dict[str, Any]):
     """ We add sessions from the plenary for the weekly and daily view. """
     # Add plenary sessions to calendar
-    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
+    all_sessions = []
     for plenary in site_data["plenary_sessions"]:
         uid = plenary["UID"]
 
@@ -340,14 +341,19 @@ def generate_plenary_events(site_data: Dict[str, Any]):
             assert start_day == end_day, "Tutorial session spans more than a day"
             assert start < end, "Session start after session end"
 
-            sessions_by_day[start_day].append((start, end))
+            all_sessions.append(session)
 
-    # Compute start and end of plenary blocks
-    for day in sessions_by_day:
-        min_start = min([t[0] for t in sessions_by_day[day]])
-        max_end = max([t[1] for t in sessions_by_day[day]])
+    blocks = compute_schedule_blocks(all_sessions)
 
-        tab_id = (day.strftime("%b %d"),)
+    # Compute start and end of tutorial blocks
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
+
+        tz = pytz.timezone("America/Santo_Domingo")
+        punta_cana_date = min_start.astimezone(tz)
+
+        tab_id = punta_cana_date.strftime("%b%d").lower()
 
         event = {
             "title": "Plenary Session",
@@ -366,7 +372,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
     """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
 
     # Add tutorial sessions to calendar
-    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
+    all_sessions = []
     for tutorial in site_data["tutorials"]:
         uid = tutorial["UID"]
         for session in tutorial["sessions"]:
@@ -390,12 +396,14 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
             assert start_day == end_day, "Tutorial session spans more than a day"
             assert start < end, "Session start after session end"
 
-            sessions_by_day[start_day].append((start, end))
+            all_sessions.append(session)
+
+    blocks = compute_schedule_blocks(all_sessions)
 
     # Compute start and end of tutorial blocks
-    for tutorial_day in sessions_by_day:
-        min_start = min([t[0] for t in sessions_by_day[tutorial_day]])
-        max_end = max([t[1] for t in sessions_by_day[tutorial_day]])
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
 
         event = {
             "title": "Tutorials",
@@ -413,8 +421,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
 def generate_workshop_events(site_data: Dict[str, Any]):
     """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
     # Add workshop sessions to calendar
-    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
-
+    all_sessions = []
     for workshop in site_data["workshops"]:
         uid = workshop["UID"]
         for session in workshop["sessions"]:
@@ -439,12 +446,14 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             assert start_day == end_day, "Tutorial session spans more than a day"
             assert start < end, "Session start after session end"
 
-            sessions_by_day[start_day].append((start, end))
+            all_sessions.append(session)
 
-    # Compute start and end of workshop blocks
-    for workshop_day in sessions_by_day:
-        min_start = min([t[0] for t in sessions_by_day[workshop_day]])
-        max_end = max([t[1] for t in sessions_by_day[workshop_day]])
+    blocks = compute_schedule_blocks(all_sessions)
+
+    # Compute start and end of tutorial blocks
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
 
         event = {
             "title": "Workshops",
@@ -599,7 +608,7 @@ def build_papers(
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
-        if len(paper.content.sessions) != 2:
+        if len(paper.content.sessions) != 1:
             print(
                 f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
             )
@@ -787,3 +796,38 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     ]
 
     assert all(lvl in site_data["sponsor_levels"] for lvl in sponsors_by_level)
+
+
+def compute_schedule_blocks(events):
+    # Based on
+    # https://stackoverflow.com/questions/54713564/how-to-find-gaps-given-a-number-of-start-and-end-datetime-objects
+    if len(events) <= 1:
+        return events
+
+    # sort by start times
+    events = sorted(events, key=lambda x: x["start_time"])
+
+    gaps = []
+
+    # Start at the end of the first range
+    now = events[0]["end_time"]
+
+    blocks = []
+    block = []
+
+    for pair in events:
+        # if next start time is before current end time, keep going until we find a gap
+        # if next start time is after current end time, found the first gap
+        if pair["start_time"] > now:
+            blocks.append(block)
+            block = [pair]
+        else:
+            block.append(pair)
+
+        # need to advance "now" only if the next end time is past the current end time
+        now = max(pair["end_time"], now)
+
+    if len(block):
+        blocks.append(block)
+
+    return blocks

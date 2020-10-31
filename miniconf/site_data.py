@@ -63,7 +63,6 @@ class SessionInfo:
             return "unknown"
 
 
-
 @dataclass(frozen=True)
 class PaperContent:
     """The content of a paper.
