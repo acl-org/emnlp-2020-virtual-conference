@@ -461,8 +461,8 @@
   {{session.session}}
   <span class="session_times">{{session.time_string}}</span>
 
-  {% if session.zoom_link %}
-  <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
+  {% if session.link %}
+  <a href="{{session.link}}" target="_blank"  class="card-link">
     <!--
     <img
         src="static/images/zoom-icon.png"
@@ -471,7 +471,11 @@
         title="Join Zoom Meeting"
     >
     -->
-    [Join Zoom Meeting]
+    {% if session.session_type == "gather" %}
+      [Join Gather Meeting]
+    {% else %}
+      [Join Zoom Meeting]
+    {% endif %}
   </a>
   {% endif %}
 

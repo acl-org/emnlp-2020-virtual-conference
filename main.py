@@ -294,7 +294,7 @@ def parse_arguments():
 if __name__ == "__main__":
     args = parse_arguments()
 
-    extra_files = load_site_data("sitedata", site_data, by_uid, qa_session_length_hr)
+    extra_files = load_site_data("sitedata", site_data, by_uid)
 
     if args.build:
         freezer.freeze()
