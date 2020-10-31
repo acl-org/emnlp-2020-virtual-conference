@@ -29,10 +29,7 @@ from miniconf.site_data import (
 
 
 def load_site_data(
-    site_data_path: str,
-    site_data: Dict[str, Any],
-    by_uid: Dict[str, Any],
-    qa_session_length_hr: int,
+    site_data_path: str, site_data: Dict[str, Any], by_uid: Dict[str, Any],
 ) -> List[str]:
     """Loads all site data at once.
 
