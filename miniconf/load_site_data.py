@@ -462,12 +462,11 @@ def generate_paper_events(site_data: Dict[str, Any]):
     all_sessions = []
     for uid, session in site_data["paper_sessions"].items():
         kind = "Zoom" if uid[-1] == "g" else "Gather"
-        uid = uid[:-1]
         start = session["start_time"]
         end = session["end_time"]
 
         event = {
-            "title": f"QA Session {uid} <br> {kind}",
+            "title": f"QA Session {uid[:-1]} <br> {kind}",
             "start": start,
             "end": end,
             "location": "",
