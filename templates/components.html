@@ -321,10 +321,9 @@
             </span>
           </div>
         <div class="mx-4 text-left card-subtitle">
-          <p>{{tutorial.abstract|safe}}</p>
-          <br/>
 
-          {% for session in tutorial.sessions %}
+
+          {% for session in tutorial.blocks %}
           <div class="m-3 text-center">
             {{session.session}}
             <span class="session_times">{{session.time_string}}</span>
@@ -353,7 +352,7 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   {% for tutorial in tutorials %}
-    {% for session in tutorial.sessions %}
+    {% for session in tutorial.blocks %}
       // create a calendar by hand
       ouicalData = addToCalendarData({
         options: {
@@ -458,8 +457,7 @@
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-  {{session.session}}
-  <span class="session_times">{{session.time_string}}</span>
+    <span>{{session.session}}, </span><span class="session_times">{{session.session}} {{session.time_string}}</span>
 
   {% if session.link %}
   <a href="{{session.link}}" target="_blank"  class="card-link">

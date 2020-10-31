@@ -650,6 +650,23 @@ def parse_session_time(session_time_str: str) -> datetime:
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
+    def build_tutorial_blocks(t: Dict[str, Any]) -> List[SessionInfo]:
+        blocks = compute_schedule_blocks(t["sessions"])
+        result = []
+        for i, block in enumerate(blocks):
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
+
+            result.append(
+                SessionInfo(
+                    session_name=f"T-Live Session {i+1}",
+                    start_time=min_start,
+                    end_time=max_end,
+                    link="",
+                )
+            )
+        return result
+
     return [
         Tutorial(
             id=item["UID"],
@@ -666,11 +683,13 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
                     session_name=session.get("name"),
                     start_time=session.get("start_time"),
                     end_time=session.get("end_time"),
+                    hosts=session.get("hosts", ""),
                     livestream_id=session.get("livestream_id"),
                     zoom_link=session.get("zoom_link"),
                 )
                 for session in item.get("sessions")
             ],
+            blocks=build_tutorial_blocks(item),
             virtual_format_description=item["info"],
         )
         for item in raw_tutorials

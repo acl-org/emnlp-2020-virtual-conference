@@ -24,22 +24,27 @@
   - name: Part 1
     start_time: 2020-11-19 15:00:00+00:00
     end_time: 2020-11-19 16:30:00+00:00
+    hosts: Eric Wallace, Matt Gardner and Sameer Singh
     livestream_id: 42
   - name: QA 1
     start_time: 2020-11-19 16:30:00+00:00
     end_time: 2020-11-19 17:00:00+00:00
+    hosts:
     livestream_id: 42
   - name: BREAK
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 17:30:00+00:00
+    hosts:
     livestream_id: 42
   - name: Part 2
     start_time: 2020-11-19 17:30:00+00:00
     end_time: 2020-11-19 19:00:00+00:00
+    hosts:
     livestream_id: 42
   - name: QA 2
     start_time: 2020-11-19 19:00:00+00:00
     end_time: 2020-11-19 19:30:00+00:00
+    hosts:
     livestream_id: 42
   website: https://www.ericswallace.com/interpretability
 - UID: T2
@@ -60,10 +65,12 @@
   - name: Q&A
     start_time: 2020-11-19 09:00:00+00:00
     end_time: 2020-11-19 10:00:00+00:00
+    hosts: Preslav Nakov and Giovanni Da San Martino
     livestream_id: 42
   - name: Q&A
     start_time: 2020-11-19 16:00:00+00:00
     end_time: 2020-11-19 17:00:00+00:00
+    hosts:
     livestream_id: 42
   website: https://propaganda.qcri.org/emnlp20-tutorial
 - UID: T3
@@ -89,10 +96,13 @@
   - name: Q&A
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 18:00:00+00:00
+    hosts: Gabriel Ilharco, Cesar Ilharco, Iulia Turc, Tim Dettmers, Felipe Ferreira,
+      Kenton Lee
     livestream_id: 42
   - name: Q&A
     start_time: 2020-11-20 00:00:00+00:00
     end_time: 2020-11-20 01:00:00+00:00
+    hosts:
     livestream_id: 42
 - UID: T4
   title: Machine Reasoning for Knowledgeable, Explainable and Inferable Models
@@ -119,10 +129,12 @@
   - name: Q&A
     start_time: 2020-11-19 09:00:00+00:00
     end_time: 2020-11-19 10:00:00+00:00
+    hosts: Nan Duan, Duyu Tang and Ming Zhou
     livestream_id: 42
   - name: Q&A
     start_time: 2020-11-20 01:00:00+00:00
     end_time: 2020-11-20 02:00:00+00:00
+    hosts:
     livestream_id: 42
 - UID: T5
   title: Representation, Learning and Reasoning on Spatial Language for Down-stream
@@ -140,10 +152,12 @@
   - name: Q&A
     start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 18:00:00+00:00
+    hosts: Parisa Kordjamshidi, James Pustejovsky and Marie-Francine Moens
     livestream_id: 42
   - name: Q&A
     start_time: 2020-11-21 00:00:00+00:00
     end_time: 2020-11-21 01:00:00+00:00
+    hosts:
     livestream_id: 42
   website: ' https://spatial-language-tutorial.github.io '
 - UID: T6
@@ -162,10 +176,12 @@
   - name: Q&A
     start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
+    hosts: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan and Zhongjun He
     livestream_id: 42
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
+    hosts:
     livestream_id: 42
 - UID: T7
   title: The Amazing World of Neural Language Generation
@@ -193,8 +209,10 @@
   - name: Q&A
     start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 20:00:00+00:00
+    hosts: Yangfeng Ji, Antoine Bosselut, Thomas Wolf and Asli Celikyilmaz
     livestream_id: 42
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
+    hosts:
     livestream_id: 42
