@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+import pytz
+
 
 @dataclass(frozen=True)
 class SessionInfo:
@@ -10,25 +12,29 @@ class SessionInfo:
     session_name: str
     start_time: datetime
     end_time: datetime
-    zoom_link: str
+    link: str
 
     @property
     def time_string(self) -> str:
-        return "({}-{} GMT)".format(
-            self.start_time.strftime("%H:%M"), self.end_time.strftime("%H:%M")
-        )
+        start = self.start_time.astimezone(pytz.utc)
+        end = self.end_time.astimezone(pytz.utc)
+        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
 
     @property
     def start_time_string(self) -> str:
-        return self.start_time.strftime("%Y-%m-%dT%H:%M:%S")
+        start_time = self.start_time.astimezone(pytz.utc)
+        return start_time.strftime("%Y-%m-%dT%H:%M:%S UTC")
 
     @property
     def end_time_string(self) -> str:
-        return self.end_time.strftime("%Y-%m-%dT%H:%M:%S")
+        end_time = self.end_time.astimezone(pytz.utc)
+        return end_time.strftime("%Y-%m-%dT%H:%M:%S UTC")
 
     @property
     def session(self) -> str:
-        start_date = f'{self.start_time.strftime("%b")} {self.start_time.day}'
+        start_time = self.start_time.astimezone(pytz.utc)
+
+        start_date = f'{start_time.strftime("%b")} {start_time.day}'
         if self.session_name.startswith("D"):
             # demo sessions
             return f"Demo Session {self.session_name[1:]}: {start_date}"
@@ -41,7 +47,21 @@ class SessionInfo:
         if self.session_name.startswith("W-"):
             # workshop sessions
             return f"{self.session_name[2:]}: {start_date}"
+        if self.session_name.endswith("z") or self.session_name.endswith("g"):
+            # workshop sessions
+            return f"{self.session_name[:-1]}: {start_date}"
+
         return f"Session {self.session_name}: {start_date}"
+
+    @property
+    def session_type(self):
+        if self.session_name.endswith("z"):
+            return "zoom"
+        elif self.session_name.endswith("g"):
+            return "gather"
+        else:
+            return "unknown"
+
 
 
 @dataclass(frozen=True)

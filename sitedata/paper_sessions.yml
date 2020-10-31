@@ -1,0 +1,1271 @@
+1Az:
+  starttime: 2020-11-16 12:00:00-04:00
+  endtime: 2020-11-16 13:00:00-04:00
+  papers:
+  - main.438
+  - main.440
+  - main.2688
+  - main.2996
+1Bz:
+  starttime: 2020-11-16 12:00:00-04:00
+  endtime: 2020-11-16 13:00:00-04:00
+  papers:
+  - main.84
+  - main.619
+  - main.856
+  - main.888
+  - TACL.1997
+1Cz:
+  starttime: 2020-11-16 12:00:00-04:00
+  endtime: 2020-11-16 13:00:00-04:00
+  papers:
+  - main.2054
+  - main.2228
+  - main.2640
+  - main.2721
+  - TACL.2049
+1Dz:
+  starttime: 2020-11-16 12:00:00-04:00
+  endtime: 2020-11-16 13:00:00-04:00
+  papers:
+  - main.498
+  - main.947
+  - main.2122
+  - main.2893
+2Az:
+  starttime: 2020-11-16 13:00:00-04:00
+  endtime: 2020-11-16 14:00:00-04:00
+  papers:
+  - main.903
+  - main.1210
+  - main.1618
+  - main.2343
+  - main.2615
+2Bz:
+  starttime: 2020-11-16 13:00:00-04:00
+  endtime: 2020-11-16 14:00:00-04:00
+  papers:
+  - TACL.2047
+  - main.328
+  - main.802
+  - main.2958
+  - main.1390
+2Cz:
+  starttime: 2020-11-16 13:00:00-04:00
+  endtime: 2020-11-16 14:00:00-04:00
+  papers:
+  - main.1219
+  - TACL.2143
+  - main.148
+  - main.1700
+2Dz:
+  starttime: 2020-11-16 13:00:00-04:00
+  endtime: 2020-11-16 14:00:00-04:00
+  papers:
+  - main.3544
+  - main.2635
+  - main.3506
+  - TACL.2135
+3Az:
+  starttime: 2020-11-16 20:00:00-04:00
+  endtime: 2020-11-16 21:00:00-04:00
+  papers:
+  - main.2900
+  - main.965
+  - main.471
+  - main.3111
+3Bz:
+  starttime: 2020-11-16 20:00:00-04:00
+  endtime: 2020-11-16 21:00:00-04:00
+  papers:
+  - main.3394
+  - main.2783
+  - main.2793
+  - main.2838
+3Cz:
+  starttime: 2020-11-16 20:00:00-04:00
+  endtime: 2020-11-16 21:00:00-04:00
+  papers:
+  - main.858
+  - TACL.2107
+  - main.1503
+  - main.1694
+  - main.3370
+3Dz:
+  starttime: 2020-11-16 20:00:00-04:00
+  endtime: 2020-11-16 21:00:00-04:00
+  papers:
+  - main.838
+  - main.2561
+  - main.2651
+  - main.2894
+  - main.3450
+4Az:
+  starttime: 2020-11-16 21:00:00-04:00
+  endtime: 2020-11-16 22:00:00-04:00
+  papers:
+  - main.96
+  - main.237
+  - main.1116
+  - main.1749
+  - main.2427
+4Bz:
+  starttime: 2020-11-16 21:00:00-04:00
+  endtime: 2020-11-16 22:00:00-04:00
+  papers:
+  - main.923
+  - main.1581
+  - main.2511
+  - main.3010
+  - main.3270
+4Cz:
+  starttime: 2020-11-16 21:00:00-04:00
+  endtime: 2020-11-16 22:00:00-04:00
+  papers:
+  - main.647
+  - main.1071
+  - main.1085
+  - main.1670
+  - main.3183
+4Dz:
+  starttime: 2020-11-16 21:00:00-04:00
+  endtime: 2020-11-16 22:00:00-04:00
+  papers:
+  - main.318
+  - main.419
+  - main.1201
+  - main.1702
+  - main.2164
+1Ag:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.130
+  - main.1432
+  - main.1485
+  - main.1680
+  - main.1770
+  - main.1798
+  - main.1960
+  - main.2100
+  - main.26
+  - main.3337
+  - main.3441
+  - main.453
+1Bg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.1046
+  - main.1130
+  - main.1458
+  - main.1575
+  - main.1648
+  - main.2818
+  - main.2865
+  - main.2959
+  - main.3272
+  - main.3391
+  - main.3470
+1Cg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.1832
+  - main.2638
+  - main.820
+  - main.1275
+  - main.1421
+  - main.1892
+  - main.2553
+  - main.3358
+  - main.357
+  - main.3609
+  - main.754
+1Dg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.1086
+  - main.158
+  - main.1977
+  - main.2048
+  - main.2877
+  - main.300
+  - main.3022
+  - main.3287
+1Eg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.1009
+  - main.1012
+  - main.1140
+  - main.128
+  - main.1522
+  - main.215
+  - main.2209
+  - main.3621
+1Fg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.1287
+  - main.3298
+  - main.3408
+  - main.3424
+  - main.789
+  - main.110
+  - main.1271
+  - main.1634
+  - main.1908
+  - main.1942
+  - main.3651
+  - main.55
+1Gg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.1949
+  - main.2792
+  - main.286
+  - main.2931
+  - main.30
+  - main.3419
+  - main.652
+  - main.2994
+  - main.3540
+  - main.376
+  - main.628
+1Hg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.1388
+  - main.2083
+  - main.2273
+  - main.2853
+  - main.3360
+  - main.635
+  - main.1788
+  - main.2380
+  - main.2973
+  - main.3140
+  - main.928
+1Ig:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - main.2307
+  - main.2644
+  - main.2886
+  - main.3550
+  - main.457
+  - main.1049
+  - main.1706
+  - main.210
+  - main.2012
+  - main.2422
+  - main.2758
+  - main.920
+1Jg:
+  starttime: 2020-11-16 22:00:00-04:00
+  endtime: 2020-11-16 23:59:00-04:00
+  papers:
+  - DEMO.48
+  - DEMO.58
+  - DEMO.86
+  - DEMO.102
+  - DEMO.111
+  - DEMO.123
+5Az:
+  starttime: 2020-11-17 04:00:00-04:00
+  endtime: 2020-11-17 05:00:00-04:00
+  papers:
+  - main.983
+  - main.2938
+  - main.3136
+  - main.3497
+5Bz:
+  starttime: 2020-11-17 04:00:00-04:00
+  endtime: 2020-11-17 05:00:00-04:00
+  papers:
+  - main.204
+  - main.2795
+  - TACL.2121
+  - main.1377
+  - TACL.2169
+5Cz:
+  starttime: 2020-11-17 04:00:00-04:00
+  endtime: 2020-11-17 05:00:00-04:00
+  papers:
+  - main.2535
+  - main.2452
+  - main.362
+  - main.1220
+  - TACL.2095
+5Dz:
+  starttime: 2020-11-17 04:00:00-04:00
+  endtime: 2020-11-17 05:00:00-04:00
+  papers:
+  - main.1504
+  - main.2674
+  - main.3227
+  - main.3236
+  - main.400
+6Az:
+  starttime: 2020-11-17 05:00:00-04:00
+  endtime: 2020-11-17 06:00:00-04:00
+  papers:
+  - TACL.2411
+  - main.750
+  - main.1225
+  - main.2895
+  - main.3282
+6Bz:
+  starttime: 2020-11-17 05:00:00-04:00
+  endtime: 2020-11-17 06:00:00-04:00
+  papers:
+  - main.1402
+  - main.623
+  - main.2131
+  - main.2718
+  - CL.2
+6Cz:
+  starttime: 2020-11-17 05:00:00-04:00
+  endtime: 2020-11-17 06:00:00-04:00
+  papers:
+  - main.1004
+  - main.1022
+  - main.2258
+  - main.1622
+6Dz:
+  starttime: 2020-11-17 05:00:00-04:00
+  endtime: 2020-11-17 06:00:00-04:00
+  papers:
+  - main.3057
+  - main.1187
+  - main.1032
+  - main.1649
+  - main.2098
+2Ag:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1018
+  - main.1208
+  - main.1498
+  - main.1682
+  - main.2370
+  - main.2873
+  - main.3205
+  - main.3321
+  - main.410
+  - main.763
+  - main.956
+  - main.977
+2Bg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1006
+  - main.1846
+  - main.2070
+  - main.2212
+  - main.2975
+  - main.478
+  - main.664
+  - main.699
+  - main.787
+  - main.954
+2Cg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1159
+  - main.1547
+  - main.1566
+  - main.1862
+  - main.2739
+  - main.327
+  - main.3519
+  - main.3617
+  - main.3646
+2Dg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1180
+  - main.1739
+  - main.179
+  - main.2764
+  - main.2779
+  - main.3344
+  - main.3431
+  - main.3496
+  - main.1857
+  - main.1935
+  - main.2151
+  - main.2251
+2Eg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.2061
+  - main.246
+  - main.3688
+  - main.701
+  - main.835
+  - main.865
+  - main.891
+  - main.894
+  - main.1733
+  - main.2424
+  - main.557
+  - main.930
+2Fg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.2075
+  - main.2512
+  - main.955
+  - main.1146
+  - main.1248
+  - main.1263
+  - main.2163
+  - main.2298
+  - main.353
+  - main.618
+  - main.852
+2Gg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1030
+  - main.1196
+  - main.279
+  - main.2927
+  - main.3088
+  - main.355
+  - main.593
+  - main.995
+2Hg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1626
+  - main.1904
+  - main.2057
+  - main.3101
+  - main.360
+  - main.1766
+  - main.3185
+  - main.3286
+  - main.3329
+  - main.3594
+  - main.392
+  - main.733
+2Ig:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1205
+  - main.16
+  - main.3327
+  - main.548
+  - main.748
+  - main.1647
+  - main.214
+  - main.2357
+  - main.2766
+  - main.3353
+  - main.870
+2Jg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1837
+  - main.2253
+  - main.2337
+  - main.390
+  - main.449
+  - main.1625
+  - main.207
+  - main.447
+  - main.486
+  - main.877
+2Kg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1551
+  - main.1612
+  - main.1614
+  - main.1996
+  - main.958
+  - main.1952
+  - main.3012
+  - main.3437
+  - main.693
+  - main.714
+2Lg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - main.1901
+  - main.2215
+  - main.3513
+  - main.3529
+  - main.87
+  - main.1061
+  - main.1267
+  - main.1379
+  - main.1754
+  - main.2419
+2Mg:
+  starttime: 2020-11-17 06:00:00-04:00
+  endtime: 2020-11-17 08:00:00-04:00
+  papers:
+  - DEMO.49
+  - DEMO.71
+  - DEMO.109
+  - DEMO.124
+  - DEMO.131
+  - DEMO.132
+7Az:
+  starttime: 2020-11-17 12:00:00-04:00
+  endtime: 2020-11-17 13:00:00-04:00
+  papers:
+  - main.2066
+  - main.2583
+  - main.2281
+  - main.2410
+7Bz:
+  starttime: 2020-11-17 12:00:00-04:00
+  endtime: 2020-11-17 13:00:00-04:00
+  papers:
+  - main.644
+  - main.1282
+  - main.1492
+  - main.3115
+  - TACL.2013
+7Cz:
+  starttime: 2020-11-17 12:00:00-04:00
+  endtime: 2020-11-17 13:00:00-04:00
+  papers:
+  - main.2891
+  - main.1395
+  - main.1393
+  - main.2920
+7Dz:
+  starttime: 2020-11-17 12:00:00-04:00
+  endtime: 2020-11-17 13:00:00-04:00
+  papers:
+  - main.645
+  - main.1023
+  - main.3464
+  - main.3398
+8Az:
+  starttime: 2020-11-17 13:00:00-04:00
+  endtime: 2020-11-17 14:00:00-04:00
+  papers:
+  - main.1298
+  - main.2825
+  - main.3541
+  - main.3240
+8Bz:
+  starttime: 2020-11-17 13:00:00-04:00
+  endtime: 2020-11-17 14:00:00-04:00
+  papers:
+  - main.2005
+  - main.2040
+  - main.2763
+  - main.2585
+8Cz:
+  starttime: 2020-11-17 13:00:00-04:00
+  endtime: 2020-11-17 14:00:00-04:00
+  papers:
+  - main.648
+  - main.1687
+  - main.2430
+  - main.2982
+  - main.3179
+8Dz:
+  starttime: 2020-11-17 13:00:00-04:00
+  endtime: 2020-11-17 14:00:00-04:00
+  papers:
+  - main.2058
+  - main.2702
+  - main.76
+  - main.1113
+  - main.2991
+3Ag:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.1383
+  - main.1445
+  - main.1456
+  - main.2412
+  - main.2490
+  - main.2500
+  - main.2661
+  - main.267
+  - main.2767
+  - main.3116
+  - main.74
+  - main.875
+3Bg:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.1446
+  - main.1594
+  - main.2367
+  - main.2391
+  - main.2396
+  - main.2515
+  - main.3093
+  - main.3486
+  - main.809
+  - main.851
+3Cg:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.151
+  - main.1528
+  - main.2181
+  - main.2271
+  - main.2491
+  - main.2784
+  - main.2790
+  - main.3348
+  - main.825
+3Dg:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.2707
+  - main.3028
+  - main.3068
+  - main.3352
+  - main.868
+  - main.1339
+  - main.168
+  - main.2313
+  - main.2448
+  - main.2916
+  - main.3403
+  - main.3457
+3Eg:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.2508
+  - main.2608
+  - main.2922
+  - main.3231
+  - main.3336
+  - main.3390
+  - main.861
+  - main.2064
+  - main.2675
+  - main.2847
+3Fg:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.1179
+  - main.1654
+  - main.2641
+  - main.3217
+  - main.3393
+  - main.850
+  - main.876
+  - main.2851
+  - main.3181
+  - main.373
+3Gg:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.108
+  - main.1782
+  - main.1877
+  - main.2078
+  - main.2120
+  - main.595
+  - main.1258
+  - main.1494
+  - main.1943
+  - main.3046
+  - main.3259
+3Hg:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - main.1484
+  - main.1631
+  - main.2414
+  - main.2438
+  - main.3278
+  - main.3543
+  - main.1103
+  - main.1938
+  - main.2989
+  - main.41
+  - main.607
+3Ig:
+  starttime: 2020-11-17 14:00:00-04:00
+  endtime: 2020-11-17 16:00:00-04:00
+  papers:
+  - DEMO.59
+  - DEMO.60
+  - DEMO.72
+  - DEMO.79
+  - DEMO.89
+  - DEMO.97
+9Az:
+  starttime: 2020-11-17 20:00:00-04:00
+  endtime: 2020-11-17 21:00:00-04:00
+  papers:
+  - main.2383
+  - main.3239
+  - main.2218
+  - CL.4
+  - TACL.2221
+9Bz:
+  starttime: 2020-11-17 20:00:00-04:00
+  endtime: 2020-11-17 21:00:00-04:00
+  papers:
+  - main.60
+  - main.1356
+  - main.2198
+  - main.2636
+  - main.2834
+9Cz:
+  starttime: 2020-11-17 20:00:00-04:00
+  endtime: 2020-11-17 21:00:00-04:00
+  papers:
+  - main.1289
+  - main.2549
+  - main.3462
+  - main.668
+10Az:
+  starttime: 2020-11-17 21:00:00-04:00
+  endtime: 2020-11-17 22:00:00-04:00
+  papers:
+  - main.1320
+  - main.3563
+  - main.3656
+  - main.2208
+10Bz:
+  starttime: 2020-11-17 21:00:00-04:00
+  endtime: 2020-11-17 22:00:00-04:00
+  papers:
+  - main.684
+  - main.1011
+  - main.2972
+  - main.3084
+10Cz:
+  starttime: 2020-11-17 21:00:00-04:00
+  endtime: 2020-11-17 22:00:00-04:00
+  papers:
+  - main.1552
+  - main.2581
+  - main.3051
+  - TACL.1943
+10Dz:
+  starttime: 2020-11-17 21:00:00-04:00
+  endtime: 2020-11-17 22:00:00-04:00
+  papers:
+  - main.1580
+  - main.1262
+  - main.2586
+  - main.3672
+4Ag:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1100
+  - main.1572
+  - main.1986
+  - main.2278
+  - main.2493
+  - main.2630
+  - main.2746
+  - main.3597
+  - main.585
+  - main.639
+  - main.871
+4Bg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1490
+  - main.1508
+  - main.247
+  - main.2632
+  - main.2914
+  - main.3074
+  - main.3434
+  - main.371
+  - main.426
+  - main.47
+  - main.517
+4Cg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1738
+  - main.1787
+  - main.2799
+  - main.287
+  - main.2947
+  - main.2974
+  - main.3032
+  - main.3453
+  - main.3517
+  - main.911
+4Dg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.165
+  - main.2042
+  - main.2050
+  - main.3157
+  - main.3580
+  - main.3593
+  - main.689
+  - main.916
+  - main.999
+4Eg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1217
+  - main.1299
+  - main.1550
+  - main.1675
+  - main.2133
+  - main.3064
+  - main.3454
+  - main.3579
+4Fg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1997
+  - main.2216
+  - main.3551
+  - main.3566
+  - main.1107
+  - main.1495
+  - main.1784
+  - main.1866
+  - main.349
+  - main.3507
+  - main.3682
+4Gg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1250
+  - main.1465
+  - main.2261
+  - main.2995
+  - main.3013
+  - main.3174
+  - main.3567
+  - main.2076
+  - main.2112
+  - main.298
+4Hg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1141
+  - main.1863
+  - main.3292
+  - main.1658
+  - main.1928
+  - main.2382
+  - main.2590
+  - main.2864
+  - main.3186
+4Ig:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1052
+  - main.1280
+  - main.1613
+  - main.3143
+  - main.32
+  - main.3304
+  - main.1615
+  - main.1755
+  - main.2529
+  - main.2733
+  - main.3648
+  - main.744
+4Jg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - main.1123
+  - main.1191
+  - main.1975
+  - main.2587
+  - main.531
+  - main.1091
+  - main.2437
+  - main.2470
+  - main.2650
+  - main.3389
+  - main.3581
+4Kg:
+  starttime: 2020-11-17 22:00:00-04:00
+  endtime: 2020-11-17 23:59:00-04:00
+  papers:
+  - DEMO.54
+  - DEMO.91
+  - DEMO.104
+  - DEMO.107
+  - DEMO.118
+11Az:
+  starttime: 2020-11-18 04:00:00-04:00
+  endtime: 2020-11-18 05:00:00-04:00
+  papers:
+  - main.1970
+  - main.616
+  - main.959
+  - main.2696
+11Bz:
+  starttime: 2020-11-18 04:00:00-04:00
+  endtime: 2020-11-18 05:00:00-04:00
+  papers:
+  - main.1231
+  - main.3676
+  - main.1010
+  - main.2117
+  - main.3299
+11Cz:
+  starttime: 2020-11-18 04:00:00-04:00
+  endtime: 2020-11-18 05:00:00-04:00
+  papers:
+  - TACL.2129
+  - main.315
+  - main.782
+  - TACL.2041
+11Dz:
+  starttime: 2020-11-18 04:00:00-04:00
+  endtime: 2020-11-18 05:00:00-04:00
+  papers:
+  - main.143
+  - main.2349
+  - main.2363
+  - TACL.2011
+12Az:
+  starttime: 2020-11-18 05:00:00-04:00
+  endtime: 2020-11-18 06:00:00-04:00
+  papers:
+  - main.407
+  - main.3257
+  - main.3495
+  - TACL.2389
+12Bz:
+  starttime: 2020-11-18 05:00:00-04:00
+  endtime: 2020-11-18 06:00:00-04:00
+  papers:
+  - main.387
+  - main.605
+  - main.1974
+  - TACL.2103
+12Cz:
+  starttime: 2020-11-18 05:00:00-04:00
+  endtime: 2020-11-18 06:00:00-04:00
+  papers:
+  - main.658
+  - main.973
+  - main.1399
+  - main.2406
+  - TACL.2255
+12Dz:
+  starttime: 2020-11-18 05:00:00-04:00
+  endtime: 2020-11-18 06:00:00-04:00
+  papers:
+  - main.384
+  - main.2094
+  - main.3023
+  - main.2068
+13Az:
+  starttime: 2020-11-18 12:00:00-04:00
+  endtime: 2020-11-18 13:00:00-04:00
+  papers:
+  - main.1972
+  - main.2072
+  - main.2205
+  - main.2377
+  - main.3072
+13Bz:
+  starttime: 2020-11-18 12:00:00-04:00
+  endtime: 2020-11-18 13:00:00-04:00
+  papers:
+  - main.3573
+  - CL.3
+  - main.2167
+  - main.2579
+  - main.2962
+13Cz:
+  starttime: 2020-11-18 12:00:00-04:00
+  endtime: 2020-11-18 13:00:00-04:00
+  papers:
+  - main.1957
+  - main.2533
+  - main.3291
+  - main.1408
+13Dz:
+  starttime: 2020-11-18 12:00:00-04:00
+  endtime: 2020-11-18 13:00:00-04:00
+  papers:
+  - CL.1
+  - CL.5
+  - TACL.1936
+  - TACL.2141
+  - main.2684
+14Az:
+  starttime: 2020-11-18 13:00:00-04:00
+  endtime: 2020-11-18 14:00:00-04:00
+  papers:
+  - main.522
+  - main.2114
+  - main.1803
+  - main.2055
+14Bz:
+  starttime: 2020-11-18 13:00:00-04:00
+  endtime: 2020-11-18 14:00:00-04:00
+  papers:
+  - main.2510
+  - main.3644
+  - main.872
+  - main.2614
+  - main.3151
+14Cz:
+  starttime: 2020-11-18 13:00:00-04:00
+  endtime: 2020-11-18 14:00:00-04:00
+  papers:
+  - main.2574
+  - TACL.2083
+  - TACL.2093
+  - main.2221
+14Dz:
+  starttime: 2020-11-18 13:00:00-04:00
+  endtime: 2020-11-18 14:00:00-04:00
+  papers:
+  - main.485
+  - main.2570
+  - main.2724
+  - main.2750
+  - main.3216
+5Ag:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1227
+  - main.1351
+  - main.1574
+  - main.1734
+  - main.2087
+  - main.2331
+  - main.345
+  - main.493
+  - main.745
+  - main.821
+5Bg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1834
+  - main.1923
+  - main.2268
+  - main.2342
+  - main.2415
+  - main.2777
+  - main.2890
+  - main.2999
+  - main.359
+5Cg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1129
+  - main.125
+  - main.1322
+  - main.1906
+  - main.2225
+  - main.3049
+  - main.3126
+  - main.470
+  - main.767
+5Dg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1466
+  - main.1569
+  - main.1669
+  - main.1720
+  - main.1817
+  - main.2426
+  - main.2476
+  - main.883
+5Eg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.2761
+  - main.2943
+  - main.3035
+  - main.319
+  - main.574
+  - main.1603
+  - main.1750
+  - main.2712
+  - main.3357
+  - main.3375
+  - main.3532
+  - main.476
+5Fg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1455
+  - main.1578
+  - main.2322
+  - main.2839
+  - main.284
+  - main.3504
+  - main.445
+  - main.1024
+  - main.106
+  - main.2520
+  - main.2915
+5Gg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1428
+  - main.1482
+  - main.1707
+  - main.1898
+  - main.3483
+  - main.730
+  - main.910
+  - main.1305
+  - main.2596
+  - main.3224
+  - main.598
+5Hg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1389
+  - main.1561
+  - main.2141
+  - main.2444
+  - main.2612
+  - main.527
+  - main.834
+  - main.1518
+  - main.1621
+  - main.3647
+5Ig:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - main.1070
+  - main.1460
+  - main.1488
+  - main.1493
+  - main.2289
+  - main.450
+  - main.2809
+  - main.2849
+  - main.504
+  - main.540
+  - main.675
+5Jg:
+  starttime: 2020-11-18 14:00:00-04:00
+  endtime: 2020-11-18 16:00:00-04:00
+  papers:
+  - DEMO.93
+  - DEMO.116
+  - DEMO.119
+  - DEMO.126
+  - DEMO.127
+  - DEMO.128
+15Az:
+  starttime: 2020-11-18 19:00:00-04:00
+  endtime: 2020-11-18 20:00:00-04:00
+  papers:
+  - main.666
+  - main.989
+  - main.1611
+  - main.2756
+15Bz:
+  starttime: 2020-11-18 19:00:00-04:00
+  endtime: 2020-11-18 20:00:00-04:00
+  papers:
+  - main.3065
+  - main.3438
+  - main.2990
+  - main.3054
+  - main.1135
+15Cz:
+  starttime: 2020-11-18 19:00:00-04:00
+  endtime: 2020-11-18 20:00:00-04:00
+  papers:
+  - main.2179
+  - main.2416
+  - main.3635
+  - TACL.2055
+  - main.1540
+15Dz:
+  starttime: 2020-11-18 19:00:00-04:00
+  endtime: 2020-11-18 20:00:00-04:00
+  papers:
+  - main.2389
+  - main.252
+  - main.334
+  - main.3184
+  - TACL.1983
+16Az:
+  starttime: 2020-11-18 20:00:00-04:00
+  endtime: 2020-11-18 21:00:00-04:00
+  papers:
+  - main.1797
+  - main.3318
+  - main.317
+  - main.1606
+  - main.233
+16Bz:
+  starttime: 2020-11-18 20:00:00-04:00
+  endtime: 2020-11-18 21:00:00-04:00
+  papers:
+  - main.638
+  - main.2238
+  - main.2705
+  - main.2814
+16Cz:
+  starttime: 2020-11-18 20:00:00-04:00
+  endtime: 2020-11-18 21:00:00-04:00
+  papers:
+  - main.1835
+  - main.2125
+  - main.2506
+  - main.3552
+  - main.702

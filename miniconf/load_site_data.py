@@ -7,7 +7,7 @@ import os
 from collections import OrderedDict, defaultdict
 from datetime import date, datetime, timedelta
 from itertools import chain
-from typing import Any, DefaultDict, Dict, List, Tuple
+from typing import Any, DefaultDict, Dict, List, Tuple, Union
 
 import jsons
 import pytz
@@ -57,12 +57,7 @@ def load_site_data(
         "demo_papers",
         "paper_recs",
         "papers_projection",
-        "main_paper_sessions",
-        "demo_paper_sessions",
-        "main_paper_zoom_links",
-        "demo_paper_zoom_links",
-        "main_paper_slideslive_ids",
-        "demo_paper_slideslive_ids",
+        "paper_sessions",
         # socials.html
         "socials",
         # workshops.html
@@ -159,24 +154,12 @@ def load_site_data(
     # papers.{html,json}
     papers = build_papers(
         raw_papers=site_data["main_papers"] + site_data["demo_papers"],
-        all_paper_sessions=[
-            site_data["main_paper_sessions"],
-            site_data["demo_paper_sessions"],
-        ],
+        paper_sessions=site_data["paper_sessions"],
         qa_session_length_hr=qa_session_length_hr,
-        all_paper_zoom_links=site_data["main_paper_zoom_links"]
-        + site_data["demo_paper_zoom_links"],
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
     )
-    for prefix in ["main", "demo"]:
-        for suffix in [
-            "papers",
-            "paper_sessions",
-            "paper_zoom_links",
-            "paper_slideslive_ids",
-        ]:
-            del site_data[f"{prefix}_{suffix}"]
+
     site_data["papers"] = papers
     demo_and_srw_tracks = ["System Demonstrations", "Student Research Workshop"]
     site_data["tracks"] = list(
@@ -311,7 +294,7 @@ def build_plenary_sessions(
                         session_name=session.get("name"),
                         start_time=session.get("start_time"),
                         end_time=session.get("end_time"),
-                        zoom_link=session.get("zoom_link"),
+                        link=session.get("zoom_link"),
                     )
                     for session in item.get("sessions")
                 ],
@@ -540,9 +523,8 @@ def get_card_image_path_for_paper(paper_id: str, paper_images_path: str) -> str:
 
 def build_papers(
     raw_papers: List[Dict[str, str]],
-    all_paper_sessions: List[Dict[str, Dict[str, Any]]],
+    paper_sessions: Dict[str, Any],
     qa_session_length_hr: int,
-    all_paper_zoom_links: List[Dict[str, str]],
     paper_recs: Dict[str, List[str]],
     paper_images_path: str,
 ) -> List[Paper]:
@@ -558,51 +540,30 @@ def build_papers(
     - pdf_url: str
     - demo_url: str
 
-    The paper_schedule file contains the live QA session slots for each paper.
-    An example paper_sessions.yml file is shown below.
-    ```yaml
-    1A:
-      date: 2020-07-06_05:00:00
-      papers:
-      - main.1
-      - main.2
-    2A:
-      date: 2020-07-06_08:00:00
-      papers:
-      - main.17
-      - main.19
-    ```
     """
     # build the lookup from (paper, slot) to zoom_link
-    zoom_info_for_paper_session: Dict[str, Dict[str, str]] = {}
-    for item in all_paper_zoom_links:
-        paper_id = item["UID"]
-        session_name = item["session_name"]
-        paper_session_id = f"{paper_id}-{session_name}"
-        assert paper_session_id not in zoom_info_for_paper_session
-        zoom_info_for_paper_session[paper_session_id] = item
+    paper_id_to_link: Dict[str, str] = {}
+
+    for session in paper_sessions.values():
+        for paper_id in session["papers"]:
+            assert paper_id not in paper_id_to_link
+            paper_id_to_link[paper_id] = session.get("link", "http://example.com")
 
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
-    for session_name, session_info in chain(
-        *[paper_sessions.items() for paper_sessions in all_paper_sessions]
-    ):
-        session_date = session_info["date"]
-        start_time = datetime.strptime(session_date, "%Y-%m-%d_%H:%M:%S")
-        end_time = start_time + timedelta(hours=qa_session_length_hr)
+    for session_name, session_info in paper_sessions.items():
+        start_time = session_info["starttime"]
+        end_time = session_info["endtime"]
+
         for paper_id in session_info["papers"]:
-            paper_session_id = f"{paper_id}-{session_name}"
-            zoom_info = zoom_info_for_paper_session[paper_session_id]
-            assert (
-                datetime.strptime(zoom_info["starttime"], "%Y-%m-%dT%H:%M:%SZ")
-                == start_time
-            ), paper_id
+            link = paper_id_to_link[paper_id]
+
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
                     start_time=start_time,
                     end_time=end_time,
-                    zoom_link=zoom_info["zoom_join_link"],
+                    link=link,
                 )
             )
 
@@ -734,7 +695,7 @@ def build_workshops(
                     session_name=session.get("name", ""),
                     start_time=session.get("start_time"),
                     end_time=session.get("end_time"),
-                    zoom_link=session.get("zoom_link", ""),
+                    link=session.get("zoom_link", ""),
                 )
                 for session in item.get("sessions")
             ],
@@ -761,7 +722,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
                     session_name=session.get("name"),
                     start_time=parse_session_time(session.get("start_time")),
                     end_time=parse_session_time(session.get("end_time")),
-                    zoom_link=session.get("zoom_link"),
+                    link=session.get("zoom_link"),
                 )
                 for session in item["sessions"]
             ],
