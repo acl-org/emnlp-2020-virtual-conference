@@ -838,7 +838,7 @@ def compute_schedule_blocks(events) -> List[List[Dict[str, Any]]]:
     now = events[0]["end_time"]
 
     blocks = []
-    block = []
+    block: List[Dict[str, Any]] = []
 
     for pair in events:
         # if next start time is before current end time, keep going until we find a gap
