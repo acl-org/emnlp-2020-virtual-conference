@@ -663,6 +663,8 @@ def build_workshops(
     for paper in raw_workshop_papers:
         grouped_papers[paper["workshop"]].append(paper)
 
+    ws_id_to_alias: Dict[str, str] = {w["UID"]: w["alias"] for w in raw_workshops}
+
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
     for workshop_id, papers in grouped_papers.items():
         for item in papers:
@@ -672,6 +674,7 @@ def build_workshops(
                     title=item["title"],
                     speakers=item["authors"],
                     presentation_id=item.get("presentation_id", None),
+                    rocketchat_channel=f"paper-{ws_id_to_alias[workshop_id]}-{item['UID'].split('.')[-1]}",
                     content=PaperContent(
                         title=item["title"],
                         authors=extract_list_field(item, "authors"),
