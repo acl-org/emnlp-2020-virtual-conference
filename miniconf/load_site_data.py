@@ -158,7 +158,7 @@ def load_site_data(
 
     site_data["papers"] = papers
     site_data["tracks"] = list(
-        sorted({track for track in {paper.content.track for paper in papers}})
+        sorted(track for track in {paper.content.track for paper in papers})
     )
     # paper_<uid>.html
     by_uid["papers"] = {paper.id: paper for paper in papers}
