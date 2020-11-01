@@ -452,11 +452,11 @@ def generate_paper_events(site_data: Dict[str, Any]):
         end = session["end_time"]
 
         event = {
-            "title": f"QA Session {uid[:-1]} <br> {kind}",
+            "title": session["long_name"].replace(":", "<br>", 1),
             "start": start,
             "end": end,
             "location": "",
-            "link": f"papers.html?session={uid}",
+            "link": f"papers.html?session={uid}&program=all",
             "category": "time",
             "type": "QA Sessions",
             "view": "day",
