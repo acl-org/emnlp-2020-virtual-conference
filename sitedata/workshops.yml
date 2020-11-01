@@ -1,130 +1,198 @@
-- UID: W1
+- UID: WS-1
   title: CoNLL 2020
-  organizers: "Raquel Fern\xE1ndez and Tal Linzen"
+  organizers: Julia Hockenmaier and Afra Alishahi
   abstract: CoNLL is a yearly top-tier NLP conference that has been organized by SIGNLL
     since 1997.
   website: https://www.conll.org
-  day: '2020-11-19'
-  rocketchat_channel: w1
-  livestream: 209170
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 07:00:00-07:00
-    end_time: 2020-11-19 16:00:00-07:00
-- UID: W2
+  rocketchat_channel: workshop-1-conll
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-2
   title: Fifth Conference on Machine Translation (WMT20)
   organizers: "Barry Haddow, Philipp Koehn, Ond\u0159ej Bojar, Christian Federmann,\
     \ Yvette Graham, Matthias Huck, Christof Monz and Lucia Specia"
   abstract: A two day conference on machine translation with shared tasks.
   website: http:/www.statmt.org/wmt20
-  day: '2020-11-19'
-  rocketchat_channel: w2
-  livestream: 481268
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 12:00:00-07:00
-    end_time: 2020-11-19 16:00:00-07:00
-- UID: W3
+  rocketchat_channel: workshop-2-wmt
+  sessions: []
+  prerecorded_talks:
+  - title: TBA
+    speakers: Jade Abbott
+    presentation_id: '38940745'
+- UID: WS-3
   title: Workshop on Insights from Negative Results in NLP
   organizers: Anna Rogers, Joao Sedoc and Anna Rumshisky
   abstract: Let's take a break from chasing leaderboards! Your negative results might
     save others time, or poke holes in things we take for granted.
   website: https://insights-workshop.github.io/
-  day: '2020-11-19'
-  rocketchat_channel: w3
-  livestream: 656713
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 18:00:00-07:00
-    end_time: 2020-11-19 21:00:00-07:00
-- UID: W4
-  title: Search-Oriented Conversational AI (SCAI)
+  rocketchat_channel: workshop-3-insights
+  sessions: []
+  prerecorded_talks:
+  - title: "Negative results yield interesting questions, or: A bunch of stuff that\
+      \ didn't work"
+    speakers: Byron C. Wallace
+    presentation_id: '38940632'
+  - title: The Ups and Downs of Word Embeddings
+    speakers: Rada Mihalcea
+    presentation_id: '38940633'
+- UID: WS-4
+  title: Search-Oriented Conversational AI (SCAI) 2
   organizers: Julia Kiseleva, Aleksandr Chuklin, Jeff Dalton and Mikhail Burtsev
-  abstract: This workshop aims to bring together researchers from the NLP, Machine
-    Learning, and IR communities to lay the ground for search-oriented conversational
-    AI and establish future directions and collaborations.
+  abstract: N/A
   website: http://scai.info
-  day: '2020-11-19'
-  rocketchat_channel: w4
-  livestream: 300512
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 22:00:00-07:00
-    end_time: 2020-11-19 23:00:00-07:00
-- UID: W5
+  rocketchat_channel: workshop-4-scai
+  sessions: []
+  prerecorded_talks:
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940066'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940075'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940067'
+  - title: TBA
+    speakers: Jian Wang
+    presentation_id: '38940068'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940069'
+  - title: TBA
+    speakers: Wenjie Ou, Yue Lin
+    presentation_id: '38940070'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940071'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940072'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940073'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940074'
+  - title: Data-Efficient Natural Language Understanding for Task-Oriented Dialogue
+    speakers: Verena Rieser
+    presentation_id: '38940054'
+  - title: Towards Self-Learning for Large Scale Conversational Agents
+    speakers: "Ivan Vuli\u0107"
+    presentation_id: '38940055'
+  - title: TBA
+    speakers: Lee, Sungjin
+    presentation_id: '38940056'
+  - title: TBA
+    speakers: Jason Weston
+    presentation_id: '38940057'
+  - title: TBA
+    speakers: Y-Lan Boureau
+    presentation_id: '38940058'
+  - title: TBA
+    speakers: Jian-Yun Nie
+    presentation_id: '38940059'
+  - title: TBA
+    speakers: Thomas Wolf
+    presentation_id: '38940060'
+- UID: WS-5
   title: Workshop on Cognitive Modeling and Computational Linguistics (CMCL)
   organizers: "Emmanuele Chersoni, Cassandra L. Jacobs, Yohei Oseki, Laurent Pr\xE9\
     vot and Enrico Santus"
   abstract: The CMCL workshop provides a venue for computational research on cognitive
     theories of language processing, representation and acquisition.
   website: https://cmclorg.github.io/
-  day: '2020-11-19'
-  rocketchat_channel: w5
-  livestream: 477053
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 11:00:00-07:00
-    end_time: 2020-11-19 21:00:00-07:00
-- UID: W6
+  rocketchat_channel: workshop-5-cmcl2020
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-6
   title: Interactive and Executable Semantic Parsing (Int-Ex)
   organizers: Ben Bogin, Srinivasan Iyer, Xi Victoria Lin, Panupong Pasupat, Alane
     Suhr, Pengcheng Yin, Tao Yu, Rui Zhang, Victor Zhong, Caiming Xiong and Dragomir
     Radev
   abstract: Map natural language to meaning representations executed in databases,
     knowledge graphs, robotic environment and software applications.
-  website: https://intex-sempar.github.io/
-  day: '2020-11-19'
-  rocketchat_channel: w6
-  livestream: 376827
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 05:00:00-07:00
-    end_time: 2020-11-19 10:00:00-07:00
-- UID: W7
+  website: Additicontact address found
+  rocketchat_channel: workshop-6-intex-sempar2020
+  sessions: []
+  prerecorded_talks:
+  - title: 'Invited Talk: Mirella Lapata'
+    speakers: Mirella Lapata
+    presentation_id: '38939447'
+  - title: 'Invited Talk: Jacob Andreas'
+    speakers: Jacob Andreas
+    presentation_id: '38939462'
+  - title: 'Invited Talk: Jonathan Berant'
+    speakers: Jonathan Berant
+    presentation_id: '38939448'
+  - title: 'Invited Talk: Yoav Artzi'
+    speakers: Yoav Artzi
+    presentation_id: '38939449'
+  - title: "Invited Talk: Dilek Hakkani-T\xFCr"
+    speakers: "Dilek Hakkani-T\xFCr"
+    presentation_id: '38939450'
+  - title: 'Invited Talk: Alex Polozov'
+    speakers: Alex Polozov
+    presentation_id: '38939451'
+  - title: 'Invited Talk: Richard Socher'
+    speakers: Richard Socher
+    presentation_id: '38939452'
+- UID: WS-7
   title: First Workshop on Scholarly Document Processing (SDP 2020)
   organizers: Muthu Kumar Chandrasekaran, Guy Feigenblat, Dayne Freitag, Tirthankar
-    Ghosal, Michal Shmueli-Scheuer, Eduard Hovy, Petr Knoth, David Konopnicki, Philipp
+    Ghosal, Drahomira Herrmannova, Eduard Hovy, Petr Knoth, David Konopnicki, Philipp
     Mayr, Robert Patton, Dominika Tkaczyk and Anita de Waard
   abstract: 'SDP is a full day workshop that provides an interdisciplinary venue for
     researchers interested in any aspect of mining scientific literature. SDP includes
     a research track and three shared tasks: 6th CL-SciSumm, 1st LongSumm, 1st LaySumm.'
   website: https://ornlcda.github.io/SDProc/
-  day: '2020-11-19'
-  rocketchat_channel: w7
-  livestream: 423897
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 09:00:00-07:00
-    end_time: 2020-11-19 14:00:00-07:00
-- UID: W9
+  rocketchat_channel: workshop-7-sdp2020
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-9
   title: Second Workshop for NLP Open Source Software (NLP-OSS)
   organizers: Masato Hagiwara, Eunjeong Park, Dmitrijs Milajevs, Nelson F. Liu, Liling
     Tan and Geeticka Chauhan
-  abstract: 'Democratizing NLP: Sharing engineering advances and best practices for
-    open sourcing software in NLP'
+  abstract: Democratizing NLP!
   website: https://nlposs.github.io/
-  day: '2020-11-19'
-  rocketchat_channel: w9
-  livestream: 663542
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 17:00:00-07:00
-    end_time: 2020-11-19 23:00:00-07:00
-- UID: W10
+  rocketchat_channel: workshop-9-nlposs
+  sessions: []
+  prerecorded_talks:
+  - title: (To be confirmed) Invited Talk 1 - Chip Huyen
+    speakers: Chip Huyen
+    presentation_id: '38939735'
+  - title: (To be confirmed) Invited Talk 2 - Spencer Kelly
+    speakers: Spencer Kelly
+    presentation_id: '38939736'
+  - title: (To be confirmed) Invited Talk 3 -  Thomas Wolf
+    speakers: Thomas Wolf
+    presentation_id: '38939737'
+- UID: WS-10
   title: Spatial Language Understanding
   organizers: Malihe Alikhani, Jason Baldridge, Mohit Bansal, Archna Bhatia, Parisa
     Kordjamshidi and Marie-Francine Moens
   abstract: Spatial Language Understanding, Learning/Reasoning on Spatial Semantics,
     (sub)Symbolic Representations and Grounding Language in Perception
   website: https://spatial-language.github.io
-  day: '2020-11-19'
-  rocketchat_channel: w10
-  livestream: 578038
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 15:00:00-07:00
-    end_time: 2020-11-19 22:00:00-07:00
-- UID: W11
+  rocketchat_channel: workshop-10-splu2020
+  sessions: []
+  prerecorded_talks:
+  - title: SpLU-Invited-talk-1
+    speakers: James Pustejovsky
+    presentation_id: '38940086'
+  - title: SpLU-Invited-talk-3
+    speakers: Julia Hockenmaier
+    presentation_id: '38940087'
+  - title: SpLU-Invited-talk-4
+    speakers: Douwe Kiela
+    presentation_id: '38940088'
+  - title: SpLU-Invited-talk-5
+    speakers: Bonnie Dorr
+    presentation_id: '38940089'
+  - title: (Invited talk) Few-shot Grounding, Mapping and Plan Generation for Instruction
+      Following
+    speakers: Yoav Artzi
+    presentation_id: '38940090'
+- UID: WS-11
   title: 'SIGTYP 2020: The Second Workshop on Computational Research in Linguistic
     Typology'
   organizers: "Yevgeni Berzak, Ryan Cotterell, Anna Korhonen, Roi Reichart, Eitan\
@@ -133,109 +201,111 @@
   abstract: Bringing together researchers interested in applying computational techniques
     to problems in linguistic typology and multilingual NLP.
   website: https://sigtyp.github.io/ws2020.html
-  day: '2020-11-19'
-  rocketchat_channel: w11
-  livestream: 917322
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 05:00:00-07:00
-    end_time: 2020-11-19 14:00:00-07:00
-- UID: W12
+  rocketchat_channel: workshop-11-sigtyp
+  sessions: []
+  prerecorded_talks:
+  - title: Invited talk
+    speakers: Miriam Butt
+    presentation_id: '38939785'
+  - title: Invited talk
+    speakers: Yulia Tsvetkov
+    presentation_id: '38939786'
+  - title: Invited talk
+    speakers: Richard Sproat
+    presentation_id: '38939787'
+  - title: Invited talk
+    speakers: Bill Croft
+    presentation_id: '38939788'
+  - title: Invited talk
+    speakers: "Harald Hammarstr\xF6m"
+    presentation_id: '38939789'
+  - title: 'SIGTYP 2020 Shared Task: Prediction of Typological Features'
+    speakers: Johannes Bjerva, Elizabeth Salesky, Sabrina J. Mielke, Aditi Chaudhary,
+      Giuseppe G. A. Celano, Edoardo M. Ponti, Ekaterina Vylomova, Ryan Cotterell,
+      Isabelle Augenstein
+    presentation_id: '38939790'
+- UID: WS-12
   title: 3rd Clinical Natural Language Processing Workshop (Clinical NLP 2020)
   organizers: Anna Rumshisky, Steven Bethard, Kirk Roberts and Tristan Naumann
   abstract: "Explore challenges and promises of clinical text: understand a patient's\
     \ story, predict health outcomes, advance medical research, and more."
   website: https://clinical-nlp.github.io/2020/
-  day: '2020-11-19'
-  rocketchat_channel: w12
-  livestream: 121706
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 12:00:00-07:00
-    end_time: 2020-11-19 18:00:00-07:00
-- UID: W13
+  rocketchat_channel: workshop-12-clinicalnlp
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-13
   title: 'Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction
     and Integration for Deep Learning Architectures'
   organizers: "Eneko Agirre, Marianna Apidianaki and Ivan Vuli\u0107"
   abstract: 'Deep Learning Inside Out: Knowledge Extraction and Integration for Deep
     Learning Architectures with special focus on low-data regimes'
   website: https://sites.google.com/view/deelio-ws/
-  day: '2020-11-19'
-  rocketchat_channel: w13
-  livestream: 309617
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 15:00:00-07:00
-    end_time: 2020-11-19 23:00:00-07:00
-- UID: W14
+  rocketchat_channel: workshop-13-deelio
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-14
   title: 6th Workshop on Noisy User-generated Text (W-NUT 2020)
   organizers: Wei Xu, Alan Ritter, Timothy Baldwin, Afshin Rahimi and Leon Derczynski
   abstract: Social media, crowdsourcing, medical texts, language learner essays, and
-    more! 2 keynotes, 130 PC members, talks and 1-min madness for posters
+    more! 2 keynotes, 130 PC members, talks &amp; 1-min madness for posters
   website: http://noisy-text.github.io
-  day: '2020-11-19'
-  rocketchat_channel: w14
-  livestream: 966895
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-19 18:00:00-07:00
-    end_time: 2020-11-19 21:00:00-07:00
-- UID: W15
+  rocketchat_channel: workshop-14-wnut2020
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-15
   title: 'SustaiNLP: Workshop on Simple and Efficient Natural Language Processing'
   organizers: "Angela Fan, Goran Glava\u0161, Shafiq Joty, Nafise Sadat Moosavi, Vered\
     \ Shwartz, Alex Wang and Thomas Wolf"
   abstract: Promoting computationally efficient NLP and justified model complexity.
     Encouraging conceptual NLP novelty, discouraging "more compute".
-  website: https://sites.google.com/view/sustainlp2020
-  day: '2020-11-20'
-  rocketchat_channel: w15
-  livestream: 917556
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 20:00:00-07:00
-    end_time: 2020-11-20 23:00:00-07:00
-- UID: W16
+  website: https://sites.google.com/view/sustainlp2019
+  rocketchat_channel: workshop-15-sustainlp2020
+  sessions: []
+  prerecorded_talks:
+  - title: Invited Talk
+    speakers: Mona Diab
+    presentation_id: '38940099'
+  - title: Invited Talk
+    speakers: Heng Ji
+    presentation_id: '38940100'
+  - title: Invited Talk
+    speakers: Graham Neubig
+    presentation_id: '38940101'
+  - title: Invited Talk
+    speakers: Alexander Rush
+    presentation_id: '38940102'
+  - title: Invited Talk
+    speakers: Armand Joulin
+    presentation_id: '38940103'
+- UID: WS-16
   title: 1st Workshop on Computational Approaches to Discourse
   organizers: "Chlo\xE9 Braud, Christian Hardmeier, Junyi Jessy Li, Annie Louis and\
     \ Michael Strube"
   abstract: The Workshop on Computational Approaches to Discourse (CODI) covers all
     aspects of discourse and its computational modeling.
-  website: https://codi-workshop.github.io/
-  day: '2020-11-20'
-  rocketchat_channel: w16
-  livestream: 479033
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 01:00:00-07:00
-    end_time: 2020-11-20 10:00:00-07:00
-- UID: W17
-  title: "The Fourth Workshop on Online Abuse and Harms (WOAH), previously \u2018\
-    Abusive Language Workshop' (ALW)"
-  organizers: Zeerak Waseem, Vinodkumar Prabhakaran, Seyi Akiwowo and Bertie Vidgen
+  website: https://cad-workshop.github.io/
+  rocketchat_channel: workshop-16-codi2020
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-17
+  title: The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW
+  organizers: Zeerak Waseem, Vinodkumar Prabhakaran and Bertie Vidgen
   abstract: The workshop focuses on online abuse through a multi-disciplinary lens,
     drawing on social sciences, law, media studies, and more.
-  website: https://www.workshopononlineabuse.com/
-  day: '2020-11-20'
-  rocketchat_channel: w17
-  livestream: 100010
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 02:00:00-07:00
-    end_time: 2020-11-20 16:00:00-07:00
-- UID: W18
+  website: https://www.workshopononlineabuse.com/home
+  rocketchat_channel: workshop-17-woah4
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-18
   title: NLP and Computational Social Science (NLP+CSS)
   organizers: Svitlana Volkova, David Jurgens, David Bamman and Dirk Hovy
   abstract: This workshop focuses on NLP for Social Sciences, interdisciplinary work
     in CSS, and integrating CSS with current trends in NLP.
-  website: https://sites.google.com/site/nlpandcss/nlp-css-at-emnlp-2020
-  day: '2020-11-20'
-  rocketchat_channel: w18
-  livestream: 656409
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 01:00:00-07:00
-    end_time: 2020-11-20 04:00:00-07:00
-- UID: W19
+  website:
+  rocketchat_channel: workshop-18-nlpcss
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-19
   title: LOUHI 2020 - 11th International Workshop on Health Text Mining and Information
     Analysis
   organizers: Alberto Lavelli, James Pustejovsky, Eben Holderness, Antonio Jimeno
@@ -243,94 +313,115 @@
   abstract: an interdisciplinary forum for researchers interested in automated processing
     of health documents
   website: https://louhi2020.fbk.eu/
-  day: '2020-11-20'
-  rocketchat_channel: w19
-  livestream: 349352
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 21:00:00-07:00
-    end_time: 2020-11-20 23:00:00-07:00
-- UID: W20
-  title: Evaluation and Comparison of NLP Systems (Eval4NLP)
-  organizers: Steffen Eger, Yang Gao, Maxime Peyrard, Wei Zhao, Eduard Hovy, Mohit
-    Bansal, Robert West, Ani Nenkova, and Ido Dagan
+  rocketchat_channel: workshop-19-louhi2020
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-20
+  title: Evaluation and Comparison of NLP Systems
+  organizers: Ido Dagan, Ani Nenkova, Mohit Bansal, Robert West, Eduard Hovy, Steffen
+    Eger, Yang Gao, Maxime Peyrard and Wei Zhao
   abstract: The workshop focuses on designing evaluation metrics, reporting trustworthy
     results and creating adequate and correct evaluation data.
   website: https://nlpevaluation2020.github.io/
-  day: '2020-11-20'
-  rocketchat_channel: w20
-  livestream: 802246
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 20:00:00-07:00
-    end_time: 2020-11-20 22:00:00-07:00
-- UID: W21
+  rocketchat_channel: workshop-20-eval4nlp
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-21
   title: 4th Workshop on Structured Prediction for NLP
   organizers: "Andr\xE9 F. T. Martins, Andreas Vlachos, Zornitsa Kozareva, Sujith\
     \ Ravi, Gerasimos Lampouras, Priyanka Agrawal and Julia Kreutzer"
   abstract: Structured prediction with continuous representations, task-level supervision
     and latent linguistic structure.
-  website: http://structuredprediction.github.io/
-  day: '2020-11-20'
-  rocketchat_channel: w21
-  livestream: 475915
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 12:00:00-07:00
-    end_time: 2020-11-20 17:00:00-07:00
-- UID: W23
+  website: http://structuredprediction.github.io/SPNLP20
+  rocketchat_channel: workshop-21-spnlp20
+  sessions: []
+  prerecorded_talks:
+  - title: Invited talk by Isabelle Augenstein
+    speakers: Isabelle Augenstein
+    presentation_id: '38940145'
+  - title: Invited talk by Jonathan Berant
+    speakers: Jonathan Berant
+    presentation_id: '38940146'
+  - title: Invited talk by Mark Johnson
+    speakers: Mark Johnson
+    presentation_id: '38940147'
+  - title: Invited talk by Alexander Rush
+    speakers: Alexander Rush
+    presentation_id: '38940148'
+  - title: Invited talk by Sunita Sarawagi
+    speakers: Sunita Sarawagi
+    presentation_id: '38940149'
+  - title: Invited talk by Ivan Titov
+    speakers: Ivan Titov
+    presentation_id: '38940150'
+- UID: WS-22
+  title: Workshop on NLP for Positive Impact
+  organizers: Maarten Sap, Anjalie Field, Michel Galley, Hannah Rashkin and Bill Dolan
+  abstract: Our workshop aims to promote NLP research that will positively impact
+    society, through proactive and responsible methods.
+  website: https://sites.google.com/view/nlp4positiveimpact2020
+  rocketchat_channel: workshop-22-nlp4positiveimpact
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-23
   title: NLP Beyond Text
   organizers: Erik Cambria, Giuseppe Castellucci, Simone Filice, Soujanya Poria, Lucia
     Specia
   abstract: Can you really know if someone is sarcastic by only reading his texts?
     If the answer is no, the NLPBT workshop is what you're looking for.
   website: https://sites.google.com/view/nlpbt-2020
-  day: '2020-11-20'
-  rocketchat_channel: w23
-  livestream: 454545
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 10:00:00-07:00
-    end_time: 2020-11-20 11:00:00-07:00
-- UID: W24
-  title: 'PrivateNLP 2020: The Second Workshop on Privacy in NLP'
+  rocketchat_channel: workshop-23-nlpbt2020
+  sessions: []
+  prerecorded_talks: []
+- UID: WS-24
+  title: 'PrivateNLP 2020: The First Workshop on Privacy in NLP'
   organizers: Oluwaseyi Feyisetan, Sepideh Ghanavati, Patricia Thaine and Shervin
     Malmasi
   abstract: 'PrivateNLP focuses on Privacy Preserving systems: differential privacy,
     anonymized datasets and models, GDPR compliance, and shared tasks!'
   website: https://sites.google.com/view/privatenlp/
-  day: '2020-11-20'
-  rocketchat_channel: w24
-  livestream: 198907
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 08:00:00-07:00
-    end_time: 2020-11-20 14:00:00-07:00
-- UID: W25
+  rocketchat_channel: workshop-24-privatenlp2020
+  sessions: []
+  prerecorded_talks:
+  - title: invited1
+    speakers: Aaron Roth
+    presentation_id: '38939775'
+  - title: invited2
+    speakers: Reza Shokri
+    presentation_id: '38939776'
+  - title: invited3
+    speakers: Krishnaram Kenthapadi
+    presentation_id: '38939777'
+  - title: invited4
+    speakers: Annabelle McIver, Mark Dras
+    presentation_id: '38939778'
+- UID: WS-25
   title: 'BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP'
   organizers: "Yonatan Belinkov, Afra Alishahi, Grzegorz Chrupa\u0142a, Dieuwke Hupkes,\
     \ Yuval Pinter and Hassan Sajjad"
   abstract: Open the black-box of neural networks in NLP and make sense of the big
     pile of goo inside it
   website: https://blackboxnlp.github.io
-  day: '2020-11-20'
-  rocketchat_channel: w25
-  livestream: 529787
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 13:00:00-07:00
-    end_time: 2020-11-20 22:00:00-07:00
-- UID: W26
+  rocketchat_channel: workshop-25-blackboxnlp2020
+  sessions: []
+  prerecorded_talks:
+  - title: Evaluating and calibrating neural language models for human-like language
+      processing
+    speakers: Roger Levy
+    presentation_id: '38939760'
+  - title: "Understanding NLP\u2019s blackbox with the brain\u2019s blackbox and vice\
+      \ versa"
+    speakers: Idan Blank
+    presentation_id: '38939761'
+  - title: When BERT plays the lottery, all tickets are winning!
+    speakers: Anna Rogers
+    presentation_id: '38939762'
+- UID: WS-26
   title: NLP for COVID-19 Workshop (Part 2)
-  organizers: Karin Verspoor, Mike Conway, Berry de Bruijn, Mark Dredze, Rada Mihalcea
-    and Byron Wallace
-  abstract: Analysing and understanding text and speech data to combat the COVID-19
-    Pandemic.
+  organizers: Karin Verspoor, Mike Conway, Berry de Bruijn, Mark Dredze, Rada Mihalcea,
+    Byron Wallace
+  abstract:
   website: https://www.nlpcovid19workshop.org/emnlp2020/
-  day: '2020-11-20'
-  rocketchat_channel: w26
-  livestream: 953141
-  sessions:
-  - name: Live Session 1
-    start_time: 2020-11-20 19:00:00-07:00
-    end_time: 2020-11-20 22:00:00-07:00
+  rocketchat_channel: workshop-26-nlp-covid19-emnlp
+  sessions: []
+  prerecorded_talks: []
