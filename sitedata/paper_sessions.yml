@@ -272,12 +272,12 @@
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
   papers:
-  - DEMO.48
-  - DEMO.58
-  - DEMO.86
-  - DEMO.102
-  - DEMO.111
-  - DEMO.123
+  - demo.48
+  - demo.58
+  - demo.86
+  - demo.102
+  - demo.111
+  - demo.123
 5Az:
   start_time: 2020-11-17 04:00:00-04:00
   end_time: 2020-11-17 05:00:00-04:00
@@ -527,12 +527,12 @@
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
   papers:
-  - DEMO.49
-  - DEMO.71
-  - DEMO.109
-  - DEMO.124
-  - DEMO.131
-  - DEMO.132
+  - demo.49
+  - demo.71
+  - demo.109
+  - demo.124
+  - demo.131
+  - demo.132
 7Az:
   start_time: 2020-11-17 12:00:00-04:00
   end_time: 2020-11-17 13:00:00-04:00
@@ -721,12 +721,12 @@
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
   papers:
-  - DEMO.59
-  - DEMO.60
-  - DEMO.72
-  - DEMO.79
-  - DEMO.89
-  - DEMO.97
+  - demo.59
+  - demo.60
+  - demo.72
+  - demo.79
+  - demo.89
+  - demo.97
 9Az:
   start_time: 2020-11-17 20:00:00-04:00
   end_time: 2020-11-17 21:00:00-04:00
@@ -931,11 +931,11 @@
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
   papers:
-  - DEMO.54
-  - DEMO.91
-  - DEMO.104
-  - DEMO.107
-  - DEMO.118
+  - demo.54
+  - demo.91
+  - demo.104
+  - demo.107
+  - demo.118
 11Az:
   start_time: 2020-11-18 04:00:00-04:00
   end_time: 2020-11-18 05:00:00-04:00
@@ -1202,12 +1202,12 @@
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
   papers:
-  - DEMO.93
-  - DEMO.116
-  - DEMO.119
-  - DEMO.126
-  - DEMO.127
-  - DEMO.128
+  - demo.93
+  - demo.116
+  - demo.119
+  - demo.126
+  - demo.127
+  - demo.128
 15Az:
   start_time: 2020-11-18 19:00:00-04:00
   end_time: 2020-11-18 20:00:00-04:00

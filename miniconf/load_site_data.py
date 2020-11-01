@@ -143,7 +143,6 @@ def load_site_data(
     for p in site_data["main_papers"]:
         p["program"] = "main"
 
-    site_data["demo_papers"] = []
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
 
@@ -158,17 +157,9 @@ def load_site_data(
     )
 
     site_data["papers"] = papers
-    demo_and_srw_tracks = ["System Demonstrations", "Student Research Workshop"]
     site_data["tracks"] = list(
-        sorted(
-            [
-                track
-                for track in {paper.content.track for paper in papers}
-                if track not in demo_and_srw_tracks
-            ]
-        )
+        sorted({track for track in {paper.content.track for paper in papers}})
     )
-    site_data["tracks"] += demo_and_srw_tracks
     # paper_<uid>.html
     by_uid["papers"] = {paper.id: paper for paper in papers}
 

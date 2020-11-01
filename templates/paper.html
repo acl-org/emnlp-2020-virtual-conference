@@ -100,7 +100,7 @@
     <p class="card-text text-center h5">
 
      <a href="papers.html?track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
-     <span class="badge badge-secondary">{{ paper.content.paper_type }} Paper</span>
+     <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
     </p>
 
     {{ components.live_sessions(
@@ -122,6 +122,7 @@
   </div>
 </div>
 
+{% if paper.presentation_id %}
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
     You can open the
@@ -162,7 +163,21 @@
     </div>
   </div>
 </div>
+{% else %}
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
+       target="_blank">#{{paper.rocketchat_channel}}</a>
+    channel in a separate window.
+  </div>
 
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+{% endif %}
 
 {% if paper.poster_pdf %}
 {{ components.section("Example Poster") }}
