@@ -447,7 +447,6 @@ def generate_paper_events(site_data: Dict[str, Any]):
 
     all_sessions = []
     for uid, session in site_data["paper_sessions"].items():
-        kind = "Zoom" if uid[-1] == "g" else "Gather"
         start = session["start_time"]
         end = session["end_time"]
 
