@@ -168,7 +168,7 @@ def load_site_data(
         sorted(track for track in {paper.content.track for paper in papers})
     )
     # paper_<uid>.html
-    papers_by_uid = {}
+    papers_by_uid: Dict[str, Any] = {}
     for paper in papers:
         assert paper.id not in papers_by_uid
         papers_by_uid[paper.id] = paper
@@ -659,7 +659,7 @@ def build_workshops(
                 return wsh["title"]
         return ""
 
-    grouped_papers = defaultdict(list)
+    grouped_papers: DefaultDict[str, Any] = defaultdict(list)
     for paper in raw_workshop_papers:
         grouped_papers[paper["workshop"]].append(paper)
 
