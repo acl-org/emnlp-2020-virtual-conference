@@ -219,13 +219,13 @@ class WorkshopPaper:
 class Workshop:
     id: str
     title: str
-    day: str
     organizers: List[str]
     abstract: str
     website: str
     livestream: Optional[str]
     papers: List[WorkshopPaper]
     schedule: List[Dict[str, Any]]
+    prerecorded_talks: List[Dict[str, Any]]
     rocketchat_channel: str
     sessions: List[SessionInfo]
 
