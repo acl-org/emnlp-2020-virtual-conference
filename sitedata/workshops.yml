@@ -6,6 +6,7 @@
   website: https://www.conll.org
   rocketchat_channel: workshop-1-conll
   sessions: []
+  alias: conll
   prerecorded_talks: []
 - UID: WS-2
   title: Fifth Conference on Machine Translation (WMT20)
@@ -15,6 +16,7 @@
   website: http:/www.statmt.org/wmt20
   rocketchat_channel: workshop-2-wmt
   sessions: []
+  alias: wmt
   prerecorded_talks:
   - title: TBA
     speakers: Jade Abbott
@@ -27,6 +29,7 @@
   website: https://insights-workshop.github.io/
   rocketchat_channel: workshop-3-insights
   sessions: []
+  alias: insights
   prerecorded_talks:
   - title: "Negative results yield interesting questions, or: A bunch of stuff that\
       \ didn't work"
@@ -42,6 +45,7 @@
   website: http://scai.info
   rocketchat_channel: workshop-4-scai
   sessions: []
+  alias: scai
   prerecorded_talks:
   - title: TBA
     speakers: Tba
@@ -103,6 +107,7 @@
   website: https://cmclorg.github.io/
   rocketchat_channel: workshop-5-cmcl2020
   sessions: []
+  alias: cmcl2020
   prerecorded_talks: []
 - UID: WS-6
   title: Interactive and Executable Semantic Parsing (Int-Ex)
@@ -114,6 +119,7 @@
   website: Additicontact address found
   rocketchat_channel: workshop-6-intex-sempar2020
   sessions: []
+  alias: intex-sempar2020
   prerecorded_talks:
   - title: 'Invited Talk: Mirella Lapata'
     speakers: Mirella Lapata
@@ -147,6 +153,7 @@
   website: https://ornlcda.github.io/SDProc/
   rocketchat_channel: workshop-7-sdp2020
   sessions: []
+  alias: sdp2020
   prerecorded_talks: []
 - UID: WS-9
   title: Second Workshop for NLP Open Source Software (NLP-OSS)
@@ -156,6 +163,7 @@
   website: https://nlposs.github.io/
   rocketchat_channel: workshop-9-nlposs
   sessions: []
+  alias: nlposs
   prerecorded_talks:
   - title: (To be confirmed) Invited Talk 1 - Chip Huyen
     speakers: Chip Huyen
@@ -175,6 +183,7 @@
   website: https://spatial-language.github.io
   rocketchat_channel: workshop-10-splu2020
   sessions: []
+  alias: splu2020
   prerecorded_talks:
   - title: SpLU-Invited-talk-1
     speakers: James Pustejovsky
@@ -203,6 +212,7 @@
   website: https://sigtyp.github.io/ws2020.html
   rocketchat_channel: workshop-11-sigtyp
   sessions: []
+  alias: sigtyp
   prerecorded_talks:
   - title: Invited talk
     speakers: Miriam Butt
@@ -232,6 +242,7 @@
   website: https://clinical-nlp.github.io/2020/
   rocketchat_channel: workshop-12-clinicalnlp
   sessions: []
+  alias: clinicalnlp
   prerecorded_talks: []
 - UID: WS-13
   title: 'Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction
@@ -242,6 +253,7 @@
   website: https://sites.google.com/view/deelio-ws/
   rocketchat_channel: workshop-13-deelio
   sessions: []
+  alias: deelio
   prerecorded_talks: []
 - UID: WS-14
   title: 6th Workshop on Noisy User-generated Text (W-NUT 2020)
@@ -251,6 +263,7 @@
   website: http://noisy-text.github.io
   rocketchat_channel: workshop-14-wnut2020
   sessions: []
+  alias: wnut2020
   prerecorded_talks: []
 - UID: WS-15
   title: 'SustaiNLP: Workshop on Simple and Efficient Natural Language Processing'
@@ -261,6 +274,7 @@
   website: https://sites.google.com/view/sustainlp2019
   rocketchat_channel: workshop-15-sustainlp2020
   sessions: []
+  alias: sustainlp2020
   prerecorded_talks:
   - title: Invited Talk
     speakers: Mona Diab
@@ -286,6 +300,7 @@
   website: https://cad-workshop.github.io/
   rocketchat_channel: workshop-16-codi2020
   sessions: []
+  alias: codi2020
   prerecorded_talks: []
 - UID: WS-17
   title: The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW
@@ -295,6 +310,7 @@
   website: https://www.workshopononlineabuse.com/home
   rocketchat_channel: workshop-17-woah4
   sessions: []
+  alias: woah4
   prerecorded_talks: []
 - UID: WS-18
   title: NLP and Computational Social Science (NLP+CSS)
@@ -304,6 +320,7 @@
   website:
   rocketchat_channel: workshop-18-nlpcss
   sessions: []
+  alias: nlpcss
   prerecorded_talks: []
 - UID: WS-19
   title: LOUHI 2020 - 11th International Workshop on Health Text Mining and Information
@@ -315,6 +332,7 @@
   website: https://louhi2020.fbk.eu/
   rocketchat_channel: workshop-19-louhi2020
   sessions: []
+  alias: louhi2020
   prerecorded_talks: []
 - UID: WS-20
   title: Evaluation and Comparison of NLP Systems
@@ -325,6 +343,7 @@
   website: https://nlpevaluation2020.github.io/
   rocketchat_channel: workshop-20-eval4nlp
   sessions: []
+  alias: eval4nlp
   prerecorded_talks: []
 - UID: WS-21
   title: 4th Workshop on Structured Prediction for NLP
@@ -335,6 +354,7 @@
   website: http://structuredprediction.github.io/SPNLP20
   rocketchat_channel: workshop-21-spnlp20
   sessions: []
+  alias: spnlp20
   prerecorded_talks:
   - title: Invited talk by Isabelle Augenstein
     speakers: Isabelle Augenstein
@@ -362,6 +382,7 @@
   website: https://sites.google.com/view/nlp4positiveimpact2020
   rocketchat_channel: workshop-22-nlp4positiveimpact
   sessions: []
+  alias: nlp4positiveimpact
   prerecorded_talks: []
 - UID: WS-23
   title: NLP Beyond Text
@@ -372,6 +393,7 @@
   website: https://sites.google.com/view/nlpbt-2020
   rocketchat_channel: workshop-23-nlpbt2020
   sessions: []
+  alias: nlpbt2020
   prerecorded_talks: []
 - UID: WS-24
   title: 'PrivateNLP 2020: The First Workshop on Privacy in NLP'
@@ -382,6 +404,7 @@
   website: https://sites.google.com/view/privatenlp/
   rocketchat_channel: workshop-24-privatenlp2020
   sessions: []
+  alias: privatenlp2020
   prerecorded_talks:
   - title: invited1
     speakers: Aaron Roth
@@ -404,6 +427,7 @@
   website: https://blackboxnlp.github.io
   rocketchat_channel: workshop-25-blackboxnlp2020
   sessions: []
+  alias: blackboxnlp2020
   prerecorded_talks:
   - title: Evaluating and calibrating neural language models for human-like language
       processing
@@ -424,4 +448,5 @@
   website: https://www.nlpcovid19workshop.org/emnlp2020/
   rocketchat_channel: workshop-26-nlp-covid19-emnlp
   sessions: []
+  alias: nlp-covid19-emnlp
   prerecorded_talks: []

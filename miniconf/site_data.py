@@ -213,6 +213,7 @@ class WorkshopPaper:
     speakers: str
     presentation_id: Optional[str]
     content: PaperContent
+    rocketchat_channel: str
 
 
 @dataclass(frozen=True)
