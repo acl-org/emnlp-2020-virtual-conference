@@ -96,8 +96,6 @@ class PaperContent:
             assert self.demo_url.startswith("https://") or self.demo_url.startswith(
                 "http://"
             ), self.demo_url
-        if self.program != "workshop":
-            assert self.paper_type[0].isupper(), self
 
 
 @dataclass(frozen=True)
