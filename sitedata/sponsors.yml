@@ -16,9 +16,9 @@
   zoom_link: Zoom link and time to be decided in coordination with EMNLP Organizing
     Committee
   schedule:
-  - start:
-    duration:
-    label: You can leave this empty until round two
+  - start: 2020-11-19 16:00:00
+    duration: 1.25
+    label: NLP & Conversational AI at Amazon - Panel Discussion and Q&A
   resources:
   - label: Amazon at EMNLP 2020
     website: https://www.amazon.science/conferences-and-events/emnlp-2020
