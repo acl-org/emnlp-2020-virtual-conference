@@ -4,7 +4,7 @@
 
 <div class="tab-content pt-3 pb-5" id="nav-tabContent">
   {% if sponsor.logoontop %}
-  <img class="rounded mx-auto d-block img-fluid" src="static/images/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="max-width: 10em; max-height: 10em"  />
+  <img class="rounded mx-auto d-block img-fluid" src="static/images/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="max-width: 15em; max-height: 10em"  />
   {% else %}
   {{ components.section(sponsor.name) }}
   {% endif %}
@@ -32,6 +32,31 @@
 {% endif %}
 
 <!-- Youtube -->
+{% if sponsor.youtubes is defined %}
+<div class="row justify-content-md-center pt-3">
+{% for yt in sponsor.youtubes %}
+  <div class="col-4">
+    <iframe width="320" height="240"   src="{{ yt }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+{% endfor %}
+</div>
+{% endif %}
+
+<!-- Google Drive Video -->
+{% if sponsor.gdrive is defined %}
+<div class="row justify-content-md-center pt-3">
+<iframe src="{{ sponsor.gdrive }}" width="640" height="480"></iframe>
+</div>
+{% endif %}
+
+<!-- Vimeo Video -->
+{% if sponsor.vimeo is defined %}
+<div class="row justify-content-md-center pt-3">
+  <iframe src="{{ sponsor.vimeo }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+<!-- Video -->
 {% if sponsor.video is defined %}
 <div class="row justify-content-md-center pt-3">
   <video width="525" controls preload="none">
@@ -65,6 +90,32 @@
 
         <a class="btn btn-primary" href="{{ sponsor.zoom_link }}" role="button" target="_blank">Join via Zoom!</a>
 
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+    <!-- Publications -->
+  {% if sponsor.publications is defined %}
+  <div class="card">
+    <div class="card-header" id="headingPublications">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsePublications" aria-expanded="true" aria-controls="collapsePublications">
+          <h5>Accepted publications</h5>
+        </button>
+      </h5>
+    </div>
+    <div id="collapsePublications" class="collapse show" aria-labelledby="headingPublications" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+        {% for paper_uid in sponsor.publications %}
+            {% set paper = papers[paper_uid] %}
+            <a class="text-dark" href="paper_{{paper.id}}.html" target="_blank">
+              <p class="font-weight-bold mb-n1">{{ paper.content.title }}</p>
+              <p >{{ paper.content.authors | join(", ") }}</p>
+            </a>
+        {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
@@ -137,7 +188,7 @@
   {% endif %}
 
   <!-- Chat -->
-  {% if sponsor.channel is defined %}
+  {% if sponsor.rocketchat_channel is defined %}
   <div class="card">
     <div class="card-header" id="headingChat">
       <h5 class="mb-0">
@@ -149,9 +200,9 @@
     <div id="collapseChat" class="collapse show" aria-labelledby="headingChat" data-parent="#accordion">
       <div class="card-body">
         <div class="col-md-12 col-xs-12 p-2">
-          <h5 class="text-center">click "Reply" in the chat window to start a private conversation with our sponsor</h5>
+          <h5 class="text-center">Click "Reply" in the chat window to start a private conversation with our sponsor</h5>
           <div id="gitter" class="slp">
-            <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{ sponsor.channel }}?layout=embedded" height="700px" width="100%" ></iframe>
+            <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{ sponsor.rocketchat_channel }}?layout=embedded" height="700px" width="100%" ></iframe>
           </div>
         </div>
       </div>
