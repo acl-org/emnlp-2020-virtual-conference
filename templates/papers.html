@@ -117,7 +117,7 @@
             class="btn-group btn-group-toggle program_option mr-3 bottom-bar"
             data-toggle="buttons" >
 
-            <label class="btn btn-sm btn-outline-secondary active">
+            <label class="btn btn-sm btn-outline-secondary">
               <input
                   type="radio"
                   name="program"
@@ -153,7 +153,7 @@
               />
               workshop
             </label>
-            <label class="btn btn-sm btn-outline-secondary">
+            <label class="btn btn-sm btn-outline-secondary active">
               <input
                 type="radio"
                 name="program"
@@ -309,7 +309,7 @@
 
   $(document).ready(function () {
     tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
-    const program = getUrlParameter("program") || 'main'
+    const program = getUrlParameter("program") || 'all'
     let track = ""
     if (program !== "workshop") {
         track = getUrlParameter("track") || 'All tracks'
