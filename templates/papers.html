@@ -104,21 +104,73 @@
         <div class="col-lg-5">
           <div class="form-group">
             <select id="track_selector" class="selectpicker form-control" data-live-search="true" data-style="btn-light">
-              <option>All tracks</option>
-            {% for track in tracks %}
-              <option>{{ track }}</option>
-            {% endfor %}
             </select>
+          </div>
+          <div id="track_selector_placeholder" class="d-none d-lg-block" style="width: 100%; height: 2.38em;">
           </div>
         </div>
 
     </div>
 
     <!-- Bottoms-->
-    <div style="display: flex; margin-top: -0.7em;">
+    <div class="button-box" style="margin-top: -0.7em;">
+      
+      <div >
+        <div 
+            class="btn-group btn-group-toggle program_option mr-3 bottom-bar"
+            data-toggle="buttons" >
+
+            <label class="btn btn-sm btn-outline-secondary active">
+              <input
+                  type="radio"
+                  name="program"
+                  value="main"
+                  autocomplete="off"
+              />
+              main
+            </label>
+            <label class="btn btn-sm btn-outline-secondary">
+              <input
+                type="radio"
+                name="program"
+                value="demo"
+                autocomplete="off"
+              />
+              demo
+            </label>
+            <label class="btn btn-sm btn-outline-secondary">
+              <input
+                type="radio"
+                name="program"
+                value="findings"
+                autocomplete="off"
+              />
+              findings
+            </label>
+            <label class="btn btn-sm btn-outline-secondary">
+              <input
+                type="radio"
+                name="program"
+                value="workshop"
+                autocomplete="off"
+              />
+              workshop
+            </label>
+            <label class="btn btn-sm btn-outline-secondary">
+              <input
+                type="radio"
+                name="program"
+                value="all"
+                autocomplete="off"
+              />
+              all
+            </label>
+        </div>
+      </div>
+      
       <div style="margin-right: 0.0em;">
         <div 
-            class="btn-group btn-group-toggle render_option mr-3"
+            class="btn-group btn-group-toggle render_option mr-3 bottom-bar"
             data-toggle="buttons" >
 
             <label class="btn btn-sm btn-outline-secondary active">
@@ -202,8 +254,8 @@
         
         <div style="float: left; margin-top: 0.2em;">
           <h6>
-            <span class="badge badge-pill badge-secondary" id="modalPaperType"></span>
-            &nbsp;
+            <span class="badge badge-pill badge-secondary" id="modalPaperType" style="margin-right: 0.5em;"></span>
+            <!-- &nbsp; -->
             <span class="badge badge-pill badge-primary" id="modalPaperTrack"></span>
           </h6>
         </div>
@@ -216,13 +268,13 @@
 
       </div>
       <div class="modal-body">
-        <h6 class="text-muted">Abstract</h6>
+        <h6 id="modalAbstractHeader" class="text-muted">Abstract</h6>
         <p id="modalAbstract"></p>
 
-        <h6 class="text-muted">Keywords</h6>
+        <h6 id="modalKeywordsHeader" class="text-muted">Keywords</h6>
         <p style="font-size: 1.3em; font-family: monospace;" id="modalKeywords"></p>
 
-        <h6 class="text-muted">Sessions</h6>
+        <h6 id="modalSessionsHeader" class="text-muted">Sessions</h6>
         <div style="display: flex;" id="modalSessions"></div>
 
       </div>
@@ -260,18 +312,24 @@
 
   $(document).ready(function () {
     tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
-    const track = getUrlParameter("track") || "All tracks";
+    const program = getUrlParameter("program") || 'main'
+    let track = ""
+    if (program !== "workshop") {
+        track = getUrlParameter("track") || 'All tracks'
+    } else {
+        track = getUrlParameter("track") || 'All workshops'
+    }
     
     updateTabs();
 
-    // start(track);
-    $('#track_selector').selectpicker('val', track);
+    start();
   });
 
   $('#track_selector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
     let track = e.target.value;
+    if (track === previousValue) return;
     setQueryStringParameter("track", track);
-    start(track);
+    start();
   });
 
   $('#tabBrowse').click(()=>{

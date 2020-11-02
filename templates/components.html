@@ -320,8 +320,10 @@
               {{ tutorial.organizers }}
             </span>
           </div>
+        <div class="mx-4 text-left card-subtitle">
 
-          {% for session in tutorial.sessions %}
+
+          {% for session in tutorial.blocks %}
           <div class="m-3 text-center">
             {{session.session}}
             <span class="session_times">{{session.time_string}}</span>
@@ -333,6 +335,7 @@
             </div>
           </div>
           {% endfor %}
+        </div>
     </div>
   </div>
   {% endfor %}
@@ -349,7 +352,7 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   {% for tutorial in tutorials %}
-    {% for session in tutorial.sessions %}
+    {% for session in tutorial.blocks %}
       // create a calendar by hand
       ouicalData = addToCalendarData({
         options: {
@@ -454,11 +457,10 @@
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-  {{session.session}}
-  <span class="session_times">{{session.time_string}}</span>
+    <span>{{session.session}}, </span><span class="session_times">{{session.session}} {{session.time_string}}</span>
 
-  {% if session.zoom_link %}
-  <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
+  {% if session.link %}
+  <a href="{{session.link}}" target="_blank"  class="card-link">
     <!--
     <img
         src="static/images/zoom-icon.png"
@@ -467,7 +469,11 @@
         title="Join Zoom Meeting"
     >
     -->
-    [Join Zoom Meeting]
+    {% if session.session_type == "gather" %}
+      [Join Gather Meeting]
+    {% else %}
+      [Join Zoom Meeting]
+    {% endif %}
   </a>
   {% endif %}
 

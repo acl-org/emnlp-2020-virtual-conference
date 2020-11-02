@@ -5,9 +5,8 @@ import itertools
 import json
 import os
 from collections import OrderedDict, defaultdict
-from datetime import date, datetime, timedelta
-from itertools import chain
-from typing import Any, DefaultDict, Dict, List, Tuple
+from datetime import datetime, timedelta
+from typing import Any, DefaultDict, Dict, List
 
 import jsons
 import pytz
@@ -30,10 +29,7 @@ from miniconf.site_data import (
 
 
 def load_site_data(
-    site_data_path: str,
-    site_data: Dict[str, Any],
-    by_uid: Dict[str, Any],
-    qa_session_length_hr: int,
+    site_data_path: str, site_data: Dict[str, Any], by_uid: Dict[str, Any],
 ) -> List[str]:
     """Loads all site data at once.
 
@@ -55,51 +51,14 @@ def load_site_data(
         # papers.html
         "main_papers",
         "demo_papers",
-        "srw_papers",
-        "cl_papers",
-        "tacl_papers",
         "paper_recs",
         "papers_projection",
-        "main_paper_sessions",
-        "demo_paper_sessions",
-        "srw_paper_sessions",
-        "cl_paper_sessions",
-        "tacl_paper_sessions",
-        "main_paper_zoom_links",
-        "demo_paper_zoom_links",
-        "srw_paper_zoom_links",
-        "cl_paper_zoom_links",
-        "tacl_paper_zoom_links",
-        "main_paper_slideslive_ids",
-        "demo_paper_slideslive_ids",
-        "srw_paper_slideslive_ids",
-        "cl_paper_slideslive_ids",
-        "tacl_paper_slideslive_ids",
+        "paper_sessions",
         # socials.html
         "socials",
         # workshops.html
         "workshops",
-        "w1_papers",
-        "w2_papers",
-        "w3_papers",
-        "w4_papers",
-        "w5_papers",
-        "w6_papers",
-        "w7_papers",
-        "w8_papers",
-        "w9_papers",
-        "w10_papers",
-        "w11_papers",
-        "w12_papers",
-        "w13_papers",
-        "w14_papers",
-        "w15_papers",
-        "w16_papers",
-        "w17_papers",
-        "w18_papers",
-        "w19_papers",
-        "w20_papers",
-        "workshop_schedules",
+        "workshop_papers",
         # sponsors.html
         "sponsors",
         # about.html
@@ -136,6 +95,7 @@ def load_site_data(
     generate_plenary_events(site_data)
     generate_tutorial_events(site_data)
     generate_workshop_events(site_data)
+    generate_paper_events(site_data)
 
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
 
@@ -159,63 +119,14 @@ def load_site_data(
     ]
     site_data["plenary_session_days"][0][-1] = "active"
 
-    # papers.{html,json}
-    papers = build_papers(
-        raw_papers=site_data["main_papers"]
-        + site_data["demo_papers"]
-        + site_data["srw_papers"]
-        + site_data["cl_papers"]
-        + site_data["tacl_papers"],
-        all_paper_sessions=[
-            site_data["main_paper_sessions"],
-            site_data["demo_paper_sessions"],
-            site_data["srw_paper_sessions"],
-            site_data["cl_paper_sessions"],
-            site_data["tacl_paper_sessions"],
-        ],
-        qa_session_length_hr=qa_session_length_hr,
-        all_paper_zoom_links=site_data["main_paper_zoom_links"]
-        + site_data["demo_paper_zoom_links"]
-        + site_data["srw_paper_zoom_links"]
-        + site_data["cl_paper_zoom_links"]
-        + site_data["tacl_paper_zoom_links"],
-        all_paper_slideslive_ids=site_data["main_paper_slideslive_ids"]
-        + site_data["demo_paper_slideslive_ids"]
-        + site_data["srw_paper_slideslive_ids"]
-        + site_data["cl_paper_slideslive_ids"]
-        + site_data["tacl_paper_slideslive_ids"],
-        paper_recs=site_data["paper_recs"],
-        paper_images_path=site_data["config"]["paper_images_path"],
-    )
-    for prefix in ["main", "demo", "srw", "cl", "tacl"]:
-        for suffix in [
-            "papers",
-            "paper_sessions",
-            "paper_zoom_links",
-            "paper_slideslive_ids",
-        ]:
-            del site_data[f"{prefix}_{suffix}"]
-    site_data["papers"] = papers
-    demo_and_srw_tracks = ["System Demonstrations", "Student Research Workshop"]
-    site_data["tracks"] = list(
-        sorted(
-            [
-                track
-                for track in {paper.content.track for paper in papers}
-                if track not in demo_and_srw_tracks
-            ]
-        )
-    )
-    site_data["tracks"] += demo_and_srw_tracks
-    # paper_<uid>.html
-    by_uid["papers"] = {paper.id: paper for paper in papers}
+    # Papers' progam to their data
+    for p in site_data["main_papers"]:
+        p["program"] = "main"
 
-    # serve_papers_projection.json
-    all_paper_ids_with_projection = {
-        item["id"] for item in site_data["papers_projection"]
-    }
-    for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
-        print(f"WARNING: {paper_id} does not have a projection")
+    for p in site_data["demo_papers"]:
+        p["program"] = "demo"
+
+    site_data["programs"] = ["main", "demo", "findings", "workshop"]
 
     # tutorials.html
     tutorials = build_tutorials(site_data["tutorials"])
@@ -229,29 +140,7 @@ def load_site_data(
     # workshops.html
     workshops = build_workshops(
         raw_workshops=site_data["workshops"],
-        raw_workshop_papers={
-            "W1": site_data["w1_papers"],
-            "W2": site_data["w2_papers"],
-            "W3": site_data["w3_papers"],
-            "W4": site_data["w4_papers"],
-            "W5": site_data["w5_papers"],
-            "W6": site_data["w6_papers"],
-            "W7": site_data["w7_papers"],
-            "W8": site_data["w8_papers"],
-            "W9": site_data["w9_papers"],
-            "W10": site_data["w10_papers"],
-            "W11": site_data["w11_papers"],
-            "W12": site_data["w12_papers"],
-            "W13": site_data["w13_papers"],
-            "W14": site_data["w14_papers"],
-            "W15": site_data["w15_papers"],
-            "W16": site_data["w16_papers"],
-            "W17": site_data["w17_papers"],
-            "W18": site_data["w18_papers"],
-            "W19": site_data["w19_papers"],
-            "W20": site_data["w20_papers"],
-        },
-        workshop_schedules=site_data["workshop_schedules"],
+        raw_workshop_papers=site_data["workshop_papers"],
     )
     site_data["workshops"] = workshops
     # workshop_<uid>.html
@@ -263,6 +152,34 @@ def load_site_data(
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
+
+    # papers.{html,json}
+    papers = build_papers(
+        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
+        paper_sessions=site_data["paper_sessions"],
+        paper_recs=site_data["paper_recs"],
+        paper_images_path=site_data["config"]["paper_images_path"],
+    )
+    for wsh in site_data["workshops"]:
+        papers.extend(wsh.papers)
+    site_data["papers"] = papers
+
+    site_data["tracks"] = list(
+        sorted(track for track in {paper.content.track for paper in papers})
+    )
+    # paper_<uid>.html
+    papers_by_uid: Dict[str, Any] = {}
+    for paper in papers:
+        assert paper.id not in papers_by_uid
+        papers_by_uid[paper.id] = paper
+    by_uid["papers"] = papers_by_uid
+
+    # serve_papers_projection.json
+    all_paper_ids_with_projection = {
+        item["id"] for item in site_data["papers_projection"]
+    }
+    for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
+        print(f"WARNING: {paper_id} does not have a projection")
 
     # about.html
     site_data["faq"] = site_data["faq"]["FAQ"]
@@ -329,7 +246,7 @@ def build_plenary_sessions(
                         session_name=session.get("name"),
                         start_time=session.get("start_time"),
                         end_time=session.get("end_time"),
-                        zoom_link=session.get("zoom_link"),
+                        link=session.get("zoom_link"),
                     )
                     for session in item.get("sessions")
                 ],
@@ -350,7 +267,7 @@ def build_plenary_sessions(
 def generate_plenary_events(site_data: Dict[str, Any]):
     """ We add sessions from the plenary for the weekly and daily view. """
     # Add plenary sessions to calendar
-    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
+    all_sessions = []
     for plenary in site_data["plenary_sessions"]:
         uid = plenary["UID"]
 
@@ -368,21 +285,21 @@ def generate_plenary_events(site_data: Dict[str, Any]):
                 "view": "day",
             }
             site_data["overall_calendar"].append(event)
-
-            start_day = start.date()
-            end_day = end.date()
-
-            assert start_day == end_day, "Tutorial session spans more than a day"
             assert start < end, "Session start after session end"
 
-            sessions_by_day[start_day].append((start, end))
+            all_sessions.append(session)
 
-    # Compute start and end of plenary blocks
-    for day in sessions_by_day:
-        min_start = min([t[0] for t in sessions_by_day[day]])
-        max_end = max([t[1] for t in sessions_by_day[day]])
+    blocks = compute_schedule_blocks(all_sessions)
 
-        tab_id = (day.strftime("%b %d"),)
+    # Compute start and end of tutorial blocks
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
+
+        tz = pytz.timezone("America/Santo_Domingo")
+        punta_cana_date = min_start.astimezone(tz)
+
+        tab_id = punta_cana_date.strftime("%b%d").lower()
 
         event = {
             "title": "Plenary Session",
@@ -401,7 +318,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
     """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
 
     # Add tutorial sessions to calendar
-    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
+    all_sessions = []
     for tutorial in site_data["tutorials"]:
         uid = tutorial["UID"]
         for session in tutorial["sessions"]:
@@ -418,19 +335,16 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
                 "view": "day",
             }
             site_data["overall_calendar"].append(event)
-
-            start_day = start.date()
-            end_day = end.date()
-
-            assert start_day == end_day, "Tutorial session spans more than a day"
             assert start < end, "Session start after session end"
 
-            sessions_by_day[start_day].append((start, end))
+            all_sessions.append(session)
+
+    blocks = compute_schedule_blocks(all_sessions)
 
     # Compute start and end of tutorial blocks
-    for tutorial_day in sessions_by_day:
-        min_start = min([t[0] for t in sessions_by_day[tutorial_day]])
-        max_end = max([t[1] for t in sessions_by_day[tutorial_day]])
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
 
         event = {
             "title": "Tutorials",
@@ -448,8 +362,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
 def generate_workshop_events(site_data: Dict[str, Any]):
     """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
     # Add workshop sessions to calendar
-    sessions_by_day: Dict[date, List[Tuple[datetime, datetime]]] = defaultdict(list)
-
+    all_sessions = []
     for workshop in site_data["workshops"]:
         uid = workshop["UID"]
         for session in workshop["sessions"]:
@@ -468,18 +381,16 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             }
             site_data["overall_calendar"].append(event)
 
-            start_day = start.date()
-            end_day = end.date()
-
-            assert start_day == end_day, "Tutorial session spans more than a day"
             assert start < end, "Session start after session end"
 
-            sessions_by_day[start_day].append((start, end))
+            all_sessions.append(session)
+
+    blocks = compute_schedule_blocks(all_sessions)
 
     # Compute start and end of workshop blocks
-    for workshop_day in sessions_by_day:
-        min_start = min([t[0] for t in sessions_by_day[workshop_day]])
-        max_end = max([t[1] for t in sessions_by_day[workshop_day]])
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
 
         event = {
             "title": "Workshops",
@@ -489,6 +400,51 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             "link": "workshops.html",
             "category": "time",
             "type": "Workshops",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
+def generate_paper_events(site_data: Dict[str, Any]):
+    """ We add sessions from papers and compute the overall paper blocks for the weekly view. """
+    # Add paper sessions to calendar
+
+    all_sessions = []
+    for uid, session in site_data["paper_sessions"].items():
+        start = session["start_time"]
+        end = session["end_time"]
+
+        event = {
+            "title": session["long_name"].replace(":", "<br>", 1),
+            "start": start,
+            "end": end,
+            "location": "",
+            "link": f"papers.html?session={uid}&program=all",
+            "category": "time",
+            "type": "QA Sessions",
+            "view": "day",
+        }
+        site_data["overall_calendar"].append(event)
+
+        assert start < end, "Session start after session end"
+
+        all_sessions.append(session)
+
+    blocks = compute_schedule_blocks(all_sessions)
+
+    # Compute start and end of tutorial blocks
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
+
+        event = {
+            "title": f"QA Session",
+            "start": min_start,
+            "end": max_end,
+            "location": "",
+            "link": f"papers.html",
+            "category": "time",
+            "type": "QA Sessions",
             "view": "week",
         }
         site_data["overall_calendar"].append(event)
@@ -558,10 +514,7 @@ def get_card_image_path_for_paper(paper_id: str, paper_images_path: str) -> str:
 
 def build_papers(
     raw_papers: List[Dict[str, str]],
-    all_paper_sessions: List[Dict[str, Dict[str, Any]]],
-    qa_session_length_hr: int,
-    all_paper_zoom_links: List[Dict[str, str]],
-    all_paper_slideslive_ids: List[Dict[str, str]],
+    paper_sessions: Dict[str, Any],
     paper_recs: Dict[str, List[str]],
     paper_images_path: str,
 ) -> List[Paper]:
@@ -577,59 +530,30 @@ def build_papers(
     - pdf_url: str
     - demo_url: str
 
-    The paper_schedule file contains the live QA session slots for each paper.
-    An example paper_sessions.yml file is shown below.
-    ```yaml
-    1A:
-      date: 2020-07-06_05:00:00
-      papers:
-      - main.1
-      - main.2
-    2A:
-      date: 2020-07-06_08:00:00
-      papers:
-      - main.17
-      - main.19
-    ```
     """
     # build the lookup from (paper, slot) to zoom_link
-    zoom_info_for_paper_session: Dict[str, Dict[str, str]] = {}
-    for item in all_paper_zoom_links:
-        paper_id = item["UID"]
-        session_name = item["session_name"]
-        paper_session_id = f"{paper_id}-{session_name}"
-        assert paper_session_id not in zoom_info_for_paper_session
-        zoom_info_for_paper_session[paper_session_id] = item
+    paper_id_to_link: Dict[str, str] = {}
 
-    # build the lookup from paper to slideslive presentation ID
-    presentation_id_for_paper: Dict[str, str] = {}
-    for item in all_paper_slideslive_ids:
-        paper_id = item["UID"]
-        presentation_id = item["presentation_id"]
-        assert paper_id not in presentation_id_for_paper
-        presentation_id_for_paper[paper_id] = presentation_id
+    for session in paper_sessions.values():
+        for paper_id in session["papers"]:
+            assert paper_id not in paper_id_to_link
+            paper_id_to_link[paper_id] = session.get("link", "http://example.com")
 
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
-    for session_name, session_info in chain(
-        *[paper_sessions.items() for paper_sessions in all_paper_sessions]
-    ):
-        session_date = session_info["date"]
-        start_time = datetime.strptime(session_date, "%Y-%m-%d_%H:%M:%S")
-        end_time = start_time + timedelta(hours=qa_session_length_hr)
+    for session_name, session_info in paper_sessions.items():
+        start_time = session_info["start_time"]
+        end_time = session_info["end_time"]
+
         for paper_id in session_info["papers"]:
-            paper_session_id = f"{paper_id}-{session_name}"
-            zoom_info = zoom_info_for_paper_session[paper_session_id]
-            assert (
-                datetime.strptime(zoom_info["starttime"], "%Y-%m-%dT%H:%M:%SZ")
-                == start_time
-            ), paper_id
+            link = paper_id_to_link[paper_id]
+
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
                     start_time=start_time,
                     end_time=end_time,
-                    zoom_link=zoom_info["zoom_join_link"],
+                    link=link,
                 )
             )
 
@@ -640,7 +564,7 @@ def build_papers(
             card_image_path=get_card_image_path_for_paper(
                 item["UID"], paper_images_path
             ),
-            presentation_id=presentation_id_for_paper.get(item["UID"]),
+            presentation_id=item.get("presentation_id", None),
             content=PaperContent(
                 title=item["title"],
                 authors=extract_list_field(item, "authors"),
@@ -653,6 +577,7 @@ def build_papers(
                 paper_type=item.get("paper_type", ""),
                 sessions=sessions_for_paper[item["UID"]],
                 similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
+                program=item["program"],
             ),
         )
         for item in raw_papers
@@ -664,7 +589,7 @@ def build_papers(
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
-        if len(paper.content.sessions) != 2:
+        if len(paper.content.sessions) != 1:
             print(
                 f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
             )
@@ -679,27 +604,46 @@ def parse_session_time(session_time_str: str) -> datetime:
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
+    def build_tutorial_blocks(t: Dict[str, Any]) -> List[SessionInfo]:
+        blocks = compute_schedule_blocks(t["sessions"])
+        result = []
+        for i, block in enumerate(blocks):
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
+
+            result.append(
+                SessionInfo(
+                    session_name=f"T-Live Session {i+1}",
+                    start_time=min_start,
+                    end_time=max_end,
+                    link="",
+                )
+            )
+        return result
+
     return [
         Tutorial(
             id=item["UID"],
             title=item["title"],
             organizers=item["organizers"],
             abstract=item["abstract"],
-            website=item["website"],
-            material=item["material"],
-            slides=item["slides"],
+            website=item.get("website", None),
+            material=item.get("material", None),
+            slides=item.get("slides", None),
             prerecorded=item.get("prerecorded", ""),
             rocketchat_channel=item.get("rocketchat_channel", ""),
             sessions=[
                 TutorialSessionInfo(
                     session_name=session.get("name"),
                     start_time=session.get("start_time"),
-                    end_time=session.get("start_time"),
+                    end_time=session.get("end_time"),
+                    hosts=session.get("hosts", ""),
                     livestream_id=session.get("livestream_id"),
                     zoom_link=session.get("zoom_link"),
                 )
                 for session in item.get("sessions")
             ],
+            blocks=build_tutorial_blocks(item),
             virtual_format_description=item["info"],
         )
         for item in raw_tutorials
@@ -707,20 +651,44 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
 
 
 def build_workshops(
-    raw_workshops: List[Dict[str, Any]],
-    raw_workshop_papers: Dict[str, List[Dict[str, Any]]],
-    workshop_schedules: Dict[str, List[Dict[str, Any]]],
+    raw_workshops: List[Dict[str, Any]], raw_workshop_papers: List[Dict[str, Any]],
 ) -> List[Workshop]:
+    def workshop_title(workshop_id):
+        for wsh in raw_workshops:
+            if wsh["UID"] == workshop_id:
+                return wsh["title"]
+        return ""
+
+    grouped_papers: DefaultDict[str, Any] = defaultdict(list)
+    for paper in raw_workshop_papers:
+        grouped_papers[paper["workshop"]].append(paper)
+
+    ws_id_to_alias: Dict[str, str] = {w["UID"]: w["alias"] for w in raw_workshops}
 
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
-    for workshop_id, papers in raw_workshop_papers.items():
+    for workshop_id, papers in grouped_papers.items():
         for item in papers:
             workshop_papers[workshop_id].append(
                 WorkshopPaper(
                     id=item["UID"],
                     title=item["title"],
-                    speakers=item["speakers"],
-                    presentation_id=item.get("presentation_id", ""),
+                    speakers=item["authors"],
+                    presentation_id=item.get("presentation_id", None),
+                    rocketchat_channel=f"paper-{ws_id_to_alias[workshop_id]}-{item['UID'].split('.')[-1]}",
+                    content=PaperContent(
+                        title=item["title"],
+                        authors=extract_list_field(item, "authors"),
+                        track=workshop_title(workshop_id),
+                        paper_type="Workshop",
+                        abstract=None,
+                        tldr=None,
+                        keywords=[],
+                        pdf_url=None,
+                        demo_url=None,
+                        sessions=[],
+                        similar_paper_uids=[],
+                        program="workshop",
+                    ),
                 )
             )
 
@@ -728,20 +696,20 @@ def build_workshops(
         Workshop(
             id=item["UID"],
             title=item["title"],
-            day=item["day"],
             organizers=item["organizers"],
             abstract=item["abstract"],
             website=item["website"],
-            livestream=item["livestream"],
+            livestream=item.get("livestream"),
             papers=workshop_papers[item["UID"]],
-            schedule=workshop_schedules.get(item["UID"]),
+            schedule=item.get("schedule"),
+            prerecorded_talks=item.get("prerecorded_talks"),
             rocketchat_channel=item["rocketchat_channel"],
             sessions=[
                 SessionInfo(
                     session_name=session.get("name", ""),
                     start_time=session.get("start_time"),
                     end_time=session.get("end_time"),
-                    zoom_link=session.get("zoom_link", ""),
+                    link=session.get("zoom_link", ""),
                 )
                 for session in item.get("sessions")
             ],
@@ -768,7 +736,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
                     session_name=session.get("name"),
                     start_time=parse_session_time(session.get("start_time")),
                     end_time=parse_session_time(session.get("end_time")),
-                    zoom_link=session.get("zoom_link"),
+                    link=session.get("zoom_link"),
                 )
                 for session in item["sessions"]
             ],
@@ -791,13 +759,16 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     for sponsor in by_uid["sponsors"].values():
         sponsor["zoom_times"] = OrderedDict()
 
-        for zoom in sponsor.get("schedule", []):
-            start = zoom["start"].astimezone(pytz.timezone("GMT"))
-            if zoom.get("end") is None:
-                end = start + timedelta(hours=zoom["duration"])
+        for session in sponsor.get("schedule", []):
+            if session["start"] is None:
+                continue
+
+            start = session["start"].astimezone(pytz.timezone("GMT"))
+            if session.get("end") is None:
+                end = start + timedelta(hours=session["duration"])
             else:
-                end = zoom["end"].astimezone(pytz.timezone("GMT"))
-            day = start.strftime("%A")
+                end = session["end"].astimezone(pytz.timezone("GMT"))
+            day = start.strftime("%A, %b %d")
             start_time = start.strftime(display_time_format)
             end_time = end.strftime(display_time_format)
             time_string = "{} ({}-{} GMT)".format(day, start_time, end_time)
@@ -805,7 +776,7 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
             if day not in sponsor["zoom_times"]:
                 sponsor["zoom_times"][day] = []
 
-            sponsor["zoom_times"][day].append((time_string, zoom["label"]))
+            sponsor["zoom_times"][day].append((time_string, session["label"]))
 
     # In the YAML, we just have a list of sponsors. We group them here by level
     sponsors_by_level: DefaultDict[str, List[Any]] = defaultdict(list)
@@ -830,3 +801,36 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     ]
 
     assert all(lvl in site_data["sponsor_levels"] for lvl in sponsors_by_level)
+
+
+def compute_schedule_blocks(events) -> List[List[Dict[str, Any]]]:
+    # Based on
+    # https://stackoverflow.com/questions/54713564/how-to-find-gaps-given-a-number-of-start-and-end-datetime-objects
+    if len(events) <= 1:
+        return events
+
+    # sort by start times
+    events = sorted(events, key=lambda x: x["start_time"])
+
+    # Start at the end of the first range
+    now = events[0]["end_time"]
+
+    blocks = []
+    block: List[Dict[str, Any]] = []
+
+    for pair in events:
+        # if next start time is before current end time, keep going until we find a gap
+        # if next start time is after current end time, found the first gap
+        if pair["start_time"] > now:
+            blocks.append(block)
+            block = [pair]
+        else:
+            block.append(pair)
+
+        # need to advance "now" only if the next end time is past the current end time
+        now = max(pair["end_time"], now)
+
+    if len(block):
+        blocks.append(block)
+
+    return blocks

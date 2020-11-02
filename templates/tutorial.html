@@ -16,6 +16,13 @@
     <a class="card-link" data-toggle="collapse" role="button" href="#details">
       Description
     </a>
+
+    {% if tutorial.sessions %}
+    <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+      Schedule
+    </a>
+    {% endif %}
+
     {% if tutorial.website %}
       <a href="{{tutorial.website}}" target="_blank"  class="card-link">
         Website
@@ -31,21 +38,10 @@
         Material
       </a>
     {% endif %}
-
-    {% if tutorial.id == 'T7' %}
-      <a href="https://docs.google.com/document/d/1WUerIY4MKuKEmvWR2OeB_oJCSBl3k4Q7KWwNzm5HYhs/view" target="_blank" class="card-link">
-          Tutorial Worksheet
-      </a>
-    {% endif %}
-    {% if tutorial.id == 'T1' %}
-      <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank"  class="card-link">
-        Question and Discussion Topic Collection via Dory
-      </a>
-    {% endif %}
     </div>
 
     {{ components.live_sessions(
-        tutorial.sessions,
+        tutorial.blocks,
         tutorial.title,
         "https://virtual.acl2020.org/tutorial_" + tutorial.id + ".html",
         false) }}
@@ -64,6 +60,35 @@
     <p></p>
   </div>
 </div>
+
+<!-- Schedule -->
+{% if tutorial.sessions %}
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 30%;">Time</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Hosts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in tutorial.sessions %}
+        <tr>
+            <td>
+              {{event.day}}, <span class="session_times">{{event.time_string}}</span>
+            </td>
+          <td scope="row">{{event.session_name}}</td>
+          <td style="white-space: pre-wrap;">{{event.hosts}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+<script src="static/js/time-extend.js"></script>
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="row m-2">

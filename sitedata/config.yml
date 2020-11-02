@@ -16,11 +16,12 @@ background_image: static/images/emnlp2020/EMNLP-Banner-5.1.jpg
 organization: Association for Computational Linguistics
 
 # Path to the folder of paper images.
-paper_images_path: https://acl2020-public.s3.amazonaws.com/papers
+paper_images_path: https://emnlp2020-public.s3.amazonaws.com/paper_images
+
 default_presentation_id: 38931484
 
 # Remove or change to your chat server.
-chat_server: acl2020.rocket.chat
+chat_server: emnlp2020.rocket.chat
 
 calendar:
   start: '2020-11-16'

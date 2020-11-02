@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+import pytz
+
 
 @dataclass(frozen=True)
 class SessionInfo:
@@ -10,25 +12,29 @@ class SessionInfo:
     session_name: str
     start_time: datetime
     end_time: datetime
-    zoom_link: str
+    link: str
 
     @property
     def time_string(self) -> str:
-        return "({}-{} GMT)".format(
-            self.start_time.strftime("%H:%M"), self.end_time.strftime("%H:%M")
-        )
+        start = self.start_time.astimezone(pytz.utc)
+        end = self.end_time.astimezone(pytz.utc)
+        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
 
     @property
     def start_time_string(self) -> str:
-        return self.start_time.strftime("%Y-%m-%dT%H:%M:%S")
+        start_time = self.start_time.astimezone(pytz.utc)
+        return start_time.strftime("%Y-%m-%dT%H:%M:%S")
 
     @property
     def end_time_string(self) -> str:
-        return self.end_time.strftime("%Y-%m-%dT%H:%M:%S")
+        end_time = self.end_time.astimezone(pytz.utc)
+        return end_time.strftime("%Y-%m-%dT%H:%M:%S")
 
     @property
     def session(self) -> str:
-        start_date = f'{self.start_time.strftime("%b")} {self.start_time.day}'
+        start_time = self.start_time.astimezone(pytz.utc)
+
+        start_date = f'{start_time.strftime("%b")} {start_time.day}'
         if self.session_name.startswith("D"):
             # demo sessions
             return f"Demo Session {self.session_name[1:]}: {start_date}"
@@ -38,10 +44,26 @@ class SessionInfo:
         if self.session_name.startswith("S-"):
             # social event sessions
             return f"{self.session_name[2:]}: {start_date}"
+        if self.session_name.startswith("T-"):
+            # workshop sessions
+            return f"{self.session_name[2:]}: {start_date}"
         if self.session_name.startswith("W-"):
             # workshop sessions
             return f"{self.session_name[2:]}: {start_date}"
+        if self.session_name.endswith("z") or self.session_name.endswith("g"):
+            # paper sessions
+            return f"{self.session_name[:-1]}: {start_date}"
+
         return f"Session {self.session_name}: {start_date}"
+
+    @property
+    def session_type(self):
+        if self.session_name.endswith("z"):
+            return "zoom"
+        elif self.session_name.endswith("g"):
+            return "gather"
+        else:
+            return "unknown"
 
 
 @dataclass(frozen=True)
@@ -63,16 +85,17 @@ class PaperContent:
     demo_url: Optional[str]
     sessions: List[SessionInfo]
     similar_paper_uids: List[str]
+    program: str
 
     def __post_init__(self):
-        assert self.track, self
+        if self.program != "workshop":
+            assert self.track, self
         if self.pdf_url:
             assert self.pdf_url.startswith("https://"), self.pdf_url
         if self.demo_url:
             assert self.demo_url.startswith("https://") or self.demo_url.startswith(
                 "http://"
             ), self.demo_url
-        assert self.paper_type[0].isupper(), self
 
 
 @dataclass(frozen=True)
@@ -134,27 +157,37 @@ class TutorialSessionInfo:
     session_name: str
     start_time: datetime
     end_time: datetime
+    hosts: str
     livestream_id: str
     zoom_link: str
 
     @property
     def time_string(self) -> str:
-        return "({}-{} GMT)".format(
-            self.start_time.strftime("%H:%M"), self.end_time.strftime("%H:%M")
-        )
+        start = self.start_time.astimezone(pytz.utc)
+        end = self.end_time.astimezone(pytz.utc)
+        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
 
     @property
     def start_time_string(self) -> str:
-        return self.start_time.strftime("%Y-%m-%dT%H:%M:%S")
+        start_time = self.start_time.astimezone(pytz.utc)
+        return start_time.strftime("%Y-%m-%dT%H:%M:%S")
 
     @property
     def end_time_string(self) -> str:
-        return self.end_time.strftime("%Y-%m-%dT%H:%M:%S")
+        end_time = self.end_time.astimezone(pytz.utc)
+        return end_time.strftime("%Y-%m-%dT%H:%M:%S")
 
     @property
     def session(self) -> str:
-        start_date = f'{self.start_time.strftime("%b")} {self.start_time.day}'
+        start = self.start_time.astimezone(pytz.utc)
+        start_date = f'{start.strftime("%b")} {start.day}'
         return f"{self.session_name}: {start_date}"
+
+    @property
+    def day(self) -> str:
+        start = self.start_time.astimezone(pytz.utc)
+        start_date = f'{start.strftime("%b")} {start.day}'
+        return start_date
 
 
 @dataclass(frozen=True)
@@ -169,6 +202,7 @@ class Tutorial:
     prerecorded: Optional[str]
     rocketchat_channel: str
     sessions: List[TutorialSessionInfo]
+    blocks: List[SessionInfo]
     virtual_format_description: str
 
 
@@ -178,19 +212,21 @@ class WorkshopPaper:
     title: str
     speakers: str
     presentation_id: Optional[str]
+    content: PaperContent
+    rocketchat_channel: str
 
 
 @dataclass(frozen=True)
 class Workshop:
     id: str
     title: str
-    day: str
     organizers: List[str]
     abstract: str
     website: str
     livestream: Optional[str]
     papers: List[WorkshopPaper]
     schedule: List[Dict[str, Any]]
+    prerecorded_talks: List[Dict[str, Any]]
     rocketchat_channel: str
     sessions: List[SessionInfo]
 

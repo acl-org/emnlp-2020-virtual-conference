@@ -118,6 +118,17 @@ const setUpKeyBindings = () => {
 const persistor = new Persistor('Mini-Conf-Papers');
 const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
 
+const updateTrackList = (tracks, default_track) => {
+    default_track = default_track || "All tracks";
+
+    tracks = Array.from([default_track]).concat(tracks);
+    let optionsHtml = tracks.map(track_html);
+
+    $('#track_selector').html(optionsHtml);
+    $('#track_selector').selectpicker('refresh');
+    $('#track_selector').selectpicker('val', default_track);
+}
+
 const updateCards = (papers) => {
     const storedPapers = persistor.getAll();
     const favPapers = favPersistor.getAll();
@@ -207,8 +218,23 @@ const openQuickviewModal = (paper) => {
     $('#quickviewModal').modal('show')
 }
 
+const maybe_update = (element_ids, value, callback) => {
+    if (value && (
+        (typeof value == "string" && value !== "") ||
+        (Array.isArray(value) && value.length > 0 )))
+        element_ids.forEach(x => $(x).show());
+    else
+        element_ids.forEach(x => $(x).hide());
+
+    callback(value);
+}
+
 const updateModalData = (paper) => {
-    $('#modalTitle').text(paper.content.title);
+
+    let program = paper.content.program;
+    let badgeClass = program_to_badge_class[program];
+    $('#modalTitle').html(
+        `${paper.content.title} &nbsp; <span class="badge badge-pill badge-${badgeClass}">${program}</span>`);
 
     let isVisited = persistor.get(paper.id) || false
     if (isVisited)
@@ -217,23 +243,56 @@ const updateModalData = (paper) => {
         $('#modalTitle').removeClass('card-title-visited');
 
     let authorsHtml = paper.content.authors.map(author_html).join(', ');
-    $('#modalAuthors').html(authorsHtml);
+    maybe_update(
+        ["#modalAuthors"], 
+        authorsHtml,
+        x => $('#modalAuthors').html(x));
 
-    $('#modalPaperType').text(paper.content.paper_type);
-    $('#modalPaperTrack').text(paper.content.track);
+    
+    maybe_update(
+        ['#modalPaperType'], 
+        paper.content.paper_type,
+        x => $('#modalPaperType').text(x));
+    maybe_update(
+        ['#modalPaperTrack'], 
+        paper.content.track,
+        x => $('#modalPaperTrack').text(x));
 
-    $('#modalAbstract').text(paper.content.abstract);
-
-    $('#modalChatUrl').attr('href', `https://${chat_server}/channel/paper-${paper.id.replace('.', '-')}`);
-    $('#modalPresUrl').attr('href', `https://slideslive.com/${paper.presentation_id}`);
-    $('#modalPaperUrl').attr('href', paper.content.pdf_url);
-    $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
+    maybe_update(
+        ['#modalAbstract', '#modalAbstractHeader'], 
+        paper.content.abstract,
+        x => $('#modalAbstract').text(x));
+    
+    if (program != "workshop"){
+        $('#modalChatUrl').attr('href', `https://${chat_server}/channel/paper-${paper.id.replace('.', '-')}`);
+        $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
+    } else {
+        $('#modalChatUrl').hide();
+        $('#modalPaperPage').hide();
+    }
+    
+    maybe_update(
+        ['#modalPresUrl'], 
+        paper.presentation_id,
+        x => $('#modalPresUrl').attr('href', `https://slideslive.com/${x}`));
+    maybe_update(
+        ['#modalPaperUrl'], 
+        paper.content.pdf_url,
+        x => $('#modalPaperUrl').attr('href', x));
+    
 
     let keywordsHtml = paper.content.keywords.map(modal_keyword).join('\n');
-    $('#modalKeywords').html(keywordsHtml);
+    maybe_update(
+        ['#modalKeywords', '#modalKeywordsHeader'], 
+        paper.content.keywords,
+        x => $('#modalKeywords').html(keywordsHtml));
 
     let sessionsHtml = paper.content.sessions.map(s => modal_session_html(s, paper)).join('\n');
     $('#modalSessions').html(sessionsHtml);
+    maybe_update(
+        ['#modalSessions', '#modalSessionsHeader'], 
+        paper.content.sessions,
+        x => $('#modalSessions').html(sessionsHtml));
 
     $('#modalPaperPage').unbind( "click" );
     $('#modalPaperPage').click(() => {
@@ -388,38 +447,68 @@ const updateSession = () => {
     }
 }
 
+const updateToolboxUI = (program, urlFilter, track) =>{
+    updateFilterSelectionBtn(urlFilter);
+
+    // Update program selector UI
+    document.querySelector(`input[name=program][value=${program}]`).checked = true;
+
+    if (["main", "workshop"].includes(program)) {
+        $("#track_selector").selectpicker('show');
+        $("#track_selector_placeholder").removeClass("d-lg-block");
+    } else{
+        $("#track_selector").selectpicker('hide');
+        $("#track_selector_placeholder").addClass("d-lg-block");
+    }
+}
+
 /**
  * START here and load JSON.
  */
-const start = (track) => {
-    // const urlFilter = getUrlParameter("filter") || 'keywords';
+const start = (reset_track) => {
+    
+    reset_track = reset_track || false;
+    
     const urlFilter = getUrlParameter("filter") || 'titles';
+    const program = getUrlParameter("program") || 'main'
+    let default_track = program == "workshop"? "All workshops" : "All tracks";
+    
+    let track = getUrlParameter("track") || default_track;
+    if (reset_track) 
+        track = default_track;
 
     setQueryStringParameter("filter", urlFilter);
-    updateFilterSelectionBtn(urlFilter);
+    setQueryStringParameter("program", program);
 
-    var path_to_papers_json;
-    if (track === "All tracks") {
-      path_to_papers_json = "papers.json";
+    updateToolboxUI(program, urlFilter, track)
+
+    let path_to_papers_json;
+    if (program === "all"){
+        path_to_papers_json = `papers.json`;
+    } else if (track === default_track) {
+        path_to_papers_json = `papers_${program}.json`;
     } else {
-      path_to_papers_json = "track_"  + track + ".json";
+        path_to_papers_json = `track_${program}_${track}.json`;
     }
+
+    $('.cards').empty();
+    $('#progressBar').show();
 
     d3.json(path_to_papers_json).then(papers => {
         shuffleArray(papers);
 
         allPapers = papers;
-
-        $('#progressBar').hide();
         
         calcAllKeys(allPapers, allKeys);
+        if (path_to_papers_json.startsWith("papers"))
+            updateTrackList(allKeys.tracks, default_track);
+        
         setTypeAhead(urlFilter,
           allKeys, filters, render);
-        // updateCards(allPapers);
 
         render();
         
-    }).catch(e => console.error(e))
+    }).catch(e => console.error(e));
 };
 
 
@@ -453,6 +542,14 @@ d3.selectAll('.render_option input').on('click', function () {
     render();
 });
 
+d3.selectAll('.program_option input').on('click', function () {
+    const me = d3.select(this);
+    let program = me.property('value');
+    setQueryStringParameter("program", program);
+
+    start(reset_track=true);
+});
+
 d3.select('.visited').on('click', () => {
     sortSelectedFirst(allPapers);
 
@@ -471,10 +568,12 @@ d3.select('.reshuffle').on('click', () => {
  * CARDS
  */
 
+const track_html = track => `<option>${track}</option>`;
+
 const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
 
-const author_html = author => `<a href="papers.html?filter=authors&search=${author}">${author}</a>`;
+const author_html = author => `<a href="papers.html?program=all&filter=authors&search=${author}">${author}</a>`;
 
 const card_image = (openreview, show) => {
     if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" width="80%"/></center>`
@@ -504,6 +603,21 @@ const card_fav_btn_html = (is_fav) => {
     }
 }
 
+const program_to_badge_class = new Map()
+program_to_badge_class["main"] = "danger";
+program_to_badge_class["demo"] = "primary";
+program_to_badge_class["findings"] = "warning";
+program_to_badge_class["workshop"] = "info";
+const card_program_badge = (paper) => {
+    let selected_program = getUrlParameter("program");
+    if (selected_program === "all") 
+        return `<span class="badge 
+                      badge-pill badge-${program_to_badge_class[paper.content.program]}"
+                      >${paper.content.program}</span>`;
+    else
+        return ``;
+}
+
 //language=HTML
 const card_html = openreview => `
         <div class="card card-paper ${openreview.content.isFav? 'card-fav' : ''}
@@ -514,6 +628,8 @@ const card_html = openreview => `
                 target="_blank"><h5 class="card-title ${openreview.content.read ? 'card-title-visited' : ''}">${openreview.content.title}</h5>
                 </a>
                 <h6 class="card-subtitle mb-2 text-muted">${openreview.content.authors.join(', ')}</h6>
+                
+                ${card_program_badge(openreview)}
                 
                 ${card_image(openreview, render_mode !== 'list')}
 
