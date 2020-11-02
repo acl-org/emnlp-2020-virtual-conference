@@ -31,7 +31,7 @@ let opacity;
 const plot_size = () => {
     const cont = document.getElementById('container');
     const wh = Math.max(window.innerHeight - 280, 300)
-    let ww = Math.max(cont.offsetWidth - 110, 300)
+    let ww = Math.max(cont.offsetWidth - 95, 300)
     if (cont.offsetWidth < 768) ww = cont.offsetWidth - 10.0;
 
     if ((wh / ww > 1.3)) {
@@ -220,7 +220,10 @@ function treeMap(data) {
             .style("stroke", "black")
             .style("fill", function(d){ return color(d.parent.data.name)} )
             .style("opacity", function(d){ return opacity(d.data.value)})
-            .on("click", function(d) {
+            .on("click", function(event, d) {
+                // const d = d3.pointer(event);
+                console.log(event);
+                console.log(d);
                 d3.selectAll(`.recter`).style("fill", d => color(d.parent.data.name)).style("opacity", d => opacity(d.data.value)).style("stroke-width", 1)
                 d3.selectAll(`.keyword-${d.data.name.replace(' ', '')}`).style("fill", d=> color(d.parent.data.name)).style("opacity", 1).style("stroke-width", 5).style("stroke", "black"); //classed("hover", true);
                 triggerListView(d.data.name, root.leaves());

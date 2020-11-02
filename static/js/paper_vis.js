@@ -54,8 +54,8 @@ const brush_start = () => {
     currentTippy.forEach(t => t.disable());
     brushed();
 }
-const brushed = () => {
-    let [[x0, y0], [x1, y1]] = d3.event.selection;
+const brushed = (event) => {
+    let [[x0, y0], [x1, y1]] = event.selection;
     x0 = Math.round(x0), y0 = Math.round(y0);
     x1 = Math.round(x1), y1 = Math.round(y1);
     // console.log(x0, x1, y1, y0, "--- x0,x1,y1,y0");
