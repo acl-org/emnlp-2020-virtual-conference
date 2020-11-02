@@ -118,15 +118,11 @@ const setUpKeyBindings = () => {
 const persistor = new Persistor('Mini-Conf-Papers');
 const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
 
-const updateTrackList = (tracks, default_track) => {
-    default_track = default_track || "All tracks";
-
-    tracks = Array.from([default_track]).concat(tracks);
+const updateTrackList = (tracks, selected_track) => {
     let optionsHtml = tracks.map(track_html);
 
-    $('#track_selector').html(optionsHtml);
-    $('#track_selector').selectpicker('refresh');
-    $('#track_selector').selectpicker('val', default_track);
+    $('#track_selector').html(optionsHtml).selectpicker("refresh");
+    $('#track_selector').val(selected_track).selectpicker("refresh");
 }
 
 const updateCards = (papers) => {
@@ -479,6 +475,7 @@ const start = (reset_track) => {
 
     setQueryStringParameter("filter", urlFilter);
     setQueryStringParameter("program", program);
+    setQueryStringParameter("track", track);
 
     updateToolboxUI(program, urlFilter, track)
 
@@ -500,8 +497,13 @@ const start = (reset_track) => {
         allPapers = papers;
         
         calcAllKeys(allPapers, allKeys);
-        if (path_to_papers_json.startsWith("papers"))
-            updateTrackList(allKeys.tracks, default_track);
+
+        let tracks = [];
+        if (program == "main")
+            tracks = allTracks;
+        else if (program == "workshop")
+            tracks = allWorkshops;
+        updateTrackList(tracks, track);
         
         setTypeAhead(urlFilter,
           allKeys, filters, render);
