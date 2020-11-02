@@ -29,12 +29,14 @@ def connect_rocket_API(config, session):
     )
     return rocket
 
+
 def sleep_session(duration):
     for remaining in range(duration, 0, -1):
         sys.stdout.write("\r")
         sys.stdout.write("{:2d} seconds remaining.".format(remaining))
         sys.stdout.flush()
         time.sleep(1)
+
 
 def create_rocketchat_channels(channel_names):
     with open(ROCKETCHAT_KEY, "r") as f:
@@ -54,27 +56,39 @@ def create_rocketchat_channels(channel_names):
                     rocket = connect_rocket_API(config, session)
                     created = rocket.channels_create(channel_name).json()
             print(channel_name, created)
-            channel_id = rocket.channels_info(channel=channel_name).json()["channel"]["_id"]
+            channel_id = rocket.channels_info(channel=channel_name).json()["channel"][
+                "_id"
+            ]
             rocket.channels_set_topic(channel_id, channel_names[paper]["topic"]).json()
-            rocket.channels_set_description(channel_id, channel_names[paper]["description"]).json()
-            print("Creating " + channel_name + " topic " + channel_names[paper]["topic"])
+            rocket.channels_set_description(
+                channel_id, channel_names[paper]["description"]
+            ).json()
+            print(
+                "Creating " + channel_name + " topic " + channel_names[paper]["topic"]
+            )
+
 
 def get_workshop_channels():
     with open(WORKSHOPS_YAML, "r") as f:
         workshops = yaml.safe_load(f)
     channels = {}
-    #channels_ary = []
+    # channels_ary = []
     for w in workshops:
         channel_name = w["rocketchat_channel"]
         alias = w["alias"]
         topic = w["title"]
         description = w["abstract"]
         website = w["website"]
-        announcement = "%s - %s - %s" % (topic,description, website,)
-        channel = {"alias":alias,"channel_name":channel_name,"topic":topic,"description":announcement}
+        announcement = "%s - %s - %s" % (topic, description, website,)
+        channel = {
+            "alias": alias,
+            "channel_name": channel_name,
+            "topic": topic,
+            "description": announcement,
+        }
         channels[w["UID"]] = channel
         # channels_ary.append(channel)
-    return channels #,channels_ary
+    return channels  # ,channels_ary
 
 
 def get_workshop_paper_channels(workshop_channels):
@@ -91,7 +105,11 @@ def get_workshop_paper_channels(workshop_channels):
         topic = "%s - %s" % (row["title"], author_string,)
         description = "%s - %s" % (topic, workshop_description,)
         channel_name = f"paper-{alias}-{paper_id.split('.')[-1]}"
-        channel = {"channel_name":channel_name , "topic":topic,"description":description,}
+        channel = {
+            "channel_name": channel_name,
+            "topic": topic,
+            "description": description,
+        }
         channels[paper_id] = channel
     return channels
 
