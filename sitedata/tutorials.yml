@@ -19,29 +19,24 @@
         livestreamed on this page. It has a chat window that you can use to have
         discussions with the tutorial teachers and other attendees anytime during the
         conference.
-  rocketchat_channel: tutorials_T1
+  rocketchat_channel: tutorial-1-interpreting-predictions
   sessions:
   - name: Part 1
     start_time: 2020-11-19 15:00:00+00:00
     end_time: 2020-11-19 16:30:00+00:00
-    livestream_id: 42
     hosts: Eric Wallace, Matt Gardner and Sameer Singh
   - name: QA 1
     start_time: 2020-11-19 16:30:00+00:00
     end_time: 2020-11-19 17:00:00+00:00
-    livestream_id: 42
   - name: BREAK
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 17:30:00+00:00
-    livestream_id: 42
   - name: Part 2
     start_time: 2020-11-19 17:30:00+00:00
     end_time: 2020-11-19 19:00:00+00:00
-    livestream_id: 42
   - name: QA 2
     start_time: 2020-11-19 19:00:00+00:00
     end_time: 2020-11-19 19:30:00+00:00
-    livestream_id: 42
   website: https://www.ericswallace.com/interpretability
 - UID: T2
   title: 'Fact-Checking, Fake News, Propaganda, and Media Bias: Truth Seeking in the
@@ -56,17 +51,15 @@
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
-  rocketchat_channel: tutorials_T2
+  rocketchat_channel: tutorial-2-fact-checking
   sessions:
   - name: Q&A
     start_time: 2020-11-19 09:00:00+00:00
     end_time: 2020-11-19 10:00:00+00:00
-    livestream_id: 42
     hosts: Preslav Nakov and Giovanni Da San Martino
   - name: Q&A
     start_time: 2020-11-19 16:00:00+00:00
     end_time: 2020-11-19 17:00:00+00:00
-    livestream_id: 42
   website: https://propaganda.qcri.org/emnlp20-tutorial
 - UID: T3
   title: High Performance Natural Language Processing
@@ -86,18 +79,16 @@
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
-  rocketchat_channel: tutorials_T3
+  rocketchat_channel: tutorial-3-high-performance
   sessions:
   - name: Q&A
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 18:00:00+00:00
-    livestream_id: 42
     hosts: Gabriel Ilharco, Cesar Ilharco, Iulia Turc, Tim Dettmers, Felipe Ferreira,
       Kenton Lee
   - name: Q&A
     start_time: 2020-11-20 00:00:00+00:00
     end_time: 2020-11-20 01:00:00+00:00
-    livestream_id: 42
 - UID: T4
   title: Machine Reasoning for Knowledgeable, Explainable and Inferable Models
   organizers: Nan Duan, Duyu Tang, Ming Zhou
@@ -118,17 +109,15 @@
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
-  rocketchat_channel: tutorials_T4
+  rocketchat_channel: tutorial-4-machine-reasoning
   sessions:
   - name: Q&A
     start_time: 2020-11-19 09:00:00+00:00
     end_time: 2020-11-19 10:00:00+00:00
-    livestream_id: 42
     hosts: Nan Duan, Duyu Tang and Ming Zhou
   - name: Q&A
     start_time: 2020-11-20 01:00:00+00:00
     end_time: 2020-11-20 02:00:00+00:00
-    livestream_id: 42
 - UID: T5
   title: Representation, Learning and Reasoning on Spatial Language for Down-stream
     NLP Tasks
@@ -140,17 +129,15 @@
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
-  rocketchat_channel: tutorials_T5
+  rocketchat_channel: tutorial-5-spatial-language
   sessions:
   - name: Q&A
     start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 18:00:00+00:00
-    livestream_id: 42
     hosts: Parisa Kordjamshidi, James Pustejovsky and Marie-Francine Moens
   - name: Q&A
     start_time: 2020-11-21 00:00:00+00:00
     end_time: 2020-11-21 01:00:00+00:00
-    livestream_id: 42
   website: ' https://spatial-language-tutorial.github.io '
 - UID: T6
   title: Simultaneous Translation
@@ -163,17 +150,15 @@
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
-  rocketchat_channel: tutorials_T6
+  rocketchat_channel: tutorial-6-simultaneous-translation
   sessions:
   - name: Q&A
     start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
-    livestream_id: 42
     hosts: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan and Zhongjun He
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
-    livestream_id: 42
 - UID: T7
   title: The Amazing World of Neural Language Generation
   organizers: Yangfeng Ji, Antoine Bosselut, Thomas Wolf, Asli Celikyilmaz
@@ -195,14 +180,12 @@
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
-  rocketchat_channel: tutorials_T7
+  rocketchat_channel: tutorial-7-world-of-generation
   sessions:
   - name: Q&A
     start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 20:00:00+00:00
-    livestream_id: 42
     hosts: Yangfeng Ji, Antoine Bosselut, Thomas Wolf and Asli Celikyilmaz
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
-    livestream_id: 42
