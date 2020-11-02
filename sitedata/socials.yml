@@ -22,7 +22,7 @@
   - name: 'Social B: Naomi, Jasmijn and Irving'
     start_time: 2020-11-18 16:00:00+00:00
     end_time: 2020-11-18 18:00:00+00:00
-- name: VegNLP
+- name: Veg*NLP
   description: |-
     Vegetarians and vegans encounter fascinating challenges in many academic settings.
     We will discuss the multitude of issues and share anecdotes, stories and recipes as non-meat-eaters in the academic world.
@@ -82,7 +82,7 @@
     - Jade Abbott
   rocketchat_channel: building-nlp-in-africa
   sessions: []
-- name: Junior Faculty in Linguistic
+- name: Junior Faculty in Linguistics/CogSci
   description:
   UID: A6
   organizers:
@@ -90,7 +90,7 @@
     - Nathan Schneider
   rocketchat_channel: junior-faculty-in-linguistics-cogsci
   sessions: []
-- name: The Unofficial EMNLP Welcome
+- name: The Unofficial EMNLP Welcome Social, Now with Clustering!
   description: 'The goal is to recreate an important part of any conference: Getting
     to know new people with interests that are similar to yours. All registered EMNLP
     2020 attendees are welcome, no matter where you are or how much experience you
