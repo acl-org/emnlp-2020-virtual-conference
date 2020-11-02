@@ -177,6 +177,7 @@ def workshop(uid):
 def sponsor(uid):
     data = _data()
     data["sponsor"] = by_uid["sponsors"][uid]
+    data["papers"] = by_uid["papers"]
     return render_template("sponsor.html", **data)
 
 
