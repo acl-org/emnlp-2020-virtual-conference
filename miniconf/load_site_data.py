@@ -169,7 +169,14 @@ def load_site_data(
     )
 
     site_data["main_program_tracks"] = list(
-        sorted(track for track in {paper.content.track for paper in papers if paper.content.program=="main"})
+        sorted(
+            track
+            for track in {
+                paper.content.track
+                for paper in papers
+                if paper.content.program == "main"
+            }
+        )
     )
     # paper_<uid>.html
     papers_by_uid: Dict[str, Any] = {}
