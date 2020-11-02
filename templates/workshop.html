@@ -24,6 +24,10 @@
       </a>
       {% endif %}
 
+      <a href="papers.html?filter=titles&program=workshop&track={{workshop.title}}" target="_blank"  class="card-link">
+        Papers
+      </a>
+
       <a href="{{workshop.website}}" target="_blank"  class="card-link">
         External Website
       </a>
@@ -100,9 +104,9 @@
 
   </div>
 
-  <div class="row m-2">    
-    {% if workshop.livestream %}
-    <!-- Livestreaming -->
+  <div class="row m-2">
+  {% if workshop.livestream %}
+<!-- Livestreaming -->
     <div class="col-md-7 col-xs-12 my-auto p-2" >
       <div id="presentation-embed" class="slp my-auto"></div>
       <script src='https://slideslive.com/embed_presentation.js'></script>
@@ -117,7 +121,6 @@
         });
       </script>
     </div>
-    {% endif %}
 
     <!-- Chat -->
     <br/>
@@ -126,7 +129,16 @@
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
+  {% else %}
+  <div class="container" style="background-color:white; padding: 0px;">
+
+
+    <!-- Chat -->
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+      </div>
   </div>
+  {% endif %}
 </div>
 
 {% if workshop.id == "W2" %}
@@ -152,15 +164,15 @@
   <!-- Prerecorded Talk -->
 {{ components.section("Pre-recorded Talks") }}
 <div id="accordion">
-  {% for paper in workshop.papers %}
+  {% for talk in workshop.prerecorded_talks %}
   <div class="row m-2">
     <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
         <br/>
         <p>
-          <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank"><b>{{paper.title}}</b></a>
+          <a href="https://slideslive.com/{{talk.presentation_id}}" target="_blank"><b>{{talk.title}}</b></a>
         </p>
         <p>
-          <i>{{paper.speakers}}</i>
+          <i>{{talk.speakers}}</i>
         </p>
     </div>
   </div>

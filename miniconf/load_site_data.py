@@ -58,27 +58,7 @@ def load_site_data(
         "socials",
         # workshops.html
         "workshops",
-        "w1_papers",
-        "w2_papers",
-        "w3_papers",
-        "w4_papers",
-        "w5_papers",
-        "w6_papers",
-        "w7_papers",
-        "w8_papers",
-        "w9_papers",
-        "w10_papers",
-        "w11_papers",
-        "w12_papers",
-        "w13_papers",
-        "w14_papers",
-        "w15_papers",
-        "w16_papers",
-        "w17_papers",
-        "w18_papers",
-        "w19_papers",
-        "w20_papers",
-        "workshop_schedules",
+        "workshop_papers",
         # sponsors.html
         "sponsors",
         # about.html
@@ -143,41 +123,10 @@ def load_site_data(
     for p in site_data["main_papers"]:
         p["program"] = "main"
 
-    site_data["demo_papers"] = []
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
 
     site_data["programs"] = ["main", "demo", "findings", "workshop"]
-
-    # papers.{html,json}
-    papers = build_papers(
-        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
-        paper_sessions=site_data["paper_sessions"],
-        paper_recs=site_data["paper_recs"],
-        paper_images_path=site_data["config"]["paper_images_path"],
-    )
-
-    site_data["papers"] = papers
-    demo_and_srw_tracks = ["System Demonstrations", "Student Research Workshop"]
-    site_data["tracks"] = list(
-        sorted(
-            [
-                track
-                for track in {paper.content.track for paper in papers}
-                if track not in demo_and_srw_tracks
-            ]
-        )
-    )
-    site_data["tracks"] += demo_and_srw_tracks
-    # paper_<uid>.html
-    by_uid["papers"] = {paper.id: paper for paper in papers}
-
-    # serve_papers_projection.json
-    all_paper_ids_with_projection = {
-        item["id"] for item in site_data["papers_projection"]
-    }
-    for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
-        print(f"WARNING: {paper_id} does not have a projection")
 
     # tutorials.html
     tutorials = build_tutorials(site_data["tutorials"])
@@ -191,29 +140,7 @@ def load_site_data(
     # workshops.html
     workshops = build_workshops(
         raw_workshops=site_data["workshops"],
-        raw_workshop_papers={
-            "W1": site_data["w1_papers"],
-            "W2": site_data["w2_papers"],
-            "W3": site_data["w3_papers"],
-            "W4": site_data["w4_papers"],
-            "W5": site_data["w5_papers"],
-            "W6": site_data["w6_papers"],
-            "W7": site_data["w7_papers"],
-            "W8": site_data["w8_papers"],
-            "W9": site_data["w9_papers"],
-            "W10": site_data["w10_papers"],
-            "W11": site_data["w11_papers"],
-            "W12": site_data["w12_papers"],
-            "W13": site_data["w13_papers"],
-            "W14": site_data["w14_papers"],
-            "W15": site_data["w15_papers"],
-            "W16": site_data["w16_papers"],
-            "W17": site_data["w17_papers"],
-            "W18": site_data["w18_papers"],
-            "W19": site_data["w19_papers"],
-            "W20": site_data["w20_papers"],
-        },
-        workshop_schedules=site_data["workshop_schedules"],
+        raw_workshop_papers=site_data["workshop_papers"],
     )
     site_data["workshops"] = workshops
     # workshop_<uid>.html
@@ -225,6 +152,34 @@ def load_site_data(
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
+
+    # papers.{html,json}
+    papers = build_papers(
+        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
+        paper_sessions=site_data["paper_sessions"],
+        paper_recs=site_data["paper_recs"],
+        paper_images_path=site_data["config"]["paper_images_path"],
+    )
+    for wsh in site_data["workshops"]:
+        papers.extend(wsh.papers)
+    site_data["papers"] = papers
+
+    site_data["tracks"] = list(
+        sorted(track for track in {paper.content.track for paper in papers})
+    )
+    # paper_<uid>.html
+    papers_by_uid: Dict[str, Any] = {}
+    for paper in papers:
+        assert paper.id not in papers_by_uid
+        papers_by_uid[paper.id] = paper
+    by_uid["papers"] = papers_by_uid
+
+    # serve_papers_projection.json
+    all_paper_ids_with_projection = {
+        item["id"] for item in site_data["papers_projection"]
+    }
+    for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
+        print(f"WARNING: {paper_id} does not have a projection")
 
     # about.html
     site_data["faq"] = site_data["faq"]["FAQ"]
@@ -456,16 +411,15 @@ def generate_paper_events(site_data: Dict[str, Any]):
 
     all_sessions = []
     for uid, session in site_data["paper_sessions"].items():
-        kind = "Zoom" if uid[-1] == "g" else "Gather"
         start = session["start_time"]
         end = session["end_time"]
 
         event = {
-            "title": f"QA Session {uid[:-1]} <br> {kind}",
+            "title": session["long_name"].replace(":", "<br>", 1),
             "start": start,
             "end": end,
             "location": "",
-            "link": f"papers.html?session={uid}",
+            "link": f"papers.html?session={uid}&program=all",
             "category": "time",
             "type": "QA Sessions",
             "view": "day",
@@ -697,9 +651,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
 
 
 def build_workshops(
-    raw_workshops: List[Dict[str, Any]],
-    raw_workshop_papers: Dict[str, List[Dict[str, Any]]],
-    workshop_schedules: Dict[str, List[Dict[str, Any]]],
+    raw_workshops: List[Dict[str, Any]], raw_workshop_papers: List[Dict[str, Any]],
 ) -> List[Workshop]:
     def workshop_title(workshop_id):
         for wsh in raw_workshops:
@@ -707,20 +659,27 @@ def build_workshops(
                 return wsh["title"]
         return ""
 
+    grouped_papers: DefaultDict[str, Any] = defaultdict(list)
+    for paper in raw_workshop_papers:
+        grouped_papers[paper["workshop"]].append(paper)
+
+    ws_id_to_alias: Dict[str, str] = {w["UID"]: w["alias"] for w in raw_workshops}
+
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
-    for workshop_id, papers in raw_workshop_papers.items():
+    for workshop_id, papers in grouped_papers.items():
         for item in papers:
             workshop_papers[workshop_id].append(
                 WorkshopPaper(
                     id=item["UID"],
                     title=item["title"],
-                    speakers=item["speakers"],
+                    speakers=item["authors"],
                     presentation_id=item.get("presentation_id", None),
+                    rocketchat_channel=f"paper-{ws_id_to_alias[workshop_id]}-{item['UID'].split('.')[-1]}",
                     content=PaperContent(
                         title=item["title"],
-                        authors=[item["speakers"]],
+                        authors=extract_list_field(item, "authors"),
                         track=workshop_title(workshop_id),
-                        paper_type=None,
+                        paper_type="Workshop",
                         abstract=None,
                         tldr=None,
                         keywords=[],
@@ -737,13 +696,13 @@ def build_workshops(
         Workshop(
             id=item["UID"],
             title=item["title"],
-            day=item["day"],
             organizers=item["organizers"],
             abstract=item["abstract"],
             website=item["website"],
-            livestream=item["livestream"],
+            livestream=item.get("livestream"),
             papers=workshop_papers[item["UID"]],
-            schedule=workshop_schedules.get(item["UID"]),
+            schedule=item.get("schedule"),
+            prerecorded_talks=item.get("prerecorded_talks"),
             rocketchat_channel=item["rocketchat_channel"],
             sessions=[
                 SessionInfo(

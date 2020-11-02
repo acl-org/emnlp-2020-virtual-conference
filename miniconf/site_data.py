@@ -96,8 +96,6 @@ class PaperContent:
             assert self.demo_url.startswith("https://") or self.demo_url.startswith(
                 "http://"
             ), self.demo_url
-        if self.program != "workshop":
-            assert self.paper_type[0].isupper(), self
 
 
 @dataclass(frozen=True)
@@ -215,19 +213,20 @@ class WorkshopPaper:
     speakers: str
     presentation_id: Optional[str]
     content: PaperContent
+    rocketchat_channel: str
 
 
 @dataclass(frozen=True)
 class Workshop:
     id: str
     title: str
-    day: str
     organizers: List[str]
     abstract: str
     website: str
     livestream: Optional[str]
     papers: List[WorkshopPaper]
     schedule: List[Dict[str, Any]]
+    prerecorded_talks: List[Dict[str, Any]]
     rocketchat_channel: str
     sessions: List[SessionInfo]
 

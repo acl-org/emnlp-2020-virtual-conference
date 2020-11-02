@@ -1,6 +1,9 @@
 1Az:
   start_time: 2020-11-16 12:00:00-04:00
   end_time: 2020-11-16 13:00:00-04:00
+  name: Zoom Q&A Session 1A
+  long_name: 'Zoom Q&A Session 1A: Sentiment Analysis, Stylistic Analysis, and Argument
+    Mining'
   papers:
   - main.438
   - main.440
@@ -9,6 +12,8 @@
 1Bz:
   start_time: 2020-11-16 12:00:00-04:00
   end_time: 2020-11-16 13:00:00-04:00
+  name: Zoom Q&A Session 1B
+  long_name: 'Zoom Q&A Session 1B: Machine Translation and Multilinguality'
   papers:
   - main.84
   - main.619
@@ -18,6 +23,8 @@
 1Cz:
   start_time: 2020-11-16 12:00:00-04:00
   end_time: 2020-11-16 13:00:00-04:00
+  name: Zoom Q&A Session 1C
+  long_name: 'Zoom Q&A Session 1C: Question Answering'
   papers:
   - main.2054
   - main.2228
@@ -27,6 +34,8 @@
 1Dz:
   start_time: 2020-11-16 12:00:00-04:00
   end_time: 2020-11-16 13:00:00-04:00
+  name: Zoom Q&A Session 1D
+  long_name: 'Zoom Q&A Session 1D: Interpretability and Analysis of Models for NLP'
   papers:
   - main.498
   - main.947
@@ -35,6 +44,8 @@
 2Az:
   start_time: 2020-11-16 13:00:00-04:00
   end_time: 2020-11-16 14:00:00-04:00
+  name: Zoom Q&A Session 2A
+  long_name: 'Zoom Q&A Session 2A: Machine Learning for NLP'
   papers:
   - main.903
   - main.1210
@@ -44,6 +55,8 @@
 2Bz:
   start_time: 2020-11-16 13:00:00-04:00
   end_time: 2020-11-16 14:00:00-04:00
+  name: Zoom Q&A Session 2B
+  long_name: 'Zoom Q&A Session 2B: NLP Applications'
   papers:
   - TACL.2047
   - main.328
@@ -53,6 +66,8 @@
 2Cz:
   start_time: 2020-11-16 13:00:00-04:00
   end_time: 2020-11-16 14:00:00-04:00
+  name: Zoom Q&A Session 2C
+  long_name: 'Zoom Q&A Session 2C: Dialog and Interactive Systems'
   papers:
   - main.1219
   - TACL.2143
@@ -61,6 +76,9 @@
 2Dz:
   start_time: 2020-11-16 13:00:00-04:00
   end_time: 2020-11-16 14:00:00-04:00
+  name: Zoom Q&A Session 2D
+  long_name: 'Zoom Q&A Session 2D: Semantics: Sentence-level Semantics, Textual Inference
+    and Other areas'
   papers:
   - main.3544
   - main.2635
@@ -69,6 +87,8 @@
 3Az:
   start_time: 2020-11-16 20:00:00-04:00
   end_time: 2020-11-16 21:00:00-04:00
+  name: Zoom Q&A Session 3A
+  long_name: 'Zoom Q&A Session 3A: Summarization'
   papers:
   - main.2900
   - main.965
@@ -77,6 +97,8 @@
 3Bz:
   start_time: 2020-11-16 20:00:00-04:00
   end_time: 2020-11-16 21:00:00-04:00
+  name: Zoom Q&A Session 3B
+  long_name: 'Zoom Q&A Session 3B: Machine Learning for NLP'
   papers:
   - main.3394
   - main.2783
@@ -85,6 +107,8 @@
 3Cz:
   start_time: 2020-11-16 20:00:00-04:00
   end_time: 2020-11-16 21:00:00-04:00
+  name: Zoom Q&A Session 3C
+  long_name: 'Zoom Q&A Session 3C: Machine Translation and Multilinguality'
   papers:
   - main.858
   - TACL.2107
@@ -94,6 +118,8 @@
 3Dz:
   start_time: 2020-11-16 20:00:00-04:00
   end_time: 2020-11-16 21:00:00-04:00
+  name: Zoom Q&A Session 3D
+  long_name: 'Zoom Q&A Session 3D: Computational Social Science and Social Media'
   papers:
   - main.838
   - main.2561
@@ -103,6 +129,8 @@
 4Az:
   start_time: 2020-11-16 21:00:00-04:00
   end_time: 2020-11-16 22:00:00-04:00
+  name: Zoom Q&A Session 4A
+  long_name: 'Zoom Q&A Session 4A: Information Extraction'
   papers:
   - main.96
   - main.237
@@ -112,6 +140,8 @@
 4Bz:
   start_time: 2020-11-16 21:00:00-04:00
   end_time: 2020-11-16 22:00:00-04:00
+  name: Zoom Q&A Session 4B
+  long_name: 'Zoom Q&A Session 4B: Language Generation'
   papers:
   - main.923
   - main.1581
@@ -121,6 +151,8 @@
 4Cz:
   start_time: 2020-11-16 21:00:00-04:00
   end_time: 2020-11-16 22:00:00-04:00
+  name: Zoom Q&A Session 4C
+  long_name: 'Zoom Q&A Session 4C: Language Grounding to Vision, Robotics and Beyond'
   papers:
   - main.647
   - main.1071
@@ -130,6 +162,8 @@
 4Dz:
   start_time: 2020-11-16 21:00:00-04:00
   end_time: 2020-11-16 22:00:00-04:00
+  name: Zoom Q&A Session 4D
+  long_name: 'Zoom Q&A Session 4D: Dialog and Interactive Systems'
   papers:
   - main.318
   - main.419
@@ -139,6 +173,8 @@
 1Ag:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1A
+  long_name: 'Gather Session 1A: Machine Translation and Multilinguality'
   papers:
   - main.130
   - main.1432
@@ -155,6 +191,8 @@
 1Bg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1B
+  long_name: 'Gather Session 1B: Machine Learning for NLP'
   papers:
   - main.1046
   - main.1130
@@ -170,6 +208,9 @@
 1Cg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1C
+  long_name: 'Gather Session 1C: Linguistic Theories, Cognitive Modeling and Psycholinguistics;
+    Semantics: Sentence-level Semantics, Textual Inference and Other areas'
   papers:
   - main.1832
   - main.2638
@@ -185,6 +226,8 @@
 1Dg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1D
+  long_name: 'Gather Session 1D: Information Extraction'
   papers:
   - main.1086
   - main.158
@@ -197,6 +240,8 @@
 1Eg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1E
+  long_name: 'Gather Session 1E: Dialog and Interactive Systems'
   papers:
   - main.1009
   - main.1012
@@ -209,6 +254,9 @@
 1Fg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1F
+  long_name: 'Gather Session 1F: Computational Social Science and Social Media; NLP
+    Applications'
   papers:
   - main.1287
   - main.3298
@@ -225,6 +273,9 @@
 1Gg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1G
+  long_name: 'Gather Session 1G: Information Retrieval and Text Mining; Speech and
+    Multimodality'
   papers:
   - main.1949
   - main.2792
@@ -240,6 +291,9 @@
 1Hg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1H
+  long_name: 'Gather Session 1H: Language Grounding to Vision, Robotics and Beyond;
+    Question Answering'
   papers:
   - main.1388
   - main.2083
@@ -255,6 +309,9 @@
 1Ig:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1I
+  long_name: 'Gather Session 1I: Interpretability and Analysis of Models for NLP;
+    Language Generation'
   papers:
   - main.2307
   - main.2644
@@ -271,16 +328,20 @@
 1Jg:
   start_time: 2020-11-16 22:00:00-04:00
   end_time: 2020-11-16 23:59:00-04:00
+  name: Gather Session 1J
+  long_name: 'Gather Session 1J: Demos'
   papers:
-  - DEMO.48
-  - DEMO.58
-  - DEMO.86
-  - DEMO.102
-  - DEMO.111
-  - DEMO.123
+  - demo.48
+  - demo.58
+  - demo.86
+  - demo.102
+  - demo.111
+  - demo.123
 5Az:
   start_time: 2020-11-17 04:00:00-04:00
   end_time: 2020-11-17 05:00:00-04:00
+  name: Zoom Q&A Session 5A
+  long_name: 'Zoom Q&A Session 5A: Information Extraction'
   papers:
   - main.983
   - main.2938
@@ -289,6 +350,8 @@
 5Bz:
   start_time: 2020-11-17 04:00:00-04:00
   end_time: 2020-11-17 05:00:00-04:00
+  name: Zoom Q&A Session 5B
+  long_name: 'Zoom Q&A Session 5B: Language Generation'
   papers:
   - main.204
   - main.2795
@@ -298,6 +361,8 @@
 5Cz:
   start_time: 2020-11-17 04:00:00-04:00
   end_time: 2020-11-17 05:00:00-04:00
+  name: Zoom Q&A Session 5C
+  long_name: 'Zoom Q&A Session 5C: Machine Learning for NLP'
   papers:
   - main.2535
   - main.2452
@@ -307,6 +372,8 @@
 5Dz:
   start_time: 2020-11-17 04:00:00-04:00
   end_time: 2020-11-17 05:00:00-04:00
+  name: Zoom Q&A Session 5D
+  long_name: 'Zoom Q&A Session 5D: Machine Translation and Multilinguality'
   papers:
   - main.1504
   - main.2674
@@ -316,6 +383,8 @@
 6Az:
   start_time: 2020-11-17 05:00:00-04:00
   end_time: 2020-11-17 06:00:00-04:00
+  name: Zoom Q&A Session 6A
+  long_name: 'Zoom Q&A Session 6A: Syntax: Tagging, Chunking, and Parsing'
   papers:
   - TACL.2411
   - main.750
@@ -325,6 +394,8 @@
 6Bz:
   start_time: 2020-11-17 05:00:00-04:00
   end_time: 2020-11-17 06:00:00-04:00
+  name: Zoom Q&A Session 6B
+  long_name: 'Zoom Q&A Session 6B: Machine Translation and Multilinguality'
   papers:
   - main.1402
   - main.623
@@ -334,6 +405,8 @@
 6Cz:
   start_time: 2020-11-17 05:00:00-04:00
   end_time: 2020-11-17 06:00:00-04:00
+  name: Zoom Q&A Session 6C
+  long_name: 'Zoom Q&A Session 6C: Question Answering'
   papers:
   - main.1004
   - main.1022
@@ -342,6 +415,9 @@
 6Dz:
   start_time: 2020-11-17 05:00:00-04:00
   end_time: 2020-11-17 06:00:00-04:00
+  name: Zoom Q&A Session 6D
+  long_name: 'Zoom Q&A Session 6D: Semantics: Sentence-level Semantics, Textual Inference
+    and Other areas'
   papers:
   - main.3057
   - main.1187
@@ -351,6 +427,8 @@
 2Ag:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2A
+  long_name: 'Gather Session 2A: Machine Learning for NLP'
   papers:
   - main.1018
   - main.1208
@@ -367,6 +445,8 @@
 2Bg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2B
+  long_name: 'Gather Session 2B: Dialog and Interactive Systems'
   papers:
   - main.1006
   - main.1846
@@ -381,6 +461,8 @@
 2Cg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2C
+  long_name: 'Gather Session 2C: Information Extraction'
   papers:
   - main.1159
   - main.1547
@@ -394,6 +476,8 @@
 2Dg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2D
+  long_name: 'Gather Session 2D: NLP Applications; Semantics: Lexical Semantics'
   papers:
   - main.1180
   - main.1739
@@ -410,6 +494,9 @@
 2Eg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2E
+  long_name: 'Gather Session 2E: Machine Translation and Multilinguality; Phonology,
+    Morphology and Word Segmentation'
   papers:
   - main.2061
   - main.246
@@ -426,6 +513,9 @@
 2Fg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2F
+  long_name: 'Gather Session 2F: Discourse and Pragmatics; Machine Translation and
+    Multilinguality'
   papers:
   - main.2075
   - main.2512
@@ -441,6 +531,8 @@
 2Gg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2G
+  long_name: 'Gather Session 2G: Language Grounding to Vision, Robotics and Beyond'
   papers:
   - main.1030
   - main.1196
@@ -453,6 +545,9 @@
 2Hg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2H
+  long_name: 'Gather Session 2H: Computational Social Science and Social Media; Sentiment
+    Analysis, Stylistic Analysis, and Argument Mining'
   papers:
   - main.1626
   - main.1904
@@ -469,6 +564,8 @@
 2Ig:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2I
+  long_name: 'Gather Session 2I: Information Retrieval and Text Mining; Language Generation'
   papers:
   - main.1205
   - main.16
@@ -484,6 +581,9 @@
 2Jg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2J
+  long_name: 'Gather Session 2J: Question Answering; Syntax: Tagging, Chunking, and
+    Parsing'
   papers:
   - main.1837
   - main.2253
@@ -498,6 +598,9 @@
 2Kg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2K
+  long_name: 'Gather Session 2K: Interpretability and Analysis of Models for NLP;
+    Summarization'
   papers:
   - main.1551
   - main.1612
@@ -512,6 +615,9 @@
 2Lg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2L
+  long_name: 'Gather Session 2L: Interpretability and Analysis of Models for NLP;
+    Semantics: Sentence-level Semantics, Textual Inference and Other areas'
   papers:
   - main.1901
   - main.2215
@@ -526,16 +632,20 @@
 2Mg:
   start_time: 2020-11-17 06:00:00-04:00
   end_time: 2020-11-17 08:00:00-04:00
+  name: Gather Session 2M
+  long_name: 'Gather Session 2M: Demos'
   papers:
-  - DEMO.49
-  - DEMO.71
-  - DEMO.109
-  - DEMO.124
-  - DEMO.131
-  - DEMO.132
+  - demo.49
+  - demo.71
+  - demo.109
+  - demo.124
+  - demo.131
+  - demo.132
 7Az:
   start_time: 2020-11-17 12:00:00-04:00
   end_time: 2020-11-17 13:00:00-04:00
+  name: Zoom Q&A Session 7A
+  long_name: 'Zoom Q&A Session 7A: Dialog and Interactive Systems'
   papers:
   - main.2066
   - main.2583
@@ -544,6 +654,8 @@
 7Bz:
   start_time: 2020-11-17 12:00:00-04:00
   end_time: 2020-11-17 13:00:00-04:00
+  name: Zoom Q&A Session 7B
+  long_name: 'Zoom Q&A Session 7B: Linguistic Theories, Cognitive Modeling and Psycholinguistics'
   papers:
   - main.644
   - main.1282
@@ -553,6 +665,8 @@
 7Cz:
   start_time: 2020-11-17 12:00:00-04:00
   end_time: 2020-11-17 13:00:00-04:00
+  name: Zoom Q&A Session 7C
+  long_name: 'Zoom Q&A Session 7C: Semantics: Lexical Semantics'
   papers:
   - main.2891
   - main.1395
@@ -561,6 +675,8 @@
 7Dz:
   start_time: 2020-11-17 12:00:00-04:00
   end_time: 2020-11-17 13:00:00-04:00
+  name: Zoom Q&A Session 7D
+  long_name: 'Zoom Q&A Session 7D: Summarization'
   papers:
   - main.645
   - main.1023
@@ -569,6 +685,8 @@
 8Az:
   start_time: 2020-11-17 13:00:00-04:00
   end_time: 2020-11-17 14:00:00-04:00
+  name: Zoom Q&A Session 8A
+  long_name: 'Zoom Q&A Session 8A: Information Retrieval and Text Mining'
   papers:
   - main.1298
   - main.2825
@@ -577,6 +695,8 @@
 8Bz:
   start_time: 2020-11-17 13:00:00-04:00
   end_time: 2020-11-17 14:00:00-04:00
+  name: Zoom Q&A Session 8B
+  long_name: 'Zoom Q&A Session 8B: Interpretability and Analysis of Models for NLP'
   papers:
   - main.2005
   - main.2040
@@ -585,6 +705,8 @@
 8Cz:
   start_time: 2020-11-17 13:00:00-04:00
   end_time: 2020-11-17 14:00:00-04:00
+  name: Zoom Q&A Session 8C
+  long_name: 'Zoom Q&A Session 8C: Language Generation'
   papers:
   - main.648
   - main.1687
@@ -594,6 +716,8 @@
 8Dz:
   start_time: 2020-11-17 13:00:00-04:00
   end_time: 2020-11-17 14:00:00-04:00
+  name: Zoom Q&A Session 8D
+  long_name: 'Zoom Q&A Session 8D: Language Grounding to Vision, Robotics and Beyond'
   papers:
   - main.2058
   - main.2702
@@ -603,6 +727,8 @@
 3Ag:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3A
+  long_name: 'Gather Session 3A: Machine Translation and Multilinguality'
   papers:
   - main.1383
   - main.1445
@@ -619,6 +745,8 @@
 3Bg:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3B
+  long_name: 'Gather Session 3B: NLP Applications'
   papers:
   - main.1446
   - main.1594
@@ -633,6 +761,8 @@
 3Cg:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3C
+  long_name: 'Gather Session 3C: Machine Learning for NLP'
   papers:
   - main.151
   - main.1528
@@ -646,6 +776,9 @@
 3Dg:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3D
+  long_name: 'Gather Session 3D: Computational Social Science and Social Media; Language
+    Generation'
   papers:
   - main.2707
   - main.3028
@@ -662,6 +795,9 @@
 3Eg:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3E
+  long_name: 'Gather Session 3E: Information Extraction; Phonology, Morphology and
+    Word Segmentation'
   papers:
   - main.2508
   - main.2608
@@ -676,6 +812,9 @@
 3Fg:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3F
+  long_name: 'Gather Session 3F: Dialog and Interactive Systems; Linguistic Theories,
+    Cognitive Modeling and Psycholinguistics'
   papers:
   - main.1179
   - main.1654
@@ -690,6 +829,9 @@
 3Gg:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3G
+  long_name: 'Gather Session 3G: Question Answering; Syntax: Tagging, Chunking, and
+    Parsing'
   papers:
   - main.108
   - main.1782
@@ -705,6 +847,9 @@
 3Hg:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3H
+  long_name: 'Gather Session 3H: Interpretability and Analysis of Models for NLP;
+    Semantics: Sentence-level Semantics, Textual Inference and Other areas'
   papers:
   - main.1484
   - main.1631
@@ -720,16 +865,20 @@
 3Ig:
   start_time: 2020-11-17 14:00:00-04:00
   end_time: 2020-11-17 16:00:00-04:00
+  name: Gather Session 3I
+  long_name: 'Gather Session 3I: Demos'
   papers:
-  - DEMO.59
-  - DEMO.60
-  - DEMO.72
-  - DEMO.79
-  - DEMO.89
-  - DEMO.97
+  - demo.59
+  - demo.60
+  - demo.72
+  - demo.79
+  - demo.89
+  - demo.97
 9Az:
   start_time: 2020-11-17 20:00:00-04:00
   end_time: 2020-11-17 21:00:00-04:00
+  name: Zoom Q&A Session 9A
+  long_name: 'Zoom Q&A Session 9A: Speech and Multimodality'
   papers:
   - main.2383
   - main.3239
@@ -739,6 +888,8 @@
 9Bz:
   start_time: 2020-11-17 20:00:00-04:00
   end_time: 2020-11-17 21:00:00-04:00
+  name: Zoom Q&A Session 9B
+  long_name: 'Zoom Q&A Session 9B: Machine Learning for NLP'
   papers:
   - main.60
   - main.1356
@@ -748,6 +899,9 @@
 9Cz:
   start_time: 2020-11-17 20:00:00-04:00
   end_time: 2020-11-17 21:00:00-04:00
+  name: Zoom Q&A Session 9C
+  long_name: 'Zoom Q&A Session 9C: Sentiment Analysis, Stylistic Analysis, and Argument
+    Mining'
   papers:
   - main.1289
   - main.2549
@@ -756,6 +910,8 @@
 10Az:
   start_time: 2020-11-17 21:00:00-04:00
   end_time: 2020-11-17 22:00:00-04:00
+  name: Zoom Q&A Session 10A
+  long_name: 'Zoom Q&A Session 10A: Phonology, Morphology and Word Segmentation'
   papers:
   - main.1320
   - main.3563
@@ -764,6 +920,8 @@
 10Bz:
   start_time: 2020-11-17 21:00:00-04:00
   end_time: 2020-11-17 22:00:00-04:00
+  name: Zoom Q&A Session 10B
+  long_name: 'Zoom Q&A Session 10B: Information Extraction'
   papers:
   - main.684
   - main.1011
@@ -772,6 +930,8 @@
 10Cz:
   start_time: 2020-11-17 21:00:00-04:00
   end_time: 2020-11-17 22:00:00-04:00
+  name: Zoom Q&A Session 10C
+  long_name: 'Zoom Q&A Session 10C: Machine Translation and Multilinguality'
   papers:
   - main.1552
   - main.2581
@@ -780,6 +940,8 @@
 10Dz:
   start_time: 2020-11-17 21:00:00-04:00
   end_time: 2020-11-17 22:00:00-04:00
+  name: Zoom Q&A Session 10D
+  long_name: 'Zoom Q&A Session 10D: Question Answering'
   papers:
   - main.1580
   - main.1262
@@ -788,6 +950,8 @@
 4Ag:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4A
+  long_name: 'Gather Session 4A: Machine Translation and Multilinguality'
   papers:
   - main.1100
   - main.1572
@@ -803,6 +967,8 @@
 4Bg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4B
+  long_name: 'Gather Session 4B: Machine Learning for NLP'
   papers:
   - main.1490
   - main.1508
@@ -818,6 +984,8 @@
 4Cg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4C
+  long_name: 'Gather Session 4C: Information Extraction'
   papers:
   - main.1738
   - main.1787
@@ -832,6 +1000,8 @@
 4Dg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4D
+  long_name: 'Gather Session 4D: Dialog and Interactive Systems'
   papers:
   - main.165
   - main.2042
@@ -845,6 +1015,9 @@
 4Eg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4E
+  long_name: 'Gather Session 4E: Sentiment Analysis, Stylistic Analysis, and Argument
+    Mining'
   papers:
   - main.1217
   - main.1299
@@ -857,6 +1030,9 @@
 4Fg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4F
+  long_name: 'Gather Session 4F: Computational Social Science and Social Media; Semantics:
+    Sentence-level Semantics, Textual Inference and Other areas'
   papers:
   - main.1997
   - main.2216
@@ -872,6 +1048,8 @@
 4Gg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4G
+  long_name: 'Gather Session 4G: NLP Applications; Semantics: Lexical Semantics'
   papers:
   - main.1250
   - main.1465
@@ -886,6 +1064,8 @@
 4Hg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4H
+  long_name: 'Gather Session 4H: Discourse and Pragmatics; Language Generation'
   papers:
   - main.1141
   - main.1863
@@ -899,6 +1079,9 @@
 4Ig:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4I
+  long_name: 'Gather Session 4I: Interpretability and Analysis of Models for NLP;
+    Syntax: Tagging, Chunking, and Parsing'
   papers:
   - main.1052
   - main.1280
@@ -915,6 +1098,8 @@
 4Jg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4J
+  long_name: 'Gather Session 4J: Question Answering; Summarization'
   papers:
   - main.1123
   - main.1191
@@ -930,15 +1115,19 @@
 4Kg:
   start_time: 2020-11-17 22:00:00-04:00
   end_time: 2020-11-17 23:59:00-04:00
+  name: Gather Session 4K
+  long_name: 'Gather Session 4K: Demos'
   papers:
-  - DEMO.54
-  - DEMO.91
-  - DEMO.104
-  - DEMO.107
-  - DEMO.118
+  - demo.54
+  - demo.91
+  - demo.104
+  - demo.107
+  - demo.118
 11Az:
   start_time: 2020-11-18 04:00:00-04:00
   end_time: 2020-11-18 05:00:00-04:00
+  name: Zoom Q&A Session 11A
+  long_name: 'Zoom Q&A Session 11A: Interpretability and Analysis of Models for NLP'
   papers:
   - main.1970
   - main.616
@@ -947,6 +1136,8 @@
 11Bz:
   start_time: 2020-11-18 04:00:00-04:00
   end_time: 2020-11-18 05:00:00-04:00
+  name: Zoom Q&A Session 11B
+  long_name: 'Zoom Q&A Session 11B: NLP Applications'
   papers:
   - main.1231
   - main.3676
@@ -956,6 +1147,8 @@
 11Cz:
   start_time: 2020-11-18 04:00:00-04:00
   end_time: 2020-11-18 05:00:00-04:00
+  name: Zoom Q&A Session 11C
+  long_name: 'Zoom Q&A Session 11C: Question Answering'
   papers:
   - TACL.2129
   - main.315
@@ -964,6 +1157,8 @@
 11Dz:
   start_time: 2020-11-18 04:00:00-04:00
   end_time: 2020-11-18 05:00:00-04:00
+  name: Zoom Q&A Session 11D
+  long_name: 'Zoom Q&A Session 11D: Semantics: Lexical Semantics'
   papers:
   - main.143
   - main.2349
@@ -972,6 +1167,8 @@
 12Az:
   start_time: 2020-11-18 05:00:00-04:00
   end_time: 2020-11-18 06:00:00-04:00
+  name: Zoom Q&A Session 12A
+  long_name: 'Zoom Q&A Session 12A: Dialog and Interactive Systems'
   papers:
   - main.407
   - main.3257
@@ -980,6 +1177,8 @@
 12Bz:
   start_time: 2020-11-18 05:00:00-04:00
   end_time: 2020-11-18 06:00:00-04:00
+  name: Zoom Q&A Session 12B
+  long_name: 'Zoom Q&A Session 12B: Information Extraction'
   papers:
   - main.387
   - main.605
@@ -988,6 +1187,8 @@
 12Cz:
   start_time: 2020-11-18 05:00:00-04:00
   end_time: 2020-11-18 06:00:00-04:00
+  name: Zoom Q&A Session 12C
+  long_name: 'Zoom Q&A Session 12C: Machine Learning for NLP'
   papers:
   - main.658
   - main.973
@@ -997,6 +1198,9 @@
 12Dz:
   start_time: 2020-11-18 05:00:00-04:00
   end_time: 2020-11-18 06:00:00-04:00
+  name: Zoom Q&A Session 12D
+  long_name: 'Zoom Q&A Session 12D: Sentiment Analysis, Stylistic Analysis, and Argument
+    Mining'
   papers:
   - main.384
   - main.2094
@@ -1005,6 +1209,8 @@
 13Az:
   start_time: 2020-11-18 12:00:00-04:00
   end_time: 2020-11-18 13:00:00-04:00
+  name: Zoom Q&A Session 13A
+  long_name: 'Zoom Q&A Session 13A: Discourse and Pragmatics'
   papers:
   - main.1972
   - main.2072
@@ -1014,6 +1220,8 @@
 13Bz:
   start_time: 2020-11-18 12:00:00-04:00
   end_time: 2020-11-18 13:00:00-04:00
+  name: Zoom Q&A Session 13B
+  long_name: 'Zoom Q&A Session 13B: NLP Applications'
   papers:
   - main.3573
   - CL.3
@@ -1023,6 +1231,9 @@
 13Cz:
   start_time: 2020-11-18 12:00:00-04:00
   end_time: 2020-11-18 13:00:00-04:00
+  name: Zoom Q&A Session 13C
+  long_name: 'Zoom Q&A Session 13C: Semantics: Sentence-level Semantics, Textual Inference
+    and Other areas'
   papers:
   - main.1957
   - main.2533
@@ -1031,6 +1242,8 @@
 13Dz:
   start_time: 2020-11-18 12:00:00-04:00
   end_time: 2020-11-18 13:00:00-04:00
+  name: Zoom Q&A Session 13D
+  long_name: 'Zoom Q&A Session 13D: Syntax: Tagging, Chunking, and Parsing'
   papers:
   - CL.1
   - CL.5
@@ -1040,6 +1253,8 @@
 14Az:
   start_time: 2020-11-18 13:00:00-04:00
   end_time: 2020-11-18 14:00:00-04:00
+  name: Zoom Q&A Session 14A
+  long_name: 'Zoom Q&A Session 14A: Machine Translation and Multilinguality'
   papers:
   - main.522
   - main.2114
@@ -1048,6 +1263,8 @@
 14Bz:
   start_time: 2020-11-18 13:00:00-04:00
   end_time: 2020-11-18 14:00:00-04:00
+  name: Zoom Q&A Session 14B
+  long_name: 'Zoom Q&A Session 14B: Computational Social Science and Social Media'
   papers:
   - main.2510
   - main.3644
@@ -1057,6 +1274,8 @@
 14Cz:
   start_time: 2020-11-18 13:00:00-04:00
   end_time: 2020-11-18 14:00:00-04:00
+  name: Zoom Q&A Session 14C
+  long_name: 'Zoom Q&A Session 14C: Machine Learning for NLP'
   papers:
   - main.2574
   - TACL.2083
@@ -1065,6 +1284,8 @@
 14Dz:
   start_time: 2020-11-18 13:00:00-04:00
   end_time: 2020-11-18 14:00:00-04:00
+  name: Zoom Q&A Session 14D
+  long_name: 'Zoom Q&A Session 14D: Information Extraction'
   papers:
   - main.485
   - main.2570
@@ -1074,6 +1295,8 @@
 5Ag:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5A
+  long_name: 'Gather Session 5A: Machine Learning for NLP'
   papers:
   - main.1227
   - main.1351
@@ -1088,6 +1311,9 @@
 5Bg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5B
+  long_name: 'Gather Session 5B: Semantics: Sentence-level Semantics, Textual Inference
+    and Other areas'
   papers:
   - main.1834
   - main.1923
@@ -1101,6 +1327,8 @@
 5Cg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5C
+  long_name: 'Gather Session 5C: NLP Applications'
   papers:
   - main.1129
   - main.125
@@ -1114,6 +1342,8 @@
 5Dg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5D
+  long_name: 'Gather Session 5D: Information Extraction'
   papers:
   - main.1466
   - main.1569
@@ -1126,6 +1356,9 @@
 5Eg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5E
+  long_name: 'Gather Session 5E: Question Answering; Sentiment Analysis, Stylistic
+    Analysis, and Argument Mining'
   papers:
   - main.2761
   - main.2943
@@ -1142,6 +1375,9 @@
 5Fg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5F
+  long_name: 'Gather Session 5F: Language Grounding to Vision, Robotics and Beyond;
+    Speech and Multimodality'
   papers:
   - main.1455
   - main.1578
@@ -1157,6 +1393,8 @@
 5Gg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5G
+  long_name: 'Gather Session 5G: Language Generation; Semantics: Lexical Semantics'
   papers:
   - main.1428
   - main.1482
@@ -1172,6 +1410,8 @@
 5Hg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5H
+  long_name: 'Gather Session 5H: Dialog and Interactive Systems; Discourse and Pragmatics'
   papers:
   - main.1389
   - main.1561
@@ -1186,6 +1426,8 @@
 5Ig:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5I
+  long_name: 'Gather Session 5I: Information Retrieval and Text Mining; Summarization'
   papers:
   - main.1070
   - main.1460
@@ -1201,16 +1443,20 @@
 5Jg:
   start_time: 2020-11-18 14:00:00-04:00
   end_time: 2020-11-18 16:00:00-04:00
+  name: Gather Session 5J
+  long_name: 'Gather Session 5J: Demos'
   papers:
-  - DEMO.93
-  - DEMO.116
-  - DEMO.119
-  - DEMO.126
-  - DEMO.127
-  - DEMO.128
+  - demo.93
+  - demo.116
+  - demo.119
+  - demo.126
+  - demo.127
+  - demo.128
 15Az:
   start_time: 2020-11-18 19:00:00-04:00
   end_time: 2020-11-18 20:00:00-04:00
+  name: Zoom Q&A Session 15A
+  long_name: 'Zoom Q&A Session 15A: Information Retrieval and Text Mining'
   papers:
   - main.666
   - main.989
@@ -1219,6 +1465,8 @@
 15Bz:
   start_time: 2020-11-18 19:00:00-04:00
   end_time: 2020-11-18 20:00:00-04:00
+  name: Zoom Q&A Session 15B
+  long_name: 'Zoom Q&A Session 15B: NLP Applications'
   papers:
   - main.3065
   - main.3438
@@ -1228,6 +1476,9 @@
 15Cz:
   start_time: 2020-11-18 19:00:00-04:00
   end_time: 2020-11-18 20:00:00-04:00
+  name: Zoom Q&A Session 15C
+  long_name: 'Zoom Q&A Session 15C: Semantics: Sentence-level Semantics, Textual Inference
+    and Other areas'
   papers:
   - main.2179
   - main.2416
@@ -1237,6 +1488,8 @@
 15Dz:
   start_time: 2020-11-18 19:00:00-04:00
   end_time: 2020-11-18 20:00:00-04:00
+  name: Zoom Q&A Session 15D
+  long_name: 'Zoom Q&A Session 15D: Language Generation'
   papers:
   - main.2389
   - main.252
@@ -1246,6 +1499,8 @@
 16Az:
   start_time: 2020-11-18 20:00:00-04:00
   end_time: 2020-11-18 21:00:00-04:00
+  name: Zoom Q&A Session 16A
+  long_name: 'Zoom Q&A Session 16A: Dialog and Interactive Systems'
   papers:
   - main.1797
   - main.3318
@@ -1255,6 +1510,8 @@
 16Bz:
   start_time: 2020-11-18 20:00:00-04:00
   end_time: 2020-11-18 21:00:00-04:00
+  name: Zoom Q&A Session 16B
+  long_name: 'Zoom Q&A Session 16B: Interpretability and Analysis of Models for NLP'
   papers:
   - main.638
   - main.2238
@@ -1263,6 +1520,8 @@
 16Cz:
   start_time: 2020-11-18 20:00:00-04:00
   end_time: 2020-11-18 21:00:00-04:00
+  name: Zoom Q&A Session 16C
+  long_name: 'Zoom Q&A Session 16C: Summarization'
   papers:
   - main.1835
   - main.2125

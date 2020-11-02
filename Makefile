@@ -9,6 +9,7 @@ all: format-check
 format-python:
 	isort -rc $(PYTHON_FILES) --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=88
 	black -t py37 $(PYTHON_FILES)
+	black -t py37 scripts/
 
 format-web:
 	npx prettier $(JS_FILES) $(CSS_FILES) --write
