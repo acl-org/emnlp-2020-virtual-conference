@@ -1,5 +1,5 @@
 # RocketChat Channels Statistics Server
-It's a simple Go web app that fetches channels statistics from RocketChat APIs and serves to users so it can be used to encourage people to engage in on-going conversations.
+It's a simple Go web app that fetches channels statistics from RocketChat APIs and serves it to users so that it can be used to encourage people to engage more in on-going conversations.
 
 It scores each channel based on the number new messages they have in the last `x` seconds. To make it more realistic, it incorporates the previous score in its calculations. In other words, if some channel was active in the previous `x` seconds but it is not now, we will still show it (You can configure it using the OLD_SCORE_COEFF environment variable, See below).
 
@@ -49,7 +49,7 @@ This method is recommended since it provides a huge performance gain over docker
 2. `docker-compose up`
 
 ## Performance Benchmark
-```bash
+```
 $ wrk -t12 -c2000 -d30s http://localhost:8000/stats.json
 Running 30s test @ http://localhost:8000/stats.json
   12 threads and 2000 connections
