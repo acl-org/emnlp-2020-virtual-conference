@@ -9,21 +9,27 @@
     \ in artificial intelligence, NLP and related fields. Amazon\u2019s Machine Learning\
     \ teams are looking forward to meeting you at EMNLP 2020. Come and build the future\
     \ with us!"
-  youtube: https://youtu.be/H8dpdFTApgo
+  youtube: https://www.youtube.com/embed/H8dpdFTApgo
   contacts:
   - name: Amazon EMNLP Team
     email: emnlp2020@amazon.com
   zoom_link: Zoom link and time to be decided in coordination with EMNLP Organizing
     Committee
   schedule:
-  - start:
-    duration:
-    label: You can leave this empty until round two
+  - start: 2020-11-19 16:00:00
+    duration: 1.25
+    label: NLP & Conversational AI at Amazon - Panel Discussion and Q&A
   resources:
+  - label: Submit Q&A for the talk - "NLP & Conversational AI at Amazon"
+    website: https://amazon.qualtrics.com/jfe/form/SV_aXc8esOJztMAhtH
   - label: Amazon at EMNLP 2020
     website: https://www.amazon.science/conferences-and-events/emnlp-2020
+  - label: Amazon Graduate Recruiting Team
+    website: https://amazonemnlp2020.splashthat.com/
+  downloads:
   - label: Amazon Research Brochure
     website: Research Brochure - EMNLP 2020.pdf
+  rocketchat_channel: sponsor-amazon
 - name: Apple
   level: Diamond
   logo: apple.png
@@ -31,7 +37,7 @@
   website: https://machinelearning.apple.com
   description: |
     Apple is a place where extraordinary people gather to do their best work. Our community is made up of every kind of individual: artists and designers, engineers and scientists, thinkers and doers. Together we create things and experiences people once couldn’t have imagined and now can’t imagine living without. So if you’re excited by the idea of making a real impact, a career with Apple might be your dream job. Just be ready to dream big.
-  youtube: https://www.youtube.com/watch?v=vfkOZTjD06Y
+  youtube: https://www.youtube.com/embed/vfkOZTjD06Y
   contacts:
   - name: Jane Luer
     email: aimlconf-recruiting@group.apple.com
@@ -45,6 +51,7 @@
     website: https://waiting
   - label: Waiting
     website: https://waiting
+  rocketchat_channel: sponsor-apple
 - name: Babelscape
   level: Silver
   logo: babelscape.png
@@ -66,7 +73,7 @@
     distilling and aggregating the information extracted across languages by
     means of a unified large-scale multilingual knowledge repository and
     **semantically-enhanced text comprehension systems**.
-  youtube: https://www.youtube.com/watch?v=FC-OJRXwoig&feature=youtu.be
+  youtube: https://www.youtube.com/embed/FC-OJRXwoig
   contacts:
   - name: Roberto Navigli
     email: navigli@babelscape.com
@@ -78,16 +85,15 @@
   downloads:
   - label: Products and Services
     website: babelscape-resource-brochure_allproducts_1_.pdf
+  rocketchat_channel: sponsor-babelscape
 - name: Baidu
   level: Platinum
-  logo: baidu.jpg
+  logo: baidu.png
   logoontop: true
   website: https://www.baidu.com/
   description: |
     Founded on January 1, 2000, Baidu is the world’s largest Chinese language Internet search provider, the largest knowledge and information centered Internet platform company in China, and a world-leading artificial intelligence (AI) platform company. Robin Li, Baidu’s co-founder, chairman, and chief executive officer, was awarded a U.S. patent for his development of the Rankdex site-scoring algorithm for search engine page rankings, making China one of only four countries in the world that has developed core search engine technology, along with the United States, Russia, and South Korea.
-    As the world’s largest Chinese language Internet search provider, Baidu responds to billions of search queries from more than 100 countries and regions every day, serving as the most important way for netizens to access Chinese language information. With its mission to “make the complicated world simpler through technology”, Baidu promotes constant technological innovation, and is committed to being a top global technology company which best understands users’ needs and enables their growth. Baidu is a world-leading AI company. Baidu Brain, the result of years of technological innovation, is the only integrated AI software and hardware platform in China, providing over 260 core AI capabilities to developers and partners from a diverse range of industries. PaddlePaddle, Baidu’s open source deep learning platform, is China’s first platform of its kind, and plays a significant role as an “operating system in the era of intelligence”, enabling the development of China’s AI industry. Baidu Cloud, a leading intelligent cloud computing platform, is one of Baidu’s core “AI to B” services, helping companies deploy Baidu’s leading technologies to accelerate the industrialization of AI.
-    Baidu places technological innovation at the heart of its business, and is a world leader in terms of innovation investment, R&amp;D, and talent acquisition. Baidu has filed over 10,000 global AI-related patent applications, including over 7,000 in China, and leads in the fields of speech recognition, natural language processing, knowledge graph, and autonomous driving.
-  youtube: https://www.youtube.com/watch?v=JJq2MWRIPBQ
+  youtube: https://www.youtube.com/embed/JJq2MWRIPBQ
   contacts:
   - name: Qianwei Cai
     email: caiqianwei@baidu.com
@@ -95,9 +101,18 @@
     email: changyue@baidu.com
   zoom_link: After the schedule
   schedule:
-  - start:
-    duration:
-    label:
+  - start: 2020-11-17 03:00:00
+    duration: 1
+    label: Chat with Baidu Researchers and Recruiters
+  - start: 2020-11-17 08:00:00
+    duration: 1
+    label: Chat with Baidu Researchers and Recruiters
+  - start: 2020-11-18 03:00:00
+    duration: 1
+    label: Chat with Baidu Researchers and Recruiters
+  - start: 2020-11-18 08:00:00
+    duration: 1
+    label: Chat with Baidu Researchers and Recruiters
   resources:
   - label: Brochure of Baidu Natural Language Processing
     website: https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_Baidu_Natural_Language_Processing.pdf
@@ -111,6 +126,11 @@
     website: https://fanyiapp.cdn.bcebos.com/cms/misc/Introduction_to_Baidu's_Natural_Language_Processing.ppsx
   - label: Baidu @ EMNLP 2020
     website: https://fanyiapp.cdn.bcebos.com/cms/misc/Baidu_Schedule.pdf
+  youtubes:
+  - https://www.youtube.com/embed/iBqfajFcSzo
+  - https://www.youtube.com/embed/hrlz42GQHgQ
+  - https://www.youtube.com/embed/Y7bEdGHmeWg
+  rocketchat_channel: sponsor-baidu
 - name: Bloomberg
   level: Diamond
   logo: bloomberg.png
@@ -130,12 +150,13 @@
     \ and neural networks to quickly understand and respond to major world events\
     \ in order to predict when or how breaking business news will impact company stock\
     \ prices and move markets \u2013 and why."
-  youtube: https://www.youtube.com/watch?v=2ZlZD-fvuhc
+  youtube: https://www.youtube.com/embed/2ZlZD-fvuhc
   contacts:
   - name: Christoph Teichmann
     email: cteichmann1@bloomberg.net
   - name: Chevonne Ortiz
     email: cortiz20@bloomberg.net
+  rocketchat_channel: sponsor-bloomberg
 - name: ByteDance
   level: Gold
   logo: bytedance.png
@@ -143,31 +164,22 @@
   website: https://www.bytedance.com/en/
   description: |
     Founded in 2012, ByteDance is a technology company operating a range of content platforms that inform, educate, entertain, and inspire people across language, culture. Dedicated to building global platforms of creation and interaction, ByteDance now has over 60,000 global employees and a portfolio of applications available in over 150 markets and 75 languages, including Toutiao, Douyin, Xigua Video, TikTok, Helo, Lark, and more. Our mission: Inspire Creativity and Enrich Life.
-  youtube: https://drive.google.com/file/d/1uF7loSpxI2mpUCi7hGUN7komGT3ehxMo/view?usp=sharing
+  gdrive: https://drive.google.com/file/d/1uF7loSpxI2mpUCi7hGUN7komGT3ehxMo/preview
   contacts:
   - name: Alexander Lindblom
     email: alexanderlindblom@bytedance.com
   publications:
-  - On the Sentence Embeddings from Pre-trained Language Models, Bohan Li, Hao Zhou,
-    Junxian He, Mingxuan Wang, Yiming Yang, and Lei Li. EMNLP 2020 (long paper)
-  - Pre-training Multilingual Neural Machine Translation by Leveraging Alignment Information,
-    Zehui Lin, Xiao Pan, Mingxuan Wang, Xipeng Qiu, Jiangtao Feng, Hao Zhou, and Lei
-    Li. EMNLP 2020 (long paper)
-  - Double Graph Based Reasoning for Document-level Relation Extraction, Shuang Zeng,
-    Runxin Xu, Baobao Chang, and Lei Li. EMNLP 2020 (long paper)
-  - Active Sentence Learning by Adversarial Uncertainty Sampling in Discrete Space,
-    Dongyu Ru, Jiangtao Feng, Lin Qiu, Hao Zhou, MIngxuan Wang, Weinan Zhang, Yong
-    Yu, and Lei Li. EMNLP 2020 - Findings
-  - Language Generation via Combinatorial Constraint Satisfaction; A Tree Search Enhanced
-    Monte-Carlo Approach, Maosen Zhang, Nan Jiang, Lei Li, and Yexiang Xue. EMNLP
-    2020 - Findings
-  downloads:
+  - main.3635
+  - main.3688
+  - main.158
+  resources:
   - label: Career opportunities
-  - website: https://drive.google.com/file/d/1cxQ0QBMO2PX4knbhMI3RSCVQciQdS585/view?usp=sharing
+    website: https://drive.google.com/file/d/1cxQ0QBMO2PX4knbhMI3RSCVQciQdS585/view?usp=sharing
   - label: Coding Camp
-  - website: https://drive.google.com/file/d/11ELUag3A_c5WReIga-tQzRGR_EepRk22/view?usp=sharing
+    website: https://drive.google.com/file/d/11ELUag3A_c5WReIga-tQzRGR_EepRk22/view?usp=sharing
   - label: Joint Research
-  - website: https://drive.google.com/file/d/1_1XeJn-LgWbcpIiXMiIZKw_SCj36p_La/view?usp=sharing
+    website: https://drive.google.com/file/d/1_1XeJn-LgWbcpIiXMiIZKw_SCj36p_La/view?usp=sharing
+  rocketchat_channel: sponsor-bytedance
 - name: DeepMind
   levels:
   - Platinum
@@ -184,40 +196,30 @@
     We have a track record of breakthroughs in fundamental AI research, published in journals like Nature, Science, and more. Our programs have learned to diagnose eye diseases as effectively as the world’s top doctors, to save 30% of the energy used to keep data centres cool, and to make state of the art predictions of the complex 3D shapes of proteins - which could one day transform how drugs are invented.
 
     DeepMind was founded in London in 2010, and we joined forces with Google in 2014 to accelerate our work. Since then, our community has expanded to include teams in Alberta, Montreal, Paris, and Mountain View in California.
-  youtube:
   contacts:
   - name: Amy Wu
     email: amybwu@google.com
   - name: General
     email: dm-emnlp-2020-enquiries@google.com
   zoom_link:
-  schedule:
-  - start:
-    duration:
-    label:
-  - start:
-    duration:
-    label:
-  - start:
-    duration:
-    label:
-  - start:
-    duration:
-    label:
-  resources:
-  - label:
-    website:
+  - start: 2020-11-16 17:00:00
+    duration: 1.0
+    label: Chat with the DeepMind Language Team
+  - start: 2020-11-17 17:00:00
+    duration: 1.0
+    label: Chat with the DeepMind Language Team
   downloads:
-  - label: DeepMind_Copy-of-Eng-and-Games.pdf
-    website:
-  - label: DeepMind_Copy-of-Operations.pdf
-    website:
-  - label: DeepMind_Copy-of-Research.pdf
-    website:
-  - label: DeepMind_Copy-of-Science-and-DeepMind-for-Google.pdf
-    website:
-  - label: DeepMind_Overview-Deck_Language-at-EMNLP2020.pptx
-    website:
+  - label: Careers Leaflet - Engineering and Games
+    website: DeepMind_Copy-of-Eng-and-Games.pdf
+  - label: Careers Leaflet - Operations
+    website: DeepMind_Copy-of-Operations.pdf
+  - label: Careers Leaflet - Research
+    website: DeepMind_Copy-of-Research.pdf
+  - label: Careers Leaflet - Science and DeepMind for Google
+    website: DeepMind_Copy-of-Science-and-DeepMind-for-Google.pdf
+  - label: Overview Deck - Language at EMNLP 2020
+    website: DeepMind_Overview-Deck_Language-at-EMNLP2020.pptx
+  rocketchat_channel: sponsor-deepmind
 - name: Facebook
   level: Platinum
   logo: facebook.jpg
@@ -243,7 +245,7 @@
     \ and work intrigue you, Facebook AI is always looking to hire the best talent\
     \ to our globally based teams. For information about open roles and how to apply,\
     \ please visit https://ai.facebook.com/join-us/\""
-  youtube: https://www.youtube.com/watch?v=eiqUzieHu8o&t=67s
+  youtube: https://www.youtube.com/embed/eiqUzieHu8o
   contacts:
   - name: Name of the contact 1
     email: mail1@example.com
@@ -259,14 +261,15 @@
     website: https://resource1.example.com
   - label: Resource 2
     website: https://resource2.example.com
+  rocketchat_channel: sponsor-facebook
 - name: Google Research
   level: Diamond
   logo: google_research.png
   logoontop: true
   website: http://goo.gle/EMNLP-Homepage
   description: |
-    Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our Accepted Papers and Workshops and Tutorials. Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our Google AI blog and Google Research website.
-  youtube: https://drive.google.com/file/d/1sgfiY7929kP2HMqNvzdiUPr-MBHqBIKm/view?usp=sharing
+    Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our [Accepted Papers](http://goo.gle/EMNLP-Accepted-Papers) and [Workshops and Tutorials](http://goo.gle/EMNLP-Workshops-Tutorials). Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our [Google AI blog](https://ai.googleblog.com/) and [Google Research website](https://research.google/).
+  youtube: https://www.youtube.com/embed/EvfziohbbnE
   contacts:
   - name: Name of the contact 1
     email: mail1@google.com
@@ -274,18 +277,18 @@
     email: mail2@google.com
   zoom_link: https://waitforsecondround.example.com
   schedule:
-  - start: 2020-11-17 08:00:00
+  - start: 2020-11-17 16:00:00
     duration: 1.0
-    label: 'Hiring Q&A with Google Recruiters (Time: PDT)'
-  - start: 2020-11-17 09:30:00
+    label: Hiring Q&A with Google Recruiters
+  - start: 2020-11-17 17:30:00
     duration: 1.0
-    label: 'Meet our Google Researchers (Time: PDT)'
-  - start: 2020-11-18 08:00:00
+    label: Meet our Google Researchers
+  - start: 2020-11-18 16:00:00
     duration: 1.0
-    label: 'Hiring Q&A with Google Recruiters (Time: PDT)'
-  - start: 2020-11-18 09:30:00
+    label: Hiring Q&A with Google Recruiters
+  - start: 2020-11-18 17:30:00
     duration: 1.0
-    label: 'Meet our Google Researchers (Time: PDT)'
+    label: Meet our Google Researchers
   resources:
   - label: Google Accepted Papers
     website: http://goo.gle/EMNLP-Accepted-Papers
@@ -301,11 +304,7 @@
     website: http://goo.gle/EMNLP-Diversity
   - label: Careers at Google
     website: http://goo.gle/EMNLP-Careers
-  downloads:
-  - label: Download 1 (no PDF)
-    website: https://download1.example.com
-  - label: Download 2 (no PDF)
-    website: https://download2.example.com
+  rocketchat_channel: sponsor-google-research
 - name: Grammarly
   level: Gold
   logo: grammarly.png
@@ -333,12 +332,42 @@
     website:
   - label:
     website:
+  rocketchat_channel: sponsor-grammarly
 - name: ISI
   level: Bronze
   logo: isi.png
   website: https://www.isi.edu
   channel: example_sponsor
   landingpage: https://www.isi.edu/
+  rocketchat_channel: sponsor-isi
+- name: Megagon Labs
+  level: Platinum
+  logo: megagon.png
+  logoontop: true
+  website: http://www.megagon.ai/
+  description: Since 2016, Megagon Labs (formerly Recruit Institute of Technology)
+    has conducted top-notch research and build technologies in Mountain View and Tokyo.  We
+    are making impacts through the worldwide services and products of the Recruit
+    Group by empowering people to make their best decision.  Our research focuses
+    are in the broad areas of Artificial Intelligence, Data Management, and Natural
+    Language Processing.
+  youtube:
+  contacts:
+  - name: Makiko Shiino
+    email: makiko@megagon.ai
+  - name: Vivian Li
+    email: vivian@megagon.ai
+  zoom_link:
+  schedule:
+  - start:
+    duration:
+    label:
+  resources:
+  - label:
+    website:
+  - label:
+    website:
+  rocketchat_channel: sponsor-megagon-labs
 - name: NAVER
   level: Silver
   logo: naver.jpg
@@ -346,7 +375,7 @@
   website: https://europe.naverlabs.com/emnlp2020
   description: |
     NAVER Corporation is Korea's premier Internet company and a global leader in online services such as NAVER search (30M DAU), LINE messaging (164MAU), and WEBTOON (62M MAU). NAVER is continuously focussed on the future and in seamlessly connecting the physical and digital worlds through advanced technology. Its AI and Robotics research in Asia and Europe are fundamental to creating this future. NAVER invests over 25 percent of annual revenue in R&D yet innovation is but one core value. NAVER promotes diversity on the internet, respects and connects people helping them to share knowledge, create communities and preserve culture.
-  video: https://vimeo.com/432786265
+  vimeo: https://player.vimeo.com/video/432786265?title=0&byline=0&portrait=0
   contacts:
   - name: Irene Maxwell
     email: dl_nlp_emnlp_2020@navercorp.com
@@ -363,6 +392,7 @@
   downloads:
   - label: Connect with us
     website: 2020_Naver_brochure_EN_F.pdf
+  rocketchat_channel: sponsor-naver
 - name: Salesforce
   logo: salesforce.png
   logoontop: true
@@ -370,24 +400,18 @@
   description: |
     Salesforce Research advances AI techniques that pave the path for new AI research directions, innovative products and applications with a positive impact on society. Our team of researchers, engineers, product managers, and designers drive AI innovation across pure research, applied research, and new product incubation- all built on our powerful AI platform. We bring companies and customers together using AI that is explainable, transparent, and accountable.
     As part of our team you’ll learn unique skills, work with talented people, influence the industry standard for fair and ethical use of artificial intelligence and help us to shape the future of AI.
-  youtube: https://www.youtube.com/watch?v=WeFQAFgYUC0&feature=emb_title
+  youtube: https://www.youtube.com/embed/WeFQAFgYUC0
   contacts:
   - name: Audrey Cook
     email: audrey.cook@salesforce.com
   - name: Caitlin McCauley
     email: cmccauley@salesforce.com
-  zoom_link:
-  schedule:
-  - start:
-    duration:
-    label:
-  resources:
-  - label:
-    website:
+  rocketchat_channel: sponsor-salesforce
 - name: Zeta Alpha
   level: Gold
   logo: zeta-alpha.png
-  logoontop: false
+  logoontop: true
+  nameontop: true
   website: https://www.zeta-alpha.com/
   description: |
     Zeta Alpha is building the next generation Enterprise Search and Insights platform, 100% focused on AI teams.
@@ -395,27 +419,36 @@
     Do you work in AI, NLP, ML or Data Science and are you finding it increasingly difficult to see the forest for the trees? With hundreds of new publications, technology announcements, and blog postings per day, who can keep up?
 
     Our AI Research Navigator is a powerful state of the art search engine 100% focused on AI content and knowledge. AI Research Navigator combines the latest neural natural language understanding and search technologies, and a user-friendly project workflow to help you locate, discover and organize the AI and Data Science knowledge relevant for your projects. Once you start using it, it will proactively keep you up-to-date on the topics you are interested in. Join us for one of our talks or ask for a demo.
-  youtube: https://www.youtube.com/embed/eO7MhBkbueM
+  youtube: https://www.youtube.com/embed/vaugp421awo
   contacts:
   - name: Jakub Zavrel
     email: zavrel@zeta-alpha.com
   - name: "Sergi Castella Sap\xE9"
     email: castella@zeta-alpha.com
+  - name: Victor Zuanazzi
+    email: zuanazzi@zeta-alpha.com
   zoom_link: https://waitforsecondround.example.com
   schedule:
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:15:00
-    label: ' Introduction to Zeta Alpha'
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:20:00
-    label: Demo AI Research Navigator
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:20:00
-    label: How to keep up with AI and NLP research?
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:20:00
-    label: Exploring trends in NLP
+  - start: 2020-11-16 14:00:00
+    end: 2020-11-16 14:30:00
+    label: Meet Zeta Alpha @ EMNLP
+  - start: 2020-11-17 12:30:00
+    end: 2020-11-17 13:00:00
+    label: Introduction to Zeta Alpha - How to keep up with AI and NLP research?
+  - start: 2020-11-17 14:00:00
+    end: 2020-11-17 14:30:00
+    label: Demo AI Research Navigator - Exploring trends in NLP
+  - start: 2020-11-18 10:00:00
+    end: 2020-11-18 10:30:00
+    label: Introduction to Zeta Alpha - How to keep up with AI and NLP research?
+  - start: 2020-11-18 12:30:00
+    end: 2020-11-18 13:00:00
+    label: Demo AI Research Navigator - Exploring trends in NLP
+  - start: 2020-11-18 20:00:00
+    end: 2020-11-18 21:30:00
+    label: Zeta Alpha - EMNLP Tropical Party - Drinks on the Beach
   downloads:
   - label: A New Neural Search and Insights Platform for Navigating and Organizing
       AI Research
-    website: zeta_alpha_EMNLP_2020 _ack_link.pdf
+    website: zeta_alpha_EMNLP_2020_ack_link.pdf
+  rocketchat_channel: sponsor-zeta-alpha
