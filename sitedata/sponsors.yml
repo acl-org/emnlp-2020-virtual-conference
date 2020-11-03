@@ -20,8 +20,13 @@
     duration: 1.25
     label: NLP & Conversational AI at Amazon - Panel Discussion and Q&A
   resources:
+  - label: Submit Q&A for the talk - "NLP & Conversational AI at Amazon"
+    website: https://amazon.qualtrics.com/jfe/form/SV_aXc8esOJztMAhtH
   - label: Amazon at EMNLP 2020
     website: https://www.amazon.science/conferences-and-events/emnlp-2020
+  - label: Amazon Graduate Recruiting Team
+    website: https://amazonemnlp2020.splashthat.com/
+  downloads:
   - label: Amazon Research Brochure
     website: Research Brochure - EMNLP 2020.pdf
   rocketchat_channel: sponsor-amazon
@@ -197,33 +202,23 @@
   - name: General
     email: dm-emnlp-2020-enquiries@google.com
   zoom_link:
-  schedule:
-  - start:
-    duration:
-    label:
-  - start:
-    duration:
-    label:
-  - start:
-    duration:
-    label:
-  - start:
-    duration:
-    label:
-  resources:
-  - label:
-    website:
+  - start: 2020-11-16 17:00:00
+    duration: 1.0
+    label: Chat with the DeepMind Language Team
+  - start: 2020-11-17 17:00:00
+    duration: 1.0
+    label: Chat with the DeepMind Language Team
   downloads:
-  - label: DeepMind_Copy-of-Eng-and-Games.pdf
-    website:
-  - label: DeepMind_Copy-of-Operations.pdf
-    website:
-  - label: DeepMind_Copy-of-Research.pdf
-    website:
-  - label: DeepMind_Copy-of-Science-and-DeepMind-for-Google.pdf
-    website:
-  - label: DeepMind_Overview-Deck_Language-at-EMNLP2020.pptx
-    website:
+  - label: Careers Leaflet - Engineering and Games
+    website: DeepMind_Copy-of-Eng-and-Games.pdf
+  - label: Careers Leaflet - Operations
+    website: DeepMind_Copy-of-Operations.pdf
+  - label: Careers Leaflet - Research
+    website: DeepMind_Copy-of-Research.pdf
+  - label: Careers Leaflet - Science and DeepMind for Google
+    website: DeepMind_Copy-of-Science-and-DeepMind-for-Google.pdf
+  - label: Overview Deck - Language at EMNLP 2020
+    website: DeepMind_Overview-Deck_Language-at-EMNLP2020.pptx
   rocketchat_channel: sponsor-deepmind
 - name: Facebook
   level: Platinum
@@ -273,8 +268,8 @@
   logoontop: true
   website: http://goo.gle/EMNLP-Homepage
   description: |
-    Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our Accepted Papers and Workshops and Tutorials. Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our Google AI blog and Google Research website.
-  gdrive: https://drive.google.com/file/d/1sgfiY7929kP2HMqNvzdiUPr-MBHqBIKm/preview
+    Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our [Accepted Papers](http://goo.gle/EMNLP-Accepted-Papers) and [Workshops and Tutorials](http://goo.gle/EMNLP-Workshops-Tutorials). Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our [Google AI blog](https://ai.googleblog.com/) and [Google Research website](https://research.google/).
+  youtube: https://www.youtube.com/embed/EvfziohbbnE
   contacts:
   - name: Name of the contact 1
     email: mail1@google.com
@@ -282,18 +277,18 @@
     email: mail2@google.com
   zoom_link: https://waitforsecondround.example.com
   schedule:
-  - start: 2020-11-17 08:00:00
+  - start: 2020-11-17 16:00:00
     duration: 1.0
-    label: 'Hiring Q&A with Google Recruiters (Time: PDT)'
-  - start: 2020-11-17 09:30:00
+    label: Hiring Q&A with Google Recruiters
+  - start: 2020-11-17 17:30:00
     duration: 1.0
-    label: 'Meet our Google Researchers (Time: PDT)'
-  - start: 2020-11-18 08:00:00
+    label: Meet our Google Researchers
+  - start: 2020-11-18 16:00:00
     duration: 1.0
-    label: 'Hiring Q&A with Google Recruiters (Time: PDT)'
-  - start: 2020-11-18 09:30:00
+    label: Hiring Q&A with Google Recruiters
+  - start: 2020-11-18 17:30:00
     duration: 1.0
-    label: 'Meet our Google Researchers (Time: PDT)'
+    label: Meet our Google Researchers
   resources:
   - label: Google Accepted Papers
     website: http://goo.gle/EMNLP-Accepted-Papers
@@ -309,11 +304,6 @@
     website: http://goo.gle/EMNLP-Diversity
   - label: Careers at Google
     website: http://goo.gle/EMNLP-Careers
-  downloads:
-  - label: Download 1 (no PDF)
-    website: https://download1.example.com
-  - label: Download 2 (no PDF)
-    website: https://download2.example.com
   rocketchat_channel: sponsor-google-research
 - name: Grammarly
   level: Gold
@@ -420,34 +410,43 @@
 - name: Zeta Alpha
   level: Gold
   logo: zeta-alpha.png
-  logoontop: false
+  logoontop: true
+  nameontop: true
   website: https://www.zeta-alpha.com/
   description: |
     Zeta Alpha is building the next generation Enterprise Search and Insights platform, 100% focused on AI teams.
 
-      Do you work in AI, NLP, ML or Data Science and are you finding it increasingly difficult to see the forest for the trees? With hundreds of new publications, technology announcements, and blog postings per day, who can keep up?
+    Do you work in AI, NLP, ML or Data Science and are you finding it increasingly difficult to see the forest for the trees? With hundreds of new publications, technology announcements, and blog postings per day, who can keep up?
 
-      Our AI Research Navigator is a powerful state of the art search engine 100% focused on AI content and knowledge. AI Research Navigator combines the latest neural natural language understanding and search technologies, and a user-friendly project workflow to help you locate, discover and organize the AI and Data Science knowledge relevant for your projects. Once you start using it, it will proactively keep you up-to-date on the topics you are interested in. Join us for one of our talks or ask for a demo.
-  youtube: https://www.youtube.com/embed/eO7MhBkbueM
+    Our AI Research Navigator is a powerful state of the art search engine 100% focused on AI content and knowledge. AI Research Navigator combines the latest neural natural language understanding and search technologies, and a user-friendly project workflow to help you locate, discover and organize the AI and Data Science knowledge relevant for your projects. Once you start using it, it will proactively keep you up-to-date on the topics you are interested in. Join us for one of our talks or ask for a demo.
+  youtube: https://www.youtube.com/embed/vaugp421awo
   contacts:
   - name: Jakub Zavrel
     email: zavrel@zeta-alpha.com
   - name: "Sergi Castella Sap\xE9"
     email: castella@zeta-alpha.com
+  - name: Victor Zuanazzi
+    email: zuanazzi@zeta-alpha.com
   zoom_link: https://waitforsecondround.example.com
   schedule:
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:15:00
-    label: ' Introduction to Zeta Alpha'
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:20:00
-    label: Demo AI Research Navigator
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:20:00
-    label: How to keep up with AI and NLP research?
-  - start: 2020-07-07 17:00:00
-    end: 2020-07-07 17:20:00
-    label: Exploring trends in NLP
+  - start: 2020-11-16 14:00:00
+    end: 2020-11-16 14:30:00
+    label: Meet Zeta Alpha @ EMNLP
+  - start: 2020-11-17 12:30:00
+    end: 2020-11-17 13:00:00
+    label: Introduction to Zeta Alpha - How to keep up with AI and NLP research?
+  - start: 2020-11-17 14:00:00
+    end: 2020-11-17 14:30:00
+    label: Demo AI Research Navigator - Exploring trends in NLP
+  - start: 2020-11-18 10:00:00
+    end: 2020-11-18 10:30:00
+    label: Introduction to Zeta Alpha - How to keep up with AI and NLP research?
+  - start: 2020-11-18 12:30:00
+    end: 2020-11-18 13:00:00
+    label: Demo AI Research Navigator - Exploring trends in NLP
+  - start: 2020-11-18 20:00:00
+    end: 2020-11-18 21:30:00
+    label: Zeta Alpha - EMNLP Tropical Party - Drinks on the Beach
   downloads:
   - label: A New Neural Search and Insights Platform for Navigating and Organizing
       AI Research
