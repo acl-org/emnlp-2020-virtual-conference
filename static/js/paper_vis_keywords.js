@@ -390,5 +390,5 @@ function triggerListView(name, allPapers) {
           ", "
         )}</div> <div><b>Keywords</b>: ${d.keywords.slice(0,keywordLimit).join(", ")} </div>`
     )
-    .on("click", (d) => window.open(`paper_${d.id}.html`, "_blank"));
+    .on("click", (event, d) => { console.log(d); return window.open(`paper_${d.id}.html`, "_blank")});
 }

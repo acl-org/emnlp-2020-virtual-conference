@@ -192,7 +192,7 @@ const updateVis = () => {
       .classed('highlight', d => d.is_selected)
       .classed('non-highlight', d => !d.is_selected && is_filtered)
       .on('click',
-        function(d) {
+        function(event, d) {
             window.open(`paper_${d.id}.html`, '_blank');
             persistor.set(d.id, true);
             d3.select(this).classed('read', true);
