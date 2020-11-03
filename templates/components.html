@@ -172,7 +172,8 @@
               <center>
                 <img
                   class="cards_img lazy-load-img"
-                  data-src="{{openreview.card_image_path}}"
+                  src="{{openreview.card_image_path}}"
+                  onerror="javascript:this.src=''"
                   width="80%"
                 />
               </center>

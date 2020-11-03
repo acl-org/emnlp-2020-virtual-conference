@@ -249,7 +249,7 @@ const tooltip_template = (d) => `
     <div>
         <div class="tt-title">${d.content.title}</div>
         <p>${d.content.authors.join(', ')}</p>
-        <img src="${d.card_image_path}" width=100%/>
+        <img src="${d.card_image_path}" onerror="javascript:this.src=''" width=100%/>
      </div>   
 `
 
