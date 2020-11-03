@@ -36,14 +36,15 @@ export UPDATE_INTERVAL=5        # The delay between each stats update. The unit 
 export OLD_SCORE_COEFF=0.8      # The more this value is close to 1, the more active channels remain 
                                 # in the list (even if it is not active anymore)
 ```
-### Without Docker (Recommended)
+### Step 2: Run the web app
+**Without Docker (Recommended)**
 1. Install Go ([Official Doc](https://golang.org/doc/install))
 2. `cd api`
 3. `make launch-service`
 
 This method is recommended since it provides a huge performance gain over docker
 
-### With Docker
+**With Docker**
 1. `docker-compose build`
 2. `docker-compose up`
 
