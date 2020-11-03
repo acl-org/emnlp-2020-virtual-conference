@@ -323,9 +323,9 @@ const render = () => {
     let pass_test = true;
     while (i < f_test.length && pass_test) {
       if (f_test[i][0] === "titles") {
-        pass_test &= d.content.title === f_test[i][1]; //eslint-disable-line no-bitwise
+        pass_test &= d.content.title === f_test[i][1]; // eslint-disable-line no-bitwise
       } else {
-        pass_test &= d.content[f_test[i][0]].indexOf(f_test[i][1]) > -1; //eslint-disable-line no-bitwise
+        pass_test &= d.content[f_test[i][0]].indexOf(f_test[i][1]) > -1; // eslint-disable-line no-bitwise
       }
       i += 1;
     }
@@ -334,7 +334,9 @@ const render = () => {
 
   if (f_test.length === 0) test = (d) => false;
 
-  all_papers.forEach((paper) => (paper.is_selected = test(paper)));
+  all_papers.forEach(function (paper) {
+    paper.is_selected = test(paper);
+  });
   updateVis();
 };
 
