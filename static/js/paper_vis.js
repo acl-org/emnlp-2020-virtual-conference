@@ -54,11 +54,10 @@ const brush_start = () => {
     currentTippy.forEach(t => t.disable());
     brushed();
 }
-const brushed = () => {
-    let [[x0, y0], [x1, y1]] = d3.event.selection;
+const brushed = (event) => {
+    let [[x0, y0], [x1, y1]] = event.selection;
     x0 = Math.round(x0), y0 = Math.round(y0);
     x1 = Math.round(x1), y1 = Math.round(y1);
-    // console.log(x0, x1, y1, y0, "--- x0,x1,y1,y0");
 
     l_main.selectAll('.dot')
       .classed('rect_selected', function () {
@@ -193,7 +192,7 @@ const updateVis = () => {
       .classed('highlight', d => d.is_selected)
       .classed('non-highlight', d => !d.is_selected && is_filtered)
       .on('click',
-        function(d) {
+        function(event, d) {
             window.open(`paper_${d.id}.html`, '_blank');
             persistor.set(d.id, true);
             d3.select(this).classed('read', true);
@@ -323,7 +322,7 @@ d3.selectAll('.filter_option input').on('click', function () {
 
     setTypeAhead(filter_mode, allKeys, filters, render);
     render();
-})
+});
 
 $(window).on('resize', _.debounce(updateVis, 150));
 
