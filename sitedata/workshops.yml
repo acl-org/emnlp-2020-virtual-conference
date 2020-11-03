@@ -4,7 +4,7 @@
   abstract: CoNLL is a yearly top-tier NLP conference that has been organized by SIGNLL
     since 1997.
   website: https://www.conll.org
-  rocketchat_channel: workshop-1-conll
+  rocketchat_channel: workshop-conll
   sessions: []
   alias: conll
   prerecorded_talks: []
@@ -14,7 +14,7 @@
     \ Yvette Graham, Matthias Huck, Christof Monz and Lucia Specia"
   abstract: A two day conference on machine translation with shared tasks.
   website: http:/www.statmt.org/wmt20
-  rocketchat_channel: workshop-2-wmt
+  rocketchat_channel: workshop-wmt
   sessions: []
   alias: wmt
   prerecorded_talks:
@@ -27,7 +27,7 @@
   abstract: Let's take a break from chasing leaderboards! Your negative results might
     save others time, or poke holes in things we take for granted.
   website: https://insights-workshop.github.io/
-  rocketchat_channel: workshop-3-insights
+  rocketchat_channel: workshop-insights
   sessions: []
   alias: insights
   prerecorded_talks:
@@ -43,7 +43,7 @@
   organizers: Julia Kiseleva, Aleksandr Chuklin, Jeff Dalton and Mikhail Burtsev
   abstract: N/A
   website: http://scai.info
-  rocketchat_channel: workshop-4-scai
+  rocketchat_channel: workshop-scai
   sessions: []
   alias: scai
   prerecorded_talks:
@@ -105,7 +105,7 @@
   abstract: The CMCL workshop provides a venue for computational research on cognitive
     theories of language processing, representation and acquisition.
   website: https://cmclorg.github.io/
-  rocketchat_channel: workshop-5-cmcl2020
+  rocketchat_channel: workshop-cmcl2020
   sessions: []
   alias: cmcl2020
   prerecorded_talks: []
@@ -117,7 +117,7 @@
   abstract: Map natural language to meaning representations executed in databases,
     knowledge graphs, robotic environment and software applications.
   website: Additicontact address found
-  rocketchat_channel: workshop-6-intex-sempar2020
+  rocketchat_channel: workshop-intex-sempar2020
   sessions: []
   alias: intex-sempar2020
   prerecorded_talks:
@@ -151,7 +151,7 @@
     researchers interested in any aspect of mining scientific literature. SDP includes
     a research track and three shared tasks: 6th CL-SciSumm, 1st LongSumm, 1st LaySumm.'
   website: https://ornlcda.github.io/SDProc/
-  rocketchat_channel: workshop-7-sdp2020
+  rocketchat_channel: workshop-sdp2020
   sessions: []
   alias: sdp2020
   prerecorded_talks: []
@@ -161,7 +161,7 @@
     Tan and Geeticka Chauhan
   abstract: Democratizing NLP!
   website: https://nlposs.github.io/
-  rocketchat_channel: workshop-9-nlposs
+  rocketchat_channel: workshop-nlposs
   sessions: []
   alias: nlposs
   prerecorded_talks:
@@ -181,7 +181,7 @@
   abstract: Spatial Language Understanding, Learning/Reasoning on Spatial Semantics,
     (sub)Symbolic Representations and Grounding Language in Perception
   website: https://spatial-language.github.io
-  rocketchat_channel: workshop-10-splu2020
+  rocketchat_channel: workshop-splu2020
   sessions: []
   alias: splu2020
   prerecorded_talks:
@@ -210,7 +210,7 @@
   abstract: Bringing together researchers interested in applying computational techniques
     to problems in linguistic typology and multilingual NLP.
   website: https://sigtyp.github.io/ws2020.html
-  rocketchat_channel: workshop-11-sigtyp
+  rocketchat_channel: workshop-sigtyp
   sessions: []
   alias: sigtyp
   prerecorded_talks:
@@ -240,7 +240,7 @@
   abstract: "Explore challenges and promises of clinical text: understand a patient's\
     \ story, predict health outcomes, advance medical research, and more."
   website: https://clinical-nlp.github.io/2020/
-  rocketchat_channel: workshop-12-clinicalnlp
+  rocketchat_channel: workshop-clinicalnlp
   sessions: []
   alias: clinicalnlp
   prerecorded_talks: []
@@ -251,7 +251,7 @@
   abstract: 'Deep Learning Inside Out: Knowledge Extraction and Integration for Deep
     Learning Architectures with special focus on low-data regimes'
   website: https://sites.google.com/view/deelio-ws/
-  rocketchat_channel: workshop-13-deelio
+  rocketchat_channel: workshop-deelio
   sessions: []
   alias: deelio
   prerecorded_talks: []
@@ -261,7 +261,7 @@
   abstract: Social media, crowdsourcing, medical texts, language learner essays, and
     more! 2 keynotes, 130 PC members, talks &amp; 1-min madness for posters
   website: http://noisy-text.github.io
-  rocketchat_channel: workshop-14-wnut2020
+  rocketchat_channel: workshop-wnut2020
   sessions: []
   alias: wnut2020
   prerecorded_talks: []
@@ -272,7 +272,7 @@
   abstract: Promoting computationally efficient NLP and justified model complexity.
     Encouraging conceptual NLP novelty, discouraging "more compute".
   website: https://sites.google.com/view/sustainlp2019
-  rocketchat_channel: workshop-15-sustainlp2020
+  rocketchat_channel: workshop-sustainlp2020
   sessions: []
   alias: sustainlp2020
   prerecorded_talks:
@@ -298,7 +298,7 @@
   abstract: The Workshop on Computational Approaches to Discourse (CODI) covers all
     aspects of discourse and its computational modeling.
   website: https://cad-workshop.github.io/
-  rocketchat_channel: workshop-16-codi2020
+  rocketchat_channel: workshop-codi2020
   sessions: []
   alias: codi2020
   prerecorded_talks: []
@@ -308,7 +308,7 @@
   abstract: The workshop focuses on online abuse through a multi-disciplinary lens,
     drawing on social sciences, law, media studies, and more.
   website: https://www.workshopononlineabuse.com/home
-  rocketchat_channel: workshop-17-woah4
+  rocketchat_channel: workshop-woah4
   sessions: []
   alias: woah4
   prerecorded_talks: []
@@ -318,7 +318,7 @@
   abstract: This workshop focuses on NLP for Social Sciences, interdisciplinary work
     in CSS, and integrating CSS with current trends in NLP.
   website:
-  rocketchat_channel: workshop-18-nlpcss
+  rocketchat_channel: workshop-nlpcss
   sessions: []
   alias: nlpcss
   prerecorded_talks: []
@@ -330,7 +330,7 @@
   abstract: an interdisciplinary forum for researchers interested in automated processing
     of health documents
   website: https://louhi2020.fbk.eu/
-  rocketchat_channel: workshop-19-louhi2020
+  rocketchat_channel: workshop-louhi2020
   sessions: []
   alias: louhi2020
   prerecorded_talks: []
@@ -341,7 +341,7 @@
   abstract: The workshop focuses on designing evaluation metrics, reporting trustworthy
     results and creating adequate and correct evaluation data.
   website: https://nlpevaluation2020.github.io/
-  rocketchat_channel: workshop-20-eval4nlp
+  rocketchat_channel: workshop-eval4nlp
   sessions: []
   alias: eval4nlp
   prerecorded_talks: []
@@ -352,7 +352,7 @@
   abstract: Structured prediction with continuous representations, task-level supervision
     and latent linguistic structure.
   website: http://structuredprediction.github.io/SPNLP20
-  rocketchat_channel: workshop-21-spnlp20
+  rocketchat_channel: workshop-spnlp20
   sessions: []
   alias: spnlp20
   prerecorded_talks:
@@ -380,7 +380,7 @@
   abstract: Our workshop aims to promote NLP research that will positively impact
     society, through proactive and responsible methods.
   website: https://sites.google.com/view/nlp4positiveimpact2020
-  rocketchat_channel: workshop-22-nlp4positiveimpact
+  rocketchat_channel: workshop-nlp4positiveimpact
   sessions: []
   alias: nlp4positiveimpact
   prerecorded_talks: []
@@ -391,7 +391,7 @@
   abstract: Can you really know if someone is sarcastic by only reading his texts?
     If the answer is no, the NLPBT workshop is what you're looking for.
   website: https://sites.google.com/view/nlpbt-2020
-  rocketchat_channel: workshop-23-nlpbt2020
+  rocketchat_channel: workshop-nlpbt2020
   sessions: []
   alias: nlpbt2020
   prerecorded_talks: []
@@ -402,7 +402,7 @@
   abstract: 'PrivateNLP focuses on Privacy Preserving systems: differential privacy,
     anonymized datasets and models, GDPR compliance, and shared tasks!'
   website: https://sites.google.com/view/privatenlp/
-  rocketchat_channel: workshop-24-privatenlp2020
+  rocketchat_channel: workshop-privatenlp2020
   sessions: []
   alias: privatenlp2020
   prerecorded_talks:
@@ -425,7 +425,7 @@
   abstract: Open the black-box of neural networks in NLP and make sense of the big
     pile of goo inside it
   website: https://blackboxnlp.github.io
-  rocketchat_channel: workshop-25-blackboxnlp2020
+  rocketchat_channel: workshop-blackboxnlp2020
   sessions: []
   alias: blackboxnlp2020
   prerecorded_talks:
@@ -446,7 +446,7 @@
     Byron Wallace
   abstract:
   website: https://www.nlpcovid19workshop.org/emnlp2020/
-  rocketchat_channel: workshop-26-nlp-covid19-emnlp
+  rocketchat_channel: workshop-nlp-covid19-emnlp
   sessions: []
   alias: nlp-covid19-emnlp
   prerecorded_talks: []
