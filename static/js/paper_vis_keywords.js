@@ -65,6 +65,12 @@ function hexToRgb(hex, alpha) {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
+const tooltip_template = (d) => `
+    <div>
+        <div class="tt-title">${d.parent.data.name}: ${d.data.name}</div>
+     </div>   
+`;
+
 function triggerListView(name, allPapers) {
   let all_sel = [];
   if (name === "all") {
@@ -111,7 +117,7 @@ function treeMap(data) {
       if (!(e.content.track in trackMappings)) {
         trackMappings[e.content.track] = {};
       }
-      for (const keyword of e.content.keywords) {
+      e.content.keywords.forEach((keyword) => {
         const lowerCasedKeyword = keyword
           .toLowerCase()
           .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
@@ -137,7 +143,7 @@ function treeMap(data) {
             },
           ];
         }
-      }
+      });
     });
     // now filter out all track keys with only 1 value
     const filteredTrackMappings = {};
@@ -317,11 +323,11 @@ const render = () => {
     let pass_test = true;
     while (i < f_test.length && pass_test) {
       if (f_test[i][0] === "titles") {
-        pass_test &= d.content.title === f_test[i][1];
+        pass_test &= d.content.title === f_test[i][1]; //eslint-disable-line no-bitwise
       } else {
-        pass_test &= d.content[f_test[i][0]].indexOf(f_test[i][1]) > -1;
+        pass_test &= d.content[f_test[i][0]].indexOf(f_test[i][1]) > -1; //eslint-disable-line no-bitwise
       }
-      i++;
+      i += 1;
     }
     return pass_test;
   };
@@ -332,18 +338,12 @@ const render = () => {
   updateVis();
 };
 
-const tooltip_template = (d) => `
-    <div>
-        <div class="tt-title">${d.parent.data.name}: ${d.data.name}</div>
-     </div>   
-`;
-
 const start = (track) => {
   const loadfiles = [
     d3.json("papers.json"),
     d3.json("serve_papers_projection.json"),
   ];
-  if (track != "All tracks") {
+  if (track !== "All tracks") {
     loadfiles.push(d3.json(`track_${track}.json`));
   } else {
     trackhighlight = [];
