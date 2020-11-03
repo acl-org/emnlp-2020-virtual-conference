@@ -233,7 +233,7 @@ func SetupUpdater() {
 	}
 	fmt.Printf("NUM_CHANNEL_TO_SHOW = %d\n", maxNumChannels)
 
-	fmt.Printf("Update the stats every %d secconds\n", UpdateInterval)
+	fmt.Printf("Update the stats every %d seconds\n", UpdateInterval)
 	update()
 	ticker := time.NewTicker(time.Duration(UpdateInterval) * time.Second)
 	go func() {
