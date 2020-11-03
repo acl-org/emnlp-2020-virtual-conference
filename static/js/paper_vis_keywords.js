@@ -45,13 +45,14 @@ const plot_size = () => {
 const xS = d3.scaleLinear().range([0, 600]);
 const yS = d3.scaleLinear().range([0, 600]);
 const plot = d3.select(".plot");
-// const l_bg = plot.append('g');
-// const l_main = plot.append('g');
-// const l_fg = plot.append('g');
 
 const updateVis = () => {
   const storedPapers = persistor.getAll();
-
+  all_papers.forEach(
+    openreview => {
+        openreview.content.read = storedPapers[openreview.id] || false
+        openreview.content.tracker = trackhighlight.includes(openreview.id) || false
+    });
   const is_filtered = filters.authors || filters.keywords || filters.titles;
   const [pW, pH] = plot_size();
 
@@ -60,9 +61,7 @@ const updateVis = () => {
 
   xS.range([sizes.margins.l, pW - sizes.margins.r]);
   yS.range([sizes.margins.t, pH - sizes.margins.b]);
-
-  treeMap(all_papers);
-  // triggerListView("all", root.leaves())
+    treeMap(all_papers.filter(d => { if ("is_selected" in d) return d.is_selected; else return true}));
 };
 
 const render = () => {
@@ -88,7 +87,6 @@ const render = () => {
   if (f_test.length === 0) test = (d) => false;
 
   all_papers.forEach((paper) => (paper.is_selected = test(paper)));
-
   updateVis();
 };
 
@@ -133,205 +131,209 @@ const start = (track) => {
     .catch((e) => console.error(e));
 };
 
-/**
- *  EVENTS
- **/
 
-const updateFilterSelectionBtn = (value) => {
-  d3.selectAll(".filter_option label").classed("active", function () {
-    const v = d3.select(this).select("input").property("value");
-    return v === value;
-  });
-};
-
-d3.selectAll(".filter_option input").on("click", function () {
-  const me = d3.select(this);
-
-  const filter_mode = me.property("value");
-  updateFilterSelectionBtn(filter_mode);
-
-  setTypeAhead(filter_mode, allKeys, filters, render);
-  render();
-});
 
 function treeMap(data) {
-  let trackMappings = {};
-  data.forEach((e) => {
-    if (!(e.content.track in trackMappings)) {
-      trackMappings[e.content.track] = {};
-    }
-    for (let keyword of e.content.keywords) {
-      let lowerCasedKeyword = keyword
-        .toLowerCase()
-        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
-        .replace(/\s{2,}/g, " ");
-      if (lowerCasedKeyword in trackMappings[e.content.track]) {
-        trackMappings[e.content.track][lowerCasedKeyword].push({
-          title: e.content.title,
-          image_path: e.card_image_path,
-          keywords: e.content.keywords,
-          authors: e.content.authors,
-          id: e.id,
-          track: e.content.track,
-        });
-      } else {
-        trackMappings[e.content.track][lowerCasedKeyword] = [
-          {
+  if (data.length > 0) {
+    let trackMappings = {};
+    data.forEach((e) => {
+      if (!(e.content.track in trackMappings)) {
+        trackMappings[e.content.track] = {};
+      }
+      for (let keyword of e.content.keywords) {
+        let lowerCasedKeyword = keyword
+          .toLowerCase()
+          .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+          .replace(/\s{2,}/g, " ");
+        if (lowerCasedKeyword in trackMappings[e.content.track]) {
+          trackMappings[e.content.track][lowerCasedKeyword].push({
             title: e.content.title,
             image_path: e.card_image_path,
             keywords: e.content.keywords,
             authors: e.content.authors,
             id: e.id,
             track: e.content.track,
-          },
-        ];
+          });
+        } else {
+          trackMappings[e.content.track][lowerCasedKeyword] = [
+            {
+              title: e.content.title,
+              image_path: e.card_image_path,
+              keywords: e.content.keywords,
+              authors: e.content.authors,
+              id: e.id,
+              track: e.content.track,
+            },
+          ];
+        }
       }
-    }
-  });
-  // now filter out all track keys with only 1 value
-  let filteredTrackMappings = {};
-  Object.entries(trackMappings).forEach(([track, keywords]) => {
-    filteredTrackMappings[track] = Object.fromEntries(
-      Object.entries(keywords).filter(([_, v]) => v.length > 1)
-    );
-  });
-  function parseTracksToTree(trackMappings) {
-    let hierarchalTreeData = { children: [] };
-    for (let TRACK_KEY of Object.keys(trackMappings)) {
-      let children = [];
-      for (let KEYWORD_KEY of Object.keys(trackMappings[TRACK_KEY])) {
-        children.push({
-          name: KEYWORD_KEY,
-          group: KEYWORD_KEY,
-          papers: trackMappings[TRACK_KEY][KEYWORD_KEY],
-          value: trackMappings[TRACK_KEY][KEYWORD_KEY].length,
-          colname: "placeholder",
+    });
+    // now filter out all track keys with only 1 value
+    let filteredTrackMappings = {};
+    let funct = data.length < 10 ? (_) => true : ([_, v]) => v.length > 1;
+    Object.entries(trackMappings).forEach(([track, keywords]) => {
+      filteredTrackMappings[track] = Object.fromEntries(
+        Object.entries(keywords).filter(funct)
+      );
+    });
+    function parseTracksToTree(trackMappings) {
+      let hierarchalTreeData = { children: [] };
+      for (let TRACK_KEY of Object.keys(trackMappings)) {
+        let children = [];
+        for (let KEYWORD_KEY of Object.keys(trackMappings[TRACK_KEY])) {
+          children.push({
+            name: KEYWORD_KEY,
+            group: KEYWORD_KEY,
+            papers: trackMappings[TRACK_KEY][KEYWORD_KEY],
+            value: trackMappings[TRACK_KEY][KEYWORD_KEY].length,
+            colname: "placeholder",
+          });
+        }
+  
+        hierarchalTreeData["children"].push({
+          name: TRACK_KEY,
+          children: children,
+          colname: "placeholder2",
         });
       }
-
-      hierarchalTreeData["children"].push({
-        name: TRACK_KEY,
-        children: children,
-        colname: "placeholder2",
-      });
+      return hierarchalTreeData;
     }
-    return hierarchalTreeData;
-  }
-  let treeData = parseTracksToTree(filteredTrackMappings);
-  let root = d3.hierarchy(treeData).sum((d) => d.value);
+    let treeData = parseTracksToTree(filteredTrackMappings);
+    let root = d3.hierarchy(treeData).sum((d) => d.value);
+  
+    d3
+      .treemap()
+      .size([1000, 1000])
+      .paddingTop(24)
+      .paddingRight(1)
+      .paddingInner(2)(root);
+    color = d3
+      .scaleOrdinal()
+      .domain(Object.keys(trackMappings))
+      .range(d3.schemeSet3);
+    opacity = d3.scaleLinear().domain([0, 10]).range([0.2, 1]);
+  
+    // and to add the text labels
+    let is_clicked = false;
+  
+    let svg = d3.select("#heatmap");
+    svg.selectAll("*").remove();
 
-  d3
-    .treemap()
-    .size([1000, 1000])
-    .paddingTop(24)
-    .paddingRight(1)
-    .paddingInner(2)(root);
-  color = d3
-    .scaleOrdinal()
-    .domain(Object.keys(trackMappings))
-    .range(d3.schemeSet3);
-  opacity = d3.scaleLinear().domain([0, 10]).range([0.2, 1]);
-
-  // and to add the text labels
-  let is_clicked = false;
-
-  let svg = d3.select("#heatmap");
-  svg
-    .selectAll("rect")
-    .data(root.leaves())
-    .enter()
-    .append("rect")
-    .attr("x", function (d) {
-      return d.x0;
-    })
-    .attr("y", function (d) {
-      return d.y0;
-    })
-    .attr("class", function (d) {
-      return `recter keyword-${d.data.name.replace(" ", "")}`;
-    })
-    .attr("width", function (d) {
-      return d.x1 - d.x0;
-    })
-    .attr("height", function (d) {
-      return d.y1 - d.y0;
-    })
-    .style("stroke", "black")
-    .style("fill", function (d) {
-      return color(d.parent.data.name);
-    })
-    .style("opacity", function (d) {
-      return opacity(d.data.value);
-    })
-    .on("click", function (event, d) {
-      // const d = d3.pointer(event);
-      console.log(event);
-      console.log(d);
-      d3.selectAll(`.recter`)
-        .style("fill", (d) => color(d.parent.data.name))
-        .style("opacity", (d) => opacity(d.data.value))
-        .style("stroke-width", 1);
-      d3.selectAll(`.keyword-${d.data.name.replace(" ", "")}`)
-        .style("fill", (d) => color(d.parent.data.name))
-        .style("opacity", 1)
-        .style("stroke-width", 5)
-        .style("stroke", "black"); //classed("hover", true);
-      triggerListView(d.data.name, root.leaves());
-    });
-
-  svg
-    .selectAll("titles")
-    .data(
-      root.descendants().filter(function (d) {
-        return d.depth == 1;
+    svg
+      .selectAll("rect")
+      .data(root.leaves())
+      .enter()
+      .append("rect")
+      .attr("x", function (d) {
+        return d.x0;
       })
-    )
-    .enter()
-    .append("text")
-    .attr("x", function (d) {
-      return d.x0;
-    })
-    .attr("y", function (d) {
-      return d.y0 + 21;
-    })
-    .attr("class", "titles")
-    .text(function (d) {
-      const pixelsPerCharacter = 5.5;
-      const numCharacters = Math.floor((d.x1 - d.x0) / pixelsPerCharacter);
-      if (d.data.name.length > numCharacters) {
-        return `${d.data.name.substring(0, numCharacters)}...`;
-      }
-      return d.data.name;
-    })
-    .attr("font-size", "11px")
-    .attr("fill", (d) => color(d.data.name));
-  svg
-    .append("text")
-    .attr("x", 0)
-    .attr("y", 20)
-    .text("Keywords by Track")
-    .attr("font-size", "19px")
-    .attr("fill", "grey");
-
-  if (!currentTippy) {
+      .attr("y", function (d) {
+        return d.y0;
+      })
+      .attr("class", function (d) {
+        return `recter keyword-${d.data.name.replace(" ", "")}`;
+      })
+      .attr("width", function (d) {
+        return d.x1 - d.x0;
+      })
+      .attr("height", function (d) {
+        return d.y1 - d.y0;
+      })
+      .style("stroke", "black")
+      .style("fill", function (d) {
+        return color(d.parent.data.name);
+      })
+      .style("opacity", function (d) {
+        return opacity(d.data.value);
+      })
+      .on("click", function (event, d) {
+        d3.selectAll(`.recter`)
+          .style("fill", (d) => color(d.parent.data.name))
+          .style("opacity", (d) => opacity(d.data.value))
+          .style("stroke-width", 1);
+        d3.selectAll(`.keyword-${d.data.name.replace(" ", "")}`)
+          .style("fill", (d) => color(d.parent.data.name))
+          .style("opacity", 1)
+          .style("stroke-width", 5)
+          .style("stroke", "black");
+        triggerListView(d.data.name, root.leaves());
+          
+      });
+  
+    svg
+      .selectAll("titles")
+      .data(
+        root.descendants().filter(function (d) {
+          return d.depth == 1;
+        })
+      )
+      .enter()
+      .append("text")
+      .attr("x", function (d) {
+        return d.x0;
+      })
+      .attr("y", function (d) {
+        return d.y0 + 21;
+      })
+      .attr("class", "titles")
+      .text(function (d) {
+        const pixelsPerCharacter = 5.5;
+        const numCharacters = Math.floor((d.x1 - d.x0) / pixelsPerCharacter);
+        if (d.data.name.length > numCharacters) {
+          return `${d.data.name.substring(0, numCharacters)}...`;
+        }
+        return d.data.name;
+      })
+      .attr("font-size", "11px")
+      .attr("fill", "black");
+    svg
+      .append("text")
+      .attr("x", 0)
+      .attr("y", 20)
+      .text("Keywords by Track")
+      .attr("font-size", "19px")
+      .attr("fill", "grey");
+  
     currentTippy = tippy(".recter", {
-      content(reference) {
-        let value = d3.select(reference).datum().name;
-        return value;
-      },
-      onShow(instance) {
-        const d = d3.select(instance.reference).datum();
-        instance.setContent(tooltip_template(d));
-      },
+        content(reference) {
+            let value = d3.select(reference).datum().name;
+            return value;
+        },
+        onShow(instance) {
+            const d = d3.select(instance.reference).datum();
+            instance.setContent(tooltip_template(d));
+        },
 
-      allowHTML: true,
+        allowHTML: true,
     });
+    currentTippy.forEach((t) => t.enable());
+    triggerListView("all", root.leaves());
+
   }
-  currentTippy.forEach((t) => t.enable());
-  triggerListView("all", root.leaves());
 }
 
 $(window).on("resize", _.debounce(updateVis, 150));
+
+/**
+ *  EVENTS
+ **/
+
+const updateFilterSelectionBtn = (value) => {
+    d3.selectAll(".filter_option label").classed("active", function () {
+      const v = d3.select(this).select("input").property("value");
+      return v === value;
+    });
+  };
+  
+  d3.selectAll(".filter_option input").on("click", function () {
+    const me = d3.select(this);
+  
+    const filter_mode = me.property("value");
+    updateFilterSelectionBtn(filter_mode);
+  
+    setTypeAhead(filter_mode, allKeys, filters, render);
+    render();
+  });
 
 function hexToRgb(hex, alpha) {
   hex = hex.replace("#", "");
@@ -367,7 +369,11 @@ function triggerListView(name, allPapers) {
       .map((e) => e.data.papers)
       .flat();
   }
+  all_sel = _.uniqWith(all_sel, (a, b) => a.id === b.id && a.track === b.track); 
+
   const sel_papers = d3.select("#sel_papers");
+  const authorLimit = 10;
+  const keywordLimit = 10;
   sel_papers
     .selectAll(".sel_paper")
     .data(all_sel)
@@ -380,25 +386,9 @@ function triggerListView(name, allPapers) {
       (d) =>
         `<div class="p_title">${
           d.title
-        }</div> <div class="p_authors">${d.authors.join(
+        }</div> <div class="p_authors">${d.authors.slice(0,authorLimit).join(
           ", "
-        )}</div> <div><b>Keywords</b>: ${d.keywords.join(", ")} </div>`
+        )}</div> <div><b>Keywords</b>: ${d.keywords.slice(0,keywordLimit).join(", ")} </div>`
     )
     .on("click", (d) => window.open(`paper_${d.id}.html`, "_blank"));
-  // .on('mouseenter', d => {
-  //     l_main.selectAll('.dot').filter(dd => dd.id === d.id)
-  //     .classed('highlight_sel', true)
-  //     .each(function () {
-  //         if (this._tippy)
-  //             this._tippy.show();
-  //     })
-  // })
-  // .on('mouseleave', d => {
-  //     l_main.selectAll('.dot').filter(dd => dd.id === d.id)
-  //     .classed('highlight_sel', false)
-  //     .each(function () {
-  //         if (this._tippy)
-  //             this._tippy.hide();
-  //     })
-  // })
 }
