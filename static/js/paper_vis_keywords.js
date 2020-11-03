@@ -48,11 +48,11 @@ const plot = d3.select(".plot");
 
 const updateVis = () => {
   const storedPapers = persistor.getAll();
-  all_papers.forEach(
-    openreview => {
-        openreview.content.read = storedPapers[openreview.id] || false
-        openreview.content.tracker = trackhighlight.includes(openreview.id) || false
-    });
+  all_papers.forEach((openreview) => {
+    openreview.content.read = storedPapers[openreview.id] || false;
+    openreview.content.tracker =
+      trackhighlight.includes(openreview.id) || false;
+  });
   const is_filtered = filters.authors || filters.keywords || filters.titles;
   const [pW, pH] = plot_size();
 
@@ -61,7 +61,12 @@ const updateVis = () => {
 
   xS.range([sizes.margins.l, pW - sizes.margins.r]);
   yS.range([sizes.margins.t, pH - sizes.margins.b]);
-    treeMap(all_papers.filter(d => { if ("is_selected" in d) return d.is_selected; else return true}));
+  treeMap(
+    all_papers.filter((d) => {
+      if ("is_selected" in d) return d.is_selected;
+      else return true;
+    })
+  );
 };
 
 const render = () => {
@@ -131,8 +136,6 @@ const start = (track) => {
     .catch((e) => console.error(e));
 };
 
-
-
 function treeMap(data) {
   if (data.length > 0) {
     let trackMappings = {};
@@ -189,7 +192,7 @@ function treeMap(data) {
             colname: "placeholder",
           });
         }
-  
+
         hierarchalTreeData["children"].push({
           name: TRACK_KEY,
           children: children,
@@ -200,7 +203,7 @@ function treeMap(data) {
     }
     let treeData = parseTracksToTree(filteredTrackMappings);
     let root = d3.hierarchy(treeData).sum((d) => d.value);
-  
+
     d3
       .treemap()
       .size([1000, 1000])
@@ -212,10 +215,10 @@ function treeMap(data) {
       .domain(Object.keys(trackMappings))
       .range(d3.schemeSet3);
     opacity = d3.scaleLinear().domain([0, 10]).range([0.2, 1]);
-  
+
     // and to add the text labels
     let is_clicked = false;
-  
+
     let svg = d3.select("#heatmap");
     svg.selectAll("*").remove();
 
@@ -257,9 +260,8 @@ function treeMap(data) {
           .style("stroke-width", 5)
           .style("stroke", "black");
         triggerListView(d.data.name, root.leaves());
-          
       });
-  
+
     svg
       .selectAll("titles")
       .data(
@@ -293,22 +295,21 @@ function treeMap(data) {
       .text("Keywords by Track")
       .attr("font-size", "19px")
       .attr("fill", "grey");
-  
-    currentTippy = tippy(".recter", {
-        content(reference) {
-            let value = d3.select(reference).datum().name;
-            return value;
-        },
-        onShow(instance) {
-            const d = d3.select(instance.reference).datum();
-            instance.setContent(tooltip_template(d));
-        },
 
-        allowHTML: true,
+    currentTippy = tippy(".recter", {
+      content(reference) {
+        let value = d3.select(reference).datum().name;
+        return value;
+      },
+      onShow(instance) {
+        const d = d3.select(instance.reference).datum();
+        instance.setContent(tooltip_template(d));
+      },
+
+      allowHTML: true,
     });
     currentTippy.forEach((t) => t.enable());
     triggerListView("all", root.leaves());
-
   }
 }
 
@@ -319,21 +320,21 @@ $(window).on("resize", _.debounce(updateVis, 150));
  **/
 
 const updateFilterSelectionBtn = (value) => {
-    d3.selectAll(".filter_option label").classed("active", function () {
-      const v = d3.select(this).select("input").property("value");
-      return v === value;
-    });
-  };
-  
-  d3.selectAll(".filter_option input").on("click", function () {
-    const me = d3.select(this);
-  
-    const filter_mode = me.property("value");
-    updateFilterSelectionBtn(filter_mode);
-  
-    setTypeAhead(filter_mode, allKeys, filters, render);
-    render();
+  d3.selectAll(".filter_option label").classed("active", function () {
+    const v = d3.select(this).select("input").property("value");
+    return v === value;
   });
+};
+
+d3.selectAll(".filter_option input").on("click", function () {
+  const me = d3.select(this);
+
+  const filter_mode = me.property("value");
+  updateFilterSelectionBtn(filter_mode);
+
+  setTypeAhead(filter_mode, allKeys, filters, render);
+  render();
+});
 
 function hexToRgb(hex, alpha) {
   hex = hex.replace("#", "");
@@ -369,7 +370,7 @@ function triggerListView(name, allPapers) {
       .map((e) => e.data.papers)
       .flat();
   }
-  all_sel = _.uniqWith(all_sel, (a, b) => a.id === b.id && a.track === b.track); 
+  all_sel = _.uniqWith(all_sel, (a, b) => a.id === b.id && a.track === b.track);
 
   const sel_papers = d3.select("#sel_papers");
   const authorLimit = 10;
@@ -386,9 +387,11 @@ function triggerListView(name, allPapers) {
       (d) =>
         `<div class="p_title">${
           d.title
-        }</div> <div class="p_authors">${d.authors.slice(0,authorLimit).join(
-          ", "
-        )}</div> <div><b>Keywords</b>: ${d.keywords.slice(0,keywordLimit).join(", ")} </div>`
+        }</div> <div class="p_authors">${d.authors
+          .slice(0, authorLimit)
+          .join(", ")}</div> <div><b>Keywords</b>: ${d.keywords
+          .slice(0, keywordLimit)
+          .join(", ")} </div>`
     )
     .on("click", (event, d) => window.open(`paper_${d.id}.html`, "_blank"));
 }
