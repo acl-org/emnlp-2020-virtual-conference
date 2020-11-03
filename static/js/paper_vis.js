@@ -259,7 +259,9 @@ const start = (track) => {
         d3.json("papers.json"),
         d3.json('serve_papers_projection.json')
     ]
-    if (track != "All tracks") {  
+    if (track === "System Demonstrations")
+        loadfiles.push(d3.json("papers_demo.json"))
+    else if (track != "All tracks") {  
         loadfiles.push(d3.json("track_main_" + track + ".json"));
     } else {
         trackhighlight =[];
