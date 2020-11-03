@@ -327,7 +327,6 @@
 
   $('#track_selector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
     let track = e.target.value;
-    if (track === previousValue) return;
     setQueryStringParameter("track", track);
     start();
   });
@@ -343,6 +342,22 @@
     updateTabs();
     render();
   });
+</script>
+
+<script>
+  allTracks = [
+    "All tracks",
+    {% for t in tracks %}
+      "{{t}}",
+    {% endfor %}
+  ];
+
+  allWorkshops = [
+  "All workshops",
+  {% for w in workshop_names %}
+      "{{w}}",
+  {% endfor %}
+  ];
 </script>
 
 <div class="text-center" id="progressBar">
