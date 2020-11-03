@@ -45,6 +45,65 @@ const xS = d3.scaleLinear().range([0, 600]);
 const yS = d3.scaleLinear().range([0, 600]);
 const plot = d3.select(".plot");
 
+function hexToRgb(hex, alpha) {
+  hex = hex.replace("#", "");
+  const r = parseInt(
+    hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2),
+    16
+  );
+  const g = parseInt(
+    hex.length === 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4),
+    16
+  );
+  const b = parseInt(
+    hex.length === 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6),
+    16
+  );
+  if (alpha) {
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function triggerListView(name, allPapers) {
+  let all_sel = [];
+  if (name === "all") {
+    all_sel = allPapers
+      .map((e) => e.data.papers)
+      .flat()
+      .filter((d) => d);
+  } else {
+    all_sel = allPapers
+      .filter((d) => d.data.name === name)
+      .map((e) => e.data.papers)
+      .flat();
+  }
+  all_sel = _.uniqWith(all_sel, (a, b) => a.id === b.id && a.track === b.track);
+
+  const sel_papers_selection = d3.select("#sel_papers");
+  const authorLimit = 10;
+  const keywordLimit = 10;
+  sel_papers_selection
+    .selectAll(".sel_paper")
+    .data(all_sel)
+    .join("div")
+    .attr("class", "sel_paper")
+    .style("background", (d) => {
+      return hexToRgb(color(d.track), opacity(5));
+    })
+    .html(
+      (d) =>
+        `<div class="p_title">${
+          d.title
+        }</div> <div class="p_authors">${d.authors
+          .slice(0, authorLimit)
+          .join(", ")}</div> <div><b>Keywords</b>: ${d.keywords
+          .slice(0, keywordLimit)
+          .join(", ")} </div>`
+    )
+    .on("click", (event, d) => window.open(`paper_${d.id}.html`, "_blank"));
+}
+
 function treeMap(data) {
   if (data.length > 0) {
     const trackMappings = {};
@@ -55,7 +114,7 @@ function treeMap(data) {
       for (const keyword of e.content.keywords) {
         const lowerCasedKeyword = keyword
           .toLowerCase()
-          .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+          .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
           .replace(/\s{2,}/g, " ");
         if (lowerCasedKeyword in trackMappings[e.content.track]) {
           trackMappings[e.content.track][lowerCasedKeyword].push({
@@ -88,28 +147,27 @@ function treeMap(data) {
         Object.entries(keywords).filter(funct)
       );
     });
-    function parseTracksToTree(trackMappings) {
+    const parseTracksToTree = (mappings) => {
       const hierarchalTreeData = { children: [] };
-      for (const TRACK_KEY of Object.keys(trackMappings)) {
-        const children = [];
-        for (const KEYWORD_KEY of Object.keys(trackMappings[TRACK_KEY])) {
-          children.push({
+      Object.keys(mappings).forEach((TRACK_KEY) => {
+        const children = Object.keys(mappings[TRACK_KEY]).map((KEYWORD_KEY) => {
+          return {
             name: KEYWORD_KEY,
             group: KEYWORD_KEY,
-            papers: trackMappings[TRACK_KEY][KEYWORD_KEY],
-            value: trackMappings[TRACK_KEY][KEYWORD_KEY].length,
+            papers: mappings[TRACK_KEY][KEYWORD_KEY],
+            value: mappings[TRACK_KEY][KEYWORD_KEY].length,
             colname: "placeholder",
-          });
-        }
+          };
+        });
 
         hierarchalTreeData.children.push({
           name: TRACK_KEY,
           children,
           colname: "placeholder2",
         });
-      }
+      });
       return hierarchalTreeData;
-    }
+    };
     const treeData = parseTracksToTree(filteredTrackMappings);
     const root = d3.hierarchy(treeData).sum((d) => d.value);
 
@@ -160,11 +218,11 @@ function treeMap(data) {
       })
       .on("click", function (event, d) {
         d3.selectAll(`.recter`)
-          .style("fill", (d) => color(d.parent.data.name))
-          .style("opacity", (d) => opacity(d.data.value))
+          .style("fill", (e) => color(e.parent.data.name))
+          .style("opacity", (e) => opacity(e.data.value))
           .style("stroke-width", 1);
         d3.selectAll(`.keyword-${d.data.name.replace(" ", "")}`)
-          .style("fill", (d) => color(d.parent.data.name))
+          .style("fill", (e) => color(e.parent.data.name))
           .style("opacity", 1)
           .style("stroke-width", 5)
           .style("stroke", "black");
@@ -175,7 +233,7 @@ function treeMap(data) {
       .selectAll("titles")
       .data(
         root.descendants().filter(function (d) {
-          return d.depth == 1;
+          return d.depth === 1;
         })
       )
       .enter()
@@ -337,62 +395,3 @@ d3.selectAll(".filter_option input").on("click", function () {
   setTypeAhead(filter_mode, allKeys, filters, render);
   render();
 });
-
-function hexToRgb(hex, alpha) {
-  hex = hex.replace("#", "");
-  const r = parseInt(
-    hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2),
-    16
-  );
-  const g = parseInt(
-    hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4),
-    16
-  );
-  const b = parseInt(
-    hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6),
-    16
-  );
-  if (alpha) {
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-  }
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
-function triggerListView(name, allPapers) {
-  let all_sel = [];
-  if (name === "all") {
-    all_sel = allPapers
-      .map((e) => e.data.papers)
-      .flat()
-      .filter((d) => d);
-  } else {
-    all_sel = allPapers
-      .filter((d) => d.data.name == name)
-      .map((e) => e.data.papers)
-      .flat();
-  }
-  all_sel = _.uniqWith(all_sel, (a, b) => a.id === b.id && a.track === b.track);
-
-  const sel_papers = d3.select("#sel_papers");
-  const authorLimit = 10;
-  const keywordLimit = 10;
-  sel_papers
-    .selectAll(".sel_paper")
-    .data(all_sel)
-    .join("div")
-    .attr("class", "sel_paper")
-    .style("background", (d) => {
-      return hexToRgb(color(d.track), opacity(5));
-    })
-    .html(
-      (d) =>
-        `<div class="p_title">${
-          d.title
-        }</div> <div class="p_authors">${d.authors
-          .slice(0, authorLimit)
-          .join(", ")}</div> <div><b>Keywords</b>: ${d.keywords
-          .slice(0, keywordLimit)
-          .join(", ")} </div>`
-    )
-    .on("click", (event, d) => window.open(`paper_${d.id}.html`, "_blank"));
-}
