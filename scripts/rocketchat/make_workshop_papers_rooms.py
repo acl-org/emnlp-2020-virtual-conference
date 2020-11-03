@@ -11,9 +11,12 @@ import json
 import yaml
 from requests import sessions
 from rocketchat_API.rocketchat import RocketChat
-
+from mass_delete_rooms import delete_rocketchat_workshop_channels
 import time
 import sys
+import datetime
+
+# from datetime import datetime
 
 WORKSHOPS_YAML = "../../sitedata/workshops.yml"
 WORKSHOPS_PAPERS_CSV = "../../sitedata/workshop_papers.csv"
@@ -41,7 +44,10 @@ def sleep_session(duration):
 def create_rocketchat_channels(channel_names):
     with open(ROCKETCHAT_KEY, "r") as f:
         config = yaml.safe_load(f)
-
+    today = datetime.datetime.today() + datetime.timedelta(days=10)
+    today = today.strftime("%Y-%m-%dT%H:%M:%S")
+    oldest = datetime.datetime.today() + datetime.timedelta(days=-10)
+    oldest = oldest.strftime("%Y-%m-%dT%H:%M:%S")
     with sessions.Session() as session:
         rocket = connect_rocket_API(config, session)
         for paper in channel_names:
@@ -63,9 +69,13 @@ def create_rocketchat_channels(channel_names):
             rocket.channels_set_description(
                 channel_id, channel_names[paper]["description"]
             ).json()
+            # pdb.set_trace()
+            # rocket.rooms_info(room_name=channel_name)
+            # rocket.rooms_clean_history(room_id = channel_id,latest=today,oldest=oldest)
             print(
                 "Creating " + channel_name + " topic " + channel_names[paper]["topic"]
             )
+            # pdb.set_trace()
 
 
 def get_workshop_channels():
@@ -115,7 +125,10 @@ def get_workshop_paper_channels(workshop_channels):
 
 
 if __name__ == "__main__":
+    with open(ROCKETCHAT_KEY, "r") as f:
+        config = yaml.safe_load(f)
     workshop_channels = get_workshop_channels()
     workshop_papers = get_workshop_paper_channels(workshop_channels)
-    create_rocketchat_channels(workshop_channels)
+    # delete_rocketchat_workshop_channels(workshop_papers,config)
+    # create_rocketchat_channels(workshop_channels)
     create_rocketchat_channels(workshop_papers)
