@@ -726,7 +726,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             id=item["UID"],
             name=item["name"],
             description=item["description"],
-            image=item["image"],
+            image=item.get("image"),
             organizers=SocialEventOrganizers(
                 members=item["organizers"]["members"],
                 website=item["organizers"].get("website", ""),
@@ -734,8 +734,8 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             sessions=[
                 SessionInfo(
                     session_name=session.get("name"),
-                    start_time=parse_session_time(session.get("start_time")),
-                    end_time=parse_session_time(session.get("end_time")),
+                    start_time=session.get("start_time"),
+                    end_time=session.get("end_time"),
                     link=session.get("zoom_link"),
                 )
                 for session in item["sessions"]
