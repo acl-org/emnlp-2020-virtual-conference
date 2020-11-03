@@ -293,7 +293,8 @@ const updateVis = () => {
     openreview.content.tracker =
       trackhighlight.includes(openreview.id) || false;
   });
-  const is_filtered = filters.authors || filters.keywords || filters.titles;
+  //   const is_filtered = filters.authors || filters.keywords || filters.titles;
+  const is_filtered = filters.keywords;
   const [pW, pH] = plot_size();
 
   plot.attr("width", pW).attr("height", pH);
@@ -363,7 +364,7 @@ const start = (track) => {
       all_papers = papers.filter((p) => p.pos !== undefined);
 
       calcAllKeys(all_papers, allKeys);
-      setTypeAhead("authors", allKeys, filters, render);
+      setTypeAhead("keywords", allKeys, filters, render);
 
       xS.domain(d3.extent(proj.map((p) => p.pos[0])));
       yS.domain(d3.extent(proj.map((p) => p.pos[1])));
