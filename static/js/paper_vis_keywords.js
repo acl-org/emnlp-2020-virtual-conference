@@ -1,5 +1,5 @@
 let all_papers = [];
-let all_pos = [];
+const all_pos = [];
 const allKeys = {
   authors: [],
   keywords: [],
@@ -14,7 +14,7 @@ const filters = {
 const summaryBy = "keywords"; // or: "abstract"
 
 let currentTippy = null;
-let brush = null;
+const brush = null;
 const sizes = {
   margins: { l: 20, b: 20, r: 20, t: 20 },
 };
@@ -37,9 +37,8 @@ const plot_size = () => {
   if (wh / ww > 1.3) {
     const min = Math.min(wh, ww);
     return [min, min];
-  } else {
-    return [ww, ww];
   }
+  return [ww, ww];
 };
 
 const xS = d3.scaleLinear().range([0, 600]);
@@ -57,14 +56,14 @@ const updateVis = () => {
   const [pW, pH] = plot_size();
 
   plot.attr("width", pW).attr("height", pH);
-  d3.select("#table_info").style("height", pH / 3 + "px");
+  d3.select("#table_info").style("height", `${pH / 3}px`);
 
   xS.range([sizes.margins.l, pW - sizes.margins.r]);
   yS.range([sizes.margins.t, pH - sizes.margins.b]);
   treeMap(
     all_papers.filter((d) => {
       if ("is_selected" in d) return d.is_selected;
-      else return true;
+      return true;
     })
   );
 };
@@ -76,11 +75,11 @@ const render = () => {
   });
 
   let test = (d) => {
-    let i = 0,
-      pass_test = true;
+    let i = 0;
+    let pass_test = true;
     while (i < f_test.length && pass_test) {
       if (f_test[i][0] === "titles") {
-        pass_test &= d.content["title"] === f_test[i][1];
+        pass_test &= d.content.title === f_test[i][1];
       } else {
         pass_test &= d.content[f_test[i][0]].indexOf(f_test[i][1]) > -1;
       }
@@ -107,7 +106,7 @@ const start = (track) => {
     d3.json("serve_papers_projection.json"),
   ];
   if (track != "All tracks") {
-    loadfiles.push(d3.json("track_" + track + ".json"));
+    loadfiles.push(d3.json(`track_${track}.json`));
   } else {
     trackhighlight = [];
   }
@@ -138,13 +137,13 @@ const start = (track) => {
 
 function treeMap(data) {
   if (data.length > 0) {
-    let trackMappings = {};
+    const trackMappings = {};
     data.forEach((e) => {
       if (!(e.content.track in trackMappings)) {
         trackMappings[e.content.track] = {};
       }
-      for (let keyword of e.content.keywords) {
-        let lowerCasedKeyword = keyword
+      for (const keyword of e.content.keywords) {
+        const lowerCasedKeyword = keyword
           .toLowerCase()
           .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
           .replace(/\s{2,}/g, " ");
@@ -172,18 +171,18 @@ function treeMap(data) {
       }
     });
     // now filter out all track keys with only 1 value
-    let filteredTrackMappings = {};
-    let funct = data.length < 10 ? (_) => true : ([_, v]) => v.length > 1;
+    const filteredTrackMappings = {};
+    const funct = data.length < 10 ? (_) => true : ([_, v]) => v.length > 1;
     Object.entries(trackMappings).forEach(([track, keywords]) => {
       filteredTrackMappings[track] = Object.fromEntries(
         Object.entries(keywords).filter(funct)
       );
     });
     function parseTracksToTree(trackMappings) {
-      let hierarchalTreeData = { children: [] };
-      for (let TRACK_KEY of Object.keys(trackMappings)) {
-        let children = [];
-        for (let KEYWORD_KEY of Object.keys(trackMappings[TRACK_KEY])) {
+      const hierarchalTreeData = { children: [] };
+      for (const TRACK_KEY of Object.keys(trackMappings)) {
+        const children = [];
+        for (const KEYWORD_KEY of Object.keys(trackMappings[TRACK_KEY])) {
           children.push({
             name: KEYWORD_KEY,
             group: KEYWORD_KEY,
@@ -193,16 +192,16 @@ function treeMap(data) {
           });
         }
 
-        hierarchalTreeData["children"].push({
+        hierarchalTreeData.children.push({
           name: TRACK_KEY,
-          children: children,
+          children,
           colname: "placeholder2",
         });
       }
       return hierarchalTreeData;
     }
-    let treeData = parseTracksToTree(filteredTrackMappings);
-    let root = d3.hierarchy(treeData).sum((d) => d.value);
+    const treeData = parseTracksToTree(filteredTrackMappings);
+    const root = d3.hierarchy(treeData).sum((d) => d.value);
 
     d3
       .treemap()
@@ -217,9 +216,9 @@ function treeMap(data) {
     opacity = d3.scaleLinear().domain([0, 10]).range([0.2, 1]);
 
     // and to add the text labels
-    let is_clicked = false;
+    const is_clicked = false;
 
-    let svg = d3.select("#heatmap");
+    const svg = d3.select("#heatmap");
     svg.selectAll("*").remove();
 
     svg
@@ -298,7 +297,7 @@ function treeMap(data) {
 
     currentTippy = tippy(".recter", {
       content(reference) {
-        let value = d3.select(reference).datum().name;
+        const value = d3.select(reference).datum().name;
         return value;
       },
       onShow(instance) {
@@ -317,7 +316,7 @@ $(window).on("resize", _.debounce(updateVis, 150));
 
 /**
  *  EVENTS
- **/
+ * */
 
 const updateFilterSelectionBtn = (value) => {
   d3.selectAll(".filter_option label").classed("active", function () {
@@ -338,23 +337,22 @@ d3.selectAll(".filter_option input").on("click", function () {
 
 function hexToRgb(hex, alpha) {
   hex = hex.replace("#", "");
-  var r = parseInt(
+  const r = parseInt(
     hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2),
     16
   );
-  var g = parseInt(
+  const g = parseInt(
     hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4),
     16
   );
-  var b = parseInt(
+  const b = parseInt(
     hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6),
     16
   );
   if (alpha) {
-    return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
-  } else {
-    return "rgb(" + r + ", " + g + ", " + b + ")";
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 function triggerListView(name, allPapers) {
