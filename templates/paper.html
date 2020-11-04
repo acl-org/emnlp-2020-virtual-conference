@@ -67,7 +67,7 @@
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
       {% for author in paper.content.authors %}
-      <a href="papers.html?filter=authors&search={{author}}" class="text-primary"
+      <a href="papers.html?filter=authors&search={{author}}&program=all" class="text-primary"
         >{{author}}</a
       >{{ "," if not loop.last }}
       {% endfor %}
@@ -99,7 +99,11 @@
     </div>
     <p class="card-text text-center h5">
 
-     <a href="papers.html?track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
+      {% if paper.content.program == "main" %}
+     <a href="papers.html?program=main&track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
+     {% elif paper.content.program == "workshop" %}
+      <a href="papers.html?program=workshop&track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
+      {% endif %}
      <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
     </p>
 
