@@ -578,7 +578,7 @@ const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
 const author_html = author => `<a href="papers.html?program=all&filter=authors&search=${author}">${author}</a>`;
 
 const card_image = (openreview, show) => {
-    if (show) return ` <center><img class="lazy-load-img cards_img card-img" src="${openreview.card_image_path}" onerror="javascript:this.src=''" width="80%"/></center>`
+    if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" onerror="javascript:this.src=''" width="80%"/></center>`
     else return ''
 };
 
