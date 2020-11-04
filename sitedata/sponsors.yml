@@ -1,3 +1,10 @@
+- name: Adobe
+  level: Silver
+  logo: adobe.png
+  website: https://www.adobe.com/careers.html
+  channel: example_sponsor
+  landingpage: https://www.adobe.com/careers.html
+  rocketchat_channel: sponsor-adobe
 - name: Amazon
   level: Diamond
   logo: amazon.png
@@ -389,6 +396,13 @@
   - label: Adversarial Grammatical Error Correction
     website: grammarly_paper.pdf
   rocketchat_channel: sponsor-grammarly
+- name: Hitachi
+  level: Silver
+  logo: hitachi.png
+  website: https://careers.hitachi.com/
+  channel: example_sponsor
+  landingpage: https://careers.hitachi.com/
+  rocketchat_channel: sponsor-hitachi
 - name: ISI
   level: Bronze
   logo: isi.png
