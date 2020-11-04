@@ -68,11 +68,11 @@
     Research Council grants and of several international awards**, the
     company places itself on the market with very high professional
     profiles and the ability to tailor its solutions to the customers' needs.
-    The company's core mission is to **overcome the language barriers** by enabling
-    the automatic processing of text **independently of the input language**, and
-    distilling and aggregating the information extracted across languages by
-    means of a unified large-scale multilingual knowledge repository and
-    **semantically-enhanced text comprehension systems**.
+    The company's core mission is to **overcome the language barriers** by
+    enabling the automatic processing of text **independently of the input
+    language**, and distilling and aggregating the information extracted across
+    languages by means of a unified large-scale multilingual knowledge repository
+    and **semantically-enhanced text comprehension systems**.
   youtube: https://www.youtube.com/embed/FC-OJRXwoig
   contacts:
   - name: Roberto Navigli
@@ -85,6 +85,35 @@
   downloads:
   - label: Products and Services
     website: babelscape-resource-brochure_allproducts_1_.pdf
+  schedule:
+  - start: 2020-11-16 16:00:00
+    duration: 1
+    label: 'WordAtlas: the largest multilingual semantic network, encyclopedic dictionary
+      and knowledge repository for multilingual applications'
+  - start: 2020-11-16 17:00:00
+    duration: 1
+    label: 'NLP pipeline: a full-fledged multilingual natural language pipeline'
+  - start: 2020-11-17 09:00:00
+    duration: 1
+    label: 'Comprehendo: multilingual word sense disambiguation and entity linking'
+  - start: 2020-11-17 12:00:00
+    duration: 1
+    label: 'Extraggo: extracting the key concepts and entities from text and connecting
+      them to a multilingual knowledge graph'
+  - start: 2020-11-17 16:00:00
+    duration: 1
+    label: 'NLP pipeline: a full-fledged multilingual natural language pipeline'
+  - start: 2020-11-18 09:00:00
+    duration: 1
+    label: 'WordAtlas: the largest multilingual semantic network, encyclopedic dictionary
+      and knowledge repository for multilingual applications'
+  - start: 2020-11-18 10:00:00
+    duration: 1
+    label: 'Extraggo: extracting the key concepts and entities from text and connecting
+      them to a multilingual knowledge graph'
+  - start: 2020-11-18 16:00:00
+    duration: 1
+    label: 'Comprehendo: multilingual word sense disambiguation and entity linking'
   rocketchat_channel: sponsor-babelscape
 - name: Baidu
   level: Platinum
@@ -202,6 +231,7 @@
   - name: General
     email: dm-emnlp-2020-enquiries@google.com
   zoom_link:
+  schedule:
   - start: 2020-11-16 17:00:00
     duration: 1.0
     label: Chat with the DeepMind Language Team
@@ -209,6 +239,8 @@
     duration: 1.0
     label: Chat with the DeepMind Language Team
   downloads:
+  - label: Language Team Overview
+    website: DeepMind_Language-Team-Overview.pdf
   - label: Careers Leaflet - Engineering and Games
     website: DeepMind_Copy-of-Eng-and-Games.pdf
   - label: Careers Leaflet - Operations
@@ -217,8 +249,6 @@
     website: DeepMind_Copy-of-Research.pdf
   - label: Careers Leaflet - Science and DeepMind for Google
     website: DeepMind_Copy-of-Science-and-DeepMind-for-Google.pdf
-  - label: Overview Deck - Language at EMNLP 2020
-    website: DeepMind_Overview-Deck_Language-at-EMNLP2020.pptx
   rocketchat_channel: sponsor-deepmind
 - name: Facebook
   level: Platinum
@@ -316,7 +346,11 @@
     Grammarly’s writing assistant is powered by advanced AI. We’re building a product that delivers sophisticated communication suggestions, adapts to individual users, and scales across the internet. Using a variety of innovative approaches—including advanced machine learning and deep learning—we consistently break new ground in natural language processing (NLP) research to deliver unrivaled assistance in our product offerings.
 
     Across offices in San Francisco, Kyiv, New York, and Vancouver, Grammarly’s values-driven team is growing—to support our expanding user base and to continue developing our writing assistant into a truly comprehensive communication partner.
-  youtube:
+
+    Check out our technical blog, where Grammarly’s engineers and researchers discuss the technical challenges they’re tackling: https://bit.ly/3eptm6P.
+
+    Explore open roles: https://bit.ly/2TMICkN.
+  youtube: https://www.youtube.com/embed/Dlq-knQpBzs
   contacts:
   - name: Dana Schafer
     email: dana.schafer@grammarly.com
@@ -324,14 +358,36 @@
     email: chad.mills@grammarly.com
   zoom_link:
   schedule:
-  - start:
-    duration:
-    label:
+  - start: 2020-11-16 18:00:00
+    duration: 1
+    label: 'Live Q&A: Learn more about how the team is growing with Grammarly technical
+      recruiter Dana Schafer'
+  - start: 2020-11-17 18:00:00
+    duration: 1
+    label: "Live Q&A: Learn more about the day-to-day on Grammarly\u2019s computational\
+      \ linguistics team with Masha Ivenskaya"
+  - start: 2020-11-17 20:00:00
+    duration: 1
+    label: "Paper presentation: Vipul Raheja will present his paper \u201CAdversarial\
+      \ Grammatical Error Correction,\u201D followed by a Q&A session"
+  - start: 2020-11-18 18:00:00
+    duration: 1
+    label: "Live Q&A: Learn more about the day-to-day on Grammarly\u2019s research\
+      \ team with Chad Mills, Grammarly\u2019s manager of applied research and engineering"
   resources:
-  - label:
-    website:
-  - label:
-    website:
+  - label: Life at Grammarly
+    website: https://bit.ly/325nydB
+  - label: Technology at Grammarly
+    website: https://bit.ly/35Zl8hM
+  downloads:
+  - label: Job Openings
+    website: grammarly_About.pdf
+  - label: Publications
+    website: grammarly_publications.pdf
+  - label: Grammarly's Tech Blog
+    website: grammarly_tech_blog.pdf
+  - label: Adversarial Grammatical Error Correction
+    website: grammarly_paper.pdf
   rocketchat_channel: sponsor-grammarly
 - name: ISI
   level: Bronze
@@ -394,6 +450,7 @@
     website: 2020_Naver_brochure_EN_F.pdf
   rocketchat_channel: sponsor-naver
 - name: Salesforce
+  level: Silver
   logo: salesforce.png
   logoontop: true
   website: https://einstein.ai/
@@ -406,6 +463,13 @@
     email: audrey.cook@salesforce.com
   - name: Caitlin McCauley
     email: cmccauley@salesforce.com
+  schedule:
+  - start: 2020-11-17 22:00:00
+    duration: 1
+    label: Spotlight on Salesforce EMNLP Papers
+  - start: 2020-11-19 00:00:00
+    duration: 1
+    label: Salesforce Research Interns @ EMNLP - A Panel Discussion
   rocketchat_channel: sponsor-salesforce
 - name: Zeta Alpha
   level: Gold
