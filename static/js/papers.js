@@ -342,12 +342,24 @@ function sortSelectedFirst(array) {
 
 /* Randomize array in-place using Durstenfeld shuffle algorithm */
 function shuffleArray(array) {
+
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
+}
+
+function hideQaEnded(array){
+    let result = []
+    let now = new Date()
+    for (let i = array.length - 1; i > 0; i--) {
+        let qa = new Date(Math.max.apply(null, array[i].content.sessions.map(function(e) {return new Date(e.end_time);})));
+        if (qa.getTime() >= now.getTime())
+            result.push(array[i])
+    }
+    allPapers = result;
 }
 
 const render = () => {
@@ -564,6 +576,11 @@ d3.select('.reshuffle').on('click', () => {
     render();
 })
 
+d3.select('.hide_qa_ended').on('click', () => {
+    hideQaEnded(allPapers);
+
+    render();
+})
 
 
 /**
