@@ -89,8 +89,11 @@
         </ul>
         {% endfor %}
 
-        <a class="btn btn-primary" href="{{ sponsor.zoom_link }}" role="button" target="_blank">Join via Zoom!</a>
-
+        {% if not sponsor.gather_only %}
+        <a class="btn btn-primary" href="{{ sponsor.zoom_link }}" role="button" target="_blank">Join the event!</a>
+        {% else %}
+        <a class="btn btn-primary" href="{{ config.gather_town }}" role="button" target="_blank">Visit us in Gather.town!</a>
+        {% endif %}
       </div>
     </div>
   </div>

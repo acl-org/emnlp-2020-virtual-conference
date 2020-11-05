@@ -1,9 +1,22 @@
 - name: Adobe
   level: Silver
   logo: adobe.png
-  website: https://www.adobe.com/careers.html
-  channel: example_sponsor
-  landingpage: https://www.adobe.com/careers.html
+  logoontop: true
+  website: https://research.adobe.com/
+  description: |
+    With a team of world-class research scientists, engineers, artists, and designers, Adobe Research blends cutting-edge academic discovery with industry impact. Our researchers shape early-stage ideas into innovative technologies. Many of our discoveries are incorporated into Adobe’s products, building the company’s reputation as a leader in fostering new forms of creativity and in advancing document and content intelligence. Working across numerous domains, our researchers collaborate with colleagues at over 75 universities.
+  youtube: https://www.youtube.com/embed/9B9BCcqhyMk
+  contacts:
+  - name: Trung Bui
+    email: bui@adobe.com
+  zoom_link:
+  schedule:
+  - start:
+    duration:
+    label:
+  downloads:
+  - label: Adobe Research @ EMNLP 2020
+    website: adobe_research_publications_emnlp_2020.pdf
   rocketchat_channel: sponsor-adobe
 - name: Amazon
   level: Diamond
@@ -43,21 +56,27 @@
   logoontop: true
   website: https://machinelearning.apple.com
   description: |
-    Apple is a place where extraordinary people gather to do their best work. Our community is made up of every kind of individual: artists and designers, engineers and scientists, thinkers and doers. Together we create things and experiences people once couldn’t have imagined and now can’t imagine living without. So if you’re excited by the idea of making a real impact, a career with Apple might be your dream job. Just be ready to dream big.
+    Apple is a place where extraordinary people gather to do their best work. Our community is made up of every kind of individual: artists and designers, engineers and scientists, thinkers and doers. It’s the diversity of those people and their ideas that inspires the innovation that runs through everything we do, from amazing technology to industry-leading environmental efforts. And innovation at this level depends on people who represent the variety of the human experience and inspire us with their own fresh perspectives.
   youtube: https://www.youtube.com/embed/vfkOZTjD06Y
-  contacts:
-  - name: Jane Luer
-    email: aimlconf-recruiting@group.apple.com
-  zoom_link: Waiting
+  zoom_link: https://appleinc.webex.com/appleinc/onstage/g.php?MTID=ebeef7337dbef265460fe648f08c716d3
   schedule:
-  - start:
-    duration:
-    label: Waiting for round two
+  - start: 2020-11-18 20:00:00
+    duration: 0.5
+    label: Q&A Session
   resources:
-  - label: Waiting
-    website: https://waiting
-  - label: Waiting
-    website: https://waiting
+  - label: Check in at our virtual booth
+    website: http://applecorp.avature.net/registration?projectId=12927&source=Keep+in+Touch+-+UR+Portal
+  - label: Chat schedule
+    website: -Waiting-
+  - label: Learn more about our publications at EMNLP
+    website: https://machinelearning.apple.com/updates/apple-at-emnlp-2020
+  - label: Apply to full-time roles
+    website: bit.ly/apple-emnlp2020
+  - label: Apply to internship roles
+    website: bit.ly/apple-emnlp2020-intern
+  downloads:
+  - label: Job Card
+    website: Apple- EMNLP Job Card.pdf
   rocketchat_channel: sponsor-apple
 - name: Babelscape
   level: Silver
@@ -166,6 +185,13 @@
   - https://www.youtube.com/embed/iBqfajFcSzo
   - https://www.youtube.com/embed/hrlz42GQHgQ
   - https://www.youtube.com/embed/Y7bEdGHmeWg
+  publications:
+  - main.3236
+  - main.3064
+  - main.349
+  - main.2818
+  - main.110
+  - main.3621
   rocketchat_channel: sponsor-baidu
 - name: Bloomberg
   level: Diamond
@@ -237,14 +263,14 @@
     email: amybwu@google.com
   - name: General
     email: dm-emnlp-2020-enquiries@google.com
-  zoom_link:
+  gather_only: true
   schedule:
   - start: 2020-11-16 17:00:00
     duration: 1.0
-    label: Chat with the DeepMind Language Team
+    label: Chat with the DeepMind Language Team!
   - start: 2020-11-17 17:00:00
     duration: 1.0
-    label: Chat with the DeepMind Language Team
+    label: Chat with the DeepMind Language Team!
   downloads:
   - label: Language Team Overview
     website: DeepMind_Language-Team-Overview.pdf
@@ -354,9 +380,9 @@
 
     Across offices in San Francisco, Kyiv, New York, and Vancouver, Grammarly’s values-driven team is growing—to support our expanding user base and to continue developing our writing assistant into a truly comprehensive communication partner.
 
-    Check out our technical blog, where Grammarly’s engineers and researchers discuss the technical challenges they’re tackling: https://bit.ly/3eptm6P.
+    Check out our technical blog, where Grammarly’s engineers and researchers discuss the technical challenges they’re tackling: [Here](https://bit.ly/3eptm6P).
 
-    Explore open roles: https://bit.ly/2TMICkN.
+    Explore open roles: [Here](https://bit.ly/2TMICkN).
   youtube: https://www.youtube.com/embed/Dlq-knQpBzs
   contacts:
   - name: Dana Schafer
@@ -396,12 +422,30 @@
   - label: Adversarial Grammatical Error Correction
     website: grammarly_paper.pdf
   rocketchat_channel: sponsor-grammarly
-- name: Hitachi
+- name: Hitachi, Ltd
   level: Silver
   logo: hitachi.png
-  website: https://careers.hitachi.com/
-  channel: example_sponsor
-  landingpage: https://careers.hitachi.com/
+  logoontop: true
+  website: https://www.hitachi.com/rd/index.html
+  description: Hitachi is contributing to the expansion of social innovation business
+    through R&D on digital technologies such as data science, media processing, AI,
+    service computing, and computing architecture to achieve safety and support efficient
+    societal infrastructure
+  youtube: https://www.youtube.com/embed/Z9kfpJV8R2o
+  contacts:
+  - name: Yuko Tamura
+    email: rdg.recruit@rdgml.intra.hitachi.co.jp
+  zoom_link:
+  schedule:
+  - start: 2020-07-07 17:00:00
+    duration: 0.5
+    label: Not set yet
+  resources:
+  - label: Research in Hitachi
+    website: http://www.hitachi.com/rd/research/digitaltechnology/index.html
+  downloads:
+  - label: Recuitment Flyers
+    website: Hitachi_R_D_Recruit_2020.pdf
   rocketchat_channel: sponsor-hitachi
 - name: ISI
   level: Bronze
@@ -451,17 +495,26 @@
     email: dl_nlp_emnlp_2020@navercorp.com
   zoom_link: https://waitforsecondround.example.com
   schedule:
-  - start: 2020-07-07 17:00:00
-    duration: 0.5
-    label:
+  - start: 2020-11-18 17:00:00
+    duration: 30
+    label: NLP research at NAVER LABS Europe
+  - start: 2020-11-18 18:00:00
+    duration: 15
+    label: Machine Translation
+  - start: 2020-11-18 18:15:00
+    duration: 15
+    label: Open Domain Question Answering
+  - start: 2020-11-18 18:30:00
+    duration: 15
+    label: Conversational AI
   resources:
-  - label: Publications
-    website: https://resource1.example.com
-  - label: Resource 2
-    website: https://resource2.example.com
+  - label: List of publications at EMNLP2020
+    website: https://drive.google.com/file/d/12z6yCTyAXONSKepCpUyAY-D-xUeU1kPx/view?usp=sharing
+  - label: Interactive Sessions
+    website: https://drive.google.com/file/d/1R7mhVHLyNp2fnO6vUEKlZFZJsbYGAYy3/view?usp=sharing
   downloads:
   - label: Connect with us
-    website: 2020_Naver_brochure_EN_F.pdf
+    website: Brochure_NAVER_LABS_Europe.pdf
   rocketchat_channel: sponsor-naver
 - name: Salesforce
   level: Silver
