@@ -351,15 +351,28 @@ function shuffleArray(array) {
     }
 }
 
-function hideQaEnded(array){
-    let result = []
-    let now = new Date()
-    for (let i = array.length - 1; i > 0; i--) {
-        let qa = new Date(Math.max.apply(null, array[i].content.sessions.map(function(e) {return new Date(e.end_time);})));
-        if (qa.getTime() >= now.getTime())
-            result.push(array[i])
+function hideQaEnded(array, element){
+    if (element.checked) {
+        let result = []
+        let now = new Date()
+        for (let i = array.length - 1; i > 0; i--) {
+            let qa = new Date(Math.max.apply(null, array[i].content.sessions.map(function (e) {
+                return new Date(e.end_time);
+            })));
+            if (qa.getTime() >= now.getTime())
+                result.push(array[i])
+        }
+        allPapers = result;
+
+        render()
+    } else {
+        // reload full list of papers from data
+        d3.json(path_to_papers_json).then(papers => {
+            shuffleArray(papers);
+            allPapers = papers;
+            render()
+        }).catch(e => console.error(e));
     }
-    allPapers = result;
 }
 
 const render = () => {
@@ -575,13 +588,6 @@ d3.select('.reshuffle').on('click', () => {
 
     render();
 })
-
-d3.select('.hide_qa_ended').on('click', () => {
-    hideQaEnded(allPapers);
-
-    render();
-})
-
 
 /**
  * CARDS

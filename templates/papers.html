@@ -212,8 +212,11 @@
       </div>
 
       <div>
-        <div class="btn-group">
-          <button class="btn btn-sm btn-outline-secondary hide_qa_ended">QA not passed</button>
+        <div class="btn-group btn-group-toggle render_option" data-toggle="buttons">
+          <label class="btn btn-sm btn-outline-secondary" data-tippy-content="Show/hide papers whose QA session is finished.">
+            <input type="checkbox" name="hide_qa_ended" display="none" onchange="hideQaEnded(allPapers, this)" />
+            QA not passed
+          </label>
         </div>
       </div>
     </div>
