@@ -134,6 +134,7 @@ def load_site_data(
     for p in site_data["findings_papers"]:
         p["program"] = "findings"
         p["paper_type"] = "findings"
+        p["track"] = "Findings"
 
     site_data["programs"] = ["main", "demo", "findings", "workshop"]
 
@@ -677,11 +678,11 @@ def build_papers(
 
     # throw warnings for missing information
     for paper in papers:
-        if not paper.presentation_id and paper.content.program != "demo":
+        if not paper.presentation_id and paper.content.program not in ["demo", "findings"]:
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
-        if len(paper.content.sessions) != 1:
+        if paper.is_presented and len(paper.content.sessions) != 1:
             print(
                 f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
             )
