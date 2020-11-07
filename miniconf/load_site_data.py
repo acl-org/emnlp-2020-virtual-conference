@@ -99,7 +99,9 @@ def load_site_data(
     generate_social_events(site_data)
 
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
-    site_data["event_types"] = { event["type"] for event in site_data["overall_calendar"] }
+    site_data["event_types"] = {
+        event["type"] for event in site_data["overall_calendar"]
+    }
 
     # plenary_sessions.html
     plenary_sessions = build_plenary_sessions(
@@ -527,7 +529,14 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
         copy.deepcopy(event)
         for event in overall_calendar
         if event["type"]
-        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions", "Socials", "Sponsors"}
+        in {
+            "Plenary Sessions",
+            "Tutorials",
+            "Workshops",
+            "QA Sessions",
+            "Socials",
+            "Sponsors",
+        }
     ]
 
     for event in events:
