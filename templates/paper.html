@@ -126,6 +126,7 @@
   </div>
 </div>
 
+{% if paper.is_presented %}
 {% if paper.presentation_id %}
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -182,6 +183,7 @@
     </div>
 </div>
 {% endif %}
+{% endif %}
 
 {% if paper.poster_pdf %}
 {{ components.section("Example Poster") }}
@@ -198,6 +200,7 @@
 </script>
 {% endif %}
 
+{% if paper_recs %}
 {{ components.section("Similar Papers") }}
 <p></p>
 <div class="container" >
@@ -223,6 +226,7 @@
   {% endfor %}
   </div>
 </div>
+{% endif %}
 
 <script src="static/js/time-extend.js"></script>
 <script>

@@ -94,7 +94,7 @@ class PaperContent:
     program: str
 
     def __post_init__(self):
-        if self.program != "workshop":
+        if self.program != "workshop" and self.program != "findings":
             assert self.track, self
         if self.pdf_url:
             assert self.pdf_url.startswith("https://"), self.pdf_url
@@ -121,6 +121,10 @@ class Paper:
     @property
     def rocketchat_channel(self) -> str:
         return f"paper-{self.id.replace('.', '-')}"
+
+    @property
+    def is_presented(self) -> bool:
+        return self.content.program != "findings"
 
 
 @dataclass(frozen=True)

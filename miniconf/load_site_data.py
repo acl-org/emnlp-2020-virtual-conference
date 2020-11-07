@@ -51,6 +51,7 @@ def load_site_data(
         # papers.html
         "main_papers",
         "demo_papers",
+        "findings_papers",
         "paper_recs",
         "papers_projection",
         "paper_sessions",
@@ -130,6 +131,11 @@ def load_site_data(
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
 
+    for p in site_data["findings_papers"]:
+        p["program"] = "findings"
+        p["paper_type"] = "findings"
+        p["track"] = "Findings of EMNLP"
+
     site_data["programs"] = ["main", "demo", "findings", "workshop"]
 
     # tutorials.html
@@ -159,7 +165,9 @@ def load_site_data(
 
     # papers.{html,json}
     papers = build_papers(
-        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
+        raw_papers=site_data["main_papers"]
+        + site_data["demo_papers"]
+        + site_data["findings_papers"],
         paper_sessions=site_data["paper_sessions"],
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
@@ -670,11 +678,14 @@ def build_papers(
 
     # throw warnings for missing information
     for paper in papers:
-        if not paper.presentation_id and paper.content.program != "demo":
+        if not paper.presentation_id and paper.content.program not in [
+            "demo",
+            "findings",
+        ]:
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
-        if len(paper.content.sessions) != 1:
+        if paper.is_presented and len(paper.content.sessions) != 1:
             print(
                 f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
             )
