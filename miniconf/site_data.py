@@ -92,6 +92,7 @@ class PaperContent:
     sessions: List[SessionInfo]
     similar_paper_uids: List[str]
     program: str
+    material: str = None
 
     def __post_init__(self):
         if self.program != "workshop":
