@@ -6,8 +6,8 @@ add_local_tz = (selector) => {
     const t = $(this).text();
     const res = regex_time.exec(t);
     if (res) {
-      const start_time = moment.utc(`2020-10-16 ${res[1]}`);
-      const end_time = moment.utc(`2020-10-20 ${res[2]}`);
+      const start_time = moment.utc(`2020-11-16 ${res[1]}`);
+      const end_time = moment.utc(`2020-11-20 ${res[2]}`);
       const local_start = start_time.tz(guess_tz);
       const local_start_and_tz = start_time.format("HH:mm");
       const local_end = end_time.tz(guess_tz);

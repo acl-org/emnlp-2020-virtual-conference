@@ -11,7 +11,7 @@ const filters = {
     session: null,
     title: null,
 };
-
+let path_to_papers_json = "";
 let render_mode = 'list';
 let current_card_index = -1;
 
@@ -342,11 +342,36 @@ function sortSelectedFirst(array) {
 
 /* Randomize array in-place using Durstenfeld shuffle algorithm */
 function shuffleArray(array) {
+
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+}
+
+function hideQaEnded(array, element){
+    if (element.checked) {
+        let result = []
+        let now = new Date()
+        for (let i = array.length - 1; i > 0; i--) {
+            let qa = new Date(Math.max.apply(null, array[i].content.sessions.map(function (e) {
+                return new Date(e.end_time);
+            })));
+            if (qa.getTime() >= now.getTime())
+                result.push(array[i])
+        }
+        allPapers = result;
+
+        render()
+    } else {
+        // reload full list of papers from data
+        d3.json(path_to_papers_json).then(papers => {
+            shuffleArray(papers);
+            allPapers = papers;
+            render()
+        }).catch(e => console.error(e));
     }
 }
 
@@ -479,7 +504,6 @@ const start = (reset_track) => {
 
     updateToolboxUI(program, urlFilter, track)
 
-    let path_to_papers_json;
     if (program === "all"){
         path_to_papers_json = `papers.json`;
     } else if (track === default_track) {
@@ -563,8 +587,6 @@ d3.select('.reshuffle').on('click', () => {
 
     render();
 })
-
-
 
 /**
  * CARDS
