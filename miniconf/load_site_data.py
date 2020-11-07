@@ -6,7 +6,7 @@ import json
 import os
 from collections import OrderedDict, defaultdict
 from datetime import timedelta
-from typing import Any, DefaultDict, Dict, List
+from typing import Any, DefaultDict, Dict, List, Optional
 
 import jsons
 import pytz
@@ -338,13 +338,15 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
     all_sessions = []
     for tutorial in site_data["tutorials"]:
         uid = tutorial["UID"]
-        for session in tutorial["sessions"]:
-            start = session["start_time"]
-            end = session["end_time"]
+        blocks = compute_schedule_blocks(tutorial["sessions"])
+
+        for block in blocks:
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
             event = {
-                "title": f"{uid}: {tutorial['title']}<br/> <br/> <i>{tutorial['organizers']}</i>",
-                "start": start,
-                "end": end,
+                "title": f"<b>{uid}: {tutorial['title']}</b><br/><i>{tutorial['organizers']}</i>",
+                "start": min_start,
+                "end": max_end,
                 "location": f"tutorial_{uid}.html",
                 "link": f"tutorial_{uid}.html",
                 "category": "time",
@@ -352,9 +354,9 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
                 "view": "day",
             }
             site_data["overall_calendar"].append(event)
-            assert start < end, "Session start after session end"
+            assert min_start < max_end, "Session start after session end"
 
-            all_sessions.append(session)
+        all_sessions.extend(tutorial["sessions"])
 
     blocks = compute_schedule_blocks(all_sessions)
 
@@ -382,14 +384,16 @@ def generate_workshop_events(site_data: Dict[str, Any]):
     all_sessions = []
     for workshop in site_data["workshops"]:
         uid = workshop["UID"]
-        for session in workshop["sessions"]:
-            start = session["start_time"]
-            end = session["end_time"]
+        all_sessions.extend(workshop["sessions"])
+
+        for block in compute_schedule_blocks(workshop["sessions"]):
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
 
             event = {
-                "title": f"{workshop['title']}<br/> <br/> <i>{workshop['organizers']}</i>",
-                "start": start,
-                "end": end,
+                "title": f"<b>{workshop['title']}</b><br/> <i>{workshop['organizers']}</i>",
+                "start": min_start,
+                "end": max_end,
                 "location": f"workshop_{uid}.html",
                 "link": f"workshop_{uid}.html",
                 "category": "time",
@@ -398,11 +402,7 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             }
             site_data["overall_calendar"].append(event)
 
-            assert start < end, "Session start after session end: " + str(
-                (workshop["title"], session)
-            )
-
-            all_sessions.append(session)
+            assert min_start < max_end, "Session start after session end"
 
     blocks = compute_schedule_blocks(all_sessions)
 
@@ -740,6 +740,26 @@ def build_workshops(
                 return wsh["title"]
         return ""
 
+    def build_workshop_blocks(t: Dict[str, Any]) -> List[SessionInfo]:
+        blocks = compute_schedule_blocks(t["sessions"], leeway=timedelta(hours=1))
+        if len(blocks) == 0:
+            return []
+
+        result = []
+        for i, block in enumerate(blocks):
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
+
+            result.append(
+                SessionInfo(
+                    session_name=f"W-Live Session {i+1}",
+                    start_time=min_start,
+                    end_time=max_end,
+                    link="",
+                )
+            )
+        return result
+
     grouped_papers: DefaultDict[str, Any] = defaultdict(list)
     for paper in raw_workshop_papers:
         grouped_papers[paper["workshop"]].append(paper)
@@ -791,9 +811,11 @@ def build_workshops(
                     start_time=session.get("start_time"),
                     end_time=session.get("end_time"),
                     link=session.get("zoom_link", ""),
+                    hosts=session.get("hosts")
                 )
                 for session in item.get("sessions")
             ],
+            blocks=build_workshop_blocks(item)
         )
         for item in raw_workshops
     ]
@@ -885,7 +907,10 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     assert all(lvl in site_data["sponsor_levels"] for lvl in sponsors_by_level)
 
 
-def compute_schedule_blocks(events) -> List[List[Dict[str, Any]]]:
+def compute_schedule_blocks(events, leeway: Optional[timedelta]= None) -> List[List[Dict[str, Any]]]:
+    if leeway is None:
+        leeway = timedelta()
+
     # Based on
     # https://stackoverflow.com/questions/54713564/how-to-find-gaps-given-a-number-of-start-and-end-datetime-objects
     if len(events) <= 1:
@@ -903,7 +928,7 @@ def compute_schedule_blocks(events) -> List[List[Dict[str, Any]]]:
     for pair in events:
         # if next start time is before current end time, keep going until we find a gap
         # if next start time is after current end time, found the first gap
-        if pair["start_time"] > now:
+        if pair["start_time"] - (now + leeway) > timedelta():
             blocks.append(block)
             block = [pair]
         else:

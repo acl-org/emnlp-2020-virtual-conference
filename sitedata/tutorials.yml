@@ -43,7 +43,7 @@
     Post-Truth Era'
   organizers: Preslav Nakov, Giovanni Da San Martino
   abstract: |-
-    The rise of social media has democratized content creation and has made it easy for anybody to share and to spread information online. On the positive side, this has given rise to citizen journalism, thus enabling much faster dissemination of information compared to what was possible with newspapers, radio, and TV. On the negative side, stripping traditional media from their gate-keeping role has left the public unprotected against the spread of disinformation, which could now travel at breaking-news speed over the same democratic channel. This situation gave rise to the proliferation of false information specifically created to affect individual people's beliefs, and ultimately to influence major events such as political elections; it also set the dawn of the Post-Truth Era, where appeal to emotions has become more important than the truth. More recently, with the emergence of the COVID-19 pandemic, a new blending of medical and political misinformation and disinformation has given rise to the first global infodemic. Limiting the impact of these negative developments has become a major focus for journalists, social media companies, and regulatory authorities.
+    The rise of social media has democratized content creation and has made it easy for anybody to share and to spread information online. On the positive side, this has given rise to citizen journalism, thus enabling much faster dissemination of information compared to what was possible with newspapers, radio, and TV. On the negative side, stripping traditional media from their gate-keeping role has left the public unprotected against the spread of disinformation, which could now travel at breaking-news speed over the same democratic channel. This situation gave rise to the proliferation of false information specifically created to affect individual people's beliefs, and ultimately to influence major events such as political elections; it also set the dawn of the Post-Truth Era, where appeal to emotions has become more important than the truth. More recently, with the emergence of the COVID-19 pandemic, a new blending of medical and political misinformation and disinformation has given rise to the first global infodemic. Limiting the impact of these negative developments has become a major focus for journalists, social media companies, and regulatory authorities. 
 
     The tutorial offers an overview of the emerging and inter-connected research areas of fact-checking, misinformation, disinformation, “fake news”, propaganda, and media bias detection, with focus on text and on computational approaches. It further explores the general fact-checking pipeline and important elements thereof such as check-worthiness estimation, spotting previous fact-checked claims, stance detection, source reliability estimation, and detecting malicious users in social media. Finally, it covers some recent developments such as the emergence of large-scale pre-trained language models, and the challenges and opportunities they offer.
   info: |-
@@ -54,12 +54,13 @@
   rocketchat_channel: tutorial-2-fact-checking
   sessions:
   - name: Q&A
-    start_time: 2020-11-19 09:00:00+00:00
-    end_time: 2020-11-19 10:00:00+00:00
+    start_time: 2020-11-19 10:00:00+00:00
+    end_time: 2020-11-19 11:00:00+00:00
     hosts: Preslav Nakov and Giovanni Da San Martino
   - name: Q&A
-    start_time: 2020-11-19 16:00:00+00:00
-    end_time: 2020-11-19 17:00:00+00:00
+    start_time: 2020-11-19 14:00:00+00:00
+    end_time: 2020-11-19 15:00:00+00:00
+  prerecorded: '38940825'
   website: https://propaganda.qcri.org/emnlp20-tutorial
 - UID: T3
   title: High Performance Natural Language Processing
@@ -89,21 +90,21 @@
   - name: Q&A
     start_time: 2020-11-20 00:00:00+00:00
     end_time: 2020-11-20 01:00:00+00:00
+  prerecorded: '38940826'
 - UID: T4
-  title: Machine Reasoning for Knowledgeable, Explainable and Inferable Models
+  title: 'Machine Reasoning: Technology, Dilemma and Future'
   organizers: Nan Duan, Duyu Tang, Ming Zhou
-  abstract: Broadly speaking, machine reasoning research aims to build AI systems
-    that can draw new conclusions or solve unseen problems from what they are told
-    (i.e. environment) and already know (i.e. knowledge) by using inference techniques
-    such as induction and deduction. In this tutorial, we will (1) review definitions,
-    key components and characteristics of machine reasoning; (2) introduce typical
-    machine reasoning frameworks, including symbolic reasoning, statistical relational
-    learning, neural-symbolic reasoning and environment-based reasoning; (3) talk
-    about necessary technologies of applying machine reasoning in NLP scenarios, including
-    natural language understanding (NLU), human-computer interaction (HCI), natural
-    language generation (NLG) and model interpretation; (4) show examples of applying
-    machine reasoning techniques in real-world applications; (5) summarize challenges
-    of current methods and discuss possible future directions.
+  abstract: Machine reasoning research aims to build interpretable AI systems that
+    can solve problems or draw conclusions from what they are told (i.e. facts and
+    observations) and already know (i.e. models, common sense and knowledge) under
+    certain constraints. In this tutorial, we will (1) describe the motivation of
+    this tutorial and give our definition on machine reasoning; (2) introduce typical
+    machine reasoning frameworks, including symbolic reasoning, probabilistic reasoning,
+    neural-symbolic reasoning and neural-evidence reasoning, and show their successful
+    applications in real-world scenarios; (3) talk about the dilemma between black-box
+    neural networks with state-of-the-art performance and machine reasoning approaches
+    with better interpretability; (4) summarize the content of this tutorial and discuss
+    possible future directions.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
@@ -118,12 +119,23 @@
   - name: Q&A
     start_time: 2020-11-20 01:00:00+00:00
     end_time: 2020-11-20 02:00:00+00:00
+  prerecorded: '38940827'
 - UID: T5
   title: Representation, Learning and Reasoning on Spatial Language for Down-stream
     NLP Tasks
   organizers: Parisa Kordjamshidi, James Pustejovsky, Marie-Francine Moens
-  abstract: |
-    Understating spatial semantics expressed in natural language can become highly complex in real-world applications. This includes applications of language grounding, navigation, visual question answering, and more generic human-machine interaction and dialogue systems. In many of such downstream tasks, explicit representation of spatial concepts and relationships can improve the capabilities of machine learning models in reasoning and deep language understanding. In this tutorial, we overview the cutting-edge research results and existing challenges related to spatial language understanding including semantic annotations,  existing corpora, symbolic and sub-symbolic representations, qualitative spatial reasoning, spatial common sense, deep and structured learning models.  We discuss the recent results on the above-mentioned applications --that need spatial language learning and reasoning -- and highlight the research gaps and future directions.
+  abstract: Understating spatial semantics expressed in natural language can become
+    highly complex in real-world applications. This includes applications of language
+    grounding, navigation, visual question answering, and more generic human-machine
+    interaction and dialogue systems. In many of such downstream tasks, explicit representation
+    of spatial concepts and relationships can improve the capabilities of machine
+    learning models in reasoning and deep language understanding. In this tutorial,
+    we overview the cutting-edge research results and existing challenges related
+    to spatial language understanding including semantic annotations,  existing corpora,
+    symbolic and sub-symbolic representations, qualitative spatial reasoning, spatial
+    common sense, deep and structured learning models.  We discuss the recent results
+    on the above-mentioned applications --that need spatial language learning and
+    reasoning -- and highlight the research gaps and future directions.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
         also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
@@ -138,7 +150,8 @@
   - name: Q&A
     start_time: 2020-11-21 00:00:00+00:00
     end_time: 2020-11-21 01:00:00+00:00
-  website: ' https://spatial-language-tutorial.github.io '
+  prerecorded: '38940828'
+  website: https://spatial-language-tutorial.github.io
 - UID: T6
   title: Simultaneous Translation
   organizers: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan, Zhongjun He
@@ -159,6 +172,7 @@
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
+  prerecorded: '38940829'
 - UID: T7
   title: The Amazing World of Neural Language Generation
   organizers: Yangfeng Ji, Antoine Bosselut, Thomas Wolf, Asli Celikyilmaz
@@ -189,3 +203,5 @@
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
+  prerecorded: '38940830'
+  website: https://nlg-world.github.io

@@ -228,7 +228,7 @@
             </span>
           </div>
 
-          {% for session in workshop.sessions %}
+          {% for session in workshop.blocks %}
           <div class="m-3 text-center">
             {{session.session}}
             <span class="session_times">{{session.time_string}}</span>
@@ -256,7 +256,7 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   {% for workshop in workshops %}
-  {% for session in workshop.sessions %}
+  {% for session in workshop.blocks %}
     // create a calendar by hand
     ouicalData = addToCalendarData({
       options: {

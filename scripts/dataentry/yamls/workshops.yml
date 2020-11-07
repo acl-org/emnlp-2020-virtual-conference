@@ -1122,8 +1122,8 @@
     end_time: 2020-11-19 15:05:00-05:00
     name: Coffee Break
     hosts: TBD
-  - start_time: 2020-11-23 15:05:00-05:00
-    end_time: 2020-11-23 15:50:00-05:00
+  - start_time: 2020-11-19 15:05:00-05:00
+    end_time: 2020-11-19 15:50:00-05:00
     name: EMNLP Findings Session 2
     hosts: Tristan Naumann
   - start_time: 2020-11-19 15:50:00-05:00
