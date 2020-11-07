@@ -93,9 +93,11 @@
       </a>
       {% endif %}
 
+      {% if paper.content.material %}
       {% for material in paper.content.material.split("|") %}
         <span class="card-link d-inline-block">{{ material|markdown }}</span>
       {% endfor %}
+      {% endif %}
       
       <a href="#" id="favBtn" class="card-link">
         <i class="fas fa-star"></i> Add to Favorites
