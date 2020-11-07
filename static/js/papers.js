@@ -11,7 +11,7 @@ const filters = {
     session: null,
     title: null,
 };
-
+let path_to_papers_json = "";
 let render_mode = 'list';
 let current_card_index = -1;
 
@@ -504,7 +504,6 @@ const start = (reset_track) => {
 
     updateToolboxUI(program, urlFilter, track)
 
-    let path_to_papers_json;
     if (program === "all"){
         path_to_papers_json = `papers.json`;
     } else if (track === default_track) {
