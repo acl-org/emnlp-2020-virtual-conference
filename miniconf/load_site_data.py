@@ -96,6 +96,7 @@ def load_site_data(
     generate_tutorial_events(site_data)
     generate_workshop_events(site_data)
     generate_paper_events(site_data)
+    generate_social_events(site_data)
 
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
 
@@ -461,6 +462,60 @@ def generate_paper_events(site_data: Dict[str, Any]):
         site_data["overall_calendar"].append(event)
 
 
+def generate_social_events(site_data: Dict[str, Any]):
+    """ We add social sessions and compute the overall paper social for the weekly view. """
+    # Add paper sessions to calendar
+
+    all_sessions = []
+    for social in site_data["socials"]:
+        for session in social["sessions"]:
+            start = session["start_time"]
+            end = session["end_time"]
+
+            uid = social["UID"]
+            if uid.startswith("B"):
+                name = "<b>Birds of a feather</b><br>" + social["name"]
+            elif uid.startswith("A"):
+                name = "<b>Affinity group meeting</b><br>" + social["name"]
+            else:
+                name = social["name"]
+
+            event = {
+                "title": name,
+                "start": start,
+                "end": end,
+                "location": "",
+                "link": f"socials.html",
+                "category": "time",
+                "type": "Socials",
+                "view": "day",
+            }
+            site_data["overall_calendar"].append(event)
+
+            assert start < end, "Session start after session end"
+
+            all_sessions.append(session)
+
+    blocks = compute_schedule_blocks(all_sessions)
+
+    # Compute start and end of tutorial blocks
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
+
+        event = {
+            "title": f"Socials",
+            "start": min_start,
+            "end": max_end,
+            "location": "",
+            "link": f"socials.html",
+            "category": "time",
+            "type": "Socials",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
 def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     events = [
@@ -738,6 +793,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             name=item["name"],
             description=item["description"],
             image=item.get("image"),
+            location=item.get("location"),
             organizers=SocialEventOrganizers(
                 members=item["organizers"]["members"],
                 website=item["organizers"].get("website", ""),
