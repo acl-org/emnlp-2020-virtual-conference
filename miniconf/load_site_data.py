@@ -5,7 +5,7 @@ import itertools
 import json
 import os
 from collections import OrderedDict, defaultdict
-from datetime import datetime, timedelta
+from datetime import timedelta
 from typing import Any, DefaultDict, Dict, List
 
 import jsons
@@ -99,6 +99,9 @@ def load_site_data(
     generate_social_events(site_data)
 
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
+    site_data["event_types"] = list(
+        {event["type"] for event in site_data["overall_calendar"]}
+    )
 
     # plenary_sessions.html
     plenary_sessions = build_plenary_sessions(
@@ -191,7 +194,9 @@ def load_site_data(
         item["id"] for item in site_data["papers_projection"]
     }
     for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
-        print(f"WARNING: {paper_id} does not have a projection")
+        paper = by_uid["papers"][paper_id]
+        if paper.content.program == "main":
+            print(f"WARNING: {paper_id} does not have a projection")
 
     # about.html
     site_data["faq"] = site_data["faq"]["FAQ"]
@@ -287,7 +292,7 @@ def generate_plenary_events(site_data: Dict[str, Any]):
             start = session["start_time"]
             end = session["end_time"]
             event = {
-                "title": plenary["title"],
+                "title": "<b>" + plenary["title"] + "</b>",
                 "start": start,
                 "end": end,
                 "location": f"plenary_session_{uid}.html",
@@ -426,8 +431,10 @@ def generate_paper_events(site_data: Dict[str, Any]):
         start = session["start_time"]
         end = session["end_time"]
 
+        parts = session["long_name"].split(":", 1)
+
         event = {
-            "title": session["long_name"].replace(":", "<br>", 1),
+            "title": f"<b>{parts[0]}</b><br>{parts[1]}",
             "start": start,
             "end": end,
             "location": "",
@@ -474,7 +481,7 @@ def generate_social_events(site_data: Dict[str, Any]):
 
             uid = social["UID"]
             if uid.startswith("B"):
-                name = "<b>Birds of a feather</b><br>" + social["name"]
+                name = "<b>Birds of a Feather</b><br>" + social["name"]
             elif uid.startswith("A"):
                 name = "<b>Affinity group meeting</b><br>" + social["name"]
             else:
@@ -522,7 +529,14 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
         copy.deepcopy(event)
         for event in overall_calendar
         if event["type"]
-        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions", "Socials"}
+        in {
+            "Plenary Sessions",
+            "Tutorials",
+            "Workshops",
+            "QA Sessions",
+            "Socials",
+            "Sponsors",
+        }
     ]
 
     for event in events:
@@ -541,6 +555,9 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
             event["url"] = event["link"]
         elif event_type == "Socials":
             event["classNames"] = ["calendar-event-socials"]
+            event["url"] = event["link"]
+        elif event_type == "Sponsors":
+            event["classNames"] = ["calendar-event-sponsors"]
             event["url"] = event["link"]
         else:
             event["classNames"] = ["calendar-event-other"]
@@ -602,7 +619,7 @@ def build_papers(
 
     for session in paper_sessions.values():
         for paper_id in session["papers"]:
-            assert paper_id not in paper_id_to_link
+            assert paper_id not in paper_id_to_link, paper_id
             paper_id_to_link[paper_id] = session.get("link", "http://example.com")
 
     # build the lookup from paper to slots
@@ -651,7 +668,7 @@ def build_papers(
 
     # throw warnings for missing information
     for paper in papers:
-        if not paper.presentation_id:
+        if not paper.presentation_id and paper.content.program != "demo":
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
@@ -663,10 +680,6 @@ def build_papers(
             print(f"WARNING: empty similar_paper_uids for {paper.id}")
 
     return papers
-
-
-def parse_session_time(session_time_str: str) -> datetime:
-    return datetime.strptime(session_time_str, "%Y-%m-%d_%H:%M:%S")
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
