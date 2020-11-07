@@ -811,11 +811,11 @@ def build_workshops(
                     start_time=session.get("start_time"),
                     end_time=session.get("end_time"),
                     link=session.get("zoom_link", ""),
-                    hosts=session.get("hosts")
+                    hosts=session.get("hosts"),
                 )
                 for session in item.get("sessions")
             ],
-            blocks=build_workshop_blocks(item)
+            blocks=build_workshop_blocks(item),
         )
         for item in raw_workshops
     ]
@@ -907,7 +907,9 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     assert all(lvl in site_data["sponsor_levels"] for lvl in sponsors_by_level)
 
 
-def compute_schedule_blocks(events, leeway: Optional[timedelta]= None) -> List[List[Dict[str, Any]]]:
+def compute_schedule_blocks(
+    events, leeway: Optional[timedelta] = None
+) -> List[List[Dict[str, Any]]]:
     if leeway is None:
         leeway = timedelta()
 
