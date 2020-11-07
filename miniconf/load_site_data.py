@@ -99,9 +99,9 @@ def load_site_data(
     generate_social_events(site_data)
 
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
-    site_data["event_types"] = {
-        event["type"] for event in site_data["overall_calendar"]
-    }
+    site_data["event_types"] = list(
+        {event["type"] for event in site_data["overall_calendar"]}
+    )
 
     # plenary_sessions.html
     plenary_sessions = build_plenary_sessions(
