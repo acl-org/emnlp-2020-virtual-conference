@@ -122,8 +122,9 @@ def generate_yaml():
             title = row["Title"]
             uid, title = title.split(":", 1)
             uid = uid.strip()
-            id_to_recording[uid] = row["SlidesLive link"].replace("https://slideslive.com/", "")
-
+            id_to_recording[uid] = row["SlidesLive link"].replace(
+                "https://slideslive.com/", ""
+            )
 
     data = []
 

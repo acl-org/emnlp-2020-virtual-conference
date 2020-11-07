@@ -398,7 +398,9 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             }
             site_data["overall_calendar"].append(event)
 
-            assert start < end, "Session start after session end"
+            assert start < end, "Session start after session end: " + str(
+                (workshop["title"], session)
+            )
 
             all_sessions.append(session)
 
