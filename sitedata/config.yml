@@ -23,6 +23,9 @@ default_presentation_id: 38931484
 # Remove or change to your chat server.
 chat_server: emnlp2020.rocket.chat
 
+gather_town: https://gather.town/
+
+
 calendar:
   start: '2020-11-16'
   end: '2020-11-20'
