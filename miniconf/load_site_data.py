@@ -678,7 +678,10 @@ def build_papers(
 
     # throw warnings for missing information
     for paper in papers:
-        if not paper.presentation_id and paper.content.program not in ["demo", "findings"]:
+        if not paper.presentation_id and paper.content.program not in [
+            "demo",
+            "findings",
+        ]:
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
