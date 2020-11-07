@@ -243,6 +243,7 @@ class SocialEvent:
     name: str
     description: str
     image: str
+    location: str
     organizers: SocialEventOrganizers
     sessions: List[SessionInfo]
     rocketchat_channel: str
