@@ -51,6 +51,7 @@ def load_site_data(
         # papers.html
         "main_papers",
         "demo_papers",
+        "findings_papers",
         "paper_recs",
         "papers_projection",
         "paper_sessions",
@@ -130,6 +131,10 @@ def load_site_data(
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
 
+    for p in site_data["findings_papers"]:
+        p["program"] = "findings"
+        p["paper_type"] = "findings"
+
     site_data["programs"] = ["main", "demo", "findings", "workshop"]
 
     # tutorials.html
@@ -159,7 +164,9 @@ def load_site_data(
 
     # papers.{html,json}
     papers = build_papers(
-        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
+        raw_papers=site_data["main_papers"]
+        + site_data["demo_papers"]
+        + site_data["findings_papers"],
         paper_sessions=site_data["paper_sessions"],
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
