@@ -335,7 +335,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
     """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
 
     # Add tutorial sessions to calendar
-    all_sessions = []
+    all_sessions: List[Dict[str, Any]] = []
     for tutorial in site_data["tutorials"]:
         uid = tutorial["UID"]
         blocks = compute_schedule_blocks(tutorial["sessions"])
