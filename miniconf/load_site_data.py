@@ -134,7 +134,7 @@ def load_site_data(
     for p in site_data["findings_papers"]:
         p["program"] = "findings"
         p["paper_type"] = "findings"
-        p["track"] = "Findings"
+        p["track"] = "Findings of EMNLP"
 
     site_data["programs"] = ["main", "demo", "findings", "workshop"]
 
