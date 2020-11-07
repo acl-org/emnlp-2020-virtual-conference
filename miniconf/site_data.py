@@ -13,6 +13,12 @@ class SessionInfo:
     start_time: datetime
     end_time: datetime
     link: str
+    hosts: str = None
+
+    @property
+    def day(self) -> str:
+        start_time = self.start_time.astimezone(pytz.utc)
+        return f'{start_time.strftime("%b")} {start_time.day}'
 
     @property
     def time_string(self) -> str:
@@ -229,6 +235,7 @@ class Workshop:
     prerecorded_talks: List[Dict[str, Any]]
     rocketchat_channel: str
     sessions: List[SessionInfo]
+    blocks: List[SessionInfo]
 
 
 @dataclass(frozen=True)

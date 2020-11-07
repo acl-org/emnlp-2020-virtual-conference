@@ -11,9 +11,9 @@
     email: bui@adobe.com
   zoom_link:
   schedule:
-  - start:
-    duration:
-    label:
+  - start: 2020-11-18 04:00:00
+    duration: 1.0
+    label: NLP Research at Adobe
   downloads:
   - label: Adobe Research @ EMNLP 2020
     website: adobe_research_publications_emnlp_2020.pdf
@@ -62,12 +62,12 @@
   schedule:
   - start: 2020-11-18 20:00:00
     duration: 0.5
-    label: Q&A Session
+    label: Meet Apple Virtual Event
   resources:
   - label: Check in at our virtual booth
     website: http://applecorp.avature.net/registration?projectId=12927&source=Keep+in+Touch+-+UR+Portal
-  - label: Chat schedule
-    website: -Waiting-
+  - label: RSVP for our Meet Apple Virtual Event
+    website: https://applecorp.avature.net/EMNLPrsvp
   - label: Learn more about our publications at EMNLP
     website: https://machinelearning.apple.com/updates/apple-at-emnlp-2020
   - label: Apply to full-time roles
@@ -77,6 +77,8 @@
   downloads:
   - label: Job Card
     website: Apple- EMNLP Job Card.pdf
+  - label: Chat with us
+    website: Apple- EMNLP Chat With Us.pdf
   rocketchat_channel: sponsor-apple
 - name: Babelscape
   level: Silver
@@ -275,13 +277,13 @@
   - label: Language Team Overview
     website: DeepMind_Language-Team-Overview.pdf
   - label: Careers Leaflet - Engineering and Games
-    website: DeepMind_Copy-of-Eng-and-Games.pdf
+    website: DeepMind_Eng-and-Games.pdf
   - label: Careers Leaflet - Operations
-    website: DeepMind_Copy-of-Operations.pdf
+    website: DeepMind_Operations.pdf
   - label: Careers Leaflet - Research
-    website: DeepMind_Copy-of-Research.pdf
+    website: DeepMind_Research.pdf
   - label: Careers Leaflet - Science and DeepMind for Google
-    website: DeepMind_Copy-of-Science-and-DeepMind-for-Google.pdf
+    website: DeepMind_Science-and-DeepMind-for-Google.pdf
   rocketchat_channel: sponsor-deepmind
 - name: Facebook
   level: Platinum
@@ -491,7 +493,9 @@
     NAVER Corporation is Korea's premier Internet company and a global leader in online services such as NAVER search (30M DAU), LINE messaging (164MAU), and WEBTOON (62M MAU). NAVER is continuously focussed on the future and in seamlessly connecting the physical and digital worlds through advanced technology. Its AI and Robotics research in Asia and Europe are fundamental to creating this future. NAVER invests over 25 percent of annual revenue in R&D yet innovation is but one core value. NAVER promotes diversity on the internet, respects and connects people helping them to share knowledge, create communities and preserve culture.
   vimeo: https://player.vimeo.com/video/432786265?title=0&byline=0&portrait=0
   contacts:
-  - name: Irene Maxwell
+  - name: NAVER LABS Europe
+    email: dl_info@naverlabs.com
+  - name: NAVER (Korea)
     email: dl_nlp_emnlp_2020@navercorp.com
   zoom_link: https://waitforsecondround.example.com
   schedule:
@@ -509,12 +513,13 @@
     label: Conversational AI
   resources:
   - label: List of publications at EMNLP2020
-    website: https://drive.google.com/file/d/12z6yCTyAXONSKepCpUyAY-D-xUeU1kPx/view?usp=sharing
+    website: https://europe.naverlabs.com/emnlp2020/#1592572802695-16c77470-538f
   - label: Interactive Sessions
-    website: https://drive.google.com/file/d/1R7mhVHLyNp2fnO6vUEKlZFZJsbYGAYy3/view?usp=sharing
-  downloads:
-  - label: Connect with us
-    website: Brochure_NAVER_LABS_Europe.pdf
+    website: https://europe.naverlabs.com/emnlp2020/#1593607137225-16acdb52-d404
+  - label: Job Openings
+    website: https://europe.naverlabs.com/emnlp2020/#1593600341618-a651a831-f5ac
+  - label: Overview of NAVER and NAVER LABS Europe
+    website: https://europe.naverlabs.com/emnlp2020/#1604669457089-576c9a34-2233
   rocketchat_channel: sponsor-naver
 - name: Salesforce
   level: Silver

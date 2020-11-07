@@ -728,7 +728,7 @@
   - start_time: 2020-11-19 15:30:00-05:00
     end_time: 2020-11-19 16:15:00-05:00
     name: |-
-      Keynote 2: Steinn Sigurdsson
+      Keynote 2: Steinn Sigurdsson 
       The future of arXiv and knowledge discovery in open science
     hosts: Tirthankar Ghosal
   - start_time: 2020-11-19 16:15:00-05:00
@@ -1679,7 +1679,7 @@
   - start_time: 2020-11-19 16:00:00+00:00
     end_time: 2020-11-19 16:40:00+00:00
     name: |-
-      Invited Talk: "Interpretability with Differentiable Subset Selection"
+      Invited Talk: "Interpretability with Differentiable Subset Selection" 
       Ivan Titov (University of Edinburgh)
     hosts: TBD
   - start_time: 2020-11-19 16:40:00+00:00

@@ -18,7 +18,7 @@
         Description
       </a>
 
-      {% if workshop.schedule %}
+      {% if workshop.blocks %}
       <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
         Schedule
       </a>
@@ -34,7 +34,7 @@
     </div>
 
     {{ components.live_sessions(
-        workshop.sessions,
+        workshop.blocks,
         workshop.title,
         "https://virtual.acl2020.org/workshop_" + workshop.id + ".html",
         false) }}
@@ -54,27 +54,26 @@
 </div>
 
 <!-- Schedule -->
-{% if workshop.schedule %}
+{% if workshop.sessions %}
 <div id="schedule" class="collapse" aria-labelledby="schedule">
   <div class="card-body">
     <table class="table table-bordered table-striped" style="font-size: small;">
       <thead>
         <tr>
           <th scope="col" style="width: 20%;">Time (PDT)</th>
-          <th scope="col" style="width: 40%;">Event</th>
-          <th scope="col">Speakers</th>          
+          <th scope="col" style="width: 50%;">Event</th>
+          <th scope="col">Hosts</th>
         </tr>
       </thead>
       <tbody>
-        {% for event in workshop.schedule %}
+        {% for event in workshop.sessions %}
+
         <tr>
-          {% if event.endTime %}          
-            <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
-          {% else %}
-            <td>{{event.date+', '+event.startTime}}</td>
-          {% endif %}
-          <td scope="row">{{event.title}}</td>
-          <td style="white-space: pre-wrap;">{{event.speakers}}</td>
+            <td>
+              {{event.day}}, <span class="session_times">{{event.time_string}}</span>
+            </td>
+          <td scope="row">{{event.session_name}}</td>
+          <td style="white-space: pre-wrap;">{{event.hosts}}</td>
         </tr>
         {% endfor %}
       </tbody>

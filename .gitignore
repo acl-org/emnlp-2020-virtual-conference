@@ -138,3 +138,6 @@ node_modules/
 .DS_Store
 
 .vscode
+
+/scripts/dataentry/downloads
+/scripts/dataentry/yamls
