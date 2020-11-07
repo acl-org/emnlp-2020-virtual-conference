@@ -381,7 +381,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
 def generate_workshop_events(site_data: Dict[str, Any]):
     """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
     # Add workshop sessions to calendar
-    all_sessions = []
+    all_sessions: List[Dict[str, Any]] = []
     for workshop in site_data["workshops"]:
         uid = workshop["UID"]
         all_sessions.extend(workshop["sessions"])
@@ -428,7 +428,7 @@ def generate_paper_events(site_data: Dict[str, Any]):
     """ We add sessions from papers and compute the overall paper blocks for the weekly view. """
     # Add paper sessions to calendar
 
-    all_sessions = []
+    all_sessions: List[Dict[str, Any]] = []
     for uid, session in site_data["paper_sessions"].items():
         start = session["start_time"]
         end = session["end_time"]
