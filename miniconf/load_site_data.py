@@ -99,6 +99,7 @@ def load_site_data(
     generate_social_events(site_data)
 
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
+    site_data["event_types"] = { event["type"] for event in site_data["overall_calendar"] }
 
     # plenary_sessions.html
     plenary_sessions = build_plenary_sessions(
@@ -191,7 +192,9 @@ def load_site_data(
         item["id"] for item in site_data["papers_projection"]
     }
     for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
-        print(f"WARNING: {paper_id} does not have a projection")
+        paper = by_uid["papers"][paper_id]
+        if paper.content.program == "main":
+            print(f"WARNING: {paper_id} does not have a projection")
 
     # about.html
     site_data["faq"] = site_data["faq"]["FAQ"]
@@ -524,7 +527,7 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
         copy.deepcopy(event)
         for event in overall_calendar
         if event["type"]
-        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions", "Socials"}
+        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions", "Socials", "Sponsors"}
     ]
 
     for event in events:
@@ -543,6 +546,9 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
             event["url"] = event["link"]
         elif event_type == "Socials":
             event["classNames"] = ["calendar-event-socials"]
+            event["url"] = event["link"]
+        elif event_type == "Sponsors":
+            event["classNames"] = ["calendar-event-sponsors"]
             event["url"] = event["link"]
         else:
             event["classNames"] = ["calendar-event-other"]
@@ -653,7 +659,7 @@ def build_papers(
 
     # throw warnings for missing information
     for paper in papers:
-        if not paper.presentation_id:
+        if not paper.presentation_id and paper.content.program != "demo":
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
@@ -665,10 +671,6 @@ def build_papers(
             print(f"WARNING: empty similar_paper_uids for {paper.id}")
 
     return papers
-
-
-def parse_session_time(session_time_str: str) -> datetime:
-    return datetime.strptime(session_time_str, "%Y-%m-%d_%H:%M:%S")
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
