@@ -666,6 +666,7 @@ def build_papers(
                 tldr=item["abstract"][:250] + "...",
                 pdf_url=item.get("pdf_url", ""),
                 demo_url=item.get("demo_url", ""),
+                material=item.get("material"),
                 track=normalize_track_name(item.get("track", "")),
                 paper_type=item.get("paper_type", ""),
                 sessions=sessions_for_paper[item["UID"]],
