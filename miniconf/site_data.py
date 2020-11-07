@@ -50,9 +50,9 @@ class SessionInfo:
         if self.session_name.startswith("W-"):
             # workshop sessions
             return f"{self.session_name[2:]}: {start_date}"
-        if self.session_name.endswith("z") or self.session_name.endswith("g"):
+        if self.session_name.startswith("z") or self.session_name.startswith("g"):
             # paper sessions
-            return f"{self.session_name[:-1]}: {start_date}"
+            return f"{self.session_name[1:]}: {start_date}"
 
         return f"Session {self.session_name}: {start_date}"
 
@@ -243,6 +243,7 @@ class SocialEvent:
     name: str
     description: str
     image: str
+    location: str
     organizers: SocialEventOrganizers
     sessions: List[SessionInfo]
     rocketchat_channel: str
