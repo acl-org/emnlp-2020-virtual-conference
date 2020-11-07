@@ -287,7 +287,7 @@ def generate_plenary_events(site_data: Dict[str, Any]):
             start = session["start_time"]
             end = session["end_time"]
             event = {
-                "title": plenary["title"],
+                "title": "<b>" + plenary["title"] + "</b>",
                 "start": start,
                 "end": end,
                 "location": f"plenary_session_{uid}.html",
@@ -426,8 +426,10 @@ def generate_paper_events(site_data: Dict[str, Any]):
         start = session["start_time"]
         end = session["end_time"]
 
+        parts = session["long_name"].split(":", 1)
+
         event = {
-            "title": session["long_name"].replace(":", "<br>", 1),
+            "title": f"<b>{parts[0]}</b><br>{parts[1]}",
             "start": start,
             "end": end,
             "location": "",
@@ -474,7 +476,7 @@ def generate_social_events(site_data: Dict[str, Any]):
 
             uid = social["UID"]
             if uid.startswith("B"):
-                name = "<b>Birds of a feather</b><br>" + social["name"]
+                name = "<b>Birds of a Feather</b><br>" + social["name"]
             elif uid.startswith("A"):
                 name = "<b>Affinity group meeting</b><br>" + social["name"]
             else:
@@ -602,7 +604,7 @@ def build_papers(
 
     for session in paper_sessions.values():
         for paper_id in session["papers"]:
-            assert paper_id not in paper_id_to_link
+            assert paper_id not in paper_id_to_link, paper_id
             paper_id_to_link[paper_id] = session.get("link", "http://example.com")
 
     # build the lookup from paper to slots
