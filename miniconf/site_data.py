@@ -123,10 +123,6 @@ class Paper:
     def rocketchat_channel(self) -> str:
         return f"paper-{self.id.replace('.', '-')}"
 
-    @property
-    def is_presented(self) -> bool:
-        return self.content.program != "findings"
-
 
 @dataclass(frozen=True)
 class PlenaryVideo:
