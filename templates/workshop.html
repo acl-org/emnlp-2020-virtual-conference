@@ -160,6 +160,7 @@
 
 {% endif %}
 
+{% if workshop.prerecorded_talks %}
   <!-- Prerecorded Talk -->
 {{ components.section("Pre-recorded Talks") }}
 <div id="accordion">
@@ -177,6 +178,7 @@
   </div>
   {% endfor %}
 </div>
+{% endif %}
 
 <script src="static/js/time-extend.js"></script>
 <script>
