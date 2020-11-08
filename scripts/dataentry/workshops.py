@@ -59,7 +59,7 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
 
     data = []
     for _, row in workshops.iterrows():
-        uid = row["UID"]
+        uid = row["UID"].strip()
         if uid == "WS-22":
             continue
 
@@ -194,11 +194,13 @@ def load_slideslive():
         "3561": "BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP",
     }
 
-    ws_name_to_id = {row["Name"]: row["UID"] for _, row in workshop_df.iterrows()}
+    ws_name_to_id = {
+        row["Name"]: row["UID"].strip() for _, row in workshop_df.iterrows()
+    }
     corrected_venues = []
     for _, row in df.iterrows():
         venue_id = row["Organizer track name"]
-        if row["Unique ID"] in fix:
+        if row["Unique ID"].strip() in fix:
             correct_venue_name = fix[row["Unique ID"]]
             venue_id = ws_name_to_id[correct_venue_name]
 
@@ -220,8 +222,8 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         if is_not_paper(row):
             continue
 
-        ws = row["Organizer track name"]
-        uid = row["Unique ID"]
+        ws = row["Organizer track name"].strip()
+        uid = row["Unique ID"].strip()
         venues.append(ws)
         UIDs.append(f"{ws}.{uid}")
         titles.append(row["Title"].replace("\n", " "))
@@ -242,6 +244,8 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
 
     columns = ["workshop", "UID", "title", "authors", "presentation_id"]
     df = pd.DataFrame(data, columns=columns)
+    df = df.drop_duplicates(subset=["UID"])
+
     df.to_csv(PATH_YAMLS / "workshop_papers.csv", index=False)
 
 

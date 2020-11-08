@@ -132,7 +132,7 @@
   </div>
 </div>
 
-{% if paper.is_presented %}
+{% if paper.content.program != "findings" %}
 {% if paper.presentation_id %}
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">

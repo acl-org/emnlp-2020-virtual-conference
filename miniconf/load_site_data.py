@@ -193,7 +193,7 @@ def load_site_data(
     # paper_<uid>.html
     papers_by_uid: Dict[str, Any] = {}
     for paper in papers:
-        assert paper.id not in papers_by_uid
+        assert paper.id not in papers_by_uid, paper.id
         papers_by_uid[paper.id] = paper
     by_uid["papers"] = papers_by_uid
 
@@ -686,7 +686,7 @@ def build_papers(
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
-        if paper.is_presented and len(paper.content.sessions) != 1:
+        if paper.presentation_id and len(paper.content.sessions) != 1:
             print(
                 f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
             )
