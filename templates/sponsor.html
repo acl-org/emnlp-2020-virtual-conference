@@ -78,7 +78,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms" data-parent="#accordion">
+    <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms">
       <div class="card-body">
         {% for day, zooms in sponsor.zoom_times.items() %}
         <h5>{{ day }}</h5>
@@ -132,7 +132,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapsePublications" class="collapse show" aria-labelledby="headingPublications" data-parent="#accordion">
+    <div id="collapsePublications" class="collapse show" aria-labelledby="headingPublications">
       <div class="card-body">
         <ul>
         {% for paper_type, papers in sponsor.grouped_publications.items() %}
@@ -160,7 +160,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseResources" class="collapse show" aria-labelledby="headingResources" data-parent="#accordion">
+    <div id="collapseResources" class="collapse show" aria-labelledby="headingResources">
       <div class="card-body">
         <ul>
         {% for resource in sponsor.resources %}
@@ -182,7 +182,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseDownloads" class="collapse show" aria-labelledby="headingDownloads" data-parent="#accordion">
+    <div id="collapseDownloads" class="collapse show" aria-labelledby="headingDownloads">
       <div class="card-body">
         <ul>
         {% for resource in sponsor.downloads%}
@@ -204,7 +204,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseContact" class="collapse show" aria-labelledby="headingContact" data-parent="#accordion">
+    <div id="collapseContact" class="collapse show" aria-labelledby="headingContact">
       <div class="card-body">
         <ul class="list-unstyled px-4">
         {% for contact in sponsor.contacts %}
@@ -226,7 +226,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseChat" class="collapse show" aria-labelledby="headingChat" data-parent="#accordion">
+    <div id="collapseChat" class="collapse show" aria-labelledby="headingChat">
       <div class="card-body">
         <div class="col-md-12 col-xs-12 p-2">
           <h5 class="text-center">Click "Reply" in the chat window to start a private conversation with our sponsor</h5>
