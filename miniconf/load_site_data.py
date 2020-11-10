@@ -865,7 +865,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
 
 def build_sponsors(site_data, by_uid, display_time_format) -> None:
     def generate_schedule(schedule: List[Dict[str, Any]]) -> Dict[str, Any]:
-        times = defaultdict(list)
+        times: Dict[str, List[Any]] = defaultdict(list)
 
         for session in schedule:
             if session["start"] is None:
@@ -900,7 +900,7 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
         if not publications:
             continue
 
-        grouped_publications = defaultdict(list)
+        grouped_publications: Dict[str, List[Any]] = defaultdict(list)
         for paper_id in publications:
             paper = by_uid["papers"][paper_id]
             grouped_publications[paper.content.paper_type].append(paper)
