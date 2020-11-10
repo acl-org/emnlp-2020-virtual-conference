@@ -84,13 +84,14 @@
         <h5>{{ day }}</h5>
         <ul>
             {% for (time_string, label) in zooms %}
-                <li> <span class="zoom_times">{{ time_string }}</span>: {{label }} </li>
+                <li> <span class="zoom_times">{{ time_string }}</span>: {{label|markdown }} </li>
             {% endfor %}
         </ul>
         {% endfor %}
 
+        {% if sponsor.zoom_link is defined %}
         <a class="btn btn-primary" href="{{ sponsor.zoom_link }}" role="button" target="_blank">Join the event!</a>
-        <a class="btn btn-primary" href="{{ config.gather_town }}" role="button" target="_blank">Visit us in Gather.town!</a>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -111,7 +112,7 @@
         <h5>{{ day }}</h5>
         <ul>
             {% for (time_string, label) in zooms %}
-                <li> <span class="zoom_times">{{ time_string }}</span>: {{label }} </li>
+                <li> <span class="zoom_times">{{ time_string }}</span>: {{label|markdown }} </li>
             {% endfor %}
         </ul>
         {% endfor %}
