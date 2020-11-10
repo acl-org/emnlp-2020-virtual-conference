@@ -481,10 +481,15 @@
     duration:
     label:
   resources:
-  - label:
-    website:
-  - label:
-    website:
+  - label: Megagon Labs
+    website: https://megagon.ai/
+  - label: Career opportunities
+    website: https://megagon.ai/jobs/
+  - label: Megagon Labs Publications
+    website: https://megagon.ai/publications/
+  publications:
+  - main.595
+  - findings.92
   rocketchat_channel: sponsor-megagon-labs
 - name: NAVER
   level: Silver
