@@ -194,6 +194,10 @@
   - main.2818
   - main.110
   - main.3621
+  - findings.279
+  - findings.384
+  - findings.419
+  - findings.414
   rocketchat_channel: sponsor-baidu
 - name: Bloomberg
   level: Diamond
@@ -263,16 +267,16 @@
   contacts:
   - name: Amy Wu
     email: amybwu@google.com
-  - name: General
+  - name: General Enquiries / Resume Drop
     email: dm-emnlp-2020-enquiries@google.com
-  gather_only: true
-  schedule:
+  zoom_link:
+  gather_schedule:
   - start: 2020-11-16 17:00:00
     duration: 1.0
-    label: Chat with the DeepMind Language Team!
+    label: Chat with the DeepMind Language Team
   - start: 2020-11-17 17:00:00
     duration: 1.0
-    label: Chat with the DeepMind Language Team!
+    label: Chat with the DeepMind Language Team
   downloads:
   - label: Language Team Overview
     website: DeepMind_Language-Team-Overview.pdf
@@ -322,10 +326,11 @@
     duration: 0.5
     label: You can leave this empty until round two
   resources:
-  - label: Resource 1
-    website: https://resource1.example.com
-  - label: Resource 2
-    website: https://resource2.example.com
+  - label: RECRUITMENT SCHEDULE
+    website: https://docs.google.com/document/d/1N3HfH4zUODZjzfHvBmm3hsJOrrjeN1P-8OuNA3n9V10/edit?usp=sharing
+  downloads:
+  - label: JOB CARD
+    website: Facebook-Job_Card.pdf
   rocketchat_channel: sponsor-facebook
 - name: Google Research
   level: Diamond
@@ -335,25 +340,22 @@
   description: |
     Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our [Accepted Papers](http://goo.gle/EMNLP-Accepted-Papers) and [Workshops and Tutorials](http://goo.gle/EMNLP-Workshops-Tutorials). Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our [Google AI blog](https://ai.googleblog.com/) and [Google Research website](https://research.google/).
   youtube: https://www.youtube.com/embed/EvfziohbbnE
-  contacts:
-  - name: Name of the contact 1
-    email: mail1@google.com
-  - name: Name of the contact 2
-    email: mail2@google.com
-  zoom_link: https://waitforsecondround.example.com
+  zoom_link: https://meet.google.com/ugx-seds-jpt
   schedule:
   - start: 2020-11-17 16:00:00
     duration: 1.0
     label: Hiring Q&A with Google Recruiters
   - start: 2020-11-17 17:30:00
     duration: 1.0
-    label: Meet our Google Researchers
+    label: 'Google Research Demo - QED: An Extensible, Structured Framework for Explainable
+      Question Answering'
   - start: 2020-11-18 16:00:00
     duration: 1.0
     label: Hiring Q&A with Google Recruiters
   - start: 2020-11-18 17:30:00
     duration: 1.0
-    label: Meet our Google Researchers
+    label: 'Google Research Demo - The Language Interpretability Tool: Extensible,
+      Interactive Visualizations and Analysis for NLP'
   resources:
   - label: Google Accepted Papers
     website: http://goo.gle/EMNLP-Accepted-Papers
@@ -499,18 +501,13 @@
     email: dl_nlp_emnlp_2020@navercorp.com
   zoom_link: https://waitforsecondround.example.com
   schedule:
-  - start: 2020-11-18 17:00:00
-    duration: 30
+  - start: 2020-11-18 09:00:00
+    end: 2020-11-18 09:45:00
+    label: Machine Translation (Prepago), Open Domain Question Answering and Conversational
+      AI at NAVER
+  - start: 2020-11-18 16:00:00
+    end: 2020-11-18 16:30:00
     label: NLP research at NAVER LABS Europe
-  - start: 2020-11-18 18:00:00
-    duration: 15
-    label: Machine Translation
-  - start: 2020-11-18 18:15:00
-    duration: 15
-    label: Open Domain Question Answering
-  - start: 2020-11-18 18:30:00
-    duration: 15
-    label: Conversational AI
   resources:
   - label: List of publications at EMNLP2020
     website: https://europe.naverlabs.com/emnlp2020/#1592572802695-16c77470-538f
@@ -537,11 +534,25 @@
     email: cmccauley@salesforce.com
   schedule:
   - start: 2020-11-17 22:00:00
-    duration: 1
-    label: Spotlight on Salesforce EMNLP Papers
+    duration: 0.833
+    label: '[Spotlight on Salesforce @ EMNLP](https://lnkd.in/gXs_-k5)'
   - start: 2020-11-19 00:00:00
-    duration: 1
-    label: Salesforce Research Interns @ EMNLP - A Panel Discussion
+    duration: 0.833
+    label: '[Salesforce Research Interns @ EMNLP Panel](https://lnkd.in/gAneh35)'
+  publications:
+  - main.2342
+  - main.1201
+  - main.2506
+  - main.1654
+  - main.1320
+  - main.2050
+  - main.355
+  - main.1622
+  - main.1009
+  - main.1012
+  - main.3217
+  - main.517
+  - main.3393
   rocketchat_channel: sponsor-salesforce
 - name: Zeta Alpha
   level: Gold
@@ -583,6 +594,13 @@
   - start: 2020-11-18 20:00:00
     end: 2020-11-18 21:30:00
     label: Zeta Alpha - EMNLP Tropical Party - Drinks on the Beach
+  gather_schedule:
+  - start: 2020-11-17 09:00:00
+    end: 2020-11-17 15:00:00
+    label: Meet Zeta Alpha at Gather.Town
+  - start: 2020-11-18 09:00:00
+    end: 2020-11-18 15:00:00
+    label: Meet Zeta Alpha at Gather.Town
   downloads:
   - label: A New Neural Search and Insights Platform for Navigating and Organizing
       AI Research

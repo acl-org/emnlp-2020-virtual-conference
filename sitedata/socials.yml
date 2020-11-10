@@ -109,7 +109,7 @@
     members:
     - Sam Bowman
   website: https://nyu-mll.github.io/emnlp2020social/
-  rocketchat_channel: social-emnpl-welcome
+  rocketchat_channel: social-emnlp-welcome
   location: Zoom
   sessions: []
 - name: Computational Social Science and Social Media
@@ -321,8 +321,8 @@
   location: Gather.Town
   sessions:
   - name: S-Session 1 with Danqi Chen
-    start_time: 2020-11-17 05:00:00+00:00
-    end_time: 2020-11-17 06:00:00+00:00
+    start_time: 2020-11-17 13:00:00+00:00
+    end_time: 2020-11-17 14:00:00+00:00
 - name: Information Retrieval and Text Mining
   description: Birds of a Feather meetup session on the topic "Information Retrieval
     and Text Mining".

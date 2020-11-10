@@ -26,6 +26,9 @@ PATH_WORKSHOPS_OVERVIEW = PATH_DOWNLOADS / "workshops.xlsx"
 URL_WORKSHOPS_SCHEDULE = "https://docs.google.com/spreadsheets/d/1BgDuZLKm8rlX-o8l61jAcOrwoKXG6SKhbvjv5-ub2Iw/export?format=xlsx"
 PATH_WORKSHOPS_SCHEDULE = PATH_DOWNLOADS / "workshops_schedule.xlsx"
 
+URL_SOCIALS = "https://docs.google.com/spreadsheets/d/1IDk3K1JD1hvH_hvyMy6TeRuE2F6DQDfpgwNpTIP9KgI/export?format=xlsx"
+PATH_SOCIALS = PATH_DOWNLOADS / "socials.xlsx"
+
 PATH_DOWNLOADS.mkdir(exist_ok=True, parents=True)
 PATH_YAMLS.mkdir(exist_ok=True, parents=True)
 
@@ -48,3 +51,7 @@ def download_tutorials():
 def download_workshops():
     download_file(URL_WORKSHOPS_OVERVIEW, PATH_WORKSHOPS_OVERVIEW)
     download_file(URL_WORKSHOPS_SCHEDULE, PATH_WORKSHOPS_SCHEDULE)
+
+
+def download_socials():
+    download_file(URL_SOCIALS, PATH_SOCIALS)

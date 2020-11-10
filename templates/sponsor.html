@@ -74,7 +74,7 @@
     <div class="card-header" id="headingZooms">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseZooms" aria-expanded="true" aria-controls="collapseZooms">
-          <h5>Schedule</h5>
+          <h5>Virtual Meeting Schedule</h5>
         </button>
       </h5>
     </div>
@@ -89,18 +89,41 @@
         </ul>
         {% endfor %}
 
-        {% if not sponsor.gather_only %}
         <a class="btn btn-primary" href="{{ sponsor.zoom_link }}" role="button" target="_blank">Join the event!</a>
-        {% else %}
         <a class="btn btn-primary" href="{{ config.gather_town }}" role="button" target="_blank">Visit us in Gather.town!</a>
-        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if sponsor.gather_times|length %}
+  <div class="card">
+    <div class="card-header" id="headingGathers">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseGathers" aria-expanded="true" aria-controls="collapseGathers">
+          <h5>Gather Schedule</h5>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseGathers" class="collapse show" aria-labelledby="headingGathers" data-parent="#accordion">
+      <div class="card-body">
+        {% for day, zooms in sponsor.gather_times.items() %}
+        <h5>{{ day }}</h5>
+        <ul>
+            {% for (time_string, label) in zooms %}
+                <li> <span class="zoom_times">{{ time_string }}</span>: {{label }} </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+        <a class="btn btn-primary" href="{{ config.gather_town }}" role="button" target="_blank">Visit us in Gather.town!</a>
       </div>
     </div>
   </div>
   {% endif %}
 
     <!-- Publications -->
-  {% if sponsor.publications is defined %}
+  {% if sponsor.grouped_publications is defined %}
   <div class="card">
     <div class="card-header" id="headingPublications">
       <h5 class="mb-0">
@@ -112,12 +135,14 @@
     <div id="collapsePublications" class="collapse show" aria-labelledby="headingPublications">
       <div class="card-body">
         <ul>
-        {% for paper_uid in sponsor.publications %}
-            {% set paper = papers[paper_uid] %}
-            <a class="text-dark" href="paper_{{paper.id}}.html" target="_blank">
-              <p class="font-weight-bold mb-n1">{{ paper.content.title }}</p>
-              <p >{{ paper.content.authors | join(", ") }}</p>
-            </a>
+        {% for paper_type, papers in sponsor.grouped_publications.items() %}
+          <h5>{{ paper_type}}</h5>
+          {% for paper in papers %}
+              <a class="text-dark" href="paper_{{paper.id}}.html" target="_blank">
+                <p class="font-weight-bold mb-n1">{{ paper.content.title }}</p>
+                <p >{{ paper.content.authors | join(", ") }}</p>
+              </a>
+          {% endfor %}
         {% endfor %}
         </ul>
       </div>
