@@ -672,6 +672,7 @@ def build_papers(
                 sessions=sessions_for_paper[item["UID"]],
                 similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
                 program=item["program"],
+                s2_id=item.get("s2_id"),
             ),
         )
         for item in raw_papers
