@@ -3,7 +3,7 @@ tagline: The 2020 Conference on Empirical Methods <br/> in Natural Language Proc
 date: November 16 &ndash; 20 <br> 2020
 proceedings_title: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing
 citation_date: November 2020
-analytics: UA-171494682-1
+analytics: UA-179777566-1
 site_url: https://virtual.2020.emnlp.org
 logo:
   image: static/images/emnlp2020/acl-logo.png
@@ -16,11 +16,16 @@ background_image: static/images/emnlp2020/EMNLP-Banner-5.1.jpg
 organization: Association for Computational Linguistics
 
 # Path to the folder of paper images.
-paper_images_path: https://acl2020-public.s3.amazonaws.com/papers
+paper_images_path: https://emnlp2020-public.s3.amazonaws.com/paper_images
+
 default_presentation_id: 38931484
 
 # Remove or change to your chat server.
-chat_server: acl2020.rocket.chat
+chat_server: emnlp2020.rocket.chat
+
+gather_town: https://gather.town/
+connected_paper: https://site.beta.connectedpapers.com/conference
+
 
 calendar:
   start: '2020-11-16'

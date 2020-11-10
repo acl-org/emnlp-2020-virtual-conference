@@ -34,8 +34,7 @@ The list of members of the orga team visible on the landing page
   - role: `<Chair name>` 
   - name: `<Name>`
   - aff: `<Affiliation>`
-  - im: `<Image URL>`
-  - tw: `<Twitter name>`
+  - image: `<Image URL>`
   
  Example (.yml):
  ```yaml
@@ -43,7 +42,7 @@ committee:
   - role: Procrastination Chair 
     name: Homer Simpson
     aff: Springfield University
-    im: https://en.wikipedia.org/wiki/Homer_Simpson#/media/File:Homer_Simpson_2006.png 
+    image: https://en.wikipedia.org/wiki/Homer_Simpson#/media/File:Homer_Simpson_2006.png 
 ```
 
 <hr>
@@ -99,7 +98,6 @@ The list of workshops or socials.
 ### sponsors [ .yml ]
 The list of sponsors.
 
-- UID: `<Unique ID>`
 - name: `<sponsor name>`
 - logo: `<sponsor logo>`
 - website: `<external website of sponsor>`
@@ -117,7 +115,10 @@ The list of sponsors.
     - website: `<link to website>`
 - contacts: `<List of contacts to reach out for more information>`
   - name: `<Name/Label of the contact>`
-    email: `<Valid mail address>`   
+    email: `<Valid mail address>`
+- level: `<Name of the sponsorship level, e.g. Gold. If there is more than one level, use levels and a list>`
+- levels: `<List of sponsorship levels if there is more than one e.g. Gold and diversity.`>
+- logoontop: `<boolean that says whether logo should be shown also on the booth, default is false, see Apple for an example>`
 
 <hr>
 

@@ -7,10 +7,10 @@
 <div class="pp-card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="">
-      {{workshop.title}}
+      {{workshop.id}}: {{workshop.title}}
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      {{ workshop.organizers | join(", ") }}
+      {{ workshop.organizers }}
     </h3>
 
     <div class="text-center p-3">
@@ -18,11 +18,15 @@
         Description
       </a>
 
-      {% if workshop.schedule %}
+      {% if workshop.blocks %}
       <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
         Schedule
       </a>
       {% endif %}
+
+      <a href="papers.html?filter=titles&program=workshop&track={{workshop.title}}" target="_blank"  class="card-link">
+        Papers
+      </a>
 
       <a href="{{workshop.website}}" target="_blank"  class="card-link">
         External Website
@@ -30,7 +34,7 @@
     </div>
 
     {{ components.live_sessions(
-        workshop.sessions,
+        workshop.blocks,
         workshop.title,
         "https://virtual.acl2020.org/workshop_" + workshop.id + ".html",
         false) }}
@@ -50,27 +54,26 @@
 </div>
 
 <!-- Schedule -->
-{% if workshop.schedule %}
+{% if workshop.sessions %}
 <div id="schedule" class="collapse" aria-labelledby="schedule">
   <div class="card-body">
     <table class="table table-bordered table-striped" style="font-size: small;">
       <thead>
         <tr>
           <th scope="col" style="width: 20%;">Time (PDT)</th>
-          <th scope="col" style="width: 40%;">Event</th>
-          <th scope="col">Speakers</th>          
+          <th scope="col" style="width: 50%;">Event</th>
+          <th scope="col">Hosts</th>
         </tr>
       </thead>
       <tbody>
-        {% for event in workshop.schedule %}
+        {% for event in workshop.sessions %}
+
         <tr>
-          {% if event.endTime %}          
-            <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
-          {% else %}
-            <td>{{event.date+', '+event.startTime}}</td>
-          {% endif %}
-          <td scope="row">{{event.title}}</td>
-          <td style="white-space: pre-wrap;">{{event.speakers}}</td>
+            <td>
+              {{event.day}}, <span class="session_times">{{event.time_string}}</span>
+            </td>
+          <td scope="row">{{event.session_name}}</td>
+          <td style="white-space: pre-wrap;">{{event.hosts}}</td>
         </tr>
         {% endfor %}
       </tbody>
@@ -100,9 +103,9 @@
 
   </div>
 
-  <div class="row m-2">    
-    {% if workshop.livestream %}
-    <!-- Livestreaming -->
+  <div class="row m-2">
+  {% if workshop.livestream %}
+<!-- Livestreaming -->
     <div class="col-md-7 col-xs-12 my-auto p-2" >
       <div id="presentation-embed" class="slp my-auto"></div>
       <script src='https://slideslive.com/embed_presentation.js'></script>
@@ -117,7 +120,6 @@
         });
       </script>
     </div>
-    {% endif %}
 
     <!-- Chat -->
     <br/>
@@ -126,46 +128,39 @@
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
+  {% else %}
+  <div class="container" style="background-color:white; padding: 0px;">
+
+
+    <!-- Chat -->
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+      </div>
   </div>
+  {% endif %}
 </div>
 
-{% if workshop.id == "W2" %}
-<!-- Recorded Livestream Talk -->
-{{ components.section("Recorded Livestream (July 9)") }}
-<div class="col-md-12 col-xs-12 my-auto p-2" >
-<div id="presentation-embed-1" class="slp my-auto"></div>
-<script src='https://slideslive.com/embed_presentation.js'></script>
-<script>
-  embed = new SlidesLiveEmbed('presentation-embed-1', {
-    presentationId: '38931790',
-    autoPlay: false, // change to true to autoplay the embedded presentation
-    verticalEnabled: true,
-    verticalWhenWidthLte: 500,
-    allowHiddenControlsWhenPaused: true,
-    hideTitle: true
-  });
-</script>
-</div>
 
-{% endif %}
 
+{% if workshop.prerecorded_talks %}
   <!-- Prerecorded Talk -->
 {{ components.section("Pre-recorded Talks") }}
 <div id="accordion">
-  {% for paper in workshop.papers %}
+  {% for talk in workshop.prerecorded_talks %}
   <div class="row m-2">
     <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
         <br/>
         <p>
-          <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank"><b>{{paper.title}}</b></a>
+          <a href="https://slideslive.com/{{talk.presentation_id}}" target="_blank"><b>{{talk.title}}</b></a>
         </p>
         <p>
-          <i>{{paper.speakers}}</i>
+          <i>{{talk.speakers}}</i>
         </p>
     </div>
   </div>
   {% endfor %}
 </div>
+{% endif %}
 
 <script src="static/js/time-extend.js"></script>
 <script>

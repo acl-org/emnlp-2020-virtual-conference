@@ -5,6 +5,7 @@ static/js/lazy_load.js
 static/js/little_helpers.js
 static/js/paper_vis.js
 static/js/papers.js
+static/js/jquery-visible.js
 static/js/persistor.js
 static/js/schedule.js
 static/css/Exo.css

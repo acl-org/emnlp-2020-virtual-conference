@@ -56,7 +56,8 @@ def papers():
     data = _data()
     # The data will be loaded from `papers.json`.
     # See the `papers_json()` method and `static/js/papers.js`.
-    data["tracks"] = site_data["tracks"]
+    data["tracks"] = site_data["main_program_tracks"]
+    data["workshop_names"] = [wsh.title for wsh in site_data["workshops"]]
     return render_template("papers.html", **data)
 
 
@@ -65,14 +66,31 @@ def papers_vis():
     data = _data()
     # The data will be loaded from `papers.json`.
     # See the `papers_json()` method and `static/js/papers.js`.
-    data["tracks"] = site_data["tracks"]
+    data["tracks"] = site_data["main_program_tracks"] + ["System Demonstrations"]
     return render_template("papers_vis.html", **data)
+
+
+@app.route("/papers_keyword_vis.html")
+def papers_keyword_vis():
+    data = _data()
+    # The data will be loaded from `papers.json`.
+    # See the `papers_json()` method and `static/js/papers.js`.
+    data["tracks"] = site_data["tracks"]
+    return render_template("papers_keyword_vis.html", **data)
+
+
+@app.route("/papers_connected.html")
+def papers_connected():
+    data = _data()
+
+    return render_template("papers_connected.html", **data)
 
 
 @app.route("/schedule.html")
 def schedule():
     data = _data()
     data["calendar"] = site_data["calendar"]
+    data["event_types"] = site_data["event_types"]
     return render_template("schedule.html", **data)
 
 
@@ -86,13 +104,14 @@ def livestream():
 def plenary_sessions():
     data = _data()
     data["plenary_sessions"] = site_data["plenary_sessions"]
+    data["plenary_session_days"] = site_data["plenary_session_days"]
     return render_template("plenary_sessions.html", **data)
 
 
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
-    data["calendar"] = site_data["tutorial_calendar"]
+    data["tutorials"] = site_data["tutorials"]
     return render_template("tutorials.html", **data)
 
 
@@ -106,7 +125,8 @@ def workshops():
 @app.route("/sponsors.html")
 def sponsors():
     data = _data()
-    data["sponsors"] = site_data["sponsors"]
+    data["sponsors"] = site_data["sponsors_by_level"]
+    data["sponsor_levels"] = site_data["sponsor_levels"]
     return render_template("sponsors.html", **data)
 
 
@@ -120,6 +140,7 @@ def socials():
 @app.route("/organizers.html")
 def organizers():
     data = _data()
+
     data["committee"] = site_data["committee"]
     return render_template("organizers.html", **data)
 
@@ -167,6 +188,7 @@ def workshop(uid):
 def sponsor(uid):
     data = _data()
     data["sponsor"] = by_uid["sponsors"][uid]
+    data["papers"] = by_uid["papers"]
     return render_template("sponsor.html", **data)
 
 
@@ -181,15 +203,41 @@ def chat():
 
 @app.route("/papers.json")
 def papers_json():
-    return jsonify(site_data["papers"])
+    all_papers = site_data["papers"]
+
+    return jsonify(all_papers)
 
 
-@app.route("/track_<track_name>.json")
-def track_json(track_name):
+@app.route("/papers_<program>.json")
+def papers_program(program):
     paper: Paper
-    papers_for_track = [
-        paper for paper in site_data["papers"] if paper.content.track == track_name
-    ]
+    if program == "workshop":
+        papers_for_program = []
+        for wsh in site_data["workshops"]:
+            papers_for_program.extend(wsh.papers)
+    else:
+        papers_for_program = [
+            paper for paper in site_data["papers"] if paper.content.program == program
+        ]
+    return jsonify(papers_for_program)
+
+
+@app.route("/track_<program_name>_<track_name>.json")
+def track_json(program_name, track_name):
+    paper: Paper
+    if program_name == "workshop":
+        papers_for_track = None
+        for wsh in site_data["workshops"]:
+            if wsh.title == track_name:
+                papers_for_track = wsh.papers
+                break
+    else:
+        papers_for_track = [
+            paper
+            for paper in site_data["papers"]
+            if paper.content.track == track_name
+            and paper.content.program == program_name
+        ]
     return jsonify(papers_for_track)
 
 
@@ -213,8 +261,14 @@ def generator():
     paper: Paper
     for paper in site_data["papers"]:
         yield "paper", {"uid": paper.id}
-    for track in site_data["tracks"]:
-        yield "track_json", {"track_name": track}
+    for program in site_data["programs"]:
+        yield "papers_program", {"program": program}
+        for track in site_data["tracks"]:
+            yield "track_json", {"track_name": track, "program_name": program}
+
+    yield "papers_program", {"program": "workshop"}
+    for wsh in site_data["workshops"]:
+        yield "track_json", {"track_name": wsh.title, "program_name": "workshop"}
     plenary_session: PlenarySession
     for _, plenary_sessions_on_date in site_data["plenary_sessions"].items():
         for plenary_session in plenary_sessions_on_date:
@@ -226,9 +280,10 @@ def generator():
     for workshop in site_data["workshops"]:
         yield "workshop", {"uid": workshop.id}
 
-    for sponsors_at_level in site_data["sponsors"]:
-        for sponsor in sponsors_at_level["sponsors"]:
-            yield "sponsor", {"uid": str(sponsor["UID"])}
+    for sponsor in site_data["sponsors"]:
+        if "landingpage" in sponsor:
+            continue
+        yield "sponsor", {"uid": str(sponsor["UID"])}
 
     for key in site_data:
         yield "serve", {"path": key}
@@ -249,7 +304,6 @@ def parse_arguments():
         dest="build",
         help="Convert the site to static assets",
     )
-    parser.add_argument("path", help="Pass the JSON data path and run the server")
 
     return parser.parse_args()
 
@@ -257,7 +311,7 @@ def parse_arguments():
 if __name__ == "__main__":
     args = parse_arguments()
 
-    extra_files = load_site_data(args.path, site_data, by_uid, qa_session_length_hr)
+    extra_files = load_site_data("sitedata", site_data, by_uid)
 
     if args.build:
         freezer.freeze()

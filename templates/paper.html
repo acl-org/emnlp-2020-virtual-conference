@@ -17,9 +17,47 @@
 {% endfor %}
 <meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
 
+<script src="static/js/persistor.js"></script>
+
+<script>
+  let paper_id = "{{ paper.id }}"
+
+  function updateFavBtn(isFav){
+    let favBtn = $('#favBtn');
+    if (isFav) {
+      // favBtn.removeClass('btn-outline-primary')
+      favBtn.addClass('card-link-warning');
+      favBtn.html('<i class="fas fa-star"></i>');
+      favBtn.tooltip(
+          {title:'Click to remove from Favorites', placement: 'right'});
+    } else {
+      favBtn.removeClass('card-link-warning')
+      // favBtn.addClass('btn-outline-primary')
+      favBtn.html('<i class="fas fa-star"></i> Add to Favorites');
+      favBtn.tooltip('dispose');
+    }
+  }
+
+  $(document).ready(function () {
+
+    const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
+
+    let isFav = favPersistor.get(paper_id);
+    updateFavBtn(isFav)
+
+    $('#favBtn').click(()=>{
+      let isFav = favPersistor.get(paper_id) || false;
+      favPersistor.set(paper_id, !isFav);
+      updateFavBtn(!isFav);
+    })
+  })
+
+</script>
+
 {% endblock %}
 
 {% block content %}
+
 
 <!-- Title -->
 <div class="pp-card m-3" style="">
@@ -29,7 +67,7 @@
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
       {% for author in paper.content.authors %}
-      <a href="papers.html?filter=authors&search={{author}}" class="text-primary"
+      <a href="papers.html?filter=authors&search={{author}}&program=all" class="text-primary"
         >{{author}}</a
       >{{ "," if not loop.last }}
       {% endfor %}
@@ -54,17 +92,36 @@
         Demo
       </a>
       {% endif %}
+      {% if paper.content.s2_id %}
+      <a class="card-link" target="_blank" href="{{ config.connected_paper}}/{{paper.content.s2_id}}/graph">
+        Connected Papers
+      </a>
+      {% endif %}
+
+      {% if paper.content.material %}
+      {% for material in paper.content.material.split("|") %}
+        <span class="card-link d-inline-block">{{ material|markdown }}</span>
+      {% endfor %}
+      {% endif %}
+      
+      <a href="#" id="favBtn" class="card-link">
+        <i class="fas fa-star"></i> Add to Favorites
+      </a>
     </div>
     <p class="card-text text-center h5">
 
-     <a href="papers.html?track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
-     <span class="badge badge-secondary">{{ paper.content.paper_type }} Paper</span>
+      {% if paper.content.program == "main" %}
+     <a href="papers.html?program=main&track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
+     {% elif paper.content.program == "workshop" %}
+      <a href="papers.html?program=workshop&track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
+      {% endif %}
+     <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
     </p>
 
     {{ components.live_sessions(
         paper.content.sessions,
         paper.content.title,
-        "https://virtual.acl2020.org/paper_" + paper.id + ".html",
+        "https://virtual.emnlp.2020.org/paper_" + paper.id + ".html",
         false) }}
 
   </div>
@@ -80,6 +137,8 @@
   </div>
 </div>
 
+{% if paper.content.program != "findings" %}
+{% if paper.presentation_id %}
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
     You can open the
@@ -120,7 +179,22 @@
     </div>
   </div>
 </div>
+{% else %}
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
+       target="_blank">#{{paper.rocketchat_channel}}</a>
+    channel in a separate window.
+  </div>
 
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+{% endif %}
+{% endif %}
 
 {% if paper.poster_pdf %}
 {{ components.section("Example Poster") }}
@@ -137,6 +211,7 @@
 </script>
 {% endif %}
 
+{% if paper_recs %}
 {{ components.section("Similar Papers") }}
 <p></p>
 <div class="container" >
@@ -153,13 +228,16 @@
              {{a}},
              {% endfor %}
           </h6>
-          <center><img class="cards_img" src="{{recommended.card_image_path}}" width="80%"/></center>
+          <center>
+              <img class="cards_img" src="{{recommended.card_image_path}}" onerror="javascript:this.src=''" width="80%"/>
+          </center>
         </div>
       </div>
     </div>
   {% endfor %}
   </div>
 </div>
+{% endif %}
 
 <script src="static/js/time-extend.js"></script>
 <script>

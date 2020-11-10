@@ -19,6 +19,21 @@ label:text-muted,
 
 body {
   font-family: "Lato", sans-serif;
+  background-color: #f2efea;
+}
+
+.bg-emnlp {
+  background-color: #2d3047 !important;
+}
+
+.bg-emnlp .nav-link {
+  color: #cecece !important;
+}
+
+.bg-emnlp .nav-link:hover,
+.nav-link:active,
+.nav-item.active > .nav-link {
+  color: #fff !important;
 }
 
 .container a:hover {
@@ -33,6 +48,10 @@ body {
 #main-nav {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.navbar .container {
+  margin-top: 0px !important;
 }
 
 .header {
@@ -111,8 +130,135 @@ body .nav-pills .nav-link.active {
 }
 
 .card-title {
-  margin-top: 10px;
-  font-size: 20px;
+  /* margin-top: 10px; */
+  font-size: 1.1em;
+  color: #212529 !important;
+}
+
+.card-title-visited {
+  color: purple !important;
+}
+
+.card-footer {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-top: none !important;
+  text-align: right;
+  padding-bottom: 1.3em;
+}
+
+.card-footer .btn-warning {
+  color: white;
+}
+
+.card-active {
+  box-shadow: 0px 9px 11px 4px rgb(84 83 83 / 21%);
+  border-color: #007bff !important;
+}
+
+.card-fav {
+  border-color: #ffc107 !important;
+}
+
+.card-dimensions {
+  margin-bottom: 1.5em;
+  min-height: 10rem;
+}
+
+.card-dimensions-image {
+  margin-bottom: 1.5em;
+  min-height: 10rem;
+}
+
+.card-dimensions-detail {
+  margin-bottom: 1.5em;
+  min-height: 10rem;
+}
+
+.btn-quickview {
+  margin-left: 0.5em;
+  margin-top: 0;
+}
+
+.shortcut-guide {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .card-dimensions {
+    margin-bottom: 1.5em;
+    min-height: 20rem;
+  }
+
+  .card-dimensions-image {
+    margin-bottom: 1.5em;
+    min-height: 30rem;
+  }
+
+  .card-dimensions-detail {
+    margin-bottom: 1.5em;
+    min-height: 60rem;
+  }
+
+  .btn-quickview {
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+  }
+
+  .shortcut-guide {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card-dimensions {
+    margin-bottom: 1.5em;
+    min-height: 16rem;
+  }
+
+  .card-dimensions-image {
+    margin-bottom: 1.5em;
+    min-height: 26rem;
+  }
+
+  .card-dimensions-detail {
+    margin-bottom: 1.5em;
+    min-height: 44rem;
+  }
+
+  .btn-quickview {
+    margin-left: 0.5em;
+    margin-top: 0;
+  }
+
+  .shortcut-guide {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card-dimensions {
+    margin-bottom: 1.5em;
+    min-height: 14rem;
+  }
+
+  .card-dimensions-image {
+    margin-bottom: 1.5em;
+    min-height: 24rem;
+  }
+
+  .card-dimensions-detail {
+    margin-bottom: 1.5em;
+    min-height: 40rem;
+  }
+
+  .btn-quickview {
+    margin-left: 0.5em;
+    margin-top: 0;
+  }
+
+  .shortcut-guide {
+    display: block;
+  }
 }
 
 h2.card-title {
@@ -125,9 +271,9 @@ h3.card-subtitle.text-muted {
   font-size: 20px;
 }
 
-.card-subtitle.text-muted {
-  text-align: center;
-  font-size: 13px;
+.card-subtitle {
+  /* text-align: center; */
+  font-size: 0.9em;
 }
 
 .main-title {
@@ -358,6 +504,10 @@ body .carousel-control-prev {
   background-color: #00a1f1;
 }
 
+.fc-v-event.calendar-event-sponsors {
+  background-color: #ffa500;
+}
+
 .fc-v-event.calendar-event-other {
   background-color: #6699ff;
 }
@@ -389,9 +539,9 @@ div#papers_options > div {
   margin-bottom: 5px;
 }
 
-#papers_options {
+/* #papers_options {
   justify-content: center;
-}
+} */
 
 .paper-detail-calendar {
   position: relative;
@@ -408,4 +558,52 @@ div#papers_options > div {
 /* Manipulate calendar event on hover */
 .fc-v-event:hover {
   background: rgb(234, 33, 45);
+}
+
+.paper-modal-session {
+  max-width: 17em;
+  /* background-color: whitesmoke; */
+  border-radius: 10em;
+  /* padding: 0.5em; */
+  margin-right: 1.5em;
+  /* padding-right: 1em; */
+}
+
+.paper-modal-session-name {
+  border-radius: 100%;
+  min-width: 2.7em;
+  min-height: 2.7em;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.6em 0;
+}
+
+.paper-modal-session-calendar-btn {
+  margin-left: -0.5em;
+}
+
+.modal-footer .btn-warning {
+  color: white;
+}
+
+.card-link-warning {
+  color: #ffc107 !important;
+}
+
+.button-box {
+  display: flex;
+}
+
+.bottom-bar {
+  margin-bottom: 0em;
+}
+
+@media (max-width: 768px) {
+  .button-box {
+    display: block;
+  }
+
+  .bottom-bar {
+    margin-bottom: 1em;
+  }
 }

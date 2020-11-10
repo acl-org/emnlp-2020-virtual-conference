@@ -9,6 +9,7 @@ all: format-check
 format-python:
 	isort -rc $(PYTHON_FILES) --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=88
 	black -t py37 $(PYTHON_FILES)
+	black -t py37 scripts/
 
 format-web:
 	npx prettier $(JS_FILES) $(CSS_FILES) --write
@@ -17,12 +18,12 @@ format-web:
 format: format-python format-web
 
 run:
-	export FLASK_DEBUG=True; export FLASK_DEVELOPMENT=True; python3 main.py sitedata/
+	export FLASK_DEBUG=True; export FLASK_DEVELOPMENT=True; python main.py
 
 freeze:
 	rm -rf build/
-	python3 main.py sitedata/ --build
-	python3 generate_version.py build/version.json
+	python main.py --build
+	python generate_version.py build/version.json
 
 # check code format
 format-check:
