@@ -133,7 +133,7 @@ def load_site_data(
 
     for p in site_data["findings_papers"]:
         p["program"] = "findings"
-        p["paper_type"] = "findings"
+        p["paper_type"] = "Findings"
         p["track"] = "Findings of EMNLP"
 
     site_data["programs"] = ["main", "demo", "findings", "workshop"]
@@ -159,9 +159,6 @@ def load_site_data(
     # socials.html
     social_events = build_socials(site_data["socials"])
     site_data["socials"] = social_events
-
-    # sponsors.html
-    build_sponsors(site_data, by_uid, display_time_format)
 
     # papers.{html,json}
     papers = build_papers(
@@ -209,6 +206,9 @@ def load_site_data(
     # about.html
     site_data["faq"] = site_data["faq"]["FAQ"]
     site_data["code_of_conduct"] = site_data["code_of_conduct"]["CodeOfConduct"]
+
+    # sponsors.html
+    build_sponsors(site_data, by_uid, display_time_format)
 
     print("Data Successfully Loaded")
     return extra_files
@@ -864,18 +864,10 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
 
 
 def build_sponsors(site_data, by_uid, display_time_format) -> None:
-    by_uid["sponsors"] = {}
+    def generate_schedule(schedule: List[Dict[str, Any]]) -> Dict[str, Any]:
+        times = defaultdict(list)
 
-    for sponsor in site_data["sponsors"]:
-        uid = "_".join(sponsor["name"].lower().split())
-        sponsor["UID"] = uid
-        by_uid["sponsors"][uid] = sponsor
-
-    # Format the session start and end times
-    for sponsor in by_uid["sponsors"].values():
-        sponsor["zoom_times"] = OrderedDict()
-
-        for session in sponsor.get("schedule", []):
+        for session in schedule:
             if session["start"] is None:
                 continue
 
@@ -889,10 +881,31 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
             end_time = end.strftime(display_time_format)
             time_string = "{} ({}-{} GMT)".format(day, start_time, end_time)
 
-            if day not in sponsor["zoom_times"]:
-                sponsor["zoom_times"][day] = []
+            times[day].append((time_string, session["label"]))
+        return times
 
-            sponsor["zoom_times"][day].append((time_string, session["label"]))
+    by_uid["sponsors"] = {}
+
+    for sponsor in site_data["sponsors"]:
+        uid = "_".join(sponsor["name"].lower().split())
+        sponsor["UID"] = uid
+        by_uid["sponsors"][uid] = sponsor
+
+    # Format the session start and end times
+    for sponsor in by_uid["sponsors"].values():
+        sponsor["zoom_times"] = generate_schedule(sponsor.get("schedule", []))
+        sponsor["gather_times"] = generate_schedule(sponsor.get("gather_schedule", []))
+
+        publications = sponsor.get("publications")
+        if not publications:
+            continue
+
+        grouped_publications = defaultdict(list)
+        for paper_id in publications:
+            paper = by_uid["papers"][paper_id]
+            grouped_publications[paper.content.paper_type].append(paper)
+
+        sponsor["grouped_publications"] = grouped_publications
 
     # In the YAML, we just have a list of sponsors. We group them here by level
     sponsors_by_level: DefaultDict[str, List[Any]] = defaultdict(list)
