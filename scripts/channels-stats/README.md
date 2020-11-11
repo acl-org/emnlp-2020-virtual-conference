@@ -36,6 +36,20 @@ export UPDATE_INTERVAL=5        # The delay between each stats update. The unit 
 export OLD_SCORE_COEFF=0.8      # The more this value is close to 1, the more active channels remain 
                                 # in the list (even if it is not active anymore)
 ```
+### Step 1.5: Modify the configuration (Optional)
+To manage what channels should be included and what channels should be ignored in the statts, you need to edit these two files:
+1. `api/config/source_channels.txt`: It specify what channels will be considered. By default it's the following:
+```text
+*
+```
+which means we consider all channels.
+
+2. `api/config/blacklist.txt`: It sets the channels we will ignore in the stats. By default it's empty. But the following is an example:
+```text
+paper-*
+workshop-*
+paper-xxx
+```
 ### Step 2: Run the web app
 **Without Docker (Recommended)**
 1. Install Go ([Official Doc](https://golang.org/doc/install))
