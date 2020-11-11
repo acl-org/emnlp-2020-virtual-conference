@@ -11,7 +11,7 @@ const filters = {
     session: null,
     title: null,
 };
-
+let path_to_papers_json = "";
 let render_mode = 'list';
 let current_card_index = -1;
 
@@ -118,15 +118,11 @@ const setUpKeyBindings = () => {
 const persistor = new Persistor('Mini-Conf-Papers');
 const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
 
-const updateTrackList = (tracks, default_track) => {
-    default_track = default_track || "All tracks";
-
-    tracks = Array.from([default_track]).concat(tracks);
+const updateTrackList = (tracks, selected_track) => {
     let optionsHtml = tracks.map(track_html);
 
-    $('#track_selector').html(optionsHtml);
-    $('#track_selector').selectpicker('refresh');
-    $('#track_selector').selectpicker('val', default_track);
+    $('#track_selector').html(optionsHtml).selectpicker("refresh");
+    $('#track_selector').val(selected_track).selectpicker("refresh");
 }
 
 const updateCards = (papers) => {
@@ -346,11 +342,36 @@ function sortSelectedFirst(array) {
 
 /* Randomize array in-place using Durstenfeld shuffle algorithm */
 function shuffleArray(array) {
+
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+}
+
+function hideQaEnded(array, element){
+    if (element.checked) {
+        let result = []
+        let now = new Date()
+        for (let i = array.length - 1; i > 0; i--) {
+            let qa = new Date(Math.max.apply(null, array[i].content.sessions.map(function (e) {
+                return new Date(e.end_time);
+            })));
+            if (qa.getTime() >= now.getTime())
+                result.push(array[i])
+        }
+        allPapers = result;
+
+        render()
+    } else {
+        // reload full list of papers from data
+        d3.json(path_to_papers_json).then(papers => {
+            shuffleArray(papers);
+            allPapers = papers;
+            render()
+        }).catch(e => console.error(e));
     }
 }
 
@@ -479,10 +500,10 @@ const start = (reset_track) => {
 
     setQueryStringParameter("filter", urlFilter);
     setQueryStringParameter("program", program);
+    setQueryStringParameter("track", track);
 
     updateToolboxUI(program, urlFilter, track)
 
-    let path_to_papers_json;
     if (program === "all"){
         path_to_papers_json = `papers.json`;
     } else if (track === default_track) {
@@ -500,8 +521,13 @@ const start = (reset_track) => {
         allPapers = papers;
         
         calcAllKeys(allPapers, allKeys);
-        if (path_to_papers_json.startsWith("papers"))
-            updateTrackList(allKeys.tracks, default_track);
+
+        let tracks = [];
+        if (program == "main")
+            tracks = allTracks;
+        else if (program == "workshop")
+            tracks = allWorkshops;
+        updateTrackList(tracks, track);
         
         setTypeAhead(urlFilter,
           allKeys, filters, render);
@@ -562,8 +588,6 @@ d3.select('.reshuffle').on('click', () => {
     render();
 })
 
-
-
 /**
  * CARDS
  */
@@ -576,7 +600,7 @@ const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
 const author_html = author => `<a href="papers.html?program=all&filter=authors&search=${author}">${author}</a>`;
 
 const card_image = (openreview, show) => {
-    if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" width="80%"/></center>`
+    if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" onerror="javascript:this.src=''" width="80%"/></center>`
     else return ''
 };
 

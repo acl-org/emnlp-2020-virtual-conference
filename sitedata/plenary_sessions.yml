@@ -4,16 +4,16 @@
   image: static/images/emnlp2020/acl-logo.png
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-16 10:45:00-04:00
-    end_time: 2020-11-16 11:00:00-04:00
+    start_time: 2020-11-16 14:45:00+00:00
+    end_time: 2020-11-16 15:00:00+00:00
 - UID: keynote_by_claire_cardie
   title: 'Keynote: Information Extraction Through the Years: How Did We Get Here?'
   day: Nov 16
   image: static/images/keynotes/claire_cardie.jpg
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-16 11:00:00-04:00
-    end_time: 2020-11-16 12:00:00-04:00
+    start_time: 2020-11-16 15:00:00+00:00
+    end_time: 2020-11-16 16:00:00+00:00
   abstract: In this talk, I'll examine the state of the NLP subfield of information
     extraction from its inception almost 30 years ago to its current realization in
     neural network models. Which aspects of the original formulation of the task are
@@ -39,16 +39,16 @@
   image: static/images/emnlp2020/acl-logo.png
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-16 19:00:00-04:00
-    end_time: 2020-11-16 20:00:00-04:00
+    start_time: 2020-11-16 23:00:00+00:00
+    end_time: 2020-11-17 00:00:00+00:00
 - UID: ethics_panel_discussion
   title: Ethics Panel Discussion
   day: Nov 17
   image: static/images/emnlp2020/acl-logo.png
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-17 11:00:00-04:00
-    end_time: 2020-11-17 12:00:00-04:00
+    start_time: 2020-11-17 15:00:00+00:00
+    end_time: 2020-11-17 16:00:00+00:00
 - UID: keynote_by_rich_caruana
   title: "Keynote: Friends Don\u2019t Let Friends Deploy Black-Box Models: The Importance\
     \ of Intelligibility in Machine Learning"
@@ -56,8 +56,8 @@
   image: static/images/keynotes/rich_caruana.jpg
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-17 19:00:00-04:00
-    end_time: 2020-11-17 20:00:00-04:00
+    start_time: 2020-11-17 23:00:00+00:00
+    end_time: 2020-11-18 00:00:00+00:00
   abstract: "In machine learning sometimes tradeoffs must be made between accuracy\
     \ and intelligibility: the most accurate models usually are not very intelligible,\
     \ and the most intelligible models usually are less accurate. This can limit the\
@@ -92,8 +92,8 @@
   image: static/images/keynotes/janet_pierrehumbert.jpg
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-18 11:00:00-04:00
-    end_time: 2020-11-18 12:00:00-04:00
+    start_time: 2020-11-18 15:00:00+00:00
+    end_time: 2020-11-18 16:00:00+00:00
   bio: |-
     [Janet Pierrehumbert](http://www.phon.ox.ac.uk/jpierrehumbert/) is the Professor of Language Modelling in the Department of Engineering Science at the University of Oxford. She received her BA in Linguistics and Mathematics at Harvard in 1975, and her Ph.D in Linguistics from MIT in 1980. Much of her Ph.D dissertation research on English prosody and intonation was carried out at AT&T Bell Laboratories, where she was also a Member of Technical Staff from 1982 to 1989. After she moved to Northwestern University in1989, her research program used a wide variety of experimental and computational methods to explore how lexical systems emerge in speech communities. She showed that the mental representations of words are at once abstract and phonetically detailed, and that social factors interact with cognitive factors as lexical patterns are learned, remembered, and generalized. Pierrehumbert joined the faculty at the University of Oxford in 2015 as a member of the interdisciplinary Oxford e-Research Centre. Her current research uses machine-learning methods to model the dynamics of on-line language. Her latest project, funded by the UK EPSRC, seeks to develop new NLP methods to characterize exaggeration, cohesion, and fragmentation in on-line forums.
 
@@ -101,17 +101,17 @@
   presenter: Janet Pierrehumbert
 - UID: business_meeting
   title: Business Meeting
-  day: Nov 18
+  day: Nov 19
   image: static/images/emnlp2020/acl-logo.png
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-18 21:00:00-04:00
-    end_time: 2020-11-18 21:45:00-04:00
+    start_time: 2020-11-19 01:00:00+00:00
+    end_time: 2020-11-19 01:45:00+00:00
 - UID: best_paper_awards_and_closing
   title: Best Paper Awards and Closing
-  day: Nov 18
+  day: Nov 19
   image: static/images/emnlp2020/acl-logo.png
   sessions:
   - name: P-Live Presentation
-    start_time: 2020-11-18 21:50:00-04:00
-    end_time: 2020-11-18 22:20:00-04:00
+    start_time: 2020-11-19 01:50:00+00:00
+    end_time: 2020-11-19 02:20:00+00:00

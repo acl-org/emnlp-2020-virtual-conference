@@ -32,6 +32,12 @@
     <a class="nav-link active" href="papers_vis.html">Visualization</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="papers_keyword_vis.html">Browse Keywords</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="papers_connected.html">Connected Papers</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" href="papers.html?showFavs=1" id="tabFavs"><i class="fas fa-star"></i> Favorites</a>
   </li>
 </ul>
@@ -79,6 +85,11 @@
                 by author
               </label>
     
+
+              <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific keywords">
+                <input type="radio" name="options" value="keywords" autocomplete="off" />
+                by keywords
+              </label>
               <button class="btn btn btn-outline-danger typeahead_all_clear" type="button">
                 &times;
               </button>
@@ -171,11 +182,11 @@
 </div>
 
 <!-- Visualization -->
-<div id="container">
-  <div class="card" style="margin-right: -40px;">
+<div id="container" position: relative; >
+  <div class="card"  style="margin-right: -40px; float:left ">
     <div class="card-header">
       <div id="outer_svg" style="display: inline-block; vertical-align: top;">
-        <svg class="plot" style="display: block;"></svg>
+        <svg class="plot" id="scatter" style="display: block;" width="1200" height="1000"></svg>
       </div>
       <div
         class="results"
@@ -202,11 +213,26 @@
           </div>
         </div>
       </div>
+      
     </div>
   </div>
+  <!-- <div class="card" style="margin-right: -40px; float:left"> -->
+    <!-- <div class="card-header"> -->
+      <!-- <div id="outer_svg2" style="display: inline-block; vertical-align: top;">
+        <svg class="plot" id="heatmap" width="1200" height="1000" style="display: block;"></svg>
+      </div> -->
+    <!-- </div> -->
+      <!-- <svg width="1400" height ="1000" id="heatmap"> -->
+    <!-- Heatmap visualization controls highlight functionality in tsne plot -->
+    
+  <!-- </svg> -->
+  <!-- </div> -->
+
 </div>
 
+
 <script src="static/js/little_helpers.js"></script>
+
 <script src="static/js/persistor.js"></script>
 <script src="static/js/paper_vis.js"></script>
 

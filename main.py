@@ -56,7 +56,8 @@ def papers():
     data = _data()
     # The data will be loaded from `papers.json`.
     # See the `papers_json()` method and `static/js/papers.js`.
-    data["tracks"] = site_data["tracks"]
+    data["tracks"] = site_data["main_program_tracks"]
+    data["workshop_names"] = [wsh.title for wsh in site_data["workshops"]]
     return render_template("papers.html", **data)
 
 
@@ -65,14 +66,31 @@ def papers_vis():
     data = _data()
     # The data will be loaded from `papers.json`.
     # See the `papers_json()` method and `static/js/papers.js`.
-    data["tracks"] = site_data["tracks"]
+    data["tracks"] = site_data["main_program_tracks"] + ["System Demonstrations"]
     return render_template("papers_vis.html", **data)
+
+
+@app.route("/papers_keyword_vis.html")
+def papers_keyword_vis():
+    data = _data()
+    # The data will be loaded from `papers.json`.
+    # See the `papers_json()` method and `static/js/papers.js`.
+    data["tracks"] = site_data["tracks"]
+    return render_template("papers_keyword_vis.html", **data)
+
+
+@app.route("/papers_connected.html")
+def papers_connected():
+    data = _data()
+
+    return render_template("papers_connected.html", **data)
 
 
 @app.route("/schedule.html")
 def schedule():
     data = _data()
     data["calendar"] = site_data["calendar"]
+    data["event_types"] = site_data["event_types"]
     return render_template("schedule.html", **data)
 
 

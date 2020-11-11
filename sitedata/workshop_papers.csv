@@ -1,4 +1,70 @@
 workshop,UID,title,authors,presentation_id
+WS-1,WS-1.100,Modelling Lexical Ambiguity with Density Matrices,Francois Meyer|Martha Lewis,38939483
+WS-1,WS-1.101,Catplayinginthesnow: Impact of Prior Segmentation on a Model of Visually Grounded Speech,William Havard|Laurent Besacier|Jean-Pierre Chevrot,38939484
+WS-1,WS-1.108,Learning to ground medical text in a 3D human atlas,Dusan Grujicic|Gorjan Radevski|Tinne Tuytelaars|Matthew Blaschko,38939485
+WS-1,WS-1.109,Representation Learning for Type-Driven Composition,Gijs Wijnholds|Mehrnoosh Sadrzadeh|Stephen Clark,38939486
+WS-1,WS-1.113,Word Representations Concentrate and This is Good News!,Romain Couillet|Yagmur Gizem Cinar|Eric Gaussier|Muhammad Imran,38939487
+WS-1,WS-1.115,``LazImpa'': Lazy and Impatient neural agents learn to communicate efficiently,Mathieu Rita|Rahma Chaabouni|Emmanuel Dupoux,38939488
+WS-1,WS-1.1165_F,Investigating Transferability in Pretrained Language Models,Alex Tamkin|Trisha Singh|Davide Giovanardi|Noah Goodman,38940643
+WS-1,WS-1.127,Re-solve it: simulating the acquisition of core semantic competences from small data,Aurélie Herbelot,38939489
+WS-1,WS-1.128,In Media Res: A Corpus for Evaluating Named Entity Linking with Creative Works,Adrian M.P. Brasoveanu|Albert Weichselbraun|Lyndon Nixon,38939490
+WS-1,WS-1.136,Analogies minus analogy test: measuring regularities in word embeddings,Louis Fournier|Emmanuel Dupoux|Ewan Dunbar,38939491
+WS-1,WS-1.137,Word associations and the distance properties of context-aware word embeddings,Maria Andueza Rodriguez|Paola Merlo,38939492
+WS-1,WS-1.14,Neural Proof Nets,Konstantinos Kogkalidis|Michael Moortgat|Richard Moot,38939465
+WS-1,WS-1.142,TrClaim-19: The First Collection for Turkish Check-Worthy Claim Detection with Annotator Rationales,Yavuz Selim Kartal|Mucahid Kutlu,38939493
+WS-1,WS-1.144,Discourse structure interacts with reference but not syntax in neural language models,Forrest Davis|Marten Van Schijndel,38939494
+WS-1,WS-1.147,Continual Adaptation for Efficient Machine Communication,Robert Hawkins|Minae Kwon|Dorsa Sadigh|Noah Goodman,38939495
+WS-1,WS-1.149,Diverse and Relevant Visual Storytelling with Scene Graph Embeddings,Xudong Hong|Rakshith Shetty|Asad Sayeed|Khushboo Mehra|Vera Demberg|Bernt Schiele,38939496
+WS-1,WS-1.15,TaxiNLI: Taking a Ride up the NLU Hill,Pratik Joshi|Somak Aditya|Aalok Sathe|Monojit Choudhury,38939466
+WS-1,WS-1.152,Alleviating Digitization Errors in Named Entity Recognition for Historical Documents,Emanuela Boros|Ahmed Hamdi|Elvys Linhares Pontes|Luis Adrián Cabrera-Diego|Jose G. Moreno|Nicolas Sidere|Antoine Doucet,38939497
+WS-1,WS-1.155,Analysing Word Representation from the Input and Output Embeddings in Neural Network Language Models,Steven Derby|Paul Miller|Barry Devereux,38939498
+WS-1,WS-1.156,On the Computational Power of Transformers and Its Implications in Sequence Modeling,Satwik Bhattamishra|Arkil Patel|Navin Goyal,38939499
+WS-1,WS-1.1597_F,Pragmatic Issue-Sensitive Image Captioning,Allen Nie|Reuben Cohn-Gordon|Christopher Potts,38940644
+WS-1,WS-1.162,An Expectation Maximisation Algorithm for Automated Cognate Detection,Roddy MacSween|Andrew Caines,38939500
+WS-1,WS-1.168,Filler-gaps that neural networks fail to generalize,Debasmita Bhattacharya|Marten Van Schijndel,38939501
+WS-1,WS-1.177,"Don’t Parse, Insert: Multilingual Semantic Parsing with Insertion Based Decoding",Qile Zhu|Haidar Khan|Saleh Soltan|Stephen Rawls|Wael Hamza,38939502
+WS-1,WS-1.18,Modeling Subjective Assessments of Guilt in Newspaper Crime Narratives,Elisa Kreiss|Zijian Wang|Christopher Potts,38939467
+WS-1,WS-1.183,Learning Context-free Languages with Nondeterministic Stack RNNs,Brian DuSell|David Chiang,38939503
+WS-1,WS-1.185,Generating Narrative Text in a Switching Dynamical System,Noah Weber|Leena Shekhar|Heeyoung Kwon|Niranjan Balasubramanian|Nathanael Chambers,38939504
+WS-1,WS-1.189,What Are You Trying to Do? Semantic Typing of Event Processes,Muhao Chen|Hongming Zhang|Haoyu Wang|Dan Roth,38939505
+WS-1,WS-1.195,A Corpus for Outbreak Detection of Diseases Prevalent in Latin America,Antonella Dellanzo|Viviana Cotik|Jose Ochoa-Luna,38939506
+WS-1,WS-1.202,Are Pretrained Language Models Symbolic Reasoners over Knowledge?,Nora Kassner|Benno Krojer|Hinrich Schütze,38939507
+WS-1,WS-1.21,On the Frailty of Universal POS Tags for Neural UD Parsers,Mark Anderson|Carlos Gómez-Rodríguez,38939468
+WS-1,WS-1.218,Understanding Linguistic Accommodation in Code-Switched Human-Machine Dialogues,Tanmay Parekh|Emily Ahn|Yulia Tsvetkov|Alan W Black,38939508
+WS-1,WS-1.221,Identifying robust markers of Parkinson’s disease in typing behaviour using a CNN-LSTM network,Neil Dhir|Mathias Edman|Álvaro Sanchez Ferro|Tom Stafford|Colin Bannard,38939509
+WS-1,WS-1.222,An Empirical Study on Model-agnostic Debiasing Strategies for Robust Natural Language Inference,Tianyu Liu|Zheng Xin|Xiaoan Ding|Baobao Chang|Zhifang Sui,38939510
+WS-1,WS-1.226,Cloze Distillation Improves Psychometric Predictive Power,Tiwalayo Eisape|Noga Zaslavsky|Roger Levy,38939511
+WS-1,WS-1.234,Disentangling dialects: a neural approach to Indo-Aryan historical phonology and subgrouping,Chundra Cathcart|Taraka Rama,38939512
+WS-1,WS-1.247,"A Dataset for Linguistic Understanding, Visual Evaluation, and Recognition of Sign Languages: The K-RSL",Alfarabi Imashev|Medet Mukushev|Vadim Kimmelman|Anara Sandygulova,38939513
+WS-1,WS-1.258,From Dataset Recycling to Multi-Property Extraction and Beyond,Tomasz Dwojak|Michał Pietruszka|Łukasz Borchmann|Jakub Chłędowski|Filip Graliński,38939514
+WS-1,WS-1.259,How well does surprisal explain N400 amplitude under different experimental conditions?,James Michaelov|Benjamin Bergen,38939515
+WS-1,WS-1.26,Classifying Syntactic Errors in Learner Language,Leshem Choshen|Dmitry Nikolaev|Yevgeni Berzak|Omri Abend,38939469
+WS-1,WS-1.28,How to Probe Sentence Embeddings in Low-Resource Languages: On Structural Design Choices for Probing Task Evaluation,Steffen Eger|Johannes Daxenberger|Iryna Gurevych,38939470
+WS-1,WS-1.29,Understanding the Source of Semantic Regularities in Word Embeddings,Hsiao-Yu Chiang|Jose Camacho-Collados|Zachary Pardos,38939471
+WS-1,WS-1.38,Finding The Right One and Resolving it,Payal Khullar|Arghya Bhattacharya|Manish Shrivastava,38939472
+WS-1,WS-1.49,Bridging Information-Seeking Human Gaze and Machine Reading Comprehension,Jonathan Malmaud|Roger Levy|Yevgeni Berzak,38939473
+WS-1,WS-1.510_F,Dynamic Data Selection for Curriculum Learning via Ability Estimation,John P. Lalor|Hong Yu,38940641
+WS-1,WS-1.561_F,From Language to Language-ish: How Brain-Like is an LSTM's Representation of Nonsensical Language Stimuli?,Maryam Hashemzadeh|Greta Kaufeld|Martha White|Andrea E. Martin|Alona Fyshe,38940642
+WS-1,WS-1.59,A Corpus of Very Short Scientific Summaries,Yifan Chen|Tamara Polajnar|Colin Batchelor|Simone Teufel,38939474
+WS-1,WS-1.61,Recurrent babbling: evaluating the acquisition of grammar from limited input data,Ludovica Pannitto|Aurélie Herbelot,38939475
+WS-1,WS-1.63,Explaining the efficiency of communication: How communicators can reduce their computational burden through interaction,Jacqueline Van Arkel|Marieke Woensdregt|Mark Dingemanse|Mark Blokpoel,38939476
+WS-1,WS-1.69,Acquiring language from speech by learning to remember and predict,Cory Shain|Micha Elsner,38939477
+WS-1,WS-1.69_F,"Stay Hungry, Stay Focused: Generating Informative and Specific Questions in Information-Seeking Conversations",Peng Qi|Yuhao Zhang|Christopher D. Manning,38940640
+WS-1,WS-1.7,Enriching Word Embeddings with Temporal and Spatial Information,Hongyu Gong|Suma Bhat|Pramod Viswanath,38939463
+WS-1,WS-1.70,Identifying Incorrect Labels in the CoNLL-2003 Corpus,Frederick Reiss|Hong Xu|Bryan Cutler|Karthik Muthuraman|Zachary Eichenberger,38939478
+WS-1,WS-1.73,When is a bishop not like a rook? When it's like a rabbi! Multi-prototype BERT embeddings for estimating semantic relationships,Gabriella Chronis|Katrin Erk,38939479
+WS-1,WS-1.8,Interpreting Attention Models with Human Visual Attention in Machine Reading Comprehension,Ekta Sood|Simon Tannert|Diego Frassinelli|Andreas Bulling|Ngoc Thang Vu,38939464
+WS-1,WS-1.83,Processing effort is a poor predictor of cross-linguistic word order frequency,Brennan Gonering|Emily Morgan,38939480
+WS-1,WS-1.88,Relations between comprehensibility and adequacy errors in machine translation output,Maja Popović,38939481
+WS-1,WS-1.96,Cross-lingual Embeddings Reveal Universal and Lineage-Specific Patterns in Grammatical Gender Assignment,Hartger Veeman|Marc Allassonnière-Tang|Aleksandrs Berdicevskis|Ali Basirat,38939482
+WS-1,WS-1.Shared1,﻿Hitachi at MRP 2020: Text-to-Graph-Notation Transducer,Hiroaki Ozaki|Gaku Morio|Yuta Koreeda|Terufumi Morishita|Toshinori Miyoshi,38941228
+WS-1,WS-1.Shared2,HIT-SCIR at MRP 2020: Transition-based Parser and Iterative Inference Parser,Longxu Dou|Yunlong Feng|Yuqiu Ji|Wanxiang Che|Ting Liu,38941229
+WS-1,WS-1.Shared3,HUJI-KU at MRP 2020: Two Transition-based Neural Parsers,Ofir Arviv|Ruixiang Cui|Daniel Hershcovich,38941230
+WS-1,WS-1.Shared4,JBNU at MRP 2020: AMR Parsing Using a Joint State Model for Graph-Sequence Iterative Inference,Seung-Hoon Na|Jinwoo Min,38941231
+WS-1,WS-1.Shared5,ÚFAL at MRP 2020: Permutation-invariant Semantic Parsing in PERIN,David Samuel|Milan Straka,38941232
+WS-1,WS-1.Shared6,FGD at MRP 2020: Prague Tectogrammatical Graphs,Daniel Zeman|Jan Hajic,38941233
+WS-1,WS-1.Shared7,DRS at MRP 2020: Dressing up Discourse Representation Structures as Graphs,Lasha Abzianidze|Johan Bos|Stephan Oepen,38941234
+WS-1,WS-1.Shared8,MRP 2020: The Second Shared Task on Cross-Framework and Cross-Linguistic Meaning Representation Parsing,Stephan Oepen|Omri Abend|Lasha Abzianidze|Johan Bos|Jan Hajic|Daniel Hershcovich|Bin Li|Tim O'Gorman|Nianwen Xue|Daniel Zeman,38941235
 WS-10,WS-10.11,Geocoding with multi-level loss for spatial language representation,Sayali Kulkarni|Shailee Jain|Mohammad Javad Hosseini|Jason Baldridge|Eugene Ie|Li Zhang,38940083
 WS-10,WS-10.12,SpaRTQA: A Textual Question Answering Benchmark for Spatial Reasoning,Roshanak Mirzaee|Hossein Rajaby Faghihi|Parisa Kordjamshidi,38940084
 WS-10,WS-10.13,Vision-and-Language Navigation by Reasoning over Spatial Configurations,Yue Zhang|Quan Guo|Parisa Kordjamshidi,38940085
@@ -219,6 +285,7 @@ WS-17,WS-17.52,Using Transfer-based Language Models to Detect Hateful and Offens
 WS-17,WS-17.56,On Cross-Dataset Generalization in Automatic Detection of Online Abuse,Isar Nejadgholi|Svetlana Kiritchenko,38939537
 WS-17,WS-17.57,Identifying and Measuring Annotator Bias Based on Annotators' Demographic Characteristics,Hala Al Kuwatly|Maximilian Wich|Georg Groh,38939538
 WS-17,WS-17.58,Investigating Annotator Bias with a Graph-Based Approach,Maximilian Wich|Hala Al Kuwatly|Georg Groh,38939539
+WS-17,WS-17.818,Findings: Hybrid Emoji-Based Masked Language Models for Zero-Shot Abusive Language Detection,Michele Corazza|Stefano Menini|Elena Cabrio|Sara Tonelli|Serena Villata,38941226
 WS-17,WS-17.K1,Keynote1,André Brock,38939540
 WS-17,WS-17.K2,Keynote2,Alex Hanna & Maliha Ahmed,38939541
 WS-17,WS-17.K3,Keynote3,Maria Y. Rodriguez,38939542
@@ -481,6 +548,25 @@ WS-25,WS-25.54,The EOS Decision and Length Extrapolation,Benjamin Newman|John He
 WS-25,WS-25.59,Evaluating Attribution Methods using White-Box LSTMs,Yiding Hao,38939768
 WS-25,WS-25.70,diagNNose: A Library for Neural Activation Analysis,Jaap Jumelet,38940638
 WS-25,WS-25.8,What Happens To BERT Embeddings During Fine-tuning?,Amil Merchant|Elahe Rahimtoroghi|Ellie Pavlick|Ian Tenney,38939763
+WS-26,WS-26.1,COVID-19 Surveillance through Twitter using Self-Supervised Learning and Few Shot Learning,Brandon Lwowski|Peyman Najafirad,38939841
+WS-26,WS-26.10,Frugal neural reranking: evaluation on the Covid-19 literature,Tiago Almeida|Sérgio Matos,38939845
+WS-26,WS-26.16,CORA: A Deep Active Learning Covid-19 Relevancy Algorithm to Identify Core Scientific Articles,Zubair Afzal|Vikrant Yadav|Olga Fedorova|Vaishnavi Kandala|Janneke Van De Loo|Saber A Akhondi|Pascal Coupet|George Tsatsaronis,38939846
+WS-26,WS-26.2,A Multilingual Neural Machine Translation Model for Biomedical Data,Alexandre Berard|Zae Myung Kim|Vassilina Nikoulina|Eunjeong Lucy Park|Matthias Gallé,38939842
+WS-26,WS-26.20,Quantifying the Effects of COVID-19 on Mental Health Support Forums,Laura Biester|Katie Matton|Janarthanan Rajendran|Emily Mower|Rada Mihalcea,38939847
+WS-26,WS-26.28,Exploratory Analysis of COVID-19 Related Tweets in North America to Inform Public Health Institutes,Hyeju Jang|Emily Rempel|Giuseppe Carenini|Naveed Janjua,38939848
+WS-26,WS-26.31,Not Just Semantics: Social Distancing and COVID Discourse on Twitter,Austin Van Loon|Sheridan Stewart|Brandon Waldon|Shrinidhi K Lakshmikanth|Ishan Shah|Sharath Chandra Guntuku|Garrick Sherman|James Zou|Johannes Eichstaedt,38939849
+WS-26,WS-26.35,Expressive Interviewing: A Conversational System for Coping with COVID-19,Charles Welch|Allison Lahnala|Veronica Perez-Rosas|Siqi Shen|Sarah Seraj|Larry An|Kenneth Resnicow|James Pennebaker|Rada Mihalcea,38939850
+WS-26,WS-26.37,Detecting COVID-19 Misinformation on Social Media,Tamanna Hossain|Robert L. Logan Iv|Arjuna Ugarte|Yoshitomo Matsubara|Sean Young|Sameer Singh,38939851
+WS-26,WS-26.45,A System for Worldwide COVID-19 Information Aggregation,Akiko Aizawa|Frederic Bergeron|Junjie Chen|Fei Cheng|Katsuhiko Hayashi|Kentaro Inui|Hiroyoshi Ito|Daisuke Kawahara|Masaru Kitsuregawa|Hirokazu Kiyomaru|Masaki Kobayashi|Takashi Kodama|Sadao Kurohashi|Qianying Liu|Masaki Matsubara|Yusuke Miyao|Atsuyuki Morishima|Yugo Murawaki|Kazumasa Omura|Haiyue Song|Eiichiro Sumita|Shinji Suzuki|Ribeka Tanaka|Yu Tanaka|Masashi Toyoda|Nobuhiro Ueda|Honai Ueoka|Masao Utiyama|Ying Zhong,38939852
+WS-26,WS-26.47,Temporal Mental Health Dynamics on Social Media,Tom Tabak|Matthew Purver,38939853
+WS-26,WS-26.50,TICO-19: the Translation Initiative for COvid-19,Antonios Anastasopoulos|Alessandro Cattelan|Zi-Yi Dou|Marcello Federico|Christian Federmann|Dmitriy Genzel|Franscisco Guzmán|Junjie Hu|Macduff Hughes|Philipp Koehn|Rosie Lazar|Will Lewis|Graham Neubig|Mengmeng Niu|Alp Öktem|Eric Paquin|Grace Tang|Sylwia Tur,38939854
+WS-26,WS-26.53,Public Sentiment on Governmental COVID-19 Measures in Dutch Social Media,Shihan Wang|Marijn Schraagen|Erik Tjong Kim Sang|Mehdi Dastani,38939855
+WS-26,WS-26.6,Answering Questions on COVID-19 in Real-Time,Jinhyuk Lee|Sean S. Yi|Minbyul Jeong|Mujeen Sung|WonJin Yoon|Yonghwa Choi|Miyoung Ko|Jaewoo Kang,38939843
+WS-26,WS-26.60,COVID-19 Literature Topic-Based Search via Hierarchical NMF,Rachel Grotheer|Longxiu Huang|Yihuan Huang|Alona Kryshchenko|Oleksandr Kryshchenko|Pengyu Li|Xia Li|Elizaveta Rebrova|Kyung Ha|Deanna Needell,38939856
+WS-26,WS-26.63,Improved Topic Representations of Medical Documents to Assist COVID-19 Literature Exploration,Yulia Otmakhova|Karin Verspoor|Timothy Baldwin|Simon Suster,38939857
+WS-26,WS-26.64,Automatic Evaluation vs. User Preference in Neural Textual QuestionAnswering over COVID-19 Scientific Literature,Arantxa Otegi|Jon Ander Campos|Gorka Azkune|Aitor Soroa|Eneko Agirre,38939858
+WS-26,WS-26.65,Twitter Data Augmentation for Monitoring Public Opinion on COVID-19 Intervention Measures,Lin Miao|Mark Last|Marina Litvak,38939859
+WS-26,WS-26.9,CAiRE-COVID: A Question Answering and Query-focused Multi-Document Summarization System for COVID-19 Scholarly Information Management,Dan Su|Yan Xu|Tiezheng Yu|Farhad Bin Siddique|Elham Barezi|Pascale Fung,38939844
 WS-3,WS-3.1,Domain adaptation challenges of BERT in tokenization and sub-word representations of Out-of-Vocabulary words,Anmol Nayak|Hariprasad Timmapathini|Karthikeyan Ponnalagu|Vijendran Gopalan Venkoparao,38940788
 WS-3,WS-3.12,On Task-Level Dialogue Composition of Generative Transformer Model,Prasanna Parthasarathi|Sharan Narang|Arvind Neelakantan,38940793
 WS-3,WS-3.19,How Effectively Can Machines Defend Against Machine-Generated Fake News? An Empirical Study,Meghana Moorthy Bhat|Srinivasan Parthasarathy,38940794
@@ -535,6 +621,7 @@ WS-7,WS-7.1457,Will this Idea Spread Beyond Academia? Understanding Knowledge Tr
 WS-7,WS-7.15shared,"CIST@CL-SciSumm 2020, LongSumm 2020: Automatic Scientific Document Summarization",Lei Li|Yang Xie|Wei Liu|Yinan Liu|Yafei Jiang|Siya Qi|Xingyuan Li,38940743
 WS-7,WS-7.17,SciWING– A Software Toolkit for Scientific Document Processing,Abhinav Ramesh Kashyap|Min-Yen Kan,38940731
 WS-7,WS-7.1728,"MedICaT: A Dataset of Medical Images, Captions, and Textual References",Sanjay Subramanian|Lucy Lu Wang|Sachin Mehta|Ben Bogin|Madeleine Van Zuylen|Sravanthi Parasar|Sameer Singh|Matt Gardner|Hannaneh Hajishirzi,38940723
+WS-7,WS-7.18,NLP-PINGAN-TECH @ CL-SciSumm 2020,Ling Chai|Guizhen Fu|Yuan Ni,38941223
 WS-7,WS-7.20shared,Dimsum @LaySumm 20,Tiezheng Yu|Dan Su|Wenliang Dai|Pascale Fung,38940741
 WS-7,WS-7.21,Multi-task Peer-Review Score Prediction,Jiyi Li|Ayaka Sato|Kazuya Shimura|Fumiyo Fukumoto,38940727
 WS-7,WS-7.22,ERLKG: Entity Representation Learning and Knowledge Graph based association analysis of COVID-19 through mining of unstructured biomedical corpora,Sayantan Basu|Sinchani Chakraborty|Atif Hassan|Sana Siddique|Ashish Anand,38940725
@@ -553,9 +640,12 @@ WS-7,WS-7.40,DeepPaperComposer: A Simple Solution for Training Data Preparation 
 WS-7,WS-7.42,"Document-Level Definition Detection in Scholarly Documents: Existing Models, Error Analyses, and Future Directions",Dongyeop Kang|Rew Head|Risham Sidhu|Kyle Lo|Daniel Weld|Marti A. Hearst,38940724
 WS-7,WS-7.43shared,"IIITBH-IITP@CL-SciSumm20, CL-LaySumm20, LongSumm20",Saichethan Miriyala Reddy|Naveen Saini|Sriparna Saha|Pushpak Bhattacharyya,38940739
 WS-7,WS-7.44,Reconstructing Manual Information Extraction with DB-to-Document Backprojection: Experiments in the Life Science Domain,Mark-Christoph Muller|Sucheta Ghosh|Maja Rey|Ulrike Wittig|Wolfgang Muller|Michael Strube,38940718
+WS-7,WS-7.45,"AUTH @ CLSciSumm 20, LaySumm 20, LongSumm 20",Alexios Gidiotis|Stefanos Stefanidis|Grigorios Tsoumakas,38941222
 WS-7,WS-7.48_2shared,"SUMMAFORMERS @ LAYSUMM 20, LONGSUMM 20",Sayar Ghosh Roy|Nikhil Pinnaparaju|Risubh Jain|Manish Gupta|Vasudeva Varma,38940742
 WS-7,WS-7.48shared,Scientific Document Summarization for LaySumm ’20 and LongSumm ’2,Sayar Ghosh Roy|Nikhil Pinnaparaju|Risubh Jain|Manish Gupta∗|Vasudeva Varma,38940738
+WS-7,WS-7.49,UniHD@CL-SciSumm 2020: Citation Extraction as Search,Dennis Aumiller|Satya Almasian|Philip Hausner|Michael Gertz,38941224
 WS-7,WS-7.5,"On the effectiveness of small, discriminatively pre-trained language representation models for biomedical text mining",Ibrahim Burak Ozyurt,38940735
+WS-7,WS-7.54,CMU: CiteQA@CLSciSumm 2020,Anjana Umapathy|Karthik Radhakrishnan|Kinjal Jain|Rahul Singh,38941225
 WS-7,WS-7.56shared,GUIR @ LongSumm 2020: Learning to Generate Long Summaries from Scientific Documents,Sajad Sotudeh Gharebagh|Arman Cohan|Nazli Goharian,38940737
 WS-7,WS-7.6,The impact of preprint servers in the formation of novel ideas,Swarup Satish|Zonghai Yao|Rew Drozdov|Boris Veytsman,38940715
 WS-7,WS-7.60,Covidex: Neural Ranking Models and Keyword Search Infrastructure for the COVID-19 Open Research Dataset.,Edwin Zhang|Nikhil Gupta|Raphael Tang|Xiao Han|Ronak Pradeep|Kuang Lu|Yue Zhang|Rodrigo Nogueira|Kyunghyun Cho|Hui Fang|Jimmy Lin,38940714

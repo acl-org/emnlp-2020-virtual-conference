@@ -504,6 +504,10 @@ body .carousel-control-prev {
   background-color: #00a1f1;
 }
 
+.fc-v-event.calendar-event-sponsors {
+  background-color: #ffa500;
+}
+
 .fc-v-event.calendar-event-other {
   background-color: #6699ff;
 }

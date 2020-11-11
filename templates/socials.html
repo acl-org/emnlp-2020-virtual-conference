@@ -59,6 +59,20 @@
               [Join Zoom Meeting]
             </a>
             </div>
+          {% elif social.location == "Gather.Town" %}
+            <div>
+            <a href="{{config.gather_town}}" target="_blank"  class="card-link">
+              <!--
+              <img
+                  src="static/images/zoom-icon.png"
+                  height="24px"
+                  alt="Join Zoom Meeting"
+                  title="Join Zoom Meeting"
+              >
+              -->
+              [Join on Gather.Town]
+            </a>
+            </div>
           {% endif %}
             <div class="text-center text-muted text-monospace">
               <div class="paper-cal-links">

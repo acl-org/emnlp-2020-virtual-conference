@@ -13,6 +13,12 @@ class SessionInfo:
     start_time: datetime
     end_time: datetime
     link: str
+    hosts: str = None
+
+    @property
+    def day(self) -> str:
+        start_time = self.start_time.astimezone(pytz.utc)
+        return f'{start_time.strftime("%b")} {start_time.day}'
 
     @property
     def time_string(self) -> str:
@@ -50,9 +56,9 @@ class SessionInfo:
         if self.session_name.startswith("W-"):
             # workshop sessions
             return f"{self.session_name[2:]}: {start_date}"
-        if self.session_name.endswith("z") or self.session_name.endswith("g"):
+        if self.session_name.startswith("z") or self.session_name.startswith("g"):
             # paper sessions
-            return f"{self.session_name[:-1]}: {start_date}"
+            return f"{self.session_name[1:]}: {start_date}"
 
         return f"Session {self.session_name}: {start_date}"
 
@@ -86,9 +92,11 @@ class PaperContent:
     sessions: List[SessionInfo]
     similar_paper_uids: List[str]
     program: str
+    material: str = None
+    s2_id: str = None
 
     def __post_init__(self):
-        if self.program != "workshop":
+        if self.program != "workshop" and self.program != "findings":
             assert self.track, self
         if self.pdf_url:
             assert self.pdf_url.startswith("https://"), self.pdf_url
@@ -229,6 +237,7 @@ class Workshop:
     prerecorded_talks: List[Dict[str, Any]]
     rocketchat_channel: str
     sessions: List[SessionInfo]
+    blocks: List[SessionInfo]
 
 
 @dataclass(frozen=True)
@@ -243,6 +252,7 @@ class SocialEvent:
     name: str
     description: str
     image: str
+    location: str
     organizers: SocialEventOrganizers
     sessions: List[SessionInfo]
     rocketchat_channel: str

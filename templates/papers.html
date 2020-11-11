@@ -43,6 +43,12 @@
     <a class="nav-link" href="papers_vis.html">Visualization</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="papers_keyword_vis.html">Browse Keywords</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="papers_connected.html">Connected Papers</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" href="#" id="tabFavs"><i class="fas fa-star"></i> Favorites</a>
   </li>
 </ul>
@@ -207,7 +213,17 @@
           <button class="btn btn-sm btn-outline-secondary visited">visited</button>
         </div>
       </div>
+
+      <div>
+        <div class="btn-group btn-group-toggle render_option" data-toggle="buttons">
+          <label class="btn btn-sm btn-outline-secondary" data-tippy-content="Show/hide papers whose QA session is finished.">
+            <input type="checkbox" name="hide_qa_ended" display="none" onchange="hideQaEnded(allPapers, this)" />
+            QA not passed
+          </label>
+        </div>
+      </div>
     </div>
+
 
   
     
@@ -324,7 +340,6 @@
 
   $('#track_selector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
     let track = e.target.value;
-    if (track === previousValue) return;
     setQueryStringParameter("track", track);
     start();
   });
@@ -340,6 +355,22 @@
     updateTabs();
     render();
   });
+</script>
+
+<script>
+  allTracks = [
+    "All tracks",
+    {% for t in tracks %}
+      "{{t}}",
+    {% endfor %}
+  ];
+
+  allWorkshops = [
+  "All workshops",
+  {% for w in workshop_names %}
+      "{{w}}",
+  {% endfor %}
+  ];
 </script>
 
 <div class="text-center" id="progressBar">

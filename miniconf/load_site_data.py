@@ -5,8 +5,8 @@ import itertools
 import json
 import os
 from collections import OrderedDict, defaultdict
-from datetime import datetime, timedelta
-from typing import Any, DefaultDict, Dict, List
+from datetime import timedelta
+from typing import Any, DefaultDict, Dict, List, Optional
 
 import jsons
 import pytz
@@ -51,6 +51,7 @@ def load_site_data(
         # papers.html
         "main_papers",
         "demo_papers",
+        "findings_papers",
         "paper_recs",
         "papers_projection",
         "paper_sessions",
@@ -96,8 +97,12 @@ def load_site_data(
     generate_tutorial_events(site_data)
     generate_workshop_events(site_data)
     generate_paper_events(site_data)
+    generate_social_events(site_data)
 
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
+    site_data["event_types"] = list(
+        {event["type"] for event in site_data["overall_calendar"]}
+    )
 
     # plenary_sessions.html
     plenary_sessions = build_plenary_sessions(
@@ -126,6 +131,11 @@ def load_site_data(
     for p in site_data["demo_papers"]:
         p["program"] = "demo"
 
+    for p in site_data["findings_papers"]:
+        p["program"] = "findings"
+        p["paper_type"] = "Findings"
+        p["track"] = "Findings of EMNLP"
+
     site_data["programs"] = ["main", "demo", "findings", "workshop"]
 
     # tutorials.html
@@ -150,12 +160,11 @@ def load_site_data(
     social_events = build_socials(site_data["socials"])
     site_data["socials"] = social_events
 
-    # sponsors.html
-    build_sponsors(site_data, by_uid, display_time_format)
-
     # papers.{html,json}
     papers = build_papers(
-        raw_papers=site_data["main_papers"] + site_data["demo_papers"],
+        raw_papers=site_data["main_papers"]
+        + site_data["demo_papers"]
+        + site_data["findings_papers"],
         paper_sessions=site_data["paper_sessions"],
         paper_recs=site_data["paper_recs"],
         paper_images_path=site_data["config"]["paper_images_path"],
@@ -167,10 +176,21 @@ def load_site_data(
     site_data["tracks"] = list(
         sorted(track for track in {paper.content.track for paper in papers})
     )
+
+    site_data["main_program_tracks"] = list(
+        sorted(
+            track
+            for track in {
+                paper.content.track
+                for paper in papers
+                if paper.content.program == "main"
+            }
+        )
+    )
     # paper_<uid>.html
     papers_by_uid: Dict[str, Any] = {}
     for paper in papers:
-        assert paper.id not in papers_by_uid
+        assert paper.id not in papers_by_uid, paper.id
         papers_by_uid[paper.id] = paper
     by_uid["papers"] = papers_by_uid
 
@@ -179,11 +199,16 @@ def load_site_data(
         item["id"] for item in site_data["papers_projection"]
     }
     for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
-        print(f"WARNING: {paper_id} does not have a projection")
+        paper = by_uid["papers"][paper_id]
+        if paper.content.program == "main":
+            print(f"WARNING: {paper_id} does not have a projection")
 
     # about.html
     site_data["faq"] = site_data["faq"]["FAQ"]
     site_data["code_of_conduct"] = site_data["code_of_conduct"]["CodeOfConduct"]
+
+    # sponsors.html
+    build_sponsors(site_data, by_uid, display_time_format)
 
     print("Data Successfully Loaded")
     return extra_files
@@ -275,7 +300,7 @@ def generate_plenary_events(site_data: Dict[str, Any]):
             start = session["start_time"]
             end = session["end_time"]
             event = {
-                "title": plenary["title"],
+                "title": "<b>" + plenary["title"] + "</b>",
                 "start": start,
                 "end": end,
                 "location": f"plenary_session_{uid}.html",
@@ -318,16 +343,18 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
     """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
 
     # Add tutorial sessions to calendar
-    all_sessions = []
+    all_sessions: List[Dict[str, Any]] = []
     for tutorial in site_data["tutorials"]:
         uid = tutorial["UID"]
-        for session in tutorial["sessions"]:
-            start = session["start_time"]
-            end = session["end_time"]
+        blocks = compute_schedule_blocks(tutorial["sessions"])
+
+        for block in blocks:
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
             event = {
-                "title": f"{uid}: {tutorial['title']}<br/> <br/> <i>{tutorial['organizers']}</i>",
-                "start": start,
-                "end": end,
+                "title": f"<b>{uid}: {tutorial['title']}</b><br/><i>{tutorial['organizers']}</i>",
+                "start": min_start,
+                "end": max_end,
                 "location": f"tutorial_{uid}.html",
                 "link": f"tutorial_{uid}.html",
                 "category": "time",
@@ -335,9 +362,9 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
                 "view": "day",
             }
             site_data["overall_calendar"].append(event)
-            assert start < end, "Session start after session end"
+            assert min_start < max_end, "Session start after session end"
 
-            all_sessions.append(session)
+        all_sessions.extend(tutorial["sessions"])
 
     blocks = compute_schedule_blocks(all_sessions)
 
@@ -362,17 +389,19 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
 def generate_workshop_events(site_data: Dict[str, Any]):
     """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
     # Add workshop sessions to calendar
-    all_sessions = []
+    all_sessions: List[Dict[str, Any]] = []
     for workshop in site_data["workshops"]:
         uid = workshop["UID"]
-        for session in workshop["sessions"]:
-            start = session["start_time"]
-            end = session["end_time"]
+        all_sessions.extend(workshop["sessions"])
+
+        for block in compute_schedule_blocks(workshop["sessions"]):
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
 
             event = {
-                "title": f"{workshop['title']}<br/> <br/> <i>{workshop['organizers']}</i>",
-                "start": start,
-                "end": end,
+                "title": f"<b>{workshop['title']}</b><br/> <i>{workshop['organizers']}</i>",
+                "start": min_start,
+                "end": max_end,
                 "location": f"workshop_{uid}.html",
                 "link": f"workshop_{uid}.html",
                 "category": "time",
@@ -381,9 +410,7 @@ def generate_workshop_events(site_data: Dict[str, Any]):
             }
             site_data["overall_calendar"].append(event)
 
-            assert start < end, "Session start after session end"
-
-            all_sessions.append(session)
+            assert min_start < max_end, "Session start after session end"
 
     blocks = compute_schedule_blocks(all_sessions)
 
@@ -409,13 +436,15 @@ def generate_paper_events(site_data: Dict[str, Any]):
     """ We add sessions from papers and compute the overall paper blocks for the weekly view. """
     # Add paper sessions to calendar
 
-    all_sessions = []
+    all_sessions: List[Dict[str, Any]] = []
     for uid, session in site_data["paper_sessions"].items():
         start = session["start_time"]
         end = session["end_time"]
 
+        parts = session["long_name"].split(":", 1)
+
         event = {
-            "title": session["long_name"].replace(":", "<br>", 1),
+            "title": f"<b>{parts[0]}</b><br>{parts[1]}",
             "start": start,
             "end": end,
             "location": "",
@@ -450,13 +479,74 @@ def generate_paper_events(site_data: Dict[str, Any]):
         site_data["overall_calendar"].append(event)
 
 
+def generate_social_events(site_data: Dict[str, Any]):
+    """ We add social sessions and compute the overall paper social for the weekly view. """
+    # Add paper sessions to calendar
+
+    all_sessions = []
+    for social in site_data["socials"]:
+        for session in social["sessions"]:
+            start = session["start_time"]
+            end = session["end_time"]
+
+            uid = social["UID"]
+            if uid.startswith("B"):
+                name = "<b>Birds of a Feather</b><br>" + social["name"]
+            elif uid.startswith("A"):
+                name = "<b>Affinity group meeting</b><br>" + social["name"]
+            else:
+                name = social["name"]
+
+            event = {
+                "title": name,
+                "start": start,
+                "end": end,
+                "location": "",
+                "link": f"socials.html",
+                "category": "time",
+                "type": "Socials",
+                "view": "day",
+            }
+            site_data["overall_calendar"].append(event)
+
+            assert start < end, "Session start after session end"
+
+            all_sessions.append(session)
+
+    blocks = compute_schedule_blocks(all_sessions)
+
+    # Compute start and end of tutorial blocks
+    for block in blocks:
+        min_start = min([t["start_time"] for t in block])
+        max_end = max([t["end_time"] for t in block])
+
+        event = {
+            "title": f"Socials",
+            "start": min_start,
+            "end": max_end,
+            "location": "",
+            "link": f"socials.html",
+            "category": "time",
+            "type": "Socials",
+            "view": "week",
+        }
+        site_data["overall_calendar"].append(event)
+
+
 def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     events = [
         copy.deepcopy(event)
         for event in overall_calendar
         if event["type"]
-        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions", "Socials"}
+        in {
+            "Plenary Sessions",
+            "Tutorials",
+            "Workshops",
+            "QA Sessions",
+            "Socials",
+            "Sponsors",
+        }
     ]
 
     for event in events:
@@ -475,6 +565,9 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
             event["url"] = event["link"]
         elif event_type == "Socials":
             event["classNames"] = ["calendar-event-socials"]
+            event["url"] = event["link"]
+        elif event_type == "Sponsors":
+            event["classNames"] = ["calendar-event-sponsors"]
             event["url"] = event["link"]
         else:
             event["classNames"] = ["calendar-event-other"]
@@ -536,7 +629,7 @@ def build_papers(
 
     for session in paper_sessions.values():
         for paper_id in session["papers"]:
-            assert paper_id not in paper_id_to_link
+            assert paper_id not in paper_id_to_link, paper_id
             paper_id_to_link[paper_id] = session.get("link", "http://example.com")
 
     # build the lookup from paper to slots
@@ -573,11 +666,13 @@ def build_papers(
                 tldr=item["abstract"][:250] + "...",
                 pdf_url=item.get("pdf_url", ""),
                 demo_url=item.get("demo_url", ""),
+                material=item.get("material"),
                 track=normalize_track_name(item.get("track", "")),
                 paper_type=item.get("paper_type", ""),
                 sessions=sessions_for_paper[item["UID"]],
                 similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
                 program=item["program"],
+                s2_id=item.get("s2_id"),
             ),
         )
         for item in raw_papers
@@ -585,11 +680,14 @@ def build_papers(
 
     # throw warnings for missing information
     for paper in papers:
-        if not paper.presentation_id:
+        if not paper.presentation_id and paper.content.program not in [
+            "demo",
+            "findings",
+        ]:
             print(f"WARNING: presentation_id not set for {paper.id}")
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
-        if len(paper.content.sessions) != 1:
+        if paper.presentation_id and len(paper.content.sessions) != 1:
             print(
                 f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
             )
@@ -597,10 +695,6 @@ def build_papers(
             print(f"WARNING: empty similar_paper_uids for {paper.id}")
 
     return papers
-
-
-def parse_session_time(session_time_str: str) -> datetime:
-    return datetime.strptime(session_time_str, "%Y-%m-%d_%H:%M:%S")
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
@@ -659,6 +753,26 @@ def build_workshops(
                 return wsh["title"]
         return ""
 
+    def build_workshop_blocks(t: Dict[str, Any]) -> List[SessionInfo]:
+        blocks = compute_schedule_blocks(t["sessions"], leeway=timedelta(hours=1))
+        if len(blocks) == 0:
+            return []
+
+        result = []
+        for i, block in enumerate(blocks):
+            min_start = min([t["start_time"] for t in block])
+            max_end = max([t["end_time"] for t in block])
+
+            result.append(
+                SessionInfo(
+                    session_name=f"W-Live Session {i+1}",
+                    start_time=min_start,
+                    end_time=max_end,
+                    link="",
+                )
+            )
+        return result
+
     grouped_papers: DefaultDict[str, Any] = defaultdict(list)
     for paper in raw_workshop_papers:
         grouped_papers[paper["workshop"]].append(paper)
@@ -710,9 +824,11 @@ def build_workshops(
                     start_time=session.get("start_time"),
                     end_time=session.get("end_time"),
                     link=session.get("zoom_link", ""),
+                    hosts=session.get("hosts"),
                 )
                 for session in item.get("sessions")
             ],
+            blocks=build_workshop_blocks(item),
         )
         for item in raw_workshops
     ]
@@ -727,6 +843,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             name=item["name"],
             description=item["description"],
             image=item.get("image"),
+            location=item.get("location"),
             organizers=SocialEventOrganizers(
                 members=item["organizers"]["members"],
                 website=item["organizers"].get("website", ""),
@@ -748,18 +865,10 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
 
 
 def build_sponsors(site_data, by_uid, display_time_format) -> None:
-    by_uid["sponsors"] = {}
+    def generate_schedule(schedule: List[Dict[str, Any]]) -> Dict[str, Any]:
+        times: Dict[str, List[Any]] = defaultdict(list)
 
-    for sponsor in site_data["sponsors"]:
-        uid = "_".join(sponsor["name"].lower().split())
-        sponsor["UID"] = uid
-        by_uid["sponsors"][uid] = sponsor
-
-    # Format the session start and end times
-    for sponsor in by_uid["sponsors"].values():
-        sponsor["zoom_times"] = OrderedDict()
-
-        for session in sponsor.get("schedule", []):
+        for session in schedule:
             if session["start"] is None:
                 continue
 
@@ -773,10 +882,31 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
             end_time = end.strftime(display_time_format)
             time_string = "{} ({}-{} GMT)".format(day, start_time, end_time)
 
-            if day not in sponsor["zoom_times"]:
-                sponsor["zoom_times"][day] = []
+            times[day].append((time_string, session["label"]))
+        return times
 
-            sponsor["zoom_times"][day].append((time_string, session["label"]))
+    by_uid["sponsors"] = {}
+
+    for sponsor in site_data["sponsors"]:
+        uid = "_".join(sponsor["name"].lower().split())
+        sponsor["UID"] = uid
+        by_uid["sponsors"][uid] = sponsor
+
+    # Format the session start and end times
+    for sponsor in by_uid["sponsors"].values():
+        sponsor["zoom_times"] = generate_schedule(sponsor.get("schedule", []))
+        sponsor["gather_times"] = generate_schedule(sponsor.get("gather_schedule", []))
+
+        publications = sponsor.get("publications")
+        if not publications:
+            continue
+
+        grouped_publications: Dict[str, List[Any]] = defaultdict(list)
+        for paper_id in publications:
+            paper = by_uid["papers"][paper_id]
+            grouped_publications[paper.content.paper_type].append(paper)
+
+        sponsor["grouped_publications"] = grouped_publications
 
     # In the YAML, we just have a list of sponsors. We group them here by level
     sponsors_by_level: DefaultDict[str, List[Any]] = defaultdict(list)
@@ -803,7 +933,12 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     assert all(lvl in site_data["sponsor_levels"] for lvl in sponsors_by_level)
 
 
-def compute_schedule_blocks(events) -> List[List[Dict[str, Any]]]:
+def compute_schedule_blocks(
+    events, leeway: Optional[timedelta] = None
+) -> List[List[Dict[str, Any]]]:
+    if leeway is None:
+        leeway = timedelta()
+
     # Based on
     # https://stackoverflow.com/questions/54713564/how-to-find-gaps-given-a-number-of-start-and-end-datetime-objects
     if len(events) <= 1:
@@ -821,7 +956,7 @@ def compute_schedule_blocks(events) -> List[List[Dict[str, Any]]]:
     for pair in events:
         # if next start time is before current end time, keep going until we find a gap
         # if next start time is after current end time, found the first gap
-        if pair["start_time"] > now:
+        if pair["start_time"] - (now + leeway) > timedelta():
             blocks.append(block)
             block = [pair]
         else:

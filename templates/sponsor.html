@@ -5,7 +5,8 @@
 <div class="tab-content pt-3 pb-5" id="nav-tabContent">
   {% if sponsor.logoontop %}
   <img class="rounded mx-auto d-block img-fluid" src="static/images/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="max-width: 15em; max-height: 10em"  />
-  {% else %}
+  {% endif %}
+  {% if not sponsor.logoontop or sponsor.nameontop %}
   {{ components.section(sponsor.name) }}
   {% endif %}
 </div>
@@ -25,7 +26,7 @@
 </div>
 
 <!-- Youtube -->
-{% if sponsor.youtube is defined %}
+{% if sponsor.youtube is defined and sponsor.youtube %}
 <div class="row justify-content-md-center pt-3">
   <iframe width="525" height="301" src="{{ sponsor.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -73,30 +74,57 @@
     <div class="card-header" id="headingZooms">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseZooms" aria-expanded="true" aria-controls="collapseZooms">
-          <h5>Schedule</h5>
+          <h5>Virtual Meeting Schedule</h5>
         </button>
       </h5>
     </div>
-    <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms" data-parent="#accordion">
+    <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms">
       <div class="card-body">
         {% for day, zooms in sponsor.zoom_times.items() %}
         <h5>{{ day }}</h5>
         <ul>
             {% for (time_string, label) in zooms %}
-                <li> <span class="zoom_times">{{ time_string }}</span>: {{label }} </li>
+                <li> <span class="zoom_times">{{ time_string }}</span>: {{label|markdown }} </li>
             {% endfor %}
         </ul>
         {% endfor %}
 
-        <a class="btn btn-primary" href="{{ sponsor.zoom_link }}" role="button" target="_blank">Join via Zoom!</a>
+        {% if sponsor.zoom_link is defined %}
+        <a class="btn btn-primary" href="{{ sponsor.zoom_link }}" role="button" target="_blank">Join the event!</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
+  {% if sponsor.gather_times|length %}
+  <div class="card">
+    <div class="card-header" id="headingGathers">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseGathers" aria-expanded="true" aria-controls="collapseGathers">
+          <h5>Gather Schedule</h5>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseGathers" class="collapse show" aria-labelledby="headingGathers" data-parent="#accordion">
+      <div class="card-body">
+        {% for day, zooms in sponsor.gather_times.items() %}
+        <h5>{{ day }}</h5>
+        <ul>
+            {% for (time_string, label) in zooms %}
+                <li> <span class="zoom_times">{{ time_string }}</span>: {{label|markdown }} </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+        <a class="btn btn-primary" href="{{ config.gather_town }}" role="button" target="_blank">Visit us in Gather.town!</a>
       </div>
     </div>
   </div>
   {% endif %}
 
     <!-- Publications -->
-  {% if sponsor.publications is defined %}
+  {% if sponsor.grouped_publications is defined %}
   <div class="card">
     <div class="card-header" id="headingPublications">
       <h5 class="mb-0">
@@ -105,15 +133,17 @@
         </button>
       </h5>
     </div>
-    <div id="collapsePublications" class="collapse show" aria-labelledby="headingPublications" data-parent="#accordion">
+    <div id="collapsePublications" class="collapse show" aria-labelledby="headingPublications">
       <div class="card-body">
         <ul>
-        {% for paper_uid in sponsor.publications %}
-            {% set paper = papers[paper_uid] %}
-            <a class="text-dark" href="paper_{{paper.id}}.html" target="_blank">
-              <p class="font-weight-bold mb-n1">{{ paper.content.title }}</p>
-              <p >{{ paper.content.authors | join(", ") }}</p>
-            </a>
+        {% for paper_type, papers in sponsor.grouped_publications.items() %}
+          <h5>{{ paper_type}}</h5>
+          {% for paper in papers %}
+              <a class="text-dark" href="paper_{{paper.id}}.html" target="_blank">
+                <p class="font-weight-bold mb-n1">{{ paper.content.title }}</p>
+                <p >{{ paper.content.authors | join(", ") }}</p>
+              </a>
+          {% endfor %}
         {% endfor %}
         </ul>
       </div>
@@ -131,7 +161,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseResources" class="collapse show" aria-labelledby="headingResources" data-parent="#accordion">
+    <div id="collapseResources" class="collapse show" aria-labelledby="headingResources">
       <div class="card-body">
         <ul>
         {% for resource in sponsor.resources %}
@@ -153,11 +183,11 @@
         </button>
       </h5>
     </div>
-    <div id="collapseDownloads" class="collapse show" aria-labelledby="headingDownloads" data-parent="#accordion">
+    <div id="collapseDownloads" class="collapse show" aria-labelledby="headingDownloads">
       <div class="card-body">
         <ul>
         {% for resource in sponsor.downloads%}
-            <li><a href="{{ resource.website }}" target="_blank">{{ resource.label }}</a></li>
+            <li><a href="static/sponsordata/{{ resource.website }}" target="_blank">{{ resource.label }}</a></li>
         {% endfor %}
         </ul>
       </div>
@@ -175,7 +205,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseContact" class="collapse show" aria-labelledby="headingContact" data-parent="#accordion">
+    <div id="collapseContact" class="collapse show" aria-labelledby="headingContact">
       <div class="card-body">
         <ul class="list-unstyled px-4">
         {% for contact in sponsor.contacts %}
@@ -197,7 +227,7 @@
         </button>
       </h5>
     </div>
-    <div id="collapseChat" class="collapse show" aria-labelledby="headingChat" data-parent="#accordion">
+    <div id="collapseChat" class="collapse show" aria-labelledby="headingChat">
       <div class="card-body">
         <div class="col-md-12 col-xs-12 p-2">
           <h5 class="text-center">Click "Reply" in the chat window to start a private conversation with our sponsor</h5>
