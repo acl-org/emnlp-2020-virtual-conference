@@ -58,7 +58,8 @@ class SessionInfo:
             return f"{self.session_name[2:]}: {start_date}"
         if self.session_name.startswith("z") or self.session_name.startswith("g"):
             # paper sessions
-            return f"{self.session_name[1:]}: {start_date}"
+            prefix = self.session_type.capitalize()
+            return f"{prefix}-{self.session_name[1:]}: {start_date}"
 
         return f"Session {self.session_name}: {start_date}"
 
