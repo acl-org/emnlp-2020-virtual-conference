@@ -79,13 +79,6 @@ def papers_keyword_vis():
     return render_template("papers_keyword_vis.html", **data)
 
 
-@app.route("/papers_connected.html")
-def papers_connected():
-    data = _data()
-
-    return render_template("papers_connected.html", **data)
-
-
 @app.route("/schedule.html")
 def schedule():
     data = _data()
