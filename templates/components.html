@@ -458,7 +458,8 @@
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-    <span>{{session.session}}, </span><span class="session_times">{{session.session}} {{session.time_string}}</span>
+    <span>{{session.session}}, </span>
+    <span class="session_times">{{session.session}} {{session.time_string}}</span>
 
   {% if session.link %}
   <a href="{{session.link}}" target="_blank"  class="card-link">

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% set page_title = "Q&A Sessions" %}
+
+{% block heading %}
+  {{ components.section("Q&A Sessions") }}
+{% endblock %}
+
+{% block content %}
+
+{% for session in qa_sessions %}
+<div class="row">
+  <a name="{{ session.uid }}">
+    <h5>{{ session.name }}:
+        {{session.day}},
+        <span>{{session.session}} </span>
+        <span class="session_times">{{session.session}} {{session.time_string}}</span>
+    </h5>
+  </a>
+  {% for subsession in session.subsessions %}
+    <div class="col-12 mb-2">
+    <strong>{{ subsession.name }}</strong>
+    <ul>
+    {% for paper_id in subsession.papers %}
+      {% set paper = papers[paper_id] %}
+      <li>
+        <a class="text-dark" href="paper_{{paper.id}}.html" target="_blank">
+          {{ paper.content.title }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+    {% if subsession.link %}
+      <a class="btn btn-primary btn-sm" href="{{ subsession.link }}" role="button" target="_blank">Join the event!</a>
+    {% endif %}
+    </div>
+  {% endfor %}
+  <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+
+</div>
+{% endfor %}
+
+  <script src="static/js/time-extend.js"></script>
+  <script>
+      $(document).ready(() => {
+          add_local_tz('.session_times');
+      });
+  </script>
+
+{% endblock %}

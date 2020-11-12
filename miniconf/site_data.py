@@ -258,3 +258,36 @@ class SocialEvent:
     sessions: List[SessionInfo]
     rocketchat_channel: str
     website: str
+
+
+@dataclass(frozen=True)
+class QaSubSession:
+    name: str
+    link: str
+    papers: List[str]
+
+
+@dataclass(frozen=True)
+class QaSession:
+    uid: str
+    name: str
+    start_time: datetime
+    end_time: datetime
+    subsessions: List[QaSubSession]
+
+    @property
+    def session(self) -> str:
+        start = self.start_time.astimezone(pytz.utc)
+        start_date = f'{start.strftime("%b")} {start.day}'
+        return f"{self.session_name}: {start_date}"
+
+    @property
+    def time_string(self) -> str:
+        start = self.start_time.astimezone(pytz.utc)
+        end = self.end_time.astimezone(pytz.utc)
+        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
+
+    @property
+    def day(self) -> str:
+        start_time = self.start_time.astimezone(pytz.utc)
+        return f'{start_time.strftime("%b")} {start_time.day}'

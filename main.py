@@ -101,6 +101,14 @@ def plenary_sessions():
     return render_template("plenary_sessions.html", **data)
 
 
+@app.route("/qa_sessions.html")
+def qa_sessions():
+    data = _data()
+    data["qa_sessions"] = site_data["qa_sessions"]
+    data["papers"] = by_uid["papers"]
+    return render_template("qa_sessions.html", **data)
+
+
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
