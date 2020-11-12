@@ -64,9 +64,9 @@ class SessionInfo:
 
     @property
     def session_type(self):
-        if self.session_name.endswith("z"):
+        if self.session_name.startswith("z"):
             return "zoom"
-        elif self.session_name.endswith("g"):
+        elif self.session_name.startswith("g"):
             return "gather"
         else:
             return "unknown"
