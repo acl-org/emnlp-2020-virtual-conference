@@ -15,10 +15,9 @@
     methods.
   info: |-
     This tutorial has slides that you see can anytime (It does not have any
-        prerecorded talk). It will be conducted entirely live on Zoom and will be
-        livestreamed on this page. It has a chat window that you can use to have
-        discussions with the tutorial teachers and other attendees anytime during the
-        conference.
+    prerecorded talk). It will be conducted entirely live on Zoom. It has a
+    chat window that you can use to have discussions with the tutorial teachers
+    and other attendees anytime during the conference.
   rocketchat_channel: tutorial-1-interpreting-predictions
   sessions:
   - name: Part 1
@@ -48,7 +47,7 @@
     The tutorial offers an overview of the emerging and inter-connected research areas of fact-checking, misinformation, disinformation, “fake news”, propaganda, and media bias detection, with focus on text and on computational approaches. It further explores the general fact-checking pipeline and important elements thereof such as check-worthiness estimation, spotting previous fact-checked claims, stance detection, source reliability estimation, and detecting malicious users in social media. Finally, it covers some recent developments such as the emergence of large-scale pre-trained language models, and the challenges and opportunities they offer.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        also has two live sessions that will be conducted on Zoom. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-2-fact-checking
@@ -77,7 +76,7 @@
     tricks.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        also has two live sessions that will be conducted on Zoom. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-3-high-performance
@@ -107,7 +106,7 @@
     possible future directions.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        also has two live sessions that will be conducted on Zoom. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-4-machine-reasoning
@@ -138,7 +137,7 @@
     reasoning -- and highlight the research gaps and future directions.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        also has two live sessions that will be conducted on Zoom. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-5-spatial-language
@@ -160,7 +159,7 @@
     Recently, with rapid improvements in machine translation, speech recognition, and speech synthesis, there has been exciting progress towards simultaneous translation. This tutorial will focus on the design and evaluation of policies for simultaneous translation, to leave attendees with a deep technical understanding of the history, the recent advances, and the remaining challenges in this field.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        also has two live sessions that will be conducted on Zoom. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-6-simultaneous-translation
@@ -191,7 +190,7 @@
     insights on several applications.'
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        also has two live sessions that will be conducted on Zoom. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-7-world-of-generation
