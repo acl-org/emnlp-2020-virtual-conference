@@ -25,7 +25,7 @@ chat_server: emnlp2020.rocket.chat
 
 gather_town: https://gather.town/
 connected_paper: https://site.beta.connectedpapers.com/conference
-
+channels_stats_server: http://francisco.uberspace.de:41620/
 
 calendar:
   start: '2020-11-16'

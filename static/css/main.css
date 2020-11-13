@@ -607,3 +607,33 @@ div#papers_options > div {
     margin-bottom: 1em;
   }
 }
+
+
+.stats-channel{
+  margin-bottom: 0.7em;
+}
+
+.stats-channel-name {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 3px;
+}
+
+.stats-channel-name a{
+  color: black;
+  border-radius: 3px;
+}
+
+.stats-channel-name a:hover{
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.stats-channel-info {
+  font-size: 0.8em;
+}
+
+.stats-last-update {
+  font-size: 0.9em;
+}
