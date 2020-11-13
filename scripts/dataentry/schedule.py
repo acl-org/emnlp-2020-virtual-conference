@@ -71,7 +71,8 @@ def build_plenary():
             "day": start.strftime("%b %d"),
             "image": image,
             "sessions": sessions,
-            "rocketchat_channel": "plenary-" + "-".join([e.lower() for e in event_name.split(" ")])
+            "rocketchat_channel": "plenary-"
+            + "-".join([e.lower() for e in event_name.split(" ")]),
         }
 
         if keynote:
@@ -82,7 +83,9 @@ def build_plenary():
                 event["abstract"] = abstract_janet
             event["bio"] = keynote["bio"]
             event["presenter"] = speaker
-            event["rocketchat_channel"] = "keynote-" + "-".join([x.lower() for x in speaker.split(" ")])
+            event["rocketchat_channel"] = "keynote-" + "-".join(
+                [x.lower() for x in speaker.split(" ")]
+            )
             # event["presentation_id"] = presentation_id
 
         plenary.append(event)
