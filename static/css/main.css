@@ -608,8 +608,7 @@ div#papers_options > div {
   }
 }
 
-
-.stats-channel{
+.stats-channel {
   margin-bottom: 0.7em;
 }
 
@@ -620,12 +619,12 @@ div#papers_options > div {
   margin-bottom: 3px;
 }
 
-.stats-channel-name a{
+.stats-channel-name a {
   color: black;
   border-radius: 3px;
 }
 
-.stats-channel-name a:hover{
+.stats-channel-name a:hover {
   color: #007bff;
   border-color: #007bff;
 }
