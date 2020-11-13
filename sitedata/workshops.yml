@@ -1,6 +1,6 @@
 - UID: WS-1
   title: CoNLL 2020
-  organizers: Julia Hockenmaier and Afra Alishahi
+  organizers: "Raquel Fern\xE1ndez and Tal Linzen"
   abstract: CoNLL is a yearly top-tier NLP conference that has been organized by SIGNLL
     since 1997.
   website: https://www.conll.org
@@ -20,8 +20,12 @@
     name: 'Session 1: Mixed topics (gather.town)'
     hosts: TBD
   - start_time: 2020-11-19 10:00:00-05:00
-    end_time: 2020-11-19 11:00:00-05:00
+    end_time: 2020-11-19 10:50:00-05:00
     name: Coffee break / watch pre-recorded Toutanova talk
+    hosts: TBD
+  - start_time: 2020-11-19 10:50:00-05:00
+    end_time: 2020-11-19 11:00:00-05:00
+    name: Opening remarks and best paper awards
     hosts: TBD
   - start_time: 2020-11-19 11:00:00-05:00
     end_time: 2020-11-19 11:30:00-05:00
@@ -463,11 +467,6 @@
     hosts: TBD
   - start_time: 2020-11-19 13:45:00-04:00
     end_time: 2020-11-19 14:45:00-04:00
-    name: 'Pressure on Language Emergence: Least Effort, Object Constancy and Frequency
-      (Findings of EMNLP)'
-    hosts: TBD
-  - start_time: 2020-11-19 13:45:00-04:00
-    end_time: 2020-11-19 14:45:00-04:00
     name: Inferring Symmetry in Natural Language (Findings of EMNLP)
     hosts: TBD
   - start_time: 2020-11-19 14:45:00-04:00
@@ -612,7 +611,7 @@
 - UID: WS-7
   title: First Workshop on Scholarly Document Processing (SDP 2020)
   organizers: Muthu Kumar Chandrasekaran, Guy Feigenblat, Dayne Freitag, Tirthankar
-    Ghosal, Drahomira Herrmannova, Eduard Hovy, Petr Knoth, David Konopnicki, Philipp
+    Ghosal, Michal Shmueli-Scheuer, Eduard Hovy, Petr Knoth, David Konopnicki, Philipp
     Mayr, Robert Patton, Dominika Tkaczyk and Anita de Waard
   abstract: 'SDP is a full day workshop that provides an interdisciplinary venue for
     researchers interested in any aspect of mining scientific literature. SDP includes
@@ -953,15 +952,15 @@
     end_time: 2020-11-19 11:35:00-05:00
     name: 'Shared Task Team 5: NUIG (Europe)'
     hosts: TBD
-  - start_time: 2020-11-19 11:40:00-05:00
-    end_time: 2020-11-19 12:10:00-05:00
+  - start_time: 2020-11-19 11:35:00-05:00
+    end_time: 2020-11-19 12:15:00-05:00
     name: "Keynote Talk: Harald Hammarstr\xF6m (Germany)"
     hosts: TBD
-  - start_time: 2020-11-19 12:10:00-05:00
-    end_time: 2020-11-19 12:20:00-05:00
+  - start_time: 2020-11-19 12:15:00-05:00
+    end_time: 2020-11-19 12:25:00-05:00
     name: Keynote Q&A
     hosts: TBD
-  - start_time: 2020-11-19 12:20:00-05:00
+  - start_time: 2020-11-19 12:25:00-05:00
     end_time: 2020-11-19 12:30:00-05:00
     name: Coffee Break
     hosts: TBD
@@ -1281,15 +1280,23 @@
   sessions:
   - start_time: 2020-11-20 00:00:00-08:00
     end_time: 2020-11-20 01:00:00-08:00
-    name: QA session1
+    name: 'QA session1: Large Product Key Memory for Pre-trained Language Models,
+      Exploring the Boundaries of Low-Resource BERT Distillation, Keyphrase Generation
+      with GANs in Low-Resources Scenarios'
     hosts: Shafiq Joty
   - start_time: 2020-11-20 01:00:00-08:00
     end_time: 2020-11-20 02:00:00-08:00
-    name: QA session2
+    name: "QA session2: Don\u2019t Read Too Much Into It: Adaptive Computation for\
+      \ Open-Domain Question Answering, A comparison between CNNs and WFAs for Sequence\
+      \ Classification, Counterfactual Augmentation for Training Next Response Selection"
     hosts: Shafiq Joty
   - start_time: 2020-11-20 07:00:00-08:00
     end_time: 2020-11-20 08:00:00-08:00
-    name: QA session3
+    name: 'QA session3: Knowing Right from Wrong: Should We Use More Complex Models
+      for Automatic Short-Answer Scoring in Bahasa Indonesia?, Learning Informative
+      Representations of Biomedical Relations with Latent Variable Models, End to
+      End Binarized Neural Networks for Text Classification, Predictive Model Selection
+      for Transfer Learning in Sequence Labeling Tasks'
     hosts: Thomas Wolf
   - start_time: 2020-11-20 08:00:00-08:00
     end_time: 2020-11-20 09:00:00-08:00
@@ -1301,23 +1308,36 @@
     hosts: Vered Shwartz & Angela Fan
   - start_time: 2020-11-20 10:00:00-08:00
     end_time: 2020-11-20 11:00:00-08:00
-    name: QA session4
+    name: 'QA session4: Early Exiting BERT for Efficient Document Ranking, Quasi-Multitask
+      Learning: an Efficient Surrogate for Obtaining Model Ensembles, A Little Bit
+      Is Worse Than None: Ranking with Limited Training Data'
     hosts: Alex Wang
   - start_time: 2020-11-20 11:00:00-08:00
     end_time: 2020-11-20 12:00:00-08:00
-    name: QA session5
+    name: 'QA session5: Load What You Need: Smaller Versions of Mutlilingual BERT,
+      Towards Accurate and Reliable Energy Measurement of NLP Models, Do We Need to
+      Create Big Datasets to Learn a Task?'
     hosts: Vered Shwartz
   - start_time: 2020-11-20 15:00:00-08:00
     end_time: 2020-11-20 16:00:00-08:00
-    name: QA Session6
+    name: 'QA Session6: Rank and run-time aware compression of NLP Applications, Incremental
+      Neural Coreference Resolution in Constant Memory, Efficient Estimation of Influence
+      of a Training Instance, Efficient Inference For Neural Machine Translation'
     hosts: Nafise Sadat Moosavi
   - start_time: 2020-11-20 16:00:00-08:00
     end_time: 2020-11-20 17:00:00-08:00
-    name: QA Session7
+    name: 'QA Session7: P-SIF: Document Embeddings using Partition Averaging, Sparse
+      Optimization for Unsupervised Extractive Summarization of Long Documents with
+      the Frank-Wolfe Algorithm, Analysis of Resource-efficient Predictive Models
+      for Natural Language Processing'
     hosts: Nafise Sadat Moosavi
   - start_time: 2020-11-20 17:00:00-08:00
     end_time: 2020-11-20 18:00:00-08:00
-    name: QA Session8
+    name: 'QA Session8: Doped Structured Matrices for Extreme Compression of LSTM
+      Models, A Two-stage Model for Slot Filling in Low-resource Settings: Domain-agnostic
+      Non-slot Reduction and Pretrained Contextual Embeddings, SqueezeBERT: What can
+      computer vision teach NLP about efficient neural networks?, FastFormers: Highly
+      Efficient Transformer Models for Natural Language Understanding'
     hosts: Alex Wang
   prerecorded_talks:
   - title: Invited Talk
@@ -1384,7 +1404,7 @@
   prerecorded_talks: []
 - UID: WS-17
   title: The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW
-  organizers: Zeerak Waseem, Vinodkumar Prabhakaran and Bertie Vidgen
+  organizers: Zeerak Waseem, Vinodkumar Prabhakaran, Seyi Akiwowo and Bertie Vidgen
   abstract: The workshop focuses on online abuse through a multi-disciplinary lens,
     drawing on social sciences, law, media studies, and more.
   website: https://www.workshopononlineabuse.com/home
@@ -1418,7 +1438,7 @@
   - start_time: 2020-11-20 15:40:00+00:00
     end_time: 2020-11-20 16:40:00+00:00
     name: "Keynote Panel: Maliha Ahmed, Andr\xE9 Brock, Alex Hanna and Maria Rodriguez"
-    hosts: Vinodkumar Prabhakaran
+    hosts: Bertie Vidgen
   - start_time: 2020-11-20 16:40:00+00:00
     end_time: 2020-11-20 17:00:00+00:00
     name: Break
@@ -1427,6 +1447,40 @@
     end_time: 2020-11-20 17:45:00+00:00
     name: Paper Q&A Panels I (3 parallel sessions)
     hosts: Zeerak Waseem
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 17:45:00+00:00
+    name: |-
+      Session 1, Panel I: Methods for classifying online abuse
+
+      A Novel Methodology for Developing Automatic Harassment Classifiers for Twitter (Ishaan Arora, Julia Guo, Sarah Ita Levitan, Susan McGregor and Julia Hirschberg)
+      Using Transfer-based Language Models to Detect Hateful and Offensive Language Online (Vebjørn Isaksen and Björn Gambäck)
+      Fine-tuning BERT for multi-domain and multi-label incivil language detection (Kadir Bulut Ozler, Kate Kenski, Steve Rains, Yotam Shmargad, Kevin Coe and Steven Bethard)
+      HurtBERT: Incorporating Lexical Features with BERT for the Detection of Abusive Language (Anna Koufakou, Endang Wahyu Pamungkas, Valerio Basile and Viviana Patti)
+      Abusive Language Detection using Syntactic Dependency Graphs (Kanika Narang and Chris Brew)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 17:45:00+00:00
+    name: |-
+      Session 1, Panel II: Biases in datasets for abuse
+
+      Impact of politically biased data on hate speech classification (Maximilian Wich, Jan Bauer and Georg Groh)
+      Identifying and Measuring Annotator Bias Based on Annotators’ Demographic Characteristics (Hala Al Kuwatly, Maximilian Wich and Georg Groh)
+      Investigating Annotator Bias with a Graph-Based Approach (Maximilian Wich, Hala Al Kuwatly and Georg Groh)
+      Reducing Unintended Identity Bias in Russian Hate Speech Detection (Nadezhda Zueva, Madina Kabirova and Pavel Kalaidin)
+      Investigating Sampling Bias in Abusive Language Detection (Dante Razo and Sandra Kübler)
+      Is your toxicity my toxicity? Understanding the influence of rater identity on perceptions of toxicity (Ian Kivlichan, Olivia Redfield, Rachel Rosen, Raquel Saxe, Nitesh Goyal and Lucy Vasserman)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 17:45:00+00:00
+    name: |-
+      Session 1, Panel III: Technical challenges in classifying online abuse
+
+      Attending the Emotions to Detect Online Abusive Language (Niloofar Safi Samghabadi, Afsheen Hatami, Mahsa Shafaei, Sudipta Kar and Thamar Solorio)
+      Enhancing the Identification of Cyberbullying through Participant Roles (Gathika Rathnayake, Thushari Atapattu, Mahen Herath, Georgia Zhang and Katrina Falkner)
+      Developing a New Classifier for Automated Identification of Incivility in Social Media (Sam Davidson, Qiusi Sun and Magdalena Wojcieszak)
+      Hybrid Emoji-Based Masked Language Models for Zero-Shot Abusive Language Detection (Michele Corazza, Stefano Menini, Elena Cabrio, Sara Tonelli and Serena Villata)
+      Countering hate on social media: Large scale classification of hate and counter speech (Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent HébertDufresne and Mirta Galesic)
+    hosts: Zeerak Waseem
   - start_time: 2020-11-20 17:45:00+00:00
     end_time: 2020-11-20 18:00:00+00:00
     name: Break
@@ -1434,6 +1488,27 @@
   - start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 18:45:00+00:00
     name: Paper Q&A Panels II (3 parallel sessions)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 18:00:00+00:00
+    end_time: 2020-11-20 18:45:00+00:00
+    name: |-
+      Session 2, Panel IV: Ways of tackling online abuse
+
+      Moderating Our (Dis)Content: Renewing the Regulatory Approach (Claire Pershan)
+      Investigating takedowns of misogynistic abuse on Twitter: a story of iterative failures and partial successes (Nicolas Suzor and Rosalie Gillett)
+      Six Attributes of Unhealthy Conversations (Ilan Price, Jordan Gifford-Moore, Jory Fleming, Saul Musker, Maayan Roichman, Guillaume Sylvain, Nithum Thain, Lucas Dixon and Jeffrey Sorensen)
+      Free Expression By Design: Improving In-Platform Features & Third-Party Tools to Tackle Online Abuse (Viktorya Vilk, Elodie Vialle and Matt Bailey)
+      A Unified Taxonomy of Harmful Content (Michele Banko, Brendon MacKeen and Laurie Ray)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 18:00:00+00:00
+    end_time: 2020-11-20 18:45:00+00:00
+    name: |-
+      Session 2, Panel V: New datasets for abuse
+
+      Towards a Comprehensive Taxonomy and Large-Scale Annotated Corpus for Online Slur Usage (Jana Kurrek, Haji Mohammad Saleem and Derek Ruths)
+      In Data We Trust: A Critical Analysis of Hate Speech Detection Datasets (Kosisochukwu Madukwe, Xiaoying Gao and Bing Xue)
+      Detecting East Asian Prejudice on Social Media (Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall and Rebekah Tromble)
+      On Cross-Dataset Generalization in Automatic Detection of Online Abuse Isar Nejadgholi and Svetlana Kiritchenko [Findings] A little goes a long way: Improving toxic language classification despite data scarcity Mika Juuti, Tommi Gröndahl, Adrian Flanagan and N. Asokan
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 18:45:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
@@ -1479,21 +1554,21 @@
     name: 'Invited Speaker: Elizabeth E. Bruch, Associate Professor in Sociology and
       Complex Systems, University of Michigan "How (and Why) Online Dating Experiences
       Differ across American Cities"'
-    hosts: Brendan O'Connor
+    hosts: David Bamman
   - start_time: 2020-11-20 10:00:00-08:00
     end_time: 2020-11-20 11:00:00-08:00
     name: Lunch + Birds of a feather
-    hosts: Brendan O'Connor
+    hosts: David Bamman
   - start_time: 2020-11-20 11:00:00-08:00
     end_time: 2020-11-20 11:45:00-08:00
     name: 'Invited Speaker: Jesse Shapiro, Eastman Professor of Political Economy,
       Brown University "Measuring Group Differences in High-Dimensional Choices: Method
       and Application to Congressional Speech"'
-    hosts: David Bamman
+    hosts: Brendan O'Connor
   - start_time: 2020-11-20 11:45:00-08:00
     end_time: 2020-11-20 13:00:00-08:00
     name: Posters/papers session 2
-    hosts: David Bamman
+    hosts: Brendan O'Connor
   - start_time: 2020-11-20 13:00:00-08:00
     end_time: 2020-11-20 13:45:00-08:00
     name: |-
@@ -1563,8 +1638,8 @@
   prerecorded_talks: []
 - UID: WS-20
   title: Evaluation and Comparison of NLP Systems
-  organizers: Ido Dagan, Ani Nenkova, Mohit Bansal, Robert West, Eduard Hovy, Steffen
-    Eger, Yang Gao, Maxime Peyrard and Wei Zhao
+  organizers: "Steffen Eger, Yang Gao, Maxime Peyrard, Wei Zhao,\_Eduard Hovy,\_Mohit\
+    \ Bansal, Robert West,\_Ani Nenkova, and Ido Dagan"
   abstract: The workshop focuses on designing evaluation metrics, reporting trustworthy
     results and creating adequate and correct evaluation data.
   website: https://nlpevaluation2020.github.io/
@@ -1873,11 +1948,11 @@
   - start_time: 2020-11-20 04:00:00-04:00
     end_time: 2020-11-20 04:15:00-04:00
     name: Opening remarks
-    hosts: Yonatan Belinkov
+    hosts: Grzegorz Chrupala
   - start_time: 2020-11-20 04:15:00-04:00
     end_time: 2020-11-20 05:00:00-04:00
     name: Keynote 1 - Anna Rogers
-    hosts: Yonatan Belinkov
+    hosts: Grzegorz Chrupala
   - start_time: 2020-11-20 05:15:00-04:00
     end_time: 2020-11-20 06:00:00-04:00
     name: Oral session 1
@@ -1905,11 +1980,11 @@
   - start_time: 2020-11-20 13:15:00-04:00
     end_time: 2020-11-20 14:00:00-04:00
     name: Keynote 3 - Idan Blank
-    hosts: Dieuwke Hupkes
+    hosts: Yonatan Belinkov
   - start_time: 2020-11-20 14:00:00-04:00
     end_time: 2020-11-20 14:20:00-04:00
     name: Awards
-    hosts: Dieuwke Hupkes
+    hosts: Yonatan Belinkov
   - start_time: 2020-11-20 14:30:00-04:00
     end_time: 2020-11-20 16:00:00-04:00
     name: Poster session B
@@ -1942,49 +2017,3 @@
   - title: When BERT plays the lottery, all tickets are winning!
     speakers: Anna Rogers
     presentation_id: '38939762'
-- UID: WS-26
-  title: NLP for COVID-19 Workshop (Part 2)
-  organizers: Karin Verspoor, Mike Conway, Berry de Bruijn, Mark Dredze, Rada Mihalcea,
-    Byron Wallace
-  abstract:
-  website: https://www.nlpcovid19workshop.org/emnlp2020/
-  rocketchat_channel: workshop-nlp-covid19-emnlp
-  alias: nlp-covid19-emnlp
-  sessions:
-  - start_time: 2020-11-19 08:00:00+00:00
-    end_time: 2020-11-19 08:10:00+00:00
-    name: Welcome Speech
-    hosts: Karin Verspoor
-  - start_time: 2020-11-19 08:10:00+00:00
-    end_time: 2020-11-19 10:30:00+00:00
-    name: 'Session 1: Presentations'
-    hosts: Karin Verspoor
-  - start_time: 2020-11-19 10:30:00+00:00
-    end_time: 2020-11-19 11:30:00+00:00
-    name: Poster session 1 (gather.town)
-    hosts: Karin Verspoor
-  - start_time: 2020-11-19 11:30:00+00:00
-    end_time: 2020-11-19 16:00:00+00:00
-    name: long break
-    hosts: TBD
-  - start_time: 2020-11-19 16:00:00+00:00
-    end_time: 2020-11-19 17:50:00+00:00
-    name: 'Session 2: Presentations'
-    hosts: TBD
-  - start_time: 2020-11-19 17:50:00+00:00
-    end_time: 2020-11-19 18:50:00+00:00
-    name: Poster session 1 (gather.town)
-    hosts: TBD
-  - start_time: 2020-11-19 18:50:00+00:00
-    end_time: 2020-11-19 19:00:00+00:00
-    name: short break
-    hosts: TBD
-  - start_time: 2020-11-19 19:00:00+00:00
-    end_time: 2020-11-19 20:35:00+00:00
-    name: 'Session 3: Presentations'
-    hosts: TBD
-  - start_time: 2020-11-19 20:35:00+00:00
-    end_time: 2020-11-19 21:00:00+00:00
-    name: Discussion
-    hosts: TBD
-  prerecorded_talks: []

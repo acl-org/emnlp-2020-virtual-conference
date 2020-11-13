@@ -41,15 +41,36 @@ def load_workshop_overview_excel() -> pd.DataFrame:
     ws = wb.worksheets[0]
     ws.delete_rows(1, 1)
     ws.delete_rows(27, 100)
-    ws.delete_cols(1, 1)
-    ws.delete_cols(6, 3)
-    ws.delete_cols(7, 14)
+    ws.delete_cols(7, 3)
+    ws.delete_cols(8, 14)
+
+    emnlp_workshops = pd.read_csv(PATH_WORKSHOPS_CSV)
+
+    softconf_id_to_organizers = {
+        row["softconfNumber"]: row["authors"] for _, row in emnlp_workshops.iterrows()
+    }
 
     df = pd.DataFrame(
         ws.values,
-        columns=["UID", "Name", "Summary", "Authors", "URL", "Alias", "Old UID"],
+        columns=[
+            "Softconf Number",
+            "UID",
+            "Name",
+            "Summary",
+            "Authors",
+            "URL",
+            "Alias",
+            "Old UID",
+        ],
     )
     df = df.dropna(subset=["UID"])
+    df = df.dropna(subset=["Softconf Number"])
+
+    df["Softconf Number"] = df["Softconf Number"].apply(lambda x: int(x))
+    df["Organizers"] = df["Softconf Number"].apply(
+        lambda x: softconf_id_to_organizers[x]
+    )
+
     return df
 
 
@@ -83,7 +104,7 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
         entry = {
             "UID": uid,
             "title": row["Name"].strip(),
-            "organizers": row["Authors"].strip(),
+            "organizers": row["Organizers"].strip(),
             "abstract": row["Summary"],
             "website": row["URL"],
             "rocketchat_channel": f"workshop-{alias.lower()}",
@@ -280,7 +301,7 @@ def add_invited_talks(slideslive: pd.DataFrame):
 
 if __name__ == "__main__":
     # download_slideslive()
-    download_workshops()
+    # download_workshops()
 
     # load_csv()
     data = build_workshops_basics()

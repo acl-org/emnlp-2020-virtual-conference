@@ -61,7 +61,7 @@
     start_time: 2020-11-19 14:00:00+00:00
     end_time: 2020-11-19 15:00:00+00:00
   prerecorded: '38940825'
-  website: https://propaganda.qcri.org/emnlp20-tutorial
+  website: https://propaganda.math.unipd.it/emnlp20-tutorial
 - UID: T3
   title: High Performance Natural Language Processing
   organizers: Gabriel Ilharco, Cesar Ilharco, Iulia Turc, Tim Dettmers, Felipe Ferreira,
