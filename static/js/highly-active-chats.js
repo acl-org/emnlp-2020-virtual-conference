@@ -1,44 +1,4 @@
-let auto_refresh_interval = 60000;
-
-const load_stats = () => {
-  path_to_stats_json = `${channel_stats_server}/stats.json`;
-  d3.json(path_to_stats_json)
-    .then((stats) => {
-      render_stats(stats);
-      setTimeout(load_stats, auto_refresh_interval);
-    })
-    .catch((e) => {
-      console.error(e);
-      setTimeout(load_stats, auto_refresh_interval);
-    });
-};
-
-const render_stats = (stats_obj) => {
-  $("#highly-active-chats-progress-bar").hide();
-  $("#highly-active-chats-btn-refresh").show();
-  $("#highly-active-chats-btn-refresh").prop("disabled", false);
-
-  list_html = stats_obj.stats.map((s) => channel_html(s.channel));
-  $("#highly-active-chats-list").html(list_html);
-
-  last_update = moment
-    .unix(stats_obj.last_update)
-    .local()
-    .format("MMM Do, HH:mm:ss");
-  last_update_html = `Last update: ${last_update} (Refreshes every ${
-    auto_refresh_interval / 1000
-  })s`;
-  $("#highly-active-chats-last-update").html(last_update_html);
-};
-
-$("#highly-active-chats-btn-refresh").click(() => {
-  $("#highly-active-chats-last-update").html("");
-  $("#highly-active-chats-list").html("");
-  $("#highly-active-chats-progress-bar").show();
-  $("#highly-active-chats-btn-refresh").hide();
-
-  setTimeout(load_stats, 0);
-});
+const auto_refresh_interval = 60000;
 
 const channel_html = (channel) => `
 <div class="stats-channel">
@@ -59,3 +19,43 @@ const channel_html = (channel) => `
     </span> 
 </div>
 `;
+
+const render_stats = (stats_obj) => {
+  $("#highly-active-chats-progress-bar").hide();
+  $("#highly-active-chats-btn-refresh").show();
+  $("#highly-active-chats-btn-refresh").prop("disabled", false);
+
+  list_html = stats_obj.stats.map((s) => channel_html(s.channel));
+  $("#highly-active-chats-list").html(list_html);
+
+  last_update = moment
+    .unix(stats_obj.last_update)
+    .local()
+    .format("MMM Do, HH:mm:ss");
+  last_update_html = `Last update: ${last_update} (Refreshes every ${
+    auto_refresh_interval / 1000
+  })s`;
+  $("#highly-active-chats-last-update").html(last_update_html);
+};
+
+const load_stats = () => {
+  path_to_stats_json = `${channel_stats_server}/stats.json`;
+  d3.json(path_to_stats_json)
+    .then((stats) => {
+      render_stats(stats);
+      setTimeout(load_stats, auto_refresh_interval);
+    })
+    .catch((e) => {
+      console.error(e);
+      setTimeout(load_stats, auto_refresh_interval);
+    });
+};
+
+$("#highly-active-chats-btn-refresh").click(() => {
+  $("#highly-active-chats-last-update").html("");
+  $("#highly-active-chats-list").html("");
+  $("#highly-active-chats-progress-bar").show();
+  $("#highly-active-chats-btn-refresh").hide();
+
+  setTimeout(load_stats, 0);
+});
