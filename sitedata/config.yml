@@ -22,7 +22,7 @@ default_presentation_id: 38931484
 
 # Remove or change to your chat server.
 chat_server: emnlp2020.rocket.chat
-channels_stats_server: http://francisco.uberspace.de:41620
+channels_stats_server: http://13.90.35.217:8000/stats.json
 
 gather_town: https://gather.town/
 connected_papers_conference_name: EMNLP2020
