@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"os"
 	"sort"
@@ -21,6 +22,7 @@ type channel struct {
 	Name       string `json:"name"`
 	NumMsgs    int    `json:"msgs"`
 	UsersCount int    `json:"usersCount"`
+	Diff       int    `json:"diff"`
 }
 
 type rocketchatAPIResponse struct {
@@ -132,6 +134,40 @@ func initialize() {
 	initBlacklistGlobs()
 }
 
+func prepareResults(channelScores []ChannelScore) []ChannelScore {
+	// Sort based on the channel score
+	sort.SliceStable(channelScores, func(i, j int) bool {
+		return channelScores[i].Score > channelScores[j].Score
+	})
+
+	// Separate zero and non zero scores
+	chScrsNonZero := make([]ChannelScore, 0)
+	chScrsZero := make([]ChannelScore, 0)
+	for _, cs := range channelScores {
+		if cs.Score == 0 {
+			chScrsZero = append(chScrsZero, cs)
+		} else {
+			chScrsNonZero = append(chScrsNonZero, cs)
+		}
+	}
+
+	// Shuffle channels with a zero score
+	rand.Shuffle(len(chScrsZero), func(i, j int) {
+		chScrsZero[i], chScrsZero[j] = chScrsZero[j], chScrsZero[i]
+	})
+
+	channelScores = append(chScrsNonZero, chScrsZero...)
+
+	max := maxNumChannels
+	if max > len(channelScores) {
+		max = len(channelScores)
+	}
+
+	channelScores = channelScores[:max]
+
+	return channelScores
+}
+
 func update() {
 	if id2channel == nil {
 		id2channel = map[string]channel{}
@@ -177,27 +213,25 @@ func update() {
 		}
 
 		var score float32 = 0.
-		if score < 1 && diff >= 1 {
+		if score < 1. && diff >= 1 {
 			score = float32(diff)
 		} else {
 			score = oldScoreCoeff*oldScore + (1.-oldScoreCoeff)*float32(diff)
 		}
 
+		if score < 0.05 {
+			score = 0.
+		}
+
+		channelStat.Diff = diff
 		channelScores = append(channelScores, ChannelScore{channelStat, score})
 
 		id2channel[channelStat.ID] = channelStat
 		id2score[channelStat.ID] = score
 	}
 
-	sort.SliceStable(channelScores, func(i, j int) bool {
-		return channelScores[i].Score > channelScores[j].Score
-	})
+	channelScores = prepareResults(channelScores)
 
-	max := maxNumChannels
-	if max > len(channelScores) {
-		max = len(channelScores)
-	}
-	channelScores = channelScores[:max]
 	apiResponse := ApiResponse{channelScores, time.Now().Unix()}
 	response, err := json.Marshal(apiResponse)
 	if err != nil {

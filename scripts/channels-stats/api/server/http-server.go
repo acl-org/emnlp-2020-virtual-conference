@@ -9,6 +9,7 @@ import (
 func stats(w http.ResponseWriter, req *http.Request) {
 	response := cache.Response().Get().([]byte)
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Write(response)
 }
 
