@@ -193,7 +193,7 @@
   UID: B14
   organizers:
     members:
-    - Ted Pederson
+    - Ted Pedersen
     - Siva Reddy
   image: static/images/emnlp2020/acl-logo.png
   rocketchat_channel: boaf-semantics

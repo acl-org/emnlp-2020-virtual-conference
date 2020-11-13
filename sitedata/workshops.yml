@@ -2017,3 +2017,49 @@
   - title: When BERT plays the lottery, all tickets are winning!
     speakers: Anna Rogers
     presentation_id: '38939762'
+- UID: WS-26
+  title: NLP for COVID-19 Workshop (Part 2)
+  organizers: Karin Verspoor, Mike Conway, Berry de Bruijn, Mark Dredze, Rada Mihalcea
+    and Byron Wallace
+  abstract:
+  website: https://www.nlpcovid19workshop.org/emnlp2020/
+  rocketchat_channel: workshop-nlp-covid19-emnlp
+  alias: nlp-covid19-emnlp
+  sessions:
+  - start_time: 2020-11-19 08:00:00+00:00
+    end_time: 2020-11-19 08:10:00+00:00
+    name: Welcome Speech
+    hosts: Karin Verspoor
+  - start_time: 2020-11-19 08:10:00+00:00
+    end_time: 2020-11-19 10:30:00+00:00
+    name: 'Session 1: Presentations'
+    hosts: Karin Verspoor
+  - start_time: 2020-11-19 10:30:00+00:00
+    end_time: 2020-11-19 11:30:00+00:00
+    name: Poster session 1 (gather.town)
+    hosts: Karin Verspoor
+  - start_time: 2020-11-19 11:30:00+00:00
+    end_time: 2020-11-19 16:00:00+00:00
+    name: long break
+    hosts: TBD
+  - start_time: 2020-11-19 16:00:00+00:00
+    end_time: 2020-11-19 17:50:00+00:00
+    name: 'Session 2: Presentations'
+    hosts: Byron Wallace
+  - start_time: 2020-11-19 17:50:00+00:00
+    end_time: 2020-11-19 18:50:00+00:00
+    name: Poster session 1 (gather.town)
+    hosts: Mike Conway
+  - start_time: 2020-11-19 18:50:00+00:00
+    end_time: 2020-11-19 19:00:00+00:00
+    name: short break
+    hosts: TBD
+  - start_time: 2020-11-19 19:00:00+00:00
+    end_time: 2020-11-19 20:35:00+00:00
+    name: 'Session 3: Presentations'
+    hosts: Mike Conway
+  - start_time: 2020-11-19 20:35:00+00:00
+    end_time: 2020-11-19 21:00:00+00:00
+    name: Discussion
+    hosts: Mike Conway
+  prerecorded_talks: []

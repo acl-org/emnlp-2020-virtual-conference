@@ -64,7 +64,7 @@ def load_workshop_overview_excel() -> pd.DataFrame:
         ],
     )
     df = df.dropna(subset=["UID"])
-    df = df.dropna(subset=["Softconf Number"])
+    df[df["Softconf Number"] is None] = -1
 
     df["Softconf Number"] = df["Softconf Number"].apply(lambda x: int(x))
     df["Organizers"] = df["Softconf Number"].apply(
