@@ -45,7 +45,7 @@
           <div class="col-md-10 col-sm-6">
             <div class="m-3 text-muted">
               <h4>
-                <a href="plenary_session_{{plenary_session.id}}.html" class="main-title" target="_blank">
+                <a href="plenary_session_{{plenary_session.id}}.html" class="main-title" >
                   {{plenary_session.title}}
                 </a>
               </h4>
@@ -66,7 +66,7 @@
             <div class="m-3 text-muted">
               {{session.session}}
               <span class="session_times">{{session.time_string}}</span>
-              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+              [<a href="livestream.html"   class="card-link">Join Livestream</a>]
             </div>
             {% endfor %}
 
@@ -216,7 +216,7 @@
 
           <div class="m-3 text-muted text-center">
             <h4>
-              <a href="workshop_{{workshop.id}}.html" class="main-title" target="_blank">
+              <a href="workshop_{{workshop.id}}.html" class="main-title" >
                 {{workshop.id}}: {{workshop.title}}
               </a>
             </h4>
@@ -310,7 +310,7 @@
 
           <div class="m-3 text-muted text-center">
             <h4>
-              <a href="tutorial_{{tutorial.id}}.html" class="main-title" target="_blank">
+              <a href="tutorial_{{tutorial.id}}.html" class="main-title" >
                 {{tutorial.id}}: {{tutorial.title}}
               </a>
             </h4>
@@ -412,7 +412,7 @@
           <div class="col-md-10 col-sm-6">
             <div class="m-3 text-muted">
             <h4>
-              <a href="social_event_{{social_event.id}}.html" class="main-title" target="_blank">
+              <a href="social_event_{{social_event.id}}.html" class="main-title" >
                 {{social_event.title}}
               </a>
             </h4>
@@ -422,7 +422,7 @@
             {{social_event.organizers.members|join(" & ")}}
             {% if social_event.organizers.website %}
             <br>
-            (<a href="{{social_event.organizers.website}}" target="_blank">{{social_event.organizers.website}}</a>)
+            (<a href="{{social_event.organizers.website}}" >{{social_event.organizers.website}}</a>)
             {% endif %}
           </h6>
 
@@ -431,7 +431,7 @@
             {{session.session}}
             <span class="session_times">{{session.time_string}}</span>
             {% if session.zoom_link %}
-              <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
+              <a href="{{session.zoom_link}}"   class="card-link" target="_blank">
                 <!--
                 <img
                     src="static/images/zoom-icon.png"
@@ -461,7 +461,7 @@
     <span>{{session.session}}, </span><span class="session_times">{{session.session}} {{session.time_string}}</span>
 
   {% if session.link %}
-  <a href="{{session.link}}" target="_blank"  class="card-link">
+  <a href="{{session.link}}"   class="card-link">
     <!--
     <img
         src="static/images/zoom-icon.png"
@@ -479,7 +479,7 @@
   {% endif %}
 
   {% if is_plenary %}
-    <a href="livestream.html" target="_blank"  class="card-link">
+    <a href="livestream.html"   class="card-link">
     [Livestream]
     </a>
   {% endif %}
