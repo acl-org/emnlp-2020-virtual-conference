@@ -194,10 +194,10 @@
   - main.2818
   - main.110
   - main.3621
-  - findings.279
-  - findings.384
-  - findings.419
-  - findings.414
+  - findings.35
+  - findings.444
+  - findings.73
+  - findings.69
   rocketchat_channel: sponsor-baidu
 - name: Bloomberg
   level: Diamond
@@ -502,7 +502,7 @@
     website: https://megagon.ai/publications/
   publications:
   - main.595
-  - findings.92
+  - findings.181
   rocketchat_channel: sponsor-megagon-labs
 - name: NAVER
   level: Silver
@@ -571,10 +571,15 @@
     duration: 2
     label: Meet Salesforce at Gather.Town
   downloads:
+  - label: About Salesforce Research
+    website: Salesforce_Research.pdf
   - label: Accepted Papers at EMNLP
     website: Salesforce_EMNLP.pdf
   - label: Join our AI Research Team
     website: Salesforce_Recruiting.pdf
+  resources:
+  - label: 'IntEx-SemPar: 1st Workshop on Interactive and Executable Semantic Parsing'
+    website: https://virtual.2020.emnlp.org/workshop_WS-6.html
   publications:
   - main.2342
   - main.1201
@@ -589,9 +594,9 @@
   - main.3217
   - main.517
   - main.3393
-  - findings.377
-  - findings.336
-  - findings.228
+  - findings.438
+  - findings.400
+  - findings.303
   rocketchat_channel: sponsor-salesforce
 - name: Zeta Alpha
   level: Gold
