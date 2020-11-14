@@ -310,7 +310,11 @@ if __name__ == "__main__":
     talks = add_invited_talks(slideslive)
 
     fix_talks = slideslive[[is_not_paper(r) for _, r in slideslive.iterrows()]]
-    fix_talks.to_csv("yamls/fix_talks.csv", index=False, columns=["Organizer track name", "Unique ID", "Title", "Speakers"])
+    fix_talks.to_csv(
+        "yamls/fix_talks.csv",
+        index=False,
+        columns=["Organizer track name", "Unique ID", "Title", "Speakers"],
+    )
 
     for ws in data:
         uid = ws["UID"]

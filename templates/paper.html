@@ -60,7 +60,7 @@
 
 
 <!-- Title -->
-<div class="pp-card m-3" style="">
+<div class="card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="color: black">
       {{paper.content.title}}
@@ -115,7 +115,7 @@
      {% elif paper.content.program == "workshop" %}
       <a href="papers.html?program=workshop&track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
       {% endif %}
-     <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
+      <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
     </p>
 
     {{ components.live_sessions(
@@ -123,6 +123,18 @@
         paper.content.title,
         "https://virtual.emnlp.2020.org/paper_" + paper.id + ".html",
         false) }}
+
+        <p class="card-text text-center h5 pt-2">
+      <span>
+      You can open the
+    <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank">pre-recorded video</a>
+    and the
+    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
+       target="_blank">#{{paper.rocketchat_channel}}</a>
+    channel
+    in separate windows.
+    </span>
+    </p>
 
   </div>
 </div>
@@ -139,15 +151,8 @@
 
 {% if paper.content.program != "findings" %}
 {% if paper.presentation_id %}
-<div class="container" style="background-color:white; padding: 0px;">
+<div class="container" style="; padding: 0px;">
   <div class="text-muted text-center">
-    You can open the
-    <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank">pre-recorded video</a>
-    and the
-    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
-       target="_blank">#{{paper.rocketchat_channel}}</a>
-    channel
-    in separate windows.
   </div>
   <div class="row m-2">
     <!-- Slides Live-->
@@ -166,8 +171,8 @@
       </script>
 
       <div class="text-muted">
-      NOTE: The SlidesLive video may display a random order of the authors.
-      The correct author list is shown at the top of this webpage.
+      NOTE: Video may display a random order of authors.
+      Correct author list is at the top of this page.
       </div>
     </div>
 
@@ -226,8 +231,8 @@
   <div class="row">
   {% for recommended in paper_recs %}
     <div class="col-md-4 col-xs-6">
-      <div class="pp-card" >
-        <div class="pp-card-header" class="text-muted">
+      <div class="pp-card card" >
+        <div class="card-header pp-card-header " class="text-muted">
           <a href="paper_{{recommended.id}}.html" class="text-muted">
             <h5 class="card-title" align="center">{{recommended.content.title}}</h5>
           </a>
