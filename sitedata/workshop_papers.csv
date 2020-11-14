@@ -4,7 +4,7 @@ WS-1,WS-1.101,Catplayinginthesnow: Impact of Prior Segmentation on a Model of Vi
 WS-1,WS-1.108,Learning to ground medical text in a 3D human atlas,Dusan Grujicic|Gorjan Radevski|Tinne Tuytelaars|Matthew Blaschko,38939485
 WS-1,WS-1.109,Representation Learning for Type-Driven Composition,Gijs Wijnholds|Mehrnoosh Sadrzadeh|Stephen Clark,38939486
 WS-1,WS-1.113,Word Representations Concentrate and This is Good News!,Romain Couillet|Yagmur Gizem Cinar|Eric Gaussier|Muhammad Imran,38939487
-WS-1,WS-1.115,``LazImpa'': Lazy and Impatient neural agents learn to communicate efficiently,Mathieu Rita|Rahma Chaabouni|Emmanuel Dupoux,38939488
+WS-1,WS-1.115,"""LazImpa"": Lazy and Impatient neural agents learn to communicate efficiently",Mathieu Rita|Rahma Chaabouni|Emmanuel Dupoux,38939488
 WS-1,WS-1.1165_F,Investigating Transferability in Pretrained Language Models,Alex Tamkin|Trisha Singh|Davide Giovanardi|Noah Goodman,38940643
 WS-1,WS-1.127,Re-solve it: simulating the acquisition of core semantic competences from small data,Aurélie Herbelot,38939489
 WS-1,WS-1.128,In Media Res: A Corpus for Evaluating Named Entity Linking with Creative Works,Adrian M.P. Brasoveanu|Albert Weichselbraun|Lyndon Nixon,38939490
@@ -22,7 +22,7 @@ WS-1,WS-1.156,On the Computational Power of Transformers and Its Implications in
 WS-1,WS-1.1597_F,Pragmatic Issue-Sensitive Image Captioning,Allen Nie|Reuben Cohn-Gordon|Christopher Potts,38940644
 WS-1,WS-1.162,An Expectation Maximisation Algorithm for Automated Cognate Detection,Roddy MacSween|Andrew Caines,38939500
 WS-1,WS-1.168,Filler-gaps that neural networks fail to generalize,Debasmita Bhattacharya|Marten Van Schijndel,38939501
-WS-1,WS-1.177,"Don’t Parse, Insert: Multilingual Semantic Parsing with Insertion Based Decoding",Qile Zhu|Haidar Khan|Saleh Soltan|Stephen Rawls|Wael Hamza,38939502
+WS-1,WS-1.177,"Don't Parse, Insert: Multilingual Semantic Parsing with Insertion Based Decoding",Qile Zhu|Haidar Khan|Saleh Soltan|Stephen Rawls|Wael Hamza,38939502
 WS-1,WS-1.18,Modeling Subjective Assessments of Guilt in Newspaper Crime Narratives,Elisa Kreiss|Zijian Wang|Christopher Potts,38939467
 WS-1,WS-1.183,Learning Context-free Languages with Nondeterministic Stack RNNs,Brian DuSell|David Chiang,38939503
 WS-1,WS-1.185,Generating Narrative Text in a Switching Dynamical System,Noah Weber|Leena Shekhar|Heeyoung Kwon|Niranjan Balasubramanian|Nathanael Chambers,38939504
@@ -31,7 +31,7 @@ WS-1,WS-1.195,A Corpus for Outbreak Detection of Diseases Prevalent in Latin Ame
 WS-1,WS-1.202,Are Pretrained Language Models Symbolic Reasoners over Knowledge?,Nora Kassner|Benno Krojer|Hinrich Schütze,38939507
 WS-1,WS-1.21,On the Frailty of Universal POS Tags for Neural UD Parsers,Mark Anderson|Carlos Gómez-Rodríguez,38939468
 WS-1,WS-1.218,Understanding Linguistic Accommodation in Code-Switched Human-Machine Dialogues,Tanmay Parekh|Emily Ahn|Yulia Tsvetkov|Alan W Black,38939508
-WS-1,WS-1.221,Identifying robust markers of Parkinson’s disease in typing behaviour using a CNN-LSTM network,Neil Dhir|Mathias Edman|Álvaro Sanchez Ferro|Tom Stafford|Colin Bannard,38939509
+WS-1,WS-1.221,Identifying robust markers of Parkinson's disease in typing behaviour using a CNN-LSTM network,Neil Dhir|Mathias Edman|Álvaro Sanchez Ferro|Tom Stafford|Colin Bannard,38939509
 WS-1,WS-1.222,An Empirical Study on Model-agnostic Debiasing Strategies for Robust Natural Language Inference,Tianyu Liu|Zheng Xin|Xiaoan Ding|Baobao Chang|Zhifang Sui,38939510
 WS-1,WS-1.226,Cloze Distillation Improves Psychometric Predictive Power,Tiwalayo Eisape|Noga Zaslavsky|Roger Levy,38939511
 WS-1,WS-1.234,Disentangling dialects: a neural approach to Indo-Aryan historical phonology and subgrouping,Chundra Cathcart|Taraka Rama,38939512
@@ -57,7 +57,7 @@ WS-1,WS-1.8,Interpreting Attention Models with Human Visual Attention in Machine
 WS-1,WS-1.83,Processing effort is a poor predictor of cross-linguistic word order frequency,Brennan Gonering|Emily Morgan,38939480
 WS-1,WS-1.88,Relations between comprehensibility and adequacy errors in machine translation output,Maja Popović,38939481
 WS-1,WS-1.96,Cross-lingual Embeddings Reveal Universal and Lineage-Specific Patterns in Grammatical Gender Assignment,Hartger Veeman|Marc Allassonnière-Tang|Aleksandrs Berdicevskis|Ali Basirat,38939482
-WS-1,WS-1.Shared1,﻿Hitachi at MRP 2020: Text-to-Graph-Notation Transducer,Hiroaki Ozaki|Gaku Morio|Yuta Koreeda|Terufumi Morishita|Toshinori Miyoshi,38941228
+WS-1,WS-1.Shared1,Hitachi at MRP 2020: Text-to-Graph-Notation Transducer,Hiroaki Ozaki|Gaku Morio|Yuta Koreeda|Terufumi Morishita|Toshinori Miyoshi,38941228
 WS-1,WS-1.Shared2,HIT-SCIR at MRP 2020: Transition-based Parser and Iterative Inference Parser,Longxu Dou|Yunlong Feng|Yuqiu Ji|Wanxiang Che|Ting Liu,38941229
 WS-1,WS-1.Shared3,HUJI-KU at MRP 2020: Two Transition-based Neural Parsers,Ofir Arviv|Ruixiang Cui|Daniel Hershcovich,38941230
 WS-1,WS-1.Shared4,JBNU at MRP 2020: AMR Parsing Using a Joint State Model for Graph-Sequence Iterative Inference,Seung-Hoon Na|Jinwoo Min,38941231
@@ -72,7 +72,7 @@ WS-10,WS-10.1453,RMM: A Recursive Mental Model for Dialogue Navigation,Homero Ro
 WS-10,WS-10.1595,Robust and Interpretable Grounding of Spatial References with Relation Networks,Tsung-Yen Yang|Andrew S. Lan|Karthik Narasimhan,38940094
 WS-10,WS-10.2,They are not all alike: answering different spatial questions requires different grounding strategies,Alberto Testoni|Claudio Greco|Tobias Bianchi|Mauricio Mazuecos|Agata Marcante|Luciana Benotti|Raffaella Bernardi,38940076
 WS-10,WS-10.2904,ARRAMON: A Joint Navigation-Assembly Instruction Interpretation Task in Dynamic Environments,Hyounghun Kim|Abhay Zala|Graham Burri|Hao Tan|Mohit Bansal,38940093
-WS-10,WS-10.3,"Categorisation, Typicality & Object-Specific Features in Spatial Referring Expressions",Adam Richard-Bollans|Anthony Cohn|Lucía Gómez Álvarez,38940077
+WS-10,WS-10.3,"Categorisation, Typicality     Object-Specific Features in Spatial Referring Expressions",Adam Richard-Bollans|Anthony Cohn|Lucía Gómez Álvarez,38940077
 WS-10,WS-10.3302,Visually-Grounded Planning without Vision: Language Models Infer Detailed Plans from High-level Instructions,Peter A. Jansen,38940098
 WS-10,WS-10.3382,Decoding Language Spatial Relations to 2D Spatial Arrangements,Gorjan Radevski|Guillem Collell|Marie-Francine Moens|Tinne Tuytelaars,38940092
 WS-10,WS-10.3466,Language-Conditioned Feature Pyramids for Visual Selection Tasks,Taichi Iki|Akiko Aizawa,38940091
@@ -91,10 +91,10 @@ WS-11,WS-11.13,DEmA: the Pavia Diachronic Emergence of Alignment database,Sonia 
 WS-11,WS-11.14,A dataset and metric to evaluate lexical extraction from parallel corpora,Barend Beekhuizen,38939805
 WS-11,WS-11.1409,SimAlign: High Quality Word Alignments without Parallel Training Data using Static and Contextualized Embeddings,Philipp Dufter|Masoud Jalili Sabet|‪François Yvon|‪Hinrich Schütze‬,38940631
 WS-11,WS-11.16,The role of community size and network structure in shaping linguistic diversity: experimental evidence,Limor Raviv|Antje Meyer|Shiri Lev-Ari,38939806
-WS-11,WS-11.17,NUIG: Multitasking Self-attention based approach to SigTyp 2020 Shared Task,Chinmay Choudhary|Colm O’Riordan,38939794
+WS-11,WS-11.17,NUIG: Multitasking Self-attention based approach to SigTyp 2020 Shared Task,Chinmay Choudhary|Colm O'Riordan,38939794
 WS-11,WS-11.18,KMI-Panlingua-IITKGP @SIGTYP2020: Exploring Rules and Hybrid Systems for Automatic Prediction of Typological Features,Ritesh Kumar|Deepak Alok|Akanksha Bansal|Bornini Lahiri|Atul Kr. Ojha,38939795
 WS-11,WS-11.2,Information from Topic Contexts: The Prediction of Aspectual Coding of Verbs in Russian,Michael Richter|Tariq Yousef,38939796
-WS-11,WS-11.3,Uncovering Typological Context-Sensitive Features,Chiara Alzetta|Felice Dell’Orletta|Simonetta Montemagni|Giulia Venturi,38939797
+WS-11,WS-11.3,Uncovering Typological Context-Sensitive Features,Chiara Alzetta|Felice Dell'Orletta|Simonetta Montemagni|Giulia Venturi,38939797
 WS-11,WS-11.4,NEMO: Frequentist Inference Approach to Constrained Linguistic Typology Feature Prediction in SIGTYP 2020 Shared Task,Alexander Gutkin|Richard Sproat,38939791
 WS-11,WS-11.5,Towards Induction of Structured Phoneme Inventories,Alexander Gutkin|Martin Jansche|Lucy Skidmore,38939798
 WS-11,WS-11.6,Is Typology-Based Adaptation Effective for Multilingual Sequence Labelling?,Ahmet Üstün|Arianna Bisazza|Gosse Bouma|Gertjan Van Noord,38939799
@@ -114,7 +114,8 @@ WS-12,WS-12.1640,Learning Visual-Semantic Embeddings for Reporting Abnormal Find
 WS-12,WS-12.17,MeDAL: Medical Abbreviation Disambiguation Dataset for Natural Language Understanding Pretraining,Zhi Wen|Xing Han Lu|Siva Reddy,38939819
 WS-12,WS-12.1713,Characterizing the Value of Information in Medical Notes,Chao-Chun Hsu|Shantanu Karnwal|Sendhil Mullainathan|Ziad Obermeyer|Chenhao Tan,38940179
 WS-12,WS-12.18,Evaluation of Transfer Learning for Adverse Drug Event (ADE) and Medication Entity Extraction,Sankaran Narayanan|Kaivalya Mannam|Sreeranga P Rajan|P Venkat Rangan,38939820
-WS-12,WS-12.19,Knowledge Grounded Conversational Symptom Detection\\ with Graph Memory Networks,Hongyin Luo|Shang-Wen Li|James Glass,38939821
+WS-12,WS-12.19,"Knowledge Grounded Conversational Symptom Detection
+ with Graph Memory Networks",Hongyin Luo|Shang-Wen Li|James Glass,38939821
 WS-12,WS-12.20,Pretrained Language Models for Biomedical and Clinical Tasks: Understanding and Extending the State-of-the-Art,Patrick Lewis|Myle Ott|Jingfei Du|Veselin Stoyanov,38939822
 WS-12,WS-12.21,Incorporating Risk Factor Embeddings in Pre-trained Transformers Improves Sentiment Prediction in Psychiatric Discharge Summaries,Xiyu Ding|Mei-Hua Hall|Timothy Miller,38939823
 WS-12,WS-12.2127,PharmMT: A Neural Machine Translation Approach to Simplify Prescription Directions,Jiazhao Li|Corey Lester|Xinyan Zhao|Yuting Ding|Yun Jiang|V.G.Vinod Vydiswaran,38940180
@@ -181,8 +182,8 @@ WS-15,WS-15.2,Rank and run-time aware compression of NLP Applications,Urmish Tha
 WS-15,WS-15.2015,Blockwise Self-Attention for Long Document Understanding,Jiezhong Qiu,38940119
 WS-15,WS-15.2017,Unsupervised Few-Bits Semantic Hashing with Implicit Topics Modeling,Fanghua Ye,38940106
 WS-15,WS-15.2182,DiPair: Fast and Accurate Distillation for Trillion-ScaleText Matching and Pair Modeling,Jiecao Chen,38940104
-WS-15,WS-15.22,Don’t Read Too Much Into It: Adaptive Computation for Open-Domain Question Answering,Yuxiang Wu|Pasquale Minervini|Pontus Stenetorp|Sebastian Riedel,38939431
-WS-17,WS-17.2217,A little goes a long way: Improving toxic language classification despite data scarcity,Tommi Gr√∂ndahl,38940137
+WS-15,WS-15.22,Don't Read Too Much Into It: Adaptive Computation for Open-Domain Question Answering,Yuxiang Wu|Pasquale Minervini|Pontus Stenetorp|Sebastian Riedel,38939431
+WS-17,WS-17.2217,A little goes a long way: Improving toxic language classification despite data scarcity,Tommi Gröndahl,38940137
 WS-15,WS-15.2230,General Purpose Text Embeddings from Pre-trained Language Models for Scalable Inference,Myle Ott,38940109
 WS-15,WS-15.2288,Domain Adversarial Fine-Tuning as an Effective Regularizer,Giorgos Vernikos,38940129
 WS-15,WS-15.2453,Improve Transformer Models with Better Relative Position Embeddings,Zhiheng Huang,38940108
@@ -218,7 +219,7 @@ WS-15,WS-15.45,A comparison between CNNs and WFAs for Sequence Classification,Ar
 WS-15,WS-15.46,Counterfactual Augmentation for Training Next Response Selection,Seungtaek Choi|Myeongho Jeong|Jinyoung Yeo|Seung-won Hwang,38939444
 WS-15,WS-15.47,Do We Need to Create Big Datasets to Learn a Task?,Swaroop Mishra|Bhavdeep Singh Sachdeva,38939445
 WS-15,WS-15.49,Guiding Attention for Self-Supervised Learning with Transformers,Ameet Deshpande|Karthik Narasimhan,38939446
-WS-21,WS-21.490,A Fully Hyperbolic Neural Model for Hierarchical Multi-Class Classification,Federico L√≥pez,38940126
+WS-21,WS-21.490,A Fully Hyperbolic Neural Model for Hierarchical Multi-Class Classification,Federico López,38940126
 WS-15,WS-15.5,Learning Informative Representations of Biomedical Relations with Latent Variable Models,Harshil Shah|Julien Fauqueur,38939422
 WS-1,WS-1.510,Dynamic Data Selection for Curriculum Learning via Ability Estimation,John P. Lalor,38940123
 WS-15,WS-15.512,Fixed Encoder Self-Attention Patterns in Transformer-Based Machine Translation,Alessandro Raganato,38940110
@@ -238,7 +239,7 @@ WS-16,WS-16.15,DSNDM: Deep Siamese Neural Discourse Model with Attention for Tex
 WS-16,WS-16.17,Do sentence embeddings capture discourse properties of sentences from Scientific Abstracts ?,Laurine Huber|Chaker Memmadi|Mathilde Dargnat|Yannick Toussaint,38939694
 WS-16,WS-16.18,Unsupervised Inference of Data-Driven Discourse Structures using a Tree Auto-Encoder,Patrick Huber|Giuseppe Carenini,38939695
 WS-16,WS-16.19,Large Discourse Treebanks from Scalable Distant Supervision,Patrick Huber|Giuseppe Carenini,38939696
-WS-16,WS-16.1951,Adapting Coreference Resolution to Twitter Conversations,Berfin AktaÅŸ,38940697
+WS-16,WS-16.1951,Adapting Coreference Resolution to Twitter Conversations,Berfin Aktaş,38940697
 WS-16,WS-16.20,"Discourse for Argument Mining, and Argument Mining as Discourse",Diane Litman,38939697
 WS-16,WS-16.208,Converting the Point of View of Messages Spoken to Virtual Assistants,Isabelle G. Lee,38940694
 WS-16,WS-16.21,Joint Modeling of Arguments for Event Understanding,Yunmo Chen|Tongfei Chen|Benjamin Van Durme,38939698
@@ -315,7 +316,7 @@ WS-18,WS-18.50,Social media data as a lens onto care-seeking behavior among wome
 WS-18,WS-18.51,Understanding Weekly COVID-19 Concerns through Dynamic Content-Specific LDA Topic Modeling,Mohammadzaman Zamani|H.|Rew Schwartz|Johannes Eichstaedt|Sharath Chandra Guntuku|Adithya Virinchipuram Ganesan|Sean Clouston|Salvatore Giorgi,38940607
 WS-18,WS-18.52,Emoji and Self-Identity in Twitter Bios,Jinhang Li|Giorgos Longinos|Steven Wilson|Walid Magdy,38940622
 WS-18,WS-18.53,Analyzing Gender Bias within Narrative Tropes,Dhruvil Gala|Mohammad Omar Khursheed|Hannah Lerner|Brendan O'Connor|Mohit Iyyer,38940608
-WS-18,WS-18.57,An Unfair Affinity Toward Fairness: Characterizing 70 Years of Social Biases in B$^{H}$ollywood,Kunal Khadilkar|Ashiqur KhudaBukhsh,38940627
+WS-18,WS-18.57,An Unfair Affinity Toward Fairness: Characterizing 70 Years of Social Biases in B^Hollywood,Kunal Khadilkar|Ashiqur KhudaBukhsh,38940627
 WS-19,WS-19.12,Evaluation of Machine Translation Methods applied to Medical Terminologies,Konstantinos Skianis|Yann Briand|Florent Desgrippes,38940042
 WS-19,WS-19.13,Not a cute stroke: Analysis of Rule- and Neural Network-based Information Extraction Systems for Brain Radiology Reports,Andreas Grivas|Beatrice Alex|Claire Grover|Richard Tobin|William Whiteley,38940043
 WS-19,WS-19.14,Biomedical Event Extraction as Multi-turn Question Answering,Xing David Wang|Leon Weber|Ulf Leser,38940044
@@ -334,15 +335,15 @@ WS-19,WS-19.5,Multitask Learning of Negation and Speculation using Transformers,
 WS-19,WS-19.8,An efficient representation of chronological events in medical texts,Andrey Kormilitzin|Nemanja Vaci|Qiang Liu|Hao Ni|Goran Nenadic|Alejo Nevado-Holgado,38940041
 WS-2,WS-2.1,The DiDi Machine Translation System for WMT20,Tanfang Chen|Weiwei Wang|Wenyang Wei|Xing Shi|Xiangang Li|Jieping Ye|Kevin Knight,38939543
 WS-2,WS-2.100,Score Combination for Improved Parallel Corpus Filtering for Low Resource Conditions,Muhammad ElNokrashy|Amr Hendy|Mohamed Abdelghaffar|Mohamed Afify|Ahmed Tawfik|Hany Hassan Awadalla,38939612
-WS-2,WS-2.101,Data Selection for Unsupervised Translation of German--Upper Sorbian,Lukas Edman|Antonio Toral|Gertjan Van Noord,38939613
+WS-2,WS-2.101,Data Selection for Unsupervised Translation of German–Upper Sorbian,Lukas Edman|Antonio Toral|Gertjan Van Noord,38939613
 WS-2,WS-2.102,Mitigating Gender Bias in Machine Translation with Target Gender Annotations,Artūrs Stafanovičs|Mārcis Pinnis|Toms Bergmanis,38939614
 WS-2,WS-2.103,Infosys Machine Translation System for WMT20 Similar Language Translation Task,Kamalkumar Rathinasamy|Amanpreet Singh|Balaguru Sivasambagupta|Prajna Prasad Neerchal|Vani Sivasankaran,38939615
 WS-2,WS-2.104,The ADAPT System Description for the WMT20 News Translation Task,Venkatesh Parthasarathy|Akshai Ramesh|Rejwanul Haque|Andy Way,38939616
-WS-2,WS-2.105,The ADAPT’s Submissions to the WMT20 Biomedical Translation Task,Prashant Nayak|Rejwanul Haque|Andy Way,38939617
+WS-2,WS-2.105,The ADAPT's Submissions to the WMT20 Biomedical Translation Task,Prashant Nayak|Rejwanul Haque|Andy Way,38939617
 WS-2,WS-2.107,LIMSI @ WMT 2020,Sadaf Abdul Rauf|José Carlos Rosales Núñez|Minh Quang Pham|François Yvon,38939618
 WS-2,WS-2.109,Russian-English Bidirectional Machine Translation System,Ariel Xv,38939619
 WS-2,WS-2.113,Transfer Learning for Related Languages: IIT Delhi's Submissions to the WMT20 Similar Language Translation Task,Lovish Madaan|Soumya Sharma|Parag Singla,38939620
-WS-2,WS-2.114,Adobe AMPS’s Submission for Very Low Resource Supervised Translation Task at WMT20,Keshaw Singh,38939621
+WS-2,WS-2.114,Adobe AMPS's Submission for Very Low Resource Supervised Translation Task at WMT20,Keshaw Singh,38939621
 WS-2,WS-2.115,Alibaba's Submission for the WMT 2020 APE Shared Task: Improving Automatic Post-Editing with Pre-trained Conditional Cross-Lingual BERT,Jiayi Wang|Ke Wang|Kai Fan|Yuqi Zhang|Jun Lu|Xin Ge|Yangbin Shi|Yu Zhao,38939622
 WS-2,WS-2.116,NMT based Similar Language Translation for Hindi - Marathi,Vandan Mujadia|Dipti Sharma,38939623
 WS-2,WS-2.117,Facebook AI's WMT20 News Translation Task Submission,Peng-Jen Chen|Ann Lee|Changhan Wang|Naman Goyal|Angela Fan|Mary Williamson|Jiatao Gu,38939624
@@ -358,23 +359,23 @@ WS-2,WS-2.128,UoS Participation in the WMT20 Translation of Biomedical Abstracts
 WS-2,WS-2.133,Tilde at WMT 2020: News Task Systems,Rihards Krišlauks|Mārcis Pinnis,38939633
 WS-2,WS-2.135,NRC Systems for Low Resource German-Upper Sorbian Machine Translation 2020: Transfer Learning with Lexical Modifications,Rebecca Knowles|Samuel Larkin|Darlene Stewart|Patrick Littell,38939634
 WS-2,WS-2.136,Linguistically Motivated Subwords Improve English-Tamil Translation: University of Groningen's Submission to WMT-2020,Prajit Dhar|Arianna Bisazza|Gertjan Van Noord,38939635
-WS-2,WS-2.137,The Tatoeba Translation Challenge -- Realistic Data Sets for Low Resource and Multilingual MT,Jörg Tiedemann,38939636
+WS-2,WS-2.137,The Tatoeba Translation Challenge – Realistic Data Sets for Low Resource and Multilingual MT,Jörg Tiedemann,38939636
 WS-2,WS-2.138,Priming Neural Machine Translation,Minh Quang Pham|Jitao Xu|Josep Crego|François Yvon|Jean Senellart,38939637
 WS-2,WS-2.139,NUIG-Panlingua-KMI Hindi↔Marathi MT Systems for Similar Language Translation Task @ WMT 2020,Atul Kr. Ojha|Priya Rani|Akanksha Bansal|Bharathi Raja Chakravarthi|Ritesh Kumar|John P. McCrae,38939638
 WS-2,WS-2.14,Combining Sequence Distillation and Transfer Learning for Efficient Low-Resource Neural Machine Translation Models,Raj Dabre|Atsushi Fujita,38939551
 WS-2,WS-2.141,NRC Systems for the 2020 Inuktitut-English News Translation Task,Rebecca Knowles|Darlene Stewart|Samuel Larkin|Patrick Littell,38939639
 WS-2,WS-2.142,Translating Similar Languages: Role of Mutual Intelligibility in Multilingual Transformers,Ife Adebara|El Moatez Billah Nagoudi|Muhammad Abdul Mageed,38939640
 WS-2,WS-2.143,CUNI Systems for the Unsupervised and Very Low Resource Translation Task in WMT20,Ivana Kvapilíková|Tom Kocmi|Ondřej Bojar,38939641
-WS-2,WS-2.144,The University of Edinburgh’s English-Tamil and English-Inuktitut Submissions to the WMT20 News Translation Task,Rachel Bawden|Alexandra Birch|Radina Dobreva|Arturo Oncevay|Antonio Valerio Miceli Barone|Philip Williams,38939642
+WS-2,WS-2.144,The University of Edinburgh's English-Tamil and English-Inuktitut Submissions to the WMT20 News Translation Task,Rachel Bawden|Alexandra Birch|Radina Dobreva|Arturo Oncevay|Antonio Valerio Miceli Barone|Philip Williams,38939642
 WS-2,WS-2.146,IST-Unbabel Participation in the WMT20 Quality Estimation Shared Task,João Moura|Miguel Vera|Daan Van Stigt|Fabio Kepler|André F. T. Martins,38939643
 WS-2,WS-2.147,YerevaNN's systems for WMT20 Biomedical Translation Task: The effect of fixing misaligned sentence pairs,Karen Hambardzumyan|Hovhannes Tamoyan|Hrant Khachatrian,38939644
 WS-2,WS-2.149,Lite Training Strategies for Portuguese-English and English-Portuguese Translation,Alexandre Lopes|Rodrigo Nogueira|Roberto Lotufo|Helio Pedrini,38939645
 WS-2,WS-2.150,Noising Scheme for Data Augmentation in Automatic Post-Editing,WonKee Lee|Jaehun Shin|Baikjin Jung|Jihyung Lee|Jong-Hyeok Lee,38939646
-WS-2,WS-2.153,The University of Maryland’s Submissions to the WMT20 Chat Translation Task: Searching for More Data to Adapt Discourse-Aware Neural Machine Translation,Calvin Bao|Yow-Ting Shiue|Chujun Song|Jie Li|Marine Carpuat,38939647
+WS-2,WS-2.153,The University of Maryland's Submissions to the WMT20 Chat Translation Task: Searching for More Data to Adapt Discourse-Aware Neural Machine Translation,Calvin Bao|Yow-Ting Shiue|Chujun Song|Jie Li|Marine Carpuat,38939647
 WS-2,WS-2.155,The AFRL WMT20 News-Translation Systems,Jeremy Gwinnup|Tim Anderson,38939648
 WS-2,WS-2.156,An exploratory approach to the Parallel Corpus Filtering shared task WMT20,Ankur Kejriwal|Philipp Koehn,38939649
 WS-2,WS-2.157,Incorporating Terminology Constraints in Automatic Post-Editing,David Wan|Chris Kedzie|Faisal Ladhak|Marine Carpuat|Kathleen McKeown,38939650
-WS-2,WS-2.158,NJU’s submission for WMT2020 QE Shared Task,Qu Cui|Xiang Geng|Shujian Huang|Jiajun Chen,38939651
+WS-2,WS-2.158,NJU's submission for WMT2020 QE Shared Task,Qu Cui|Xiang Geng|Shujian Huang|Jiajun Chen,38939651
 WS-2,WS-2.16,Paraphrase Generation as Zero-Shot Multilingual Translation: Disentangling Semantic Similarity from Lexical and Syntactic Diversity,Brian Thompson|Matt Post,38939552
 WS-2,WS-2.160,"Evaluating Low Resource Machine Translation: BLEU, character-based or semantic metric?",Chi-kiu Lo,38939652
 WS-2,WS-2.161,MT reference-less evaluation using YiSi-2 with bilingual mappings of massive multilingual language model learnt from minimal amount of parallel data,Chi-kiu Lo|Samuel Larkin,38939653
@@ -399,7 +400,7 @@ WS-2,WS-2.187,Tencent Neural Machine Translation Systems for the WMT20 News Tran
 WS-2,WS-2.188,Tencent AI Lab Machine Translation Systems for WMT20 Chat Translation Task,Longyue Wang|Zhaopeng Tu|Xing Wang|Li Ding|Liang Ding|Shuming Shi,38939671
 WS-2,WS-2.189,Findings of the WMT 2020 Shared Task on Automatic Post-Editing,Rajen Chatterjee|Markus Freitag|Matteo Negri|Marco Turchi,38939672
 WS-2,WS-2.19,When Does Unsupervised Machine Translation Work?,Kelly Marchisio|Kevin Duh|Philipp Koehn,38939554
-WS-2,WS-2.190,ParBLEU: Augmenting Metrics with Automatic Paraphrases for the WMT’20 Metrics Shared Task,Rachel Bawden|Biao Zhang|Andre Tättar|Matt Post,38939673
+WS-2,WS-2.190,ParBLEU: Augmenting Metrics with Automatic Paraphrases for the WMT'20 Metrics Shared Task,Rachel Bawden|Biao Zhang|Andre Tättar|Matt Post,38939673
 WS-2,WS-2.191,Findings of the WMT 2020 Shared Task on Chat Translation,M. Amin Farajian|António V. Lopes|André F. T. Martins|Sameen Maruf|Gholamreza Haffari,38939674
 WS-2,WS-2.192,"Findings of the WMT 2020 Biomedical Translation Shared Task: Basque, Italian and Russian as New Additional Languages",Rachel Bawden|Giorgio Maria Di Nunzio|Cristian Grozea|Inigo Jauregi Unanue|Antonio Jimeno Yepes|Nancy Mah|David Martinez|Aurélie Névéol|Mariana Neves|Maite Oronoz|Olatz Perez-de-Viñaspre|Massimo Piccardi|Roland Roller|Amy Siu|Philippe Thomas|Federica Vezzani|Maika Vicente Navarro|Dina Wiemann|Lana Yeganova,38939675
 WS-2,WS-2.193,Findings of the WMT 2020 Shared Task on Machine Translation Robustness,Lucia Specia|Zhenhao Li|Juan Pino|Vishrav Chaudhary|Francisco Guzmán|Graham Neubig|Nadir Durrani|Yonatan Belinkov|Philipp Koehn|Hassan Sajjad|Paul Michel|Xian Li,38939676
@@ -413,21 +414,21 @@ WS-2,WS-2.1973,Findings of the 2020 Conference on Machine Translation (WMT20): T
 WS-2,WS-2.198,Learning to Evaluate Translation Beyond English: BLEURT Submissions to the WMT Metrics 2020 Shared Task,Thibault Sellam|Amy Pu|Hyung Won Chung|Sebastian Gehrmann|Qijun Tan|Markus Freitag|Dipanjan Das|Ankur Parikh,38939681
 WS-2,WS-2.2,Volctrans Parallel Corpus Filtering System for WMT 2020,Runxin Xu|Zhuo Zhi|Jun Cao|Mingxuan Wang|Lei Li,38939544
 WS-2,WS-2.20,"Multilingual Neural Machine Translation: Case-study for Catalan, Spanish and Portuguese Romance Languages",Pere Vergés Boncompte|Marta R. Costa-jussà,38939555
-WS-2,WS-2.21,NICT Kyoto Submission for the WMT’20 Quality Estimation Task: Intermediate Training for Domain and Task Adaptation,Raphael Rubino,38939556
+WS-2,WS-2.21,NICT Kyoto Submission for the WMT'20 Quality Estimation Task: Intermediate Training for Domain and Task Adaptation,Raphael Rubino,38939556
 WS-2,WS-2.22,On the Same Page? Comparing Inter-Annotator Agreement in Sentence and Document Level Human Machine Translation Evaluation,Sheila Castilho,38939557
 WS-2,WS-2.23,OPPO's Machine Translation Systems for WMT20,Tingxun Shi|Shiyu Zhao|Xiaopu Li|Xiaoxue Wang|Qian Zhang|Di Ai|Dawei Dang|Xue Zhengshan|Jie Hao,38939558
 WS-2,WS-2.26,Towards Multimodal Simultaneous Neural Machine Translation,Aizhan Imankulova|Masahiro Kaneko|Tosho Hirasawa|Mamoru Komachi,38939559
 WS-2,WS-2.3,Tohoku-AIP-NTT at WMT 2020 News Translation Task,Shun Kiyono|Takumi Ito|Ryuto Konno|Makoto Morishita|Jun Suzuki,38939545
 WS-2,WS-2.31,Document-aligned Japanese-English Conversation Parallel Corpus,Matīss Rikters|Ryokan Ri|Tong Li|Toshiaki Nakazawa,38939560
-WS-2,WS-2.32,POSTECH-ETRI’s Submission to the WMT2020 APE Shared Task:Automatic Post-Editing with Cross-lingual Language Model,Jihyung Lee|WonKee Lee|Jaehun Shin|Baikjin Jung|Young-Kil Kim|Jong-Hyeok Lee,38939561
+WS-2,WS-2.32,POSTECH-ETRI's Submission to the WMT2020 APE Shared Task:Automatic Post-Editing with Cross-lingual Language Model,Jihyung Lee|WonKee Lee|Jaehun Shin|Baikjin Jung|Young-Kil Kim|Jong-Hyeok Lee,38939561
 WS-2,WS-2.35,Pretrained Language Models and Backtranslation for English-Basque Biomedical Neural Machine Translation,Inigo Jauregi Unanue|Massimo Piccardi,38939562
 WS-2,WS-2.36,WMT20 Document-Level Markable Error Exploration,Vilém Zouhar|Tereza Vojtěchová|Ondřej Bojar,38939563
 WS-2,WS-2.37,The LMU Munich System for the WMT20 Very Low Resource Supervised MT Task,Jindřich Libovický|Viktor Hangya|Helmut Schmid|Alexander Fraser,38939564
 WS-2,WS-2.39,Incorporate Semantic Structures into Machine Translation Evaluation via UCCA,Jin Xu|Yinuo Guo|Junfeng Hu,38939565
-WS-2,WS-2.40,Samsung R&D Institute Poland submission to WMT20 News Translation Task,Mateusz Krubiński|Marcin Chochowski|Bartłomiej Boczek|Mikołaj Koszowski|Adam Dobrowolski|Marcin Szymański|Paweł Przybysz,38939566
+WS-2,WS-2.40,Samsung R   D Institute Poland submission to WMT20 News Translation Task,Mateusz Krubiński|Marcin Chochowski|Bartłomiej Boczek|Mikołaj Koszowski|Adam Dobrowolski|Marcin Szymański|Paweł Przybysz,38939566
 WS-2,WS-2.42,The MUCOW word sense disambiguation test suite at WMT 2020,Yves Scherrer|Alessandro Raganato|Jörg Tiedemann,38939567
 WS-2,WS-2.43,Language Models not just for Pre-training: Fast Online Neural Noisy Channel Modeling,Shruti Bhosale|Kyra Yee|Sergey Edunov|Michael Auli,38939568
-WS-2,WS-2.44,Bicleaner at WMT 2020: Universitat d’Alacant–Prompsit’s submission to the parallel corpus filtering shared task,Miquel Esplà-Gomis|Víctor M. Sánchez-Cartagena|Jaume Zaragoza-Bernabeu|Felipe Sánchez-Martínez,38939569
+WS-2,WS-2.44,Bicleaner at WMT 2020: Universitat d'Alacant–Prompsit's submission to the parallel corpus filtering shared task,Miquel Esplà-Gomis|Víctor M. Sánchez-Cartagena|Jaume Zaragoza-Bernabeu|Felipe Sánchez-Martínez,38939569
 WS-2,WS-2.45,HW-TSC's Participation at WMT 2020 Automatic Post Editing Shared Task,Hao Yang|Minghan Wang|Daimeng Wei|Hengchao Shang|Jiaxin Guo|Zongyao Li|Lizhi Lei|Ying Qin|Shimin Tao|Shiliang Sun|Yimeng Chen,38939570
 WS-2,WS-2.46,HW-TSC's Participation at WMT 2020 Quality Estimation Shared Task,Minghan Wang|Hao Yang|Hengchao Shang|Daimeng Wei|Jiaxin Guo|Lizhi Lei|Ying Qin|Shimin Tao|Shiliang Sun|Yimeng Chen|Liangyou Li,38939571
 WS-2,WS-2.47,The NiuTrans Machine Translation Systems for WMT20,Yuhao Zhang|Ziyang Wang|Runzhe Cao|Binghao Wei|Weiqiao Shan|Shuhan Zhou|Abudurexiti Reheman|Tao Zhou|Xin Zeng|Laohu Wang|Yongyu Mu|Jingnan Zhang|Xiaoqian Liu|Xuanjun Zhou|Yinqiao Li|Bei Li|Tong Xiao|Jingbo Zhu,38939572
@@ -436,7 +437,7 @@ WS-2,WS-2.49,eTranslation's Submissions to the WMT 2020 News Translation Task,Cs
 WS-2,WS-2.5,Two-Phase Cross-Lingual Language Model Fine-Tuning for Machine Translation Quality Estimation,Dongjun Lee,38939546
 WS-2,WS-2.51,The NITS-CNLP System for the Unsupervised MT Task at WMT 2020,Salam Michael Singh|Thoudam Doren Singh|Sivaji Bandyopadhyay,38939575
 WS-2,WS-2.52,Huawei's Submissions to the WMT20 Biomedical Translation Task,Wei Peng|Jianfeng Liu|Minghan Wang|Liangyou Li|Xupeng Meng|Hao Yang|Qun Liu,38939576
-WS-2,WS-2.53,"Naver Labs Europe’s Participation to the Robustness, Chat and Biomedical Tasks at WMT 2020",Alexandre Berard|Ioan Calapodescu|Vassilina Nikoulina|Jerin Philip,38939577
+WS-2,WS-2.53,"Naver Labs Europe's Participation to the Robustness, Chat and Biomedical Tasks at WMT 2020",Alexandre Berard|Ioan Calapodescu|Vassilina Nikoulina|Jerin Philip,38939577
 WS-2,WS-2.54,Neural Machine Translation between similar South-Slavic languages,Maja Popović|Alberto Poncelas,38939578
 WS-2,WS-2.57,IIE's Neural Machine Translation Systems for WMT20,Xiangpeng Wei|Ping Guo|Yunpeng Li|Xingsheng Zhang|Luxi Xing|Yue Hu,38939579
 WS-2,WS-2.58,Alibaba Submission to the WMT20 Parallel Corpus Filtering Task,Jun Lu|Xin Ge|Yangbin Shi|Yuqi Zhang,38939580
@@ -446,7 +447,7 @@ WS-2,WS-2.60,The LMU Munich System for the WMT 2020 Unsupervised Machine Transla
 WS-2,WS-2.62,Addressing Exposure Bias With Document Minimum Risk Training: Cambridge at the WMT20 Biomedical Translation Task,Danielle Saunders|Bill Byrne,38939583
 WS-2,WS-2.65,UdS-DFKI@WMT20: Unsupervised MT and Very Low Resource Supervised MT for German↔Upper Sorbian,Sourav Dutta|Jesujoba Alabi|Saptarashmi Bandyopadhyay|Dana Ruiter|Josef Van Genabith,38939584
 WS-2,WS-2.68,Diving Deep into Context-Aware Neural Machine Translation,Jingjing Huo|Christian Herold|Yingbo Gao|Leonard Dahlmann|Shahram Khadivi|Hermann Ney,38939585
-WS-2,WS-2.69,The DeepMind Chinese--English Document Translation System at WMT2020,Lei Yu|Laurent Sartran|Po-Sen Huang|Wojciech Stokowiec|Domenic Donato|Srivatsan Srinivasan|Alek Andreev|Wang Ling|Sona Mokra|Agustin Dal Lago|Yotam Doron|Susannah Young|Phil Blunsom|Chris Dyer,38939586
+WS-2,WS-2.69,The DeepMind Chinese–English Document Translation System at WMT2020,Lei Yu|Laurent Sartran|Po-Sen Huang|Wojciech Stokowiec|Domenic Donato|Srivatsan Srinivasan|Alek Andreev|Wang Ling|Sona Mokra|Agustin Dal Lago|Yotam Doron|Susannah Young|Phil Blunsom|Chris Dyer,38939586
 WS-2,WS-2.70,Neural Machine Translation for Similar Language Translation: The Case of Indo-Aryan Languages,Santanu Pal|Marcos Zampieri,38939587
 WS-2,WS-2.71,Fast Interleaved Bidirectional Sequence Generation,Biao Zhang|Ivan Titov|Rico Sennrich,38939588
 WS-2,WS-2.72,The University of Helsinki and Aalto University submissions to the WMT 2020 news and low-resource translation tasks,Yves Scherrer|Stig-Arne Grönroos|Sami Virpioja,38939589
@@ -466,7 +467,7 @@ WS-2,WS-2.87,The NiuTrans System for the WMT20 Quality Estimation Shared Task,Ch
 WS-2,WS-2.88,TMUOU submission for WMT20 Quality Estimation Shared Task,Akifumi Nakamachi|Hiroki Shimanaka|Tomoyuki Kajiwara|Mamoru Komachi,38939602
 WS-2,WS-2.89,GTCOM Neural Machine Translation Systems for WMT20,Chao Bei|Hao Zong|Qingmin Liu|Conghu Yuan,38939603
 WS-2,WS-2.9,Ixamed's submission description for WMT20 Biomedical shared task: benefits and limitations of using terminologies for domain adaptation,Xabier Soto|Olatz Perez-de-Viñaspre|Gorka Labaka|Maite Oronoz,38939549
-WS-2,WS-2.90,Unbabel’s Participation in the WMT20 Metrics Shared Task,Ricardo Rei|Craig Stewart|Ana C Farinha|Alon Lavie,38939604
+WS-2,WS-2.90,Unbabel's Participation in the WMT20 Metrics Shared Task,Ricardo Rei|Craig Stewart|Ana C Farinha|Alon Lavie,38939604
 WS-2,WS-2.91,Transformer-based Neural Machine Translation System for Hindi - Marathi,Amit Kumar|Rupjyoti Baruah|Rajesh Kumar Mundotiya|Anil Kumar Singh,38939605
 WS-2,WS-2.92,Filtering Noisy Parallel Corpus using Transformers with Proxy Task Learning,Haluk Açarçiçek|Talha Çolakoğlu|pınar Ece Aktan hatipoğlu|Chong Hsuan Huang|Wei Peng,38939606
 WS-2,WS-2.93,TransQuest at WMT2020: Sentence-Level Direct Assessment,Tharindu Ranasinghe|Constantin Orasan|Ruslan Mitkov,38939607
@@ -491,7 +492,7 @@ WS-20,WS-20.28,Evaluating the Evaluation of Diversity in Natural Language Genera
 WS-20,WS-20.29,Item Response Theory for Efficient Human Evaluation of Chatbots ,João Sedoc|Lyle Ungar,38939718
 WS-20,WS-20.3,Artemis: A Novel Annotation Methodology for Indicative Single Document Summarization,Rahul Jha|Keping Bi|Yang Li|Mahdi Pakdaman|Asli Celikyilmaz|Ivan Zhiboedov|Kieran McDonald,38939707
 WS-20,WS-20.30,ViLBERTScore: Evaluating Image Caption Using Vision-and-Language BERT,Hwanhee Lee|Seunghyun Yoon|Franck Dernoncourt|Doo Soon Kim|Trung Bui|Kyomin Jung,38939719
-WS-20,WS-20.3117,#Turki$hTweets: A Benchmark Dataset for Turkish Text Correction,Asiye Tuba Köksal|Özge Bozal|Emre Yürekli|Gizem Gezici,38940037
+WS-20,WS-20.3117,#TurkihTweets: A Benchmark Dataset for Turkish Text Correction,Asiye Tuba Köksal|Özge Bozal|Emre Yürekli|Gizem Gezici,38940037
 WS-20,WS-20.3148,Multichannel Generative Language Model: Learning All Possible Factorizations Within and Across Channels,Harris Chan,38940114
 WS-20,WS-20.34,On Aligning OpenIE Extractions with Knowledge Bases: A Case Study,Kiril Gashteovski|Rainer Gemulla|Bhushan Kotnis|Sven Hertling|Christian Meilicke,38939720
 WS-20,WS-20.35,Improving Text Generation Evaluation with Batch Centering and Tempered Word Mover Distance,Xi Chen|Nan Ding|Tomer Levinboim|Radu Soricut,38939721
@@ -515,12 +516,12 @@ WS-21,WS-21.20,Layer-wise Guided Training for BERT: Learning Incrementally Refin
 WS-21,WS-21.21,Improving Joint Training of Inference Networks and Structured Prediction Energy Networks,Lifu Tu|Richard Yuanzhe Pang|Kevin Gimpel,38940143
 WS-21,WS-21.2146,Graph-to-Tree Neural Networks for Learning Structured Input-Output Translation with Applications to Semantic Parsing and Math Word Problem,Shucheng Li|Lingfei Wu|Shiwei Feng|Fangli Xu|Fengyuan Xu|Sheng Zhong,38940650
 WS-21,WS-21.22,Reading the Manual: Event Extraction as Definition Comprehension,Yunmo Chen|Tongfei Chen|Seth Ebner|Aaron Steven White|Benjamin Van Durme,38940159
-WS-21,WS-21.2220,An Instance Level Approach for Shallow Semantic Parsing in Scientiï¬c Procedural Text,Daivik Swarup|Ahsaas Bajaj|Sheshera Mysore|Tim O'Gorman|Rajarshi Das|Andrew McCallum,38940651
+WS-21,WS-21.2220,An Instance Level Approach for Shallow Semantic Parsing in Scientific Procedural Text,Daivik Swarup|Ahsaas Bajaj|Sheshera Mysore|Tim O'Gorman|Rajarshi Das|Andrew McCallum,38940651
 WS-21,WS-21.2284,On Long-Tailed Phenomena in Neural Machine Translation,Vikas Raunak|Siddharth Dalmia|Vivek Gupta|Florian Metze,38940652
 WS-21,WS-21.23,On the Discrepancy between Density Estimation and Sequence Generation,Jason Lee|Dustin Tran|Orhan Firat|Kyunghyun Cho,38940144
 WS-21,WS-21.24,Log-Linear Reformulation of the Noisy Channel Model for Document-Level Neural Machine Translation,Sébastien Jean|Kyunghyun Cho,38940157
 WS-21,WS-21.2417,Graph-to-Graph Transformer for Transition-based Dependency Parsing,Alireza Mohammadshahi|James Henderson,38940653
-WS-21,WS-21.26,Deeply Embedded Knowledge Representation & Reasoning For Natural Language Question Answering: A Practitioner’s Perspective,Arindam Mitra|Sanjay Narayana|Chitta Baral,38940152
+WS-21,WS-21.26,Deeply Embedded Knowledge Representation     Reasoning For Natural Language Question Answering: A Practitioner's Perspective,Arindam Mitra|Sanjay Narayana|Chitta Baral,38940152
 WS-21,WS-21.3373,An Empirical Investigation of Beam-Aware Training in Supertagging,Renato Negrinho|Matthew R. Gormley|Geoff Gordon,38940654
 WS-21,WS-21.4,CopyNext: Explicit Span Copying and Alignment in Sequence to Sequence Models,Abhinav Singh|Patrick Xia|Guanghui Qin|Mahsa Yarmohammadi|Benjamin Van Durme,38940142
 WS-21,WS-21.7,Generating Synthetic Data for Task-Oriented Semantic Parsing with Hierarchical Representations,Ke Tran|Ming Tan,38940155
@@ -586,7 +587,7 @@ WS-3,WS-3.3106,Poison Attacks against Text Datasets with Conditional Adversarial
 WS-3,WS-3.3296,How Effective is Task-Agnostic Data Augmentation for Pretrained Transformers?,Shayne Longpre|Yu Wang|Christopher DuBois,38940806
 WS-3,WS-3.33,The Extraordinary Failure of Complement Coercion Crowdsourcing,Yanai Elazar|Victoria Basmov|Shauli Ravfogel|Yoav Goldberg|Reut Tsarfat,38940804
 WS-3,WS-3.34,Embedding Structured Dictionary Entries,Steven Wilson|Walid Magdy|Barbara McGillivray|Gareth Tyson,38940805
-WS-3,WS-3.4,Q. Can Knowledge Graphs be used to Answer Boolean Questions? A. It’s complicated!,Daria Dzendzik|Carl Vogel|Jennifer Foster,38940789
+WS-3,WS-3.4,Q. Can Knowledge Graphs be used to Answer Boolean Questions? A. It's complicated!,Daria Dzendzik|Carl Vogel|Jennifer Foster,38940789
 WS-3,WS-3.6,How Far Can We Go with Data Selection? A Case Study on Semantic Sequence Tagging Tasks,Samuel Louvan|Bernardo Magnini,38940790
 WS-3,WS-3.7,Evaluating the Effectiveness of Efficient Neural Architecture Search for Sentence-Pair Tasks,Ansel MacLaughlin|Jwala Dhamala|Anoop Kumar|Sriram Venkatapathy|Ragav Venkatesan|Rahul Gupta,38940791
 WS-3,WS-3.8,Which Matters Most? Comparing the Impact of Concept and Document Relationships in Topic Models,Silvia Terragni|Debora Nozza|Elisabetta Fersini|Messina Enza,38940792
@@ -642,7 +643,7 @@ WS-7,WS-7.43shared,"IIITBH-IITP@CL-SciSumm20, CL-LaySumm20, LongSumm20",Saicheth
 WS-7,WS-7.44,Reconstructing Manual Information Extraction with DB-to-Document Backprojection: Experiments in the Life Science Domain,Mark-Christoph Muller|Sucheta Ghosh|Maja Rey|Ulrike Wittig|Wolfgang Muller|Michael Strube,38940718
 WS-7,WS-7.45,"AUTH @ CLSciSumm 20, LaySumm 20, LongSumm 20",Alexios Gidiotis|Stefanos Stefanidis|Grigorios Tsoumakas,38941222
 WS-7,WS-7.48_2shared,"SUMMAFORMERS @ LAYSUMM 20, LONGSUMM 20",Sayar Ghosh Roy|Nikhil Pinnaparaju|Risubh Jain|Manish Gupta|Vasudeva Varma,38940742
-WS-7,WS-7.48shared,Scientific Document Summarization for LaySumm ’20 and LongSumm ’2,Sayar Ghosh Roy|Nikhil Pinnaparaju|Risubh Jain|Manish Gupta∗|Vasudeva Varma,38940738
+WS-7,WS-7.48shared,Scientific Document Summarization for LaySumm '20 and LongSumm '2,Sayar Ghosh Roy|Nikhil Pinnaparaju|Risubh Jain|Manish Gupta∗|Vasudeva Varma,38940738
 WS-7,WS-7.49,UniHD@CL-SciSumm 2020: Citation Extraction as Search,Dennis Aumiller|Satya Almasian|Philip Hausner|Michael Gertz,38941224
 WS-7,WS-7.5,"On the effectiveness of small, discriminatively pre-trained language representation models for biomedical text mining",Ibrahim Burak Ozyurt,38940735
 WS-7,WS-7.54,CMU: CiteQA@CLSciSumm 2020,Anjana Umapathy|Karthik Radhakrishnan|Kinjal Jain|Rahul Singh,38941225
@@ -658,7 +659,7 @@ WS-9,WS-9.12,"Howl: A Deployed, Open-Source Wake Word Detection System",Raphael 
 WS-9,WS-9.13,iNLTK: Natural Language Toolkit for Indic Languages,Gaurav Arora,38939747
 WS-9,WS-9.14,iobes: A Library for Span-Level Processing,Brian Lester,38939748
 WS-9,WS-9.15,jiant: A Software Toolkit for Research on General-Purpose Text Understanding Models,Yada Pruksachatkun|Phil Yeres|Haokun Liu|Jason Phang|Phu Mon Htut|Alex Wang|Ian Tenney|Samuel R. Bowman,38939749
-WS-9,WS-9.16,KLPT -- Kurdish Language Processing Toolkit,Sina Ahmadi,38939750
+WS-9,WS-9.16,KLPT – Kurdish Language Processing Toolkit,Sina Ahmadi,38939750
 WS-9,WS-9.17,Open Korean Corpora: A Practical Report,Won Ik Cho|Sangwhan Moon|Youngsook Song,38939751
 WS-9,WS-9.18,Open-Source Morphology for Endangered Mordvinic Languages,Jack Rueter|Mika Hämäläinen|Niko Partanen,38939752
 WS-9,WS-9.19,Pimlico: A toolkit for corpus-processing pipelines and reproducible experiments,Mark Granroth-Wilding,38939753
@@ -666,7 +667,7 @@ WS-9,WS-9.20,PySBD: Pragmatic Sentence Boundary Disambiguation,Nipun Sadvilkar|M
 WS-9,WS-9.21,SacreROUGE: An Open-Source Library for Using and Developing Summarization Evaluation Metrics,Daniel Deutsch|Dan Roth,38939755
 WS-9,WS-9.22,TextAttack: Lessons learned in designing Python frameworks for NLP,John Morris|Jin Yong Yoo|Yanjun Qi,38939756
 WS-9,WS-9.23,"TOMODAPI: A Topic Modeling API to Train, Use and Compare Topic Models",Pasquale Lisena|Ismail Harrando|Oussama Kandakji|Raphael Troncy,38939757
-WS-9,WS-9.24,User-centered & Robust NLP OSS: Lessons Learned from Developing & Maintaining RSMTool,Nitin Madnani|Anastassia Loukina,38939758
+WS-9,WS-9.24,User-centered     Robust NLP OSS: Lessons Learned from Developing     Maintaining RSMTool,Nitin Madnani|Anastassia Loukina,38939758
 WS-9,WS-9.25,WAFFLE: A Graph for WordNet Applied to FreeForm Linguistic Exploration,Berk Ekmekci|Blake Howald,38939759
 WS-9,WS-9.4,A Framework to Assist Chat Operators of Mental Healthcare Services,Thiago Madeira|Heder Bernardino|Jairo Francisco De Souza|Henrique Gomide|Nathália Munck Machado|Bruno Marcos Pinheiro Da Silva|Alexandre Vieira Pereira Pacelli,38939738
 WS-9,WS-9.5,ARBML: Democritizing Arabic Natural Language Processing Tools,Zaid Alyafeai|Maged Al-Shaibani,38939739

@@ -1,5 +1,6 @@
 import csv
 import random
+from collections import defaultdict
 from dataclasses import dataclass
 from typing import List, Dict
 
@@ -21,6 +22,7 @@ class Session:
     start: datetime
     end: datetime
     host: str
+    zoom_link: str = None
 
 
 @dataclass
@@ -35,6 +37,7 @@ class Tutorial:
 
 def load_schedule() -> Dict[str, Tutorial]:
     wb = load_workbook(PATH_TUTORIALS_SCHEDULE)
+    zooms = load_zooms()
 
     data = {}
     for ws in wb.worksheets[1:]:
@@ -88,7 +91,7 @@ def load_schedule() -> Dict[str, Tutorial]:
             end = datetime.combine(day.date(), end_time)
             end = tz.localize(end)
 
-            session = Session(name, start, end, host)
+            session = Session(name, start, end, host, zooms[tutorial_id])
             sessions.append(session)
 
         tutorial = Tutorial(
@@ -107,6 +110,18 @@ def load_schedule() -> Dict[str, Tutorial]:
 
 def load_slideslive() -> pd.DataFrame:
     return pd.read_csv(PATH_SLIDESLIVE_OTHER)
+
+
+def load_zooms() -> Dict[str, str]:
+    df = pd.read_excel(PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS, sheet_name="Tutorials")
+    result = {}
+
+    for _, row in df.iterrows():
+        number = row["UID"].split(".")[-1]
+        uid = "T" + number
+        result[uid] = row["Personal Meeting LINK"]
+
+    return result
 
 
 def generate_yaml():
@@ -179,6 +194,7 @@ def generate_yaml():
                 "name": session.name,
                 "start_time": session.start,
                 "end_time": session.end,
+                "zoom_link": session.zoom_link,
             }
             if session.host:
                 e["hosts"] = session.host
@@ -193,6 +209,7 @@ def generate_yaml():
 
 
 if __name__ == "__main__":
+    download_zooms()
     download_slideslive()
     download_tutorials()
     generate_yaml()
