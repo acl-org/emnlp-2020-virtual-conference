@@ -5,13 +5,16 @@ const channel_html = (channel) => `
     <h5 class="stats-channel-name">
         <a target="_blank" href="https://emnlp2020.rocket.chat/channel/${channel.name}">#${channel.name}</a>
     </h5>
-    <span class="stats-channel-info text-muted"><i class="fas fa-users"></i> ${channel.usersCount}</span> 
+    <span class="stats-channel-info text-muted"  tabindex="0" data-toggle="tooltip" 
+        data-placement="bottom" title="Number of Users"><i class="fas fa-users"></i> ${channel.usersCount}</span> 
     &nbsp;
     &nbsp;
-    <span class="stats-channel-info text-muted"><i class="fas fa-comments"></i> ${channel.msgs}</span> 
+    <span class="stats-channel-info text-muted"  tabindex="0" data-toggle="tooltip" 
+        data-placement="bottom" title="Number of Total Messages"><i class="fas fa-comments"></i> ${channel.msgs}</span> 
     &nbsp;
     &nbsp;
-    <span class="stats-channel-info text-success"><i class="fas fa-chart-line"></i> ${channel.diff}</span> 
+    <span class="stats-channel-info text-success"  tabindex="0" data-toggle="tooltip" 
+        data-placement="bottom" title="Number of New Messages"><i class="fas fa-chart-line"></i> ${channel.diff}</span> 
     &nbsp;
     &nbsp;
     <span class="stats-channel-info text-muted">
@@ -34,8 +37,9 @@ const render_stats = (stats_obj) => {
     .format("MMM Do, HH:mm:ss");
   last_update_html = `Last update: ${last_update} (Refreshes every ${
     auto_refresh_interval / 1000
-  })s`;
+  }s)`;
   $("#highly-active-chats-last-update").html(last_update_html);
+  setTimeout(() => $('[data-toggle="tooltip"]').tooltip(), 0);
 };
 
 const load_stats = () => {
