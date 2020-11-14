@@ -16,7 +16,6 @@
     start_time: 2020-11-16 15:00:00+00:00
     end_time: 2020-11-16 16:00:00+00:00
   rocketchat_channel: keynote-claire-cardie
-  presentation_id: 38941033
   abstract: In this talk, I'll examine the state of the NLP subfield of information
     extraction from its inception almost 30 years ago to its current realization in
     neural network models. Which aspects of the original formulation of the task are
