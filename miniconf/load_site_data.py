@@ -812,6 +812,7 @@ def build_workshops(
             schedule=item.get("schedule"),
             prerecorded_talks=item.get("prerecorded_talks"),
             rocketchat_channel=item["rocketchat_channel"],
+            zoom_links=item.get("zoom_links", []),
             sessions=[
                 SessionInfo(
                     session_name=session.get("name", ""),
