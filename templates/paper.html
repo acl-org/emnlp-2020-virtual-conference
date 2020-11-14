@@ -111,9 +111,9 @@
     <p class="card-text text-center h5">
 
       {% if paper.content.program == "main" %}
-     <a href="papers.html?program=main&track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
+     <a href="papers.html?program=main&track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
      {% elif paper.content.program == "workshop" %}
-      <a href="papers.html?program=workshop&track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
+      <a href="papers.html?program=workshop&track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
       {% endif %}
      <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
     </p>
@@ -126,7 +126,7 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3 {% if paper.content.program != "findings"%}collapse{% endif %}">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
