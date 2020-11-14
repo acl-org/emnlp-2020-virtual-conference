@@ -6,7 +6,9 @@ from typing import List, Dict, Any
 import re
 
 import ruamel
+from ftfy import fix_text
 from openpyxl import load_workbook
+from pylatexenc.latex2text import LatexNodes2Text
 from ruamel import yaml
 
 import numpy as np
@@ -247,13 +249,18 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         if is_not_paper(row):
             continue
 
+        title = row["Title"].replace("\n", " ")
+        title = LatexNodes2Text().latex_to_text(title)
+        title = fix_text(title)
+        author_list = [fix_text(e.strip()) for e in re.split(",| and | And ", row["Speakers"])]
+
         ws = row["Organizer track name"].strip()
         uid = row["Unique ID"].strip()
         venues.append(ws)
         UIDs.append(f"{ws}.{uid}")
-        titles.append(row["Title"].replace("\n", " "))
+        titles.append(title)
         authors.append(
-            "|".join(e.strip() for e in re.split(",| and | And ", row["Speakers"]))
+            "|".join(author_list)
         )
         presentation_ids.append(
             row["SlidesLive link"].replace("https://slideslive.com/", "")
@@ -318,9 +325,9 @@ def get_zooms() -> Dict[str, List[str]]:
 
 
 if __name__ == "__main__":
-    download_slideslive()
-    download_workshops()
-    download_zooms()
+    #download_slideslive()
+    #download_workshops()
+    #download_zooms()
 
     # load_csv()
     data = build_workshops_basics()
