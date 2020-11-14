@@ -699,12 +699,14 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             min_start = min([t["start_time"] for t in block])
             max_end = max([t["end_time"] for t in block])
 
+            assert all(s["zoom_link"] == block[0]["zoom_link"] for s in block)
+
             result.append(
                 SessionInfo(
                     session_name=f"T-Live Session {i+1}",
                     start_time=min_start,
                     end_time=max_end,
-                    link="",
+                    link=block[0]["zoom_link"],
                 )
             )
         return result
@@ -812,6 +814,7 @@ def build_workshops(
             schedule=item.get("schedule"),
             prerecorded_talks=item.get("prerecorded_talks"),
             rocketchat_channel=item["rocketchat_channel"],
+            zoom_links=item.get("zoom_links", []),
             sessions=[
                 SessionInfo(
                     session_name=session.get("name", ""),
@@ -853,6 +856,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             ],
             rocketchat_channel=item.get("rocketchat_channel", ""),
             website=item.get("website", ""),
+            zoom_link=item.get("zoom_link"),
         )
         for item in raw_socials
     ]

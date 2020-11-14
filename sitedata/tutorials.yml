@@ -15,39 +15,45 @@
     methods.
   info: |-
     This tutorial has slides that you see can anytime (It does not have any
-    prerecorded talk). It will be conducted entirely live on Zoom. It has a
-    chat window that you can use to have discussions with the tutorial teachers
-    and other attendees anytime during the conference.
+        prerecorded talk). It will be conducted entirely live on Zoom and will be
+        livestreamed on this page. It has a chat window that you can use to have
+        discussions with the tutorial teachers and other attendees anytime during the
+        conference.
   rocketchat_channel: tutorial-1-interpreting-predictions
   sessions:
   - name: Part 1
     start_time: 2020-11-19 15:00:00+00:00
     end_time: 2020-11-19 16:30:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
     hosts: Eric Wallace, Matt Gardner and Sameer Singh
-  - name: QA 1
+  - name: Q&A 1
     start_time: 2020-11-19 16:30:00+00:00
     end_time: 2020-11-19 17:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
   - name: BREAK
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 17:30:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
   - name: Part 2
     start_time: 2020-11-19 17:30:00+00:00
     end_time: 2020-11-19 19:00:00+00:00
-  - name: QA 2
+    zoom_link: https://us02web.zoom.us/j/2637599975
+  - name: Q&A 2
     start_time: 2020-11-19 19:00:00+00:00
     end_time: 2020-11-19 19:30:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
   website: https://www.ericswallace.com/interpretability
 - UID: T2
   title: 'Fact-Checking, Fake News, Propaganda, and Media Bias: Truth Seeking in the
     Post-Truth Era'
   organizers: Preslav Nakov, Giovanni Da San Martino
   abstract: |-
-    The rise of social media has democratized content creation and has made it easy for anybody to share and to spread information online. On the positive side, this has given rise to citizen journalism, thus enabling much faster dissemination of information compared to what was possible with newspapers, radio, and TV. On the negative side, stripping traditional media from their gate-keeping role has left the public unprotected against the spread of disinformation, which could now travel at breaking-news speed over the same democratic channel. This situation gave rise to the proliferation of false information specifically created to affect individual people's beliefs, and ultimately to influence major events such as political elections; it also set the dawn of the Post-Truth Era, where appeal to emotions has become more important than the truth. More recently, with the emergence of the COVID-19 pandemic, a new blending of medical and political misinformation and disinformation has given rise to the first global infodemic. Limiting the impact of these negative developments has become a major focus for journalists, social media companies, and regulatory authorities. 
+    The rise of social media has democratized content creation and has made it easy for anybody to share and to spread information online. On the positive side, this has given rise to citizen journalism, thus enabling much faster dissemination of information compared to what was possible with newspapers, radio, and TV. On the negative side, stripping traditional media from their gate-keeping role has left the public unprotected against the spread of disinformation, which could now travel at breaking-news speed over the same democratic channel. This situation gave rise to the proliferation of false information specifically created to affect individual people's beliefs, and ultimately to influence major events such as political elections; it also set the dawn of the Post-Truth Era, where appeal to emotions has become more important than the truth. More recently, with the emergence of the COVID-19 pandemic, a new blending of medical and political misinformation and disinformation has given rise to the first global infodemic. Limiting the impact of these negative developments has become a major focus for journalists, social media companies, and regulatory authorities.
 
     The tutorial offers an overview of the emerging and inter-connected research areas of fact-checking, misinformation, disinformation, “fake news”, propaganda, and media bias detection, with focus on text and on computational approaches. It further explores the general fact-checking pipeline and important elements thereof such as check-worthiness estimation, spotting previous fact-checked claims, stance detection, source reliability estimation, and detecting malicious users in social media. Finally, it covers some recent developments such as the emergence of large-scale pre-trained language models, and the challenges and opportunities they offer.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom. Additionally, it has
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-2-fact-checking
@@ -55,10 +61,12 @@
   - name: Q&A
     start_time: 2020-11-19 10:00:00+00:00
     end_time: 2020-11-19 11:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/7912953569
     hosts: Preslav Nakov and Giovanni Da San Martino
   - name: Q&A
     start_time: 2020-11-19 14:00:00+00:00
     end_time: 2020-11-19 15:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/7912953569
   prerecorded: '38940825'
   website: https://propaganda.math.unipd.it/emnlp20-tutorial
 - UID: T3
@@ -76,7 +84,7 @@
     tricks.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom. Additionally, it has
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-3-high-performance
@@ -84,11 +92,13 @@
   - name: Q&A
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 18:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9096516638
     hosts: Gabriel Ilharco, Cesar Ilharco, Iulia Turc, Tim Dettmers, Felipe Ferreira,
       Kenton Lee
   - name: Q&A
     start_time: 2020-11-20 00:00:00+00:00
     end_time: 2020-11-20 01:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9096516638
   prerecorded: '38940826'
 - UID: T4
   title: 'Machine Reasoning: Technology, Dilemma and Future'
@@ -106,7 +116,7 @@
     possible future directions.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom. Additionally, it has
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-4-machine-reasoning
@@ -114,10 +124,12 @@
   - name: Q&A
     start_time: 2020-11-19 09:00:00+00:00
     end_time: 2020-11-19 10:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/4445879998
     hosts: Nan Duan, Duyu Tang and Ming Zhou
   - name: Q&A
     start_time: 2020-11-20 01:00:00+00:00
     end_time: 2020-11-20 02:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/4445879998
   prerecorded: '38940827'
 - UID: T5
   title: Representation, Learning and Reasoning on Spatial Language for Down-stream
@@ -137,7 +149,7 @@
     reasoning -- and highlight the research gaps and future directions.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom. Additionally, it has
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-5-spatial-language
@@ -145,10 +157,12 @@
   - name: Q&A
     start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 18:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/8232538402
     hosts: Parisa Kordjamshidi, James Pustejovsky and Marie-Francine Moens
   - name: Q&A
     start_time: 2020-11-21 00:00:00+00:00
     end_time: 2020-11-21 01:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/8232538402
   prerecorded: '38940828'
   website: https://spatial-language-tutorial.github.io
 - UID: T6
@@ -159,7 +173,7 @@
     Recently, with rapid improvements in machine translation, speech recognition, and speech synthesis, there has been exciting progress towards simultaneous translation. This tutorial will focus on the design and evaluation of policies for simultaneous translation, to leave attendees with a deep technical understanding of the history, the recent advances, and the remaining challenges in this field.
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom. Additionally, it has
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-6-simultaneous-translation
@@ -167,10 +181,12 @@
   - name: Q&A
     start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9514558044
     hosts: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan and Zhongjun He
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9514558044
   prerecorded: '38940829'
 - UID: T7
   title: The Amazing World of Neural Language Generation
@@ -190,7 +206,7 @@
     insights on several applications.'
   info: |-
     This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
-        also has two live sessions that will be conducted on Zoom. Additionally, it has
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
         a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
         conference.
   rocketchat_channel: tutorial-7-world-of-generation
@@ -198,9 +214,11 @@
   - name: Q&A
     start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 20:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9058998626
     hosts: Yangfeng Ji, Antoine Bosselut, Thomas Wolf and Asli Celikyilmaz
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9058998626
   prerecorded: '38940830'
   website: https://nlg-world.github.io

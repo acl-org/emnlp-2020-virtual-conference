@@ -237,6 +237,7 @@ class Workshop:
     rocketchat_channel: str
     sessions: List[SessionInfo]
     blocks: List[SessionInfo]
+    zoom_links: List[str]
 
 
 @dataclass(frozen=True)
@@ -256,3 +257,4 @@ class SocialEvent:
     sessions: List[SessionInfo]
     rocketchat_channel: str
     website: str
+    zoom_link: str

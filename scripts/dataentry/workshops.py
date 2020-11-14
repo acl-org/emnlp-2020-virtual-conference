@@ -6,7 +6,9 @@ from typing import List, Dict, Any
 import re
 
 import ruamel
+from ftfy import fix_text
 from openpyxl import load_workbook
+from pylatexenc.latex2text import LatexNodes2Text
 from ruamel import yaml
 
 import numpy as np
@@ -64,7 +66,7 @@ def load_workshop_overview_excel() -> pd.DataFrame:
         ],
     )
     df = df.dropna(subset=["UID"])
-    df[df["Softconf Number"] is None] = -1
+    df["Softconf Number"] = df["Softconf Number"].fillna(-1)
 
     df["Softconf Number"] = df["Softconf Number"].apply(lambda x: int(x))
     df["Organizers"] = df["Softconf Number"].apply(
@@ -77,6 +79,7 @@ def load_workshop_overview_excel() -> pd.DataFrame:
 def build_workshops_basics() -> List[Dict[str, Any]]:
     workshops = load_workshop_overview_excel()
     schedule = load_schedule()
+    zooms = get_zooms()
 
     data = []
     for _, row in workshops.iterrows():
@@ -111,6 +114,9 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
             "alias": alias,
             "sessions": sessions,
         }
+
+        if uid in zooms:
+            entry["zoom_links"] = zooms[uid]
 
         data.append(entry)
 
@@ -243,13 +249,18 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         if is_not_paper(row):
             continue
 
+        title = row["Title"].replace("\n", " ")
+        title = LatexNodes2Text().latex_to_text(title)
+        title = fix_text(title)
+        author_list = [fix_text(e.strip()) for e in re.split(",| and | And ", row["Speakers"])]
+
         ws = row["Organizer track name"].strip()
         uid = row["Unique ID"].strip()
         venues.append(ws)
         UIDs.append(f"{ws}.{uid}")
-        titles.append(row["Title"].replace("\n", " "))
+        titles.append(title)
         authors.append(
-            "|".join(e.strip() for e in re.split(",| and | And ", row["Speakers"]))
+            "|".join(author_list)
         )
         presentation_ids.append(
             row["SlidesLive link"].replace("https://slideslive.com/", "")
@@ -299,9 +310,24 @@ def add_invited_talks(slideslive: pd.DataFrame):
     return talks_per_workshop
 
 
+def get_zooms() -> Dict[str, List[str]]:
+    df = pd.read_excel(PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS, sheet_name="Workshops")
+
+    zooms = defaultdict(list)
+    for _, row in df.iterrows():
+        uid = row["UID"].replace(".", "-").upper()
+        zooms[uid].append(row["Personal Meeting LINK"])
+
+        for i in range(row["# of accounts"] - 1):
+            zooms[uid].append(row[f"Personal Meeting LINK.{i+1}"])
+
+    return zooms
+
+
 if __name__ == "__main__":
-    # download_slideslive()
-    # download_workshops()
+    #download_slideslive()
+    #download_workshops()
+    #download_zooms()
 
     # load_csv()
     data = build_workshops_basics()
