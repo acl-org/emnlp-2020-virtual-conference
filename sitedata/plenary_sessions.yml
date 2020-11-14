@@ -44,6 +44,8 @@
     start_time: 2020-11-16 23:00:00+00:00
     end_time: 2020-11-17 00:00:00+00:00
   rocketchat_channel: plenary-industry-panel
+  presenter: "Fei Sha, Chin-Yew Lin, Kristina Toutanova, Daniel Marcu, Joel Tetreault,\
+    \ Jo\xE3o Gra\xE7a"
 - UID: ethics_panel_discussion
   title: Ethics Panel Discussion
   day: Nov 17
@@ -53,6 +55,10 @@
     start_time: 2020-11-17 15:00:00+00:00
     end_time: 2020-11-17 16:00:00+00:00
   rocketchat_channel: plenary-ethics-panel-discussion
+  presenter: Mona Diab, Emily Bender, Rosie Campbell, Allan Dafoe, Pascale Fung, Meg
+    Mitchell, Saif Muhammad
+  abstract: 'Publishing in an era of Responsible AI: How can NLP be proactive? Considerations
+    and Implications'
 - UID: keynote_by_rich_caruana
   title: "Keynote: Friends Don\u2019t Let Friends Deploy Black-Box Models: The Importance\
     \ of Intelligibility in Machine Learning"
