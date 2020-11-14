@@ -257,3 +257,4 @@ class SocialEvent:
     sessions: List[SessionInfo]
     rocketchat_channel: str
     website: str
+    zoom_link: str

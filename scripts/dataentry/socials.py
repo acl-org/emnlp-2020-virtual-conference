@@ -1,5 +1,6 @@
 import csv
 import random
+from collections import defaultdict
 from dataclasses import dataclass
 from typing import List, Dict
 
@@ -16,7 +17,7 @@ import pandas as pd
 from scripts.dataentry.paths import *
 
 
-def load_excel():
+def generate_socials():
     wb = load_workbook(PATH_SOCIALS)
 
     ws = wb.worksheets[0]
@@ -37,6 +38,21 @@ def load_excel():
     )
     df = df.dropna(subset=["ID"])
     df = df[:-1]
+
+    zoom_df = pd.read_excel(
+        PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS, sheet_name="Affinity"
+    ).fillna("")
+
+    zooms = {}
+    for _, row in zoom_df.iterrows():
+        number = row["UID"].split(".")[-1]
+        uid = row["UID"][0].upper() + number
+
+        assert uid not in zooms
+
+        link = row["Personal Meeting LINK"]
+        if link:
+            zooms[uid] = link
 
     id_to_organizers = {
         row["ID"]: [e.strip() for e in row["Organizers"].split(",")]
@@ -95,6 +111,11 @@ def load_excel():
 
         data["rocketchat_channel"] = id_to_channel[uid]
         data["location"] = id_to_location[uid]
+
+        if uid in zooms:
+            assert "Zoom" in data["location"], data["location"]
+            data["zoom_link"] = zooms[uid]
+
         result.append(data)
 
         sessions = []
@@ -136,4 +157,4 @@ def load_excel():
 
 if __name__ == "__main__":
     download_socials()
-    load_excel()
+    generate_socials()

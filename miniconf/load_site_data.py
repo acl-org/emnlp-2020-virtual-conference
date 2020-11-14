@@ -854,6 +854,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             ],
             rocketchat_channel=item.get("rocketchat_channel", ""),
             website=item.get("website", ""),
+            zoom_link=item.get("zoom_link"),
         )
         for item in raw_socials
     ]
