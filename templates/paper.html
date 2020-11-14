@@ -92,7 +92,7 @@
         Demo
       </a>
       {% endif %}
-      {% if paper.content.s2_id %}
+      {% if paper.program == "main" %}
       <a class="card-link" target="_blank" href="https://www.connectedpapers.com/conferece-redirect/main/{{ config.connected_papers_conference_name }}/{{paper.id}}/graph">
         Connected Papers
       </a>
@@ -214,7 +214,7 @@
 {% if config.connected_papers_conference_name %}
 <div class="container">
   {{ components.section("Connected Papers in EMNLP2020") }}
-  <iframe width="100%" height="600px"
+  <iframe width="100%" height="600px" loading="lazy"
             src="https://www.connectedpapers.com/conferece-redirect/conference/{{ config.connected_papers_conference_name }}/{{ paper.id }}/graph">
   </iframe>
 </div>
