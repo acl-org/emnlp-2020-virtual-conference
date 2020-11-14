@@ -699,12 +699,14 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             min_start = min([t["start_time"] for t in block])
             max_end = max([t["end_time"] for t in block])
 
+            assert all(s["zoom_link"] == block[0]["zoom_link"] for s in block)
+
             result.append(
                 SessionInfo(
                     session_name=f"T-Live Session {i+1}",
                     start_time=min_start,
                     end_time=max_end,
-                    link="",
+                    link=block[0]["zoom_link"],
                 )
             )
         return result

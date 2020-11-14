@@ -318,7 +318,7 @@ def get_zooms() -> Dict[str, List[str]]:
 
 
 if __name__ == "__main__":
-    # download_slideslive()
+    download_slideslive()
     download_workshops()
     download_zooms()
 
