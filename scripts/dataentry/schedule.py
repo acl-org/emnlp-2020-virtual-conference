@@ -31,8 +31,7 @@ def build_plenary():
     }
 
     abstract_janet = """
-    To evaluate the performance of NLP systems, the standard is to use held-out test data. When the systems are deployed in real-world applications, they will only be successful if they perform well on examples that their architects never saw before. Many of these will be examples that nobody ever saw before; the central observation of generative linguistics, going back to von Humboldt, is that human language involves “The infinite use of finite means”.
-    
+    To evaluate the performance of NLP systems, the standard is to use held-out test data. When the systems are deployed in real-world applications, they will only be successful if they perform well on examples that their architects never saw before. Many of these will be examples that nobody ever saw before; the central observation of generative linguistics, going back to von Humboldt, is that human language involves "The infinite use of finite means".
     Predicting the real-world success of NLP systems thus comes down to predicting future human linguistic behaviour. In this talk, I will discuss some general characteristics of human linguistic behaviour, and the extent to which they are, or are not addressed in current NLP methodology. The topics I will address include: look-ahead and prediction; the role of categorization in building abstractions; effects of context; and variability across individuals.
     """.strip()
 
