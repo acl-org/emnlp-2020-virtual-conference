@@ -6,6 +6,7 @@
   - name: P-Live Presentation
     start_time: 2020-11-16 14:45:00+00:00
     end_time: 2020-11-16 15:00:00+00:00
+  rocketchat_channel: plenary-opening-remarks
 - UID: keynote_by_claire_cardie
   title: 'Keynote: Information Extraction Through the Years: How Did We Get Here?'
   day: Nov 16
@@ -14,6 +15,7 @@
   - name: P-Live Presentation
     start_time: 2020-11-16 15:00:00+00:00
     end_time: 2020-11-16 16:00:00+00:00
+  rocketchat_channel: keynote-claire-cardie
   abstract: In this talk, I'll examine the state of the NLP subfield of information
     extraction from its inception almost 30 years ago to its current realization in
     neural network models. Which aspects of the original formulation of the task are
@@ -41,6 +43,7 @@
   - name: P-Live Presentation
     start_time: 2020-11-16 23:00:00+00:00
     end_time: 2020-11-17 00:00:00+00:00
+  rocketchat_channel: plenary-industry-panel
 - UID: ethics_panel_discussion
   title: Ethics Panel Discussion
   day: Nov 17
@@ -49,6 +52,7 @@
   - name: P-Live Presentation
     start_time: 2020-11-17 15:00:00+00:00
     end_time: 2020-11-17 16:00:00+00:00
+  rocketchat_channel: plenary-ethics-panel-discussion
 - UID: keynote_by_rich_caruana
   title: "Keynote: Friends Don\u2019t Let Friends Deploy Black-Box Models: The Importance\
     \ of Intelligibility in Machine Learning"
@@ -58,6 +62,7 @@
   - name: P-Live Presentation
     start_time: 2020-11-17 23:00:00+00:00
     end_time: 2020-11-18 00:00:00+00:00
+  rocketchat_channel: keynote-rich-caruana
   abstract: "In machine learning sometimes tradeoffs must be made between accuracy\
     \ and intelligibility: the most accurate models usually are not very intelligible,\
     \ and the most intelligible models usually are less accurate. This can limit the\
@@ -94,10 +99,39 @@
   - name: P-Live Presentation
     start_time: 2020-11-18 15:00:00+00:00
     end_time: 2020-11-18 16:00:00+00:00
-  bio: |-
-    [Janet Pierrehumbert](http://www.phon.ox.ac.uk/jpierrehumbert/) is the Professor of Language Modelling in the Department of Engineering Science at the University of Oxford. She received her BA in Linguistics and Mathematics at Harvard in 1975, and her Ph.D in Linguistics from MIT in 1980. Much of her Ph.D dissertation research on English prosody and intonation was carried out at AT&T Bell Laboratories, where she was also a Member of Technical Staff from 1982 to 1989. After she moved to Northwestern University in1989, her research program used a wide variety of experimental and computational methods to explore how lexical systems emerge in speech communities. She showed that the mental representations of words are at once abstract and phonetically detailed, and that social factors interact with cognitive factors as lexical patterns are learned, remembered, and generalized. Pierrehumbert joined the faculty at the University of Oxford in 2015 as a member of the interdisciplinary Oxford e-Research Centre. Her current research uses machine-learning methods to model the dynamics of on-line language. Her latest project, funded by the UK EPSRC, seeks to develop new NLP methods to characterize exaggeration, cohesion, and fragmentation in on-line forums.
-
-    Pierrehumbert is a Fellow of the Linguistic Society of America, the Cognitive Science Society, and the American Academy of Arts and Sciences. She was elected to the National Academy of Sciences in 2019. She is the recipient of the 2020 Medal for Scientific Achievement from the International Speech Communication Association.
+  rocketchat_channel: keynote-janet-pierrehumbert
+  abstract: "To evaluate the performance of NLP systems, the standard is to use held-out\
+    \ test data. When the systems are deployed in real-world applications, they will\
+    \ only be successful if they perform well on examples that their architects never\
+    \ saw before. Many of these will be examples that nobody ever saw before; the\
+    \ central observation of generative linguistics, going back to von Humboldt, is\
+    \ that human language involves \"The infinite use of finite means\".\n    Predicting\
+    \ the real-world success of NLP systems thus comes down to predicting future human\
+    \ linguistic behaviour. In this talk, I will discuss some general characteristics\
+    \ of human linguistic behaviour, and the extent to which they are, or are not\
+    \ addressed in current NLP methodology. The topics I will address include: look-ahead\
+    \ and prediction; the role of categorization in building abstractions; effects\
+    \ of context; and variability across individuals."
+  bio: "[Janet Pierrehumbert](http://www.phon.ox.ac.uk/jpierrehumbert/) is the Professor\
+    \ of Language Modelling in the Department of Engineering Science at the University\
+    \ of Oxford. She received her BA in Linguistics and Mathematics at Harvard in\
+    \ 1975, and her Ph.D in Linguistics from MIT in 1980. Much of her Ph.D dissertation\
+    \ research on English prosody and intonation was carried out at AT&T Bell Laboratories,\
+    \ where she was also a Member of Technical Staff from 1982 to 1989. After she\
+    \ moved to Northwestern University in1989, her research program used a wide variety\
+    \ of experimental and computational methods to explore how lexical systems emerge\
+    \ in speech communities. She showed that the mental representations of words are\
+    \ at once abstract and phonetically detailed, and that social factors interact\
+    \ with cognitive factors as lexical patterns are learned, remembered, and generalized.\
+    \ Pierrehumbert joined the faculty at the University of Oxford in 2015 as a member\
+    \ of the interdisciplinary Oxford e-Research Centre. Her current research uses\
+    \ machine-learning methods to model the dynamics of on-line language. Her latest\
+    \ project, funded by the UK EPSRC, seeks to develop new NLP methods to characterize\
+    \ exaggeration, cohesion, and fragmentation in on-line forums.\n\nPierrehumbert\
+    \ is a Fellow of the Linguistic Society of America, the Cognitive Science Society,\
+    \ and the American Academy of Arts and Sciences. She was elected to the National\
+    \ Academy of Sciences in 2019. She is the recipient of the 2020 Medal for Scientific\
+    \ Achievement from the International Speech Communication Association."
   presenter: Janet Pierrehumbert
 - UID: business_meeting
   title: Business Meeting
@@ -107,6 +141,7 @@
   - name: P-Live Presentation
     start_time: 2020-11-19 01:00:00+00:00
     end_time: 2020-11-19 01:45:00+00:00
+  rocketchat_channel: plenary-business-meeting
 - UID: best_paper_awards_and_closing
   title: Best Paper Awards and Closing
   day: Nov 19
@@ -115,3 +150,4 @@
   - name: P-Live Presentation
     start_time: 2020-11-19 01:50:00+00:00
     end_time: 2020-11-19 02:20:00+00:00
+  rocketchat_channel: plenary-best-paper-awards-and-closing
