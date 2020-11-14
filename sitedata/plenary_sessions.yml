@@ -16,7 +16,6 @@
     start_time: 2020-11-16 15:00:00+00:00
     end_time: 2020-11-16 16:00:00+00:00
   rocketchat_channel: keynote-claire-cardie
-  presentation_id: 38941033
   abstract: In this talk, I'll examine the state of the NLP subfield of information
     extraction from its inception almost 30 years ago to its current realization in
     neural network models. Which aspects of the original formulation of the task are
@@ -45,6 +44,8 @@
     start_time: 2020-11-16 23:00:00+00:00
     end_time: 2020-11-17 00:00:00+00:00
   rocketchat_channel: plenary-industry-panel
+  presenter: "Fei Sha, Chin-Yew Lin, Kristina Toutanova, Daniel Marcu, Joel Tetreault,\
+    \ Jo\xE3o Gra\xE7a"
 - UID: ethics_panel_discussion
   title: Ethics Panel Discussion
   day: Nov 17
@@ -54,6 +55,10 @@
     start_time: 2020-11-17 15:00:00+00:00
     end_time: 2020-11-17 16:00:00+00:00
   rocketchat_channel: plenary-ethics-panel-discussion
+  presenter: Mona Diab, Emily Bender, Rosie Campbell, Allan Dafoe, Pascale Fung, Meg
+    Mitchell, Saif Muhammad
+  abstract: 'Publishing in an era of Responsible AI: How can NLP be proactive? Considerations
+    and Implications'
 - UID: keynote_by_rich_caruana
   title: "Keynote: Friends Don\u2019t Let Friends Deploy Black-Box Models: The Importance\
     \ of Intelligibility in Machine Learning"
@@ -106,13 +111,13 @@
     \ only be successful if they perform well on examples that their architects never\
     \ saw before. Many of these will be examples that nobody ever saw before; the\
     \ central observation of generative linguistics, going back to von Humboldt, is\
-    \ that human language involves \u201CThe infinite use of finite means\u201D.\n\
-    \    \n    Predicting the real-world success of NLP systems thus comes down to\
-    \ predicting future human linguistic behaviour. In this talk, I will discuss some\
-    \ general characteristics of human linguistic behaviour, and the extent to which\
-    \ they are, or are not addressed in current NLP methodology. The topics I will\
-    \ address include: look-ahead and prediction; the role of categorization in building\
-    \ abstractions; effects of context; and variability across individuals."
+    \ that human language involves \"The infinite use of finite means\".\n    Predicting\
+    \ the real-world success of NLP systems thus comes down to predicting future human\
+    \ linguistic behaviour. In this talk, I will discuss some general characteristics\
+    \ of human linguistic behaviour, and the extent to which they are, or are not\
+    \ addressed in current NLP methodology. The topics I will address include: look-ahead\
+    \ and prediction; the role of categorization in building abstractions; effects\
+    \ of context; and variability across individuals."
   bio: "[Janet Pierrehumbert](http://www.phon.ox.ac.uk/jpierrehumbert/) is the Professor\
     \ of Language Modelling in the Department of Engineering Science at the University\
     \ of Oxford. She received her BA in Linguistics and Mathematics at Harvard in\

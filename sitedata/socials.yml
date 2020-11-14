@@ -35,7 +35,10 @@
   website: https://sites.google.com/view/vegnlp/
   rocketchat_channel: social-vegnlp
   location: Gather.Town
-  sessions: []
+  sessions:
+  - name: S-Session 1
+    start_time: 2020-11-17 14:00:00+00:00
+    end_time: 2020-11-17 15:00:00+00:00
 - name: LatinX in NLP
   description: This affinity social is aimed at LatinX individuals working on or interested
     in NLP with a goal to increase the visibility of researchers of LatinX origin
@@ -49,7 +52,13 @@
   website: http://www.latinxinai.org/emnlp-2020
   rocketchat_channel: social-latinx
   location: Zoom
-  sessions: []
+  sessions:
+  - name: S-Session 1
+    start_time: 2020-11-17 17:00:00+00:00
+    end_time: 2020-11-17 19:00:00+00:00
+  - name: S-Session 2
+    start_time: 2020-11-18 18:00:00+00:00
+    end_time: 2020-11-18 20:00:00+00:00
 - name: North Africans in NLP
   description: We welcome NLP & AI researchers who are North African and/or are based
     in North Africa to attend our panel discussion with an exciting line-up of speakers,
@@ -87,7 +96,13 @@
   website: https://www.masakhane.io/events/social-emnlp2020
   rocketchat_channel: social-nlpafrica
   location: Zoom
-  sessions: []
+  sessions:
+  - name: S-Session 1
+    start_time: 2020-11-17 14:00:00+00:00
+    end_time: 2020-11-17 15:00:00+00:00
+  - name: S-Session 2
+    start_time: 2020-11-18 14:00:00+00:00
+    end_time: 2020-11-18 15:00:00+00:00
 - name: Junior Faculty in Linguistics/CogSci
   description: An informal gathering for junior faculty (U.S. Assistant Professors
     and similar) around the world who identify as linguists or cognitive scientists.
@@ -99,7 +114,10 @@
     - Nathan Schneider
   rocketchat_channel: social-jrcogsci
   location: Zoom
-  sessions: []
+  sessions:
+  - name: S-Session 1
+    start_time: 2020-11-18 18:00:00+00:00
+    end_time: 2020-11-18 19:00:00+00:00
 - name: The Unofficial EMNLP Welcome Social, Now with Clustering!
   description: 'The goal is to recreate an important part of any conference: Getting
     to know new people with interests that are similar to yours. All registered EMNLP
@@ -112,7 +130,16 @@
   website: https://nyu-mll.github.io/emnlp2020social/
   rocketchat_channel: social-emnlp-welcome
   location: Zoom
-  sessions: []
+  sessions:
+  - name: S-Session 1
+    start_time: 2020-11-17 20:00:00+00:00
+    end_time: 2020-11-17 21:00:00+00:00
+  - name: S-Session 2
+    start_time: 2020-11-18 22:00:00+00:00
+    end_time: 2020-11-18 23:00:00+00:00
+  - name: S-Session 3
+    start_time: 2020-11-18 10:00:00+00:00
+    end_time: 2020-11-18 11:00:00+00:00
 - name: Computational Social Science and Social Media
   description: Birds of a Feather meetup session on the topic "Computational Social
     Science and Social Media".
@@ -404,4 +431,10 @@
     - tbd
   rocketchat_channel: panel-ugrad
   location: Gather.Town
-  sessions: []
+  sessions:
+  - name: S-Session 1
+    start_time: 2020-11-17 17:00:00+00:00
+    end_time: 2020-11-17 18:00:00+00:00
+  - name: S-Session 2
+    start_time: 2020-11-18 03:00:00+00:00
+    end_time: 2020-11-18 04:00:00+00:00
