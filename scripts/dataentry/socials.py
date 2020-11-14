@@ -158,3 +158,4 @@ def generate_socials():
 if __name__ == "__main__":
     download_socials()
     generate_socials()
+    download_zooms()

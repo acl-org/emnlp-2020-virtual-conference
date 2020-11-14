@@ -135,6 +135,7 @@
   website: https://nyu-mll.github.io/emnlp2020social/
   rocketchat_channel: social-emnlp-welcome
   location: Zoom
+  zoom_link: https://us02web.zoom.us/j/4372427218
   sessions:
   - name: S-Session 1
     start_time: 2020-11-17 20:00:00+00:00
@@ -160,7 +161,8 @@
     start_time: 2020-11-17 13:00:00+00:00
     end_time: 2020-11-17 14:00:00+00:00
 - name: Machine Translation and Multilinguality
-  description: Birds of a Feather meetup session on the topic "".
+  description: Birds of a Feather meetup session on the topic "Machine Translation
+    and Multilinguality".
   UID: B10
   organizers:
     members:
