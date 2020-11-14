@@ -193,6 +193,6 @@ def generate_yaml():
 
 
 if __name__ == "__main__":
-    # download_slideslive()
-    # download_tutorials()
+    download_slideslive()
+    download_tutorials()
     generate_yaml()

@@ -26,6 +26,9 @@ PATH_WORKSHOPS_OVERVIEW = PATH_DOWNLOADS / "workshops.xlsx"
 URL_WORKSHOPS_SCHEDULE = "https://docs.google.com/spreadsheets/d/1BgDuZLKm8rlX-o8l61jAcOrwoKXG6SKhbvjv5-ub2Iw/export?format=xlsx"
 PATH_WORKSHOPS_SCHEDULE = PATH_DOWNLOADS / "workshops_schedule.xlsx"
 
+URL_WORKSHOPS_CSV = "https://raw.githubusercontent.com/emnlp2020/emnlp2020-website/master/src/data/workshops.csv"
+PATH_WORKSHOPS_CSV = PATH_DOWNLOADS / "workshops.csv"
+
 URL_SOCIALS = "https://docs.google.com/spreadsheets/d/1IDk3K1JD1hvH_hvyMy6TeRuE2F6DQDfpgwNpTIP9KgI/export?format=xlsx"
 PATH_SOCIALS = PATH_DOWNLOADS / "socials.xlsx"
 
@@ -51,6 +54,7 @@ def download_tutorials():
 def download_workshops():
     download_file(URL_WORKSHOPS_OVERVIEW, PATH_WORKSHOPS_OVERVIEW)
     download_file(URL_WORKSHOPS_SCHEDULE, PATH_WORKSHOPS_SCHEDULE)
+    download_file(URL_WORKSHOPS_CSV, PATH_WORKSHOPS_CSV)
 
 
 def download_socials():
