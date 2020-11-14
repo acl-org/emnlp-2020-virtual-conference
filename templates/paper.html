@@ -93,7 +93,7 @@
       </a>
       {% endif %}
       {% if paper.content.s2_id %}
-      <a class="card-link" target="_blank" href="{{ config.connected_paper}}/{{paper.content.s2_id}}/graph">
+      <a class="card-link" target="_blank" href="https://www.connectedpapers.com/conferece-redirect/main/{{ config.connected_papers_conference_name }}/{{paper.id}}/graph">
         Connected Papers
       </a>
       {% endif %}
@@ -211,9 +211,17 @@
 </script>
 {% endif %}
 
+{% if config.connected_papers_conference_name %}
+<div class="container">
+  {{ components.section("Connected Papers in EMNLP2020") }}
+  <iframe width="100%" height="600px"
+            src="https://www.connectedpapers.com/conferece-redirect/conference/{{ config.connected_papers_conference_name }}/{{ paper.id }}/graph">
+  </iframe>
+</div>
+{% endif %}
+
 {% if paper_recs %}
 {{ components.section("Similar Papers") }}
-<p></p>
 <div class="container" >
   <div class="row">
   {% for recommended in paper_recs %}
