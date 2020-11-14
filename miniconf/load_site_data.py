@@ -44,8 +44,7 @@ def load_site_data(
         # schedule.html
         "overall_calendar",
         "plenary_sessions",
-        "business_meeting",
-        "review_meeting",
+        "opening_remarks",
         # tutorials.html
         "tutorials",
         # papers.html
@@ -107,10 +106,7 @@ def load_site_data(
     # plenary_sessions.html
     plenary_sessions = build_plenary_sessions(
         raw_plenary_sessions=site_data["plenary_sessions"],
-        raw_plenary_videos={
-            "business_meeting": site_data["business_meeting"],
-            "review_meeting": site_data["review_meeting"],
-        },
+        raw_plenary_videos={"opening_remarks": site_data["opening_remarks"]},
     )
 
     site_data["plenary_sessions"] = plenary_sessions
@@ -281,11 +277,10 @@ def build_plenary_sessions(
                 bio=item.get("bio"),
                 presentation_id=item.get("presentation_id"),
                 rocketchat_channel=item.get("rocketchat_channel"),
-                videos=plenary_videos[item["UID"]]
-                if item["UID"] in ["business_meeting", "review_meeting"]
-                else None,
+                videos=plenary_videos.get(item["UID"]),
             )
         )
+
     return plenary_sessions
 
 
