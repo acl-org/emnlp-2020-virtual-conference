@@ -275,8 +275,8 @@
         // Event timezone. Will convert the given time to that zone
         timezone: 'UTC',
         // Event Address
-        {% if session.zoom_link %}
-          address: '{{session.zoom_link}}',
+        {% if session.link %}
+          address: '{{session.link}}',
         {% endif %}
 
         // Event Description
@@ -372,8 +372,8 @@
           // Event timezone. Will convert the given time to that zone
           timezone: 'UTC',
           // Event Address
-          {% if session.zoom_link %}
-            address: '{{session.zoom_link}}',
+          {% if session.link %}
+            address: '{{session.link}}',
           {% endif %}
 
           // Event Description
@@ -430,8 +430,8 @@
           <div class="m-3 text-muted">
             {{session.session}}
             <span class="session_times">{{session.time_string}}</span>
-            {% if session.zoom_link %}
-              <a href="{{session.zoom_link}}"   class="card-link" target="_blank">
+            {% if session.link %}
+              <a href="{{session.link}}"   class="card-link" target="_blank">
                 <!--
                 <img
                     src="static/images/zoom-icon.png"
@@ -516,8 +516,8 @@
         // Event timezone. Will convert the given time to that zone
         timezone: 'UTC',
         // Event Address
-        {% if session.zoom_link %}
-        address: '{{session.zoom_link}}',
+        {% if session.link %}
+        address: '{{session.link}}',
         {% endif %}
 
         // Event Description

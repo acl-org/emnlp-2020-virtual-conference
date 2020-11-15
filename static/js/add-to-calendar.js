@@ -75,8 +75,11 @@
           // use regular times
           startTime = formatTime(event.start);
           endTime = formatTime(event.end);
+          console.log("Else");
         }
       }
+
+      console.log(event.timezone);
       
       var href = encodeURI([
         'https://www.google.com/calendar/render',
@@ -139,9 +142,9 @@
     },
 
     off365: function(event) {
-      var startTime = formatTime(event.tzstart);
-      var endTime = formatTime(event.tzend);
-      
+      var startTime = moment(event.tzstart).format();
+      var endTime = moment(event.tzend).format();
+
       var href = encodeURI([
         'https://outlook.office365.com/owa/',
         '?path=/calendar/action/compose',
