@@ -937,7 +937,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
                     session_name=session.get("name"),
                     start_time=session.get("start_time"),
                     end_time=session.get("end_time"),
-                    link=session.get("zoom_link"),
+                    link=session.get("link"),
                 )
                 for session in item["sessions"]
             ],

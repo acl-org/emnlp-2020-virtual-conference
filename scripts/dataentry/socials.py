@@ -81,19 +81,35 @@ def generate_socials():
             "A4": "static/images/socials/NorthAfricansInNLP.png",
         }
 
-        ws.delete_rows(1, 9)
-        ws.delete_cols(7, 100)
-        df = pd.DataFrame(
-            ws.values,
-            columns=[
-                "Session Name",
-                "Day",
-                "Start Time",
-                "End Time",
-                "Time Zone",
-                "Host",
-            ],
-        )
+        if uid != "M2":
+            ws.delete_rows(1, 9)
+            ws.delete_cols(7, 100)
+            df = pd.DataFrame(
+                ws.values,
+                columns=[
+                    "Session Name",
+                    "Day",
+                    "Start Time",
+                    "End Time",
+                    "Time Zone",
+                    "Host",
+                ],
+            )
+        else:
+            ws.delete_rows(1, 9)
+            ws.delete_cols(8, 100)
+            df = pd.DataFrame(
+                ws.values,
+                columns=[
+                    "Session Name",
+                    "Day",
+                    "Start Time",
+                    "End Time",
+                    "Time Zone",
+                    "Host",
+                    "Zoom Link",
+                ],
+            )
         df.dropna(subset=["Session Name"], inplace=True)
 
         data["name"] = name
@@ -143,9 +159,16 @@ def generate_socials():
             end = datetime.combine(day.date(), end_time)
             end = tz.localize(end)
 
-            sessions.append(
-                {"name": name, "start_time": start, "end_time": end,}
-            )
+            e = {
+                "name": name,
+                "start_time": start,
+                "end_time": end,
+            }
+            print(df.columns)
+            if "Zoom Link" in df.columns.values:
+                e["link"] = row["Zoom Link"]
+
+            sessions.append(e)
 
         data["sessions"] = sessions
 
