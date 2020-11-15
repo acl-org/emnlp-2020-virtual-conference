@@ -6,11 +6,18 @@
 <div id="highly-active-chats-list">
 </div>
 
-<div class="text-center" id="highly-active-chats-progress-bar">
+<div class="text-center" id="highly-active-chats-progress-bar" style="margin-bottom: 80em;">
     <div class="spinner-border text-primary" style="margin-top: 3em; width: 3rem; height: 3rem;" role="status">
       <span class="sr-only">Loading...</span>
     </div>
 </div>
+
+<br/>
+<p class="text-muted">
+    <strong>How it works: </strong>
+    We calculate the number of new messages for every channel in the last N seconds. Then, we sort them descendingly.
+    Channels with no new messages will be randomly shuffled.
+</p>
 
 <script src="static/js/highly-active-chats.js"></script>
 <script>
