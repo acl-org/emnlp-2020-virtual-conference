@@ -638,3 +638,19 @@ div#papers_options > div {
 .stats-last-update {
   font-size: 0.9em;
 }
+ 
+.navbar-nav li:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown-toggle::after {
+   transition: transform 0.15s linear; 
+}
+ 
+.show.dropdown .dropdown-toggle::after {
+  transform: translateY(3px);
+}
+
+.dropdown-menu {
+  margin-top: 0;
+}

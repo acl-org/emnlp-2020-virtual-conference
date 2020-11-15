@@ -130,7 +130,9 @@
             {% for href, id in navigation_bar %}
               {% if id == "Chat" %}
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle {% if id == active_page %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" 
+                      href="{{href}}" target="_blank" id="navbarDropdown" role="button" 
+                      data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
                     Chat
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
