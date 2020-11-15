@@ -87,6 +87,33 @@ def build_plenary():
             )
             # event["presentation_id"] = presentation_id
 
+        if uid == "industry_panel":
+            event["presenter"] = ", ".join(
+                [
+                    "Fei Sha",
+                    "Chin-Yew Lin",
+                    "Kristina Toutanova",
+                    "Daniel Marcu",
+                    "Joel Tetreault",
+                    "João Graça",
+                ]
+            )
+        elif uid == "ethics_panel_discussion":
+            event["presenter"] = ", ".join(
+                [
+                    "Mona Diab",
+                    "Emily Bender",
+                    "Rosie Campbell",
+                    "Allan Dafoe",
+                    "Pascale Fung",
+                    "Meg Mitchell",
+                    "Saif Muhammad",
+                ]
+            )
+            event[
+                "abstract"
+            ] = "Publishing in an era of Responsible AI: How can NLP be proactive? Considerations and Implications"
+
         plenary.append(event)
 
     with open("yamls/plenary_sessions.yml", "w") as f:

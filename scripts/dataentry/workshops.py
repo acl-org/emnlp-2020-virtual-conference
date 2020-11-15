@@ -1,24 +1,39 @@
-import csv
+from collections import defaultdict
+import re
 from collections import defaultdict
 from dataclasses import dataclass
-import random
-from typing import List, Dict, Any
-import re
-
-import ruamel
-from openpyxl import load_workbook
-from ruamel import yaml
-
-import numpy as np
-
-from datetime import datetime, time, timedelta
+from datetime import datetime, timedelta
+from typing import Any
+from typing import List, Dict
+import xml.etree.ElementTree as ET
 
 import pandas as pd
-
 import pytz
+import ruamel
+from ftfy import fix_text
+from openpyxl import load_workbook
+from pylatexenc.latex2text import LatexNodes2Text
+from ruamel import yaml
+from ruamel import yaml
 
 # https://docs.google.com/spreadsheets/d/19LRnJpae5NQd0D1NEO40kTbwDvS9f125tpsjBdevrcs/edit#gid=0
 from scripts.dataentry.paths import *
+
+fix = {
+    "490": "4th Workshop on Structured Prediction for NLP",
+    "510": "CoNLL 2020",
+    "884": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
+    "1093": "SIGTYP 2020: The Second Workshop on Computational Research in Linguistic Typology",
+    "1761": "Search-Oriented Conversational AI (SCAI) 2",
+    "2217": "The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW",
+    "2487": "1st Workshop on Computational Approaches to Discourse",
+    "2575": "Workshop on Insights from Negative Results in NLP",
+    "2797": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
+    "2800": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
+    "2976": "BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP",
+    "3476": "Interactive and Executable Semantic Parsing (Int-Ex)",
+    "3561": "BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP",
+}
 
 
 @dataclass
@@ -34,6 +49,17 @@ class Workshop:
     uid: str
     sessions: List[Session]
     description: str
+
+
+@dataclass
+class Paper:
+    uid: str
+    title: str
+    authors: str
+    abstract: str
+    track: str
+    kind: str
+    link: str
 
 
 def load_workshop_overview_excel() -> pd.DataFrame:
@@ -64,7 +90,7 @@ def load_workshop_overview_excel() -> pd.DataFrame:
         ],
     )
     df = df.dropna(subset=["UID"])
-    df[df["Softconf Number"] is None] = -1
+    df["Softconf Number"] = df["Softconf Number"].fillna(-1)
 
     df["Softconf Number"] = df["Softconf Number"].apply(lambda x: int(x))
     df["Organizers"] = df["Softconf Number"].apply(
@@ -77,6 +103,7 @@ def load_workshop_overview_excel() -> pd.DataFrame:
 def build_workshops_basics() -> List[Dict[str, Any]]:
     workshops = load_workshop_overview_excel()
     schedule = load_schedule()
+    zooms = get_zooms()
 
     data = []
     for _, row in workshops.iterrows():
@@ -112,6 +139,9 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
             "sessions": sessions,
         }
 
+        if uid in zooms:
+            entry["zoom_links"] = zooms[uid]
+
         data.append(entry)
 
     data.sort(key=lambda w: -int(w["UID"][2:]))
@@ -126,7 +156,6 @@ def load_schedule():
     for ws in wb.worksheets[4:]:
         workshop_id = ws["B2"].value
         assert workshop_id.startswith("WS-"), "Does not start with WS: " + workshop_id
-        print(workshop_id, ws.title)
 
         description = ws["B3"].value or ""
         ws.delete_rows(1, 6)
@@ -197,37 +226,14 @@ def load_slideslive():
     df = pd.read_csv(PATH_SLIDESLIVE_WORKSHOPS)
     df = df.drop([0])
 
-    workshop_df = load_workshop_overview_excel()
+    df_obj = df.select_dtypes(['object'])
+    df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 
-    fix = {
-        "490": "4th Workshop on Structured Prediction for NLP",
-        "510": "CoNLL 2020",
-        "884": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
-        "1093": "SIGTYP 2020: The Second Workshop on Computational Research in Linguistic Typology",
-        "1761": "Search-Oriented Conversational AI (SCAI) 2",
-        "2217": "The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW",
-        "2487": "1st Workshop on Computational Approaches to Discourse",
-        "2575": "Workshop on Insights from Negative Results in NLP",
-        "2797": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
-        "2800": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
-        "2976": "BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP",
-        "3476": "Interactive and Executable Semantic Parsing (Int-Ex)",
-        "3561": "BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP",
-    }
+    workshop_df = load_workshop_overview_excel()
 
     ws_name_to_id = {
         row["Name"]: row["UID"].strip() for _, row in workshop_df.iterrows()
     }
-    corrected_venues = []
-    for _, row in df.iterrows():
-        venue_id = row["Organizer track name"]
-        if row["Unique ID"].strip() in fix:
-            correct_venue_name = fix[row["Unique ID"]]
-            venue_id = ws_name_to_id[correct_venue_name]
-
-        corrected_venues.append(venue_id)
-
-    df["Organizer track name"] = corrected_venues
 
     return df
 
@@ -243,41 +249,206 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         if is_not_paper(row):
             continue
 
+        title = row["Title"].replace("\n", " ")
+        title = LatexNodes2Text().latex_to_text(title)
+        title = fix_text(title).strip()
+        author_list = [
+            fix_text(e.strip()) for e in re.split(",| and | And ", row["Speakers"])
+        ]
+
         ws = row["Organizer track name"].strip()
         uid = row["Unique ID"].strip()
+
+        if ws == "WS-15" and str(uid) in fix.keys():
+            continue
+
         venues.append(ws)
         UIDs.append(f"{ws}.{uid}")
-        titles.append(row["Title"].replace("\n", " "))
-        authors.append(
-            "|".join(e.strip() for e in re.split(",| and | And ", row["Speakers"]))
-        )
+        titles.append(title)
+        authors.append("|".join(author_list))
         presentation_ids.append(
             row["SlidesLive link"].replace("https://slideslive.com/", "")
         )
+
+    anthology_papers = get_anthology_workshop_papers()
+    title_to_anthology_paper = {a.title.strip().lower(): a for a in anthology_papers}
+    author_to_anthology_paper = {a.authors.lower(): a for a in anthology_papers}
+
+    unmatched = []
+    uid_to_anthology_paper = {}
+    for uid, title, author in zip(UIDs, titles, authors):
+        if uid.startswith(("WS-2")):
+            continue
+
+        if title.lower() in title_to_anthology_paper:
+            assert uid not in uid_to_anthology_paper
+            uid_to_anthology_paper[uid] = title_to_anthology_paper[title.lower()]
+        else:
+            unmatched.append((uid, title, author.lower()))
+
+    for uid, title, author in list(unmatched):
+        if author.lower() in author_to_anthology_paper:
+            assert uid not in uid_to_anthology_paper, (
+                uid,
+                title,
+                author,
+                uid_to_anthology_paper[uid],
+            )
+            uid_to_anthology_paper[uid] = author_to_anthology_paper[author.lower()]
+            unmatched.remove((uid, title, author.lower()))
+
+    unmatched_df = pd.DataFrame(unmatched)
+    unmatched_df.to_csv("unmatched_workshop_papers.csv", index=False)
+    for e in unmatched:
+        print(e)
+
+    print(len(unmatched), len(uid_to_anthology_paper))
+
+    abstracts = []
+    urls = []
+    for uid in UIDs:
+        if uid in uid_to_anthology_paper:
+            paper = uid_to_anthology_paper[uid]
+            abstracts.append(paper.abstract)
+            urls.append(paper.link)
+        else:
+            abstracts.append("")
+            urls.append("")
 
     data = {
         "workshop": venues,
         "UID": UIDs,
         "title": titles,
         "authors": authors,
+        "abstract": abstracts,
         "presentation_id": presentation_ids,
+        "pdf_url": urls,
     }
 
-    columns = ["workshop", "UID", "title", "authors", "presentation_id"]
+    columns = [
+        "workshop",
+        "UID",
+        "title",
+        "authors",
+        "abstract",
+        "presentation_id",
+        "pdf_url",
+    ]
     df = pd.DataFrame(data, columns=columns)
     df = df.drop_duplicates(subset=["UID"])
 
     df.to_csv(PATH_YAMLS / "workshop_papers.csv", index=False)
 
 
+def get_anthology_workshop_papers() -> List[Paper]:
+    anthology = (
+        Path(
+            r"C:\Users\klie\AppData\Roaming\JetBrains\PyCharm2020.2\scratches\emnlp\acl-anthology"
+        )
+        / "data"
+    )
+
+    conference = "emnlp"
+    year = 2020
+
+    mapping = {
+        "2020.conll-1": "WS-1",
+        "2020.alw-1": "WS-17",
+        "2020.blackboxnlp-1": "WS-25",
+        "2020.clinicalnlp-1": "WS-12",
+        "2020.cmcl-1": "WS-5",
+        "2020.codi-1": "WS-16",
+        "2020.deelio-1": "WS-13",
+        "2020.eval4nlp-1": "WS-20",
+        "2020.insights-1": "WS-3",
+        "2020.intexsempar-1": "WS-6",
+        "2020.louhi-1": "WS-19",
+        "2020.nlpbt-1": "WS-23",
+        "2020.nlpcovid19-1": "WS-26",
+        "2020.nlpcss-1": "WS-18",
+        "2020.nlposs-1": "WS-9",
+        "2020.privatenlp-1": "WS-24",
+        "2020.scai-1": "WS-4",
+        "2020.sdp-1": "WS-7",
+        "2020.sigtyp-1": "WS-11",
+        "2020.splu-1": "WS-10",
+        "2020.spnlp-1": "WS-21",
+        "2020.sustainlp-1": "WS-15",
+        "2020.wnut-1": "WS-14",
+        "2020.findings-1": "findings",
+    }
+
+    papers = []
+    for venue in mapping.keys():
+        if venue.endswith("-1"):
+            file_name = venue[:-2]
+        else:
+            file_name = venue
+
+        path_to_xml = anthology / "xml" / f"{file_name}.xml"
+        tree = ET.parse(path_to_xml)
+        root = tree.getroot()
+        collection_id = root.attrib["id"]
+
+        for volume in root.findall("volume"):
+
+            volume_id = volume.attrib["id"]
+
+            for paper in volume.findall("paper"):
+                paper_id = paper.attrib["id"]
+                title = "".join(paper.find("title").itertext())
+                uid = f"{collection_id}-{volume_id}.{paper_id}"
+                authors = [
+                    " ".join(author.itertext()) for author in paper.findall("author")
+                ]
+                authors = "|".join(authors)
+
+                if paper.find("abstract") is not None:
+                    abstract = "".join(paper.find("abstract").itertext())
+                else:
+                    abstract = ""
+
+                link = f"https://www.aclweb.org/anthology/{uid}"
+
+                track = mapping[venue]
+                kind = None
+
+                if track.startswith("W"):
+                    kind = "workshop"
+                elif track == "main":
+                    kind = "long"
+                else:
+                    kind = "findings"
+
+                assert kind
+
+                paper = Paper(
+                    uid=uid,
+                    title=title,
+                    authors=authors,
+                    abstract=abstract,
+                    track=track,
+                    kind=kind,
+                    link=link,
+                )
+
+                papers.append(paper)
+
+    return papers
+
+
 def is_not_paper(row) -> bool:
-    uid = row["Unique ID"].lower()
-    title = row["Title"].lower()
+    uid = row["Unique ID"].lower().strip()
+    title = row["Title"].lower().strip()
+
     return (
-        "invited" in uid
-        or "challenge" in uid
-        or "invited" in title
-        or row["Unique ID"] == "Shared task"
+        ("invited" in uid)
+        or ("challenge" in uid)
+        or ("invited" in title)
+        or ("keynote" in title)
+        or ("keynote" in uid)
+        or (row["Unique ID"] == "Shared task")
+        or (title == "tba" and "paper" not in uid)
     )
 
 
@@ -288,20 +459,38 @@ def add_invited_talks(slideslive: pd.DataFrame):
         if not is_not_paper(row):
             continue
 
+
         title = row["Title"]
+
         speakers = row["Speakers"]
         presentation_id = row["SlidesLive link"].replace("https://slideslive.com/", "")
+        print(title, speakers, row["Organizer track name"])
 
-        talks_per_workshop[row["Organizer track name"]].append(
+        talks_per_workshop[row["Organizer track name"].strip()].append(
             {"title": title, "speakers": speakers, "presentation_id": presentation_id}
         )
 
     return talks_per_workshop
 
 
+def get_zooms() -> Dict[str, List[str]]:
+    df = pd.read_excel(PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS, sheet_name="Workshops")
+
+    zooms = defaultdict(list)
+    for _, row in df.iterrows():
+        uid = row["UID"].replace(".", "-").upper()
+        zooms[uid].append(row["Personal Meeting LINK"])
+
+        for i in range(row["# of accounts"] - 1):
+            zooms[uid].append(row[f"Personal Meeting LINK.{i+1}"])
+
+    return zooms
+
+
 if __name__ == "__main__":
     # download_slideslive()
     # download_workshops()
+    # download_zooms()
 
     # load_csv()
     data = build_workshops_basics()
@@ -310,7 +499,11 @@ if __name__ == "__main__":
     talks = add_invited_talks(slideslive)
 
     fix_talks = slideslive[[is_not_paper(r) for _, r in slideslive.iterrows()]]
-    fix_talks.to_csv("yamls/fix_talks.csv", index=False, columns=["Organizer track name", "Unique ID", "Title", "Speakers"])
+    fix_talks.to_csv(
+        "yamls/fix_talks.csv",
+        index=False,
+        columns=["Organizer track name", "Unique ID", "Title", "Speakers"],
+    )
 
     for ws in data:
         uid = ws["UID"]

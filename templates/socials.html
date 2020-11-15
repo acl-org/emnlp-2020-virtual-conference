@@ -18,9 +18,9 @@
     <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
          style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
 
-      <h3 class="card-title" style="font-weight: 700;">
+      <h2 class="card-title" >
         {{social.name}}
-      </h3>
+      </h2>
 
       <h6 class="text-muted font-italic">
         {{social.organizers.members|join(" & ")}}
@@ -39,41 +39,14 @@
 
       <div class="mx-4 text-left card-subtitle">
         <p>{{social.description|safe}}</p>
-        <br/>
+
+        <p class="text-center">This event takes place in {{ social.location }}.</p>
 
         {% for session in social.sessions %}
           <div class="m-3 text-muted text-center">
           {{session.session}}
           <span class="session_times">{{session.time_string}}</span>
-          {% if session.zoom_link %}
-            <div>
-            <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
-              <!--
-              <img
-                  src="static/images/zoom-icon.png"
-                  height="24px"
-                  alt="Join Zoom Meeting"
-                  title="Join Zoom Meeting"
-              >
-              -->
-              [Join Zoom Meeting]
-            </a>
-            </div>
-          {% elif social.location == "Gather.Town" %}
-            <div>
-            <a href="{{config.gather_town}}" target="_blank"  class="card-link">
-              <!--
-              <img
-                  src="static/images/zoom-icon.png"
-                  height="24px"
-                  alt="Join Zoom Meeting"
-                  title="Join Zoom Meeting"
-              >
-              -->
-              [Join on Gather.Town]
-            </a>
-            </div>
-          {% endif %}
+
             <div class="text-center text-muted text-monospace">
               <div class="paper-cal-links">
                 <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
@@ -92,8 +65,16 @@
         {% if social.website %}
           | <a href="{{social.website}}" target="_blank"> Website </a>
         {% endif %}
+        {% if social.zoom_link %}
+          | <a href="{{social.zoom_link}}" target="_blank"> Zoom </a>
+        {% endif %}
+        {% if "Gather" in social.location %}
+          | <a href="{{config.gather_town}}" target="_blank"> Gather.Town </a>
+        {% endif %}
       </p>
       {% endif %}
+
+
 
     </div>
   </div>

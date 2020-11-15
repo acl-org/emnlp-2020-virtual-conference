@@ -71,7 +71,7 @@
               </div>
             </div> -->
             <div class="input-group-append btn-group-toggle filter_option">
-              <label class="btn btn-outline-primary" data-tippy-content="Search for papers titles">
+              <label class="btn btn-outline-secondary" data-tippy-content="Search for papers titles">
                 <input type="radio" name="options" value="titles" autocomplete="off" checked />
                 by title
               </label>
@@ -89,12 +89,12 @@
                 keyword
               </label>
               -->
-              <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific authors">
+              <label class="btn btn-outline-secondary" data-tippy-content="Search for papers from specific authors">
                 <input type="radio" name="options" value="authors" autocomplete="off" />
                 by author
               </label>
     
-              <button class="btn btn btn-outline-danger typeahead_all_clear" type="button">
+              <button class="btn btn btn-outline-secondary typeahead_all_clear" type="button">
                 &times;
               </button>
             </div>
@@ -204,19 +204,25 @@
         </div>
       </div>
 
+
       <div>
-        <div class="btn-group">
-          <button class="btn btn-sm btn-outline-secondary reshuffle">shuffle</button>
+        <div class="btn-group btn-group-toggle render_option" data-toggle="buttons">
           <button class="btn btn-sm btn-outline-secondary visited">visited</button>
         </div>
       </div>
 
       <div>
-        <div class="btn-group btn-group-toggle render_option" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle render_option pl-2 " data-toggle="buttons">
           <label class="btn btn-sm btn-outline-secondary" data-tippy-content="Show/hide papers whose QA session is finished.">
             <input type="checkbox" name="hide_qa_ended" display="none" onchange="hideQaEnded(allPapers, this)" />
             QA not passed
           </label>
+        </div>
+      </div>
+
+      <div>
+        <div class="btn-group pl-2 ">
+          <button class="btn btn-sm btn-outline-secondary reshuffle">shuffle</button>
         </div>
       </div>
     </div>

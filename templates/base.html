@@ -90,7 +90,8 @@
     ('workshops.html', 'Workshops'),
     ('socials.html', 'Socials'),
     ('sponsors.html', 'Sponsors'),
-    ('chat.html', 'Chat'),
+    ('http://' + config.chat_server, 'Chat'),
+    (config.gather_town , 'Gather'),
     ('organizers.html', 'Organizers'),
     ('about.html', 'Help'),
     ] -%}
@@ -129,7 +130,7 @@
             {% for href, id in navigation_bar %}
               {% if id == "Chat" %}
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle {% if id == active_page %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Chat
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -140,7 +141,11 @@
                 </li>
               {% else %}
                 <li class="nav-item {% if id == active_page %}active{% endif %}">
+                  {% if href.startswith("http") %}
+                  <a class="nav-link" href="{{href}}" target="_blank">{{id}}</a>
+                  {% else %}
                   <a class="nav-link" href="{{href}}">{{id}}</a>
+                  {% endif %}
                 </li>
               {% endif %}
             {% endfor %}
