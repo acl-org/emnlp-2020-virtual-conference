@@ -1,3 +1,4 @@
+import dataclasses
 from collections import defaultdict
 import re
 from collections import defaultdict
@@ -54,6 +55,7 @@ class Workshop:
 @dataclass
 class Paper:
     uid: str
+    ws_id: str
     title: str
     authors: str
     abstract: str
@@ -280,8 +282,7 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
     unmatched = []
     uid_to_anthology_paper = {}
     for uid, title, author in zip(UIDs, titles, authors):
-        if uid.startswith(("WS-2")):
-            continue
+
 
         if title.lower() in title_to_anthology_paper:
             assert uid not in uid_to_anthology_paper
@@ -301,7 +302,7 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
             unmatched.remove((uid, title, author.lower()))
 
     unmatched_df = pd.DataFrame(unmatched)
-    unmatched_df.to_csv("unmatched_workshop_papers.csv", index=False)
+    unmatched_df.to_csv("yamls/unmatched_workshop_papers.csv", index=False)
 
     print("Unmatched", len(unmatched), len(uid_to_anthology_paper))
 
@@ -317,6 +318,27 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         else:
             abstracts.append("")
             urls.append("")
+
+    all_the_titles = set(titles)
+    not_slideslive_but_anthology = []
+
+    for paper in anthology_papers:
+        if paper.title not in all_the_titles and paper.ws_id != "findings" and not paper.uid.startswith("2020.nlpcovid19-acl"):
+            if paper.ws_id == "WS-14":
+                venues.append(paper.ws_id)
+                UIDs.append(f"{paper.ws_id}.{paper.uid}")
+                titles.append(paper.title)
+                authors.append(paper.authors)
+                abstracts.append(paper.abstract)
+                presentation_ids.append("")
+                urls.append(paper.link)
+                print(paper)
+            else:
+                not_slideslive_but_anthology.append(dataclasses.astuple(paper))
+
+    not_slideslive_but_anthology_df = pd.DataFrame(unmatched)
+    not_slideslive_but_anthology_df.to_csv("yamls/not_slideslive_but_anthology.csv", index=False)
+
 
     data = {
         "workshop": venues,
@@ -338,7 +360,6 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         "pdf_url",
     ]
     df = pd.DataFrame(data, columns=columns)
-    df = df.drop_duplicates(subset=["UID"])
 
     df.to_csv(PATH_YAMLS / "workshop_papers.csv", index=False)
 
@@ -382,7 +403,7 @@ def get_anthology_workshop_papers() -> List[Paper]:
     }
 
     papers = []
-    for venue in mapping.keys():
+    for venue, ws_id in mapping.items():
         if venue.endswith("-1"):
             file_name = venue[:-2]
         else:
@@ -427,6 +448,7 @@ def get_anthology_workshop_papers() -> List[Paper]:
 
                 paper = Paper(
                     uid=uid,
+                    ws_id=ws_id,
                     title=title,
                     authors=authors,
                     abstract=abstract,
@@ -498,9 +520,9 @@ def get_zooms() -> Dict[str, List[str]]:
 
 
 if __name__ == "__main__":
-    # download_slideslive()
-    # download_workshops()
-    # download_zooms()
+    #download_slideslive()
+    #download_workshops()
+    #download_zooms()
 
     # load_csv()
     data = build_workshops_basics()

@@ -1248,75 +1248,75 @@
   - start_time: 2020-11-19 04:00:00+00:00
     end_time: 2020-11-19 04:15:00+00:00
     name: Opening
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 04:15:00+00:00
     end_time: 2020-11-19 04:45:00+00:00
     name: Invited Talk by Rob Munro & QA
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 04:45:00+00:00
     end_time: 2020-11-19 05:15:00+00:00
     name: Oral Presentations (research papers) 1a
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 05:15:00+00:00
     end_time: 2020-11-19 05:35:00+00:00
     name: 'Shared Task #2 - Identification of informative COVID-19 English Tweets'
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 05:35:00+00:00
     end_time: 2020-11-19 05:50:00+00:00
     name: Breakout Rooms (social event)
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 05:50:00+00:00
     end_time: 2020-11-19 06:20:00+00:00
     name: Invited Talk by Irwin King & QA
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 06:20:00+00:00
     end_time: 2020-11-19 06:35:00+00:00
     name: Oral Presentations (research papers) 1b
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 06:35:00+00:00
     end_time: 2020-11-19 07:35:00+00:00
     name: GatherTown Poster Session
-    hosts: TBD
+    hosts: 'Tim Baldwin & Afshin Rahimi '
   - start_time: 2020-11-19 15:00:00+00:00
     end_time: 2020-11-19 15:35:00+00:00
     name: Invited Talk by Manaal Faruqui & QA
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 15:35:00+00:00
     end_time: 2020-11-19 15:45:00+00:00
     name: Lightning Talks  (research papers) 2a
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 15:45:00+00:00
     end_time: 2020-11-19 15:55:00+00:00
     name: 'Shared Task #3 - COVID-19 Event Extraction from Twitter'
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 15:55:00+00:00
     end_time: 2020-11-19 16:15:00+00:00
     name: Oral Presentations (research papers) 2a
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 16:15:00+00:00
     end_time: 2020-11-19 16:30:00+00:00
     name: Breakout Rooms (social event)
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 16:30:00+00:00
     end_time: 2020-11-19 17:05:00+00:00
     name: Invited Talk by Eduardo Blanco & QA
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 17:05:00+00:00
     end_time: 2020-11-19 17:15:00+00:00
     name: Oral Presentations (research papers) 2b
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 17:15:00+00:00
     end_time: 2020-11-19 17:25:00+00:00
     name: 'Shared Task #1 - Entity and Relation Recognition over Wet-lab Protocols'
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 17:25:00+00:00
     end_time: 2020-11-19 17:35:00+00:00
     name: Lightning Talks  (research papers) 2b
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   - start_time: 2020-11-19 17:35:00+00:00
     end_time: 2020-11-19 18:35:00+00:00
     name: GatherTown Poster Session
-    hosts: TBD
+    hosts: Wei Xu & Alan Ritter
   zoom_links:
   - https://us02web.zoom.us/j/9496849754
   - https://us02web.zoom.us/j/4654314422
@@ -1483,7 +1483,8 @@
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 13:55:00+00:00
     end_time: 2020-11-20 14:40:00+00:00
-    name: 'Keynote 2: Alex Hanna and Maliha Ahmed'
+    name: 'Keynote 2: "100,000 Lines in the Sand": Agency and Policy Feedback in Content
+      Moderation: Alex Hanna and Maliha Ahmed'
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 14:40:00+00:00
     end_time: 2020-11-20 14:45:00+00:00
@@ -1491,7 +1492,8 @@
     hosts: TBD
   - start_time: 2020-11-20 14:45:00+00:00
     end_time: 2020-11-20 15:30:00+00:00
-    name: 'Keynote 3: Maria Rodriguez'
+    name: 'Keynote 3: "The Root Of Algorithmic Bias And How To Deal With It": Maria
+      Rodriguez'
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 15:30:00+00:00
     end_time: 2020-11-20 15:40:00+00:00
