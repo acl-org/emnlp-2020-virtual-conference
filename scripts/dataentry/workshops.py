@@ -295,6 +295,8 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
             uid_to_anthology_paper[uid] = author_to_anthology_paper[author.lower()]
             unmatched.remove((uid, title, author.lower()))
 
+    unmatched_df = pd.DataFrame(unmatched)
+    unmatched_df.to_csv("unmatched_workshop_papers.csv", index=False)
     for e in unmatched:
         print(e)
 
@@ -399,7 +401,7 @@ def get_anthology_workshop_papers() -> List[Paper]:
                 ]
                 authors = "|".join(authors)
 
-                if paper.find("abstract"):
+                if paper.find("abstract") is not None:
                     abstract = "".join(paper.find("abstract").itertext())
                 else:
                     abstract = ""
@@ -502,7 +504,7 @@ if __name__ == "__main__":
         uid = ws["UID"]
         ws["prerecorded_talks"] = talks[uid]
 
-        yaml.scalarstring.walk_tree(data)
+    yaml.scalarstring.walk_tree(data)
 
     with open(PATH_YAMLS / "workshops.yml", "w") as f:
         yaml.dump(data, f, Dumper=ruamel.yaml.RoundTripDumper)

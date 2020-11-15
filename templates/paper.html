@@ -74,9 +74,12 @@
     </h3>
    
     <div class="text-center p-3">
+      {% if paper.content.abstract %}
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Abstract
       </a>
+      {% endif %}
+
       {% if paper.content.pdf_url %}
       <a class="card-link" target="_blank" href="{{paper.content.pdf_url}}">
         Paper
