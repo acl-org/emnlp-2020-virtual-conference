@@ -780,40 +780,40 @@
   - start_time: 2020-11-19 05:00:00-08:00
     end_time: 2020-11-19 05:30:00-08:00
     name: Workshop Opening
-    hosts: TBD
+    hosts: NLP-OSS Organziers
   - start_time: 2020-11-19 05:30:00-08:00
     end_time: 2020-11-19 06:30:00-08:00
     name: 'On Typing: Historical and Potential Interactions in Word-processing - Spencer
       Kelly'
-    hosts: TBD
+    hosts: NLP-OSS Organziers
   - start_time: 2020-11-19 06:30:00-08:00
     end_time: 2020-11-19 07:30:00-08:00
     name: An Introduction to Transfer Learning in NLP and HuggingFace - Thomas Wolf
-    hosts: TBD
+    hosts: NLP-OSS Organziers
   - start_time: 2020-11-19 07:30:00-08:00
     end_time: 2020-11-19 09:00:00-08:00
     name: Talks Session 1 (Watch on your own, authors encouraged to mend their slidelive
       chat but not complusory)
-    hosts: TBD
-  - start_time: 2020-11-19 13:30:00-08:00
-    end_time: 2020-11-19 15:00:00-08:00
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 14:30:00-08:00
+    end_time: 2020-11-19 16:00:00-08:00
     name: Talks Session 2 (Watch on your own, authors encouraged to mend their slidelive
       chat but not complusory)
-    hosts: TBD
-  - start_time: 2020-11-19 15:00:00-08:00
-    end_time: 2020-11-19 16:30:00-08:00
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 16:00:00-08:00
+    end_time: 2020-11-19 17:30:00-08:00
     name: Gather-town (Live) + Poster QnA
-    hosts: TBD
-  - start_time: 2020-11-19 17:00:00-08:00
-    end_time: 2020-11-19 18:00:00-08:00
-    name: Principles of Good Machine Learning Systems Design - Chip Huyen
-    hosts: TBD
+    hosts: NLP-OSS Organziers
   - start_time: 2020-11-19 18:00:00-08:00
-    end_time: 2020-11-19 18:30:00-08:00
+    end_time: 2020-11-19 19:00:00-08:00
+    name: Principles of Good Machine Learning Systems Design - Chip Huyen
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 19:00:00-08:00
+    end_time: 2020-11-19 19:30:00-08:00
     name: Closing Remarks
-    hosts: TBD
+    hosts: NLP-OSS Organziers
   zoom_links:
-  - https://us02web.zoom.us/j/8611203662
+  - https://us02web.zoom.us/j/7858391728
   prerecorded_talks:
   - title: (To be confirmed) Invited Talk 1 - Chip Huyen
     speakers: Chip Huyen
@@ -907,7 +907,7 @@
     name: QA/Poster
     hosts: SpLU Organizers
   zoom_links:
-  - https://us02web.zoom.us/j/6544235364
+  - https://us02web.zoom.us/j/9514624887
   prerecorded_talks:
   - title: SpLU-Invited-talk-1
     speakers: James Pustejovsky
@@ -1089,7 +1089,7 @@
     name: Closing
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/8256048025
+  - https://us02web.zoom.us/j/5070305812
   prerecorded_talks:
   - title: Invited talk
     speakers: Miriam Butt
@@ -1169,7 +1169,7 @@
     name: Concluding Session
     hosts: Anna Rumshisky
   zoom_links:
-  - https://us02web.zoom.us/j/2191269172
+  - https://us02web.zoom.us/j/2769990355
   prerecorded_talks:
   - title: Keynote 3rd Clinical Natural Language Processing Workshop
     speakers: Hong Yu
@@ -1187,11 +1187,11 @@
   - start_time: 2020-11-19 09:30:00-04:00
     end_time: 2020-11-19 09:35:00-04:00
     name: Opening Remarks
-    hosts: TBD
+    hosts: Eneko Agirre
   - start_time: 2020-11-19 09:35:00-04:00
     end_time: 2020-11-19 10:35:00-04:00
     name: 'Keynote Talk 1: Ellie Pavlick'
-    hosts: TBD
+    hosts: Marianna Apidianaki
   - start_time: 2020-11-19 10:35:00-04:00
     end_time: 2020-11-19 10:45:00-04:00
     name: Break
@@ -1199,7 +1199,7 @@
   - start_time: 2020-11-19 10:45:00-04:00
     end_time: 2020-11-19 12:00:00-04:00
     name: 'Session 1: Oral Presentations & QA'
-    hosts: TBD
+    hosts: "Ivan Vuli\u0107"
   - start_time: 2020-11-19 12:00:00-04:00
     end_time: 2020-11-19 12:30:00-04:00
     name: Break
@@ -1207,11 +1207,11 @@
   - start_time: 2020-11-19 12:30:00-04:00
     end_time: 2020-11-19 13:30:00-04:00
     name: 'Keynote Talk 2: Eduard Hovy'
-    hosts: TBD
+    hosts: Eneko Agirre
   - start_time: 2020-11-19 13:30:00-04:00
     end_time: 2020-11-19 14:45:00-04:00
     name: 'Session 2: Oral Presentations & QA'
-    hosts: TBD
+    hosts: Marianna Apidianaki
   - start_time: 2020-11-19 14:45:00-04:00
     end_time: 2020-11-19 15:15:00-04:00
     name: Break
@@ -1220,14 +1220,14 @@
     end_time: 2020-11-19 16:40:00-04:00
     name: 'Session 3: Findings papers presentations & QA                            (Two
       Parallel sessions)'
-    hosts: TBD
+    hosts: "Session 3A: Ivan Vuli\u0107, Session 3B: Eneko Agirre"
   - start_time: 2020-11-19 16:40:00-04:00
     end_time: 2020-11-19 17:00:00-04:00
     name: Closing remarks
-    hosts: TBD
+    hosts: "E. Agirre, M. Apidianaki and I. Vuli\u0107"
   zoom_links:
-  - https://us02web.zoom.us/j/6468079734
-  - https://us02web.zoom.us/j/8739881077
+  - https://us02web.zoom.us/j/8018218663
+  - https://us02web.zoom.us/j/3550218712
   prerecorded_talks:
   - title: Keynote talk by Eduard Hovy
     speakers: Eduard Hovy
@@ -1318,8 +1318,8 @@
     name: GatherTown Poster Session
     hosts: Wei Xu & Alan Ritter
   zoom_links:
-  - https://us02web.zoom.us/j/9496849754
-  - https://us02web.zoom.us/j/4654314422
+  - https://us02web.zoom.us/j/8056354262
+  - https://us02web.zoom.us/j/3446463699
   prerecorded_talks: []
 - UID: WS-15
   title: 'SustaiNLP: Workshop on Simple and Efficient Natural Language Processing'
@@ -1393,8 +1393,8 @@
       Efficient Transformer Models for Natural Language Understanding'
     hosts: Alex Wang
   zoom_links:
-  - https://us02web.zoom.us/j/2813948593
-  - https://us02web.zoom.us/j/5399225004
+  - https://us02web.zoom.us/j/5715758008
+  - https://us02web.zoom.us/j/4500113018
   prerecorded_talks:
   - title: Invited Talk
     speakers: Mona Diab
@@ -1458,11 +1458,11 @@
     name: Discussion and closing remarks
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/2127328315
-  - https://us02web.zoom.us/j/8322328374
-  - https://us02web.zoom.us/j/7223487977
-  - https://us02web.zoom.us/j/4535887602
-  - https://us02web.zoom.us/j/6127577219
+  - https://us02web.zoom.us/j/3636713515
+  - https://us02web.zoom.us/j/2338884319
+  - https://us02web.zoom.us/j/9783550398
+  - https://us02web.zoom.us/j/5611345347
+  - https://us02web.zoom.us/j/9987253895
   prerecorded_talks: []
 - UID: WS-17
   title: The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW
@@ -1479,12 +1479,14 @@
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 13:10:00+00:00
     end_time: 2020-11-20 13:55:00+00:00
-    name: "Keynote 1: Andr\xE9 Brock"
+    name: "<b>Keynote</b><br> TBD <i>- Andr\xE9 Brock</i> <br> <a href=\"https://us02web.zoom.us/j/2801979203\"\
+      >Zoom link 1</a>"
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 13:55:00+00:00
     end_time: 2020-11-20 14:40:00+00:00
-    name: 'Keynote 2: "100,000 Lines in the Sand": Agency and Policy Feedback in Content
-      Moderation: Alex Hanna and Maliha Ahmed'
+    name: '<b>Keynote</b><br>"100,000 Lines in the Sand": Agency and Policy Feedback
+      in Content Moderation <i>- Alex Hanna and Maliha Ahmed</i> <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom
+      link 1</a>'
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 14:40:00+00:00
     end_time: 2020-11-20 14:45:00+00:00
@@ -1492,8 +1494,9 @@
     hosts: TBD
   - start_time: 2020-11-20 14:45:00+00:00
     end_time: 2020-11-20 15:30:00+00:00
-    name: 'Keynote 3: "The Root Of Algorithmic Bias And How To Deal With It": Maria
-      Rodriguez'
+    name: <b>Keynote</b><br>"The Root Of Algorithmic Bias And How To Deal With It"
+      <i>- Maria Rodriguez</i> <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom
+      link 1</a>
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 15:30:00+00:00
     end_time: 2020-11-20 15:40:00+00:00
@@ -1501,7 +1504,8 @@
     hosts: TBD
   - start_time: 2020-11-20 15:40:00+00:00
     end_time: 2020-11-20 16:40:00+00:00
-    name: "Keynote Panel: Maliha Ahmed, Andr\xE9 Brock, Alex Hanna and Maria Rodriguez"
+    name: "Keynote Panel: Maliha Ahmed, Andr\xE9 Brock, Alex Hanna and Maria Rodriguez\
+      \ <br> <a href=\"https://us02web.zoom.us/j/2801979203\">Zoom link 1</a>"
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 16:40:00+00:00
     end_time: 2020-11-20 17:00:00+00:00
@@ -1514,36 +1518,33 @@
   - start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 17:45:00+00:00
     name: |-
-      Session 1, Panel I: Methods for classifying online abuse
-
-      A Novel Methodology for Developing Automatic Harassment Classifiers for Twitter (Ishaan Arora, Julia Guo, Sarah Ita Levitan, Susan McGregor and Julia Hirschberg)
-      Using Transfer-based Language Models to Detect Hateful and Offensive Language Online (Vebjørn Isaksen and Björn Gambäck)
-      Fine-tuning BERT for multi-domain and multi-label incivil language detection (Kadir Bulut Ozler, Kate Kenski, Steve Rains, Yotam Shmargad, Kevin Coe and Steven Bethard)
-      HurtBERT: Incorporating Lexical Features with BERT for the Detection of Abusive Language (Anna Koufakou, Endang Wahyu Pamungkas, Valerio Basile and Viviana Patti)
-      Abusive Language Detection using Syntactic Dependency Graphs (Kanika Narang and Chris Brew)
+      Session 1, Panel I: Methods for classifying online abuse <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom link 1</a> <br><br>
+      • A Novel Methodology for Developing Automatic Harassment Classifiers for Twitter (Ishaan Arora, Julia Guo, Sarah Ita Levitan, Susan McGregor and Julia Hirschberg)<br>
+      • Using Transfer-based Language Models to Detect Hateful and Offensive Language Online (Vebjørn Isaksen and Björn Gambäck)<br>
+      • Fine-tuning BERT for multi-domain and multi-label incivil language detection (Kadir Bulut Ozler, Kate Kenski, Steve Rains, Yotam Shmargad, Kevin Coe and Steven Bethard)<br>
+      • HurtBERT: Incorporating Lexical Features with BERT for the Detection of Abusive Language (Anna Koufakou, Endang Wahyu Pamungkas, Valerio Basile and Viviana Patti)<br>
+      • Abusive Language Detection using Syntactic Dependency Graphs (Kanika Narang and Chris Brew)
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 17:45:00+00:00
     name: |-
-      Session 1, Panel II: Biases in datasets for abuse
-
-      Impact of politically biased data on hate speech classification (Maximilian Wich, Jan Bauer and Georg Groh)
-      Identifying and Measuring Annotator Bias Based on Annotators’ Demographic Characteristics (Hala Al Kuwatly, Maximilian Wich and Georg Groh)
-      Investigating Annotator Bias with a Graph-Based Approach (Maximilian Wich, Hala Al Kuwatly and Georg Groh)
-      Reducing Unintended Identity Bias in Russian Hate Speech Detection (Nadezhda Zueva, Madina Kabirova and Pavel Kalaidin)
-      Investigating Sampling Bias in Abusive Language Detection (Dante Razo and Sandra Kübler)
-      Is your toxicity my toxicity? Understanding the influence of rater identity on perceptions of toxicity (Ian Kivlichan, Olivia Redfield, Rachel Rosen, Raquel Saxe, Nitesh Goyal and Lucy Vasserman)
+      Session 1, Panel II: Biases in datasets for abuse<br> <a href="https://us02web.zoom.us/j/2506384854">Zoom link 2</a> <br><br>
+      • Impact of politically biased data on hate speech classification (Maximilian Wich, Jan Bauer and Georg Groh)<br>
+      • Identifying and Measuring Annotator Bias Based on Annotators’ Demographic Characteristics (Hala Al Kuwatly, Maximilian Wich and Georg Groh)<br>
+      • Investigating Annotator Bias with a Graph-Based Approach (Maximilian Wich, Hala Al Kuwatly and Georg Groh)<br>
+      • Reducing Unintended Identity Bias in Russian Hate Speech Detection (Nadezhda Zueva, Madina Kabirova and Pavel Kalaidin)<br>
+      • Investigating Sampling Bias in Abusive Language Detection (Dante Razo and Sandra Kübler)<br>
+      • Is your toxicity my toxicity? Understanding the influence of rater identity on perceptions of toxicity (Ian Kivlichan, Olivia Redfield, Rachel Rosen, Raquel Saxe, Nitesh Goyal and Lucy Vasserman)
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 17:45:00+00:00
     name: |-
-      Session 1, Panel III: Technical challenges in classifying online abuse
-
-      Attending the Emotions to Detect Online Abusive Language (Niloofar Safi Samghabadi, Afsheen Hatami, Mahsa Shafaei, Sudipta Kar and Thamar Solorio)
-      Enhancing the Identification of Cyberbullying through Participant Roles (Gathika Rathnayake, Thushari Atapattu, Mahen Herath, Georgia Zhang and Katrina Falkner)
-      Developing a New Classifier for Automated Identification of Incivility in Social Media (Sam Davidson, Qiusi Sun and Magdalena Wojcieszak)
-      Hybrid Emoji-Based Masked Language Models for Zero-Shot Abusive Language Detection (Michele Corazza, Stefano Menini, Elena Cabrio, Sara Tonelli and Serena Villata)
-      Countering hate on social media: Large scale classification of hate and counter speech (Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent HébertDufresne and Mirta Galesic)
+      Session 1, Panel III: Technical challenges in classifying online abuse<br> <a href="https://us02web.zoom.us/j/7641600011">Zoom link 2</a> <br><br>
+      • Attending the Emotions to Detect Online Abusive Language (Niloofar Safi Samghabadi, Afsheen Hatami, Mahsa Shafaei, Sudipta Kar and Thamar Solorio)<br>
+      • Enhancing the Identification of Cyberbullying through Participant Roles (Gathika Rathnayake, Thushari Atapattu, Mahen Herath, Georgia Zhang and Katrina Falkner)<br>
+      • Developing a New Classifier for Automated Identification of Incivility in Social Media (Sam Davidson, Qiusi Sun and Magdalena Wojcieszak)<br>
+      • [Findings] Hybrid Emoji-Based Masked Language Models for Zero-Shot Abusive Language Detection (Michele Corazza, Stefano Menini, Elena Cabrio, Sara Tonelli and Serena Villata)<br>
+      • Countering hate on social media: Large scale classification of hate and counter speech (Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent HébertDufresne and Mirta Galesic)
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 17:45:00+00:00
     end_time: 2020-11-20 18:00:00+00:00
@@ -1556,23 +1557,22 @@
   - start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 18:45:00+00:00
     name: |-
-      Session 2, Panel IV: Ways of tackling online abuse
-
-      Moderating Our (Dis)Content: Renewing the Regulatory Approach (Claire Pershan)
-      Investigating takedowns of misogynistic abuse on Twitter: a story of iterative failures and partial successes (Nicolas Suzor and Rosalie Gillett)
-      Six Attributes of Unhealthy Conversations (Ilan Price, Jordan Gifford-Moore, Jory Fleming, Saul Musker, Maayan Roichman, Guillaume Sylvain, Nithum Thain, Lucas Dixon and Jeffrey Sorensen)
-      Free Expression By Design: Improving In-Platform Features & Third-Party Tools to Tackle Online Abuse (Viktorya Vilk, Elodie Vialle and Matt Bailey)
-      A Unified Taxonomy of Harmful Content (Michele Banko, Brendon MacKeen and Laurie Ray)
+      Session 2, Panel IV: Ways of tackling online abuse<br> <a href="https://us02web.zoom.us/j/2801979203">Zoom link 1</a><br><br>
+      • Moderating Our (Dis)Content: Renewing the Regulatory Approach (Claire Pershan)<br>
+      • Investigating takedowns of misogynistic abuse on Twitter: a story of iterative failures and partial successes (Nicolas Suzor and Rosalie Gillett)<br>
+      • Six Attributes of Unhealthy Conversations (Ilan Price, Jordan Gifford-Moore, Jory Fleming, Saul Musker, Maayan Roichman, Guillaume Sylvain, Nithum Thain, Lucas Dixon and Jeffrey Sorensen)<br>
+      • Free Expression By Design: Improving In-Platform Features & Third-Party Tools to Tackle Online Abuse (Viktorya Vilk, Elodie Vialle and Matt Bailey)<br>
+      • A Unified Taxonomy of Harmful Content (Michele Banko, Brendon MacKeen and Laurie Ray)<br>
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 18:45:00+00:00
     name: |-
-      Session 2, Panel V: New datasets for abuse
-
-      Towards a Comprehensive Taxonomy and Large-Scale Annotated Corpus for Online Slur Usage (Jana Kurrek, Haji Mohammad Saleem and Derek Ruths)
-      In Data We Trust: A Critical Analysis of Hate Speech Detection Datasets (Kosisochukwu Madukwe, Xiaoying Gao and Bing Xue)
-      Detecting East Asian Prejudice on Social Media (Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall and Rebekah Tromble)
-      On Cross-Dataset Generalization in Automatic Detection of Online Abuse Isar Nejadgholi and Svetlana Kiritchenko [Findings] A little goes a long way: Improving toxic language classification despite data scarcity Mika Juuti, Tommi Gröndahl, Adrian Flanagan and N. Asokan
+      Session 2, Panel V: New datasets for abuse<br> <a href="https://us02web.zoom.us/j/2506384854">Zoom link 2</a> <br><br>
+      • Towards a Comprehensive Taxonomy and Large-Scale Annotated Corpus for Online Slur Usage (Jana Kurrek, Haji Mohammad Saleem and Derek Ruths)<br>
+      • In Data We Trust: A Critical Analysis of Hate Speech Detection Datasets (Kosisochukwu Madukwe, Xiaoying Gao and Bing Xue)<br>
+      • Detecting East Asian Prejudice on Social Media (Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall and Rebekah Tromble)<br>
+      • On Cross-Dataset Generalization in Automatic Detection of Online Abuse Isar Nejadgholi and Svetlana Kiritchenko<br>
+      • [Findings] A little goes a long way: Improving toxic language classification despite data scarcity Mika Juuti, Tommi Gröndahl, Adrian Flanagan and N. Asokan
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 18:45:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
@@ -1580,16 +1580,18 @@
     hosts: TBD
   - start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 19:20:00+00:00
-    name: 'Online Abuse and Human Rights: Report on WOAH RightsCon Satellite Session'
+    name: 'Online Abuse and Human Rights: Report on WOAH RightsCon Satellite Session<br>
+      <a href="https://us02web.zoom.us/j/2801979203">Zoom link 1</a>'
     hosts: Vinodkumar Prabhakaran
   - start_time: 2020-11-20 19:20:00+00:00
     end_time: 2020-11-20 19:30:00+00:00
-    name: Closing Remarks
+    name: Closing Remarks <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom
+      link 1</a>
     hosts: Vinodkumar Prabhakaran
   zoom_links:
-  - https://us02web.zoom.us/j/2801979203
-  - https://us02web.zoom.us/j/2506384854
-  - https://us02web.zoom.us/j/7641600011
+  - https://us02web.zoom.us/j/4396802858
+  - https://us02web.zoom.us/j/5727154448
+  - https://us02web.zoom.us/j/9208909204
   prerecorded_talks:
   - title: Keynote1
     speakers: "Andr\xE9 Brock"
@@ -1661,7 +1663,7 @@
     name: Closing Remarks
     hosts: David Jurgens
   zoom_links:
-  - https://us02web.zoom.us/j/2610080158
+  - https://us02web.zoom.us/j/6709619322
   prerecorded_talks: []
 - UID: WS-19
   title: LOUHI 2020 - 11th International Workshop on Health Text Mining and Information
@@ -1715,7 +1717,7 @@
     name: 'Session 4: oral presentations & QA'
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/2312702306
+  - https://us02web.zoom.us/j/9825218020
   prerecorded_talks: []
 - UID: WS-20
   title: Evaluation and Comparison of NLP Systems
@@ -1768,7 +1770,7 @@
     name: Concluding Remarks
     hosts: Yang Gao
   zoom_links:
-  - https://us02web.zoom.us/j/7744162647
+  - https://us02web.zoom.us/j/5916616973
   prerecorded_talks: []
 - UID: WS-21
   title: 4th Workshop on Structured Prediction for NLP
@@ -1849,8 +1851,8 @@
     name: Closing Remarks
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/2838032815
-  - https://us02web.zoom.us/j/3772906280
+  - https://us02web.zoom.us/j/3828955479
+  - https://us02web.zoom.us/j/6468788696
   prerecorded_talks:
   - title: Invited talk by Isabelle Augenstein
     speakers: Isabelle Augenstein
@@ -1927,7 +1929,7 @@
     name: Closing NLPBT
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/8192922716
+  - https://us02web.zoom.us/j/4210020303
   prerecorded_talks: []
 - UID: WS-24
   title: 'PrivateNLP 2020: The First Workshop on Privacy in NLP'
