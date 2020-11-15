@@ -332,11 +332,10 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
                 abstracts.append(paper.abstract)
                 presentation_ids.append("")
                 urls.append(paper.link)
-                print(paper)
             else:
                 not_slideslive_but_anthology.append(dataclasses.astuple(paper))
 
-    not_slideslive_but_anthology_df = pd.DataFrame(unmatched)
+    not_slideslive_but_anthology_df = pd.DataFrame(not_slideslive_but_anthology)
     not_slideslive_but_anthology_df.to_csv("yamls/not_slideslive_but_anthology.csv", index=False)
 
 
