@@ -458,18 +458,11 @@
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-    <span>{{session.session}}, </span><span class="session_times">{{session.session}} {{session.time_string}}</span>
+    <span>{{session.session}}, </span>
+    <span class="session_times">{{session.session}} {{session.time_string}}</span>
 
   {% if session.link %}
-  <a href="{{session.link}}"   class="card-link">
-    <!--
-    <img
-        src="static/images/zoom-icon.png"
-        height="24px"
-        alt="Join Zoom Meeting"
-        title="Join Zoom Meeting"
-    >
-    -->
+  <a href="{{session.link}}"   class="card-link" target="_blank">
     {% if session.session_type == "gather" %}
       [Join Gather Meeting]
     {% else %}

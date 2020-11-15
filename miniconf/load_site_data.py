@@ -6,7 +6,7 @@ import json
 import os
 from collections import OrderedDict, defaultdict
 from datetime import timedelta
-from typing import Any, DefaultDict, Dict, List, Optional
+from typing import Any, DefaultDict, Dict, List, Optional, Tuple
 
 import jsons
 import pytz
@@ -18,6 +18,8 @@ from miniconf.site_data import (
     PaperContent,
     PlenarySession,
     PlenaryVideo,
+    QaSession,
+    QaSubSession,
     SessionInfo,
     SocialEvent,
     SocialEventOrganizers,
@@ -205,6 +207,17 @@ def load_site_data(
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
+
+    # qa_sessions.html
+    site_data["qa_sessions"], site_data["qa_session_days"] = build_qa_sessions(
+        site_data["paper_sessions"]
+    )
+    site_data["qa_sessions_by_day"] = {
+        day: list(sessions)
+        for day, sessions in itertools.groupby(
+            site_data["qa_sessions"], lambda qa: qa.day
+        )
+    }
 
     print("Data Successfully Loaded")
     return extra_files
@@ -431,7 +444,7 @@ def generate_paper_events(site_data: Dict[str, Any]):
     """ We add sessions from papers and compute the overall paper blocks for the weekly view. """
     # Add paper sessions to calendar
 
-    all_sessions: List[Dict[str, Any]] = []
+    all_grouped: Dict[str, List[Any]] = defaultdict(list)
     for uid, session in site_data["paper_sessions"].items():
         start = session["start_time"]
         end = session["end_time"]
@@ -452,21 +465,33 @@ def generate_paper_events(site_data: Dict[str, Any]):
 
         assert start < end, "Session start after session end"
 
-        all_sessions.append(session)
+        # Sessions are suffixd with subsession id
+        all_grouped[uid[:-1]].append(session)
 
-    blocks = compute_schedule_blocks(all_sessions)
+    for uid, group in all_grouped.items():
+        start_time = group[0]["start_time"]
+        end_time = group[0]["end_time"]
+        assert all(s["start_time"] == start_time for s in group)
+        assert all(s["end_time"] == end_time for s in group)
 
-    # Compute start and end of tutorial blocks
-    for block in blocks:
-        min_start = min([t["start_time"] for t in block])
-        max_end = max([t["end_time"] for t in block])
+        number = uid[1:]
+        tab_id = (
+            start_time.astimezone(pytz.utc).strftime("%b %d").replace(" ", "").lower()
+        )
+
+        if uid.startswith("z"):
+            name = f"Zoom Q&A Session {number}"
+        elif uid.startswith("g"):
+            name = f"Gather Session {number}"
+        else:
+            raise Exception("Invalid session type")
 
         event = {
-            "title": f"QA Session",
-            "start": min_start,
-            "end": max_end,
+            "title": name,
+            "start": start_time,
+            "end": end_time,
             "location": "",
-            "link": f"papers.html",
+            "link": f"qa_sessions.html#tab-{tab_id}",
             "category": "time",
             "type": "QA Sessions",
             "view": "week",
@@ -622,10 +647,15 @@ def build_papers(
     # build the lookup from (paper, slot) to zoom_link
     paper_id_to_link: Dict[str, str] = {}
 
-    for session in paper_sessions.values():
+    for session_id, session in paper_sessions.items():
         for paper_id in session["papers"]:
             assert paper_id not in paper_id_to_link, paper_id
-            paper_id_to_link[paper_id] = session.get("link", "http://example.com")
+            if session_id.startswith("z"):
+                paper_id_to_link[paper_id] = session.get("zoom_link")
+            elif session_id.startswith("g"):
+                paper_id_to_link[
+                    paper_id
+                ] = "https://www.virtualchair.net/events/emnlp2020"
 
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
@@ -689,6 +719,61 @@ def build_papers(
             print(f"WARNING: empty similar_paper_uids for {paper.id}")
 
     return papers
+
+
+def build_qa_sessions(
+    raw_paper_sessions: Dict[str, Any]
+) -> Tuple[List[QaSession], List[Tuple[str, str, str]]]:
+    raw_subsessions: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+
+    for uid, subsession in raw_paper_sessions.items():
+        overall_id = uid[:-1]
+        raw_subsessions[overall_id].append(subsession)
+
+    days = set()
+
+    paper_sessions = []
+    for uid, rs in raw_subsessions.items():
+        number = uid[1:]
+        if uid.startswith("z"):
+            name = f"Zoom Q&A Session {number}"
+        elif uid.startswith("g"):
+            name = f"Gather Session {number}"
+        else:
+            raise Exception("Invalid session type")
+
+        start_time = rs[0]["start_time"]
+        end_time = rs[0]["end_time"]
+        assert all(s["start_time"] == start_time for s in rs)
+        assert all(s["end_time"] == end_time for s in rs)
+
+        subsessions = []
+        for s in rs:
+            qa_subsession = QaSubSession(
+                name=s["long_name"].split(":")[-1].strip(),
+                link=s.get("zoom_link", "http://zoom.us"),
+                papers=s["papers"],
+            )
+            subsessions.append(qa_subsession)
+
+        qa_session = QaSession(
+            uid=uid,
+            name=name,
+            start_time=start_time,
+            end_time=end_time,
+            subsessions=subsessions,
+        )
+        paper_sessions.append(qa_session)
+
+        days.add(qa_session.day)
+
+    qa_session_days = []
+    for i, day in enumerate(sorted(days)):
+        qa_session_days.append(
+            (day.replace(" ", "").lower(), day, "active" if i == 0 else "")
+        )
+
+    return paper_sessions, qa_session_days
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:

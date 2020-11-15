@@ -1,6 +1,8 @@
 import datetime
 import json
+import re
 from collections import defaultdict
+import roman
 
 import pandas as pd
 import pytz
@@ -8,7 +10,11 @@ import pytz
 from ruamel import yaml
 import ruamel
 
-from scripts.dataentry.paths import PATH_SLIDESLIVE_OTHER
+from scripts.dataentry.paths import (
+    PATH_SLIDESLIVE_OTHER,
+    download_zooms,
+    PATH_ZOOM_ACCOUNTS_SCHEDULED,
+)
 
 
 def build_plenary():
@@ -122,6 +128,25 @@ def build_plenary():
 
 def build_paper_sessions():
     df = pd.read_csv("downloads/schedule.csv")
+    zooms = pd.read_excel(PATH_ZOOM_ACCOUNTS_SCHEDULED, sheet_name="MainConf")
+
+    session_id_to_zooms = {}
+    for _, row in zooms.iterrows():
+        session_id = row["uniqueid"]
+        _, _, name = session_id.split(".")
+        match = re.match(r"(\d+)(\w+)", name)
+
+        session = match.group(1)
+        subsession_roman = match.group(2)
+        subsession_nuber = roman.fromRoman(subsession_roman.upper())
+
+        subsession_letter = chr(ord("A") - 1 + subsession_nuber)
+        real_session_id = f"{session}{subsession_letter}"
+
+        link = row["join_link"]
+        assert real_session_id not in session_id_to_zooms
+        session_id_to_zooms[real_session_id] = link
+        print(real_session_id)
 
     sessions = {}
     papers_in_session = defaultdict(list)
@@ -135,7 +160,7 @@ def build_paper_sessions():
 
         start, end = get_time(row)
         uid = row["sessionNumber"]
-        uid = row["format"][0] + uid
+        prefixed_uid = row["format"][0] + uid
 
         paper_id = str(row["paperID"])
         if paper_id.startswith("CL"):
@@ -147,14 +172,17 @@ def build_paper_sessions():
         else:
             paper_id = "main." + paper_id
 
-        papers_in_session[uid].append(paper_id)
+        papers_in_session[prefixed_uid].append(paper_id)
 
-        sessions[uid] = {
+        sessions[prefixed_uid] = {
             "start_time": start,
             "end_time": end,
             "name": row["sessionName"],
             "long_name": row["sessionLongName"],
         }
+        if row["format"] == "zoom":
+            link = session_id_to_zooms[uid]
+            sessions[prefixed_uid]["zoom_link"] = link
 
     for uid in sessions:
         sessions[uid]["papers"] = papers_in_session[uid]
@@ -224,6 +252,8 @@ def get_time(row):
 
 
 if __name__ == "__main__":
+    download_zooms()
+
     build_plenary()
     build_paper_sessions()
     build_overall_calendar()

@@ -12,7 +12,6 @@ from miniconf.site_data import Paper, PlenarySession, Tutorial, Workshop
 
 site_data: Dict[str, Any] = {}
 by_uid: Dict[str, Any] = {}
-qa_session_length_hr = 1
 
 # ------------- SERVER CODE -------------------->
 
@@ -99,6 +98,16 @@ def plenary_sessions():
     data["plenary_sessions"] = site_data["plenary_sessions"]
     data["plenary_session_days"] = site_data["plenary_session_days"]
     return render_template("plenary_sessions.html", **data)
+
+
+@app.route("/qa_sessions.html")
+def qa_sessions():
+    data = _data()
+    data["qa_session_days"] = site_data["qa_session_days"]
+    data["qa_sessions"] = site_data["qa_sessions_by_day"]
+
+    data["papers"] = by_uid["papers"]
+    return render_template("qa_sessions.html", **data)
 
 
 @app.route("/tutorials.html")

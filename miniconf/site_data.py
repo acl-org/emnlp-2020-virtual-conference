@@ -58,7 +58,8 @@ class SessionInfo:
             return f"{self.session_name[2:]}: {start_date}"
         if self.session_name.startswith("z") or self.session_name.startswith("g"):
             # paper sessions
-            return f"{self.session_name[1:]}: {start_date}"
+            prefix = self.session_type.capitalize()
+            return f"{prefix}-{self.session_name[1:]}: {start_date}"
 
         return f"Session {self.session_name}: {start_date}"
 
@@ -258,3 +259,30 @@ class SocialEvent:
     rocketchat_channel: str
     website: str
     zoom_link: str
+
+
+@dataclass(frozen=True)
+class QaSubSession:
+    name: str
+    link: str
+    papers: List[str]
+
+
+@dataclass(frozen=True)
+class QaSession:
+    uid: str
+    name: str
+    start_time: datetime
+    end_time: datetime
+    subsessions: List[QaSubSession]
+
+    @property
+    def time_string(self) -> str:
+        start = self.start_time.astimezone(pytz.utc)
+        end = self.end_time.astimezone(pytz.utc)
+        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
+
+    @property
+    def day(self) -> str:
+        start_time = self.start_time.astimezone(pytz.utc)
+        return start_time.strftime("%b %d")
