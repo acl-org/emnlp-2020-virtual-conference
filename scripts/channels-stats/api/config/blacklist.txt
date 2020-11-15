@@ -3,8 +3,11 @@ announcements
 general
 live
 firsttimers
-On-call volunteers
 presenter-helpdesk
 incidents
 social-media-posts
 professional-conduct-committee
+introduction
+organizers-registration-desk
+sponsor-registration-desk
+oncall-volunteers

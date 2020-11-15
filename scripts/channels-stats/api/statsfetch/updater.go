@@ -83,12 +83,12 @@ func getChannelsFromAPI() ([]channel, error) {
 	return allChannels, nil
 }
 
-func initBlacklistGlobs() {
-	backlistGlobs = make([]glob.Glob, 0)
+func readGlobs(filepath string) []glob.Glob {
+	globs := make([]glob.Glob, 0)
 
-	bytesRead, err := ioutil.ReadFile("config/blacklist.txt")
+	bytesRead, err := ioutil.ReadFile(filepath)
 	if err != nil {
-		return
+		return globs
 	}
 
 	fileContent := string(bytesRead)
@@ -97,41 +97,29 @@ func initBlacklistGlobs() {
 		if len(pattern) == 0 {
 			break
 		}
-
-		g := glob.MustCompile(pattern)
-		backlistGlobs = append(backlistGlobs, g)
+		g := glob.MustCompile(strings.TrimSpace(pattern))
+		globs = append(globs, g)
 	}
 
-	fmt.Println("Blacklists:")
-	fmt.Println(backlistGlobs)
-}
-
-func initSourcesGlobs() {
-	sourceGlobs = make([]glob.Glob, 0)
-
-	bytesRead, err := ioutil.ReadFile("config/source_channels.txt")
-	if err != nil {
-		return
-	}
-
-	fileContent := string(bytesRead)
-	lines := strings.Split(fileContent, "\n")
-	for _, pattern := range lines {
-		if len(pattern) == 0 {
-			break
-		}
-
-		g := glob.MustCompile(pattern)
-		sourceGlobs = append(sourceGlobs, g)
-	}
-
-	fmt.Println("Source Channels:")
-	fmt.Println(sourceGlobs)
+	return globs
 }
 
 func initialize() {
-	initSourcesGlobs()
-	initBlacklistGlobs()
+	sourceGlobs = readGlobs("config/source_channels.txt")
+	fmt.Printf("Source Channels[%d]:\n[\n", len(sourceGlobs))
+	for _, g := range sourceGlobs {
+		fmt.Print("\t")
+		fmt.Println(g)
+	}
+	fmt.Println("]")
+
+	backlistGlobs = readGlobs("config/blacklist.txt")
+	fmt.Printf("Blacklist[%d]:\n[\n", len(backlistGlobs))
+	for _, g := range backlistGlobs {
+		fmt.Print("\t")
+		fmt.Println(g)
+	}
+	fmt.Println("]")
 }
 
 func prepareResults(channelScores []ChannelScore) []ChannelScore {
@@ -177,14 +165,14 @@ func update() {
 	}
 
 	fmt.Println("U: " + time.Now().String())
-	newChannels, err := getChannelsFromAPI()
+	allChannels, err := getChannelsFromAPI()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	channelScores := make([]ChannelScore, 0)
-	for _, channelStat := range newChannels {
+	for _, channelStat := range allChannels {
 		isIncluded := false
 		for _, g := range sourceGlobs {
 			isIncluded = isIncluded || g.Match(channelStat.Name)
