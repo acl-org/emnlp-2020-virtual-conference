@@ -724,7 +724,7 @@ def build_papers(
 def build_qa_sessions(
     raw_paper_sessions: Dict[str, Any]
 ) -> Tuple[List[QaSession], List[Tuple[str, str, str]]]:
-    raw_subsessions = defaultdict(list)
+    raw_subsessions: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
 
     for uid, subsession in raw_paper_sessions.items():
         overall_id = uid[:-1]
