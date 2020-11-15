@@ -790,10 +790,12 @@ def build_workshops(
                         authors=extract_list_field(item, "authors"),
                         track=workshop_title(workshop_id),
                         paper_type="Workshop",
-                        abstract=None,
-                        tldr=None,
+                        abstract=item.get("abstract"),
+                        tldr=item["abstract"][:250] + "..."
+                        if item["abstract"]
+                        else None,
                         keywords=[],
-                        pdf_url=None,
+                        pdf_url=item.get("pdf_url"),
                         demo_url=None,
                         sessions=[],
                         similar_paper_uids=[],

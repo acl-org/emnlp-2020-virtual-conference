@@ -501,7 +501,14 @@
     hosts: TBD
   zoom_links:
   - https://us02web.zoom.us/j/8257686500?pwd=azc0bFltRk5ZQUp1TDhGRkxreGFiQT09
-  prerecorded_talks: []
+  prerecorded_talks:
+  - title: 'How Languages Carve Up the World: Cognitive Explanation through Computational
+      Modeling'
+    speakers: Suzanne Stevenson
+    presentation_id: '38939684'
+  - title: Information Processing, Communication, and Word Order
+    speakers: Richard Futrell
+    presentation_id: '38939685'
 - UID: WS-6
   title: Interactive and Executable Semantic Parsing (Int-Ex)
   organizers: Ben Bogin, Srinivasan Iyer, Xi Victoria Lin, Panupong Pasupat, Alane
@@ -1158,7 +1165,10 @@
   zoom_links:
   - https://us02web.zoom.us/j/6468079734
   - https://us02web.zoom.us/j/8739881077
-  prerecorded_talks: []
+  prerecorded_talks:
+  - title: Keynote 3rd Clinical Natural Language Processing Workshop
+    speakers: Hong Yu
+    presentation_id: '38939840'
 - UID: WS-13
   title: 'Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction
     and Integration for Deep Learning Architectures'
@@ -1213,7 +1223,14 @@
   zoom_links:
   - https://us02web.zoom.us/j/9496849754
   - https://us02web.zoom.us/j/4654314422
-  prerecorded_talks: []
+  prerecorded_talks:
+  - title: Keynote talk by Eduard Hovy
+    speakers: Eduard Hovy
+    presentation_id: '38940164'
+  - title: 'You can lead a horse to water...: Representing vs. Using Features in Neural
+      NLP'
+    speakers: Ellie Pavlick
+    presentation_id: '38940165'
 - UID: WS-14
   title: 6th Workshop on Noisy User-generated Text (W-NUT 2020)
   organizers: Wei Xu, Alan Ritter, Timothy Baldwin, Afshin Rahimi and Leon Derczynski
@@ -1565,7 +1582,16 @@
     hosts: Vinodkumar Prabhakaran
   zoom_links:
   - https://us02web.zoom.us/j/2610080158
-  prerecorded_talks: []
+  prerecorded_talks:
+  - title: Keynote1
+    speakers: "Andr\xE9 Brock"
+    presentation_id: '38939540'
+  - title: Keynote2
+    speakers: Alex Hanna & Maliha Ahmed
+    presentation_id: '38939541'
+  - title: Keynote3
+    speakers: Maria Y. Rodriguez
+    presentation_id: '38939542'
 - UID: WS-18
   title: NLP and Computational Social Science (NLP+CSS)
   organizers: Svitlana Volkova, David Jurgens, David Bamman and Dirk Hovy
