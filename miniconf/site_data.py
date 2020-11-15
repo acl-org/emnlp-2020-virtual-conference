@@ -277,12 +277,6 @@ class QaSession:
     subsessions: List[QaSubSession]
 
     @property
-    def session(self) -> str:
-        start = self.start_time.astimezone(pytz.utc)
-        start_date = f'{start.strftime("%b")} {start.day}'
-        return f"{self.session_name}: {start_date}"
-
-    @property
     def time_string(self) -> str:
         start = self.start_time.astimezone(pytz.utc)
         end = self.end_time.astimezone(pytz.utc)
