@@ -127,10 +127,10 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
             }
             for session in schedule[uid].sessions
         ]
-
+        title = row["Name"].strip()
         entry = {
             "UID": uid,
-            "title": row["Name"].strip(),
+            "title": title,
             "organizers": row["Organizers"].strip(),
             "abstract": row["Summary"],
             "website": row["URL"],
@@ -139,8 +139,11 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
             "sessions": sessions,
         }
 
-        if uid in zooms:
-            entry["zoom_links"] = zooms[uid]
+        if title in zooms:
+            entry["zoom_links"] = zooms[title]
+        else:
+
+            print(title)
 
         data.append(entry)
 
@@ -299,10 +302,8 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
 
     unmatched_df = pd.DataFrame(unmatched)
     unmatched_df.to_csv("unmatched_workshop_papers.csv", index=False)
-    for e in unmatched:
-        print(e)
 
-    print(len(unmatched), len(uid_to_anthology_paper))
+    print("Unmatched", len(unmatched), len(uid_to_anthology_paper))
 
     abstracts = []
     urls = []
@@ -461,12 +462,10 @@ def add_invited_talks(slideslive: pd.DataFrame):
         if not is_not_paper(row):
             continue
 
-
         title = row["Title"]
 
         speakers = row["Speakers"]
         presentation_id = row["SlidesLive link"].replace("https://slideslive.com/", "")
-        print(title, speakers, row["Organizer track name"])
 
         talks_per_workshop[row["Organizer track name"].strip()].append(
             {"title": title, "speakers": speakers, "presentation_id": presentation_id}
@@ -478,9 +477,18 @@ def add_invited_talks(slideslive: pd.DataFrame):
 def get_zooms() -> Dict[str, List[str]]:
     df = pd.read_excel(PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS, sheet_name="Workshops")
 
+    mapping = {
+        "5th Conference on Machine Translation (WMT20)": "Fifth Conference on Machine Translation (WMT20)",
+        "Search-Oriented Conversational AI (SCAI)": "Search-Oriented Conversational AI (SCAI) 2",
+        "4th Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW": "The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW",
+        "Evaluation and Comparison of NLP Systems (Eval4NLP)": "Evaluation and Comparison of NLP Systems",
+        "2nd Workshop for NLP Open Source Software (NLP-OSS)": "Second Workshop for NLP Open Source Software (NLP-OSS)",
+    }
+
     zooms = defaultdict(list)
     for _, row in df.iterrows():
-        uid = row["UID"].replace(".", "-").upper()
+        uid = row["WS Name"]
+        uid = mapping.get(uid, uid)
         zooms[uid].append(row["Personal Meeting LINK"])
 
         for i in range(row["# of accounts"] - 1):
