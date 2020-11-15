@@ -77,7 +77,13 @@
     hosts: TBD
   zoom_links:
   - https://us02web.zoom.us/j/2575188702?pwd=VUdsT1dDK1d6ZXBjT0oyQk1vSUh2UT09
-  prerecorded_talks: []
+  prerecorded_talks:
+  - title: Dupoux-Keynote
+    speakers: Emmanuel Dupoux
+    presentation_id: '38940786'
+  - title: Toutanova-Keynote
+    speakers: Kristina Toutanova
+    presentation_id: '38940787'
 - UID: WS-2
   title: Fifth Conference on Machine Translation (WMT20)
   organizers: "Barry Haddow, Philipp Koehn, Ond\u0159ej Bojar, Christian Federmann,\

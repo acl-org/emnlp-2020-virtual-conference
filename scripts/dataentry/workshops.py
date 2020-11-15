@@ -226,6 +226,9 @@ def load_slideslive():
     df = pd.read_csv(PATH_SLIDESLIVE_WORKSHOPS)
     df = df.drop([0])
 
+    df_obj = df.select_dtypes(['object'])
+    df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
+
     workshop_df = load_workshop_overview_excel()
 
     ws_name_to_id = {
@@ -256,7 +259,6 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         ws = row["Organizer track name"].strip()
         uid = row["Unique ID"].strip()
 
-        print(ws, uid)
         if ws == "WS-15" and str(uid) in fix.keys():
             continue
 
@@ -436,8 +438,8 @@ def get_anthology_workshop_papers() -> List[Paper]:
 
 
 def is_not_paper(row) -> bool:
-    uid = row["Unique ID"].lower()
-    title = row["Title"].lower()
+    uid = row["Unique ID"].lower().strip()
+    title = row["Title"].lower().strip()
 
     return (
         ("invited" in uid)
@@ -457,11 +459,14 @@ def add_invited_talks(slideslive: pd.DataFrame):
         if not is_not_paper(row):
             continue
 
+
         title = row["Title"]
+
         speakers = row["Speakers"]
         presentation_id = row["SlidesLive link"].replace("https://slideslive.com/", "")
+        print(title, speakers, row["Organizer track name"])
 
-        talks_per_workshop[row["Organizer track name"]].append(
+        talks_per_workshop[row["Organizer track name"].strip()].append(
             {"title": title, "speakers": speakers, "presentation_id": presentation_id}
         )
 
