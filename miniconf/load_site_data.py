@@ -6,7 +6,7 @@ import json
 import os
 from collections import OrderedDict, defaultdict
 from datetime import timedelta
-from typing import Any, DefaultDict, Dict, List, Optional
+from typing import Any, DefaultDict, Dict, List, Optional, Tuple
 
 import jsons
 import pytz
@@ -209,7 +209,15 @@ def load_site_data(
     build_sponsors(site_data, by_uid, display_time_format)
 
     # qa_sessions.html
-    site_data["qa_sessions"] = build_qa_sessions(site_data["paper_sessions"])
+    site_data["qa_sessions"], site_data["qa_session_days"] = build_qa_sessions(
+        site_data["paper_sessions"]
+    )
+    site_data["qa_sessions_by_day"] = {
+        day: list(sessions)
+        for day, sessions in itertools.groupby(
+            site_data["qa_sessions"], lambda qa: qa.day
+        )
+    }
 
     print("Data Successfully Loaded")
     return extra_files
@@ -711,14 +719,18 @@ def build_papers(
     return papers
 
 
-def build_qa_sessions(raw_paper_sessions: Dict[str, Any]) -> List[QaSession]:
+def build_qa_sessions(
+    raw_paper_sessions: Dict[str, Any]
+) -> Tuple[List[QaSession], List[Tuple[str, str, str]]]:
     raw_subsessions = defaultdict(list)
 
     for uid, subsession in raw_paper_sessions.items():
         overall_id = uid[:-1]
         raw_subsessions[overall_id].append(subsession)
 
-    result = []
+    days = set()
+
+    paper_sessions = []
     for uid, rs in raw_subsessions.items():
         number = uid[1:]
         if uid.startswith("z"):
@@ -737,7 +749,7 @@ def build_qa_sessions(raw_paper_sessions: Dict[str, Any]) -> List[QaSession]:
         for s in rs:
             qa_subsession = QaSubSession(
                 name=s["long_name"].split(":")[-1].strip(),
-                link=s.get("link", "http://zoom.us"),
+                link=s.get("zoom_link", "http://zoom.us"),
                 papers=s["papers"],
             )
             subsessions.append(qa_subsession)
@@ -749,9 +761,17 @@ def build_qa_sessions(raw_paper_sessions: Dict[str, Any]) -> List[QaSession]:
             end_time=end_time,
             subsessions=subsessions,
         )
-        result.append(qa_session)
+        paper_sessions.append(qa_session)
 
-    return result
+        days.add(qa_session.day)
+
+    qa_session_days = []
+    for i, day in enumerate(sorted(days)):
+        qa_session_days.append(
+            (day.replace(" ", "").lower(), day, "active" if i == 0 else "")
+        )
+
+    return paper_sessions, qa_session_days
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:

@@ -291,4 +291,4 @@ class QaSession:
     @property
     def day(self) -> str:
         start_time = self.start_time.astimezone(pytz.utc)
-        return f'{start_time.strftime("%b")} {start_time.day}'
+        return start_time.strftime(("%b %d"))

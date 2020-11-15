@@ -103,7 +103,9 @@ def plenary_sessions():
 @app.route("/qa_sessions.html")
 def qa_sessions():
     data = _data()
-    data["qa_sessions"] = site_data["qa_sessions"]
+    data["qa_session_days"] = site_data["qa_session_days"]
+    data["qa_sessions"] = site_data["qa_sessions_by_day"]
+
     data["papers"] = by_uid["papers"]
     return render_template("qa_sessions.html", **data)
 
