@@ -75,7 +75,6 @@
           // use regular times
           startTime = formatTime(event.start);
           endTime = formatTime(event.end);
-          console.log("Else");
         }
       }
 
