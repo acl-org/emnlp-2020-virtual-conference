@@ -637,10 +637,15 @@ def build_papers(
     # build the lookup from (paper, slot) to zoom_link
     paper_id_to_link: Dict[str, str] = {}
 
-    for session in paper_sessions.values():
+    for session_id, session in paper_sessions.items():
         for paper_id in session["papers"]:
             assert paper_id not in paper_id_to_link, paper_id
-            paper_id_to_link[paper_id] = session.get("link", "http://example.com")
+            if session_id.startswith("z"):
+                paper_id_to_link[paper_id] = session.get("zoom_link")
+            elif session_id.startswith("g"):
+                paper_id_to_link[
+                    paper_id
+                ] = "https://www.virtualchair.net/events/emnlp2020"
 
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)

@@ -231,7 +231,7 @@ def load_slideslive():
     df = pd.read_csv(PATH_SLIDESLIVE_WORKSHOPS)
     df = df.drop([0])
 
-    df_obj = df.select_dtypes(['object'])
+    df_obj = df.select_dtypes(["object"])
     df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 
     workshop_df = load_workshop_overview_excel()
@@ -283,7 +283,6 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
     uid_to_anthology_paper = {}
     for uid, title, author in zip(UIDs, titles, authors):
 
-
         if title.lower() in title_to_anthology_paper:
             assert uid not in uid_to_anthology_paper
             uid_to_anthology_paper[uid] = title_to_anthology_paper[title.lower()]
@@ -323,7 +322,11 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
     not_slideslive_but_anthology = []
 
     for paper in anthology_papers:
-        if paper.title not in all_the_titles and paper.ws_id != "findings" and not paper.uid.startswith("2020.nlpcovid19-acl"):
+        if (
+            paper.title not in all_the_titles
+            and paper.ws_id != "findings"
+            and not paper.uid.startswith("2020.nlpcovid19-acl")
+        ):
             if paper.ws_id == "WS-14":
                 venues.append(paper.ws_id)
                 UIDs.append(f"{paper.ws_id}.{paper.uid}")
@@ -336,8 +339,9 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
                 not_slideslive_but_anthology.append(dataclasses.astuple(paper))
 
     not_slideslive_but_anthology_df = pd.DataFrame(not_slideslive_but_anthology)
-    not_slideslive_but_anthology_df.to_csv("yamls/not_slideslive_but_anthology.csv", index=False)
-
+    not_slideslive_but_anthology_df.to_csv(
+        "yamls/not_slideslive_but_anthology.csv", index=False
+    )
 
     data = {
         "workshop": venues,
@@ -519,9 +523,9 @@ def get_zooms() -> Dict[str, List[str]]:
 
 
 if __name__ == "__main__":
-    #download_slideslive()
-    #download_workshops()
-    #download_zooms()
+    # download_slideslive()
+    # download_workshops()
+    # download_zooms()
 
     # load_csv()
     data = build_workshops_basics()

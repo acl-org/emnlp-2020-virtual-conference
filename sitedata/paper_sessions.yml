@@ -4,6 +4,7 @@ z1A:
   name: Zoom Q&A Session 1A
   long_name: 'Zoom Q&A Session 1A: Sentiment Analysis, Stylistic Analysis, and Argument
     Mining'
+  zoom_link: https://us02web.zoom.us/j/86415082986?pwd=c0hCZDY1VEJOTGtVV21LbHZlSmhDdz09
   papers:
   - main.438
   - main.440
@@ -14,6 +15,7 @@ z1B:
   end_time: 2020-11-16 17:00:00+00:00
   name: Zoom Q&A Session 1B
   long_name: 'Zoom Q&A Session 1B: Machine Translation and Multilinguality'
+  zoom_link: https://us02web.zoom.us/j/82453765034?pwd=cnhBc2NhWFJMeVZpYjBCWmFXZnZoQT09
   papers:
   - main.84
   - main.619
@@ -25,6 +27,7 @@ z1C:
   end_time: 2020-11-16 17:00:00+00:00
   name: Zoom Q&A Session 1C
   long_name: 'Zoom Q&A Session 1C: Question Answering'
+  zoom_link: https://us02web.zoom.us/j/89612381282?pwd=NStyWmFNVmRYRTdDT0lUNGY4Z3gwQT09
   papers:
   - main.2054
   - main.2228
@@ -36,6 +39,7 @@ z1D:
   end_time: 2020-11-16 17:00:00+00:00
   name: Zoom Q&A Session 1D
   long_name: 'Zoom Q&A Session 1D: Interpretability and Analysis of Models for NLP'
+  zoom_link: https://us02web.zoom.us/j/82073200719?pwd=cWNzdnJYdm5UR0VuSWY4b3NPYzI3UT09
   papers:
   - main.498
   - main.947
@@ -46,6 +50,7 @@ z2A:
   end_time: 2020-11-16 18:00:00+00:00
   name: Zoom Q&A Session 2A
   long_name: 'Zoom Q&A Session 2A: Machine Learning for NLP'
+  zoom_link: https://us02web.zoom.us/j/88364226663?pwd=VXY1Wk9LNi8vWTN1TGJRaGxtSU9MQT09
   papers:
   - main.1210
   - main.1618
@@ -56,6 +61,7 @@ z2B:
   end_time: 2020-11-16 18:00:00+00:00
   name: Zoom Q&A Session 2B
   long_name: 'Zoom Q&A Session 2B: NLP Applications'
+  zoom_link: https://us02web.zoom.us/j/89131451599?pwd=Skg3TzA0eEJpS2JHdmVxUnAzT0tpUT09
   papers:
   - TACL.2047
   - main.328
@@ -67,6 +73,7 @@ z2C:
   end_time: 2020-11-16 18:00:00+00:00
   name: Zoom Q&A Session 2C
   long_name: 'Zoom Q&A Session 2C: Dialog and Interactive Systems'
+  zoom_link: https://us02web.zoom.us/j/82960045865?pwd=QzZ0L3ZrVDl5R25Lc3JsTE9YQ0FmZz09
   papers:
   - main.1219
   - TACL.2143
@@ -78,6 +85,7 @@ z2D:
   name: Zoom Q&A Session 2D
   long_name: 'Zoom Q&A Session 2D: Semantics: Sentence-level Semantics, Textual Inference
     and Other areas'
+  zoom_link: https://us02web.zoom.us/j/82548895889?pwd=S2NjdnBseXZIZVByZWQvYmRuTHREdz09
   papers:
   - main.3544
   - main.2635
@@ -88,6 +96,7 @@ z3A:
   end_time: 2020-11-17 01:00:00+00:00
   name: Zoom Q&A Session 3A
   long_name: 'Zoom Q&A Session 3A: Summarization'
+  zoom_link: https://us02web.zoom.us/j/84091080836?pwd=NWd1YndTNFVkNzc2aWdRRjlJbUNSUT09
   papers:
   - main.2900
   - main.965
@@ -98,6 +107,7 @@ z3B:
   end_time: 2020-11-17 01:00:00+00:00
   name: Zoom Q&A Session 3B
   long_name: 'Zoom Q&A Session 3B: Machine Learning for NLP'
+  zoom_link: https://us02web.zoom.us/j/87110035954?pwd=cnp0Y29iK3QvTS9yem9ZT0MvWnJlQT09
   papers:
   - main.3394
   - main.2783
@@ -109,6 +119,7 @@ z3C:
   end_time: 2020-11-17 01:00:00+00:00
   name: Zoom Q&A Session 3C
   long_name: 'Zoom Q&A Session 3C: Machine Translation and Multilinguality'
+  zoom_link: https://us02web.zoom.us/j/87446498334?pwd=SWxXcnA4RjNHM1REOHdxeWpCOUt6Zz09
   papers:
   - main.858
   - TACL.2107
@@ -120,6 +131,7 @@ z3D:
   end_time: 2020-11-17 01:00:00+00:00
   name: Zoom Q&A Session 3D
   long_name: 'Zoom Q&A Session 3D: Computational Social Science and Social Media'
+  zoom_link: https://us02web.zoom.us/j/81659740753?pwd=a3k4aWNUdklpc3JoOW95dHNiZllKQT09
   papers:
   - main.838
   - main.2561
@@ -131,6 +143,7 @@ z4A:
   end_time: 2020-11-17 02:00:00+00:00
   name: Zoom Q&A Session 4A
   long_name: 'Zoom Q&A Session 4A: Information Extraction'
+  zoom_link: https://us02web.zoom.us/j/83470501177?pwd=UGE4cmJnSk1kZENST0JxY25WbG1YZz09
   papers:
   - main.96
   - main.237
@@ -142,6 +155,7 @@ z4B:
   end_time: 2020-11-17 02:00:00+00:00
   name: Zoom Q&A Session 4B
   long_name: 'Zoom Q&A Session 4B: Language Generation'
+  zoom_link: https://us02web.zoom.us/j/83868106773?pwd=YjlPNUdKQmVmdGErL3JYcGlNUmR1dz09
   papers:
   - main.923
   - main.1581
@@ -153,6 +167,7 @@ z4C:
   end_time: 2020-11-17 02:00:00+00:00
   name: Zoom Q&A Session 4C
   long_name: 'Zoom Q&A Session 4C: Language Grounding to Vision, Robotics and Beyond'
+  zoom_link: https://us02web.zoom.us/j/82458116377?pwd=UlhvOGpmbVo2TFd6aW9NRXBBUnI1dz09
   papers:
   - main.647
   - main.1071
@@ -164,6 +179,7 @@ z4D:
   end_time: 2020-11-17 02:00:00+00:00
   name: Zoom Q&A Session 4D
   long_name: 'Zoom Q&A Session 4D: Dialog and Interactive Systems'
+  zoom_link: https://us02web.zoom.us/j/81568377176?pwd=bVgyT3AyMWhKLzdUMmowdkJMN3dYdz09
   papers:
   - main.318
   - main.419
@@ -343,6 +359,7 @@ z5A:
   end_time: 2020-11-17 09:00:00+00:00
   name: Zoom Q&A Session 5A
   long_name: 'Zoom Q&A Session 5A: Information Extraction'
+  zoom_link: https://us02web.zoom.us/j/85494812250?pwd=dlVzMmpqRkNhNkRab2FTMmlVSGNBZz09
   papers:
   - main.983
   - main.2938
@@ -353,6 +370,7 @@ z5B:
   end_time: 2020-11-17 09:00:00+00:00
   name: Zoom Q&A Session 5B
   long_name: 'Zoom Q&A Session 5B: Language Generation'
+  zoom_link: https://us02web.zoom.us/j/88149377683?pwd=M1JRV3FiY2xGd3dzdTZ5NzNYS0JoQT09
   papers:
   - main.204
   - main.2795
@@ -364,6 +382,7 @@ z5C:
   end_time: 2020-11-17 09:00:00+00:00
   name: Zoom Q&A Session 5C
   long_name: 'Zoom Q&A Session 5C: Machine Learning for NLP'
+  zoom_link: https://us02web.zoom.us/j/87308259822?pwd=dEh2RTN3RWxYVHJ2S2loODYwMXJZUT09
   papers:
   - main.2535
   - main.2452
@@ -375,6 +394,7 @@ z5D:
   end_time: 2020-11-17 09:00:00+00:00
   name: Zoom Q&A Session 5D
   long_name: 'Zoom Q&A Session 5D: Machine Translation and Multilinguality'
+  zoom_link: https://us02web.zoom.us/j/87678672082?pwd=RHQ0MVp4V3VBc3k0ZnAvUDB2OGRMZz09
   papers:
   - main.1504
   - main.2674
@@ -386,6 +406,7 @@ z6A:
   end_time: 2020-11-17 10:00:00+00:00
   name: Zoom Q&A Session 6A
   long_name: 'Zoom Q&A Session 6A: Syntax: Tagging, Chunking, and Parsing'
+  zoom_link: https://us02web.zoom.us/j/88299398376?pwd=bnoyditPa0kxSjBRQjJHYndWVkhkUT09
   papers:
   - TACL.2411
   - main.750
@@ -397,6 +418,7 @@ z6B:
   end_time: 2020-11-17 10:00:00+00:00
   name: Zoom Q&A Session 6B
   long_name: 'Zoom Q&A Session 6B: Machine Translation and Multilinguality'
+  zoom_link: https://us02web.zoom.us/j/81578934481?pwd=THlYUlFabXZoVnoyckM5VG1aT1lsQT09
   papers:
   - main.1402
   - main.623
@@ -408,6 +430,7 @@ z6C:
   end_time: 2020-11-17 10:00:00+00:00
   name: Zoom Q&A Session 6C
   long_name: 'Zoom Q&A Session 6C: Question Answering'
+  zoom_link: https://us02web.zoom.us/j/89338601804?pwd=TENaRmpXM21SdEtDUXRyZTcrRGdHQT09
   papers:
   - main.1004
   - main.1022
@@ -419,6 +442,7 @@ z6D:
   name: Zoom Q&A Session 6D
   long_name: 'Zoom Q&A Session 6D: Semantics: Sentence-level Semantics, Textual Inference
     and Other areas'
+  zoom_link: https://us02web.zoom.us/j/82920897926?pwd=LzRrcjVsVW92SGxnbWxQTDFyMUE3UT09
   papers:
   - main.3057
   - main.1187
@@ -647,6 +671,7 @@ z7A:
   end_time: 2020-11-17 17:00:00+00:00
   name: Zoom Q&A Session 7A
   long_name: 'Zoom Q&A Session 7A: Dialog and Interactive Systems'
+  zoom_link: https://us02web.zoom.us/j/86025460804?pwd=R2pGUHVkRmwweDhCbEF1bzFzVmZjZz09
   papers:
   - main.2066
   - main.2583
@@ -657,6 +682,7 @@ z7B:
   end_time: 2020-11-17 17:00:00+00:00
   name: Zoom Q&A Session 7B
   long_name: 'Zoom Q&A Session 7B: Linguistic Theories, Cognitive Modeling and Psycholinguistics'
+  zoom_link: https://us02web.zoom.us/j/89871081567?pwd=Mlo1WFJDaFU4eGtzeGxKT0hTbWdkUT09
   papers:
   - main.644
   - main.1282
@@ -668,6 +694,7 @@ z7C:
   end_time: 2020-11-17 17:00:00+00:00
   name: Zoom Q&A Session 7C
   long_name: 'Zoom Q&A Session 7C: Semantics: Lexical Semantics'
+  zoom_link: https://us02web.zoom.us/j/87522413085?pwd=Ykpld0JleUl4TUhXZk9GRUlnZDZuUT09
   papers:
   - main.2891
   - main.1395
@@ -678,6 +705,7 @@ z7D:
   end_time: 2020-11-17 17:00:00+00:00
   name: Zoom Q&A Session 7D
   long_name: 'Zoom Q&A Session 7D: Summarization'
+  zoom_link: https://us02web.zoom.us/j/87108869894?pwd=aHBLOHBxUU9sR1Z2VmpBTjVJMGt3dz09
   papers:
   - main.645
   - main.1023
@@ -688,6 +716,7 @@ z8A:
   end_time: 2020-11-17 18:00:00+00:00
   name: Zoom Q&A Session 8A
   long_name: 'Zoom Q&A Session 8A: Information Retrieval and Text Mining'
+  zoom_link: https://us02web.zoom.us/j/83414011778?pwd=aEoyOW9vMWcxSU9JK3ErWUo2RC94UT09
   papers:
   - main.1298
   - main.2825
@@ -698,6 +727,7 @@ z8B:
   end_time: 2020-11-17 18:00:00+00:00
   name: Zoom Q&A Session 8B
   long_name: 'Zoom Q&A Session 8B: Interpretability and Analysis of Models for NLP'
+  zoom_link: https://us02web.zoom.us/j/88499908559?pwd=NHAzQ0FyRW5UeGVNcURVRFJRWlpqdz09
   papers:
   - main.2005
   - main.2040
@@ -708,6 +738,7 @@ z8C:
   end_time: 2020-11-17 18:00:00+00:00
   name: Zoom Q&A Session 8C
   long_name: 'Zoom Q&A Session 8C: Language Generation'
+  zoom_link: https://us02web.zoom.us/j/85116457799?pwd=WURraGpXWTZjOU02WUZPZ3RZN0FPZz09
   papers:
   - main.648
   - main.1687
@@ -719,6 +750,7 @@ z8D:
   end_time: 2020-11-17 18:00:00+00:00
   name: Zoom Q&A Session 8D
   long_name: 'Zoom Q&A Session 8D: Language Grounding to Vision, Robotics and Beyond'
+  zoom_link: https://us02web.zoom.us/j/85670441533?pwd=YUg5WXArQ2tiT09vUUlVaE95SVdWZz09
   papers:
   - main.2058
   - main.2702
@@ -881,6 +913,7 @@ z9A:
   end_time: 2020-11-18 01:00:00+00:00
   name: Zoom Q&A Session 9A
   long_name: 'Zoom Q&A Session 9A: Speech and Multimodality'
+  zoom_link: https://us02web.zoom.us/j/83146526657?pwd=WnlKUWZIVzNwdHpCU1c3MEllMGFaQT09
   papers:
   - main.2383
   - main.3239
@@ -891,6 +924,7 @@ z9B:
   end_time: 2020-11-18 01:00:00+00:00
   name: Zoom Q&A Session 9B
   long_name: 'Zoom Q&A Session 9B: Machine Learning for NLP'
+  zoom_link: https://us02web.zoom.us/j/82992509042?pwd=VngyL1R4MDgrRzIyaDNYajhrdzl1dz09
   papers:
   - main.60
   - main.1356
@@ -903,6 +937,7 @@ z9C:
   name: Zoom Q&A Session 9C
   long_name: 'Zoom Q&A Session 9C: Sentiment Analysis, Stylistic Analysis, and Argument
     Mining'
+  zoom_link: https://us02web.zoom.us/j/86268989236?pwd=encyOXhQTnRiR09zM1VjWGI1eGxqZz09
   papers:
   - main.1289
   - main.2549
@@ -913,6 +948,7 @@ z10A:
   end_time: 2020-11-18 02:00:00+00:00
   name: Zoom Q&A Session 10A
   long_name: 'Zoom Q&A Session 10A: Phonology, Morphology and Word Segmentation'
+  zoom_link: https://us02web.zoom.us/j/81887257278?pwd=L3ZwZ1dyZk0yVmRzMllJUEczRE1xdz09
   papers:
   - main.1320
   - main.3563
@@ -923,6 +959,7 @@ z10B:
   end_time: 2020-11-18 02:00:00+00:00
   name: Zoom Q&A Session 10B
   long_name: 'Zoom Q&A Session 10B: Information Extraction'
+  zoom_link: https://us02web.zoom.us/j/83339288117?pwd=RVJGcEJSRGo5T1dBanY4eEwyYmdJZz09
   papers:
   - main.684
   - main.1011
@@ -933,6 +970,7 @@ z10C:
   end_time: 2020-11-18 02:00:00+00:00
   name: Zoom Q&A Session 10C
   long_name: 'Zoom Q&A Session 10C: Machine Translation and Multilinguality'
+  zoom_link: https://us02web.zoom.us/j/87967084160?pwd=UXVHcjR1dUFVWkN1UVpKNlVkY1ptQT09
   papers:
   - main.1552
   - main.2581
@@ -943,6 +981,7 @@ z10D:
   end_time: 2020-11-18 02:00:00+00:00
   name: Zoom Q&A Session 10D
   long_name: 'Zoom Q&A Session 10D: Question Answering'
+  zoom_link: https://us02web.zoom.us/j/83956172458?pwd=L1dIbGtqNHJWVzM5SjcvbHR2VW1sdz09
   papers:
   - main.1580
   - main.1262
@@ -1131,6 +1170,7 @@ z11A:
   end_time: 2020-11-18 09:00:00+00:00
   name: Zoom Q&A Session 11A
   long_name: 'Zoom Q&A Session 11A: Interpretability and Analysis of Models for NLP'
+  zoom_link: https://us02web.zoom.us/j/82106550824?pwd=SlAzMHZHcjQvVkFTc3RxWGN0clltUT09
   papers:
   - main.1970
   - main.616
@@ -1141,6 +1181,7 @@ z11B:
   end_time: 2020-11-18 09:00:00+00:00
   name: Zoom Q&A Session 11B
   long_name: 'Zoom Q&A Session 11B: NLP Applications'
+  zoom_link: https://us02web.zoom.us/j/81075150687?pwd=SmdGR1plOS81WEZPY012RUhhazd1UT09
   papers:
   - main.1231
   - main.3676
@@ -1152,6 +1193,7 @@ z11C:
   end_time: 2020-11-18 09:00:00+00:00
   name: Zoom Q&A Session 11C
   long_name: 'Zoom Q&A Session 11C: Question Answering'
+  zoom_link: https://us02web.zoom.us/j/82529980845?pwd=YnNicFBHOUM2dW1mcTRGdUpjcjRRdz09
   papers:
   - TACL.2129
   - main.315
@@ -1162,6 +1204,7 @@ z11D:
   end_time: 2020-11-18 09:00:00+00:00
   name: Zoom Q&A Session 11D
   long_name: 'Zoom Q&A Session 11D: Semantics: Lexical Semantics'
+  zoom_link: https://us02web.zoom.us/j/87235539709?pwd=QnZtUjdqWFpRUjZseVh3bExwV25LUT09
   papers:
   - main.143
   - main.2349
@@ -1172,6 +1215,7 @@ z12A:
   end_time: 2020-11-18 10:00:00+00:00
   name: Zoom Q&A Session 12A
   long_name: 'Zoom Q&A Session 12A: Dialog and Interactive Systems'
+  zoom_link: https://us02web.zoom.us/j/81431871678?pwd=Wkp6cmhOSk5kWll5RFZPTDZ1Z1RYZz09
   papers:
   - main.407
   - main.3257
@@ -1182,6 +1226,7 @@ z12B:
   end_time: 2020-11-18 10:00:00+00:00
   name: Zoom Q&A Session 12B
   long_name: 'Zoom Q&A Session 12B: Information Extraction'
+  zoom_link: https://us02web.zoom.us/j/89103809569?pwd=dHpGODFFc09Fb3FRNkg0T1lEQXBaUT09
   papers:
   - main.387
   - main.605
@@ -1192,6 +1237,7 @@ z12C:
   end_time: 2020-11-18 10:00:00+00:00
   name: Zoom Q&A Session 12C
   long_name: 'Zoom Q&A Session 12C: Machine Learning for NLP'
+  zoom_link: https://us02web.zoom.us/j/89778699711?pwd=YXBhUElLb3NyR3pFVVNxRDYzMEk5QT09
   papers:
   - main.658
   - main.973
@@ -1204,6 +1250,7 @@ z12D:
   name: Zoom Q&A Session 12D
   long_name: 'Zoom Q&A Session 12D: Sentiment Analysis, Stylistic Analysis, and Argument
     Mining'
+  zoom_link: https://us02web.zoom.us/j/87300792275?pwd=MkxaQnZwenZKK3Z3a2N1a29uRDBVUT09
   papers:
   - main.384
   - main.2094
@@ -1214,6 +1261,7 @@ z13A:
   end_time: 2020-11-18 17:00:00+00:00
   name: Zoom Q&A Session 13A
   long_name: 'Zoom Q&A Session 13A: Discourse and Pragmatics'
+  zoom_link: https://us02web.zoom.us/j/81503783246?pwd=eUM3ZThwT05yUTNLanZzNzRJQ0tKUT09
   papers:
   - main.1972
   - main.2072
@@ -1225,6 +1273,7 @@ z13B:
   end_time: 2020-11-18 17:00:00+00:00
   name: Zoom Q&A Session 13B
   long_name: 'Zoom Q&A Session 13B: NLP Applications'
+  zoom_link: https://us02web.zoom.us/j/82231184127?pwd=bDVFdnJsT3dwZUxtY3FPNE1SQkFHQT09
   papers:
   - main.3573
   - CL.3
@@ -1237,6 +1286,7 @@ z13C:
   name: Zoom Q&A Session 13C
   long_name: 'Zoom Q&A Session 13C: Semantics: Sentence-level Semantics, Textual Inference
     and Other areas'
+  zoom_link: https://us02web.zoom.us/j/85610984916?pwd=RTA2Tjl3OWI3Q21URGJ4YytTYVMvUT09
   papers:
   - main.1957
   - main.2533
@@ -1247,6 +1297,7 @@ z13D:
   end_time: 2020-11-18 17:00:00+00:00
   name: Zoom Q&A Session 13D
   long_name: 'Zoom Q&A Session 13D: Syntax: Tagging, Chunking, and Parsing'
+  zoom_link: https://us02web.zoom.us/j/88478787631?pwd=TmFxTGJzbVc4cllZYmhYVG9yREQwdz09
   papers:
   - CL.1
   - CL.5
@@ -1258,6 +1309,7 @@ z14A:
   end_time: 2020-11-18 18:00:00+00:00
   name: Zoom Q&A Session 14A
   long_name: 'Zoom Q&A Session 14A: Machine Translation and Multilinguality'
+  zoom_link: https://us02web.zoom.us/j/85331513992?pwd=UmdEY01Ja1FjSGxJZFFTdDRiRm1tQT09
   papers:
   - main.522
   - main.2114
@@ -1269,6 +1321,7 @@ z14B:
   end_time: 2020-11-18 18:00:00+00:00
   name: Zoom Q&A Session 14B
   long_name: 'Zoom Q&A Session 14B: Computational Social Science and Social Media'
+  zoom_link: https://us02web.zoom.us/j/83902636901?pwd=SGpCY2o2V0NWYkFsNGpYbUZKa2RQdz09
   papers:
   - main.2510
   - main.3644
@@ -1280,6 +1333,7 @@ z14C:
   end_time: 2020-11-18 18:00:00+00:00
   name: Zoom Q&A Session 14C
   long_name: 'Zoom Q&A Session 14C: Machine Learning for NLP'
+  zoom_link: https://us02web.zoom.us/j/81517071485?pwd=Z3ZxQ1g5UkpBZnFYTTNGQkVicitKUT09
   papers:
   - main.2574
   - TACL.2083
@@ -1290,6 +1344,7 @@ z14D:
   end_time: 2020-11-18 18:00:00+00:00
   name: Zoom Q&A Session 14D
   long_name: 'Zoom Q&A Session 14D: Information Extraction'
+  zoom_link: https://us02web.zoom.us/j/88173630953?pwd=YVlRMFZkMlpYRDMyWi8yMFBURkpDZz09
   papers:
   - main.485
   - main.2570
@@ -1456,6 +1511,7 @@ z15A:
   end_time: 2020-11-19 00:00:00+00:00
   name: Zoom Q&A Session 15A
   long_name: 'Zoom Q&A Session 15A: Information Retrieval and Text Mining'
+  zoom_link: https://us02web.zoom.us/j/89472678477?pwd=ak5mRS9iTmJoMTVER2pndmNJSkUxQT09
   papers:
   - main.666
   - main.989
@@ -1466,6 +1522,7 @@ z15B:
   end_time: 2020-11-19 00:00:00+00:00
   name: Zoom Q&A Session 15B
   long_name: 'Zoom Q&A Session 15B: NLP Applications'
+  zoom_link: https://us02web.zoom.us/j/81887255329?pwd=eXJjdU4vamY1YjFHTkhHWUJRMCt5Zz09
   papers:
   - main.3065
   - main.3438
@@ -1478,6 +1535,7 @@ z15C:
   name: Zoom Q&A Session 15C
   long_name: 'Zoom Q&A Session 15C: Semantics: Sentence-level Semantics, Textual Inference
     and Other areas'
+  zoom_link: https://us02web.zoom.us/j/84690510115?pwd=d3E0eGhLdHZYN2VjY3RSaERCa2lpdz09
   papers:
   - main.2179
   - main.2416
@@ -1489,6 +1547,7 @@ z15D:
   end_time: 2020-11-19 00:00:00+00:00
   name: Zoom Q&A Session 15D
   long_name: 'Zoom Q&A Session 15D: Language Generation'
+  zoom_link: https://us02web.zoom.us/j/86793597701?pwd=RUY3QjJIRER2bjZaNGVJczhCRXNmdz09
   papers:
   - main.2389
   - main.252
@@ -1500,6 +1559,7 @@ z16A:
   end_time: 2020-11-19 01:00:00+00:00
   name: Zoom Q&A Session 16A
   long_name: 'Zoom Q&A Session 16A: Dialog and Interactive Systems'
+  zoom_link: https://us02web.zoom.us/j/82052099070?pwd=S1A0N050SCtqbDlid3JvWEQySU4yQT09
   papers:
   - main.1797
   - main.3318
@@ -1511,6 +1571,7 @@ z16B:
   end_time: 2020-11-19 01:00:00+00:00
   name: Zoom Q&A Session 16B
   long_name: 'Zoom Q&A Session 16B: Interpretability and Analysis of Models for NLP'
+  zoom_link: https://us02web.zoom.us/j/82892354187?pwd=ZFVYUXdKc2luaGNqWmg2UVlCSFgwZz09
   papers:
   - main.638
   - main.2238
@@ -1521,6 +1582,7 @@ z16C:
   end_time: 2020-11-19 01:00:00+00:00
   name: Zoom Q&A Session 16C
   long_name: 'Zoom Q&A Session 16C: Summarization'
+  zoom_link: https://us02web.zoom.us/j/89015037036?pwd=ZHAvb3ExNDFIdXYrckFtUDJncGdKdz09
   papers:
   - main.1835
   - main.2125
