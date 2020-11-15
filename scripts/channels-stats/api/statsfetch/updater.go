@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"os"
 	"sort"
@@ -21,6 +22,7 @@ type channel struct {
 	Name       string `json:"name"`
 	NumMsgs    int    `json:"msgs"`
 	UsersCount int    `json:"usersCount"`
+	Diff       int    `json:"diff"`
 }
 
 type rocketchatAPIResponse struct {
@@ -81,12 +83,12 @@ func getChannelsFromAPI() ([]channel, error) {
 	return allChannels, nil
 }
 
-func initBlacklistGlobs() {
-	backlistGlobs = make([]glob.Glob, 0)
+func readGlobs(filepath string) []glob.Glob {
+	globs := make([]glob.Glob, 0)
 
-	bytesRead, err := ioutil.ReadFile("config/blacklist.txt")
+	bytesRead, err := ioutil.ReadFile(filepath)
 	if err != nil {
-		return
+		return globs
 	}
 
 	fileContent := string(bytesRead)
@@ -95,41 +97,63 @@ func initBlacklistGlobs() {
 		if len(pattern) == 0 {
 			break
 		}
-
-		g := glob.MustCompile(pattern)
-		backlistGlobs = append(backlistGlobs, g)
+		g := glob.MustCompile(strings.TrimSpace(pattern))
+		globs = append(globs, g)
 	}
 
-	fmt.Println("Blacklists:")
-	fmt.Println(backlistGlobs)
-}
-
-func initSourcesGlobs() {
-	sourceGlobs = make([]glob.Glob, 0)
-
-	bytesRead, err := ioutil.ReadFile("config/source_channels.txt")
-	if err != nil {
-		return
-	}
-
-	fileContent := string(bytesRead)
-	lines := strings.Split(fileContent, "\n")
-	for _, pattern := range lines {
-		if len(pattern) == 0 {
-			break
-		}
-
-		g := glob.MustCompile(pattern)
-		sourceGlobs = append(sourceGlobs, g)
-	}
-
-	fmt.Println("Source Channels:")
-	fmt.Println(sourceGlobs)
+	return globs
 }
 
 func initialize() {
-	initSourcesGlobs()
-	initBlacklistGlobs()
+	sourceGlobs = readGlobs("config/source_channels.txt")
+	fmt.Printf("Source Channels[%d]:\n[\n", len(sourceGlobs))
+	for _, g := range sourceGlobs {
+		fmt.Print("\t")
+		fmt.Println(g)
+	}
+	fmt.Println("]")
+
+	backlistGlobs = readGlobs("config/blacklist.txt")
+	fmt.Printf("Blacklist[%d]:\n[\n", len(backlistGlobs))
+	for _, g := range backlistGlobs {
+		fmt.Print("\t")
+		fmt.Println(g)
+	}
+	fmt.Println("]")
+}
+
+func prepareResults(channelScores []ChannelScore) []ChannelScore {
+	// Sort based on the channel score
+	sort.SliceStable(channelScores, func(i, j int) bool {
+		return channelScores[i].Score > channelScores[j].Score
+	})
+
+	// Separate zero and non zero scores
+	chScrsNonZero := make([]ChannelScore, 0)
+	chScrsZero := make([]ChannelScore, 0)
+	for _, cs := range channelScores {
+		if cs.Score == 0 {
+			chScrsZero = append(chScrsZero, cs)
+		} else {
+			chScrsNonZero = append(chScrsNonZero, cs)
+		}
+	}
+
+	// Shuffle channels with a zero score
+	rand.Shuffle(len(chScrsZero), func(i, j int) {
+		chScrsZero[i], chScrsZero[j] = chScrsZero[j], chScrsZero[i]
+	})
+
+	channelScores = append(chScrsNonZero, chScrsZero...)
+
+	max := maxNumChannels
+	if max > len(channelScores) {
+		max = len(channelScores)
+	}
+
+	channelScores = channelScores[:max]
+
+	return channelScores
 }
 
 func update() {
@@ -141,14 +165,14 @@ func update() {
 	}
 
 	fmt.Println("U: " + time.Now().String())
-	newChannels, err := getChannelsFromAPI()
+	allChannels, err := getChannelsFromAPI()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	channelScores := make([]ChannelScore, 0)
-	for _, channelStat := range newChannels {
+	for _, channelStat := range allChannels {
 		isIncluded := false
 		for _, g := range sourceGlobs {
 			isIncluded = isIncluded || g.Match(channelStat.Name)
@@ -167,6 +191,13 @@ func update() {
 
 		oldStat, statExists := id2channel[channelStat.ID]
 		oldScore, scoreExists := id2score[channelStat.ID]
+
+		// Subtract # of users from # of msgs to have a better approximation
+		// since RocketChat counts users joining the channel toward its # of msgs
+		if channelStat.NumMsgs >= channelStat.UsersCount {
+			channelStat.NumMsgs -= channelStat.UsersCount
+		}
+
 		diff := 0
 		if statExists {
 			diff = channelStat.NumMsgs - oldStat.NumMsgs
@@ -177,27 +208,25 @@ func update() {
 		}
 
 		var score float32 = 0.
-		if score < 1 && diff >= 1 {
+		if oldScore < 1. && diff >= 1 {
 			score = float32(diff)
 		} else {
 			score = oldScoreCoeff*oldScore + (1.-oldScoreCoeff)*float32(diff)
 		}
 
+		if score < 0.05 {
+			score = 0.
+		}
+
+		channelStat.Diff = diff
 		channelScores = append(channelScores, ChannelScore{channelStat, score})
 
 		id2channel[channelStat.ID] = channelStat
 		id2score[channelStat.ID] = score
 	}
 
-	sort.SliceStable(channelScores, func(i, j int) bool {
-		return channelScores[i].Score > channelScores[j].Score
-	})
+	channelScores = prepareResults(channelScores)
 
-	max := maxNumChannels
-	if max > len(channelScores) {
-		max = len(channelScores)
-	}
-	channelScores = channelScores[:max]
 	apiResponse := ApiResponse{channelScores, time.Now().Unix()}
 	response, err := json.Marshal(apiResponse)
 	if err != nil {

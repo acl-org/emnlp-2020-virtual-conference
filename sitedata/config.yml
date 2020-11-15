@@ -22,10 +22,10 @@ default_presentation_id: 38931484
 
 # Remove or change to your chat server.
 chat_server: emnlp2020.rocket.chat
+channels_stats_server: http://13.90.35.217:8000
 
 gather_town: https://www.virtualchair.net/events/emnlp2020
 connected_papers_conference_name: EMNLP2020
-
 
 calendar:
   start: '2020-11-16'

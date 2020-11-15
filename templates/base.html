@@ -58,6 +58,7 @@
     />
 
     <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/chats-modal.css" />
     <link rel="stylesheet" href="static/css/lazy_load.css" />
     <link rel="stylesheet" href="static/css/typeahead.css" />
 
@@ -127,13 +128,28 @@
         >
           <ul class="navbar-nav ml-auto">
             {% for href, id in navigation_bar %}
-            <li class="nav-item {% if id == active_page %}active{% endif %}">
-              {% if href.startswith("http") %}
-              <a class="nav-link" href="{{href}}" target="_blank">{{id}}</a>
+              {% if id == "Chat" %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" 
+                      href="{{href}}" target="_blank" id="navbarDropdown" role="button" 
+                      data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Chat
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#chatsModal">
+                      Active Chats
+                    </a>
+                  </div>
+                </li>
               {% else %}
-              <a class="nav-link" href="{{href}}">{{id}}</a>
+                <li class="nav-item {% if id == active_page %}active{% endif %}">
+                  {% if href.startswith("http") %}
+                  <a class="nav-link" href="{{href}}" target="_blank">{{id}}</a>
+                  {% else %}
+                  <a class="nav-link" href="{{href}}">{{id}}</a>
+                  {% endif %}
+                </li>
               {% endif %}
-            </li>
             {% endfor %}
           </ul>
         </div>
@@ -211,5 +227,6 @@
     </script>
     <script src="static/js/lazy_load.js"></script>
     {% endblock %}
+    {% include "highly_active_chats_modal.html" %}
   </body>
 </html>

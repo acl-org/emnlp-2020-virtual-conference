@@ -32,7 +32,7 @@ To run the web server, you need specify some configuratins through environment v
 ```bash
 export SERVER_URL="https://emnlp2020.rocket.chat/"
 export NUM_CHANNEL_TO_SHOW=20   # The API will give you the top N channels. You need to specify N here
-export UPDATE_INTERVAL=5        # The delay between each stats update. The unit for this variable is seconds
+export UPDATE_INTERVAL=900        # The delay between each stats update. The unit for this variable is seconds
 export OLD_SCORE_COEFF=0.8      # The more this value is close to 1, the more active channels remain 
                                 # in the list (even if it is not active anymore)
 ```
