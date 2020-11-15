@@ -89,7 +89,8 @@
     ('workshops.html', 'Workshops'),
     ('socials.html', 'Socials'),
     ('sponsors.html', 'Sponsors'),
-    ('chat.html', 'Chat'),
+    ('http://' + config.chat_server, 'Chat'),
+    (config.gather_town , 'Gather'),
     ('organizers.html', 'Organizers'),
     ('about.html', 'Help'),
     ] -%}
@@ -127,7 +128,11 @@
           <ul class="navbar-nav ml-auto">
             {% for href, id in navigation_bar %}
             <li class="nav-item {% if id == active_page %}active{% endif %}">
+              {% if href.startswith("http") %}
+              <a class="nav-link" href="{{href}}" target="_blank">{{id}}</a>
+              {% else %}
               <a class="nav-link" href="{{href}}">{{id}}</a>
+              {% endif %}
             </li>
             {% endfor %}
           </ul>

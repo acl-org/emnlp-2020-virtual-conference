@@ -37,7 +37,7 @@ def generate_socials():
         ],
     )
     df = df.dropna(subset=["ID"])
-    df = df[:-1]
+    df = df.drop([df.index[-2]])
 
     zoom_df = pd.read_excel(
         PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS, sheet_name="Affinity"
@@ -57,6 +57,7 @@ def generate_socials():
     id_to_organizers = {
         row["ID"]: [e.strip() for e in row["Organizers"].split(",")]
         for _, row in df.iterrows()
+        if row["Organizers"]
     }
     id_to_name = {row["ID"]: row["Event"] for _, row in df.iterrows()}
     id_to_channel = {row["ID"]: row["Channel Name"] for _, row in df.iterrows()}
@@ -122,7 +123,7 @@ def generate_socials():
         for idx, row in df.iterrows():
             name = "S-" + row["Session Name"].strip()
 
-            if uid.startswith("B") and row["Host"]:
+            if (uid.startswith("B") or uid.startswith("M")) and row["Host"]:
                 name = name + " with " + row["Host"]
 
             day = row["Day"]

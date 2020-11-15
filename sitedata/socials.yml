@@ -141,8 +141,8 @@
     start_time: 2020-11-17 20:00:00+00:00
     end_time: 2020-11-17 21:00:00+00:00
   - name: S-Session 2
-    start_time: 2020-11-18 22:00:00+00:00
-    end_time: 2020-11-18 23:00:00+00:00
+    start_time: 2020-11-17 22:00:00+00:00
+    end_time: 2020-11-17 23:00:00+00:00
   - name: S-Session 3
     start_time: 2020-11-18 10:00:00+00:00
     end_time: 2020-11-18 11:00:00+00:00
@@ -426,6 +426,28 @@
   - name: S-Session 2 with Luke Zettlemoyer
     start_time: 2020-11-18 05:00:00+00:00
     end_time: 2020-11-18 06:00:00+00:00
+- name: Open Mentoring sessions
+  description: Mentoring sessions on various topics, open to everyone. Do note that
+    there is a capacity limit of 300.
+  UID: M2
+  organizers:
+    members:
+    - Jack Hessel
+    - Tim Baldwin
+    - Ritwik Banerjee
+    - Steven Bethard
+    - Michael Roth
+    - Yevgeni Berzak
+    - Marzieh Fadaee
+  rocketchat_channel:
+  location: Zoom
+  sessions:
+  - name: S-Session 1 with Jack Hessel, Tim Baldwin, Ritwik Banerjee, Steven Bethard
+    start_time: 2020-11-17 04:00:00+00:00
+    end_time: 2020-11-17 05:00:00+00:00
+  - name: S-Session 2 with Michael Roth, Yevgeni Berzak, Marzieh Fadaee
+    start_time: 2020-11-17 12:00:00+00:00
+    end_time: 2020-11-17 13:00:00+00:00
 - name: Undergraduate Student Panel
   description: A panel designed for undergraduates attending the conference. We assume
     that these participants may be interested in pursuing a graduate degree, so we
