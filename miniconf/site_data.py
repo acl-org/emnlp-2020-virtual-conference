@@ -94,7 +94,6 @@ class PaperContent:
     similar_paper_uids: List[str]
     program: str
     material: str = None
-    s2_id: str = None
 
     def __post_init__(self):
         if self.program != "workshop" and self.program != "findings":
@@ -239,6 +238,7 @@ class Workshop:
     rocketchat_channel: str
     sessions: List[SessionInfo]
     blocks: List[SessionInfo]
+    zoom_links: List[str]
 
 
 @dataclass(frozen=True)
@@ -258,6 +258,7 @@ class SocialEvent:
     sessions: List[SessionInfo]
     rocketchat_channel: str
     website: str
+    zoom_link: str
 
 
 @dataclass(frozen=True)

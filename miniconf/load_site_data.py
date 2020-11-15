@@ -46,8 +46,7 @@ def load_site_data(
         # schedule.html
         "overall_calendar",
         "plenary_sessions",
-        "business_meeting",
-        "review_meeting",
+        "opening_remarks",
         # tutorials.html
         "tutorials",
         # papers.html
@@ -109,10 +108,7 @@ def load_site_data(
     # plenary_sessions.html
     plenary_sessions = build_plenary_sessions(
         raw_plenary_sessions=site_data["plenary_sessions"],
-        raw_plenary_videos={
-            "business_meeting": site_data["business_meeting"],
-            "review_meeting": site_data["review_meeting"],
-        },
+        raw_plenary_videos={"opening_remarks": site_data["opening_remarks"]},
     )
 
     site_data["plenary_sessions"] = plenary_sessions
@@ -286,11 +282,10 @@ def build_plenary_sessions(
                 bio=item.get("bio"),
                 presentation_id=item.get("presentation_id"),
                 rocketchat_channel=item.get("rocketchat_channel"),
-                videos=plenary_videos[item["UID"]]
-                if item["UID"] in ["business_meeting", "review_meeting"]
-                else None,
+                videos=plenary_videos.get(item["UID"]),
             )
         )
+
     return plenary_sessions
 
 
@@ -687,7 +682,6 @@ def build_papers(
                 sessions=sessions_for_paper[item["UID"]],
                 similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
                 program=item["program"],
-                s2_id=item.get("s2_id"),
             ),
         )
         for item in raw_papers
@@ -763,12 +757,14 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             min_start = min([t["start_time"] for t in block])
             max_end = max([t["end_time"] for t in block])
 
+            assert all(s["zoom_link"] == block[0]["zoom_link"] for s in block)
+
             result.append(
                 SessionInfo(
                     session_name=f"T-Live Session {i+1}",
                     start_time=min_start,
                     end_time=max_end,
-                    link="",
+                    link=block[0]["zoom_link"],
                 )
             )
         return result
@@ -852,10 +848,12 @@ def build_workshops(
                         authors=extract_list_field(item, "authors"),
                         track=workshop_title(workshop_id),
                         paper_type="Workshop",
-                        abstract=None,
-                        tldr=None,
+                        abstract=item.get("abstract"),
+                        tldr=item["abstract"][:250] + "..."
+                        if item["abstract"]
+                        else None,
                         keywords=[],
-                        pdf_url=None,
+                        pdf_url=item.get("pdf_url"),
                         demo_url=None,
                         sessions=[],
                         similar_paper_uids=[],
@@ -876,6 +874,7 @@ def build_workshops(
             schedule=item.get("schedule"),
             prerecorded_talks=item.get("prerecorded_talks"),
             rocketchat_channel=item["rocketchat_channel"],
+            zoom_links=item.get("zoom_links", []),
             sessions=[
                 SessionInfo(
                     session_name=session.get("name", ""),
@@ -917,6 +916,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             ],
             rocketchat_channel=item.get("rocketchat_channel", ""),
             website=item.get("website", ""),
+            zoom_link=item.get("zoom_link"),
         )
         for item in raw_socials
     ]

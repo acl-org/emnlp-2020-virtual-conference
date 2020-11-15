@@ -26,8 +26,17 @@ PATH_WORKSHOPS_OVERVIEW = PATH_DOWNLOADS / "workshops.xlsx"
 URL_WORKSHOPS_SCHEDULE = "https://docs.google.com/spreadsheets/d/1BgDuZLKm8rlX-o8l61jAcOrwoKXG6SKhbvjv5-ub2Iw/export?format=xlsx"
 PATH_WORKSHOPS_SCHEDULE = PATH_DOWNLOADS / "workshops_schedule.xlsx"
 
+URL_WORKSHOPS_CSV = "https://raw.githubusercontent.com/emnlp2020/emnlp2020-website/master/src/data/workshops.csv"
+PATH_WORKSHOPS_CSV = PATH_DOWNLOADS / "workshops.csv"
+
 URL_SOCIALS = "https://docs.google.com/spreadsheets/d/1IDk3K1JD1hvH_hvyMy6TeRuE2F6DQDfpgwNpTIP9KgI/export?format=xlsx"
 PATH_SOCIALS = PATH_DOWNLOADS / "socials.xlsx"
+
+URL_ZOOMS_ACCOUNTS_WITH_PASSWORDS = "https://docs.google.com/spreadsheets/d/1QFvG1mOMTJwGXE7Erwbr1XiDoCqkIOxxUYkx0vWyR8s/export?format=xlsx"
+PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS = PATH_DOWNLOADS / "zoom_accounts_with_passwords.xlsx"
+
+URL_ZOOMS_ACCOUNTS_SCHEDULED = "https://docs.google.com/spreadsheets/d/1LTVmbJ2XUnMKM_Tw6UqtuUSxW-roiz_ifJEtX2J7qtE/export?format=xlsx"
+PATH_ZOOM_ACCOUNTS_SCHEDULED = PATH_DOWNLOADS / "zoom_accounts_scheduled.xlsx"
 
 PATH_DOWNLOADS.mkdir(exist_ok=True, parents=True)
 PATH_YAMLS.mkdir(exist_ok=True, parents=True)
@@ -51,7 +60,13 @@ def download_tutorials():
 def download_workshops():
     download_file(URL_WORKSHOPS_OVERVIEW, PATH_WORKSHOPS_OVERVIEW)
     download_file(URL_WORKSHOPS_SCHEDULE, PATH_WORKSHOPS_SCHEDULE)
+    download_file(URL_WORKSHOPS_CSV, PATH_WORKSHOPS_CSV)
 
 
 def download_socials():
     download_file(URL_SOCIALS, PATH_SOCIALS)
+
+
+def download_zooms():
+    download_file(URL_ZOOMS_ACCOUNTS_WITH_PASSWORDS, PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS)
+    download_file(URL_ZOOMS_ACCOUNTS_SCHEDULED, PATH_ZOOM_ACCOUNTS_SCHEDULED)

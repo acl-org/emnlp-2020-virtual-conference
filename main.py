@@ -12,7 +12,6 @@ from miniconf.site_data import Paper, PlenarySession, Tutorial, Workshop
 
 site_data: Dict[str, Any] = {}
 by_uid: Dict[str, Any] = {}
-qa_session_length_hr = 1
 
 # ------------- SERVER CODE -------------------->
 

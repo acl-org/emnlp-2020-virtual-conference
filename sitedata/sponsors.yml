@@ -9,15 +9,15 @@
   contacts:
   - name: Trung Bui
     email: bui@adobe.com
-  zoom_link:
   schedule:
-  - start: 2020-11-18 04:00:00
+  - start: 2020-11-17 20:00:00-08:00
     duration: 1.0
     label: NLP Research at Adobe
   downloads:
   - label: Adobe Research @ EMNLP 2020
     website: adobe_research_publications_emnlp_2020.pdf
   rocketchat_channel: sponsor-adobe
+  zoom_link: https://us02web.zoom.us/j/9525376582?pwd=QUNIZGVkVkRWTGtUV29JbGpuK3VrUT09
 - name: Amazon
   level: Diamond
   logo: amazon.png
@@ -33,10 +33,8 @@
   contacts:
   - name: Amazon EMNLP Team
     email: emnlp2020@amazon.com
-  zoom_link: Zoom link and time to be decided in coordination with EMNLP Organizing
-    Committee
   schedule:
-  - start: 2020-11-19 16:00:00
+  - start: 2020-11-19 12:00:00-04:00
     duration: 1.25
     label: NLP & Conversational AI at Amazon - Panel Discussion and Q&A
   resources:
@@ -50,6 +48,7 @@
   - label: Amazon Research Brochure
     website: Research Brochure - EMNLP 2020.pdf
   rocketchat_channel: sponsor-amazon
+  zoom_link: https://us02web.zoom.us/j/4104890373?pwd=Wk9Bd1lSeDdPMk1IeEtuZGFmd2FVUT09
 - name: Apple
   level: Diamond
   logo: apple.png
@@ -60,7 +59,7 @@
   youtube: https://www.youtube.com/embed/vfkOZTjD06Y
   zoom_link: https://appleinc.webex.com/appleinc/onstage/g.php?MTID=ebeef7337dbef265460fe648f08c716d3
   schedule:
-  - start: 2020-11-18 20:00:00
+  - start: 2020-11-18 13:00:00-07:00
     duration: 0.5
     label: Meet Apple Virtual Event
   resources:
@@ -71,9 +70,9 @@
   - label: Learn more about our publications at EMNLP
     website: https://machinelearning.apple.com/updates/apple-at-emnlp-2020
   - label: Apply to full-time roles
-    website: bit.ly/apple-emnlp2020
+    website: https://bit.ly/apple-emnlp2020
   - label: Apply to internship roles
-    website: bit.ly/apple-emnlp2020-intern
+    website: https://bit.ly/apple-emnlp2020-intern
   downloads:
   - label: Job Card
     website: Apple- EMNLP Job Card.pdf
@@ -114,35 +113,36 @@
   - label: Products and Services
     website: babelscape-resource-brochure_allproducts_1_.pdf
   schedule:
-  - start: 2020-11-16 16:00:00
+  - start: 2020-11-16 17:00:00+01:00
     duration: 1
     label: 'WordAtlas: the largest multilingual semantic network, encyclopedic dictionary
       and knowledge repository for multilingual applications'
-  - start: 2020-11-16 17:00:00
+  - start: 2020-11-16 18:00:00+01:00
     duration: 1
     label: 'NLP pipeline: a full-fledged multilingual natural language pipeline'
-  - start: 2020-11-17 09:00:00
+  - start: 2020-11-17 10:00:00+01:00
     duration: 1
     label: 'Comprehendo: multilingual word sense disambiguation and entity linking'
-  - start: 2020-11-17 12:00:00
+  - start: 2020-11-17 13:00:00+01:00
     duration: 1
     label: 'Extraggo: extracting the key concepts and entities from text and connecting
       them to a multilingual knowledge graph'
-  - start: 2020-11-17 16:00:00
+  - start: 2020-11-17 17:00:00+01:00
     duration: 1
     label: 'NLP pipeline: a full-fledged multilingual natural language pipeline'
-  - start: 2020-11-18 09:00:00
+  - start: 2020-11-18 10:00:00+01:00
     duration: 1
     label: 'WordAtlas: the largest multilingual semantic network, encyclopedic dictionary
       and knowledge repository for multilingual applications'
-  - start: 2020-11-18 10:00:00
+  - start: 2020-11-18 11:00:00+01:00
     duration: 1
     label: 'Extraggo: extracting the key concepts and entities from text and connecting
       them to a multilingual knowledge graph'
-  - start: 2020-11-18 16:00:00
+  - start: 2020-11-18 17:00:00+01:00
     duration: 1
     label: 'Comprehendo: multilingual word sense disambiguation and entity linking'
   rocketchat_channel: sponsor-babelscape
+  zoom_link: https://us02web.zoom.us/j/5693515745?pwd=bUdHdkVnQkd3R2tDeHR3Qi96UHA3Zz09
 - name: Baidu
   level: Platinum
   logo: baidu.png
@@ -156,18 +156,17 @@
     email: caiqianwei@baidu.com
   - name: Yue Chang
     email: changyue@baidu.com
-  zoom_link: After the schedule
   schedule:
-  - start: 2020-11-17 03:00:00
+  - start: 2020-11-17 03:00:00+00:00
     duration: 1
     label: Chat with Baidu Researchers and Recruiters
-  - start: 2020-11-17 08:00:00
+  - start: 2020-11-17 08:00:00+00:00
     duration: 1
     label: Chat with Baidu Researchers and Recruiters
-  - start: 2020-11-18 03:00:00
+  - start: 2020-11-18 03:00:00+00:00
     duration: 1
     label: Chat with Baidu Researchers and Recruiters
-  - start: 2020-11-18 08:00:00
+  - start: 2020-11-18 08:00:00+00:00
     duration: 1
     label: Chat with Baidu Researchers and Recruiters
   resources:
@@ -194,11 +193,12 @@
   - main.2818
   - main.110
   - main.3621
-  - findings.279
-  - findings.384
-  - findings.419
-  - findings.414
+  - findings.35
+  - findings.444
+  - findings.73
+  - findings.69
   rocketchat_channel: sponsor-baidu
+  zoom_link: https://us02web.zoom.us/j/4301994498?pwd=UzRTSkFQUlVGOTIrVFgvaGFFQnZhZz09
 - name: Bloomberg
   level: Diamond
   logo: bloomberg.png
@@ -225,6 +225,7 @@
   - name: Chevonne Ortiz
     email: cortiz20@bloomberg.net
   rocketchat_channel: sponsor-bloomberg
+  zoom_link: https://us02web.zoom.us/j/8948229064?pwd=dlM2cCtCM1cyVjFPWEFhQW5ST3hRZz09
 - name: ByteDance
   level: Gold
   logo: bytedance.png
@@ -240,6 +241,10 @@
   - main.3635
   - main.3688
   - main.158
+  - findings.441
+  - findings.115
+  - WS-2.59
+  - WS-2.2
   resources:
   - label: Career opportunities
     website: https://drive.google.com/file/d/1cxQ0QBMO2PX4knbhMI3RSCVQciQdS585/view?usp=sharing
@@ -248,6 +253,7 @@
   - label: Joint Research
     website: https://drive.google.com/file/d/1_1XeJn-LgWbcpIiXMiIZKw_SCj36p_La/view?usp=sharing
   rocketchat_channel: sponsor-bytedance
+  zoom_link: https://us02web.zoom.us/j/2786437534?pwd=T2VMSGZEUGtJY1loRDlHQUROYWlPdz09
 - name: DeepMind
   levels:
   - Platinum
@@ -269,12 +275,11 @@
     email: amybwu@google.com
   - name: General Enquiries / Resume Drop
     email: dm-emnlp-2020-enquiries@google.com
-  zoom_link:
   gather_schedule:
-  - start: 2020-11-16 17:00:00
+  - start: 2020-11-16 17:00:00+00:00
     duration: 1.0
     label: Chat with the DeepMind Language Team
-  - start: 2020-11-17 17:00:00
+  - start: 2020-11-17 17:00:00+00:00
     duration: 1.0
     label: Chat with the DeepMind Language Team
   downloads:
@@ -289,6 +294,7 @@
   - label: Careers Leaflet - Science and DeepMind for Google
     website: DeepMind_Science-and-DeepMind-for-Google.pdf
   rocketchat_channel: sponsor-deepmind
+  zoom_link: https://us02web.zoom.us/j/8516356683?pwd=cDlPZTFWN1grdXpqN1dRZndLTXduZz09
 - name: Facebook
   level: Platinum
   logo: facebook.jpg
@@ -315,30 +321,20 @@
     \ to our globally based teams. For information about open roles and how to apply,\
     \ please visit https://ai.facebook.com/join-us/\""
   youtube: https://www.youtube.com/embed/eiqUzieHu8o
-  contacts:
-  - name: Name of the contact 1
-    email: mail1@example.com
-  - name: Name of the contact 2
-    email: mail2@example.com
-  zoom_link: https://waitforsecondround.example.com
-  schedule:
-  - start: 2020-07-07 17:00:00
-    duration: 0.5
-    label: You can leave this empty until round two
   resources:
   - label: RECRUITMENT SCHEDULE
     website: https://docs.google.com/document/d/1N3HfH4zUODZjzfHvBmm3hsJOrrjeN1P-8OuNA3n9V10/edit?usp=sharing
-  downloads:
   - label: JOB CARD
     website: Facebook-Job_Card.pdf
   rocketchat_channel: sponsor-facebook
+  zoom_link: https://us02web.zoom.us/j/6908152693?pwd=bVBYREhwNzZkMDNReHVyU1dUMTJiUT09
 - name: Google Research
   level: Diamond
   logo: google_research.png
   logoontop: true
   website: http://goo.gle/EMNLP-Homepage
   description: |
-    Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our [Accepted Papers](http://goo.gle/EMNLP-Accepted-Papers) and [Workshops and Tutorials](http://goo.gle/EMNLP-Workshops-Tutorials). Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our [Google AI blog](https://ai.googleblog.com/) and [Google Research website](https://research.google/).
+    Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our [Accepted Papers](https://goo.gle/EMNLP-Accepted-Papers) and [Workshops and Tutorials](https://goo.gle/EMNLP-Workshops-Tutorials). Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our [Google AI blog](https://ai.googleblog.com/) and [Google Research website](https://research.google/).
   youtube: https://www.youtube.com/embed/EvfziohbbnE
   zoom_link: https://meet.google.com/ugx-seds-jpt
   schedule:
@@ -393,21 +389,20 @@
     email: dana.schafer@grammarly.com
   - name: Chad Mills
     email: chad.mills@grammarly.com
-  zoom_link:
   schedule:
-  - start: 2020-11-16 18:00:00
+  - start: 2020-11-16 10:00:00-08:00
     duration: 1
     label: 'Live Q&A: Learn more about how the team is growing with Grammarly technical
       recruiter Dana Schafer'
-  - start: 2020-11-17 18:00:00
+  - start: 2020-11-17 10:00:00-08:00
     duration: 1
     label: "Live Q&A: Learn more about the day-to-day on Grammarly\u2019s computational\
       \ linguistics team with Masha Ivenskaya"
-  - start: 2020-11-17 20:00:00
+  - start: 2020-11-17 12:00:00-08:00
     duration: 1
     label: "Paper presentation: Vipul Raheja will present his paper \u201CAdversarial\
       \ Grammatical Error Correction,\u201D followed by a Q&A session"
-  - start: 2020-11-18 18:00:00
+  - start: 2020-11-18 10:00:00-08:00
     duration: 1
     label: "Live Q&A: Learn more about the day-to-day on Grammarly\u2019s research\
       \ team with Chad Mills, Grammarly\u2019s manager of applied research and engineering"
@@ -426,6 +421,7 @@
   - label: Adversarial Grammatical Error Correction
     website: grammarly_paper.pdf
   rocketchat_channel: sponsor-grammarly
+  zoom_link: https://us02web.zoom.us/j/6934399329?pwd=UTRoL3hia29GMHNkaFhPQ2dBU2hNdz09
 - name: Hitachi, Ltd
   level: Silver
   logo: hitachi.png
@@ -439,7 +435,6 @@
   contacts:
   - name: Yuko Tamura
     email: rdg.recruit@rdgml.intra.hitachi.co.jp
-  zoom_link:
   schedule:
   - start: 2020-07-07 17:00:00
     duration: 0.5
@@ -451,6 +446,7 @@
   - label: Recuitment Flyers
     website: Hitachi_R_D_Recruit_2020.pdf
   rocketchat_channel: sponsor-hitachi
+  zoom_link: https://us02web.zoom.us/j/8208787597?pwd=dzVyTmExZUNLaDZYdUlydDdmQlFQUT09
 - name: ISI
   level: Bronze
   logo: isi.png
@@ -458,6 +454,7 @@
   channel: example_sponsor
   landingpage: https://www.isi.edu/
   rocketchat_channel: sponsor-isi
+  zoom_link: https://us02web.zoom.us/j/6976149518?pwd=Wk9XbDA4ODNpem1VUjVWYndNRlBCUT09
 - name: Megagon Labs
   level: Platinum
   logo: megagon.png
@@ -475,11 +472,18 @@
     email: makiko@megagon.ai
   - name: Vivian Li
     email: vivian@megagon.ai
-  zoom_link:
   schedule:
-  - start:
-    duration:
-    label:
+  - start: 2020-11-17 12:00:00-08:00
+    duration: 0.5
+    label: Meet our Researchers
+  - start: 2020-11-17 12:30:00-08:00
+    duration: 0.5
+    label: 'Discussion about Ruler: Data Programming by Demonstration for Document
+      Labeling'
+  gather_schedule:
+  - start: 2020-11-16 12:00:00-08:00
+    duration: 3
+    label: Meet Megagon Labs at GatherTown
   resources:
   - label: Megagon Labs
     website: https://megagon.ai/
@@ -489,8 +493,9 @@
     website: https://megagon.ai/publications/
   publications:
   - main.595
-  - findings.92
+  - findings.181
   rocketchat_channel: sponsor-megagon-labs
+  zoom_link: https://us02web.zoom.us/j/4214315981?pwd=K3JHVTMxUFFQU0M3bmJiRWo3SmZWZz09
 - name: NAVER
   level: Silver
   logo: naver.jpg
@@ -504,7 +509,6 @@
     email: dl_info@naverlabs.com
   - name: NAVER (Korea)
     email: dl_nlp_emnlp_2020@navercorp.com
-  zoom_link: https://waitforsecondround.example.com
   schedule:
   - start: 2020-11-18 09:00:00
     end: 2020-11-18 09:45:00
@@ -523,6 +527,7 @@
   - label: Overview of NAVER and NAVER LABS Europe
     website: https://europe.naverlabs.com/emnlp2020/#1604669457089-576c9a34-2233
   rocketchat_channel: sponsor-naver
+  zoom_link: https://us02web.zoom.us/j/3306875999?pwd=TkhHMGNyVXJSWXN0T1drVU8rajNzUT09
 - name: Salesforce
   level: Silver
   logo: salesforce.png
@@ -538,12 +543,35 @@
   - name: Caitlin McCauley
     email: cmccauley@salesforce.com
   schedule:
-  - start: 2020-11-17 22:00:00
+  - start: 2020-11-17 14:00:00-08:00
     duration: 0.833
     label: '[Spotlight on Salesforce @ EMNLP](https://lnkd.in/gXs_-k5)'
-  - start: 2020-11-19 00:00:00
+  - start: 2020-11-18 16:00:00-08:00
     duration: 0.833
     label: '[Salesforce Research Interns @ EMNLP Panel](https://lnkd.in/gAneh35)'
+  gather_schedule:
+  - start: 2020-11-16 12:00:00-08:00
+    duration: 2
+    label: Meet Salesforce at Gather.Town
+  - start: 2020-11-17 08:00:00-08:00
+    duration: 2
+    label: Meet Salesforce at Gather.Town
+  - start: 2020-11-18 17:00:00-08:00
+    duration: 2
+    label: Meet Salesforce at Gather.Town
+  - start: 2020-11-19 12:00:00-08:00
+    duration: 2
+    label: Meet Salesforce at Gather.Town
+  downloads:
+  - label: About Salesforce Research
+    website: Salesforce_Research.pdf
+  - label: Accepted Papers at EMNLP
+    website: Salesforce_EMNLP.pdf
+  - label: Join our AI Research Team
+    website: Salesforce_Recruiting.pdf
+  resources:
+  - label: 'IntEx-SemPar: 1st Workshop on Interactive and Executable Semantic Parsing'
+    website: https://virtual.2020.emnlp.org/workshop_WS-6.html
   publications:
   - main.2342
   - main.1201
@@ -558,7 +586,11 @@
   - main.3217
   - main.517
   - main.3393
+  - findings.438
+  - findings.400
+  - findings.303
   rocketchat_channel: sponsor-salesforce
+  zoom_link: https://us02web.zoom.us/j/2733496946?pwd=SmZOL0hNczBTR3k4Y2RCVDNMcGZ1Zz09
 - name: Zeta Alpha
   level: Gold
   logo: zeta-alpha.png
@@ -579,35 +611,35 @@
     email: castella@zeta-alpha.com
   - name: Victor Zuanazzi
     email: zuanazzi@zeta-alpha.com
-  zoom_link: https://waitforsecondround.example.com
   schedule:
-  - start: 2020-11-16 14:00:00
-    end: 2020-11-16 14:30:00
+  - start: 2020-11-16 15:00:00+01:00
+    end: 2020-11-16 15:30:00+01:00
     label: Meet Zeta Alpha @ EMNLP
-  - start: 2020-11-17 12:30:00
-    end: 2020-11-17 13:00:00
+  - start: 2020-11-17 13:30:00+01:00
+    end: 2020-11-17 14:00:00+01:00
     label: Introduction to Zeta Alpha - How to keep up with AI and NLP research?
-  - start: 2020-11-17 14:00:00
-    end: 2020-11-17 14:30:00
+  - start: 2020-11-17 15:00:00+01:00
+    end: 2020-11-17 15:30:00+01:00
     label: Demo AI Research Navigator - Exploring trends in NLP
-  - start: 2020-11-18 10:00:00
-    end: 2020-11-18 10:30:00
+  - start: 2020-11-18 11:00:00+01:00
+    end: 2020-11-18 11:30:00+01:00
     label: Introduction to Zeta Alpha - How to keep up with AI and NLP research?
-  - start: 2020-11-18 12:30:00
-    end: 2020-11-18 13:00:00
+  - start: 2020-11-18 13:30:00+01:00
+    end: 2020-11-18 14:00:00+01:00
     label: Demo AI Research Navigator - Exploring trends in NLP
-  - start: 2020-11-18 20:00:00
-    end: 2020-11-18 21:30:00
+  - start: 2020-11-18 21:00:00+01:00
+    end: 2020-11-18 22:30:00+01:00
     label: Zeta Alpha - EMNLP Tropical Party - Drinks on the Beach
   gather_schedule:
-  - start: 2020-11-17 09:00:00
-    end: 2020-11-17 15:00:00
+  - start: 2020-11-17 10:00:00+01:00
+    end: 2020-11-17 16:00:00+01:00
     label: Meet Zeta Alpha at Gather.Town
-  - start: 2020-11-18 09:00:00
-    end: 2020-11-18 15:00:00
+  - start: 2020-11-18 10:00:00+01:00
+    end: 2020-11-18 16:00:00+01:00
     label: Meet Zeta Alpha at Gather.Town
   downloads:
   - label: A New Neural Search and Insights Platform for Navigating and Organizing
       AI Research
     website: zeta_alpha_EMNLP_2020_ack_link.pdf
   rocketchat_channel: sponsor-zeta-alpha
+  zoom_link: https://us02web.zoom.us/j/7768908976?pwd=WDlXOGh6anc2N3RSTHNkbmg4WjFsZz09

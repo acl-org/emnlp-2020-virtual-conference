@@ -60,14 +60,12 @@ body {
 
 .pp-card {
   font-family: "Lato";
-  box-shadow: 0 0 14px 0 rgba(204, 204, 204, 1);
   margin-bottom: 1em;
   display: block;
   overflow: hidden;
 }
 
 .pp-card-header {
-  border: 4px solid #eee;
   font-family: "Lato";
   height: 340px;
   padding-top: 10px;
@@ -144,6 +142,10 @@ body .nav-pills .nav-link.active {
   border-top: none !important;
   text-align: right;
   padding-bottom: 1.3em;
+}
+
+#calendar {
+  margin-top: 20px;
 }
 
 .card-footer .btn-warning {
@@ -606,4 +608,49 @@ div#papers_options > div {
   .bottom-bar {
     margin-bottom: 1em;
   }
+}
+
+.stats-channel {
+  margin-bottom: 0.7em;
+}
+
+.stats-channel-name {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 3px;
+}
+
+.stats-channel-name a {
+  color: black;
+  border-radius: 3px;
+}
+
+.stats-channel-name a:hover {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.stats-channel-info {
+  font-size: 0.8em;
+}
+
+.stats-last-update {
+  font-size: 0.9em;
+}
+
+.navbar-nav li:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-toggle::after {
+  transition: transform 0.15s linear;
+}
+
+.show.dropdown .dropdown-toggle::after {
+  transform: translateY(3px);
+}
+
+.dropdown-menu {
+  margin-top: 0;
 }

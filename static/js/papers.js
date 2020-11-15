@@ -600,21 +600,28 @@ const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
 const author_html = author => `<a href="papers.html?program=all&filter=authors&search=${author}">${author}</a>`;
 
 const card_image = (openreview, show) => {
-    if (show) return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" onerror="javascript:this.src=''" width="80%"/></center>`
+    if (show && openreview.card_image_path && openreview.card_image_path !== '') return ` <center><img class="lazy-load-img cards_img card-img" data-src="${openreview.card_image_path}" onerror="javascript:this.onerror=null;this.src=''" width="80%"/></center>`
     else return ''
 };
 
 
 const card_detail = (openreview, show) => {
-    if (show)
-        return ` 
-        <br/>
-        <p class="card-text"> ${openreview.content.tldr}</p>
-        <p class="card-text"><span class="font-weight-bold">Keywords:</span>
-            ${openreview.content.keywords.map(keyword).join(', ')}
-        </p>
-`
-    else return ''
+    if (show) {
+        let str = ''
+        if (openreview.content.tldr && openreview.content.tldr != '')
+            str += `<br/><p class="card-text"> ${openreview.content.tldr}</p>`
+        
+        if (openreview.content.keywords 
+            && (openreview.content.keywords.length > 1 
+                || openreview.content.keywords.length == 1 && openreview.content.keywords[0] !== ""))
+            str += `<p class="card-text"><span class="font-weight-bold">Keywords:</span>
+                ${openreview.content.keywords.map(keyword).join(', ')}
+            </p>`
+        
+        return str
+    } else {
+        return ''
+    }
 };
 
 const card_fav_btn_html = (is_fav) => {
