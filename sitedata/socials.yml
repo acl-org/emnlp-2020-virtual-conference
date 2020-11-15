@@ -127,7 +127,7 @@
   description: 'The goal is to recreate an important part of any conference: Getting
     to know new people with interests that are similar to yours. All registered EMNLP
     2020 attendees are welcome, no matter where you are or how much experience you
-    have with NLP. Please register before Noon UTC on Monday.'
+    have with NLP. *You must register before 11pm UTC on Monday to attend*.'
   UID: A7
   organizers:
     members:
@@ -427,8 +427,8 @@
     start_time: 2020-11-18 05:00:00+00:00
     end_time: 2020-11-18 06:00:00+00:00
 - name: Open Mentoring sessions
-  description: Mentoring sessions on various topics, open to everyone. Do note that
-    there is a capacity limit of 300.
+  description: Mentoring sessions on various topics, open to everyone (do note that
+    there is a capacity limit of 300).
   UID: M2
   organizers:
     members:
@@ -439,15 +439,23 @@
     - Michael Roth
     - Yevgeni Berzak
     - Marzieh Fadaee
+    - Noah Smith
+    - Mohit Bansal
   rocketchat_channel:
   location: Zoom
   sessions:
   - name: S-Session 1 with Jack Hessel, Tim Baldwin, Ritwik Banerjee, Steven Bethard
     start_time: 2020-11-17 04:00:00+00:00
     end_time: 2020-11-17 05:00:00+00:00
+    link: https://us02web.zoom.us/j/85167531611?pwd=emxIemJwems2RFVRMDQyY2VFVmFQQT09
   - name: S-Session 2 with Michael Roth, Yevgeni Berzak, Marzieh Fadaee
     start_time: 2020-11-17 12:00:00+00:00
     end_time: 2020-11-17 13:00:00+00:00
+    link: https://us02web.zoom.us/j/81448433082?pwd=UEdmMERLN1piM25YeUVWck5rZjd0QT09
+  - name: S-Session 3 with Noah Smith, Mohit Bansal
+    start_time: 2020-11-18 20:00:00+00:00
+    end_time: 2020-11-18 21:00:00+00:00
+    link: https://us02web.zoom.us/j/84632095944?pwd=STdkUUI3bEhJUG8rWk5LTEdxaGtBdz09
 - name: Undergraduate Student Panel
   description: A panel designed for undergraduates attending the conference. We assume
     that these participants may be interested in pursuing a graduate degree, so we

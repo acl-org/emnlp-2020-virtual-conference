@@ -46,7 +46,21 @@
           <div class="m-3 text-muted text-center">
           {{session.session}}
           <span class="session_times">{{session.time_string}}</span>
-
+          {% if session.link %}
+            <div>
+            <a href="{{session.link}}" target="_blank"  class="card-link">
+              <!--
+              <img
+                  src="static/images/zoom-icon.png"
+                  height="24px"
+                  alt="Join Zoom Meeting"
+                  title="Join Zoom Meeting"
+              >
+              -->
+              [Join Meeting]
+            </a>
+            </div>
+          {% endif %}
             <div class="text-center text-muted text-monospace">
               <div class="paper-cal-links">
                 <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
