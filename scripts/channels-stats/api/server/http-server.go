@@ -17,5 +17,5 @@ func RunServer() {
 	http.HandleFunc("/stats.json", stats)
 
 	fmt.Println("Starting the http server on http://0.0.0.0:8000/stats.json ...")
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":80", nil)
 }
