@@ -306,10 +306,12 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
 
     abstracts = []
     urls = []
-    for uid in UIDs:
+    for i, uid in enumerate(UIDs):
         if uid in uid_to_anthology_paper:
             paper = uid_to_anthology_paper[uid]
             abstracts.append(paper.abstract)
+            authors[i] = paper.authors
+            titles[i] = paper.title
             urls.append(paper.link)
         else:
             abstracts.append("")
