@@ -191,6 +191,13 @@ func update() {
 
 		oldStat, statExists := id2channel[channelStat.ID]
 		oldScore, scoreExists := id2score[channelStat.ID]
+
+		// Subtract # of users from # of msgs to have a better approximation
+		// since RocketChat counts users joining the channel toward its # of msgs
+		if channelStat.NumMsgs >= channelStat.UsersCount {
+			channelStat.NumMsgs -= channelStat.UsersCount
+		}
+
 		diff := 0
 		if statExists {
 			diff = channelStat.NumMsgs - oldStat.NumMsgs
@@ -201,7 +208,7 @@ func update() {
 		}
 
 		var score float32 = 0.
-		if score < 1. && diff >= 1 {
+		if oldScore < 1. && diff >= 1 {
 			score = float32(diff)
 		} else {
 			score = oldScoreCoeff*oldScore + (1.-oldScoreCoeff)*float32(diff)
