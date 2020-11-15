@@ -468,7 +468,6 @@ def generate_paper_events(site_data: Dict[str, Any]):
         # Sessions are suffixd with subsession id
         all_grouped[uid[:-1]].append(session)
 
-    # Compute start and end of tutorial blocks
     for uid, group in all_grouped.items():
         start_time = group[0]["start_time"]
         end_time = group[0]["end_time"]
@@ -476,6 +475,9 @@ def generate_paper_events(site_data: Dict[str, Any]):
         assert all(s["end_time"] == end_time for s in group)
 
         number = uid[1:]
+        tab_id = (
+            start_time.astimezone(pytz.utc).strftime("%b %d").replace(" ", "").lower()
+        )
 
         if uid.startswith("z"):
             name = f"Zoom Q&A Session {number}"
@@ -489,7 +491,7 @@ def generate_paper_events(site_data: Dict[str, Any]):
             "start": start_time,
             "end": end_time,
             "location": "",
-            "link": f"qa_sessions.html#{uid}",
+            "link": f"qa_sessions.html#tab-{tab_id}",
             "category": "time",
             "type": "QA Sessions",
             "view": "week",

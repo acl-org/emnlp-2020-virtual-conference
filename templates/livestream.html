@@ -16,7 +16,7 @@
 
 {% block content %}
 
-{% set livestream_id = '42' %}
+{% set livestream_id = '38942825' %}
 {% set cart_url = "https://www.streamtext.net/text.aspx?event=EMNLPCONFERENCE" %}
 
 <div id="live container">
@@ -27,7 +27,7 @@
       </a>
       and
       <a href="{{ cart_url }}" target="_blank">
-        captions (for Q&A)
+        captions (for panels only)
       </a>
       below
       in separate windows.
@@ -72,8 +72,8 @@
     </div>
     </div>
 
-    {% set text_show = "Show Live Captioning (Only available for Q&A)" %}
-    {% set text_hide = "Hide Live Captioning (Only available for Q&A)" %}
+    {% set text_show = "Show Live Captioning (Only available for panel discussions)" %}
+    {% set text_hide = "Hide Live Captioning (Only available for panel discussions)" %}
     <p class="text-center">
       <a id="toggleCaption"
          class="btn btn-danger"
