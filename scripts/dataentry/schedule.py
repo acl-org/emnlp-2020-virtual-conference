@@ -25,10 +25,10 @@ def build_plenary():
 
     slideslive = pd.read_csv(PATH_SLIDESLIVE_OTHER)
 
-    author_to_presentatiod_id = {
-        row["Speakers"]: row["SlidesLive link"].replace("https://slideslive.com/", "")
-        for _, row in slideslive.iterrows()
-    }
+    # author_to_presentatiod_id = {
+    #     row["Speakers"]: row["SlidesLive link"].replace("https://slideslive.com/", "")
+    #     for _, row in slideslive.iterrows()
+    # }
 
     keynote_map = {
         "Keynote I": "Claire Cardie",
@@ -107,18 +107,17 @@ def build_plenary():
         elif uid == "ethics_panel_discussion":
             event["presenter"] = ", ".join(
                 [
-                    "Mona Diab",
                     "Emily Bender",
                     "Rosie Campbell",
                     "Allan Dafoe",
                     "Pascale Fung",
                     "Meg Mitchell",
-                    "Saif Muhammad",
+                    "Saif Mohammad",
                 ]
             )
             event[
                 "abstract"
-            ] = "Publishing in an era of Responsible AI: How can NLP be proactive? Considerations and Implications"
+            ] = "Publishing in an era of Responsible AI: How can NLP be proactive? Considerations and Implications. Moderated by Mona Diab."
 
         plenary.append(event)
 

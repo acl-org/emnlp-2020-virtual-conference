@@ -529,86 +529,86 @@
   - start_time: 2020-11-19 08:15:00-08:00
     end_time: 2020-11-19 08:30:00-08:00
     name: Opening Remarks
-    hosts: TBD
+    hosts: Victor Zhong, Victoria Lin, Rui Zhang
   - start_time: 2020-11-19 08:30:00-08:00
     end_time: 2020-11-19 09:30:00-08:00
     name: 'Invited Talk: Jacob Andreas'
-    hosts: TBD
+    hosts: Ben Bogin
   - start_time: 2020-11-19 09:30:00-08:00
     end_time: 2020-11-19 10:30:00-08:00
     name: 'Invited Talk: Jonathan Berant'
-    hosts: TBD
+    hosts: Ben Bogin
   - start_time: 2020-11-19 10:30:00-08:00
     end_time: 2020-11-19 10:50:00-08:00
     name: Break
-    hosts: TBD
+    hosts: N/A
   - start_time: 2020-11-19 10:50:00-08:00
     end_time: 2020-11-19 11:00:00-08:00
     name: Learning Adaptive Language Interfaces through Decomposition
-    hosts: TBD
+    hosts: Rui Zhang
   - start_time: 2020-11-19 11:00:00-08:00
     end_time: 2020-11-19 11:10:00-08:00
     name: Improving Sequence-to-Sequence Semantic Parser for Task Oriented Dialog
-    hosts: TBD
+    hosts: Rui Zhang
   - start_time: 2020-11-19 11:10:00-08:00
     end_time: 2020-11-19 11:20:00-08:00
     name: Uncertainty and Traffic-Aware Active Learning for Semantic Parsing
-    hosts: TBD
+    hosts: Rui Zhang
   - start_time: 2020-11-19 11:20:00-08:00
     end_time: 2020-11-19 11:30:00-08:00
     name: Did You Ask a Good Question? A Cross-Domain Question Intention Classification
       Benchmark for Text-to-SQL
-    hosts: TBD
+    hosts: Rui Zhang
   - start_time: 2020-11-19 11:30:00-08:00
     end_time: 2020-11-19 12:30:00-08:00
     name: 'Invited Talk: Yoav Artzi'
-    hosts: TBD
+    hosts: Rui Zhang
   - start_time: 2020-11-19 12:30:00-08:00
     end_time: 2020-11-19 13:30:00-08:00
     name: Poster Presentation in gather.town
-    hosts: TBD
+    hosts: N/A
   - start_time: 2020-11-19 13:30:00-08:00
     end_time: 2020-11-19 14:30:00-08:00
     name: "Invited Talk: Dilek Hakkani-T\xFCr"
-    hosts: TBD
+    hosts: Victoria Lin
   - start_time: 2020-11-19 14:30:00-08:00
     end_time: 2020-11-19 14:40:00-08:00
     name: 'QA2Explanation: Generating and Evaluating Explanations for Question Answering
       Systems over Knowledge Graph'
-    hosts: TBD
+    hosts: Victoria Lin
   - start_time: 2020-11-19 14:40:00-08:00
     end_time: 2020-11-19 14:50:00-08:00
     name: 'ColloQL: Robust Text-to-SQL Over Search Queries'
-    hosts: TBD
+    hosts: Victoria Lin
   - start_time: 2020-11-19 14:50:00-08:00
     end_time: 2020-11-19 15:00:00-08:00
     name: 'GRAPPA: Grammar-Augmented Pre-Training for Table Semantic Parsing'
-    hosts: TBD
+    hosts: Victoria Lin
   - start_time: 2020-11-19 15:00:00-08:00
     end_time: 2020-11-19 15:10:00-08:00
     name: 'Beyond I.I.D.: Three Levels of Generalization for Question Answering on
       Knowledge Bases'
-    hosts: TBD
+    hosts: Victoria Lin
   - start_time: 2020-11-19 15:10:00-08:00
     end_time: 2020-11-19 15:20:00-08:00
     name: Natural Language Response Generation from SQL with Generalization and Back-translation
-    hosts: TBD
+    hosts: Victoria Lin
   - start_time: 2020-11-19 15:20:00-08:00
     end_time: 2020-11-19 15:30:00-08:00
     name: Break
-    hosts: TBD
+    hosts: N/A
   - start_time: 2020-11-19 15:30:00-08:00
     end_time: 2020-11-19 16:30:00-08:00
     name: 'Invited Talk: Alex Polozov'
-    hosts: TBD
+    hosts: Victor Zhong
   - start_time: 2020-11-19 16:30:00-08:00
     end_time: 2020-11-19 17:30:00-08:00
     name: 'Invited Talk: Richard Socher'
-    hosts: TBD
+    hosts: Victor Zhong
   - start_time: 2020-11-19 17:30:00-08:00
     end_time: 2020-11-19 17:35:00-08:00
     name: Closing remarks
-    hosts: TBD
+    hosts: Victor Zhong, Victoria Lin, Rui Zhang
   zoom_links:
   - https://us02web.zoom.us/j/6771937722
   prerecorded_talks:
@@ -1187,11 +1187,11 @@
   - start_time: 2020-11-19 09:30:00-04:00
     end_time: 2020-11-19 09:35:00-04:00
     name: Opening Remarks
-    hosts: Eneko Agirre
+    hosts: Eneko Agirre (Zoom link 1)
   - start_time: 2020-11-19 09:35:00-04:00
     end_time: 2020-11-19 10:35:00-04:00
     name: 'Keynote Talk 1: Ellie Pavlick'
-    hosts: Marianna Apidianaki
+    hosts: Marianna Apidianaki (Zoom link 1)
   - start_time: 2020-11-19 10:35:00-04:00
     end_time: 2020-11-19 10:45:00-04:00
     name: Break
@@ -1199,7 +1199,7 @@
   - start_time: 2020-11-19 10:45:00-04:00
     end_time: 2020-11-19 12:00:00-04:00
     name: 'Session 1: Oral Presentations & QA'
-    hosts: "Ivan Vuli\u0107"
+    hosts: "Ivan Vuli\u0107 (Zoom link 1)"
   - start_time: 2020-11-19 12:00:00-04:00
     end_time: 2020-11-19 12:30:00-04:00
     name: Break
@@ -1207,11 +1207,11 @@
   - start_time: 2020-11-19 12:30:00-04:00
     end_time: 2020-11-19 13:30:00-04:00
     name: 'Keynote Talk 2: Eduard Hovy'
-    hosts: Eneko Agirre
+    hosts: Eneko Agirre (Zoom link 1)
   - start_time: 2020-11-19 13:30:00-04:00
     end_time: 2020-11-19 14:45:00-04:00
     name: 'Session 2: Oral Presentations & QA'
-    hosts: Marianna Apidianaki
+    hosts: Marianna Apidianaki (Zoom link 1)
   - start_time: 2020-11-19 14:45:00-04:00
     end_time: 2020-11-19 15:15:00-04:00
     name: Break
@@ -1220,11 +1220,16 @@
     end_time: 2020-11-19 16:40:00-04:00
     name: 'Session 3: Findings papers presentations & QA                            (Two
       Parallel sessions)'
-    hosts: "Session 3A: Ivan Vuli\u0107, Session 3B: Eneko Agirre"
+    hosts: "Session 3A: Ivan Vuli\u0107 (Zoom link 1), Session 3B: Eneko Agirre (Zoom\
+      \ link 2)"
   - start_time: 2020-11-19 16:40:00-04:00
     end_time: 2020-11-19 17:00:00-04:00
     name: Closing remarks
-    hosts: "E. Agirre, M. Apidianaki and I. Vuli\u0107"
+    hosts: "E. Agirre, M. Apidianaki and I. Vuli\u0107 (Zoom link 1)"
+  - start_time: 2020-11-19 22:00:00-04:00
+    end_time: 2020-11-19 22:40:00-04:00
+    name: 'Session 4: Additional QA Sessions'
+    hosts: Zoom links to be found on the DeeLIO webpage
   zoom_links:
   - https://us02web.zoom.us/j/8018218663
   - https://us02web.zoom.us/j/3550218712
@@ -1479,13 +1484,13 @@
     hosts: Zeerak Waseem
   - start_time: 2020-11-20 13:10:00+00:00
     end_time: 2020-11-20 13:55:00+00:00
-    name: "<b>Keynote</b><br> TBD <i>- Andr\xE9 Brock</i> <br> <a href=\"https://us02web.zoom.us/j/2801979203\"\
+    name: "<b>Keynote</b><br> TBD <i>- Andr\xE9 Brock</i> <br> <a href=\"https://us02web.zoom.us/j/4396802858\"\
       >Zoom link 1</a>"
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 13:55:00+00:00
     end_time: 2020-11-20 14:40:00+00:00
     name: '<b>Keynote</b><br>"100,000 Lines in the Sand": Agency and Policy Feedback
-      in Content Moderation <i>- Alex Hanna and Maliha Ahmed</i> <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom
+      in Content Moderation <i>- Alex Hanna and Maliha Ahmed</i> <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom
       link 1</a>'
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 14:40:00+00:00
@@ -1495,7 +1500,7 @@
   - start_time: 2020-11-20 14:45:00+00:00
     end_time: 2020-11-20 15:30:00+00:00
     name: <b>Keynote</b><br>"The Root Of Algorithmic Bias And How To Deal With It"
-      <i>- Maria Rodriguez</i> <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom
+      <i>- Maria Rodriguez</i> <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom
       link 1</a>
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 15:30:00+00:00
@@ -1505,7 +1510,7 @@
   - start_time: 2020-11-20 15:40:00+00:00
     end_time: 2020-11-20 16:40:00+00:00
     name: "Keynote Panel: Maliha Ahmed, Andr\xE9 Brock, Alex Hanna and Maria Rodriguez\
-      \ <br> <a href=\"https://us02web.zoom.us/j/2801979203\">Zoom link 1</a>"
+      \ <br> <a href=\"https://us02web.zoom.us/j/4396802858\">Zoom link 1</a>"
     hosts: Bertie Vidgen
   - start_time: 2020-11-20 16:40:00+00:00
     end_time: 2020-11-20 17:00:00+00:00
@@ -1518,7 +1523,7 @@
   - start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 17:45:00+00:00
     name: |-
-      Session 1, Panel I: Methods for classifying online abuse <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom link 1</a> <br><br>
+      Session 1, Panel I: Methods for classifying online abuse <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom link 1</a> <br><br>
       • A Novel Methodology for Developing Automatic Harassment Classifiers for Twitter (Ishaan Arora, Julia Guo, Sarah Ita Levitan, Susan McGregor and Julia Hirschberg)<br>
       • Using Transfer-based Language Models to Detect Hateful and Offensive Language Online (Vebjørn Isaksen and Björn Gambäck)<br>
       • Fine-tuning BERT for multi-domain and multi-label incivil language detection (Kadir Bulut Ozler, Kate Kenski, Steve Rains, Yotam Shmargad, Kevin Coe and Steven Bethard)<br>
@@ -1528,7 +1533,7 @@
   - start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 17:45:00+00:00
     name: |-
-      Session 1, Panel II: Biases in datasets for abuse<br> <a href="https://us02web.zoom.us/j/2506384854">Zoom link 2</a> <br><br>
+      Session 1, Panel II: Biases in datasets for abuse<br> <a href="https://us02web.zoom.us/j/5727154448">Zoom link 2</a> <br><br>
       • Impact of politically biased data on hate speech classification (Maximilian Wich, Jan Bauer and Georg Groh)<br>
       • Identifying and Measuring Annotator Bias Based on Annotators’ Demographic Characteristics (Hala Al Kuwatly, Maximilian Wich and Georg Groh)<br>
       • Investigating Annotator Bias with a Graph-Based Approach (Maximilian Wich, Hala Al Kuwatly and Georg Groh)<br>
@@ -1539,7 +1544,7 @@
   - start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 17:45:00+00:00
     name: |-
-      Session 1, Panel III: Technical challenges in classifying online abuse<br> <a href="https://us02web.zoom.us/j/7641600011">Zoom link 2</a> <br><br>
+      Session 1, Panel III: Technical challenges in classifying online abuse<br> <a href="https://us02web.zoom.us/j/9208909204">Zoom link 3</a> <br><br>
       • Attending the Emotions to Detect Online Abusive Language (Niloofar Safi Samghabadi, Afsheen Hatami, Mahsa Shafaei, Sudipta Kar and Thamar Solorio)<br>
       • Enhancing the Identification of Cyberbullying through Participant Roles (Gathika Rathnayake, Thushari Atapattu, Mahen Herath, Georgia Zhang and Katrina Falkner)<br>
       • Developing a New Classifier for Automated Identification of Incivility in Social Media (Sam Davidson, Qiusi Sun and Magdalena Wojcieszak)<br>
@@ -1557,7 +1562,7 @@
   - start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 18:45:00+00:00
     name: |-
-      Session 2, Panel IV: Ways of tackling online abuse<br> <a href="https://us02web.zoom.us/j/2801979203">Zoom link 1</a><br><br>
+      Session 2, Panel IV: Ways of tackling online abuse<br> <a href="https://us02web.zoom.us/j/4396802858">Zoom link 1</a><br><br>
       • Moderating Our (Dis)Content: Renewing the Regulatory Approach (Claire Pershan)<br>
       • Investigating takedowns of misogynistic abuse on Twitter: a story of iterative failures and partial successes (Nicolas Suzor and Rosalie Gillett)<br>
       • Six Attributes of Unhealthy Conversations (Ilan Price, Jordan Gifford-Moore, Jory Fleming, Saul Musker, Maayan Roichman, Guillaume Sylvain, Nithum Thain, Lucas Dixon and Jeffrey Sorensen)<br>
@@ -1567,7 +1572,7 @@
   - start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 18:45:00+00:00
     name: |-
-      Session 2, Panel V: New datasets for abuse<br> <a href="https://us02web.zoom.us/j/2506384854">Zoom link 2</a> <br><br>
+      Session 2, Panel V: New datasets for abuse<br> <a href="https://us02web.zoom.us/j/5727154448">Zoom link 2</a> <br><br>
       • Towards a Comprehensive Taxonomy and Large-Scale Annotated Corpus for Online Slur Usage (Jana Kurrek, Haji Mohammad Saleem and Derek Ruths)<br>
       • In Data We Trust: A Critical Analysis of Hate Speech Detection Datasets (Kosisochukwu Madukwe, Xiaoying Gao and Bing Xue)<br>
       • Detecting East Asian Prejudice on Social Media (Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall and Rebekah Tromble)<br>
@@ -1581,11 +1586,11 @@
   - start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 19:20:00+00:00
     name: 'Online Abuse and Human Rights: Report on WOAH RightsCon Satellite Session<br>
-      <a href="https://us02web.zoom.us/j/2801979203">Zoom link 1</a>'
+      <a href="https://us02web.zoom.us/j/4396802858">Zoom link 1</a>'
     hosts: Vinodkumar Prabhakaran
   - start_time: 2020-11-20 19:20:00+00:00
     end_time: 2020-11-20 19:30:00+00:00
-    name: Closing Remarks <br> <a href="https://us02web.zoom.us/j/2801979203">Zoom
+    name: Closing Remarks <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom
       link 1</a>
     hosts: Vinodkumar Prabhakaran
   zoom_links:

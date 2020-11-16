@@ -55,10 +55,10 @@
     start_time: 2020-11-17 15:00:00+00:00
     end_time: 2020-11-17 16:00:00+00:00
   rocketchat_channel: plenary-ethics-panel-discussion
-  presenter: Mona Diab, Emily Bender, Rosie Campbell, Allan Dafoe, Pascale Fung, Meg
-    Mitchell, Saif Muhammad
+  presenter: Emily Bender, Rosie Campbell, Allan Dafoe, Pascale Fung, Meg Mitchell,
+    Saif Mohammad
   abstract: 'Publishing in an era of Responsible AI: How can NLP be proactive? Considerations
-    and Implications'
+    and Implications. Moderated by Mona Diab.'
 - UID: keynote_by_rich_caruana
   title: "Keynote: Friends Don\u2019t Let Friends Deploy Black-Box Models: The Importance\
     \ of Intelligibility in Machine Learning"

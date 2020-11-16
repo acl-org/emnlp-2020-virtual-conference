@@ -21,19 +21,19 @@ from ruamel import yaml
 from scripts.dataentry.paths import *
 
 fix = {
-    "490": "4th Workshop on Structured Prediction for NLP",
-    "510": "CoNLL 2020",
-    "884": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
-    "1093": "SIGTYP 2020: The Second Workshop on Computational Research in Linguistic Typology",
-    "1761": "Search-Oriented Conversational AI (SCAI) 2",
-    "2217": "The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW",
-    "2487": "1st Workshop on Computational Approaches to Discourse",
-    "2575": "Workshop on Insights from Negative Results in NLP",
-    "2797": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
-    "2800": "Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction and Integration for Deep Learning Architectures",
-    "2976": "BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP",
-    "3476": "Interactive and Executable Semantic Parsing (Int-Ex)",
-    "3561": "BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP",
+    "490": "WS-21",
+    "510": "WS-1",
+    "884": "WS-13",
+    "1093": "WS-11",
+    "1761": "WS-4",
+    "2217": "WS-17",
+    "2487": "WS-16",
+    "2575": "WS-3",
+    "2797": "WS-13",
+    "2800": "WS-13",
+    "2976": "WS-25",
+    "3476": "WS-6",
+    "3561": "WS-25",
 }
 
 
@@ -265,10 +265,15 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         uid = row["Unique ID"].strip()
 
         if ws == "WS-15" and str(uid) in fix.keys():
+            ws = fix[uid]
+
+        paper_id = f"{ws}.{uid}"
+        if title in titles or paper_id in UIDs:
+            print(paper_id, title)
             continue
 
         venues.append(ws)
-        UIDs.append(f"{ws}.{uid}")
+        UIDs.append(paper_id)
         titles.append(title)
         authors.append("|".join(author_list))
         presentation_ids.append(
@@ -278,14 +283,16 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
     anthology_papers = get_anthology_workshop_papers()
     title_to_anthology_paper = {a.title.strip().lower(): a for a in anthology_papers}
     author_to_anthology_paper = {a.authors.lower(): a for a in anthology_papers}
+    url_to_anthology_paper = {a.link: a for a in anthology_papers}
 
     unmatched = []
     uid_to_anthology_paper = {}
     for uid, title, author in zip(UIDs, titles, authors):
-
         if title.lower() in title_to_anthology_paper:
             assert uid not in uid_to_anthology_paper
             uid_to_anthology_paper[uid] = title_to_anthology_paper[title.lower()]
+        elif uid == "WS-1.Shared8":
+            uid_to_anthology_paper[uid] = url_to_anthology_paper["https://www.aclweb.org/anthology/2020.conll-shared.1"]
         else:
             unmatched.append((uid, title, author.lower()))
 
@@ -327,16 +334,14 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
             and paper.ws_id != "findings"
             and not paper.uid.startswith("2020.nlpcovid19-acl")
         ):
-            if paper.ws_id == "WS-14":
-                venues.append(paper.ws_id)
-                UIDs.append(f"{paper.ws_id}.{paper.uid}")
-                titles.append(paper.title)
-                authors.append(paper.authors)
-                abstracts.append(paper.abstract)
-                presentation_ids.append("")
-                urls.append(paper.link)
-            else:
-                not_slideslive_but_anthology.append(dataclasses.astuple(paper))
+            venues.append(paper.ws_id)
+            UIDs.append(f"{paper.ws_id}.{paper.uid}")
+            titles.append(paper.title)
+            authors.append(paper.authors)
+            abstracts.append(paper.abstract)
+            presentation_ids.append("")
+            urls.append(paper.link)
+
 
     not_slideslive_but_anthology_df = pd.DataFrame(not_slideslive_but_anthology)
     not_slideslive_but_anthology_df.to_csv(
