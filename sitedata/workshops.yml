@@ -96,87 +96,87 @@
   - start_time: 2020-11-19 09:45:00+00:00
     end_time: 2020-11-19 10:00:00+00:00
     name: Welcome Speech
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-19 10:00:00+00:00
     end_time: 2020-11-19 11:00:00+00:00
     name: Shared Tasks Overview 1a
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-19 11:00:00+00:00
     end_time: 2020-11-19 12:30:00+00:00
     name: Poster Session 1a
-    hosts: TBD
+    hosts: GT
   - start_time: 2020-11-19 12:30:00+00:00
     end_time: 2020-11-19 13:00:00+00:00
     name: Break
-    hosts: TBD
+    hosts: n/a
   - start_time: 2020-11-19 13:00:00+00:00
     end_time: 2020-11-19 14:00:00+00:00
     name: Full Research Paper Session 1
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-19 14:00:00+00:00
     end_time: 2020-11-19 16:00:00+00:00
     name: Break
-    hosts: TBD
+    hosts: n/a
   - start_time: 2020-11-19 16:00:00+00:00
     end_time: 2020-11-19 17:00:00+00:00
     name: Shared Tasks Overview 1b
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 18:30:00+00:00
     name: Poster Session 1b
-    hosts: TBD
+    hosts: GT
   - start_time: 2020-11-19 18:30:00+00:00
     end_time: 2020-11-19 19:00:00+00:00
     name: Break
-    hosts: TBD
+    hosts: n/a
   - start_time: 2020-11-19 19:00:00+00:00
     end_time: 2020-11-19 20:00:00+00:00
     name: Full Research Paper Session 2
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-20 09:00:00+00:00
     end_time: 2020-11-20 10:00:00+00:00
     name: Full Research Paper Session 3
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-20 10:00:00+00:00
     end_time: 2020-11-20 11:00:00+00:00
     name: Shared Tasks Overview 2a
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-20 11:00:00+00:00
     end_time: 2020-11-20 12:30:00+00:00
     name: Poster Session 2a
-    hosts: TBD
+    hosts: GT
   - start_time: 2020-11-20 12:30:00+00:00
     end_time: 2020-11-20 13:00:00+00:00
     name: Break
-    hosts: TBD
+    hosts: n/a
   - start_time: 2020-11-20 13:00:00+00:00
     end_time: 2020-11-20 14:00:00+00:00
     name: Invited Talk
-    hosts: TBD
+    hosts: livestream over zoom??
   - start_time: 2020-11-20 14:00:00+00:00
-    end_time: 2020-11-20 15:00:00+00:00
+    end_time: 2020-11-20 15:30:00+00:00
     name: Panel Discussion
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-20 16:00:00+00:00
     end_time: 2020-11-20 17:00:00+00:00
     name: Shared Tasks Overview 2b
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 18:30:00+00:00
     name: Poster Session 2b
-    hosts: TBD
+    hosts: GT
   - start_time: 2020-11-20 18:30:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
     name: Break
-    hosts: TBD
+    hosts: n/a
   - start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 20:00:00+00:00
     name: Full Research Paper Session 4
-    hosts: TBD
+    hosts: zoom
   - start_time: 2020-11-20 20:00:00+00:00
     end_time: 2020-11-20 20:15:00+00:00
     name: Closing
-    hosts: TBD
+    hosts: zoom
   zoom_links:
   - https://us02web.zoom.us/j/7379300234?pwd=cnJnZllOM1dUNEJlSXZxd1ZNSC83QT09
   prerecorded_talks:
@@ -522,7 +522,7 @@
     Radev
   abstract: Map natural language to meaning representations executed in databases,
     knowledge graphs, robotic environment and software applications.
-  website: Additicontact address found
+  website: https://intex-sempar.github.io/
   rocketchat_channel: workshop-intex-sempar2020
   alias: intex-sempar2020
   sessions:
