@@ -224,6 +224,16 @@
     email: cteichmann1@bloomberg.net
   - name: Chevonne Ortiz
     email: cortiz20@bloomberg.net
+  schedule:
+  - start: 2020-11-16 11:00:00-05:00
+    end: 2020-11-16 15:00:00-05:00
+    label: Bloomberg researcher(s) and recruiting at the booth
+  - start: 2020-11-17 05:00:00-05:00
+    duration: 1
+    label: Bloomberg researcher(s) at the booth
+  - start: 2020-11-18 04:00:00-05:00
+    end: 2020-11-18 16:00:00-05:00
+    label: Bloomberg researcher(s) and recruiting at the booth
   rocketchat_channel: sponsor-bloomberg
   zoom_link: https://us02web.zoom.us/j/8948229064?pwd=dlM2cCtCM1cyVjFPWEFhQW5ST3hRZz09
 - name: ByteDance
@@ -335,6 +345,8 @@
   website: http://goo.gle/EMNLP-Homepage
   description: |
     Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps, ads, translate and more. Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features such as gender and number. They also label relationships between words, such as subject, object, modification, and others. We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology. On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization), cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to the Knowledge Graph. To learn more about the research we’re presenting at EMNLP 2020, check out our [Accepted Papers](https://goo.gle/EMNLP-Accepted-Papers) and [Workshops and Tutorials](https://goo.gle/EMNLP-Workshops-Tutorials). Interested in seeing more of our latest research developments and meeting the people behind our innovations? Be sure to explore our [Google AI blog](https://ai.googleblog.com/) and [Google Research website](https://research.google/).
+
+    Our RocketChat schedule is: (i) On Nov. 16 (Mon), Nov. 18 (Wed) and Nov 20 (Fri): GMT: 9-10AM, 2-3PM, 4-5PM, 9-10PM, 10-11PM / PST: 1-2AM, 6-7AM, 11AM-12PM, 1-2PM, 2-3PM; (ii) On Nov 19 (Thu): GMT: 9-10AM, 4-5PM, 9-10PM, 10-11PM / PST: 1-2AM, 11AM-12PM, 1-2PM, 2-3PM.
   youtube: https://www.youtube.com/embed/EvfziohbbnE
   zoom_link: https://meet.google.com/ugx-seds-jpt
   schedule:
