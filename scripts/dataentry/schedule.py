@@ -25,10 +25,10 @@ def build_plenary():
 
     slideslive = pd.read_csv(PATH_SLIDESLIVE_OTHER)
 
-    # author_to_presentatiod_id = {
-    #     row["Speakers"]: row["SlidesLive link"].replace("https://slideslive.com/", "")
-    #     for _, row in slideslive.iterrows()
-    # }
+    author_to_presentatiod_id = {
+         row["Speakers"]: row["SlidesLive link"].replace("https://slideslive.com/", "")
+         for _, row in slideslive.iterrows()
+    }
 
     keynote_map = {
         "Keynote I": "Claire Cardie",
@@ -59,7 +59,7 @@ def build_plenary():
             keynote = keynotes[idx]
             event_name = f"Keynote by {speaker}"
             image = f"static/images/keynotes/{'_'.join(speaker.lower().split())}.jpg"
-            # presentation_id = author_to_presentatiod_id[speaker]
+
 
         start, end = get_time(row)
         assert start < end, (start, end)
@@ -91,7 +91,14 @@ def build_plenary():
             event["rocketchat_channel"] = "keynote-" + "-".join(
                 [x.lower() for x in speaker.split(" ")]
             )
-            # event["presentation_id"] = presentation_id
+
+            if speaker in ["Claire Cardie"]:
+                presentation_id = author_to_presentatiod_id[speaker]
+                event["presentation_id"] = presentation_id
+
+                event["sessions"] = [
+                    {"name": "P-Live Presentation", "start_time": start, "end_time": end}
+                ]
 
         if uid == "industry_panel":
             event["presenter"] = ", ".join(
