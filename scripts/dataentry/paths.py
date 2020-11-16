@@ -32,7 +32,7 @@ PATH_WORKSHOPS_CSV = PATH_DOWNLOADS / "workshops.csv"
 URL_SOCIALS = "https://docs.google.com/spreadsheets/d/1IDk3K1JD1hvH_hvyMy6TeRuE2F6DQDfpgwNpTIP9KgI/export?format=xlsx"
 PATH_SOCIALS = PATH_DOWNLOADS / "socials.xlsx"
 
-URL_ZOOMS_ACCOUNTS_WITH_PASSWORDS = "https://docs.google.com/spreadsheets/d/1QFvG1mOMTJwGXE7Erwbr1XiDoCqkIOxxUYkx0vWyR8s/export?format=xlsx"
+URL_ZOOMS_ACCOUNTS_WITH_PASSWORDS = "https://docs.google.com/spreadsheets/d/1dg2By1lGyFuY_jBG9t1JDnYFx0UhdHl8jUuqqe0-5v8/export?format=xlsx"
 PATH_ZOOM_ACCOUNTS_WITH_PASSWORDS = PATH_DOWNLOADS / "zoom_accounts_with_passwords.xlsx"
 
 URL_ZOOMS_ACCOUNTS_SCHEDULED = "https://docs.google.com/spreadsheets/d/1LTVmbJ2XUnMKM_Tw6UqtuUSxW-roiz_ifJEtX2J7qtE/export?format=xlsx"
