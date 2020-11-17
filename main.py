@@ -21,9 +21,7 @@ app.config.from_object(__name__)
 freezer = Freezer(app)
 markdown = Markdown(app)
 
-app.jinja_env.filters["quote_plus"] = lambda u: quote_plus(
-    u
-)  # pylint: disable=no-member
+app.jinja_env.filters["quote_plus"] = quote_plus
 
 # MAIN PAGES
 
