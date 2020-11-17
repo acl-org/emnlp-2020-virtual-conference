@@ -289,12 +289,13 @@
   UID: B18
   organizers:
     members:
+    - Ryan Cotterell
     - Valia Kordoni
   image: static/images/emnlp2020/acl-logo.png
   rocketchat_channel: boaf-syntax
   location: Gather.Town
   sessions:
-  - name: S-Session 1 with Valia Kordoni
+  - name: S-Session 1 with Ryan Cotterell, Valia Kordoni
     start_time: 2020-11-18 21:00:00+00:00
     end_time: 2020-11-18 22:00:00+00:00
 - name: Dialogue and Interactive Systems
