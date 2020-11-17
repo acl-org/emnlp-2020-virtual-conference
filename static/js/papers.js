@@ -500,7 +500,7 @@ const start = (reset_track) => {
 
     setQueryStringParameter("filter", urlFilter);
     setQueryStringParameter("program", program);
-    setQueryStringParameter("track", encodeURIComponent(track));
+    setQueryStringParameter("track", track);
 
     updateToolboxUI(program, urlFilter, track)
 
@@ -509,7 +509,7 @@ const start = (reset_track) => {
     } else if (track === default_track) {
         path_to_papers_json = `papers_${program}.json`;
     } else {
-        path_to_papers_json = `track_${program}_${track}.json`;
+        path_to_papers_json = `track_${program}_${encodeURIComponent(track)}.json`;
     }
 
     $('.cards').empty();
