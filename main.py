@@ -2,6 +2,7 @@
 import argparse
 import os
 from typing import Any, Dict
+from urllib.parse import quote_plus
 
 from flask import Flask, jsonify, redirect, render_template, send_from_directory
 from flask_frozen import Freezer
@@ -19,6 +20,10 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 freezer = Freezer(app)
 markdown = Markdown(app)
+
+app.jinja_env.filters["quote_plus"] = lambda u: quote_plus(
+    u
+)  # pylint: disable=no-member
 
 # MAIN PAGES
 

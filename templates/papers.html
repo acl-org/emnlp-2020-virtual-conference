@@ -347,7 +347,7 @@
 
   $('#track_selector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
     let track = e.target.value;
-    setQueryStringParameter("track", track);
+    setQueryStringParameter("track", encodeURIComponent(track));
     start();
   });
 

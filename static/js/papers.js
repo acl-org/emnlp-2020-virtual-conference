@@ -500,7 +500,7 @@ const start = (reset_track) => {
 
     setQueryStringParameter("filter", urlFilter);
     setQueryStringParameter("program", program);
-    setQueryStringParameter("track", track);
+    setQueryStringParameter("track", encodeURIComponent(track));
 
     updateToolboxUI(program, urlFilter, track)
 
