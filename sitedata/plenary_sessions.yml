@@ -46,6 +46,7 @@
     start_time: 2020-11-16 23:00:00+00:00
     end_time: 2020-11-17 00:00:00+00:00
   rocketchat_channel: plenary-industry-panel
+  presentation_id: '38942828'
   presenter: "Fei Sha, Chin-Yew Lin, Kristina Toutanova, Daniel Marcu, Joel Tetreault,\
     \ Jo\xE3o Gra\xE7a"
 - UID: ethics_panel_discussion
