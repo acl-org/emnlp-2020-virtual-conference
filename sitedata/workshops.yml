@@ -349,20 +349,23 @@
   zoom_links:
   - https://us02web.zoom.us/j/4123561447?pwd=UUM5ZkxMQ3hYK0VVYU9YYWg3MmFjdz09
   prerecorded_talks:
-  - title: TBA
-    speakers: Tba
+  - title: Clarifying Questions in Conversations with Augmented Syntax Features and
+      Side Information
+    speakers: Hang Li, Tianqiao Liu, Yu Kang, Guowei Xu, Wenbiao Ding, Zitao Liu
     presentation_id: '38940066'
   - title: TBA
     speakers: Tba
     presentation_id: '38940075'
-  - title: TBA
-    speakers: Tba
+  - title: Clarifying Questions in Conversations with Augmented Syntax Features and
+      Side Information - TAL ML Team's Solution for ConvAI3 Challenge
+    speakers: Hang Li, Tianqiao Liu, Yu Kang, Guowei Xu, Wenbiao Ding, Zitao Liu
     presentation_id: '38940067'
-  - title: TBA
-    speakers: Jian Wang
+  - title: "Clarifying Questions for Conversational Search Systems: Team Soda\u2019\
+      s Solution for the ClariQ Challenge"
+    speakers: Jian Wang, Wenjie Li
     presentation_id: '38940068'
   - title: TBA
-    speakers: Tba
+    speakers: Jian Wang, Wenjie Li
     presentation_id: '38940069'
   - title: TBA
     speakers: Wenjie Ou, Yue Lin
@@ -379,25 +382,25 @@
   - title: TBA
     speakers: Tba
     presentation_id: '38940074'
-  - title: Data-Efficient Natural Language Understanding for Task-Oriented Dialogue
+  - title: Response Generation and Retrieval for Multimodal Conversational AI
     speakers: Verena Rieser
     presentation_id: '38940054'
-  - title: Towards Self-Learning for Large Scale Conversational Agents
+  - title: Data-Efficient Natural Language Understanding for Task-Oriented Dialogue
     speakers: "Ivan Vuli\u0107"
     presentation_id: '38940055'
-  - title: TBA
+  - title: Towards Self-Learning for Large Scale Conversational Agents
     speakers: Lee, Sungjin
     presentation_id: '38940056'
-  - title: TBA
+  - title: BlenderBot, Knowledge and Search
     speakers: Jason Weston
     presentation_id: '38940057'
-  - title: TBA
+  - title: Better-behaved Conversational Agents
     speakers: Y-Lan Boureau
     presentation_id: '38940058'
-  - title: TBA
+  - title: Smooth Training for Open-Domain Question Answering
     speakers: Jian-Yun Nie
     presentation_id: '38940059'
-  - title: TBA
+  - title: Transfer Learning and tools for Conversational Agents
     speakers: Thomas Wolf
     presentation_id: '38940060'
 - UID: WS-5

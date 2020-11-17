@@ -7,6 +7,11 @@ from datetime import datetime, timedelta
 from typing import Any
 from typing import List, Dict
 import xml.etree.ElementTree as ET
+from pybtex import database
+
+import pandas as pd
+
+from pylatexenc.latex2text import LatexNodes2Text
 
 import pandas as pd
 import pytz
@@ -280,7 +285,7 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
             row["SlidesLive link"].replace("https://slideslive.com/", "")
         )
 
-    anthology_papers = get_anthology_workshop_papers()
+    anthology_papers = get_anthology_workshop_papers() + read_wmt_bib()
     title_to_anthology_paper = {a.title.strip().lower(): a for a in anthology_papers}
     author_to_anthology_paper = {a.authors.lower(): a for a in anthology_papers}
     url_to_anthology_paper = {a.link: a for a in anthology_papers}
@@ -469,6 +474,42 @@ def get_anthology_workshop_papers() -> List[Paper]:
                 papers.append(paper)
 
     return papers
+
+
+def read_wmt_bib() -> List[Paper]:
+    result = []
+    with open("downloads/2020.wmt-1.0.bib") as f:
+        bib = database.parse_file(f)
+
+        for i, entry in enumerate(bib.entries.values()):
+            if entry.type == "book":
+                continue
+
+            title = LatexNodes2Text().latex_to_text(entry.fields["title"])
+            url = entry.fields["url"]
+            abstract = LatexNodes2Text().latex_to_text(entry.fields["abstract"])
+            author = "|".join(
+                [
+                    " ".join(reversed(str(e).split(", ")))
+                    for e in entry.persons["author"]
+                ]
+            )
+
+            uid = url.replace("https://www.aclweb.org/anthology/", "")
+            url = "https://www.statmt.org/wmt20/pdf/" + uid + ".pdf"
+
+            paper = Paper(
+                uid=f"WS-2.{uid}",
+                ws_id="WS-2",
+                title=title,
+                authors=author,
+                abstract=abstract,
+                track="WS-2",
+                kind="workshop",
+                link=url,
+            )
+            result.append(paper)
+    return result
 
 
 def is_not_paper(row) -> bool:
