@@ -294,9 +294,8 @@
     We have a track record of breakthroughs in fundamental AI research, published in journals like Nature, Science, and more. Our programs have learned to diagnose eye diseases as effectively as the world’s top doctors, to save 30% of the energy used to keep data centres cool, and to make state of the art predictions of the complex 3D shapes of proteins - which could one day transform how drugs are invented.
 
     DeepMind was founded in London in 2010, and we joined forces with Google in 2014 to accelerate our work. Since then, our community has expanded to include teams in Alberta, Montreal, Paris, and Mountain View in California.
+  youtube: https://www.youtube.com/embed/koEWIEHTopo
   contacts:
-  - name: Amy Wu
-    email: amybwu@google.com
   - name: General Enquiries / Resume Drop
     email: dm-emnlp-2020-enquiries@google.com
   gather_schedule:
@@ -317,6 +316,15 @@
     website: DeepMind_Research.pdf
   - label: Careers Leaflet - Science and DeepMind for Google
     website: DeepMind_Science-and-DeepMind-for-Google.pdf
+  publications:
+  - main.1901
+  - main.1817
+  - main.1455
+  - findings.106
+  - main.1803
+  - findings.7
+  - main.2583
+  - demo.71
   rocketchat_channel: sponsor-deepmind
   zoom_link: https://us02web.zoom.us/j/8516356683?pwd=cDlPZTFWN1grdXpqN1dRZndLTXduZz09
 - name: Facebook

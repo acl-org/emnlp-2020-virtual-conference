@@ -292,7 +292,9 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
             assert uid not in uid_to_anthology_paper
             uid_to_anthology_paper[uid] = title_to_anthology_paper[title.lower()]
         elif uid == "WS-1.Shared8":
-            uid_to_anthology_paper[uid] = url_to_anthology_paper["https://www.aclweb.org/anthology/2020.conll-shared.1"]
+            uid_to_anthology_paper[uid] = url_to_anthology_paper[
+                "https://www.aclweb.org/anthology/2020.conll-shared.1"
+            ]
         else:
             unmatched.append((uid, title, author.lower()))
 
@@ -341,7 +343,6 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
             abstracts.append(paper.abstract)
             presentation_ids.append("")
             urls.append(paper.link)
-
 
     not_slideslive_but_anthology_df = pd.DataFrame(not_slideslive_but_anthology)
     not_slideslive_but_anthology_df.to_csv(
@@ -487,14 +488,28 @@ def is_not_paper(row) -> bool:
 
 def add_invited_talks(slideslive: pd.DataFrame):
     talks_per_workshop = defaultdict(list)
+    fixed_workshop_titles_df = pd.read_excel(PATH_WORKSHOP_TALKS)
+
+    id_to_fixed_talk = {
+        f"{row['Unique ID']}.{row['Organizer track name']}".strip(): (
+            row["Title"],
+            row["Speakers"],
+        )
+        for _, row in fixed_workshop_titles_df.iterrows()
+    }
 
     for _, row in slideslive.iterrows():
         if not is_not_paper(row):
             continue
 
-        title = row["Title"]
+        uid = f"{row['Unique ID']}.{row['Organizer track name']}".strip()
 
-        speakers = row["Speakers"]
+        if uid in id_to_fixed_talk:
+            title, speakers = id_to_fixed_talk[uid]
+        else:
+            title = row["Title"].strip()
+            speakers = row["Speakers"].strip()
+
         presentation_id = row["SlidesLive link"].replace("https://slideslive.com/", "")
 
         talks_per_workshop[row["Organizer track name"].strip()].append(
@@ -528,9 +543,9 @@ def get_zooms() -> Dict[str, List[str]]:
 
 
 if __name__ == "__main__":
-    #download_slideslive()
+    # download_slideslive()
     download_workshops()
-    #download_zooms()
+    # download_zooms()
 
     # load_csv()
     data = build_workshops_basics()
