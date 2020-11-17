@@ -1195,27 +1195,40 @@
   - start_time: 2020-11-19 10:35:00-04:00
     end_time: 2020-11-19 10:45:00-04:00
     name: Break
-    hosts: TBD
+    hosts: '-'
   - start_time: 2020-11-19 10:45:00-04:00
     end_time: 2020-11-19 12:00:00-04:00
-    name: 'Session 1: Oral Presentations & QA'
+    name: |-
+      Session 1: Oral Presentations & QA<br><br>
+      • Common Sense or World Knowledge? Investigating Adapter-Based Knowledge Injection into Pretrained Transformers (Anne Lauscher, Olga Majewska, Leonardo F. R. Ribeiro, Iryna Gurevych, Nikolai Rozanov and Goran Glavaš) <a href="https://virtual.2020.emnlp.org/paper_WS-13.9.html">paper+bideo</a><br><br>
+      • Incorporating Commonsense Knowledge Graph in Pretrained Models for Social Commonsense Task(Ting-Yun Chang, Yang Liu, Karthik Gopalakrishnan, Behnam Hedayatnia, Pei Zhou and Dilek Hakkani-Tur) <a href="https://virtual.2020.emnlp.org/paper_WS-13.18.html">paper+bideo</a><br><br>
+      • Entity Attribute Relation Extraction with Attribute-Aware Embeddings (Dan Iter and Xiao Yu) <a href="https://virtual.2020.emnlp.org/paper_WS-13.12.html">paper+bideo</a><br><br>
+      • On the Complementary Nature of Knowledge Graph Embedding, Fine Grain Entity Types, and Language Modeling (Rajat Patel and Francis Ferraro) <a href="https://virtual.2020.emnlp.org/paper_WS-13.22.html">paper+bideo</a><br><br>
+      • Commonsense Statements Identification and Explanation with Transformer based Encoders (Sonia Cibu and Anca Marginean) <a href="https://virtual.2020.emnlp.org/paper_WS-13.20.html">paper+bideo</a><br><br>
+      • Target Concept Guided Medical Concept Normalization in Noisy User-Generated Texts (Katikapalli Subramanyam Kalyan and Sivanesan Sangeetha) <a href="https://virtual.2020.emnlp.org/paper_WS-13.17.html">paper+bideo</a><br><br>
     hosts: "Ivan Vuli\u0107 (Zoom link 1)"
   - start_time: 2020-11-19 12:00:00-04:00
     end_time: 2020-11-19 12:30:00-04:00
     name: Break
-    hosts: TBD
+    hosts: '-'
   - start_time: 2020-11-19 12:30:00-04:00
     end_time: 2020-11-19 13:30:00-04:00
     name: 'Keynote Talk 2: Eduard Hovy'
     hosts: Eneko Agirre (Zoom link 1)
   - start_time: 2020-11-19 13:30:00-04:00
     end_time: 2020-11-19 14:45:00-04:00
-    name: 'Session 2: Oral Presentations & QA'
+    name: |-
+      Session 2: Oral Presentations & QA<br><br>
+      • Relation Extraction with Contextualized Relation Embedding (Xiaoyu Chen and Rohan Badlani) <a href="https://virtual.2020.emnlp.org/paper_WS-13.4.html">paper+bideo</a><br><br>
+      • GenAug: Data Augmentation for Finetuning Text Generators (Steven Y. Feng, Varun Gangal, Dongyeop Kang, Teruko Mitamura and Eduard Hovy) <a href="https://virtual.2020.emnlp.org/paper_WS-13.7.html">paper+bideo</a><br><br>
+      • Generalization to Mitigate Synonym Substitution Attacks (Basemah Alshemali and Jugal Kalita) <a href="https://virtual.2020.emnlp.org/paper_WS-13.6.html">paper+bideo</a><br><br>
+      • Correcting the Misuse: A Method for the Chinese Idiom Cloze Test (Xinyu Wang, Hongsheng Zhao, Tan Yang and Hongbo Wang) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1.html">paper+bideo</a><br><br>
+      • Enhancing Question Answering by Injecting Ontological Knowledge through Regularization (Travis Goodwin and Dina Demner-Fushman) <a href="https://virtual.2020.emnlp.org/paper_WS-13.16.html">paper+bideo</a><br><br>
     hosts: Marianna Apidianaki (Zoom link 1)
   - start_time: 2020-11-19 14:45:00-04:00
     end_time: 2020-11-19 15:15:00-04:00
     name: Break
-    hosts: TBD
+    hosts: '-'
   - start_time: 2020-11-19 15:15:00-04:00
     end_time: 2020-11-19 16:40:00-04:00
     name: |-
@@ -1223,14 +1236,48 @@
       (Two Parallel sessions)
     hosts: "Session 3A: Ivan Vuli\u0107 (Zoom link 1), Session 3B: Eneko Agirre (Zoom\
       \ link 2)"
+  - start_time: 2020-11-19 15:15:00-04:00
+    end_time: 2020-11-19 16:40:00-04:00
+    name: |-
+      Session 3A<br><br>
+      • E-BERT: Efficient-Yet-Effective Entity Embeddings for BERT (Nina Poerner, Ulli Waltinger and Hinrich Schütze) <a href="https://virtual.2020.emnlp.org/paper_WS-13.696.html">paper+bideo</a><br><br>
+      • Generative Data Augmentation for Commonsense Reasoning (Yiben Yang, Chaitanya Malaviya, Jared Fernandez, Swabha Swayamdipta, Ronan Le Bras, Ji-Ping Wang, Chandra Bhagavatula, Yejin Choi and Doug Downey) <a href="https://virtual.2020.emnlp.org/paper_WS-13.884.html">paper+bideo</a><br><br>
+      • AutoETER: Automated Entity Type Representation for Knowledge Graph Embedding (Guanglin Niu, Bo Li, Yongfei Zhang, Shiliang Pu and Jingyang Li) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1008.html">paper+bideo</a><br><br>
+      • Dynamic Semantic Matching and Aggregation Network for Few-shot Intent Detection (Hoang Nguyen, Chenwei Zhang, Congying Xia and Philip Yu) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1039.html">paper+bideo</a><br><br>
+      • Biomedical Event Extraction with Hierarchical Knowledge Graphs (Kung-Hsiang Huang, Mu Yang and Nanyun Peng) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1059.html">paper+bideo</a><br><br>
+      • BERT-kNN: Adding a kNN Search Component to Pretrained Language Models for Better QA (Nora Kassner and Hinrich Schütze) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2513.html">paper+bideo</a><br><br>
+    hosts: "Ivan Vuli\u0107 (Zoom link 1)"
+  - start_time: 2020-11-19 15:15:00-04:00
+    end_time: 2020-11-19 16:40:00-04:00
+    name: |-
+      Session 3B<br><br>
+      • Out-of-Sample Representation Learning for Knowledge Graphs (Marjan Albooyeh, Rishab Goel and Seyed Mehran Kazemi) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2047.html">paper+bideo</a><br><br>
+      • Visual Objects As Context: Exploiting Visual Objects for Lexical Entailment (Masayasu Muraoka, Tetsuya Nasukawa and Bishwaranjan Bhattacharjee) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2085.html">paper+bideo</a><br><br>
+      • Cross-Lingual Text Classification with Minimal Resources by Transferring a Sparse Teacher (Giannis Karamanolakis, Daniel Hsu and Luis Gravano) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2666.html">paper+bideo</a><br><br>
+      • Adversarial Augmentation Policy Search for Domain and Cross-Lingual Generalization in Reading Comprehension (Adyasha Maharana and Mohit Bansal)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.2797.html">paper+bideo</a><br><br>
+      • Continual Learning Long Short Term Memory (Xin Guo, Yu Tian, Qinghan Xue, Panos Lampropoulos, Steven Eliuk, Kenneth Barner and Xiaolong Wang)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.1524.html">paper+bideo</a><br><br>
+      • Denoising Multi-Source Weak Supervision for Neural Text Classification (Wendi Ren, Yinghao Li, Hanting Su, David Kartchner, Cassie Mitchell and Chao Zhang)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.2800.html">paper+bideo</a><br><br>
+    hosts: Eneko Agirre (Zoom link 2)
   - start_time: 2020-11-19 16:40:00-04:00
     end_time: 2020-11-19 17:00:00-04:00
     name: Closing remarks
     hosts: "E. Agirre, M. Apidianaki and I. Vuli\u0107 (Zoom link 1)"
   - start_time: 2020-11-19 22:00:00-04:00
     end_time: 2020-11-19 22:40:00-04:00
-    name: 'Session 4: Additional QA Sessions'
-    hosts: Zoom links to be found on the DeeLIO external website
+    name: |-
+      Session 4: Additional QA Sessions<br><br>
+      • GenAug: Data Augmentation for Finetuning Text Generators (Steven Y. Feng, Varun Gangal, Dongyeop Kang, Teruko Mitamura and Eduard Hovy) <a href="https://virtual.2020.emnlp.org/paper_WS-13.7.html">paper+bideo</a> <a href="https://cmu.zoom.us/j/91205554634?pwd=UkFWbDhHb2paN0RhZzI2c1ZjaHdDdz09">zoom channel</a><br><br>
+      • Common Sense or World Knowledge? Investigating Adapter-Based Knowledge Injection into Pretrained Transformers (Anne Lauscher, Olga Majewska, Leonardo F. R. Ribeiro, Iryna Gurevych, Nikolai Rozanov and Goran Glavaš) <a href="https://virtual.2020.emnlp.org/paper_WS-13.9.html">paper+bideo</a><a href="https://us04web.zoom.us/j/77688037366?pwd=S3NmeWhncmJGekh0VE5ZMnFvSS9oUT09">zoom channel</a><br><br>
+      • Incorporating Commonsense Knowledge Graph in Pretrained Models for Social Commonsense Task(Ting-Yun Chang, Yang Liu, Karthik Gopalakrishnan, Behnam Hedayatnia, Pei Zhou and Dilek Hakkani-Tur) <a href="https://virtual.2020.emnlp.org/paper_WS-13.18.html">paper+bideo</a><a href="https://us05web.zoom.us/j/87035883818?pwd=MFVMU2hzM2tKL2ZyaDBaek5BY3FZUT09">zoom channel</a><br><br>
+      • Commonsense Statements Identification and Explanation with Transformer based Encoders (Sonia Cibu and Anca Marginean) <a href="https://virtual.2020.emnlp.org/paper_WS-13.20.html">paper+bideo</a><a href="https://us04web.zoom.us/j/72704160575?pwd=SDk0Vzk3djRrUDYyZ0RwS2NidzBYdz09">zoom channel</a><br><br>
+      • E-BERT: Efficient-Yet-Effective Entity Embeddings for BERT (Nina Poerner, Ulli Waltinger and Hinrich Schütze) <a href="https://virtual.2020.emnlp.org/paper_WS-13.696.html">paper+bideo</a><a href="https://us02web.zoom.us/j/88678730754?pwd=SGdMaUZXa1VyeG9Ea21EZllLWm1vdz09">zoom channel</a><br><br>
+      • AutoETER: Automated Entity Type Representation for Knowledge Graph Embedding (Guanglin Niu, Bo Li, Yongfei Zhang, Shiliang Pu and Jingyang Li) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1008.html">paper+bideo</a><a href="https://zoom.us/j/97149632460?pwd=N0RRWXVYcnltU0dTaXpOZEFERCtnUT09">zoom channel</a><br><br>
+      • Dynamic Semantic Matching and Aggregation Network for Few-shot Intent Detection (Hoang Nguyen, Chenwei Zhang, Congying Xia and Philip Yu) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1039.html">paper+bideo</a><a href="https://zoom.us/j/91263575056?pwd=Sjc2WllYd3lzTnVUN1Q5TjRjak13dz09">zoom channel</a><br><br>
+      • Continual Learning Long Short Term Memory (Xin Guo, Yu Tian, Qinghan Xue, Panos Lampropoulos, Steven Eliuk, Kenneth Barner and Xiaolong Wang)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.1524.html">paper+bideo</a><a href="https://us02web.zoom.us/j/82872350643?pwd=bGNMVTBkU3Vka2NiY3FoeUswRzVjZz09">zoom channel</a><br><br>
+      • Visual Objects As Context: Exploiting Visual Objects for Lexical Entailment (Masayasu Muraoka, Tetsuya Nasukawa and Bishwaranjan Bhattacharjee) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2085.html">paper+bideo</a><a href="https://us04web.zoom.us/j/71033235132?pwd=REhqRWNxQ1BEZW5MS3pLYlRjVVdrQT09">zoom channel</a><br><br>
+      • Cross-Lingual Text Classification with Minimal Resources by Transferring a Sparse Teacher (Giannis Karamanolakis, Daniel Hsu and Luis Gravano) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2666.html">paper+bideo</a><a href="https://us04web.zoom.us/j/75571792938?pwd=cnc5eHFVRUZmaTFkTUFON0JJc3ZrZz09">zoom channel</a><br><br>
+      • Adversarial Augmentation Policy Search for Domain and Cross-Lingual Generalization in Reading Comprehension (Adyasha Maharana and Mohit Bansal)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.2797.html">paper+bideo</a><a href="https://unc.zoom.us/j/97249841910">zoom channel</a><br><br>
+    hosts: Please use separate Zoom links
   zoom_links:
   - https://us02web.zoom.us/j/8018218663
   - https://us02web.zoom.us/j/3550218712
@@ -1794,11 +1841,15 @@
     hosts: TBD
   - start_time: 2020-11-19 09:10:00+00:00
     end_time: 2020-11-19 09:50:00+00:00
-    name: 'Invited Talk: Mark Johnson (Macquarie University)'
+    name: |-
+      Invited Talk: Introduction to Structured Prediction in NLP
+      Mark Johnson (Macquarie University)
     hosts: TBD
   - start_time: 2020-11-19 09:50:00+00:00
     end_time: 2020-11-19 10:30:00+00:00
-    name: 'Invited Talk: Sunita Sarawagi (IIT Bombay)'
+    name: |-
+      Invited Talk: The Role and Representation of Alignments in Modern Seq2Seq Architectures
+      Sunita Sarawagi (IIT Bombay)
     hosts: TBD
   - start_time: 2020-11-19 10:30:00+00:00
     end_time: 2020-11-19 11:00:00+00:00
@@ -1806,7 +1857,9 @@
     hosts: TBD
   - start_time: 2020-11-19 11:00:00+00:00
     end_time: 2020-11-19 11:40:00+00:00
-    name: 'Invited Talk: Isabelle Augenstein (University of Copenhagen)'
+    name: |-
+      Invited Talk: Explainable Fact Checking as Structured Prediction
+      Isabelle Augenstein (University of Copenhagen)
     hosts: TBD
   - start_time: 2020-11-19 11:40:00+00:00
     end_time: 2020-11-19 11:55:00+00:00
@@ -1826,7 +1879,9 @@
     hosts: TBD
   - start_time: 2020-11-19 13:00:00+00:00
     end_time: 2020-11-19 13:40:00+00:00
-    name: 'Invited Talk: Jonathan Berant (Tel-Aviv University)'
+    name: |-
+      Invited Talk: Latent Tree Models for Compositional Generalization
+       Jonathan Berant (Tel-Aviv University)
     hosts: TBD
   - start_time: 2020-11-19 13:40:00+00:00
     end_time: 2020-11-19 13:55:00+00:00
@@ -1845,12 +1900,14 @@
   - start_time: 2020-11-19 16:00:00+00:00
     end_time: 2020-11-19 16:40:00+00:00
     name: |-
-      Invited Talk: "Interpretability with Differentiable Subset Selection"
+      Invited Talk: Interpretability with Differentiable Subset Selection
       Ivan Titov (University of Edinburgh)
     hosts: TBD
   - start_time: 2020-11-19 16:40:00+00:00
     end_time: 2020-11-19 17:20:00+00:00
-    name: 'Invited Talk: Alexander Rush (Cornell Tech)'
+    name: |-
+      Invited Talk: Exploring Deep Structured NLP
+      Alexander Rush (Cornell Tech)
     hosts: TBD
   - start_time: 2020-11-19 17:20:00+00:00
     end_time: 2020-11-19 17:30:00+00:00
