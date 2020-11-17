@@ -351,11 +351,12 @@
   organizers:
     members:
     - Danqi Chen
+    - Omer Levy
   image: static/images/emnlp2020/acl-logo.png
   rocketchat_channel: boaf-ie
   location: Gather.Town
   sessions:
-  - name: S-Session 1 with Danqi Chen
+  - name: S-Session 1 with Danqi Chen, Omer Levy
     start_time: 2020-11-17 13:00:00+00:00
     end_time: 2020-11-17 14:00:00+00:00
 - name: Information Retrieval and Text Mining
