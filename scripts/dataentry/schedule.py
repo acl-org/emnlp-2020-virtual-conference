@@ -30,6 +30,11 @@ def build_plenary():
          for _, row in slideslive.iterrows()
     }
 
+    uid_to_presentatiod_id = {
+         row["Speakers"]: row["SlidesLive link"].replace("https://slideslive.com/", "")
+         for _, row in slideslive.iterrows()
+    }
+
     keynote_map = {
         "Keynote I": "Claire Cardie",
         "Keynote II": "Rich Caruana",
