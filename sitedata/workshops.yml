@@ -1881,19 +1881,19 @@
   - start_time: 2020-11-19 09:00:00+00:00
     end_time: 2020-11-19 09:10:00+00:00
     name: Welcome Speech
-    hosts: TBD
+    hosts: "Priyanka Agrawal, Andr\xE9 Martins"
   - start_time: 2020-11-19 09:10:00+00:00
     end_time: 2020-11-19 09:50:00+00:00
     name: |-
       Invited Talk: Introduction to Structured Prediction in NLP
       Mark Johnson (Macquarie University)
-    hosts: TBD
+    hosts: "Priyanka Agrawal, Andr\xE9 Martins"
   - start_time: 2020-11-19 09:50:00+00:00
     end_time: 2020-11-19 10:30:00+00:00
     name: |-
       Invited Talk: The Role and Representation of Alignments in Modern Seq2Seq Architectures
       Sunita Sarawagi (IIT Bombay)
-    hosts: TBD
+    hosts: "Priyanka Agrawal, Andr\xE9 Martins"
   - start_time: 2020-11-19 10:30:00+00:00
     end_time: 2020-11-19 11:00:00+00:00
     name: Coffee Break
@@ -1943,14 +1943,14 @@
   - start_time: 2020-11-19 16:00:00+00:00
     end_time: 2020-11-19 16:40:00+00:00
     name: |-
-      Invited Talk: Interpretability with Differentiable Subset Selection
-      Ivan Titov (University of Edinburgh)
+      Invited Talk: Exploring Deep Structured NLP
+      Alexander Rush (Cornell Tech)
     hosts: TBD
   - start_time: 2020-11-19 16:40:00+00:00
     end_time: 2020-11-19 17:20:00+00:00
     name: |-
-      Invited Talk: Exploring Deep Structured NLP
-      Alexander Rush (Cornell Tech)
+      Invited Talk: Interpretability with Differentiable Subset Selection
+      Ivan Titov (University of Edinburgh)
     hosts: TBD
   - start_time: 2020-11-19 17:20:00+00:00
     end_time: 2020-11-19 17:30:00+00:00
