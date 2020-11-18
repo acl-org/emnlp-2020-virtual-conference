@@ -194,72 +194,110 @@
   sessions:
   - start_time: 2020-11-19 07:00:00-08:00
     end_time: 2020-11-19 07:15:00-08:00
-    name: Opening remarks
-    hosts: TBD
+    name: <b>Opening remarks</b>
+    hosts: Anna Rogers
   - start_time: 2020-11-19 07:15:00-08:00
     end_time: 2020-11-19 08:00:00-08:00
-    name: 'Invited talk: Rada Mihalcea'
+    name: |-
+      <b>Invited talk: <a href="http://web.eecs.umich.edu/~mihalcea/">Rada Mihalcea</a>:</b> The ups and downs of word embeddings<br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-mihalcea">RocketChat</a><br/>
+      <i>Word embeddings have largely been a “success story” in our field. They have enabled progress in numerous language processing applications, and have facilitated the application of large-scale language analyses in other domains, such as social sciences and humanities. While less talked about, word embeddings also have many shortcomings – instability, lack of transparency, biases, and more. In this talk, I will review the “ups” and “downs” of word embeddings, discuss tradeoffs, and chart potential future research directions to address some of the downsides of these word representations.</i>
     hosts: Anna Rumshisky
   - start_time: 2020-11-19 08:00:00-08:00
     end_time: 2020-11-19 08:15:00-08:00
-    name: Q&A with Rada Mihalcea
+    name: <b>Q&A with Rada Mihalcea</b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/insights-invited-mihalcea">RocketChat</a>
     hosts: Anna Rumshisky
   - start_time: 2020-11-19 08:15:00-08:00
     end_time: 2020-11-19 08:45:00-08:00
-    name: 'Thematic session: representation learning'
+    name: |-
+      <b>Thematic session: representation learning </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-representations">RocketChat</a> <br/>
+      • Embedding Structured Dictionary Entries (Steven Wilson, Walid Magdy, Barbara McGillivray and Gareth Tyson) <a href="https://virtual.2020.emnlp.org/paper_WS-3.34.html">Paper</a><br/>
+      • Can Knowledge Graph Embeddings Tell Us What Fact-checked Claims Are About? (Valentina Beretta, Sébastien Harispe, Katarina Boland, Luke Lo Seen, Konstantin Todorov and Andon Tchechmedjiev) <a href="https://virtual.2020.emnlp.org/paper_WS-3.24.html">Paper</a><br/>
+      • Layout-Aware Text Representations Harm Clustering Documents by Type (Catherine Finegan-Dollak and Ashish Verma) <a href="https://virtual.2020.emnlp.org/paper_WS-3.22.html">Paper</a>
     hosts: Anna Rogers
   - start_time: 2020-11-19 08:45:00-08:00
     end_time: 2020-11-19 09:15:00-08:00
-    name: 'Thematic session: dialogue'
+    name: |-
+      <b>Thematic session: dialogue </b>  <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-dialogue">RocketChat</a> <br/>
+      • On Task-Level Dialogue Composition of Generative Transformer Model (Prasanna Parthasarathi, Sharan Narang and Arvind Neelakantan) <a href="https://virtual.2020.emnlp.org/paper_WS-3.12.html">Paper</a><br/>
+      • HINT3: Raising the bar for Intent Detection in the Wild (Gaurav Arora, Chirag Jain, Manas Chaturvedi and Krupal Modi) <a href="https://virtual.2020.emnlp.org/paper_WS-3.31.html">Paper</a><br/>
+      • Effects of Naturalistic Variation in Goal-Oriented Dialog (Jatin Ganhotra, Robert Moore, Sachindra Joshi and Kahini Wadhawan <a href="https://virtual.2020.emnlp.org/paper_WS-3.3004.html">Paper</a>
     hosts: Joao Sedoc
   - start_time: 2020-11-19 09:15:00-08:00
     end_time: 2020-11-19 10:00:00-08:00
-    name: Social break / meal time
+    name: <b>Social break / meal time.</b> Gather.town (room TBA)
     hosts: n/a
   - start_time: 2020-11-19 10:00:00-08:00
     end_time: 2020-11-19 10:45:00-08:00
-    name: 'Invited talk: Byron Wallace'
+    name: |-
+      <b>Invited talk: <a href="http://www.byronwallace.com/">Byron Wallace</a>:</b>Negative results yield interesting questions, or: a bunch of stuff that didn’t work  <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-wallace">RocketChat</a><br/>
+      <i>I will discuss recent projects in which ideas did not pan out as expected, but where these initial negative results led to (arguably) more interesting questions. My hope is that these case studies of negative results — which ultimately led to work we viewed as compelling enough to warrant write-up — will foster discussion about when “negative” results are nonetheless interesting, and about the kinds of questions we ask in empirical NLP research.</i>
     hosts: Anna Rumshisky
   - start_time: 2020-11-19 10:45:00-08:00
     end_time: 2020-11-19 11:00:00-08:00
-    name: Q&A with Byron Wallace
+    name: <b>Q&A with Byron Wallace</b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/insights-invited-wallace">RocketChat</a>
     hosts: Anna Rumshisky
   - start_time: 2020-11-19 11:00:00-08:00
     end_time: 2020-11-19 11:30:00-08:00
-    name: 'Thematic session: QA'
+    name: |-
+      <b>Thematic session: question answering </b><br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-from-qa">RocketChat</a><br/>
+      • Do Transformers Dream of Inference, or Can Pretrained Generative Models Learn Implicit Inferential Rules? (Zhengzhong Liang and Mihai Surdeanu) <a href="https://virtual.2020.emnlp.org/paper_WS-3.26.html">Paper</a><br/>
+      • What do we expect from Multiple-choice QA Systems? (Krunal Shah, Nitish Gupta and Dan Roth) <a href="https://virtual.2020.emnlp.org/paper_WS-3.2575.html">Paper</a><br/>
+      • Q. Can Knowledge Graphs be used to Answer Boolean Questions? A. It’s complicated! (Daria Dzendzik, Carl Vogel and Jennifer Foster) <a href="https://virtual.2020.emnlp.org/paper_WS-3.4.html">Paper</a>
     hosts: Anna Rogers
   - start_time: 2020-11-19 11:30:00-08:00
     end_time: 2020-11-19 12:00:00-08:00
-    name: 'Thematic session: NLI'
-    hosts: TBD
+    name: |-
+      <b>Thematic session: natural language inference </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-from-nli">RocketChat</a><br/>
+      • Counterfactually-Augmented SNLI Training Data Does Not Yield Better Generalization Than Unaugmented Data (William Huang, Haokun Liu and Samuel R. Bowman) <a href="https://virtual.2020.emnlp.org/paper_WS-3.27.html">Paper</a><br/>
+      • The Extraordinary Failure of Complement Coercion Crowdsourcing (Yanai Elazar, Victoria Basmov, Shauli Ravfogel, Yoav Goldberg and Reut Tsarfat) <a href="https://virtual.2020.emnlp.org/paper_WS-3.33.html">Paper</a><br/>
+      • Poison Attacks against Text Datasets with Conditional Adversarially Regularized Autoencoder (Alvin Chan, Yi Tay, Yew-Soon Ong and Aston Zhang) <a href="https://virtual.2020.emnlp.org/paper_WS-3.106.html">Paper</a>
+    hosts: Anna Rogers
   - start_time: 2020-11-19 12:00:00-08:00
     end_time: 2020-11-19 12:30:00-08:00
-    name: 'Thematic session: lessons learned the hard way'
+    name: |-
+      <b>Thematic session: lessons learned the hard way</b> <br/><a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-lessons">RocketChat</a> <br/>
+      • Evaluating the Effectiveness of Efficient Neural Architecture Search for Sentence-Pair Tasks (Ansel MacLaughlin, Jwala Dhamala, Anoop Kumar, Sriram Venkatapathy, Ragav Venkatesan and Rahul Gupta) <a href="https://virtual.2020.emnlp.org/paper_WS-3.7.html">Paper</a><br/>
+      • NMF Ensembles? Not for Text Summarization! (Alka Khurana and Vasudha Bhatnagar) <a href="https://virtual.2020.emnlp.org/paper_WS-3.29.html">Paper</a><br/>
+      • If You Build Your Own NER Scorer, Non-replicable Results Will Come (Constantine Lignos and Marjan Kamyab) <a href="https://virtual.2020.emnlp.org/paper_WS-3.30.html">Paper</a>
     hosts: Joao Sedoc
   - start_time: 2020-11-19 12:30:00-08:00
     end_time: 2020-11-19 13:00:00-08:00
-    name: Social break / meal time
+    name: <b>Social break / meal time.</b> Gather.town (room TBA)
     hosts: TBD
   - start_time: 2020-11-19 13:00:00-08:00
     end_time: 2020-11-19 14:00:00-08:00
-    name: Interactive Orals
+    name: |-
+      <b>Interactive Orals</b> <br/>
+      • Domain adaptation challenges of BERT in tokenization and sub-word representations of Out-of-Vocabulary words (Anmol Nayak, Hariprasad Timmapathini, Karthikeyan Ponnalagu and Vijendran Gopalan Venkoparao) <a href="https://virtual.2020.emnlp.org/paper_WS-3.1.html">Paper</a> <br/>
+      • How Far Can We Go with Data Selection? A Case Study on Semantic Sequence Tagging Tasks (Samuel Louvan and Bernardo Magnini) <a href="https://virtual.2020.emnlp.org/paper_WS-3.6.html">Paper</a><br/>
+      • Which Matters Most? Comparing the Impact of Concept and Document Relationships in Topic Models (Silvia Terragni, Debora Nozza, Elisabetta Fersini and Messina Enza) <a href="https://virtual.2020.emnlp.org/paper_WS-3.8.html">Paper</a><br/>
+      • How Effectively Can Machines Defend Against Machine-Generated Fake News? An Empirical Study (Meghana Moorthy Bhat and Srinivasan Parthasarathy) <a href="https://virtual.2020.emnlp.org/paper_WS-3.19.html">Paper</a><br/>
+      • Label Propagation-Based Semi-Supervised Learning for Hate Speech Classification (Ashwin Geet D’Sa, Irina Illina, Dominique Fohr and Dietrich Klakow) <a href="https://virtual.2020.emnlp.org/paper_WS-3.20.html">Paper</a><br/>
+      • An Analysis of Capsule Networks for Part of Speech Tagging in High- and Low-resource Scenarios (Andrew Zupon, Faiz Rafique and Mihai Surdeanu) <a href="https://virtual.2020.emnlp.org/paper_WS-3.23.html">Paper</a><br/>
+      • How Effective is Task-Agnostic Data Augmentation for Pretrained Transformers? (Shayne Longpre, Yu Wang and Christopher DuBois) <a href="https://virtual.2020.emnlp.org/paper_WS-3.3296.html">Paper</a><br/>
+      • WER we are and WER we think we are (Piotr Szymański, Piotr Żelasko, Mikolaj Morzy, Adrian Szymczak, Marzena Żyła-Hoppe, Joanna Banaszczak, Lukasz Augustyniak, Jan Mizgajski and Yishay Carmiel) <a href="https://virtual.2020.emnlp.org/paper_WS-3.2436.html">Paper</a><br/>
     hosts: n/a
   - start_time: 2020-11-19 14:00:00-08:00
     end_time: 2020-11-19 14:45:00-08:00
-    name: Panel discussion
+    name: |-
+      <b>The frustrations of leaderboardism. Panel discussion with Kawin Ethayarajh, Jesse Dodge and Rachael Tatman </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-panel">RocketChat</a><br/>
+      <i>Leaderboards do not only drive progress in NLP: the bias towards publication of positive, and particularly state-of-the-art results implicitly encourages the development of highly specialized and brittle systems. If the reported success cannot be reproduced, or does not generalize well, the main result is much frustration by the developers who pick up academic papers in search of something that would actually work.</i>
     hosts: Anna Rogers
   - start_time: 2020-11-19 14:45:00-08:00
     end_time: 2020-11-19 15:00:00-08:00
-    name: Breakout
-    hosts: Joao Sedoc
+    name: <b>QA with the panelists </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/insights-panel">RocketChat</a>
+    hosts: Anna Rogers
   - start_time: 2020-11-19 15:00:00-08:00
     end_time: 2020-11-19 15:15:00-08:00
-    name: Closing remarks
-    hosts: TBD
+    name: <b>Closing remarks </b> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>
+    hosts: Anna Rogers
   - start_time: 2020-11-19 15:15:00-08:00
     end_time: 2020-11-19 16:00:00-08:00
-    name: Happy hour
-    hosts: TBD
+    name: <b>Virtual happy hour</b> Gather.town (room TBA)
+    hosts: Joao Sedoc
   zoom_links:
   - https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09
   prerecorded_talks:

@@ -356,6 +356,7 @@
   resources:
   - label: RECRUITMENT SCHEDULE
     website: https://docs.google.com/document/d/1N3HfH4zUODZjzfHvBmm3hsJOrrjeN1P-8OuNA3n9V10/edit?usp=sharing
+  downloads:
   - label: JOB CARD
     website: Facebook-Job_Card.pdf
   rocketchat_channel: sponsor-facebook
