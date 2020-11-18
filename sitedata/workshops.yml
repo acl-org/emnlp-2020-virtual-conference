@@ -2217,8 +2217,8 @@
     presentation_id: '38939762'
 - UID: WS-26
   title: NLP for COVID-19 Workshop (Part 2)
-  organizers: Karin Verspoor, Mike Conway, Berry de Bruijn, Mark Dredze, Rada Mihalcea
-    and Byron Wallace
+  organizers: Karin Verspoor, Kevin Bretonnel Cohen, Mike Conway, Berry de Bruijn,
+    Mark Dredze, Rada Mihalcea and Byron Wallace
   abstract:
   website: https://www.nlpcovid19workshop.org/emnlp2020/
   rocketchat_channel: workshop-nlp-covid19-emnlp

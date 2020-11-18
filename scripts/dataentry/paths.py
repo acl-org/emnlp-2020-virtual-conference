@@ -63,7 +63,7 @@ def download_tutorials():
 def download_workshops():
     download_file(URL_WORKSHOPS_OVERVIEW, PATH_WORKSHOPS_OVERVIEW)
     download_file(URL_WORKSHOPS_SCHEDULE, PATH_WORKSHOPS_SCHEDULE)
-    download_file(URL_WORKSHOPS_CSV, PATH_WORKSHOPS_CSV)
+    # download_file(URL_WORKSHOPS_CSV, PATH_WORKSHOPS_CSV)
     download_file(URL_WORKSHOP_TALKS, PATH_WORKSHOP_TALKS)
 
 
