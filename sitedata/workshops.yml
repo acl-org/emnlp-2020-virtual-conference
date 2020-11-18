@@ -23,7 +23,8 @@
     hosts: TBD
   - start_time: 2020-11-19 10:00:00-05:00
     end_time: 2020-11-19 10:50:00-05:00
-    name: Coffee break / watch pre-recorded Toutanova talk
+    name: Coffee break / watch pre-recorded Toutanova talk "Toward Progress in Text
+      Representations for Question Answering"
     hosts: TBD
   - start_time: 2020-11-19 10:50:00-05:00
     end_time: 2020-11-19 11:00:00-05:00
@@ -55,7 +56,8 @@
     hosts: TBD
   - start_time: 2020-11-20 10:00:00-05:00
     end_time: 2020-11-20 11:00:00-05:00
-    name: Coffee break / watch pre-recorded Dupoux talk
+    name: 'Coffee break / watch pre-recorded Dupoux talk "Learning Language Like Infants
+      Do: Self Supervised Learning From Raw Video"'
     hosts: TBD
   - start_time: 2020-11-20 11:00:00-05:00
     end_time: 2020-11-20 11:30:00-05:00
@@ -1540,15 +1542,15 @@
     name: Breakout Session + Lunch
     hosts: TBD
   - start_time: 2020-11-20 12:15:00-06:00
-    end_time: 2020-11-21 01:15:00-06:00
+    end_time: 2020-11-20 13:15:00-06:00
     name: 'Keynote talk: Eduard Hovy'
     hosts: TBD
-  - start_time: 2020-11-20 01:15:00-06:00
-    end_time: 2020-11-20 01:45:00-06:00
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
     name: 'Session 2: QA'
     hosts: TBD
-  - start_time: 2020-11-20 01:45:00-06:00
-    end_time: 2020-11-20 02:30:00-06:00
+  - start_time: 2020-11-20 13:45:00-06:00
+    end_time: 2020-11-20 14:30:00-06:00
     name: Discussion and closing remarks
     hosts: TBD
   zoom_links:
