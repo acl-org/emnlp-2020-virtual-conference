@@ -78,10 +78,10 @@
   zoom_links:
   - https://us02web.zoom.us/j/2575188702?pwd=VUdsT1dDK1d6ZXBjT0oyQk1vSUh2UT09
   prerecorded_talks:
-  - title: Dupoux-Keynote
+  - title: 'Learning Language Like Infants Do: Self Supervised Learning From Raw Video'
     speakers: Emmanuel Dupoux
     presentation_id: '38940786'
-  - title: Toutanova-Keynote
+  - title: Toward Progress in Text Representations for Question Answering
     speakers: Kristina Toutanova
     presentation_id: '38940787'
 - UID: WS-2
@@ -2222,40 +2222,40 @@
   rocketchat_channel: workshop-nlp-covid19-emnlp
   alias: nlp-covid19-emnlp
   sessions:
-  - start_time: 2020-11-19 08:00:00+00:00
-    end_time: 2020-11-19 08:10:00+00:00
+  - start_time: 2020-11-20 08:00:00+00:00
+    end_time: 2020-11-20 08:10:00+00:00
     name: Welcome Speech
     hosts: Karin Verspoor
-  - start_time: 2020-11-19 08:10:00+00:00
-    end_time: 2020-11-19 10:30:00+00:00
+  - start_time: 2020-11-20 08:10:00+00:00
+    end_time: 2020-11-20 10:30:00+00:00
     name: 'Session 1: Presentations'
     hosts: Karin Verspoor
-  - start_time: 2020-11-19 10:30:00+00:00
-    end_time: 2020-11-19 11:30:00+00:00
+  - start_time: 2020-11-20 10:30:00+00:00
+    end_time: 2020-11-20 11:30:00+00:00
     name: Poster session 1 (gather.town)
     hosts: Karin Verspoor
-  - start_time: 2020-11-19 11:30:00+00:00
-    end_time: 2020-11-19 16:00:00+00:00
+  - start_time: 2020-11-20 11:30:00+00:00
+    end_time: 2020-11-20 16:00:00+00:00
     name: long break
     hosts: TBD
-  - start_time: 2020-11-19 16:00:00+00:00
-    end_time: 2020-11-19 17:50:00+00:00
+  - start_time: 2020-11-20 16:00:00+00:00
+    end_time: 2020-11-20 17:50:00+00:00
     name: 'Session 2: Presentations'
     hosts: Byron Wallace
-  - start_time: 2020-11-19 17:50:00+00:00
-    end_time: 2020-11-19 18:50:00+00:00
+  - start_time: 2020-11-20 17:50:00+00:00
+    end_time: 2020-11-20 18:50:00+00:00
     name: Poster session 1 (gather.town)
     hosts: Mike Conway
-  - start_time: 2020-11-19 18:50:00+00:00
-    end_time: 2020-11-19 19:00:00+00:00
+  - start_time: 2020-11-20 18:50:00+00:00
+    end_time: 2020-11-20 19:00:00+00:00
     name: short break
     hosts: TBD
-  - start_time: 2020-11-19 19:00:00+00:00
-    end_time: 2020-11-19 20:35:00+00:00
+  - start_time: 2020-11-20 19:00:00+00:00
+    end_time: 2020-11-20 20:35:00+00:00
     name: 'Session 3: Presentations'
     hosts: Mike Conway
-  - start_time: 2020-11-19 20:35:00+00:00
-    end_time: 2020-11-19 21:00:00+00:00
+  - start_time: 2020-11-20 20:35:00+00:00
+    end_time: 2020-11-20 21:00:00+00:00
     name: Discussion
     hosts: Mike Conway
   zoom_links:
