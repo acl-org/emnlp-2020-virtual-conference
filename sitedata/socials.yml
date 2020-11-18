@@ -435,14 +435,15 @@
   organizers:
     members:
     - Jack Hessel
-    - Tim Baldwin
+    - Julia Hockenmaier
+    - Marzieh Fadaee
+    - Michael Roth
+    - Mohit Bansal
+    - Noah Smith
     - Ritwik Banerjee
     - Steven Bethard
-    - Michael Roth
+    - Tim Baldwin
     - Yevgeni Berzak
-    - Marzieh Fadaee
-    - Noah Smith
-    - Mohit Bansal
   rocketchat_channel:
   location: Zoom
   sessions:
