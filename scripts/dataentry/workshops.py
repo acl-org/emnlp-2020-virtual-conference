@@ -124,6 +124,7 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
             other = {"WS-4": "SCAI", "WS-1": "ConLL", "WS-13": "DeeLIO"}
             alias = other[row["UID"]]
 
+        workshop = schedule[uid]
         alias = alias.lower()
         sessions = [
             {
@@ -132,14 +133,14 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
                 "name": session.name,
                 "hosts": session.host,
             }
-            for session in schedule[uid].sessions
+            for session in workshop.sessions
         ]
         title = row["Name"].strip()
         entry = {
             "UID": uid,
             "title": title,
             "organizers": row["Organizers"].strip(),
-            "abstract": row["Summary"],
+            "abstract": workshop.description if workshop.description else row["Summary"],
             "website": row["URL"],
             "rocketchat_channel": f"workshop-{alias.lower()}",
             "alias": alias,
@@ -159,7 +160,7 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
     return data
 
 
-def load_schedule():
+def load_schedule() -> Dict[str, Workshop]:
     wb = load_workbook(PATH_WORKSHOPS_SCHEDULE)
 
     data = {}

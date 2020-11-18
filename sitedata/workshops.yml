@@ -1,8 +1,10 @@
 - UID: WS-1
   title: CoNLL 2020
   organizers: "Raquel Fern\xE1ndez and Tal Linzen"
-  abstract: CoNLL is a yearly top-tier NLP conference that has been organized by SIGNLL
-    since 1997.
+  abstract: "CoNLL is a yearly conference organized by SIGNLL (ACL's Special Interest\
+    \ Group on Natural Language Learning). The main focus of CoNLL is on theoretically,\
+    \ cognitively and scientifically motivated approaches to computational linguistics,\
+    \ rather than on work driven by particular engineering applications. "
   website: https://www.conll.org
   rocketchat_channel: workshop-conll
   alias: conll
@@ -1987,7 +1989,7 @@
   - start_time: 2020-11-20 15:00:00+00:00
     end_time: 2020-11-20 15:10:00+00:00
     name: Intro to NLPBT
-    hosts: TBD
+    hosts: Simone Filice
   - start_time: 2020-11-20 15:10:00+00:00
     end_time: 2020-11-20 15:30:00+00:00
     name: Modulated Fusion using Transformer for Linguistic-Acoustic Emotion Recognition
@@ -2029,7 +2031,7 @@
   - start_time: 2020-11-20 19:50:00+00:00
     end_time: 2020-11-20 20:00:00+00:00
     name: Closing NLPBT
-    hosts: TBD
+    hosts: Giuseppe Castellucci
   zoom_links:
   - https://us02web.zoom.us/j/4210020303
   prerecorded_talks: []
@@ -2237,7 +2239,7 @@
   - start_time: 2020-11-20 11:30:00+00:00
     end_time: 2020-11-20 16:00:00+00:00
     name: long break
-    hosts: TBD
+    hosts: unhosted
   - start_time: 2020-11-20 16:00:00+00:00
     end_time: 2020-11-20 17:50:00+00:00
     name: 'Session 2: Presentations'
@@ -2249,7 +2251,7 @@
   - start_time: 2020-11-20 18:50:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
     name: short break
-    hosts: TBD
+    hosts: unhosted
   - start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 20:35:00+00:00
     name: 'Session 3: Presentations'
