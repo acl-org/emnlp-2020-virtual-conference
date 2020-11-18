@@ -1519,15 +1519,19 @@
   sessions:
   - start_time: 2020-11-20 08:00:00-06:00
     end_time: 2020-11-20 08:10:00-06:00
-    name: Opening remarks
+    name: <b>Opening remarks</b><a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a>
     hosts: TBD
   - start_time: 2020-11-20 08:10:00-06:00
     end_time: 2020-11-20 09:00:00-06:00
-    name: Discussion on next year workshop and SIG
+    name: <b>Discussion on next year workshop and SIG</b><a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a>
     hosts: TBD
   - start_time: 2020-11-20 09:00:00-06:00
     end_time: 2020-11-20 10:00:00-06:00
-    name: 'Keynote talk: Eunsol Choi'
+    name: <b>Keynote</b><br> Eunsol Choi  <a href="https://codi-workshop.github.io/invited-speakers/">
+      <i>- Learning to Understand Language in Context</i> <br></a> <a href="https://us02web.zoom.us/j/4396802858">Zoom
+      link 1</a>
     hosts: TBD
   - start_time: 2020-11-20 10:00:00-06:00
     end_time: 2020-11-20 10:15:00-06:00
@@ -1535,23 +1539,84 @@
     hosts: TBD
   - start_time: 2020-11-20 10:15:00-06:00
     end_time: 2020-11-20 10:45:00-06:00
-    name: 'Session 1: QA'
-    hosts: TBD
+    name: |-
+      Session 1: QA - Anaphora and coreference - Part 1 <br> <a href="https://us02web.zoom.us/j/2338884319">Zoom link 2</a> <br><br> Exploring Span Representations in Neural Coreference Resolution, Patrick Kahardipraja, Olena Vyshnevska and Sharid Loáiciga <br>
+      Using Type Information to Improve Entity Coreference Resolution, Sopan Khosla and Carolyn Rose <br>
+      Eliminating Mention Overlaps: Evaluation of Coreference Resolution Systems Under Adversarial Attacks, Haixia Chai, Wei Zhao, Steffen Eger and Michael Strube <br>
+      COLING Free the Plural: Unrestricted Split-Antecedent Anaphora Resolution, Juntao Yu, Nafise Sadat Moosavi, Silviu Paun and Massimo Poesio
+    hosts: Michael Strube
+  - start_time: 2020-11-20 10:15:00-06:00
+    end_time: 2020-11-20 10:45:00-06:00
+    name: |-
+      Session 1: QA - Coherence relations, discourse parsing and corpora - Part 1 <br> <a href="https://us02web.zoom.us/j/9783550398">Zoom link 3</a> <br><br>
+                        Coreference for Discourse Parsing: A Neural Approach, Grigorii Guz and Giuseppe Carenini <br>
+                        Analyzing Neural Discourse Coherence Models, Youmna Farag, Josef Valvoda, Helen Yannakoudakis and Ted Briscoe  <br>
+                        DSNDM: Deep Siamese Neural Discourse Model with Attention for Text Pairs Categorization and Ranking, Alexander Chernyavskiy and Dmitry Ilvovsky <br>
+                        Unsupervised Inference of Data-Driven Discourse Structures using a Tree Auto-Encoder, Patrick Huber and Giuseppe Carenini
+    hosts: "Chlo\xE9 Braud and Annie Louis"
+  - start_time: 2020-11-20 10:15:00-06:00
+    end_time: 2020-11-20 10:45:00-06:00
+    name: |-
+      Session 1: QA - Discourse and dialog - Part 1 <br> <a href="https://us02web.zoom.us/j/5611345347">Zoom link 4</a> <br><br>
+                        Joint Modeling of Arguments for Event Understanding, Yunmo Chen, Tongfei Chen and Benjamin Van Durme <br>
+                        Beyond Adjacency Pairs: Extracting Longer Regularities in Human-Machine Dialogues, Maitreyee Maitreyee   <br>
+                        FINDINGS Converting the Point of View of Messages Spoken to Virtual Assistants, Isabelle G. Lee, Vera Zu, Sai Srujana Buddi, Dennis Liang, Purva Kulkarni, Jack G.M. Fitzgerald   <br>
+                        FINDINGS Dialogue Generation on Infrequent Sentence Functions via Structured Meta-Learning, Yifan Gao, Piji Li, Wei Bi, Xiaojiang Liu, Michael R. Lyu, Irwin King  <br>
+                        FINDINGS Composed Variational Natural Language Generation for Few-shot Intents, Congying Xia, Caiming Xiong, Philip Yu, Richard Socher <br>
+                        FINDINGS A Hierarchical Network for Abstractive Meeting Summarization with Cross-Domain Pretraining, Chenguang Zhu, Ruochen Xu, Michael Zeng, Xuedong Huang
+    hosts: Christian Hardmeier and Jessy Li
   - start_time: 2020-11-20 10:45:00-06:00
     end_time: 2020-11-20 12:15:00-06:00
-    name: Breakout Session + Lunch
+    name: <b>Breakout Sessions + Lunch</b><a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a>
     hosts: TBD
   - start_time: 2020-11-20 12:15:00-06:00
     end_time: 2020-11-20 13:15:00-06:00
-    name: 'Keynote talk: Eduard Hovy'
+    name: <b>Keynote</b><br> Eduard Hovy  <a href="https://codi-workshop.github.io/invited-speakers/">
+      <i>- Discourse processing in the time of DNNs</i> <br></a> <a href="https://us02web.zoom.us/j/4396802858">Zoom
+      link 1</a>
     hosts: TBD
   - start_time: 2020-11-20 13:15:00-06:00
     end_time: 2020-11-20 13:45:00-06:00
-    name: 'Session 2: QA'
-    hosts: TBD
+    name: |-
+      Session 2: QA - Anaphora and coreference - Part 2  <br> <a href="https://us02web.zoom.us/j/2338884319">Zoom link 2</a> <br><br>
+                        Exploring Coreference Features in Heterogeneous Data with Text Classification, Ekaterina Lapshinova-Koltunski and Kerstin Kunz <br>
+                        COLING Multitask Learning-Based Neural Bridging Reference Resolution, Juntao Yu and Massimo Poesio  <br>
+                        FINDINGS Paraphrasing vs Coreferring: Two Sides of the Same Coin Yehudit Meged   <br>
+                        FINDINGS Adapting Coreference Resolution to Twitter Conversations Berfin AktaÅŸ
+    hosts: Michael Strube
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
+    name: |-
+      Session 2: QA - Coherence relations, discourse parsing and corpora - Part 2 <br> <a href="https://us02web.zoom.us/j/9783550398">Zoom link 3</a> <br><br>
+                        TED-MDB Lexicons: TrEnConnLex, PtEnConnLex, Murathan Kurfalı, Sibel Ozer, Deniz Zeyrek and Amália Mendes <br>
+                        Large Discourse Treebanks from Scalable Distant Supervision, Patrick Huber and Giuseppe Carenini  <br>
+                        Contextualized Embeddings for Connective Disambiguation in Shallow Discourse Parsing, René Knaebel and Manfred Stede <br>
+                        Extending Implicit Discourse Relation Recognition to the PDTB-3, Li Liang, Zheng Zhao and Bonnie Webber
+    hosts: "Chlo\xE9 Braud  "
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
+    name: |-
+      Session 2: QA - Discourse and language understanding   <br> <a href="https://us02web.zoom.us/j/5611345347">Zoom link 4</a> <br><br>
+                        Discourse for Argument Mining, and Argument Mining as Discourse, Diane Litman  <br>
+                        Do sentence embeddings capture discourse properties of sentences from Scientific Abstracts?, Laurine Huber, Chaker Memmadi, Mathilde Dargnat and Yannick Toussaint  <br>
+                        How does discourse affect Spanish-Chinese Translation? A case study based on a Spanish-Chinese parallel corpus, Shuyuan Cao  <br>
+                        FINDINGS Social Commonsense Reasoning with Multi-Head Knowledge Attention, Debjit Paul, Anette Frank <br>
+                        FINDINGS Thinking Like a Skeptic: Defeasible Inference in Natural Language, Rachel Rudinger, Vered Shwartz, Jena D. Hwang, Chandra Bhagavatula, Maxwell Forbes, Ronan Le Bras, Noah A. Smith, Yejin Choi
+    hosts: Christian Hardmeier and Annie Louis
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
+    name: |-
+      Session 2: QA - Generation and applications   <br> <a href="https://us02web.zoom.us/j/9987253895">Zoom link 5</a> <br><br>
+                        Computational Interpretation of Recency for the Choice of Referring Expressions in Discourse, Fahime Same and Kees van Deemter <br>
+                        Do We Really Need Thrs In Transformer For Extractive Summarization? Discourse Can Help!, Wen Xiao, Patrick Huber and Giuseppe Carenini  <br>
+                        Supporting Comedy Writers: Predicting Audience’s Response from Sketch Comedy and Crosstalk Scripts, Maolin Li  <br>
+                        Exploring aspects of similarity between spoken personal narratives by disentangling them into narrative clause types, Belen Saldias and Deb Roy
+    hosts: Jessy Li
   - start_time: 2020-11-20 13:45:00-06:00
     end_time: 2020-11-20 14:30:00-06:00
-    name: Discussion and closing remarks
+    name: <b>Discussion and closing remarks</b><a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a>
     hosts: TBD
   zoom_links:
   - https://us02web.zoom.us/j/3636713515
