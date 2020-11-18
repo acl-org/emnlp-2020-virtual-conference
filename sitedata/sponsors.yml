@@ -59,7 +59,7 @@
   youtube: https://www.youtube.com/embed/vfkOZTjD06Y
   zoom_link: https://appleinc.webex.com/appleinc/onstage/g.php?MTID=ebeef7337dbef265460fe648f08c716d3
   schedule:
-  - start: 2020-11-18 13:00:00-07:00
+  - start: 2020-11-18 21:00:00+00:00
     duration: 0.5
     label: Meet Apple Virtual Event
   resources:

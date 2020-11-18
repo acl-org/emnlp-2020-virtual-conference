@@ -553,6 +553,10 @@ def add_invited_talks(slideslive: pd.DataFrame):
 
         presentation_id = row["SlidesLive link"].replace("https://slideslive.com/", "")
 
+        if presentation_id == "38939447":
+            print("removing", presentation_id)
+            continue
+
         talks_per_workshop[row["Organizer track name"].strip()].append(
             {"title": title, "speakers": speakers, "presentation_id": presentation_id}
         )
