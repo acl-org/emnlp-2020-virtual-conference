@@ -11,7 +11,8 @@
   sessions:
   - start_time: 2020-11-19 05:45:00-05:00
     end_time: 2020-11-19 07:45:00-05:00
-    name: 'Shared task: MRP (zoom + gather.town)'
+    name: '<a href="http://mrp.nlpl.eu/2020/index.php?page=16">Shared Task: Meaning
+      Representation Parsing</a> (zoom and gather.town)'
     hosts: TBD
   - start_time: 2020-11-19 07:45:00-05:00
     end_time: 2020-11-19 08:00:00-05:00
