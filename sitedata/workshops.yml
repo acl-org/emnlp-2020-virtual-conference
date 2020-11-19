@@ -230,7 +230,7 @@
     hosts: Joao Sedoc
   - start_time: 2020-11-19 09:15:00-08:00
     end_time: 2020-11-19 10:00:00-08:00
-    name: <b>Social break / meal time.</b> Gather.town (room TBA)
+    name: <b>Social break / meal time.</b> Gather.town (room N)
     hosts: n/a
   - start_time: 2020-11-19 10:00:00-08:00
     end_time: 2020-11-19 10:45:00-08:00
@@ -269,8 +269,8 @@
     hosts: Joao Sedoc
   - start_time: 2020-11-19 12:30:00-08:00
     end_time: 2020-11-19 13:00:00-08:00
-    name: <b>Social break / meal time.</b> Gather.town (room TBA)
-    hosts: TBD
+    name: <b>Social break / meal time.</b> Gather.town (room N)
+    hosts: n/a
   - start_time: 2020-11-19 13:00:00-08:00
     end_time: 2020-11-19 14:00:00-08:00
     name: |-
@@ -301,7 +301,7 @@
     hosts: Anna Rogers
   - start_time: 2020-11-19 15:15:00-08:00
     end_time: 2020-11-19 16:00:00-08:00
-    name: <b>Virtual happy hour</b> Gather.town (room TBA)
+    name: <b>Virtual happy hour</b> Gather.town (room N)
     hosts: Joao Sedoc
   zoom_links:
   - https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09
