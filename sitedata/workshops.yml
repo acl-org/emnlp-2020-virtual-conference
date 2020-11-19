@@ -1259,7 +1259,12 @@
     hosts: Anna Rumshisky
   - start_time: 2020-11-19 10:00:00-05:00
     end_time: 2020-11-19 10:25:00-05:00
-    name: Oral Session 1
+    name: |-
+      Oral Session 1
+
+      - [Various Approaches for Predicting Stroke Prognosis using Magnetic Resonance Imaging Text Records](https://virtual.2020.emnlp.org/paper_WS-12.15.html)
+      - [Multiple Sclerosis Severity Classification From Clinical Text](https://virtual.2020.emnlp.org/paper_WS-12.12.html)
+      - [BERT-XML: Large Scale Automated ICD Coding Using BERT Pretraining](https://virtual.2020.emnlp.org/paper_WS-12.43.html)
     hosts: Steven Bethard
   - start_time: 2020-11-19 10:25:00-05:00
     end_time: 2020-11-19 10:40:00-05:00
@@ -1273,7 +1278,13 @@
     hosts: Unhosted
   - start_time: 2020-11-19 10:50:00-05:00
     end_time: 2020-11-19 11:25:00-05:00
-    name: Oral Session 2
+    name: |-
+      Oral Session 2
+
+      - [Incorporating Risk Factor Embeddings in Pre-trained Transformers Improves Sentiment Prediction in Psychiatric Discharge Summaries](https://virtual.2020.emnlp.org/paper_WS-12.21.html)
+      - [Information Extraction from Swedish Medical Prescriptions with Sig-Transformer Encoder](https://virtual.2020.emnlp.org/paper_WS-12.10.html)
+      - [Evaluation of Transfer Learning for Adverse Drug Event (ADE) and Medication Entity Extraction](https://virtual.2020.emnlp.org/paper_WS-12.18.html)
+      - [BioBERTpt - A Portuguese Neural Language Model for Clinical Named Entity Recognition](https://virtual.2020.emnlp.org/paper_WS-12.30.html)
     hosts: Kirk Roberts
   - start_time: 2020-11-19 11:25:00-05:00
     end_time: 2020-11-19 11:40:00-05:00
@@ -1283,7 +1294,28 @@
     hosts: Kirk Roberts
   - start_time: 2020-11-19 11:40:00-05:00
     end_time: 2020-11-19 12:00:00-05:00
-    name: Poster Teasers </br> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>
+    name: |-
+      Poster Teasers
+
+      - [Dilated Convolutional Attention Network for Medical Code Assignment from Clinical Text](https://virtual.2020.emnlp.org/paper_WS-12.1.html)
+      - [Classification of Syncope Cases in Norwegian Medical Records](https://virtual.2020.emnlp.org/paper_WS-12.3.html)
+      - [Comparison of Machine Learning Methods for Multi-label Classification of Nursing Education and Licensure Exam Questions](https://virtual.2020.emnlp.org/paper_WS-12.4.html)
+      - [Clinical XLNet: Modeling Sequential Clinical Notes and Predicting Prolonged Mechanical Ventilation](https://virtual.2020.emnlp.org/paper_WS-12.6.html)
+      - [Automatic recognition of abdominal lymph nodes from clinical text](https://virtual.2020.emnlp.org/paper_WS-12.7.html)
+      - [How You Ask Matters: The Effect of Paraphrastic Questions to BERT Performance on a Clinical SQuAD Dataset](https://virtual.2020.emnlp.org/paper_WS-12.11.html)
+      - [Relative and Incomplete Time Expression Anchoring for Clinical Text](https://virtual.2020.emnlp.org/paper_WS-12.16.html)
+      - [MeDAL: Medical Abbreviation Disambiguation Dataset for Natural Language Understanding Pretraining](https://virtual.2020.emnlp.org/paper_WS-12.17.html)
+      - [Knowledge Grounded Conversational Symptom Detection with Graph Memory Networks](https://virtual.2020.emnlp.org/paper_WS-12.19.html)
+      - [Pretrained Language Models for Biomedical and Clinical Tasks: Understanding and Extending the State-of-the-Art](https://virtual.2020.emnlp.org/paper_WS-12.20.html)
+      - [Assessment of DistilBERT performance on Named Entity Recognition task for the detection of Protected Health Information and medical concepts](https://virtual.2020.emnlp.org/paper_WS-12.23.html)
+      - [Distinguishing between Dementia with Lewy bodies (DLB) and Alzheimer’s Disease (AD) using Mental Health Records: a Classification Approach](https://virtual.2020.emnlp.org/paper_WS-12.2020.clinicalnlp-1.19.html)
+      - [Weakly Supervised Medication Regimen Extraction from Medical Conversations](https://virtual.2020.emnlp.org/paper_WS-12.26.html)
+      - [Extracting Relations between Radiotherapy Treatment Details](https://virtual.2020.emnlp.org/paper_WS-12.27.html)
+      - [Cancer Registry Information Extraction via Transfer Learning](https://virtual.2020.emnlp.org/paper_WS-12.31.html)
+      - [PHICON: Improving Generalization of Clinical Text De-identification Models via Data Augmentation](https://virtual.2020.emnlp.org/paper_WS-12.37.html)
+      - [Where’s the Question? A Multi-channel Deep Convolutional Neural Network for Question Identification in Textual Data](https://virtual.2020.emnlp.org/paper_WS-12.38.html)
+      - [Learning from Unlabelled Data for Clinical Semantic Textual Similarity](https://virtual.2020.emnlp.org/paper_WS-12.40.html)
+      - [Joint Learning with Pre-trained Transformer on Named Entity Recognition and Relation Extraction Tasks for Clinical Analytics](https://virtual.2020.emnlp.org/paper_WS-12.44.html)
     hosts: Kirk Roberts
   - start_time: 2020-11-19 12:30:00-05:00
     end_time: 2020-11-19 13:20:00-05:00
