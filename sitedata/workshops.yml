@@ -83,7 +83,7 @@
   zoom_links:
   - https://us02web.zoom.us/j/2575188702?pwd=VUdsT1dDK1d6ZXBjT0oyQk1vSUh2UT09
   prerecorded_talks:
-  - title: 'Learning Language Like Infants Do: Self Supervised Learning From Raw Video'
+  - title: 'Learning Language Like Infants Do: Self Supervised Learning From Raw Audio'
     speakers: Emmanuel Dupoux
     presentation_id: '38940786'
   - title: Toward Progress in Text Representations for Question Answering
