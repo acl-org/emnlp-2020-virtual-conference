@@ -146,6 +146,7 @@
     \ Achievement from the International Speech Communication Association."
   presenter: Janet Pierrehumbert
 - UID: business_meeting
+  presentation_id: "38942830"
   title: Business Meeting
   day: Nov 19
   image: static/images/emnlp2020/acl-logo.png
@@ -156,6 +157,7 @@
   rocketchat_channel: plenary-business-meeting
 - UID: best_paper_awards_and_closing
   title: Best Paper Awards and Closing
+  presentation_id: "38942830"
   day: Nov 19
   image: static/images/emnlp2020/acl-logo.png
   sessions:

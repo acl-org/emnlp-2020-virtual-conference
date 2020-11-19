@@ -1575,8 +1575,8 @@
   - start_time: 2020-11-20 06:00:00-08:00
     end_time: 2020-11-20 07:00:00-08:00
     name: '<b>Invited Talk</b><br> <a href="https://us02web.zoom.us/j/5715758008">Zoom
-      link 1</a> <br><br> <b>Mona Diab</b>: Non-parameterized sentence encoders: an
-      efficient alternative'
+      link 1</a> <br> <b>Mona Diab</b>: Non-parameterized sentence encoders: an efficient
+      alternative'
     hosts: TBD
   - start_time: 2020-11-20 07:00:00-08:00
     end_time: 2020-11-20 08:00:00-08:00
@@ -1587,6 +1587,14 @@
       • <a href="https://virtual.2020.emnlp.org/paper_WS-15.6.html">End to End Binarized Neural Networks for Text Classification</a> <br>
       • <a href="https://virtual.2020.emnlp.org/paper_WS-15.36.html">Predictive Model Selection for Transfer Learning in Sequence Labeling Tasks</a>
     hosts: Thomas Wolf
+  - start_time: 2020-11-20 07:00:00-08:00
+    end_time: 2020-11-20 08:00:00-08:00
+    name: |-
+      QA session3-B: <br> <a href="https://us02web.zoom.us/j/4500113018">Zoom link 2</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.547.html">PBoS: Probabilistic Bag-of-Subwords for Generalizing Word Embedding</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.2017.html">Unsupervised Few-Bits Semantic Hashing with Implicit Topics Modeling</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.512.html"> Fixed Encoder Self-Attention Patterns in Transformer-Based Machine Translation</a>
+    hosts: TBD
   - start_time: 2020-11-20 08:00:00-08:00
     end_time: 2020-11-20 09:00:00-08:00
     name: |-
@@ -1600,7 +1608,7 @@
     end_time: 2020-11-20 10:00:00-08:00
     name: |-
       <b>Panel Discussion</b> <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
-      <b>Panelists:</b> Kyunghyun Cho, Yejin Choi, Mona Diab, Yoav Goldberg, Iryna Gurevych, Heng Ji, Graham Neubig, Alexander Rush, Armand Joulin, Luke Zettlemoyer
+      <b>Panelists</b>: Kyunghyun Cho, Yejin Choi, Mona Diab, Yoav Goldberg, Iryna Gurevych, Heng Ji, Graham Neubig, Alexander Rush, Armand Joulin, Luke Zettlemoyer
     hosts: Vered Shwartz & Angela Fan
   - start_time: 2020-11-20 10:00:00-08:00
     end_time: 2020-11-20 11:00:00-08:00
@@ -1932,10 +1940,11 @@
     presentation_id: '38939542'
 - UID: WS-18
   title: NLP and Computational Social Science (NLP+CSS)
-  organizers: Svitlana Volkova, David Jurgens, David Bamman and Dirk Hovy
+  organizers: Svitlana Volkova, David Jurgens, David Bamman, Dirk Hovy and Brendan
+    T. O'Connor
   abstract: This workshop focuses on NLP for Social Sciences, interdisciplinary work
     in CSS, and integrating CSS with current trends in NLP.
-  website:
+  website: https://sites.google.com/site/nlpandcss/nlp-css-at-emnlp-2020
   rocketchat_channel: workshop-nlpcss
   alias: nlpcss
   sessions:
