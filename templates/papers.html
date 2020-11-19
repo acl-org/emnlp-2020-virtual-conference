@@ -393,7 +393,7 @@
     for (paper_id of fav_papers) {
       var paper = papers_by_id[paper_id];
       var content = paper["content"];
-      var row = [paper["id"], paper["title"], content["authors"].join(", "), content["pdf_url"] ];
+      var row = [paper["id"], content["title"], content["authors"].join(", "), content["pdf_url"] ];
       result.push( row.join("\t"));
     }
 
