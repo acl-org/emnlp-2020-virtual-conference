@@ -256,6 +256,9 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
     authors = []
     presentation_ids = []
 
+    fixed_papers = {}
+
+    i = 0
     for _, row in slideslive.iterrows():
         if is_not_paper(row):
             continue
@@ -267,24 +270,38 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
             fix_text(e.strip()) for e in re.split(",| and | And ", row["Speakers"])
         ]
 
+        presentation_id = row["SlidesLive link"].replace("https://slideslive.com/", "")
+
         ws = row["Organizer track name"].strip()
         uid = row["Unique ID"].strip()
 
+        if title.startswith("Findings:"):
+            continue
+
+        if uid == "510" or uid == "561" or uid == "1093" or uid == "1761"  or uid == "2575-ws3":
+            continue
+
         if ws == "WS-15" and str(uid) in fix.keys():
             ws = fix[uid]
+            fixed_papers[title] = i
+        elif title in fixed_papers:
+            idx = fixed_papers[title]
+            print(title, idx, len(titles))
+            assert titles[idx] == title
+            presentation_ids[idx] = presentation_id
+            continue
 
         paper_id = f"{ws}.{uid}"
-        if title in titles or paper_id in UIDs:
-            print(paper_id, title)
-            continue
 
         venues.append(ws)
         UIDs.append(paper_id)
         titles.append(title)
         authors.append("|".join(author_list))
         presentation_ids.append(
-            row["SlidesLive link"].replace("https://slideslive.com/", "")
+            presentation_id
         )
+
+        i += 1
 
     anthology_papers = get_anthology_workshop_papers() + read_wmt_bib()
     title_to_anthology_paper = {a.title.strip().lower(): a for a in anthology_papers}
