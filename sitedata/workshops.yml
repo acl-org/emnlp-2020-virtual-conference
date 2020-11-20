@@ -1765,7 +1765,7 @@
     hosts: TBD
   - start_time: 2020-11-20 10:00:00-06:00
     end_time: 2020-11-20 10:15:00-06:00
-    name: break
+    name: <b> break - Gather.town (Room K) </b>
     hosts: TBD
   - start_time: 2020-11-20 10:15:00-06:00
     end_time: 2020-11-20 10:45:00-06:00
@@ -1797,8 +1797,8 @@
     hosts: Christian Hardmeier and Jessy Li
   - start_time: 2020-11-20 10:45:00-06:00
     end_time: 2020-11-20 12:15:00-06:00
-    name: <b>Breakout Sessions + Lunch</b> <br><a href="https://us02web.zoom.us/j/3636713515">Zoom
-      link 1</a>
+    name: '<b>Breakout Sessions + Lunch</b> <br><a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a><br><b>Then meet in: Gather.town (Room K) </b><br>'
     hosts: TBD
   - start_time: 2020-11-20 12:15:00-06:00
     end_time: 2020-11-20 13:15:00-06:00
@@ -2442,7 +2442,7 @@
   - start_time: 2020-11-20 15:00:00-08:00
     end_time: 2020-11-20 17:00:00-08:00
     name: Session 4
-    hosts: TBD
+    hosts: Patricia
   - start_time: 2020-11-20 15:00:00-08:00
     end_time: 2020-11-20 15:45:00-08:00
     name: Invited talk by Krishnaram Kenthapadi
