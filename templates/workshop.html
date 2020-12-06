@@ -37,19 +37,7 @@
 
     </div>
 
-    <div class="text-center pt-n2 pb-3">
-      {% if workshop.zoom_links| length == 1  %}
-        <a href="{{ workshop.zoom_links[0] }}" target="_blank"  class="card-link">
-        Zoom Link
-        </a>
-      {% elif workshop.zoom_links|length > 1 %}
-        {% for zoom_link in workshop.zoom_links %}
-        <a href="{{ zoom_link }}" target="_blank"  class="card-link">
-        Zoom Link  {{ loop.index }}
-        </a>
-        {% endfor %}
-      {% endif %}
-    </div>
+
 
     {{ components.live_sessions(
         workshop.blocks,
@@ -100,65 +88,6 @@
 </div>
 {% endif %}
 <script src="static/js/time-extend.js"></script>
-
-<div class="container" style="background-color:white; padding: 0px;">
-  <div class="text-muted text-center">
-  You can open the
-  {% if workshop.livestream %}
-  <a href="https://slideslive.com/{{workshop.livestream}}" target="_blank">livestream video</a>
-  and
-  {% endif %}
-  the
-  <a href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}" target="_blank">
-    #{{ workshop.rocketchat_channel }}
-  </a>
-  channel
-  {% if workshop.livestream %}
-  in separate windows.
-  {% else %}
-  in a separate window.
-  {% endif %}
-
-  </div>
-
-  <div class="row m-2">
-  {% if workshop.livestream %}
-<!-- Livestreaming -->
-    <div class="col-md-7 col-xs-12 my-auto p-2" >
-      <div id="presentation-embed" class="slp my-auto"></div>
-      <script src='https://slideslive.com/embed_presentation.js'></script>
-      <script>
-        embed = new SlidesLiveEmbed('presentation-embed', {
-        presentationId: '{{workshop.livestream}}',
-        autoPlay: false, // change to true to autoplay the embedded presentation
-        verticalEnabled: true,
-        verticalWhenWidthLte: 500,
-        allowHiddenControlsWhenPaused: true,
-        hideTitle: true
-        });
-      </script>
-    </div>
-
-    <!-- Chat -->
-    <br/>
-    <div class="col-md-5 col-xs-12 p-2">
-      <div id="gitter" class="slp">
-        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
-      </div>
-    </div>
-  {% else %}
-  <div class="container" style="background-color:white; padding: 0px;">
-
-
-    <!-- Chat -->
-      <div id="gitter" class="slp">
-        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
-      </div>
-  </div>
-  {% endif %}
-</div>
-
-
 
 {% if workshop.prerecorded_talks %}
   <!-- Prerecorded Talk -->

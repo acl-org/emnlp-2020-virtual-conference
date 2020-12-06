@@ -24,24 +24,24 @@
   - name: Part 1
     start_time: 2020-11-19 15:00:00+00:00
     end_time: 2020-11-19 16:30:00+00:00
-    zoom_link: https://us02web.zoom.us/j/2637599975
+    zoom_link: https://zoom.us
     hosts: Eric Wallace, Matt Gardner and Sameer Singh
   - name: Q&A 1
     start_time: 2020-11-19 16:30:00+00:00
     end_time: 2020-11-19 17:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/2637599975
+    zoom_link: https://zoom.us
   - name: BREAK
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 17:30:00+00:00
-    zoom_link: https://us02web.zoom.us/j/2637599975
+    zoom_link: https://zoom.us
   - name: Part 2
     start_time: 2020-11-19 17:30:00+00:00
     end_time: 2020-11-19 19:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/2637599975
+    zoom_link: https://zoom.us
   - name: Q&A 2
     start_time: 2020-11-19 19:00:00+00:00
     end_time: 2020-11-19 19:30:00+00:00
-    zoom_link: https://us02web.zoom.us/j/2637599975
+    zoom_link: https://zoom.us
   website: https://www.ericswallace.com/interpretability
 - UID: T2
   title: 'Fact-Checking, Fake News, Propaganda, and Media Bias: Truth Seeking in the
@@ -61,12 +61,12 @@
   - name: Q&A
     start_time: 2020-11-19 10:00:00+00:00
     end_time: 2020-11-19 11:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/7912953569
+    zoom_link: https://zoom.us
     hosts: Preslav Nakov and Giovanni Da San Martino
   - name: Q&A
     start_time: 2020-11-19 14:00:00+00:00
     end_time: 2020-11-19 15:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/7912953569
+    zoom_link: https://zoom.us
   prerecorded: '38940825'
   website: https://propaganda.math.unipd.it/emnlp20-tutorial
 - UID: T3
@@ -92,13 +92,13 @@
   - name: Q&A
     start_time: 2020-11-19 17:00:00+00:00
     end_time: 2020-11-19 18:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/9096516638
+    zoom_link: https://zoom.us
     hosts: Gabriel Ilharco, Cesar Ilharco, Iulia Turc, Tim Dettmers, Felipe Ferreira,
       Kenton Lee
   - name: Q&A
     start_time: 2020-11-20 00:00:00+00:00
     end_time: 2020-11-20 01:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/9096516638
+    zoom_link: https://zoom.us
   prerecorded: '38940826'
 - UID: T4
   title: 'Machine Reasoning: Technology, Dilemma and Future'
@@ -124,12 +124,12 @@
   - name: Q&A
     start_time: 2020-11-19 09:00:00+00:00
     end_time: 2020-11-19 10:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/4445879998
+    zoom_link: https://zoom.us
     hosts: Nan Duan, Duyu Tang and Ming Zhou
   - name: Q&A
     start_time: 2020-11-20 01:00:00+00:00
     end_time: 2020-11-20 02:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/4445879998
+    zoom_link: https://zoom.us
   prerecorded: '38940827'
 - UID: T5
   title: Representation, Learning and Reasoning on Spatial Language for Down-stream
@@ -157,12 +157,12 @@
   - name: Q&A
     start_time: 2020-11-20 17:00:00+00:00
     end_time: 2020-11-20 18:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/8232538402
+    zoom_link: https://zoom.us
     hosts: Parisa Kordjamshidi, James Pustejovsky and Marie-Francine Moens
   - name: Q&A
     start_time: 2020-11-21 00:00:00+00:00
     end_time: 2020-11-21 01:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/8232538402
+    zoom_link: https://zoom.us
   prerecorded: '38940828'
   website: https://spatial-language-tutorial.github.io
 - UID: T6
@@ -181,12 +181,12 @@
   - name: Q&A
     start_time: 2020-11-20 18:00:00+00:00
     end_time: 2020-11-20 19:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/9514558044
+    zoom_link: https://zoom.us
     hosts: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan and Zhongjun He
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/9514558044
+    zoom_link: https://zoom.us
   prerecorded: '38940829'
 - UID: T7
   title: The Amazing World of Neural Language Generation
@@ -214,11 +214,11 @@
   - name: Q&A
     start_time: 2020-11-20 19:00:00+00:00
     end_time: 2020-11-20 20:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/9058998626
+    zoom_link: https://zoom.us
     hosts: Yangfeng Ji, Antoine Bosselut, Thomas Wolf and Asli Celikyilmaz
   - name: Q&A
     start_time: 2020-11-21 01:00:00+00:00
     end_time: 2020-11-21 02:00:00+00:00
-    zoom_link: https://us02web.zoom.us/j/9058998626
+    zoom_link: https://zoom.us
   prerecorded: '38940830'
   website: https://nlg-world.github.io

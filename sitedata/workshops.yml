@@ -81,7 +81,7 @@
     name: 'Session 6: Mixed topics + Findings papers (gather.town)'
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/2575188702?pwd=VUdsT1dDK1d6ZXBjT0oyQk1vSUh2UT09
+  - https://zoom.us
   prerecorded_talks:
   - title: 'Learning Language Like Infants Do: Self Supervised Learning From Raw Audio'
     speakers: Emmanuel Dupoux
@@ -183,7 +183,7 @@
     name: Closing
     hosts: zoom
   zoom_links:
-  - https://us02web.zoom.us/j/7379300234?pwd=cnJnZllOM1dUNEJlSXZxd1ZNSC83QT09
+  - https://zoom.us
   prerecorded_talks:
   - title: '"Low-resourcedness" Beyond Data'
     speakers: Masakhane
@@ -304,7 +304,7 @@
     name: <b>Virtual happy hour</b> Gather.town (room N)
     hosts: Joao Sedoc
   zoom_links:
-  - https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09
+  - https://zoom.us
   prerecorded_talks:
   - title: "Negative results yield interesting questions, or: A bunch of stuff that\
       \ didn't work"
@@ -390,7 +390,7 @@
     name: Social Hour
     hosts: J. Kiseleva & J. Dalton
   zoom_links:
-  - https://us02web.zoom.us/j/4123561447?pwd=UUM5ZkxMQ3hYK0VVYU9YYWg3MmFjdz09
+  - https://zoom.us
   prerecorded_talks:
   - title: Clarifying Questions in Conversations with Augmented Syntax Features and
       Side Information
@@ -552,7 +552,7 @@
     name: Closing Remarks
     hosts: Enrico Santus
   zoom_links:
-  - https://us02web.zoom.us/j/8257686500?pwd=azc0bFltRk5ZQUp1TDhGRkxreGFiQT09
+  - https://zoom.us
   prerecorded_talks:
   - title: 'How Languages Carve Up the World: Cognitive Explanation through Computational
       Modeling'
@@ -656,7 +656,7 @@
     name: Closing remarks
     hosts: Victor Zhong, Victoria Lin, Rui Zhang
   zoom_links:
-  - https://us02web.zoom.us/j/6771937722
+  - https://zoom.us
   prerecorded_talks:
   - title: 'Invited Talk: Jacob Andreas'
     speakers: Jacob Andreas
@@ -807,9 +807,9 @@
     name: Closing
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/3372872285
-  - https://us02web.zoom.us/j/9587240070
-  - https://us02web.zoom.us/j/4013040190
+  - https://zoom.us
+  - https://zoom.us
+  - https://zoom.us
   prerecorded_talks: []
 - UID: WS-9
   title: Second Workshop for NLP Open Source Software (NLP-OSS)
@@ -856,7 +856,7 @@
     name: Closing Remarks
     hosts: NLP-OSS Organziers
   zoom_links:
-  - https://us02web.zoom.us/j/7858391728
+  - https://zoom.us
   prerecorded_talks:
   - title: (To be confirmed) Invited Talk 1 - Chip Huyen
     speakers: Chip Huyen
@@ -1028,7 +1028,7 @@
     name: QA/Poster
     hosts: SpLU Organizers
   zoom_links:
-  - https://us02web.zoom.us/j/9514624887
+  - https://zoom.us
   prerecorded_talks:
   - title: "\tVisualizing Meaning: Semantic Simulation of Actions and Events"
     speakers: James Pustejovsky, Brandeis University
@@ -1210,7 +1210,7 @@
     name: Closing
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/5070305812
+  - https://zoom.us
   prerecorded_talks:
   - title: Invited talk
     speakers: Miriam Butt
@@ -1392,7 +1392,7 @@
     name: Concluding Session
     hosts: Anna Rumshisky
   zoom_links:
-  - https://us02web.zoom.us/j/2769990355
+  - https://zoom.us
   prerecorded_talks:
   - title: Keynote 3rd Clinical Natural Language Processing Workshop
     speakers: Hong Yu
@@ -1503,8 +1503,8 @@
       • Adversarial Augmentation Policy Search for Domain and Cross-Lingual Generalization in Reading Comprehension (Adyasha Maharana and Mohit Bansal)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.2797.html">paper+video</a> (<a href="https://unc.zoom.us/j/97249841910">zoom channel</a><br><br>
     hosts: Please use separate Zoom links
   zoom_links:
-  - https://us02web.zoom.us/j/8018218663
-  - https://us02web.zoom.us/j/3550218712
+  - https://zoom.us
+  - https://zoom.us
   prerecorded_talks:
   - title: Keynote talk by Eduard Hovy
     speakers: Eduard Hovy
@@ -1595,8 +1595,8 @@
     name: GatherTown Poster Session
     hosts: Wei Xu & Alan Ritter
   zoom_links:
-  - https://us02web.zoom.us/j/8056354262
-  - https://us02web.zoom.us/j/3446463699
+  - https://zoom.us
+  - https://zoom.us
   prerecorded_talks: []
 - UID: WS-15
   title: 'SustaiNLP: Workshop on Simple and Efficient Natural Language Processing'
@@ -1719,8 +1719,8 @@
       • <a href="https://virtual.2020.emnlp.org/paper_WS-15.1098.html">  OptSLA: an Optimization-Based Approach for Sequential Label Aggregation  </a>
     hosts: Alex Wang
   zoom_links:
-  - https://us02web.zoom.us/j/5715758008
-  - https://us02web.zoom.us/j/4500113018
+  - https://zoom.us
+  - https://zoom.us
   prerecorded_talks:
   - title: Invited Talk
     speakers: Mona Diab
@@ -1849,11 +1849,11 @@
       link 1</a>
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/3636713515
-  - https://us02web.zoom.us/j/2338884319
-  - https://us02web.zoom.us/j/9783550398
-  - https://us02web.zoom.us/j/5611345347
-  - https://us02web.zoom.us/j/9987253895
+  - https://zoom.us
+  - https://zoom.us
+  - https://zoom.us
+  - https://zoom.us
+  - https://zoom.us
   prerecorded_talks: []
 - UID: WS-17
   title: The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW
@@ -1980,9 +1980,9 @@
       link 1</a>
     hosts: Vinodkumar Prabhakaran
   zoom_links:
-  - https://us02web.zoom.us/j/4396802858
-  - https://us02web.zoom.us/j/5727154448
-  - https://us02web.zoom.us/j/9208909204
+  - https://zoom.us
+  - https://zoom.us
+  - https://zoom.us
   prerecorded_talks:
   - title: Keynote1
     speakers: "Andr\xE9 Brock"
@@ -2055,7 +2055,7 @@
     name: Closing Remarks
     hosts: David Jurgens
   zoom_links:
-  - https://us02web.zoom.us/j/6709619322
+  - https://zoom.us
   prerecorded_talks: []
 - UID: WS-19
   title: LOUHI 2020 - 11th International Workshop on Health Text Mining and Information
@@ -2129,7 +2129,7 @@
       Detection of Mental Health from Reddit via Deep Contextualized Representations (Zhengping Jiang, Sarah Ita Levitan, Jonathan Zomick and Julia Hirschberg)
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/9825218020
+  - https://zoom.us
   prerecorded_talks: []
 - UID: WS-20
   title: Evaluation and Comparison of NLP Systems
@@ -2182,7 +2182,7 @@
     name: Concluding Remarks
     hosts: Yang Gao
   zoom_links:
-  - https://us02web.zoom.us/j/5916616973
+  - https://zoom.us
   prerecorded_talks: []
 - UID: WS-21
   title: 4th Workshop on Structured Prediction for NLP
@@ -2299,8 +2299,8 @@
       Julia Kreutzer,  André Martins
       Zoom Link 1
   zoom_links:
-  - https://us02web.zoom.us/j/3828955479
-  - https://us02web.zoom.us/j/6468788696
+  - https://zoom.us
+  - https://zoom.us
   prerecorded_talks:
   - title: Invited talk by Isabelle Augenstein
     speakers: Isabelle Augenstein
@@ -2377,7 +2377,7 @@
     name: Closing NLPBT
     hosts: Giuseppe Castellucci
   zoom_links:
-  - https://us02web.zoom.us/j/4210020303
+  - https://zoom.us
   prerecorded_talks: []
 - UID: WS-24
   title: 'PrivateNLP 2020: The First Workshop on Privacy in NLP'
@@ -2461,7 +2461,7 @@
     name: Closing remarks
     hosts: TBD
   zoom_links:
-  - https://us02web.zoom.us/j/9648673341
+  - https://zoom.us
   prerecorded_talks:
   - title: invited1
     speakers: Aaron Roth
@@ -2546,7 +2546,7 @@
     name: Keynote 3 - Idan Blank (repeat)
     hosts: Yuval Pinter
   zoom_links:
-  - https://us02web.zoom.us/j/4126435944
+  - https://zoom.us
   prerecorded_talks:
   - title: Evaluating and calibrating neural language models for human-like language
       processing
@@ -2605,5 +2605,5 @@
     name: Discussion
     hosts: Mike Conway
   zoom_links:
-  - https://us02web.zoom.us/j/2311998450
+  - https://zoom.us
   prerecorded_talks: []

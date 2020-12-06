@@ -84,14 +84,11 @@
     ('index.html', 'Home'),
     ('schedule.html', 'Schedule'),
     ('plenary_sessions.html', 'Plenary'),
-    ('livestream.html', 'Livestream'),
     ('papers.html', 'Papers'),
     ('tutorials.html', 'Tutorials'),
     ('workshops.html', 'Workshops'),
     ('socials.html', 'Socials'),
     ('sponsors.html', 'Sponsors'),
-    ('http://' + config.chat_server, 'Chat'),
-    (config.gather_town , 'Gather'),
     ('https://2020.emnlp.org/organizers', 'Organizers'),
     ('about.html', 'Help'),
     ] -%}
@@ -132,28 +129,13 @@
         >
           <ul class="navbar-nav ml-auto">
             {% for href, id in navigation_bar %}
-              {% if id == "Chat" %}
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" 
-                      href="{{href}}" target="_blank" id="chatNavbarDropdown" role="button"
-                      data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Chat
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="chatNavbarDropdown">
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#chatsModal">
-                      Active Chats
-                    </a>
-                  </div>
-                </li>
-              {% else %}
-                <li class="nav-item {% if id == active_page %}active{% endif %}">
-                  {% if href.startswith("http") %}
-                  <a class="nav-link" href="{{href}}" target="_blank">{{id}}</a>
-                  {% else %}
-                  <a class="nav-link" href="{{href}}">{{id}}</a>
-                  {% endif %}
-                </li>
-              {% endif %}
+              <li class="nav-item {% if id == active_page %}active{% endif %}">
+                {% if href.startswith("http") %}
+                <a class="nav-link" href="{{href}}" target="_blank">{{id}}</a>
+                {% else %}
+                <a class="nav-link" href="{{href}}">{{id}}</a>
+                {% endif %}
+              </li>
             {% endfor %}
           </ul>
         </div>
