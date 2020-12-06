@@ -219,6 +219,19 @@ Most of these are optional. If the sponsor should not get a booth, then you can 
     channel: example_sponsor
     landingpage: https://www.isi.edu/
 
+
+#### Sponsor Accounts
+
+Sponsors a number of visitor accounts based on their sponsor tier. They also can register 3 people that only exhibit.
+We recommend also creating one account per sponsor early enough so that they can see their booth live. We recommend naming
+it after the sponsor and not binding it to a specific person, e.g. better call it `sponsor.deepmind`. This account will
+then not be removed before the conference. Additional exhibitors need to register and can usually register for free.
+
+#### Relevant documents
+
+- [Invitation to Dry Run](https://docs.google.com/document/d/1f0ScAG_tUNZry4F5cVBkfwtKaftnKJfZEn7nJZvkxd0/edit?usp=sharing)
+- [EMNLP Instructions to sponsors](https://docs.google.com/document/d/1p6ZsN8WmtZiHG0Oyh2zY8eQmSNxH8lzMDHGIWr36LZI/edit?usp=sharing)
+
 ### Chat
 
 We use RocketChat throughout this page to have channels for keynotes, plenaries, live, papers, workshops, tutorials
@@ -256,6 +269,12 @@ We buy one Master account and then create accounts for the specific events. For 
 we do not schedule events but use the personal meeting link. You can use
 [these scripts](https://github.com/acl-org/acl-2020-virtual-conference-tools) to help you creating Zoom things.
 
+#### Relevant documents
+
+- [Volunteers’ Documentation on Zoom](https://docs.google.com/document/d/1MFg1CnSd2Vu4oS30MXqJt4v3c1XozHX_1DPGxkXqXeA/edit?usp=sharing)
+- [Sponsors’ Documentation on Zoom](https://docs.google.com/document/d/1CPekSelpKNjGMTH7okFmCzEGaCqFmqSu2HVfYRRSWiU/edit?usp=sharing)
+- [Mentors’ Documentation on Zoom](https://docs.google.com/document/d/10aVXLFKQH95cCJ-JoauhzNztBjcu_2iYw-Pz9ETFlS8/edit?usp=sharing)
+
 ### User creation
 
 For the first batch of accounts, we are given an Excel file and bulk create accounts. This is best to be done the 
@@ -268,6 +287,16 @@ We use Zappier for that: After the first bulk creation, the registration company
 mails to us. Then we use Zappier to parse email, name, affiliation and host. This is sent to a AWS Lambda function
 that then creates the account for us. See also [this issue](https://github.com/acl-org/acl-2020-virtual-conference/issues/55).
 
+### Help Desk
+
+We recommend setting up a helpdesk that is staffed by volunteers. For that, create a Google Group and add helpdesk members
+and also create a helpdesk channel. It is best to set the Google Group up early enough and also use it as the reply 
+mail for the conference invitation account credentials mail and also to mention it there.
+
+### Favicons
+
+We use [this website](https://realfavicongenerator.net/) to generate favicons from an image.
+
 ## Acknowledgements
 
 MiniConf was built by [Hendrik Strobelt](http://twitter.com/hen_str) and [Sasha Rush](http://twitter.com/srush_nlp).
@@ -275,6 +304,13 @@ MiniConf was built by [Hendrik Strobelt](http://twitter.com/hen_str) and [Sasha 
 Thanks to Darren Nelson for the original design sketches. Shakir Mohamed, Martha White, Kyunghyun Cho, Lee Campbell, 
 and Adam White for planning and feedback. Hao Fang, Junaid Rahim, Jake Tae, Yasser Souri, Soumya Chatterjee, and Ankshita 
 Gupta for contributions. 
+
+It was extended by the [ACL 2020 virtual infrastructure team](https://acl2020.org/committees/organization), especially
+by Hao Fang and Sudha Rao [with the help of many volunteers](https://virtual.acl2020.org/static/pdf/virtual_infrastructure_volunteers.pdf).
+
+It was extended for EMNLP 2020 by [Jan-Christoph Klie](https://github.com/jcklie) with the help of the 
+[EMNLP 2020 virtual infrastructure team](https://2020.emnlp.org/organizers) and 
+[with the help of many volunteers](static/pdf/volunteers.pdf).
 
 
 

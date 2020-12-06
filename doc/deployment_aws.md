@@ -147,7 +147,8 @@ very confusing for people.
 
 ### Invitation mails
 
-See https://github.com/acl-org/emnlp-2020-virtual-conference/issues/21 . 
+See https://github.com/acl-org/emnlp-2020-virtual-conference/issues/21 . The PDF we link to can be generated
+from `doc/emnlp-2020-virtual-website-login-steps`.
 
 ### Additional user fields
 
