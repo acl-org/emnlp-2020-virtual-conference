@@ -30,11 +30,11 @@ The repository consists of the following main components:
 
 Collection of data files representing the papers, speakers, workshops, and other important information for the conference.
 
-2) *Routing* [sitedata](https://github.com/acl-org/emnlp-2020-virtual-conference/tree/master/main.py)
+2) *Routing* [main.py](https://github.com/acl-org/emnlp-2020-virtual-conference/tree/master/main.py)
 
 This file contains defines the Flask app and the routes
 
-3) *Templates* [sitedata](https://github.com/acl-org/emnlp-2020-virtual-conference/tree/master/templates)
+3) *Templates* [templates](https://github.com/acl-org/emnlp-2020-virtual-conference/tree/master/templates)
 
 Contains all the pages for the site. See `base.html` for the master page and `components.html` for core components.
 
