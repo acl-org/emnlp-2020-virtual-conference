@@ -386,31 +386,33 @@
 
 <script>
   function saveFavorites() {
-    const fav_papers = Object.keys(favPersistor.getAll());
-    const papers_by_id = Object.fromEntries( allPapers.map( x => [x["id"], x]) );
+    d3.json("papers.json").then(all_the_papers => {
 
-    var result = [];
-    for (paper_id of fav_papers) {
-      var paper = papers_by_id[paper_id];
-      var content = paper["content"];
-      var row = [paper["id"], content["title"], content["authors"].join(", "), content["pdf_url"] ];
-      result.push( row.join("\t"));
-    }
+      const fav_papers = Object.keys(favPersistor.getAll());
+      const papers_by_id = Object.fromEntries(all_the_papers.map(x => [x["id"], x]));
 
-    var data = result.join("\n");
+      var result = [];
+      for (paper_id of fav_papers) {
+        var paper = papers_by_id[paper_id];
+        var content = paper["content"];
+        var row = [paper["id"], content["title"], content["authors"].join(", "), content["pdf_url"]];
+        result.push(row.join("\t"));
+      }
 
-    var blob = new Blob([data], {type: 'text/csv'});
-    if(window.navigator.msSaveOrOpenBlob) {
+      var data = result.join("\n");
+
+      var blob = new Blob([data], {type: 'text/csv'});
+      if (window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveBlob(blob, "favorites.csv");
-    }
-    else{
+      } else {
         var elem = window.document.createElement('a');
         elem.href = window.URL.createObjectURL(blob);
         elem.download = "favorites.csv";
         document.body.appendChild(elem);
         elem.click();
         document.body.removeChild(elem);
-    }
+      }
+    });
 }
 
 

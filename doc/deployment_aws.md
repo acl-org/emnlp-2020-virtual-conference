@@ -81,6 +81,28 @@ as the `FROM email address`.
 
 Users will use this mail then when asking for help so you should closely monitor this address. 
 
+Also make sure to configure your mail in SES to validate *DKIM* and *MAIL FRON Domain*. Our mail template was
+
+   Welcome to the EMNLP 2020 Virtual Conference! <br>
+   <br>
+   Please find your account information below. <br>
+   Username: {username}<br>
+   Password: {####}<br>
+   <br>
+   Please go to <a href="https://virtual.2020.emnlp.org" >https://virtual.2020.emnlp.org</a>, and login with your username and password. You will be prompted to change your password. You can use the same one if you want.
+   <br>
+   
+   For more detailed instructions on logging in (with helpful pictures!), check out 
+   <a href="https://emnlp2020-public.s3.amazonaws.com/guides/emnlp-virtual-website-login-steps.pdf">our user guide</a><br>
+   
+   If you have any technical issues with your account, <a href="mailto:virtual.2020@emnlp.org">please email us</a>  or reply to this e-mail.<br>
+   
+   <br>
+   -- EMNLP2020 Organizing Committee
+
+We recommend to not mix HTML and plaintext mail like we did to reduce being classified as spam. You can test
+your sending reputation via e.g. [these tools](https://sendgrid.com/blog/5-ways-check-sending-reputation/).
+
 ## Autodeploy via Github Actions
 
 This repository comes with an action to build and deploy this repository automatically. To set it up, do the following:
@@ -102,7 +124,12 @@ S3 bucket. Thne the CloudFront distribution will be invalidated to quickly updat
 
 ## RocketChat integration
 
-See https://github.com/acl-org/acl-2020-virtual-conference/issues/53
+We integrate RocketChat via SSO into our Amazon Cognito user repository so that only one set of username and password 
+is needed. For that, you can refer to [this guide](https://github.com/acl-org/acl-2020-virtual-conference/issues/53).
+You do not need to change the Lambda functions if you set up the project correctly when creating the AWS app. 
+
+You can refer to our [checklist for RocketChat](https://github.com/acl-org/emnlp-2020-virtual-conference/issues/49) to
+have an idea what needs to be done. 
 
 ## Customizing
 
@@ -121,6 +148,11 @@ very confusing for people.
 ### Invitation mails
 
 See https://github.com/acl-org/emnlp-2020-virtual-conference/issues/21 . 
+
+### Additional user fields
+
+We recommend also to create an affiliation field and adapt scripts to add this info, VirtualChair and Gather.town wants
+to have it.
 
 ## Trouble Shooting
 
