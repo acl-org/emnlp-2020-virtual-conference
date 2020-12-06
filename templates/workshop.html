@@ -98,7 +98,11 @@
     <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
         <br/>
         <p>
+          {% if talk.presentation_id %}
           <a href="https://slideslive.com/{{talk.presentation_id}}" target="_blank"><b>{{talk.title}}</b></a>
+          {% elif talk.link %}
+          <a href="{{talk.link}}" target="_blank"><b>{{talk.title}}</b></a>
+          {% endif %}
         </p>
         <p>
           <i>{{talk.speakers}}</i>
