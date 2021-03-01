@@ -29,14 +29,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-        
+
     - name: Install NPM dependencies
       run: npm ci
 
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
-        REPO: self
+        REPO: git@github.com:acl-org/emnlp-2020-virtual-conference.git
         BRANCH: gh-pages
         FOLDER: build
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
