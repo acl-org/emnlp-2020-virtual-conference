@@ -16,7 +16,7 @@ background_image: static/images/emnlp2020/EMNLP-Banner-5.1.jpg
 organization: Association for Computational Linguistics
 
 # Path to the folder of paper images.
-paper_images_path: https://emnlp2020-public.s3.amazonaws.com/paper_images
+paper_images_path: https://raw.githubusercontent.com/acl-org/emnlp-2020-virtual-conference-images/master/paper_images/
 
 default_presentation_id: 38931484
 
