@@ -1,0 +1,708 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/chats-modal.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>EMNLP2020: The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <!-- Add back ('livestream.html', 'Livestream'),
+    for a new conference
+    -->
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark  bg-emnlp mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/emnlp2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">EMNLP2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="index.html">Home</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="schedule.html">Schedule</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="papers.html">Papers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="tutorials.html">Tutorials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="workshops.html">Workshops</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="socials.html">Socials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="sponsors.html">Sponsors</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="https://2020.emnlp.org/organizers" target="_blank">Organizers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="about.html">Help</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+        The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Zeerak Waseem, Vinodkumar Prabhakaran, Seyi Akiwowo and Bertie Vidgen
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="papers.html?filter=titles&program=workshop&track=The+Fourth+Workshop+on+Online+Abuse+and+Harms+%28WOAH%29+a.k.a.+ALW" target="_blank"  class="card-link">
+        Papers
+      </a>
+
+      
+      <a href="https://www.workshopononlineabuse.com/home" target="_blank"  class="card-link">
+        External Website
+      </a>
+      
+
+
+    </div>
+
+
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+    <span>Live Session 1: Nov 20, </span>
+    <span class="session_times">Live Session 1: Nov 20 (13:00-19:30 UTC)</span>
+
+  
+
+  <!--
+  
+  -->
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-11-20T13:00:00"),
+        end: new Date("2020-11-20T19:30:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_WS-17.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+      calendarNodeSpan.appendChild(document.createTextNode("["));
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+      calendarNodeSpan.appendChild(document.createTextNode("]"));
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        The workshop focuses on online abuse through a multi-disciplinary lens, drawing on social sciences, law, media studies, and more.
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 50%;">Event</th>
+          <th scope="col">Hosts</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(13:00-13:10 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Opening Remarks</p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(13:10-13:55 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Keynote</b><br> TBD <i>- André Brock</i> <br> <a href="https://zoom.us">Zoom link 1</a></p></td>
+          <td style="white-space: pre-wrap;">Bertie Vidgen</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(13:55-14:40 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Keynote</b><br>"100,000 Lines in the Sand": Agency and Policy Feedback in Content Moderation <i>- Alex Hanna and Maliha Ahmed</i> <br> <a href="https://zoom.us">Zoom link 1</a></p></td>
+          <td style="white-space: pre-wrap;">Bertie Vidgen</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(14:40-14:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Break</p></td>
+          <td style="white-space: pre-wrap;">TBD</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(14:45-15:30 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Keynote</b><br>"The Root Of Algorithmic Bias And How To Deal With It" <i>- Maria Rodriguez</i> <br> <a href="https://zoom.us">Zoom link 1</a></p></td>
+          <td style="white-space: pre-wrap;">Bertie Vidgen</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(15:30-15:40 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Break</p></td>
+          <td style="white-space: pre-wrap;">TBD</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(15:40-16:40 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Keynote Panel: Maliha Ahmed, André Brock, Alex Hanna and Maria Rodriguez <br> <a href="https://zoom.us">Zoom link 1</a></p></td>
+          <td style="white-space: pre-wrap;">Bertie Vidgen</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(16:40-17:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Break</p></td>
+          <td style="white-space: pre-wrap;">TBD</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(17:00-17:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Paper Q&amp;A Panels I (3 parallel sessions)</p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(17:00-17:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Session 1, Panel I: Methods for classifying online abuse <br> <a href="https://zoom.us">Zoom link 1</a> <br><br>
+• A Novel Methodology for Developing Automatic Harassment Classifiers for Twitter (Ishaan Arora, Julia Guo, Sarah Ita Levitan, Susan McGregor and Julia Hirschberg)<br>
+• Using Transfer-based Language Models to Detect Hateful and Offensive Language Online (Vebjørn Isaksen and Björn Gambäck)<br>
+• Fine-tuning BERT for multi-domain and multi-label incivil language detection (Kadir Bulut Ozler, Kate Kenski, Steve Rains, Yotam Shmargad, Kevin Coe and Steven Bethard)<br>
+• HurtBERT: Incorporating Lexical Features with BERT for the Detection of Abusive Language (Anna Koufakou, Endang Wahyu Pamungkas, Valerio Basile and Viviana Patti)<br>
+• Abusive Language Detection using Syntactic Dependency Graphs (Kanika Narang and Chris Brew)</p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(17:00-17:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Session 1, Panel II: Biases in datasets for abuse<br> <a href="https://zoom.us">Zoom link 2</a> <br><br>
+• Impact of politically biased data on hate speech classification (Maximilian Wich, Jan Bauer and Georg Groh)<br>
+• Identifying and Measuring Annotator Bias Based on Annotators’ Demographic Characteristics (Hala Al Kuwatly, Maximilian Wich and Georg Groh)<br>
+• Investigating Annotator Bias with a Graph-Based Approach (Maximilian Wich, Hala Al Kuwatly and Georg Groh)<br>
+• Reducing Unintended Identity Bias in Russian Hate Speech Detection (Nadezhda Zueva, Madina Kabirova and Pavel Kalaidin)<br>
+• Investigating Sampling Bias in Abusive Language Detection (Dante Razo and Sandra Kübler)<br>
+• Is your toxicity my toxicity? Understanding the influence of rater identity on perceptions of toxicity (Ian Kivlichan, Olivia Redfield, Rachel Rosen, Raquel Saxe, Nitesh Goyal and Lucy Vasserman)</p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(17:00-17:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Session 1, Panel III: Technical challenges in classifying online abuse<br> <a href="https://zoom.us">Zoom link 3</a> <br><br>
+• Attending the Emotions to Detect Online Abusive Language (Niloofar Safi Samghabadi, Afsheen Hatami, Mahsa Shafaei, Sudipta Kar and Thamar Solorio)<br>
+• Enhancing the Identification of Cyberbullying through Participant Roles (Gathika Rathnayake, Thushari Atapattu, Mahen Herath, Georgia Zhang and Katrina Falkner)<br>
+• Developing a New Classifier for Automated Identification of Incivility in Social Media (Sam Davidson, Qiusi Sun and Magdalena Wojcieszak)<br>
+• [Findings] Hybrid Emoji-Based Masked Language Models for Zero-Shot Abusive Language Detection (Michele Corazza, Stefano Menini, Elena Cabrio, Sara Tonelli and Serena Villata)<br>
+• Countering hate on social media: Large scale classification of hate and counter speech (Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent HébertDufresne and Mirta Galesic)</p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(17:45-18:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Break</p></td>
+          <td style="white-space: pre-wrap;">TBD</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(18:00-18:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Paper Q&amp;A Panels II (3 parallel sessions)</p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(18:00-18:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Session 2, Panel IV: Ways of tackling online abuse<br> <a href="https://zoom.us">Zoom link 1</a><br><br>
+• Moderating Our (Dis)Content: Renewing the Regulatory Approach (Claire Pershan)<br>
+• Investigating takedowns of misogynistic abuse on Twitter: a story of iterative failures and partial successes (Nicolas Suzor and Rosalie Gillett)<br>
+• Six Attributes of Unhealthy Conversations (Ilan Price, Jordan Gifford-Moore, Jory Fleming, Saul Musker, Maayan Roichman, Guillaume Sylvain, Nithum Thain, Lucas Dixon and Jeffrey Sorensen)<br>
+• Free Expression By Design: Improving In-Platform Features &amp; Third-Party Tools to Tackle Online Abuse (Viktorya Vilk, Elodie Vialle and Matt Bailey)<br>
+• A Unified Taxonomy of Harmful Content (Michele Banko, Brendon MacKeen and Laurie Ray)<br></p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(18:00-18:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Session 2, Panel V: New datasets for abuse<br> <a href="https://zoom.us">Zoom link 2</a> <br><br>
+• Towards a Comprehensive Taxonomy and Large-Scale Annotated Corpus for Online Slur Usage (Jana Kurrek, Haji Mohammad Saleem and Derek Ruths)<br>
+• In Data We Trust: A Critical Analysis of Hate Speech Detection Datasets (Kosisochukwu Madukwe, Xiaoying Gao and Bing Xue)<br>
+• Detecting East Asian Prejudice on Social Media (Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall and Rebekah Tromble)<br>
+• On Cross-Dataset Generalization in Automatic Detection of Online Abuse Isar Nejadgholi and Svetlana Kiritchenko<br>
+• [Findings] A little goes a long way: Improving toxic language classification despite data scarcity Mika Juuti, Tommi Gröndahl, Adrian Flanagan and N. Asokan</p></td>
+          <td style="white-space: pre-wrap;">Zeerak Waseem</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(18:45-19:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Break</p></td>
+          <td style="white-space: pre-wrap;">TBD</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(19:00-19:20 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Online Abuse and Human Rights: Report on WOAH RightsCon Satellite Session<br> <a href="https://zoom.us">Zoom link 1</a></p></td>
+          <td style="white-space: pre-wrap;">Vinodkumar Prabhakaran</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 20, <span class="session_times">(19:20-19:30 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p>Closing Remarks <br> <a href="https://zoom.us">Zoom link 1</a></p></td>
+          <td style="white-space: pre-wrap;">Vinodkumar Prabhakaran</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Plenary Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          
+          <a href="https://slideslive.com/38939540" target="_blank"><b>Keynote1</b></a>
+          
+        </p>
+        <p>
+          <i>André Brock</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          
+          <a href="https://slideslive.com/38939541" target="_blank"><b>&#34;100,000 Lines in the Sand&#34;: Agency and Policy Feedback in Content Moderation</b></a>
+          
+        </p>
+        <p>
+          <i>Alex Hanna &amp; Maliha Ahmed</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          
+          <a href="https://slideslive.com/38939542" target="_blank"><b>The Root Of Algorithmic Bias And How To Deal With It</b></a>
+          
+        </p>
+        <p>
+          <i>Maria Y. Rodriguez</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-179777566-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-179777566-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-left">
+          <img src="static/images/emnlp2020/acl-logo.png"
+            height="45px"
+            width="auto" align="center"
+          >
+          <span class="lead">EMNLP 2020</span>
+        </p>
+        <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+    <div class="modal left fade" id="chatsModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-height: 100% !important;">
+        <div class="modal-content" style="max-height: 100% !important;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Active Chats</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 1em;">
+    <div class="stats-last-update text-muted" id="highly-active-chats-last-update"></div>
+    <a id="highly-active-chats-btn-refresh" href="#" class="text-primary" style="display: none;">Refresh now</a>
+</div>
+
+<div id="highly-active-chats-list">
+</div>
+
+<div class="text-center" id="highly-active-chats-progress-bar" style="margin-bottom: 80em;">
+    <div class="spinner-border text-primary" style="margin-top: 3em; width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<br/>
+<p class="text-muted">
+    <strong>How it works: </strong>
+    We calculate the number of new messages for every channel in the last N seconds. Then, we sort them descendingly.
+    Channels with no new messages will be randomly shuffled. Please note that the number of messages might not be accurate.
+</p>
+
+<script src="static/js/highly-active-chats.js"></script>
+<script>
+    let channel_stats_server = "https://emnlp2020-channels-stats.azure-api.net"
+    $(document).ready( function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        load_stats();
+    });
+</script>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+  </body>
+</html>

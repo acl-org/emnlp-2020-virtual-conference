@@ -1,0 +1,676 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/chats-modal.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>EMNLP2020: Workshop on Insights from Negative Results in NLP</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <!-- Add back ('livestream.html', 'Livestream'),
+    for a new conference
+    -->
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark  bg-emnlp mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/emnlp2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">EMNLP2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="index.html">Home</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="schedule.html">Schedule</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="papers.html">Papers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="tutorials.html">Tutorials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="workshops.html">Workshops</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="socials.html">Socials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="sponsors.html">Sponsors</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="https://2020.emnlp.org/organizers" target="_blank">Organizers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="about.html">Help</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+        Workshop on Insights from Negative Results in NLP
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Anna Rogers, Joao Sedoc and Anna Rumshisky
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="papers.html?filter=titles&program=workshop&track=Workshop+on+Insights+from+Negative+Results+in+NLP" target="_blank"  class="card-link">
+        Papers
+      </a>
+
+      
+      <a href="https://insights-workshop.github.io/" target="_blank"  class="card-link">
+        External Website
+      </a>
+      
+
+
+    </div>
+
+
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+    <span>Live Session 1: Nov 19, </span>
+    <span class="session_times">Live Session 1: Nov 19 (15:00-00:00 UTC)</span>
+
+  
+
+  <!--
+  
+  -->
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'Workshop on Insights from Negative Results in NLP'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-11-19T15:00:00"),
+        end: new Date("2020-11-20T00:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_WS-3.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+      calendarNodeSpan.appendChild(document.createTextNode("["));
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+      calendarNodeSpan.appendChild(document.createTextNode("]"));
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        Let's take a break from chasing leaderboards! Your negative results might save others time, or poke holes in things we take for granted.
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 50%;">Event</th>
+          <th scope="col">Hosts</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(15:00-15:15 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Opening remarks</b></p></td>
+          <td style="white-space: pre-wrap;">Anna Rogers</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(15:15-16:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Invited talk: <a href="http://web.eecs.umich.edu/~mihalcea/">Rada Mihalcea</a>:</b> The ups and downs of word embeddings<br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-mihalcea">RocketChat</a><br/>
+<i>Word embeddings have largely been a “success story” in our field. They have enabled progress in numerous language processing applications, and have facilitated the application of large-scale language analyses in other domains, such as social sciences and humanities. While less talked about, word embeddings also have many shortcomings – instability, lack of transparency, biases, and more. In this talk, I will review the “ups” and “downs” of word embeddings, discuss tradeoffs, and chart potential future research directions to address some of the downsides of these word representations.</i></p></td>
+          <td style="white-space: pre-wrap;">Anna Rumshisky</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(16:00-16:15 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Q&amp;A with Rada Mihalcea</b> <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-mihalcea">RocketChat</a></p></td>
+          <td style="white-space: pre-wrap;">Anna Rumshisky</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(16:15-16:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Thematic session: representation learning </b> <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-representations">RocketChat</a> <br/>
+• Embedding Structured Dictionary Entries (Steven Wilson, Walid Magdy, Barbara McGillivray and Gareth Tyson) <a href="https://virtual.2020.emnlp.org/paper_WS-3.34.html">Paper</a><br/>
+• Can Knowledge Graph Embeddings Tell Us What Fact-checked Claims Are About? (Valentina Beretta, Sébastien Harispe, Katarina Boland, Luke Lo Seen, Konstantin Todorov and Andon Tchechmedjiev) <a href="https://virtual.2020.emnlp.org/paper_WS-3.24.html">Paper</a><br/>
+• Layout-Aware Text Representations Harm Clustering Documents by Type (Catherine Finegan-Dollak and Ashish Verma) <a href="https://virtual.2020.emnlp.org/paper_WS-3.22.html">Paper</a></p></td>
+          <td style="white-space: pre-wrap;">Anna Rogers</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(16:45-17:15 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Thematic session: dialogue </b>  <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-dialogue">RocketChat</a> <br/>
+• On Task-Level Dialogue Composition of Generative Transformer Model (Prasanna Parthasarathi, Sharan Narang and Arvind Neelakantan) <a href="https://virtual.2020.emnlp.org/paper_WS-3.12.html">Paper</a><br/>
+• HINT3: Raising the bar for Intent Detection in the Wild (Gaurav Arora, Chirag Jain, Manas Chaturvedi and Krupal Modi) <a href="https://virtual.2020.emnlp.org/paper_WS-3.31.html">Paper</a><br/>
+• Effects of Naturalistic Variation in Goal-Oriented Dialog (Jatin Ganhotra, Robert Moore, Sachindra Joshi and Kahini Wadhawan <a href="https://virtual.2020.emnlp.org/paper_WS-3.3004.html">Paper</a></p></td>
+          <td style="white-space: pre-wrap;">Joao Sedoc</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(17:15-18:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Social break / meal time.</b> Gather.town (room N)</p></td>
+          <td style="white-space: pre-wrap;">n/a</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(18:00-18:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Invited talk: <a href="http://www.byronwallace.com/">Byron Wallace</a>:</b>Negative results yield interesting questions, or: a bunch of stuff that didn’t work  <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-wallace">RocketChat</a><br/>
+<i>I will discuss recent projects in which ideas did not pan out as expected, but where these initial negative results led to (arguably) more interesting questions. My hope is that these case studies of negative results — which ultimately led to work we viewed as compelling enough to warrant write-up — will foster discussion about when “negative” results are nonetheless interesting, and about the kinds of questions we ask in empirical NLP research.</i></p></td>
+          <td style="white-space: pre-wrap;">Anna Rumshisky</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(18:45-19:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Q&amp;A with Byron Wallace</b> <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-wallace">RocketChat</a></p></td>
+          <td style="white-space: pre-wrap;">Anna Rumshisky</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(19:00-19:30 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Thematic session: question answering </b><br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-from-qa">RocketChat</a><br/>
+• Do Transformers Dream of Inference, or Can Pretrained Generative Models Learn Implicit Inferential Rules? (Zhengzhong Liang and Mihai Surdeanu) <a href="https://virtual.2020.emnlp.org/paper_WS-3.26.html">Paper</a><br/>
+• What do we expect from Multiple-choice QA Systems? (Krunal Shah, Nitish Gupta and Dan Roth) <a href="https://virtual.2020.emnlp.org/paper_WS-3.2575.html">Paper</a><br/>
+• Q. Can Knowledge Graphs be used to Answer Boolean Questions? A. It’s complicated! (Daria Dzendzik, Carl Vogel and Jennifer Foster) <a href="https://virtual.2020.emnlp.org/paper_WS-3.4.html">Paper</a></p></td>
+          <td style="white-space: pre-wrap;">Anna Rogers</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(19:30-20:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Thematic session: natural language inference </b> <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-from-nli">RocketChat</a><br/>
+• Counterfactually-Augmented SNLI Training Data Does Not Yield Better Generalization Than Unaugmented Data (William Huang, Haokun Liu and Samuel R. Bowman) <a href="https://virtual.2020.emnlp.org/paper_WS-3.27.html">Paper</a><br/>
+• The Extraordinary Failure of Complement Coercion Crowdsourcing (Yanai Elazar, Victoria Basmov, Shauli Ravfogel, Yoav Goldberg and Reut Tsarfat) <a href="https://virtual.2020.emnlp.org/paper_WS-3.33.html">Paper</a><br/>
+• Poison Attacks against Text Datasets with Conditional Adversarially Regularized Autoencoder (Alvin Chan, Yi Tay, Yew-Soon Ong and Aston Zhang) <a href="https://virtual.2020.emnlp.org/paper_WS-3.106.html">Paper</a></p></td>
+          <td style="white-space: pre-wrap;">Anna Rogers</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(20:00-20:30 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Thematic session: lessons learned the hard way</b> <br/><a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-lessons">RocketChat</a> <br/>
+• Evaluating the Effectiveness of Efficient Neural Architecture Search for Sentence-Pair Tasks (Ansel MacLaughlin, Jwala Dhamala, Anoop Kumar, Sriram Venkatapathy, Ragav Venkatesan and Rahul Gupta) <a href="https://virtual.2020.emnlp.org/paper_WS-3.7.html">Paper</a><br/>
+• NMF Ensembles? Not for Text Summarization! (Alka Khurana and Vasudha Bhatnagar) <a href="https://virtual.2020.emnlp.org/paper_WS-3.29.html">Paper</a><br/>
+• If You Build Your Own NER Scorer, Non-replicable Results Will Come (Constantine Lignos and Marjan Kamyab) <a href="https://virtual.2020.emnlp.org/paper_WS-3.30.html">Paper</a></p></td>
+          <td style="white-space: pre-wrap;">Joao Sedoc</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(20:30-21:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Social break / meal time.</b> Gather.town (room N)</p></td>
+          <td style="white-space: pre-wrap;">n/a</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(21:00-22:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Interactive Orals</b> <br/>
+• Domain adaptation challenges of BERT in tokenization and sub-word representations of Out-of-Vocabulary words (Anmol Nayak, Hariprasad Timmapathini, Karthikeyan Ponnalagu and Vijendran Gopalan Venkoparao) <a href="https://virtual.2020.emnlp.org/paper_WS-3.1.html">Paper</a> <br/>
+• How Far Can We Go with Data Selection? A Case Study on Semantic Sequence Tagging Tasks (Samuel Louvan and Bernardo Magnini) <a href="https://virtual.2020.emnlp.org/paper_WS-3.6.html">Paper</a><br/>
+• Which Matters Most? Comparing the Impact of Concept and Document Relationships in Topic Models (Silvia Terragni, Debora Nozza, Elisabetta Fersini and Messina Enza) <a href="https://virtual.2020.emnlp.org/paper_WS-3.8.html">Paper</a><br/>
+• How Effectively Can Machines Defend Against Machine-Generated Fake News? An Empirical Study (Meghana Moorthy Bhat and Srinivasan Parthasarathy) <a href="https://virtual.2020.emnlp.org/paper_WS-3.19.html">Paper</a><br/>
+• Label Propagation-Based Semi-Supervised Learning for Hate Speech Classification (Ashwin Geet D’Sa, Irina Illina, Dominique Fohr and Dietrich Klakow) <a href="https://virtual.2020.emnlp.org/paper_WS-3.20.html">Paper</a><br/>
+• An Analysis of Capsule Networks for Part of Speech Tagging in High- and Low-resource Scenarios (Andrew Zupon, Faiz Rafique and Mihai Surdeanu) <a href="https://virtual.2020.emnlp.org/paper_WS-3.23.html">Paper</a><br/>
+• How Effective is Task-Agnostic Data Augmentation for Pretrained Transformers? (Shayne Longpre, Yu Wang and Christopher DuBois) <a href="https://virtual.2020.emnlp.org/paper_WS-3.3296.html">Paper</a><br/>
+• WER we are and WER we think we are (Piotr Szymański, Piotr Żelasko, Mikolaj Morzy, Adrian Szymczak, Marzena Żyła-Hoppe, Joanna Banaszczak, Lukasz Augustyniak, Jan Mizgajski and Yishay Carmiel) <a href="https://virtual.2020.emnlp.org/paper_WS-3.2436.html">Paper</a><br/></p></td>
+          <td style="white-space: pre-wrap;">n/a</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(22:00-22:45 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>The frustrations of leaderboardism. Panel discussion with Kawin Ethayarajh, Jesse Dodge and Rachael Tatman </b> <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-panel">RocketChat</a><br/>
+<i>Leaderboards do not only drive progress in NLP: the bias towards publication of positive, and particularly state-of-the-art results implicitly encourages the development of highly specialized and brittle systems. If the reported success cannot be reproduced, or does not generalize well, the main result is much frustration by the developers who pick up academic papers in search of something that would actually work.</i></p></td>
+          <td style="white-space: pre-wrap;">Anna Rogers</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(22:45-23:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>QA with the panelists </b> <br/> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-panel">RocketChat</a></p></td>
+          <td style="white-space: pre-wrap;">Anna Rogers</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(23:00-23:15 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Closing remarks </b> <a href="https://zoom.us?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a></p></td>
+          <td style="white-space: pre-wrap;">Anna Rogers</td>
+        </tr>
+        
+
+        <tr>
+            <td>
+              Nov 19, <span class="session_times">(23:15-00:00 UTC)</span>
+            </td>
+          <td scope="row" style="white-space: pre-wrap;"><p><b>Virtual happy hour</b> Gather.town (room N)</p></td>
+          <td style="white-space: pre-wrap;">Joao Sedoc</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Plenary Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          
+          <a href="https://slideslive.com/38940632" target="_blank"><b>Negative results yield interesting questions, or: A bunch of stuff that didn&#39;t work</b></a>
+          
+        </p>
+        <p>
+          <i>Byron C. Wallace</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          
+          <a href="https://slideslive.com/38940633" target="_blank"><b>The Ups and Downs of Word Embeddings</b></a>
+          
+        </p>
+        <p>
+          <i>Rada Mihalcea</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-179777566-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-179777566-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-left">
+          <img src="static/images/emnlp2020/acl-logo.png"
+            height="45px"
+            width="auto" align="center"
+          >
+          <span class="lead">EMNLP 2020</span>
+        </p>
+        <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+    <div class="modal left fade" id="chatsModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-height: 100% !important;">
+        <div class="modal-content" style="max-height: 100% !important;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Active Chats</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 1em;">
+    <div class="stats-last-update text-muted" id="highly-active-chats-last-update"></div>
+    <a id="highly-active-chats-btn-refresh" href="#" class="text-primary" style="display: none;">Refresh now</a>
+</div>
+
+<div id="highly-active-chats-list">
+</div>
+
+<div class="text-center" id="highly-active-chats-progress-bar" style="margin-bottom: 80em;">
+    <div class="spinner-border text-primary" style="margin-top: 3em; width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<br/>
+<p class="text-muted">
+    <strong>How it works: </strong>
+    We calculate the number of new messages for every channel in the last N seconds. Then, we sort them descendingly.
+    Channels with no new messages will be randomly shuffled. Please note that the number of messages might not be accurate.
+</p>
+
+<script src="static/js/highly-active-chats.js"></script>
+<script>
+    let channel_stats_server = "https://emnlp2020-channels-stats.azure-api.net"
+    $(document).ready( function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        load_stats();
+    });
+</script>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+  </body>
+</html>

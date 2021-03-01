@@ -1,0 +1,787 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/chats-modal.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>EMNLP2020: Plenary Sessions</title>
+    
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <!-- Add back ('livestream.html', 'Livestream'),
+    for a new conference
+    -->
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark  bg-emnlp mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/emnlp2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">EMNLP2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="index.html">Home</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="schedule.html">Schedule</a>
+                
+              </li>
+            
+              <li class="nav-item active">
+                
+                <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="papers.html">Papers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="tutorials.html">Tutorials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="workshops.html">Workshops</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="socials.html">Socials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="sponsors.html">Sponsors</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="https://2020.emnlp.org/organizers" target="_blank">Organizers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="about.html">Help</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Plenary Sessions</h1>
+  </div>
+</div>
+<!-- Uncomment this block after all livestream events are over.
+<div class="text-muted text-center">
+  You can now watch recorded livestream <a href="livestream.html" >here</a>.
+</div>
+-->
+<!--
+<div class="text-muted text-center">
+  The recorded livestream videos available:
+  <a href="https://slideslive.com/38931670" target="_blank">[July 6]</a>
+  and
+  <a href="https://slideslive.com/38931671" target="_blank">[July 7]</a>.
+</div>
+-->
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+        
+<ul class="nav nav-pills justify-content-center">
+  
+  <li class="nav-item">
+    <a
+      class="nav-link active"
+      data-toggle="tab"
+      href="#tab-nov16"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Nov 16
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link "
+      data-toggle="tab"
+      href="#tab-nov17"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Nov 17
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link "
+      data-toggle="tab"
+      href="#tab-nov18"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Nov 18
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link "
+      data-toggle="tab"
+      href="#tab-nov19"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Nov 19
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+<div class="tab-content" id="nav-tabContent">
+
+  
+  <div
+    class="tab-pane fade active show"
+    id="tab-nov16"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+
+    <div id="nov16">
+      <div class="plenary_sessions">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/emnlp2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_opening_remarks.html" class="main-title" >
+                  Opening Remarks
+                </a>
+              </h4>
+            </div>
+
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 16
+              <span class="session_times">(14:45-15:00 UTC)</span>
+              
+                [<a href="plenary_session_opening_remarks.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/keynotes/claire_cardie.jpg" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_keynote_by_claire_cardie.html" class="main-title" >
+                  Keynote: Information Extraction Through the Years: How Did We Get Here?
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Claire Cardie
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 16
+              <span class="session_times">(15:00-16:00 UTC)</span>
+              
+                [<a href="plenary_session_keynote_by_claire_cardie.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+            <div class="m-3">
+              <p>In this talk, I'll examine the state of the NLP subfield of information extraction from its inception almost 30 years ago to its current realization in neural network models. Which aspects of the original formulation of the task are more or less solved? In what ways are current state-of-the-art methods still falling short? What's up next for information extraction?</p>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/emnlp2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_industry_panel.html" class="main-title" >
+                  Industry Panel
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Fei Sha, Chin-Yew Lin, Kristina Toutanova, Daniel Marcu, Joel Tetreault, João Graça
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 16
+              <span class="session_times">(23:00-00:00 UTC)</span>
+              
+                [<a href="plenary_session_industry_panel.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div
+    class="tab-pane fade "
+    id="tab-nov17"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+
+    <div id="nov17">
+      <div class="plenary_sessions">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/emnlp2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_ethics_panel_discussion.html" class="main-title" >
+                  Ethics Panel Discussion
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Emily M. Bender, Rosie Campbell, Allan Dafoe, Pascale Fung, Meg Mitchell, Saif Mohammad
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 17
+              <span class="session_times">(15:00-16:00 UTC)</span>
+              
+                [<a href="plenary_session_ethics_panel_discussion.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+            <div class="m-3">
+              <p>Publishing in an era of Responsible AI: How can NLP be proactive? Considerations and Implications. Moderated by Mona Diab.</p>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/keynotes/rich_caruana.jpg" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_keynote_by_rich_caruana.html" class="main-title" >
+                  Keynote: Friends Don’t Let Friends Deploy Black-Box Models: The Importance of Intelligibility in Machine Learning
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Rich Caruana
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 17
+              <span class="session_times">(23:00-00:00 UTC)</span>
+              
+                [<a href="plenary_session_keynote_by_rich_caruana.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+            <div class="m-3">
+              <p>In machine learning sometimes tradeoffs must be made between accuracy and intelligibility: the most accurate models usually are not very intelligible, and the most intelligible models usually are less accurate. This can limit the accuracy of models that can safely be deployed in mission-critical applications where being able to understand, validate, edit, and ultimately trust a model is important. We have been working on a learning method to escape this tradeoff that is as accurate as full complexity models such as boosted trees and random forests, but more intelligible than linear models. This makes it easy to understand what the model has learned and to edit the model when it learns inappropriate things. Making it possible for humans to understand and repair a model is critical because most training data has unexpected problems. I’ll present several case studies where these high-accuracy GAMs discover surprising patterns in the data that would have made deploying a black-box model inappropriate. I’ll also show how these models can be used to detect and correct bias. And if there’s time, I’ll briefly discuss using intelligible GAM models to predict COVID-19 mortality.</p>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div
+    class="tab-pane fade "
+    id="tab-nov18"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+
+    <div id="nov18">
+      <div class="plenary_sessions">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/keynotes/janet_pierrehumbert.jpg" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_keynote_by_janet_pierrehumbert.html" class="main-title" >
+                  Keynote: Linguistic Behaviour and the Realistic Testing of NLP Systems.
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Janet Pierrehumbert
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 18
+              <span class="session_times">(15:00-16:00 UTC)</span>
+              
+                [<a href="plenary_session_keynote_by_janet_pierrehumbert.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+            <div class="m-3">
+              <p>To evaluate the performance of NLP systems, the standard is to use held-out test data. When the systems are deployed in real-world applications, they will only be successful if they perform well on examples that their architects never saw before. Many of these will be examples that nobody ever saw before; the central observation of generative linguistics, going back to von Humboldt, is that human language involves "The infinite use of finite means".
+    Predicting the real-world success of NLP systems thus comes down to predicting future human linguistic behaviour. In this talk, I will discuss some general characteristics of human linguistic behaviour, and the extent to which they are, or are not addressed in current NLP methodology. The topics I will address include: look-ahead and prediction; the role of categorization in building abstractions; effects of context; and variability across individuals.</p>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div
+    class="tab-pane fade "
+    id="tab-nov19"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+
+    <div id="nov19">
+      <div class="plenary_sessions">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/emnlp2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_business_meeting.html" class="main-title" >
+                  Business Meeting
+                </a>
+              </h4>
+            </div>
+
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 19
+              <span class="session_times">(01:00-01:45 UTC)</span>
+              
+                [<a href="plenary_session_business_meeting.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/emnlp2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_best_paper_awards_and_closing.html" class="main-title" >
+                  Best Paper Awards and Closing
+                </a>
+              </h4>
+            </div>
+
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Nov 19
+              <span class="session_times">(01:50-02:20 UTC)</span>
+              
+                [<a href="plenary_session_best_paper_awards_and_closing.html"   class="card-link">Watch video</a>]
+              
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  
+
+</div>
+
+<script src="static/js/lazy_load.js"></script>
+<script type="text/javascript">
+  lazyLoader();
+</script>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-179777566-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-179777566-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-left">
+          <img src="static/images/emnlp2020/acl-logo.png"
+            height="45px"
+            width="auto" align="center"
+          >
+          <span class="lead">EMNLP 2020</span>
+        </p>
+        <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+    <div class="modal left fade" id="chatsModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-height: 100% !important;">
+        <div class="modal-content" style="max-height: 100% !important;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Active Chats</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 1em;">
+    <div class="stats-last-update text-muted" id="highly-active-chats-last-update"></div>
+    <a id="highly-active-chats-btn-refresh" href="#" class="text-primary" style="display: none;">Refresh now</a>
+</div>
+
+<div id="highly-active-chats-list">
+</div>
+
+<div class="text-center" id="highly-active-chats-progress-bar" style="margin-bottom: 80em;">
+    <div class="spinner-border text-primary" style="margin-top: 3em; width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<br/>
+<p class="text-muted">
+    <strong>How it works: </strong>
+    We calculate the number of new messages for every channel in the last N seconds. Then, we sort them descendingly.
+    Channels with no new messages will be randomly shuffled. Please note that the number of messages might not be accurate.
+</p>
+
+<script src="static/js/highly-active-chats.js"></script>
+<script>
+    let channel_stats_server = "https://emnlp2020-channels-stats.azure-api.net"
+    $(document).ready( function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        load_stats();
+    });
+</script>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+  </body>
+</html>

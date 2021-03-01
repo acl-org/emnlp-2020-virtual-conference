@@ -1,0 +1,3964 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/chats-modal.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>EMNLP2020: Socials</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <!-- Add back ('livestream.html', 'Livestream'),
+    for a new conference
+    -->
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark  bg-emnlp mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/emnlp2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">EMNLP2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="index.html">Home</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="schedule.html">Schedule</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="papers.html">Papers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="tutorials.html">Tutorials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="workshops.html">Workshops</a>
+                
+              </li>
+            
+              <li class="nav-item active">
+                
+                <a class="nav-link" href="socials.html">Socials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="sponsors.html">Sponsors</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="https://2020.emnlp.org/organizers" target="_blank">Organizers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="about.html">Help</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Socials</h1>
+  </div>
+</div>
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+<div id="day">
+<div class="speakers">
+<div class="cards row">
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Queer_in_AI'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Queer in AI
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Pranav A &amp; Vasundhara &amp; Luca Soldaini &amp; Sabine Weber
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/socials/queer_in_ai.png" alt="Logo of Queer in AI"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>The Queer in AI social is an event for queer people and allies in NLP to share their experiences, network with others and discuss queer issues in research. The social will involve a mix of mini-talks, Q&A sessions and breakout discussions. All event information will remain confidential to respect the privacy and safety of participants. People of all identities, including allies, are invited to attend!</p>
+
+        <p class="text-center">This event takes place in Zoom.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Social A: Delip, Lil Miss and Kirby: Nov 17
+          <span class="session_times">(01:00-03:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A1-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Social B: Naomi, Jasmijn and Irving: Nov 18
+          <span class="session_times">(16:00-18:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A1-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/social-queer-ai" target="_blank"> Chat </a>
+        
+          | <a href="https://sites.google.com/view/queer-in-ai/emnlp2020" target="_blank"> Website </a>
+        
+        
+          | <a href="https://us02web.zoom.us/j/2827770680" target="_blank"> Zoom </a>
+        
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Veg*NLP'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Veg*NLP
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Boaz Shmueli
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/socials/VegNLP-logo.png" alt="Logo of Veg*NLP"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Vegetarians and vegans encounter fascinating challenges in many academic settings.
+We will discuss the multitude of issues and share anecdotes, stories and recipes as non-meat-eaters in the academic world.
+Everyone is welcome to join, including carnivores, omnivores, and people with religious or any other dietary restrictions!</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Virtual Potluck Party: Nov 17
+          <span class="session_times">(14:00-15:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A2-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/social-vegnlp" target="_blank"> Chat </a>
+        
+          | <a href="https://sites.google.com/view/vegnlp/" target="_blank"> Website </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='LatinX_in_NLP'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        LatinX in NLP
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Luciana Benotti &amp; Diana Galván Sosa
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/socials/LXAI-navlogo.png" alt="Logo of LatinX in NLP"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>This affinity social is aimed at LatinX individuals working on or interested in NLP with a goal to increase the visibility of researchers of LatinX origin in a field that has been dominated by other regions.</p>
+
+        <p class="text-center">This event takes place in Zoom.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1: Diana Galvan (chair): Nov 17
+          <span class="session_times">(17:00-19:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A3-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2: Luciana Benotti (chair): Nov 18
+          <span class="session_times">(18:00-20:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A3-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/social-latinx" target="_blank"> Chat </a>
+        
+          | <a href="http://www.latinxinai.org/emnlp-2020" target="_blank"> Website </a>
+        
+        
+          | <a href="https://us02web.zoom.us/j/3825328538" target="_blank"> Zoom </a>
+        
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='North_Africans_in_NLP'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        North Africans in NLP
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Asma Ben Abacha &amp; Khalil Mrini &amp; Meriem Beloucif &amp; Nedjma Ousidhoum &amp; Waleed Ammar
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/socials/NorthAfricansInNLP.png" alt="Logo of North Africans in NLP"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>We welcome NLP & AI researchers who are North African and/or are based in North Africa to attend our panel discussion with an exciting line-up of speakers, and to participate in our two networking sessions.</p>
+
+        <p class="text-center">This event takes place in Zoom &amp; Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Panel Discussion on Research in NLP &amp; AI as a North African (Zoom): Nov 16
+          <span class="session_times">(18:00-19:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A4-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Networking Session for North Africa, Europe &amp; the Americas (Gather.town): Nov 16
+          <span class="session_times">(19:00-20:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A4-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Networking Session for North Africa, Europe, Asia &amp; Oceania (Gather.town): Nov 18
+          <span class="session_times">(10:00-11:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A4-3"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/social-northafrica" target="_blank"> Chat </a>
+        
+          | <a href="https://sites.google.com/view/NorthAfricansInNLP" target="_blank"> Website </a>
+        
+        
+          | <a href="https://us02web.zoom.us/j/2503215783" target="_blank"> Zoom </a>
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Building_NLP_in_Africa'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Building NLP in Africa
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Jade Abbott
+        
+      </h6>
+
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>African NLP is more than just a lack of data, it's African expression, it's decolonisation, it's poetry, literature and music. Whether your African or simply excited by Africa, please join us at the Masakhane social.</p>
+
+        <p class="text-center">This event takes place in Zoom.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1: Nov 17
+          <span class="session_times">(14:00-15:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A5-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2: Nov 18
+          <span class="session_times">(14:00-15:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A5-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/social-nlpafrica" target="_blank"> Chat </a>
+        
+          | <a href="https://www.masakhane.io/events/social-emnlp2020" target="_blank"> Website </a>
+        
+        
+          | <a href="https://us02web.zoom.us/j/3445194683" target="_blank"> Zoom </a>
+        
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Junior_Faculty_in_Linguistics/CogSci'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Junior Faculty in Linguistics/CogSci
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Nathan Schneider
+        
+      </h6>
+
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>An informal gathering for junior faculty (U.S. Assistant Professors and similar) around the world who identify as linguists or cognitive scientists. Discussion will center on approaches to, and challenges of, computational teaching and research in these disciplines.</p>
+
+        <p class="text-center">This event takes place in Zoom.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1: Nov 18
+          <span class="session_times">(18:00-19:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A6-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/social-jrcogsci" target="_blank"> Chat </a>
+        
+        
+          | <a href="https://us02web.zoom.us/j/5969810920" target="_blank"> Zoom </a>
+        
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='The_Unofficial_EMNLP_Welcome_Social,_Now_with_Clustering!'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        The Unofficial EMNLP Welcome Social, Now with Clustering!
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Sam Bowman
+        
+      </h6>
+
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>The goal is to recreate an important part of any conference: Getting to know new people with interests that are similar to yours. All registered EMNLP 2020 attendees are welcome, no matter where you are or how much experience you have with NLP. *You must register before 11pm UTC on Monday to attend*.</p>
+
+        <p class="text-center">This event takes place in Zoom.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1: Nov 17
+          <span class="session_times">(20:00-21:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A7-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2: Nov 17
+          <span class="session_times">(22:00-23:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A7-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 3: Nov 18
+          <span class="session_times">(10:00-11:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-A7-3"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/social-emnlp-welcome" target="_blank"> Chat </a>
+        
+          | <a href="https://nyu-mll.github.io/emnlp2020social/" target="_blank"> Website </a>
+        
+        
+          | <a href="https://us02web.zoom.us/j/4372427218" target="_blank"> Zoom </a>
+        
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Computational_Social_Science_and_Social_Media'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Computational Social Science and Social Media
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Preslav Nakov
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Computational Social Science and Social Media"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Computational Social Science and Social Media".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Preslav Nakov: Nov 17
+          <span class="session_times">(13:00-14:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B1-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-social-media" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Machine_Translation_and_Multilinguality'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Machine Translation and Multilinguality
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Chi-kiu (Jackie) Lo &amp; Antonis Anastasopoulos
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Machine Translation and Multilinguality"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Machine Translation and Multilinguality".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Chi-kiu (Jackie) Lo: Nov 16
+          <span class="session_times">(19:00-20:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B10-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Antonis Anastasopoulos: Nov 17
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B10-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-multiling" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='NLP_Applications'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        NLP Applications
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Deqing Chen
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of NLP Applications"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "NLP Applications".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Deqing Chen: Nov 18
+          <span class="session_times">(05:00-06:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B11-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-applications" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Question_Answering'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Question Answering
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Pradeep Dasigi &amp; Xianchao Wu
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Question Answering"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Question Answering".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Pradeep Dasigi: Nov 17
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B12-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Xianchao Wu: Nov 18
+          <span class="session_times">(11:00-12:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B12-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-qa" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Resources_and_Evaluation'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Resources and Evaluation
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Eunsol Choi
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Resources and Evaluation"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Resource and Evaluation".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Eunsol Choi: Nov 18
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B13-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-eval" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Semantics:_Lexical,_Sentence_level,_Textual_Inference_and_Other_areas'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Semantics: Lexical, Sentence level, Textual Inference and Other areas
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Ted Pedersen &amp; Siva Reddy
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Semantics: Lexical, Sentence level, Textual Inference and Other areas"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Semantics: Lexical, Sentence level, Textual Inference and Other areas".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Ted Pederson: Nov 16
+          <span class="session_times">(19:00-20:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B14-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Siva Reddy: Nov 17
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B14-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-semantics" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Sentiment_Analysis,_Stylistic_Analysis,_and_Argument_Mining'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Sentiment Analysis, Stylistic Analysis, and Argument Mining
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Iryna Gurevych
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Sentiment Analysis, Stylistic Analysis, and Argument Mining"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Sentiment Analysis, Stylistic Analysis, and Argument Mining".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Iryna Gurevych: Nov 17
+          <span class="session_times">(13:00-14:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B15-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-sentiment" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Speech_and_Multimodality'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Speech and Multimodality
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Grzegorz Chrupala
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Speech and Multimodality"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Speech and Multimodality".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Grzegorz Chrupala: Nov 18
+          <span class="session_times">(11:00-12:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B16-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-speech" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Summarization'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Summarization
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Lili Mou &amp; Muthukumar Chandrasekaran
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Summarization"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Summarization".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Lili Mou: Nov 17
+          <span class="session_times">(05:00-06:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B17-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Muthukumar Chandrasekaran: Nov 18
+          <span class="session_times">(05:00-06:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B17-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-summarisation" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Syntax:_Tagging,_Chunking_and_Parsing'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Syntax: Tagging, Chunking and Parsing
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Ryan Cotterell &amp; Valia Kordoni
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Syntax: Tagging, Chunking and Parsing"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Syntax: Tagging, Chunking and Parsing".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Ryan Cotterell, Valia Kordoni: Nov 18
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B18-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-syntax" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Dialogue_and_Interactive_Systems'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Dialogue and Interactive Systems
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Walter Chang &amp; Samira Shaikh
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Dialogue and Interactive Systems"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Dialogue and Interactive Systems".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Walter Chang: Nov 17
+          <span class="session_times">(05:00-06:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B2-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Samira Shaikh: Nov 18
+          <span class="session_times">(05:00-06:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B2-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-dialogue" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Discourse_and_Pragmatics'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Discourse and Pragmatics
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Vered Shwartz
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Discourse and Pragmatics"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Discourse and Pragmatics".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Vered Shwartz: Nov 16
+          <span class="session_times">(19:00-20:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B3-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-discourse" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Generation'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Generation
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Yacine Jernite &amp; Jackie Cheung
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Generation"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Generation".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Yacine Jernite: Nov 16
+          <span class="session_times">(19:00-20:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B4-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Jackie Cheung: Nov 17
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B4-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-generation" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Information_Extraction'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Information Extraction
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Danqi Chen &amp; Omer Levy
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Information Extraction"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Information Extraction".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Danqi Chen, Omer Levy: Nov 17
+          <span class="session_times">(13:00-14:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B5-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-ie" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Information_Retrieval_and_Text_Mining'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Information Retrieval and Text Mining
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Steven Bedrick &amp; Avi Sil
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Information Retrieval and Text Mining"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Information Retrieval and Text Mining".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Steven Bedrick: Nov 17
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B6-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Avi Sil: Nov 18
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B6-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-ir" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Interpretability_and_Analysis_of_Models_for_NLP'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Interpretability and Analysis of Models for NLP
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Ana Marasovic
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Interpretability and Analysis of Models for NLP"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Interpretability and Analysis of Models for NLP".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Ana Marasovic: Nov 17
+          <span class="session_times">(05:00-06:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B7-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-interpret" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Linguistic_Theories,_Cognitive_Modeling_and_Psycholinguistics'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Linguistic Theories, Cognitive Modeling and Psycholinguistics
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Afra Alishahi &amp; Tal Linzen
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Linguistic Theories, Cognitive Modeling and Psycholinguistics"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Linguistic Theories, Cognitive Modeling and Psycholinguistics".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Afra Alishahi: Nov 18
+          <span class="session_times">(11:00-12:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B8-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Tal Linzen: Nov 18
+          <span class="session_times">(21:00-22:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B8-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-theory" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Machine_Learning_for_NLP'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Machine Learning for NLP
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Sebastian Ruder &amp; Luke Zettlemoyer
+        
+      </h6>
+
+      
+        <div class="m-4">
+        <img height="100"
+             src="static/images/emnlp2020/acl-logo.png" alt="Logo of Machine Learning for NLP"/>
+        </div>
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Birds of a Feather meetup session on the topic "Machine Learning for NLP".</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Sebastian Ruder: Nov 17
+          <span class="session_times">(13:00-14:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B9-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Luke Zettlemoyer: Nov 18
+          <span class="session_times">(05:00-06:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-B9-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/boaf-ml" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Open_Mentoring_sessions'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Open Mentoring sessions
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Jack Hessel &amp; Julia Hockenmaier &amp; Marzieh Fadaee &amp; Michael Roth &amp; Mohit Bansal &amp; Noah Smith &amp; Ritwik Banerjee &amp; Steven Bethard &amp; Tim Baldwin &amp; Yevgeni Berzak
+        
+      </h6>
+
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>Mentoring sessions on various topics, open to everyone (do note that there is a capacity limit of 300).</p>
+
+        <p class="text-center">This event takes place in Zoom.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1 with Jack Hessel, Tim Baldwin, Ritwik Banerjee, Steven Bethard: Nov 17
+          <span class="session_times">(04:00-05:00 UTC)</span>
+          
+            <div>
+            <a href="https://us02web.zoom.us/j/85167531611?pwd=emxIemJwems2RFVRMDQyY2VFVmFQQT09" target="_blank"  class="card-link">
+              <!--
+              <img
+                  src="static/images/zoom-icon.png"
+                  height="24px"
+                  alt="Join Zoom Meeting"
+                  title="Join Zoom Meeting"
+              >
+              -->
+              [Join Meeting]
+            </a>
+            </div>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-M2-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2 with Michael Roth, Yevgeni Berzak, Marzieh Fadaee: Nov 17
+          <span class="session_times">(12:00-13:00 UTC)</span>
+          
+            <div>
+            <a href="https://us02web.zoom.us/j/81448433082?pwd=UEdmMERLN1piM25YeUVWck5rZjd0QT09" target="_blank"  class="card-link">
+              <!--
+              <img
+                  src="static/images/zoom-icon.png"
+                  height="24px"
+                  alt="Join Zoom Meeting"
+                  title="Join Zoom Meeting"
+              >
+              -->
+              [Join Meeting]
+            </a>
+            </div>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-M2-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 3 with Noah Smith, Mohit Bansal, Julia Hockenmaier: Nov 18
+          <span class="session_times">(20:00-21:00 UTC)</span>
+          
+            <div>
+            <a href="https://us02web.zoom.us/j/84632095944?pwd=STdkUUI3bEhJUG8rWk5LTEdxaGtBdz09" target="_blank"  class="card-link">
+              <!--
+              <img
+                  src="static/images/zoom-icon.png"
+                  height="24px"
+                  alt="Join Zoom Meeting"
+                  title="Join Zoom Meeting"
+              >
+              -->
+              [Join Meeting]
+            </a>
+            </div>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-M2-3"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+
+
+
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-sm-12 p-3"
+       id='Undergraduate_Student_Panel'>
+    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+      <h2 class="card-title" >
+        Undergraduate Student Panel
+      </h2>
+
+      <h6 class="text-muted font-italic">
+        Chris Brew &amp; tbd
+        
+      </h6>
+
+      
+
+      <div class="mx-4 text-left card-subtitle">
+        <p>A panel designed for undergraduates attending the conference. We assume that these participants may be interested in pursuing a graduate degree, so we will provide presentations and informal small group conversations that will give people an idea how graduate study works and what research life is like.</p>
+
+        <p class="text-center">This event takes place in Gather.Town.</p>
+
+        
+          <div class="m-3 text-muted text-center">
+          Session 1: Nov 17
+          <span class="session_times">(17:00-18:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-U1-1"></span>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="m-3 text-muted text-center">
+          Session 2: Nov 18
+          <span class="session_times">(03:00-04:00 UTC)</span>
+          
+            <div class="text-center text-muted text-monospace">
+              <div class="paper-cal-links">
+                <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+                <span id="session-cal-link-U1-2"></span>
+              </div>
+            </div>
+
+          </div>
+        
+
+      </div>
+
+      
+      <p class="text-center text-muted card-title">
+        <a href="https://emnlp2020.rocket.chat/channel/panel-ugrad" target="_blank"> Chat </a>
+        
+        
+        
+          | <a href="https://www.virtualchair.net/events/emnlp2020" target="_blank"> Gather.Town </a>
+        
+      </p>
+      
+
+
+
+    </div>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Queer in AI'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T01:00:00"),
+          end: new Date("2020-11-17T03:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A1-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Queer in AI'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T16:00:00"),
+          end: new Date("2020-11-18T18:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A1-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Veg*NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T14:00:00"),
+          end: new Date("2020-11-17T15:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A2-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'LatinX in NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T17:00:00"),
+          end: new Date("2020-11-17T19:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A3-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'LatinX in NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T18:00:00"),
+          end: new Date("2020-11-18T20:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A3-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'North Africans in NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-16T18:00:00"),
+          end: new Date("2020-11-16T19:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A4-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'North Africans in NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-16T19:00:00"),
+          end: new Date("2020-11-16T20:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A4-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'North Africans in NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T10:00:00"),
+          end: new Date("2020-11-18T11:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A4-3');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Building NLP in Africa'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T14:00:00"),
+          end: new Date("2020-11-17T15:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A5-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Building NLP in Africa'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T14:00:00"),
+          end: new Date("2020-11-18T15:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A5-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Junior Faculty in Linguistics/CogSci'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T18:00:00"),
+          end: new Date("2020-11-18T19:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A6-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'The Unofficial EMNLP Welcome Social, Now with Clustering!'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T20:00:00"),
+          end: new Date("2020-11-17T21:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A7-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'The Unofficial EMNLP Welcome Social, Now with Clustering!'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T22:00:00"),
+          end: new Date("2020-11-17T23:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A7-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'The Unofficial EMNLP Welcome Social, Now with Clustering!'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T10:00:00"),
+          end: new Date("2020-11-18T11:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-A7-3');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Computational Social Science and Social Media'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T13:00:00"),
+          end: new Date("2020-11-17T14:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B1-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Machine Translation and Multilinguality'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-16T19:00:00"),
+          end: new Date("2020-11-16T20:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B10-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Machine Translation and Multilinguality'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T21:00:00"),
+          end: new Date("2020-11-17T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B10-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'NLP Applications'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T05:00:00"),
+          end: new Date("2020-11-18T06:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B11-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Question Answering'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T21:00:00"),
+          end: new Date("2020-11-17T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B12-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Question Answering'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T11:00:00"),
+          end: new Date("2020-11-18T12:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B12-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Resources and Evaluation'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T21:00:00"),
+          end: new Date("2020-11-18T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B13-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Semantics: Lexical, Sentence level, Textual Inference and Other areas'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-16T19:00:00"),
+          end: new Date("2020-11-16T20:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B14-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Semantics: Lexical, Sentence level, Textual Inference and Other areas'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T21:00:00"),
+          end: new Date("2020-11-17T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B14-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Sentiment Analysis, Stylistic Analysis, and Argument Mining'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T13:00:00"),
+          end: new Date("2020-11-17T14:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B15-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Speech and Multimodality'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T11:00:00"),
+          end: new Date("2020-11-18T12:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B16-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Summarization'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T05:00:00"),
+          end: new Date("2020-11-17T06:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B17-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Summarization'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T05:00:00"),
+          end: new Date("2020-11-18T06:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B17-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Syntax: Tagging, Chunking and Parsing'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T21:00:00"),
+          end: new Date("2020-11-18T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B18-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Dialogue and Interactive Systems'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T05:00:00"),
+          end: new Date("2020-11-17T06:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B2-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Dialogue and Interactive Systems'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T05:00:00"),
+          end: new Date("2020-11-18T06:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B2-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Discourse and Pragmatics'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-16T19:00:00"),
+          end: new Date("2020-11-16T20:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B3-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Generation'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-16T19:00:00"),
+          end: new Date("2020-11-16T20:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B4-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Generation'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T21:00:00"),
+          end: new Date("2020-11-17T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B4-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Information Extraction'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T13:00:00"),
+          end: new Date("2020-11-17T14:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B5-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Information Retrieval and Text Mining'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T21:00:00"),
+          end: new Date("2020-11-17T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B6-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Information Retrieval and Text Mining'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T21:00:00"),
+          end: new Date("2020-11-18T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B6-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Interpretability and Analysis of Models for NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T05:00:00"),
+          end: new Date("2020-11-17T06:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B7-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Linguistic Theories, Cognitive Modeling and Psycholinguistics'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T11:00:00"),
+          end: new Date("2020-11-18T12:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B8-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Linguistic Theories, Cognitive Modeling and Psycholinguistics'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T21:00:00"),
+          end: new Date("2020-11-18T22:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B8-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Machine Learning for NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T13:00:00"),
+          end: new Date("2020-11-17T14:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B9-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Machine Learning for NLP'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T05:00:00"),
+          end: new Date("2020-11-18T06:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-B9-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Open Mentoring sessions'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T04:00:00"),
+          end: new Date("2020-11-17T05:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-M2-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Open Mentoring sessions'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T12:00:00"),
+          end: new Date("2020-11-17T13:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-M2-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Open Mentoring sessions'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T20:00:00"),
+          end: new Date("2020-11-18T21:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-M2-3');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Undergraduate Student Panel'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-17T17:00:00"),
+          end: new Date("2020-11-17T18:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-U1-1');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: 'Undergraduate Student Panel'.replace("#", " "),
+
+          // Event start date
+          start: new Date("2020-11-18T03:00:00"),
+          end: new Date("2020-11-18T04:00:00"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
+          // Event Address
+          
+
+          // Event Description
+          // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+          description: ''
+        }
+      });
+
+      targetNode = document.querySelector('#session-cal-link-U1-2');
+      for (const name of calendarNames) {
+        calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+        calendarNodeSpan = document.createElement("span");
+        calendarNodeSpan.setAttribute("style", "padding: 2px");
+        calendarNodeSpan.appendChild(document.createTextNode("["));
+        calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+        calendarNodeSpan.appendChild(document.createTextNode("]"));
+        targetNode.appendChild(calendarNodeSpan);
+      }
+    
+  
+</script>
+
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-179777566-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-179777566-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-left">
+          <img src="static/images/emnlp2020/acl-logo.png"
+            height="45px"
+            width="auto" align="center"
+          >
+          <span class="lead">EMNLP 2020</span>
+        </p>
+        <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+    <div class="modal left fade" id="chatsModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-height: 100% !important;">
+        <div class="modal-content" style="max-height: 100% !important;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Active Chats</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 1em;">
+    <div class="stats-last-update text-muted" id="highly-active-chats-last-update"></div>
+    <a id="highly-active-chats-btn-refresh" href="#" class="text-primary" style="display: none;">Refresh now</a>
+</div>
+
+<div id="highly-active-chats-list">
+</div>
+
+<div class="text-center" id="highly-active-chats-progress-bar" style="margin-bottom: 80em;">
+    <div class="spinner-border text-primary" style="margin-top: 3em; width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<br/>
+<p class="text-muted">
+    <strong>How it works: </strong>
+    We calculate the number of new messages for every channel in the last N seconds. Then, we sort them descendingly.
+    Channels with no new messages will be randomly shuffled. Please note that the number of messages might not be accurate.
+</p>
+
+<script src="static/js/highly-active-chats.js"></script>
+<script>
+    let channel_stats_server = "https://emnlp2020-channels-stats.azure-api.net"
+    $(document).ready( function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        load_stats();
+    });
+</script>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/chats-modal.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>EMNLP2020: Baidu</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <!-- Add back ('livestream.html', 'Livestream'),
+    for a new conference
+    -->
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark  bg-emnlp mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/emnlp2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">EMNLP2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="index.html">Home</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="schedule.html">Schedule</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="papers.html">Papers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="tutorials.html">Tutorials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="workshops.html">Workshops</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="socials.html">Socials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="sponsors.html">Sponsors</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="https://2020.emnlp.org/organizers" target="_blank">Organizers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="about.html">Help</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<div class="tab-content pt-3 pb-5" id="nav-tabContent">
+  
+  <img class="rounded mx-auto d-block img-fluid" src="static/images/sponsors/baidu.png" alt="Baidu" style="max-width: 15em; max-height: 10em"  />
+  
+  
+</div>
+
+<div class="row justify-content-md-center mt-n3 pb-3">
+  <div class="col-6 text-center lead">
+      <a href="https://www.baidu.com/" target="_blank">Visit Website</a>
+  </div>
+</div>
+
+<!-- Description -->
+<div class="row justify-content-md-center">
+    <div class="col-10">
+        <span  class="lead">
+          <p>Founded on January 1, 2000, Baidu is the world’s largest Chinese language Internet search provider, the largest knowledge and information centered Internet platform company in China, and a world-leading artificial intelligence (AI) platform company. Robin Li, Baidu’s co-founder, chairman, and chief executive officer, was awarded a U.S. patent for his development of the Rankdex site-scoring algorithm for search engine page rankings, making China one of only four countries in the world that has developed core search engine technology, along with the United States, Russia, and South Korea.</p></span>
+    </div>
+</div>
+
+<!-- Youtube -->
+
+<div class="row justify-content-md-center pt-3">
+  <iframe width="525" height="301" src="https://www.youtube.com/embed/JJq2MWRIPBQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+<!-- Youtube -->
+
+<div class="row justify-content-md-center pt-3">
+
+  <div class="col-4">
+    <iframe width="320" height="240"   src="https://www.youtube.com/embed/iBqfajFcSzo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="col-4">
+    <iframe width="320" height="240"   src="https://www.youtube.com/embed/hrlz42GQHgQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="col-4">
+    <iframe width="320" height="240"   src="https://www.youtube.com/embed/Y7bEdGHmeWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+</div>
+
+
+<!-- Google Drive Video -->
+
+
+<!-- Vimeo Video -->
+
+
+<!-- Video -->
+
+
+<div class="row justify-content-md-center py-5">
+<div id="accordion" class="col-10 ">
+
+
+    <!-- Publications -->
+  
+  <div class="card">
+    <div class="card-header" id="headingPublications">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsePublications" aria-expanded="true" aria-controls="collapsePublications">
+          <h5>Accepted publications</h5>
+        </button>
+      </h5>
+    </div>
+    <div id="collapsePublications" class="collapse show" aria-labelledby="headingPublications">
+      <div class="card-body">
+        <ul>
+        
+          <h5>Long</h5>
+          
+              <a class="text-dark" href="paper_main.3236.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Learning Adaptive Segmentation Policy for Simultaneous Translation</p>
+                <p >Ruiqing Zhang, Chuanqiang Zhang, Zhongjun He, Hua Wu, Haifeng Wang</p>
+              </a>
+          
+              <a class="text-dark" href="paper_main.3064.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Diversified Multiple Instance Learning for Document-Level Multi-Aspect Sentiment Classification</p>
+                <p >Yunjie Ji, Hao Liu, Bolei He, Xinyan Xiao, Hua Wu, Yanhua Yu</p>
+              </a>
+          
+              <a class="text-dark" href="paper_main.349.html" target="_blank">
+                <p class="font-weight-bold mb-n1">DuSQL: A Large-Scale and Pragmatic Chinese Text-to-SQL Dataset</p>
+                <p >Lijie Wang, Ao Zhang, Kun Wu, Ke Sun, Zhenghua Li, Hua Wu, Min Zhang, Haifeng Wang</p>
+              </a>
+          
+              <a class="text-dark" href="paper_main.110.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Towards Medical Machine Reading Comprehension with Structural Knowledge and Plain Text</p>
+                <p >Dongfang Li, Baotian Hu, Qingcai Chen, Weihua Peng, Anqi Wang</p>
+              </a>
+          
+              <a class="text-dark" href="paper_main.3497.html" target="_blank">
+                <p class="font-weight-bold mb-n1">A Predicate-Function-Argument Annotation of Natural Language for Open-Domain Information eXpression</p>
+                <p >Mingming Sun, Wenyue Hua, Zoey Liu, Xin Wang, Kangjie Zheng, Ping Li</p>
+              </a>
+          
+        
+          <h5>Short</h5>
+          
+              <a class="text-dark" href="paper_main.2818.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Improving Bilingual Lexicon Induction for Low Frequency Words</p>
+                <p >Jiaji Huang, Xingyu Cai, Kenneth Church</p>
+              </a>
+          
+              <a class="text-dark" href="paper_main.3621.html" target="_blank">
+                <p class="font-weight-bold mb-n1">SlotRefine: A Fast Non-Autoregressive Model for Joint Intent Detection and Slot Filling</p>
+                <p >Di Wu, Liang Ding, Fan Lu, Jian Xie</p>
+              </a>
+          
+        
+          <h5>Findings</h5>
+          
+              <a class="text-dark" href="paper_findings.35.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Dual Low-Rank Multimodal Fusion</p>
+                <p >Tao Jin, Siyu Huang, Yingming Li, Zhongfei Zhang</p>
+              </a>
+          
+              <a class="text-dark" href="paper_findings.444.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Joint Intent Detection and Entity Linking on Spatial Domain Queries</p>
+                <p >Lei Zhang, Runze Wang, Jingbo Zhou, Jingsong Yu, Zhenhua Ling, Hui Xiong</p>
+              </a>
+          
+              <a class="text-dark" href="paper_findings.73.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Event Extraction as Multi-turn Question Answering</p>
+                <p >Fayuan Li, Weihua Peng, Yuguang Chen, Quan Wang, Lu Pan, Yajuan Lyu, Yong Zhu</p>
+              </a>
+          
+              <a class="text-dark" href="paper_findings.69.html" target="_blank">
+                <p class="font-weight-bold mb-n1">Syntactic and Semantic-driven Learning for Open Information Extraction</p>
+                <p >Jialong Tang, Yaojie Lu, Hongyu Lin, Xianpei Han, Le Sun, Xinyan Xiao, Hua Wu</p>
+              </a>
+          
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Resources -->
+  
+  <div class="card">
+    <div class="card-header" id="headingResources">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseResources" aria-expanded="true" aria-controls="collapseResources">
+          <h5>Resources</h5>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseResources" class="collapse show" aria-labelledby="headingResources">
+      <div class="card-body">
+        <ul>
+        
+            <li><a href="https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_Baidu_Natural_Language_Processing.pdf" target="_blank">Brochure of Baidu Natural Language Processing</a></li>
+        
+            <li><a href="https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_Baidu_Knowledge_Graph.pdf" target="_blank">Brochure of Baidu Knowledge Graph</a></li>
+        
+            <li><a href="https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_Baidu_Research.pdf" target="_blank">Brochure of Baidu Research</a></li>
+        
+            <li><a href="https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_PaddlePaddle.pdf" target="_blank">Brochure of PaddlePaddle</a></li>
+        
+            <li><a href="https://fanyiapp.cdn.bcebos.com/cms/misc/Introduction_to_Baidu&#39;s_Natural_Language_Processing.ppsx" target="_blank">Introduction to Baidu&#39;s Natural Language Processing</a></li>
+        
+            <li><a href="https://fanyiapp.cdn.bcebos.com/cms/misc/Baidu_Schedule.pdf" target="_blank">Baidu @ EMNLP 2020</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Downloads -->
+  
+
+
+
+
+</div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.zoom_times');
+  });
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-179777566-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-179777566-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-left">
+          <img src="static/images/emnlp2020/acl-logo.png"
+            height="45px"
+            width="auto" align="center"
+          >
+          <span class="lead">EMNLP 2020</span>
+        </p>
+        <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+    <div class="modal left fade" id="chatsModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-height: 100% !important;">
+        <div class="modal-content" style="max-height: 100% !important;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Active Chats</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 1em;">
+    <div class="stats-last-update text-muted" id="highly-active-chats-last-update"></div>
+    <a id="highly-active-chats-btn-refresh" href="#" class="text-primary" style="display: none;">Refresh now</a>
+</div>
+
+<div id="highly-active-chats-list">
+</div>
+
+<div class="text-center" id="highly-active-chats-progress-bar" style="margin-bottom: 80em;">
+    <div class="spinner-border text-primary" style="margin-top: 3em; width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<br/>
+<p class="text-muted">
+    <strong>How it works: </strong>
+    We calculate the number of new messages for every channel in the last N seconds. Then, we sort them descendingly.
+    Channels with no new messages will be randomly shuffled. Please note that the number of messages might not be accurate.
+</p>
+
+<script src="static/js/highly-active-chats.js"></script>
+<script>
+    let channel_stats_server = "https://emnlp2020-channels-stats.azure-api.net"
+    $(document).ready( function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        load_stats();
+    });
+</script>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+  </body>
+</html>

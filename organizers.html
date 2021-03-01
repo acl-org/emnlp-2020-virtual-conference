@@ -1,0 +1,817 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/chats-modal.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>EMNLP2020: Organizers</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <!-- Add back ('livestream.html', 'Livestream'),
+    for a new conference
+    -->
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark  bg-emnlp mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/emnlp2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">EMNLP2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="index.html">Home</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="schedule.html">Schedule</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="papers.html">Papers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="tutorials.html">Tutorials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="workshops.html">Workshops</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="socials.html">Socials</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="sponsors.html">Sponsors</a>
+                
+              </li>
+            
+              <li class="nav-item active">
+                
+                <a class="nav-link" href="https://2020.emnlp.org/organizers" target="_blank">Organizers</a>
+                
+              </li>
+            
+              <li class="nav-item ">
+                
+                <a class="nav-link" href="about.html">Help</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Organizers</h1>
+  </div>
+</div>
+<div class="text-muted text-center">
+Also check out our
+<a href="https://2020.emnlp.org/organizers/senior-program-committee" target="_blank">Senior Program Committee</a>
+and
+<a href="https://2020.emnlp.org/organizers/ethics-committee" target="_blank">Ethics Committee</a>.
+</div>
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+
+  <h4>General Chair</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/1bc4b2fd3ed07db0a3dd87271a8df3c5/94da3/bonnie_webber.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Bonnie Webber</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Edinburgh, UK
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Program Co-chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/6a8ad7ecaa679312d5d67b4f9342faac/94da3/trevor_cohn.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Trevor Cohn</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              The University of Melbourne, Australia
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/b173696a1709bfbfecdd2be93a57a846/94da3/yulan_he.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Yulan He</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Warwick, UK
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/5efed94a102b6e6fd30066ec778172e4/94da3/yang_liu.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Yang Liu</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Amazon – Alexa AI, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Workshop Chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/592074e7ccdfb0d8d82702b0c385c32b/94da3/lonneke_van_der_plas.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Lonneke van der Plas</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Malta, Malta
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/d3ba870fc3fd718edb064d9d5b9c963d/94da3/jackie_chi_kit_cheung.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Jackie Chi Kit Cheung</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              McGill University, Canada
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Tutorial Chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/defc4001888c4c80a4e8410806c9e290/94da3/aline_villavicencio.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Aline Villavicencio</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Sheffield, UK
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/98ee780dd02d8fef790dcea3f7d2fcd3/7ba55/benjamin_van_durme.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Benjamin van Durme</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Johns Hopkins University, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Demonstration Chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/e3b54bc911ff3187a0dcd1a1302252d8/94da3/qun_liu.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Qun Liu</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Huawei Noah&#39;s Ark Lab, Hong Kong
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/2561cb887e75cae94da97054cbb6d134/94da3/david_schlangen.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">David Schlangen</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Potsdam, Germany
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>General Publication Chair</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/5092a15c0874961beec142bf36ffc110/94da3/fei_liu.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Fei Liu</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Central Florida, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Publication Chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/c56fe81d28f29b6bc50d7064a3292a1e/94da3/philippe_muller.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Philippe Muller</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Toulouse, France, UK
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/6c2dbb34009b6deff1a67f7095d43708/7a6cf/yang_gao.png" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Yang Gao</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Royal Holloway, University of London
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/a4ba39118bd47fb8f61ac0022fc7b6ab/94da3/jing_li.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Jing Li</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              The Hong Kong Polytechnic University, Hong Kong
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/90012ef5c420ce11f1a09e0b1c21963e/94da3/veronika_laippala.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Veronika Laippala</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Turku, Finland
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Publicity Chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/cb7726e03753f2ca6de917658148b155/94da3/anna_rogers.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Anna Rogers</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Copenhagen, Denmark
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/ae751e75d91d08d2939b274405854b65/94da3/ruifeng_xu.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Ruifeng Xu</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Harbin Institute of Technology, China
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Website Chair</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/e9bf5d21c129c1295099cdea7515e59c/94da3/andy_mackinlay.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Andy MacKinlay</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Culture Amp, Australia
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Student Volunteer Coordinator &amp; Student Scholarship Chair</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="static/images/committee/placeholder.png" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Kellie Webster</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Google, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Diversity &amp; Inclusion Chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/81ac8cc54abd4a4257a36262b43a7612/94da3/isabelle_augenstein.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Isabelle Augenstein</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Copenhagen
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/39dd647aa2a52e522a5b6485cc64a3cd/94da3/chris_brew.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Chris Brew</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Diversity &amp; Inclusion Student Chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/cf0d65976c54e6df10d9d5a2e29e3e2f/94da3/murathan_kurfali.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Murathan Kurfali</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of Stockholm
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/ad66a7ccf5824bde5faab124ad8d6c3a/94da3/prathyusha_jwalapuram.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Prathyusha Jwalapuram</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Nanyang Technological University, Singapore
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Virtual Infrastructure Co-chairs</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/80e59d1d5fd18bb21eaae8c0da5e5fbb/94da3/jan-christoph_klie.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Jan-Christoph Klie</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Technical University of Darmstadt, Germany
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/82dda44a38439af353648c931814dd9a/94da3/yang_feng.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Yang Feng</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Chinese Academy of Sciences, China
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/65d86d48aca35dea862bc16a060185f7/94da3/zhongyu_wei.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Zhongyu Wei</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Fudan University, China
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/e4361b3c3aeb75120afda05edf318439/94da3/eduardo_blanco.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Eduardo Blanco</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              University of North Texas, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>Advisors, Virtual Infrastructure Committee</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/aaf18ad0ead732dad61c81118f80cf03/94da3/sudha_rao.jpg" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Sudha Rao</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Microsoft Research, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="https://2020.emnlp.org/static/e1e861e5e50769036955a9a9164d7b74/7a6cf/hao_fang.png" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Hao Fang</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Microsoft Semantic Machines, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  <h4>ACL Business Manager &amp; Local Arrangements Chair</h4>
+  <div class="row mb-5 mt-3">
+    
+    <div class="col-md-3 col-xs-6">
+      <div class="card text-center shadow p-3 bg-light rounded h-100">
+        <div class="text-muted">
+          <img src="static/images/committee/placeholder.png" class="rounded mx-auto my-3" style="height: 150px;" />
+          <h5 class="card-title" align="center">Priscilla Rasmussen</h5>
+          <div>
+            <h6 class="card-subtitle text-muted">
+              Association for Computational Linguistics, USA
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-179777566-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-179777566-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-left">
+          <img src="static/images/emnlp2020/acl-logo.png"
+            height="45px"
+            width="auto" align="center"
+          >
+          <span class="lead">EMNLP 2020</span>
+        </p>
+        <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+    <div class="modal left fade" id="chatsModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document" style="max-height: 100% !important;">
+        <div class="modal-content" style="max-height: 100% !important;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Active Chats</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 1em;">
+    <div class="stats-last-update text-muted" id="highly-active-chats-last-update"></div>
+    <a id="highly-active-chats-btn-refresh" href="#" class="text-primary" style="display: none;">Refresh now</a>
+</div>
+
+<div id="highly-active-chats-list">
+</div>
+
+<div class="text-center" id="highly-active-chats-progress-bar" style="margin-bottom: 80em;">
+    <div class="spinner-border text-primary" style="margin-top: 3em; width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<br/>
+<p class="text-muted">
+    <strong>How it works: </strong>
+    We calculate the number of new messages for every channel in the last N seconds. Then, we sort them descendingly.
+    Channels with no new messages will be randomly shuffled. Please note that the number of messages might not be accurate.
+</p>
+
+<script src="static/js/highly-active-chats.js"></script>
+<script>
+    let channel_stats_server = "https://emnlp2020-channels-stats.azure-api.net"
+    $(document).ready( function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        load_stats();
+    });
+</script>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+  </body>
+</html>
