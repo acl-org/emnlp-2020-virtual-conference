@@ -141,3 +141,4 @@ node_modules/
 
 /scripts/dataentry/downloads
 /scripts/dataentry/yamls
+/venv2/
