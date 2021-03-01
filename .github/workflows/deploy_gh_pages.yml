@@ -39,4 +39,4 @@ jobs:
         REPO: git@github.com:acl-org/emnlp-2020-virtual-conference.git
         BRANCH: gh-pages
         FOLDER: build
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.CI_TOKEN }}
