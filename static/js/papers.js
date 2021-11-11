@@ -260,7 +260,7 @@ const updateModalData = (paper) => {
         x => $('#modalAbstract').text(x));
     
     if (program != "workshop"){
-        $('#modalChatUrl').attr('href', `https://${chat_server}/channel/paper-${paper.id.replace('.', '-')}`);
+        $('#modalChatUrl').hide();
         $('#modalPaperPage').attr('href', `paper_${paper.id}.html`);
     } else {
         $('#modalChatUrl').hide();
